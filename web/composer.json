@@ -110,7 +110,8 @@
         "drupal/datetime_extras": "^1.0@alpha",
         "drupal/media_entity_browser": "^2.0",
         "drupal/bootstrap_simple_carousel": "^1.2",
-        "drupal/block_field": "^1.0@alpha"
+        "drupal/block_field": "^1.0@alpha",
+        "drush/drush": "^9.7"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
