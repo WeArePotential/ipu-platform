@@ -112,7 +112,8 @@
         "drupal/bootstrap_simple_carousel": "^1.2",
         "drupal/block_field": "^1.0@alpha",
         "drupal/metatag": "^1.8",
-        "commerceguys/addressing": "^1.0"
+        "commerceguys/addressing": "^1.0",
+        "platformsh/config-reader": "^2.2"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
