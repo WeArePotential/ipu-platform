@@ -25,7 +25,7 @@ class IpuMapBlock extends BlockBase {
   public function build() {
 
     $settings = ['foo' => 'bar'];
-    $markup = '<div id="ipu_map" class="container">'.$this->t('IPU Map demo').'<div class="row mapcontainer_un"><div class="col-12 map">MAP</div></div></div>';
+    $markup = 'Code?<div id="ipu_map" class="container">'.$this->t('IPU Map demo').'<div class="row mapcontainer_un"><div class="col-12 map">MAP</div></div></div>';
     $build = array(
       '#markup' => $markup
     );
