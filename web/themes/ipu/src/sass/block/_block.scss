@@ -1,0 +1,962 @@
+body {
+  /*background-color: theme-color("light");*/
+}
+
+main {
+  background-color: $white !important;
+}
+// Basic styling for h1 and h2 headings
+h1,
+.basic-page__node-title h2,
+.page__node-title h2,
+.ipu-map-country h2,
+.section-page__node-title h2 {
+  line-height: 1.25em;
+  font-weight: 400;
+  padding-bottom: 4px;
+  border-bottom: 2px solid color("ipu-teal");
+  margin-bottom: 20px;
+}
+
+// h2's are 
+h1 {
+  color: color("ipu-dark-grey");
+  font-size: $h1-font-size;
+  border-width: 4px;
+}
+
+h2 {
+  color: color("ipu-teal");
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+  font-weight: 300;
+}
+
+h3 {
+  color: color("ipu-teal");
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+  font-weight: 300;
+}
+
+a {
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+.page__footer {
+  background-color: theme-color("dark");
+  .region-inner {
+    padding: 40px 0;
+    @extend .row;
+    & > .block {
+      @extend .col-md-3;
+      @extend .col-sm-6;
+      margin-bottom: 20px;
+    }
+    p {
+      color: $ipu-white;
+      font-size: $font-size-sm;
+      line-height: 1rem;
+    }
+    h2 {
+      color: $ipu-white;
+      font-size: 1.1rem;
+      border-bottom: 2px solid color("ipu-teal");
+    }
+    li.nav-item {
+      padding: 0 0 0.25rem;
+    }
+    a {
+      color: $ipu-white;
+      font-weight: $font-weight-normal;
+      &:hover {
+       color: $tertiary;
+      }
+      &.nav-link {
+        padding: 0;
+        font-weight: $font-weight-light;
+        line-height: 1rem;
+        font-size: $font-size-sm;
+      }
+    }
+    ul.nav li {
+      width: 100%;
+      span {
+        padding: 2px 0 2px 4px;
+      }
+    }
+    .block--quicklinks ul {
+      padding-left: 0;
+      list-style: none;
+      li {
+        list-style: none;
+        padding-bottom: 0.25rem;
+      }
+      a {
+        font-weight: $font-weight-light;
+        font-size: $font-size-sm;
+        display: block;
+        line-height: 1.1rem;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+
+.topbar {
+  background-color: theme-color("dark");
+  padding: 1px 0 1px 0;
+  font-size: 0.8rem;
+
+  .custom-select {
+    height: 28px;
+  }
+
+  ul {
+    margin-bottom: 0;
+  }
+  ul.nav {
+    text-align: right;
+    :first-child {
+      flex: 1;
+    }
+  }
+  a {
+    font-weight: $font-weight-normal;
+    color: theme-color("light");
+    padding: $navbar-nav-link-padding-x;
+    &:hover {
+      color: color("orange") !important;
+      text-decoration: none;
+    }
+    &.active {
+      background-color: color("white");
+      color: color("ipu-grey");
+    }
+    &.nav-link {
+      color: theme-color("light");
+      padding: 0 $navbar-nav-link-padding-x;
+      &:hover {
+        color: color("orange") !important;
+      }
+      &::before {
+        font-size: 1rem;
+        display: block;
+      }
+      span {
+        display: none;
+      }
+    }
+  }
+
+  .text-left .region-inner {
+    display: flex;
+    justify-content: flex-start;
+    a {
+      padding: 0.25em;
+      display: block;
+    }
+  }
+  ul.cross-site-navigation {
+    white-space: nowrap;
+  }
+  /* Language switcher */
+  .block--languagedropdownswitchercontent {
+    display: inline-block;
+    margin-left: 10px;
+    .lang-dropdown-select-element {
+      font-size: 0.85rem;
+      border-radius: 0;
+    }
+  }
+}
+#branding img.logo {
+  height: 90px;
+  width: auto;
+  padding: $navbar-padding-x $navbar-padding-y;
+}
+#branding .block--ipu-search {
+  display: inline-block;
+}
+
+// Font awesome icons
+.example-download,
+#branding .form-actions {
+  &::after,
+  &::before {
+    font-family: "Font Awesome 5 Free", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 900;
+    line-height: 1;
+  }
+}
+
+.follow-facebook,
+.follow-twitter,
+.follow-instagram,
+.follow-youtube,
+.follow-flickr {
+  &::after,
+  &::before {
+    font-family: "Font Awesome 5 Brands";
+  }
+}
+
+.example-download::after {
+  content: "\f093" !important;
+}
+
+.follow-facebook::before {
+  content: "\f39e" !important;
+}
+.follow-twitter::before {
+  content: "\f099" !important;
+}
+.follow-flickr::before {
+  content: "\f16e" !important;
+}
+.follow-youtube::before {
+  content: "\f431" !important;
+}
+.follow-instagram::before {
+  content: "\f16d" !important;
+}
+
+.cta-link {
+  font-size: 0.65rem;
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
+  &::after {
+    font-family: "Font Awesome 5 Free", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: 1;
+    content: "\F093" !important;
+  }
+}
+
+.block--views-block--theme-list-block-1,
+.block--views-block--theme-list-block-1-2 {
+  .views-field-description__value {
+    font-size: 0.75rem;
+    line-height: 1em;
+    font-weight: 300;
+  }
+  .col {
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+}
+
+.term-icon a {
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  &:hover {
+    color: color("ipu-orange");
+    text-decoration: none;
+  }
+}
+
+/* Generic override due to this issues:
+https://www.drupal.org/project/drupal/issues/2929888
+*/
+.img-thumbnail {
+  display: block;
+  padding: 0;
+  border-width: 0;
+  border-radius: 0;
+  max-width: 100%;
+  margin: 0;
+}
+
+a::before,
+span::before {
+  .term-icon & {
+    content: "";
+    width: 22px;
+    height: 22px;
+    display: block;
+    float: left;
+    margin-right: 0.4rem;
+  }
+
+  .term-icon-88 & {
+    background: url("../img/theme_icons/gender_equality.svg");
+  }
+  .term-icon-139 & {
+    background: url("../img/theme_icons/peace_building.svg");
+  }
+  .term-icon-82 & {
+    background: url("../img/theme_icons/human_rights.svg");
+  }
+  .term-icon-198 & {
+    background: url("../img/theme_icons/global_development.svg");
+  }
+  .term-icon-231 & {
+    background: url("../img/theme_icons/parliamentary_dialogue.svg");
+  }
+  .term-icon-139 & {
+    background: url("../img/theme_icons/peace_building.svg");
+  }
+  .term-icon-19 & {
+    background: url("../img/theme_icons/strong_parliaments.svg");
+  }
+  .term-icon-117 & {
+    background: url("../img/theme_icons/youth.svg");
+  }
+}
+
+/* Mega menu Parliaments dropdown */
+.ipu-map-country-select-form .form-item-isocode {
+  float: left;
+}
+.ipu-map-country-select-form .button {
+  text-transform: uppercase;
+  margin: 0px 4px;
+}
+
+/* Subpages section on section pages */
+.section-page-subpages-section {
+  background-color: color("ipu-very-light-grey");
+  padding: 20px 0;
+  margin: 10px -15px 0 -15px; /* Push to edge of container-fluid without row */
+  .field__label {
+    @extend h2;
+    margin: 30px 0;
+  }
+}
+
+.paragraph--type--sections {
+  margin-top: 10px;
+  .sections__field-section-title {
+    @extend h2;
+    margin: 20px 0;
+  }
+}
+
+.ipu-event__field-event-sub-page {
+  .tab-pane {
+    background-color: color("white");
+    border: 1px solid color("ipu-light-grey");
+    border-width: 0px 1px 1px 1px;
+    box-shadow: color("ipu-light-grey");
+  }
+}
+
+/* ipu event sessions */
+.page__content .media img {
+  max-width: 100%;
+  height: auto;
+}
+
+.node-readmore .nav-link {
+  border: 1px solid color("ipu-blue");
+  padding: 0px 4px;
+  border-radius: 1px;
+  text-transform: uppercase;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.ipu-map-country {
+  .ipu-map-flag img {
+    height: 2.5rem;
+    width: auto;
+    margin-right: 10px;
+  }
+}
+
+// Block quote styles
+.blockquote {
+  width: 75%;
+  margin-right: auto;
+  margin-bottom: 2.5em;
+  margin-left: auto;
+  padding-top: 1.25em;
+  padding-bottom: 1.25em;
+  border-style: solid none;
+  border-width: 1px;
+  border-color: $tertiary;
+  color: $ipu-grey;
+  line-height: 1.25em;
+  font-style: italic;
+}
+
+// List styles
+
+ul,
+ol,
+dl {
+  padding-left: 20px;
+}
+
+// Link styles
+a.btn {
+  text-decoration: none;
+}
+
+// Breadcrumb styles
+.breadcrumb {
+  font-size: $font-size-sm;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  content: "|";
+}
+
+// Country page
+
+// Data points
+.data-point-title {
+  font-weight: $font-weight-bold;
+}
+
+// Statistics components
+.stats {
+  font-size: $font-size-sm;
+}
+.stats-item {
+  min-height: 30px;
+}
+
+.data-parliament-name {
+  font-weight: $font-weight-bold;
+  border-bottom: 1px solid $secondary;
+}
+.stats-number {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+}
+.stats-content {
+  padding-left: $spacer;
+}
+.stats-age {
+  border: 1px solid $ipu-light-grey;
+}
+.card-current-women-percent .stats-item {
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+}
+.stats-more-link {
+  @extend .btn;
+  @extend .btn-sm;
+  @extend .btn-outline-dark;
+  text-transform: uppercase;
+  font-size: $font-size-xs;
+  letter-spacing: 0.05rem;
+  padding: 0.125rem 0.5rem;
+  width: 100%;
+}
+.stats-women {
+  background-color: transparent;
+  z-index: 1000;
+  background-position: 0 0;
+  background-image: url("../img/icons/woman.png");
+}
+
+.stats-men {
+  background-color: transparent;
+  background-position: 100% 0;
+  background-image: url("../img/icons/man.png");
+}
+
+.stats-under-45 {
+  background-color: $tertiary;
+}
+.stats-not-under-45 {
+  background-color: $light;
+}
+
+.stats-circle {
+  border-radius: 50%;
+  background-color: $primary;
+  width: 75px;
+  height: 75px;
+  line-height: 75px;
+  text-align: center;
+  color: $white;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-lg;
+  margin-right: 10px;
+}
+
+.stats-title {
+  color: $ipu-grey;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-normal;
+}
+
+// Borders
+.ipu-border-bottom {
+  border-bottom: 1px solid $ipu-grey;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+
+// Cards
+.card {
+  // box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3);
+}
+.card-body {
+  font-size: $font-size-sm;
+}
+
+/* Sections */
+/* Some buttons */
+.section-page__node-link a {
+    margin: 4px 0;
+}
+.sections__field-section-title {
+  @extend h2;
+  margin: 20px 0;
+}
+
+// Highlight cards base styles
+.node--view-mode-highlight {
+  position: relative;
+  @extend .card;
+  margin-bottom: $spacer;
+
+  .article__node-post-date {
+    font-size: $font-size-sm;
+  }
+  .article__field-media-image {
+    margin-top: -10px;
+  }
+
+  // Article type for all highlight cards
+  .article__type,
+  .ipu-event__field-event-type {
+    @extend .badge;
+    @extend .badge-tertiary;
+    position: absolute;
+    top: -3px;
+    left: -3px;;
+    background-color: $tertiary;
+    font-size: 0.6rem;
+  }
+
+  // Article content for all highlight cards
+  .article__type-content,
+  .layout__region--content,
+  .event__type-content,
+  .bs-region--main {
+    @extend .card-body;
+  }
+
+  .article__node-link a {
+    &:hover,
+    &:focus {
+      background-color: $tertiary;
+    }
+  }
+
+  .group-event-wrapper {
+    margin-top: -10px;
+  }
+  // Styling date element
+  .ipu-event__dates,
+  .event__date{
+    border-radius: 50%;
+    background-color: $tertiary;
+    width: 100px;
+    height: 100px;
+    // line-height: 75px;
+    text-align: center;
+    color: $white;
+    font-weight: $font-weight-bold;
+    // font-size: $font-size-lg;
+    border: 4px solid #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-image: url(../img/icons/calendar.png);
+    background-position: 100% 50%;
+    background-size: 36px;
+    line-height: 1.1em;
+    // time {
+    //   display: flex;
+    //   height: 100%;
+    //   background-color: $tertiary;
+    //   border-radius: 50%;
+    // }
+    .event-dates-part {
+      display: block;
+    }
+    .event-dates-day {
+      font-size: $font-size-lg;
+    }
+  }
+  .event__date {
+    background-color: $ipu-grey;
+  }
+  .group-event-date {
+    position: absolute;
+    right: -25px;
+    top: -20px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+// Read more link base styles
+.article__node-link a,
+.ipu-event__node-link a {
+  @extend .btn;
+  @extend .btn-sm;
+
+  &:after {
+    padding-left: 5px;
+    font-family: "Font Awesome 5 Free";
+    content: "\f061";
+    font-weight: 900;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+  }
+
+  
+}
+
+// News specific (Brand blue)
+.articles-card-news,
+.viewfield--view__articles {
+  .node--view-mode-highlight {
+    @extend .text-white;
+    @extend .bg-primary;
+
+    a {
+      @extend .text-white;
+    }
+  }
+
+  .article__field-media-image + .article__type-content {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba($primary, 0.8);
+  }
+
+  .article__node-link a {
+    @extend .btn-outline-light;
+  }
+  
+}
+.viewfield--view__articles {
+  h3 {
+    font-size: $font-size-base;
+  }
+}
+
+// Case study specific styles
+.articles-card-case-study {
+
+  .article__node-link a {
+    @extend .btn-outline-dark;
+  }
+  
+  .article__type {
+    @extend .bg-secondary;
+  }
+  .article__node-title a {
+    @extend .text-secondary;
+  }
+}
+
+.ipu-event__node-link a,
+.more-data-parline {
+  @extend .btn;
+  @extend .btn-sm;
+  @extend .btn-outline-primary;
+  span::before {
+    padding-right: 5px;
+  }
+}
+.more-data-parline {
+  width: 100%;
+}
+// Currently removing row and column styles
+// NOTE: May want to try and remove these in Drupal
+// NOTE: Display suite is using Bootstrap 1 column layout
+.node--view-mode-highlight.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+.node--view-mode-highlight .col-sm-12 {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.articles-card-case-study h3,
+.view-mode-highlight-sm h3 {
+  font-size: $font-size-base;
+}
+
+// NOTE: May want to remove in Drupal
+// Hide some things for now, where it would need a whole new template
+
+.view-mode-highlight-sm .article__body {
+  display: none;
+}
+
+
+.articles-card-case-study .article__node-post-date {
+  display: none;
+}
+
+.text-white a {
+  color: $white;
+}
+
+// Search styles
+.form-search {
+  border: 0;
+}
+
+.form-inline {
+  border-bottom: 1px solid $dark;
+}
+
+#branding .form-actions::after {
+  content: "\f002" !important;
+  color: $tertiary;
+}
+
+#branding .form-actions:hover::after,
+#branding .form-actions:focus::after {
+  color: $secondary;
+}
+
+#branding .form-submit {
+  background-color: transparent;
+  border: 0;
+  position: absolute;
+  color: transparent;
+}
+
+// Event styles
+.group-event-wrapper {
+  display: flex;
+  position: relative;
+  .event__type-content {
+    max-width: calc(100% - 60px);
+  }
+  .ipu-event__field-location {
+    font-size: $font-size-sm;
+  }
+}
+
+/* News styles */
+.node-article {
+  .article__node-post-date {
+    font-weight: $font-weight-bold;
+  }
+  .group-news-image {
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  /* Put caption over image */
+  .article__field-caption {
+    position: absolute;
+    bottom: 0;
+    background-color: $ipu-blue-light;
+    color: $ipu-white;
+    padding: 0.5rem;
+    font-size: $font-size-sm;
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+  .article__body {
+    margin: 30px 0;
+  }
+
+  /* 2-column text */
+  @include media-breakpoint-up(md) {
+  .article__body {
+      -webkit-column-count: 2;
+      -moz-column-count: 2;
+      column-count: 2;
+      -webkit-column-gap: 30px;
+      -moz-column-gap: 30px;
+      column-gap: 30px;
+    }
+  }
+
+  .group-related {
+    margin: 0 -15px;
+    background-color: $ipu-light-grey;
+    padding: 20px 0;
+    & .field__label {
+      @extend h2;
+      font-weight: $font-weight-light;
+      margin: 30px 0;
+    }
+    & > div {
+      @extend .container;
+      .field__item .views-element-container > div {
+        @extend .row;
+        .views-row {
+          @extend .col-lg-4;
+          @extend .col-md-6;
+        }
+      }
+    }
+  }
+}
+/* Standard cards with h3 arrows and images with captions over*/
+
+
+.image-with-caption {
+  .group-image {
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+.image-with-caption-caption {
+    position: absolute;
+    bottom: 0;
+    background-color: $ipu-blue-light;
+    color: $ipu-white;
+    padding: 0.5rem;
+    font-size: $font-size-sm;
+    p {
+      margin-bottom: 0;
+    }
+}
+
+
+.section-page-subpages-section {
+  .row .views-row {
+    @extend .col-lg-4;
+    @extend .col-md-6;
+    margin-bottom: 20px;
+    .layout--onecol {
+      @extend .card;
+      position: relative;
+      height: 100%;
+    }
+    .section-page__node-link,
+    .basic-page__node-link {
+      display: none;
+    }
+    .section-page__node-title,
+    .basic-page__node-title {
+      position: absolute;
+      top: 20px;
+      left: 0px;
+      background-color: rgb(255, 255, 255, 0.85);
+      max-width: calc( 100% - 20px );
+      h3 {
+        line-height: 1.6rem;
+        padding: 0;
+        margin: 0;
+        a {
+          padding: 4px 8px;
+          display:block;
+          font-weight: 400;
+          &::after {
+            padding-left: 4px;
+            font-family: "Font Awesome 5 Free", sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            display: inline-block;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 900;
+            line-height: 1;
+            content: "\f061" !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+.paragraph--type--sections {
+  .field--type-viewfield {
+    .views-element-container > div {
+      @extend .row;
+    }
+    .views-row {
+      @extend .col-md-4;
+    }
+    .events-card .views-row {
+      @extend .col-md-6;
+    }
+  }
+}
+
+.node-basic_page,
+.section-page__dynamic-block-fieldnode-section-sub-pages {
+  @extend .image-with-caption;
+  /* Put caption over image */
+  .basic-page__field-caption {
+    @extend .image-with-caption-caption;
+  }
+}
+/* Override when in highlights box */
+.section-page__dynamic-block-fieldnode-section-sub-pages {
+  .group-image {
+    margin-top: 0px;
+    &:hover {
+      .basic-page__field-caption {
+        opacity: 1;
+      }
+    }
+    .basic-page__field-caption {
+      opacity: 0;
+      transition: all 700ms ease-in-out;
+    }
+  }
+}
+/* 'See also' section on basic pages */
+.basic-page__field-related-content {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  @extend .card;
+  .field__label {
+    @extend .card-title;
+    @extend h3;
+    padding: 10px 10px 0 10px;
+  }
+  .field__items {
+    @extend .card-body;
+    .field__item:not(:last-child) {
+      border-bottom: 1px solid $ipu-very-light-grey;
+    }
+    .field__item {
+      a {
+        /*font-size: $font-size-sm;*/
+        padding: 2px 8px;
+        display: block;
+        font-weight: $font-weight-light;
+        &:hover {
+          background-color: $ipu-teal-light;
+        }
+      }
+    }
+  }
+}

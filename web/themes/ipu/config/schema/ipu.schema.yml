@@ -1,0 +1,5 @@
+# Schema for the configuration files of the ipu theme.
+
+ipu.settings:
+  type: theme_settings
+  label: 'ipu settings'

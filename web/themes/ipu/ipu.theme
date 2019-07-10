@@ -1,0 +1,26 @@
+<?php
+/**
+ * @file
+ * Theme functions
+ */
+
+// Include all files from the includes directory.
+$includes_path = dirname(__FILE__) . '/includes/*.inc';
+foreach (glob($includes_path) as $filename) {
+  require_once dirname(__FILE__) . '/includes/' . basename($filename);
+}
+
+/**
+ * Implements template_preprocess_html().
+ */
+function ipu_preprocess_html(&$variables) {
+  if (isset($variables['node_type'])) {
+    // Add node-TYPE class to the <body> element.
+    $variables['attributes']['class'][] = ('node-' . $variables['node_type']);
+  }
+}
+function ipu_preprocess_viewfield_item(&$variables) {
+  $element = &$variables['element'];
+  $variables['view_id'] = $element['#view_id'];
+  $variables['display_id'] = $element['#display_id'];
+}

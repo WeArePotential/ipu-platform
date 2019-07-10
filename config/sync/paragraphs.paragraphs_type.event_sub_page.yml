@@ -1,0 +1,9 @@
+uuid: 595d9751-1608-4345-bf1f-9be78d4d549e
+langcode: en
+status: true
+dependencies: {  }
+id: event_sub_page
+label: 'Event sub page'
+icon_uuid: null
+description: 'Migrated from field_collection field_event_sub_page'
+behavior_plugins: {  }

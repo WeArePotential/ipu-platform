@@ -1,0 +1,62 @@
+uuid: 92a9fa62-29ad-4637-a460-c302f0574828
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ipu_event_section.feeds_item
+    - field.field.paragraph.ipu_event_section.field_fc_original_reference
+    - field.field.paragraph.ipu_event_section.field_ie_fc_button_links
+    - field.field.paragraph.ipu_event_section.field_ie_fc_description
+    - field.field.paragraph.ipu_event_section.field_ie_fc_title
+    - field.field.paragraph.ipu_event_section.field_ipu_event_document_widget
+    - field.field.paragraph.ipu_event_section.field_original_fc_id
+    - paragraphs.paragraphs_type.ipu_event_section
+  module:
+    - entity_reference_revisions
+    - link
+    - text
+id: paragraph.ipu_event_section.default
+targetEntityType: paragraph
+bundle: ipu_event_section
+mode: default
+content:
+  field_ie_fc_button_links:
+    label: hidden
+    weight: 2
+    type: link
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    region: content
+  field_ie_fc_description:
+    label: hidden
+    weight: 1
+    type: text_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_ie_fc_title:
+    label: hidden
+    weight: 0
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_ipu_event_document_widget:
+    label: above
+    weight: 3
+    type: entity_reference_revisions_entity_view
+    settings:
+      view_mode: full
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  feeds_item: true
+  field_fc_original_reference: true
+  field_original_fc_id: true

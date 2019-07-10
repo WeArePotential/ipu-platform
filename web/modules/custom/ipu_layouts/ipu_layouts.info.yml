@@ -1,0 +1,4 @@
+name: IPU Layouts
+description: Bootstrap layouts for IPU pages
+core: 8.x
+type: module

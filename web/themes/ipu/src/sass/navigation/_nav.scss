@@ -1,0 +1,194 @@
+
+#main-nav {
+  background-color: color("white");
+  border-width: 1px 0 4px 0;
+  border-top-color: color("ipu-light-grey");
+  border-bottom-color: color("ipu-blue");
+  border-style: solid;
+  .navbar-nav {
+    flex-direction: row;
+  }
+  .dropdown-menu {
+    padding: 0.25rem 0;
+    margin: 0;
+    border-radius: 1px;
+  }
+  .ultimenu {
+    min-height: auto;
+    padding: 0;
+    /* Expand menu so it's twice as wide as parent (which is col-6)*/
+    z-index: 5000;
+    .ultimenu__flyout {
+      background-color: #fff;
+      box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
+      z-index: 2102;
+      margin-right: -50%;
+      width: 200%;
+      .region-inner {
+        padding: 20px;
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: flex-start;
+        & > .block {
+        }
+      }
+    }
+    .ultimenu__item > a {
+      font-size: 1rem;
+      letter-spacing: 0.1em;
+    }
+  }
+  .nav-item,
+  .ultimenu__item {
+    border-width: 0 0 0 1px;
+    border-color: color("ipu-light-grey");
+    border-style: solid;
+    border-right-width: 0;
+    display: inline-block;
+    &.active .nav-link,
+    &.is-active-trail {
+      background-color: color("ipu-teal-light");
+      color: color("ipu-dark-grey");
+      &:hover {
+        background-color: color("ipu-teal");
+        color: color("white");
+      }
+    }
+    .nav-link,
+    .ultimenu__link,
+    .dropdown-item {
+      padding: 0.25rem 0.75rem;
+      min-height: 33px;
+      text-transform: uppercase;
+      letter-spacing: 0.075em;
+      color: color("ipu-grey");
+      font-weight: 400;
+      font-size: 0.8rem;
+
+      &:hover,
+      &:active {
+        background-color: color("ipu-teal");
+        color: color("white");
+      }
+
+      &.is-active,
+      &.active {
+        background-color: color("ipu-teal-light");
+
+        &:hover {
+          background-color: color("ipu-teal");
+          color: color("white");
+        }
+      }
+    }
+    .nav-link {
+      padding: 0.45rem 0.75rem 0.05rem 0.75rem;
+    }
+
+
+    // Uncomment to turn on dropdown arrows
+    // .ultimenu__link {
+    //   @extend .dropdown-toggle;
+    // }
+
+    // Comment out to turn on dropdown arrows
+    .dropdown-toggle::after {
+      content: none;
+    }
+    &:last-child {
+      border-right-width: 1px;
+    }
+  }
+  .nav-item + .nav-item {
+    margin-left: -4px;
+  }
+  #main-nav-right .navbar-nav {
+    display: inline-block;
+  }
+}
+main,
+ol.breadcrumb {
+  background-color: gray("100");
+}
+
+
+/* Right hand column sub-meuu
+  Based on normal Drupal classy theme html
+  */
+.block--ipu-content ul.menu {
+  list-style: none;
+  background-color: $white;
+  border-width: 0 1px 1px 1px;
+  border-color: $ipu-very-light-grey;
+  border-style: solid;
+  padding-left: 0;
+  li.menu-item--active-trail {
+    background-color: $light;
+    li {
+      background-color: $light;
+    }
+  }
+  & > li {
+    border-top: 1px solid $ipu-very-light-grey;
+    padding-left: 0;
+    &.menu-item--collapsed,
+    &.menu-item--expanded {
+      & > a {
+        @extend .dropdown-toggle;
+        white-space: normal;
+        &:after {
+          color: $ipu-teal-light;
+          transform: rotate(270deg);
+          transition: all linear 0.25s;
+        }
+      }
+    }
+    &.menu-item--expanded {
+      & > a:after {
+        transform: rotate(0deg) ;
+        transition: all linear 0.25s;
+      }
+    }
+
+    &.active {
+      background-color: $ipu-teal-light;
+      a {
+        font-weight: $font-weight-normal;
+      }
+      ul {
+        background-color: $light;
+      }
+    }
+    a {
+      display: block;
+      padding: 2px 8px;
+      &.is-active {
+        background-color: $ipu-teal-light;
+      }
+    }
+    & > a {
+      font-size: 1.1rem;
+      font-weight: $font-weight-light;
+    }
+    /* Sub-menu */
+    ul {
+      border-width: 0 0;
+      li {
+        border-width: 0;
+        &.active-trail {
+          background-color: $light;
+        }
+        a {
+          font-size: $font-size-sm;
+          padding-left: 20px;
+          font-weight: $font-weight-light;
+        }
+        ul li a {
+            padding-left: 40px;
+          }
+
+
+      }
+    }
+  }
+}

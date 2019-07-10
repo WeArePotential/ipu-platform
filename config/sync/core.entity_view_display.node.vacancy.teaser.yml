@@ -1,0 +1,45 @@
+uuid: ec190bac-f8f5-4798-8717-6f03540675d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.vacancy.body
+    - field.field.node.vacancy.field_contact_ipu
+    - field.field.node.vacancy.field_deadline
+    - field.field.node.vacancy.field_home_based
+    - field.field.node.vacancy.field_how_to_apply
+    - field.field.node.vacancy.field_media_image
+    - field.field.node.vacancy.field_vacancy_location
+    - field.field.node.vacancy.field_vacancy_type
+    - node.type.vacancy
+  module:
+    - text
+    - user
+id: node.vacancy.teaser
+targetEntityType: node
+bundle: vacancy
+mode: teaser
+content:
+  body:
+    label: hidden
+    weight: 1
+    type: text_summary_or_trimmed
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_contact_ipu: true
+  field_deadline: true
+  field_home_based: true
+  field_how_to_apply: true
+  field_media_image: true
+  field_vacancy_location: true
+  field_vacancy_type: true
+  langcode: true

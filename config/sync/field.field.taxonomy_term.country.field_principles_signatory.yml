@@ -1,0 +1,29 @@
+uuid: 52d5b862-3648-4a52-8559-7b5366a3f094
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_principles_signatory
+    - taxonomy.vocabulary.country
+  module:
+    - custom_add_another
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
+id: taxonomy_term.country.field_principles_signatory
+field_name: field_principles_signatory
+entity_type: taxonomy_term
+bundle: country
+label: 'Principles signatory'
+description: 'Indicated whether a country parliament has signed up to the principles.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Signatory
+  off_label: Non-signatory
+field_type: boolean

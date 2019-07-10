@@ -1,0 +1,9 @@
+uuid: 26bac2eb-3ee8-45a5-b491-900eed2366a0
+langcode: en
+status: true
+dependencies: {  }
+name: 'Event Sponsor'
+vid: event_sponsor
+description: ''
+hierarchy: 0
+weight: 0

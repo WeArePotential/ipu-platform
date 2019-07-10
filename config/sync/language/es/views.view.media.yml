@@ -1,0 +1,52 @@
+display:
+  default:
+    display_title: Máster
+    display_options:
+      exposed_form:
+        options:
+          reset_button_label: Restablecer
+          exposed_sorts_label: 'Ordenar por'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      pager:
+        options:
+          expose:
+            items_per_page_label: 'Elementos por página'
+            items_per_page_options_all_label: '- Todo -'
+            offset_label: Desplazamiento
+          tags:
+            previous: '‹ Anterior'
+            next: 'Siguiente >'
+            first: '« Primero'
+            last: 'Último »'
+      fields:
+        thumbnail__target_id:
+          separator: ', '
+        name:
+          separator: ', '
+        bundle:
+          label: Tipo
+          separator: ', '
+        uid:
+          separator: ', '
+        status:
+          label: Estado
+          settings:
+            format_custom_true: Publicado
+            format_custom_false: 'Sin publicar'
+          separator: ', '
+        changed:
+          separator: ', '
+        operations:
+          label: Operaciones
+      filters:
+        bundle:
+          expose:
+            label: Tipo
+        status:
+          group_info:
+            group_items:
+              1:
+                title: Publicado
+              2:
+                title: 'Sin publicar'

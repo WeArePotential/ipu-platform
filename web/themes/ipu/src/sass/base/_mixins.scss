@@ -1,0 +1,17 @@
+@mixin icon($icon) {
+  @include fa-icon;
+  @extend .fas;
+  @extend .fa-#{$icon};
+}
+@mixin icon-brand($icon) {
+  @include fa-icon;
+  font-family: "Font Awesome 5 Brands";
+  @extend .fas;
+  @extend .fa-#{$icon};
+}
+
+@mixin shadow-box() {
+  background-color: #fff;
+  padding: 4px 6px;
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3);
+}

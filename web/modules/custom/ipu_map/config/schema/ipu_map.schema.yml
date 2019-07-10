@@ -1,0 +1,7 @@
+block.settings.ipu_map_block:
+  type: block_settings
+  label: 'IPU Map block'
+  mapping:
+    ipu_map_block_settings:
+      type: text
+      label: 'IPU Map block settings'

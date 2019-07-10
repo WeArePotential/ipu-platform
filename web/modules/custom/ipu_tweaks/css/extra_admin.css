@@ -1,0 +1,16 @@
+/* Style overrides for the Adminimal theme, to help with editors pages */
+.field-multiple-table .field-multiple-table {
+  background-color: #f9f9f9;
+}
+
+.cke_editable {
+  padding: 4px;
+}
+
+/* Background colour on each sub-page */
+#field-event-sub-page-values {
+  background-color: rgba(0, 168, 180, 0.1);
+}
+#field-event-sub-page-values > th {
+  background-color: rgba(0, 168, 180, 0.3);
+}

@@ -1,0 +1,20 @@
+uuid: 078af164-0abd-418a-a3d2-8df8fe6286c1
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.governing_body
+  module:
+    - path
+id: taxonomy_term.governing_body.path
+field_name: path
+entity_type: taxonomy_term
+bundle: governing_body
+label: 'URL alias'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

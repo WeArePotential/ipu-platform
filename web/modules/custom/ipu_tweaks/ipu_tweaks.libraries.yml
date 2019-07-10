@@ -1,0 +1,11 @@
+extra-admin:
+  css:
+    theme:
+      css/extra_admin.css: {}
+ultimenu-override:
+  css:
+    theme:
+      css/ultimenu_override.css: {}
+  js:
+    js/ultimenu_override.js: {}
+

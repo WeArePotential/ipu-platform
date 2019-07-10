@@ -1,0 +1,29 @@
+uuid: ae6f4608-6c9f-4d31-a952-fa311a8a8101
+langcode: en
+status: true
+dependencies:
+  module:
+    - ultimenu
+  theme:
+    - ipu
+id: ultimenumegamenu
+theme: ipu
+region: navbar_left
+weight: 0
+provider: null
+plugin: 'ultimenu_block:ultimenu-mega-menu'
+settings:
+  id: 'ultimenu_block:ultimenu-mega-menu'
+  label: 'Ultimenu: Mega menu'
+  provider: ultimenu
+  label_display: '0'
+  ajaxify: false
+  regions: {  }
+  skin: module|ultimenu--basic
+  submenu: false
+  orientation: ultimenu--htb
+  submenu_position: ''
+  canvas_off: null
+  canvas_on: null
+  canvas_skin: null
+visibility: {  }

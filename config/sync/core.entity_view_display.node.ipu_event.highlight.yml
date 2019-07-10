@@ -1,0 +1,253 @@
+uuid: 2aaeeca4-fe20-4f3e-af55-4563dc0aace5
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.highlight
+    - field.field.node.ipu_event.field_agenda_order_number
+    - field.field.node.ipu_event.field_country
+    - field.field.node.ipu_event.field_date_accuracy
+    - field.field.node.ipu_event.field_do_not_display_as_link
+    - field.field.node.ipu_event.field_document_show_print
+    - field.field.node.ipu_event.field_documents_order_number
+    - field.field.node.ipu_event.field_event_computed_date
+    - field.field.node.ipu_event.field_event_sub_page
+    - field.field.node.ipu_event.field_event_theme
+    - field.field.node.ipu_event.field_event_type
+    - field.field.node.ipu_event.field_hide_documents_menu
+    - field.field.node.ipu_event.field_hide_programs_menu
+    - field.field.node.ipu_event.field_ipu_event_dates
+    - field.field.node.ipu_event.field_ipu_event_right_menu
+    - field.field.node.ipu_event.field_ipu_event_section
+    - field.field.node.ipu_event.field_ipu_event_session_type
+    - field.field.node.ipu_event.field_ipu_event_sessions
+    - field.field.node.ipu_event.field_ipu_event_sponsors
+    - field.field.node.ipu_event.field_location
+    - field.field.node.ipu_event.field_programme_show_print
+    - field.field.node.ipu_event.field_sponsor
+    - field.field.node.ipu_event.field_summary
+    - field.field.node.ipu_event.field_twitter_order
+    - node.type.ipu_event
+  module:
+    - address
+    - datetime_range
+    - ds
+    - field_group
+    - smart_trim
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: bs_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        layout:
+          wrapper: div
+          classes:
+            row: row
+          add_layout_class: 1
+          attributes: ''
+        regions:
+          main:
+            wrapper: div
+            classes:
+              col-sm-12: col-sm-12
+            add_region_classes: 1
+            attributes: ''
+    regions:
+      main:
+        - group_content
+        - field_ipu_event_dates
+        - group_date
+        - field_event_type
+        - group_wrapper
+        - node_title
+        - field_location
+        - field_summary
+        - node_link
+        - field_do_not_display_as_link
+    fields:
+      node_link:
+        plugin_id: node_link
+        weight: 6
+        label: hidden
+        formatter: default
+      node_title:
+        plugin_id: node_title
+        weight: 3
+        label: hidden
+        formatter: default
+        settings:
+          link: true
+          wrapper: h3
+          class: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+  field_group:
+    group_content:
+      children:
+        - field_event_type
+        - node_title
+        - field_location
+        - field_summary
+        - node_link
+        - field_do_not_display_as_link
+      parent_name: group_wrapper
+      weight: 0
+      format_type: html_element
+      format_settings:
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: event__type-content
+      label: Content
+      region: hidden
+    group_wrapper:
+      children:
+        - group_content
+        - group_date
+      parent_name: ''
+      weight: 2
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: group-event-wrapper
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Wrapper
+      region: hidden
+    group_date:
+      children:
+        - field_ipu_event_dates
+      parent_name: group_wrapper
+      weight: 1
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: group-event-date
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Date
+      region: hidden
+id: node.ipu_event.highlight
+targetEntityType: node
+bundle: ipu_event
+mode: highlight
+content:
+  field_do_not_display_as_link:
+    type: boolean
+    weight: 7
+    region: main
+    label: inline
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+  field_event_type:
+    type: entity_reference_label
+    weight: 2
+    region: main
+    label: hidden
+    settings:
+      link: false
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+  field_ipu_event_dates:
+    weight: 1
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: short_date_only
+      separator: '-'
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: daterange_default
+    region: main
+  field_location:
+    label: hidden
+    weight: 4
+    type: address_plain
+    settings: {  }
+    third_party_settings: {  }
+    region: main
+  field_summary:
+    label: hidden
+    weight: 5
+    type: smart_trim
+    settings:
+      trim_length: 40
+      trim_type: words
+      trim_suffix: ''
+      wrap_class: trimmed
+      more_text: More
+      more_class: more-link
+      trim_options:
+        text: true
+        trim_zero: false
+      wrap_output: false
+      more_link: false
+      summary_handler: full
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    region: main
+hidden:
+  field_agenda_order_number: true
+  field_country: true
+  field_date_accuracy: true
+  field_document_show_print: true
+  field_documents_order_number: true
+  field_event_computed_date: true
+  field_event_sub_page: true
+  field_event_theme: true
+  field_hide_documents_menu: true
+  field_hide_programs_menu: true
+  field_ipu_event_right_menu: true
+  field_ipu_event_section: true
+  field_ipu_event_session_type: true
+  field_ipu_event_sessions: true
+  field_ipu_event_sponsors: true
+  field_programme_show_print: true
+  field_sponsor: true
+  field_twitter_order: true
+  langcode: true
+  links: true

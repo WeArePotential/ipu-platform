@@ -1,0 +1,95 @@
+uuid: 84356a6f-5720-4a85-bdef-f72675ddf6c9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ipu_event_document.field_event_document
+    - field.field.paragraph.ipu_event_document.field_event_document_description
+    - field.field.paragraph.ipu_event_document.field_event_document_title
+    - field.field.paragraph.ipu_event_document.field_original_fc_id
+    - field.field.paragraph.ipu_event_document.field_outcome
+    - field.field.paragraph.ipu_event_document.field_publication_language
+    - field.field.paragraph.ipu_event_document.field_speech
+    - paragraphs.paragraphs_type.ipu_event_document
+  module:
+    - ds
+    - options
+id: paragraph.ipu_event_document.default
+targetEntityType: paragraph
+bundle: ipu_event_document
+mode: default
+content:
+  field_event_document:
+    label: hidden
+    weight: 2
+    type: entity_reference_entity_view
+    settings:
+      view_mode: thumbnail
+      link: false
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    region: content
+  field_event_document_description:
+    label: hidden
+    weight: 3
+    type: basic_string
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_event_document_title:
+    label: hidden
+    weight: 0
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_outcome:
+    weight: 5
+    label: hidden
+    settings:
+      format: custom
+      format_custom_true: '(Outcome document)'
+      format_custom_false: ''
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: boolean
+    region: content
+  field_publication_language:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_speech:
+    label: hidden
+    weight: 4
+    type: boolean
+    settings:
+      format: custom
+      format_custom_true: (Speech)
+      format_custom_false: ''
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    region: content
+hidden:
+  field_original_fc_id: true

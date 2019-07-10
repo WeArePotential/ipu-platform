@@ -1,0 +1,18 @@
+uuid: 83f9ce5f-e2d9-4d85-8161-36218e28c943
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.vacancy
+id: taxonomy_term.vacancy.name
+field_name: name
+entity_type: taxonomy_term
+bundle: vacancy
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

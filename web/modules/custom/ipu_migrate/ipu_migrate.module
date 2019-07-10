@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * Implements hook_migrate_MIGRATION_ID_prepare_row().
+ */
+function ipu_migrate_migrate_upgrade_d7_node_ipu_event_prepare_row(\Drupal\migrate\Row $row, \Drupal\migrate\Plugin\MigrateSourceInterface $source, \Drupal\migrate\Plugin\MigrationInterface $migration) {
+  $values = $row->getSourceProperty('field_event_sub_page');
+  $value_new = [];
+  if ($values) {
+    foreach ($values as $value) {
+      $value_new[] = ['item_id' => $value['value']];
+    }
+
+    $row->setSourceProperty('field_event_sub_page', $value_new);
+  }
+}

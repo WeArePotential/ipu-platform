@@ -1,0 +1,9 @@
+uuid: 1ec864cb-89f5-4719-b651-eafa32f887f8
+langcode: en
+status: true
+dependencies: {  }
+id: ipu_event_document
+label: 'Event document'
+icon_uuid: null
+description: 'Migrated from field_collection field_ipu_event_document'
+behavior_plugins: {  }

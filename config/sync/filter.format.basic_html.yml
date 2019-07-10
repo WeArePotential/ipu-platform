@@ -1,0 +1,29 @@
+uuid: 7178109a-e9ff-47bf-b1a7-0f687c918a88
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: P8ddpAIKtawJDi5SzOwCzVnnNYqONewSTJ6Xn0dW_aQ
+name: 'Basic HTML'
+format: basic_html
+weight: -9
+filters:
+  filter_url:
+    id: filter_url
+    provider: filter
+    status: true
+    weight: -46
+    settings:
+      filter_url_length: 72
+  filter_htmlcorrector:
+    id: filter_htmlcorrector
+    provider: filter
+    status: true
+    weight: -42
+    settings: {  }
+  filter_null:
+    id: filter_null
+    provider: filter
+    status: true
+    weight: -47
+    settings: {  }

@@ -1,0 +1,22 @@
+uuid: 3ac77ff0-019e-4863-849c-df6a19497995
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comment_node_document
+id: comment.comment_node_document.status
+field_name: status
+entity_type: comment
+bundle: comment_node_document
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: 'Drupal\comment\Entity\Comment::getDefaultStatus'
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

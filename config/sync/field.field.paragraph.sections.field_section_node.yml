@@ -1,0 +1,44 @@
+uuid: 9c0a1fa5-57e8-4574-9ca7-487b8f7e198f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_section_node
+    - node.type.article
+    - node.type.basic_page
+    - node.type.document
+    - node.type.event
+    - node.type.publication
+    - paragraphs.paragraphs_type.sections
+  module:
+    - custom_add_another
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
+id: paragraph.sections.field_section_node
+field_name: field_section_node
+entity_type: paragraph
+bundle: sections
+label: Node
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      basic_page: basic_page
+      document: document
+      event: event
+      article: article
+      publication: publication
+    sort:
+      field: _none
+      direction: ASC
+    behaviors:
+      views-select-list:
+        status: 0
+field_type: entity_reference

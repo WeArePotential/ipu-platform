@@ -1,0 +1,16 @@
+country_page:
+  label: Country page 2 column stacked
+  category: IPU Layouts
+  template: templates/ipu-country-2col-stacked
+  class: '\Drupal\ipu_layouts\Plugin\layout\IpuLayoutClass'
+  icon: images/country-page-2col-stacked.png
+  library: ipu_layouts/ipu_layouts-country-page
+  regions:
+    top:
+      label: Top
+    left:
+      label: Left
+    right:
+      label: Right
+    bottom:
+      label: Bottom

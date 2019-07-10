@@ -1,0 +1,19 @@
+uuid: f069ff88-bb26-4c1f-85f6-17bf961a11d7
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+  title:
+    display_configurable_title: true
+name: Events
+type: ipu_event
+description: 'Create an IPU event'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

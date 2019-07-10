@@ -1,0 +1,15 @@
+/* Override some Ultimenu CSS to remove the :hover functionality and use click instead.
+ * @see /themes/basic/js/ultimenu-override.js
+*/
+
+@media screen and (min-width: 992px) {
+  /* Force hover to stay hidden */
+  .ultimenu--hover > li:hover > .ultimenu__flyout {
+    visibility: hidden !important;
+  }
+
+  /* Force focus anywhere in li to show  */
+  .ultimenu--hover > li:focus-within > .ultimenu__flyout {
+    visibility: visible !important;
+  }
+}

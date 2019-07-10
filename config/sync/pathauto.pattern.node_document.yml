@@ -1,0 +1,22 @@
+uuid: 685880da-06b3-409d-b46b-74e1227ab833
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node_document
+label: 'Content - Document'
+type: 'canonical_entities:node'
+pattern: 'documents/[node:field_document_type]/[node:created:custom:Y-m]/[node:title]'
+selection_criteria:
+  44aa209c-b197-439c-b8c7-632b4418dcde:
+    id: node_type
+    bundles:
+      document: document
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 44aa209c-b197-439c-b8c7-632b4418dcde
+selection_logic: and
+weight: -6
+relationships: {  }

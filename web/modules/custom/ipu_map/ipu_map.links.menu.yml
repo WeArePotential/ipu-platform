@@ -1,0 +1,7 @@
+ipu_map.admin_form:
+  title: 'IPU Map settings'
+  parent: system.admin_config_system
+  description: 'Administrative interface for the IPU Map module'
+  weight: -10
+  route_name: ipu_map.admin_form
+

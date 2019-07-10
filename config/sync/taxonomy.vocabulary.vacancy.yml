@@ -1,0 +1,9 @@
+uuid: c8ffb813-fd4e-48ac-804e-7f07052fadba
+langcode: en
+status: true
+dependencies: {  }
+name: Vacancy
+vid: vacancy
+description: ''
+hierarchy: 0
+weight: -2

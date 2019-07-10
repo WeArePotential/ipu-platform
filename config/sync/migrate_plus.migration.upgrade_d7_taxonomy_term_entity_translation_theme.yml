@@ -1,0 +1,89 @@
+uuid: 45ae4955-9bd1-46c4-88d0-271174492442
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_taxonomy_term_entity_translation_theme
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: alterFieldFormatterMigration
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - translation
+  - Content
+  - Multilingual
+migration_group: migrate_drupal_7
+label: 'Taxonomy term entity translations (Theme)'
+source:
+  plugin: d7_taxonomy_term_entity_translation
+  bundle: theme
+process:
+  tid:
+    -
+      plugin: get
+      source: entity_id
+  name:
+    -
+      plugin: get
+      source: name
+  description/value:
+    -
+      plugin: get
+      source: description
+  description/format:
+    -
+      plugin: get
+      source: format
+  langcode:
+    -
+      plugin: get
+      source: language
+  status:
+    -
+      plugin: get
+      source: status
+  content_translation_source:
+    -
+      plugin: get
+      source: source
+  content_translation_outdated:
+    -
+      plugin: get
+      source: translate
+  content_translation_uid:
+    -
+      plugin: get
+      source: uid
+  content_translation_created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: changed
+  forum_container:
+    -
+      plugin: get
+      source: is_container
+destination:
+  plugin: 'entity:taxonomy_term'
+  translations: true
+  destination_module: content_translation
+  default_bundle: theme
+migration_dependencies:
+  required:
+    - upgrade_language
+    - upgrade_d7_entity_translation_settings
+    - upgrade_d7_taxonomy_term_tags
+    - upgrade_d7_taxonomy_term_article
+    - upgrade_d7_taxonomy_term_country
+    - upgrade_d7_taxonomy_term_ipu_structure
+    - upgrade_d7_taxonomy_term_theme
+    - upgrade_d7_taxonomy_term_event
+    - upgrade_d7_taxonomy_term_publication
+    - upgrade_d7_taxonomy_term_documents
+    - upgrade_d7_taxonomy_term_geopolitical_group
+    - upgrade_d7_taxonomy_term_vacancy
+    - upgrade_d7_taxonomy_term_event_sponsor
+    - upgrade_d7_taxonomy_term_governing_body
+  optional: {  }

@@ -1,0 +1,18 @@
+uuid: e951a0e2-6c76-4087-898f-8c3b3939187d
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.entity_browser_test
+id: node.entity_browser_test.created
+field_name: created
+entity_type: node
+bundle: entity_browser_test
+label: 'Authored on'
+description: 'The time that the node was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

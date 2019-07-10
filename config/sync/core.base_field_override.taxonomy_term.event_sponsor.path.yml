@@ -1,0 +1,20 @@
+uuid: 943196a9-f14a-4fab-931a-e258ec728cd8
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.event_sponsor
+  module:
+    - path
+id: taxonomy_term.event_sponsor.path
+field_name: path
+entity_type: taxonomy_term
+bundle: event_sponsor
+label: 'URL alias'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

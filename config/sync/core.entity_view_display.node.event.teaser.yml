@@ -1,0 +1,80 @@
+uuid: 2557c9ca-c300-4e6e-bea2-0684126760e6
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.event.body
+    - field.field.node.event.field_country
+    - field.field.node.event.field_document
+    - field.field.node.event.field_event_date
+    - field.field.node.event.field_event_type
+    - field.field.node.event.field_event_url
+    - field.field.node.event.field_ipu_structure
+    - field.field.node.event.field_location
+    - field.field.node.event.field_media_image
+    - field.field.node.event.field_theme
+    - node.type.event
+  module:
+    - address
+    - datetime
+    - field_group
+    - user
+third_party_settings:
+  field_group:
+    group_event_data:
+      children:
+        - field_location
+        - field_event_date
+      parent_name: ''
+      weight: 0
+      label: event_data
+      format_settings:
+        label: event_data
+        formatter: open
+        id: ''
+        classes: 'group-event-data field-group-fieldset'
+        description: ''
+        show_label: false
+        label_element: h3
+        effect: none
+        speed: fast
+        element: div
+      format_type: html_element
+      region: content
+id: node.event.teaser
+targetEntityType: node
+bundle: event
+mode: teaser
+content:
+  field_event_date:
+    label: hidden
+    weight: 1
+    type: datetime_default
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    region: content
+  field_location:
+    label: hidden
+    weight: 2
+    type: address_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  body: true
+  field_country: true
+  field_document: true
+  field_event_type: true
+  field_event_url: true
+  field_ipu_structure: true
+  field_media_image: true
+  field_theme: true
+  langcode: true

@@ -1,0 +1,9 @@
+uuid: 76620a83-02cf-44e2-b00c-7ec55572c700
+langcode: en
+status: true
+dependencies: {  }
+id: sections
+label: Sections
+icon_uuid: null
+description: 'Migrated from field_collection field_sections'
+behavior_plugins: {  }

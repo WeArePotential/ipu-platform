@@ -1,0 +1,50 @@
+uuid: 256941a9-4872-420e-9525-4de139716310
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_publication_file
+    - paragraphs.paragraphs_type.publication_document
+  module:
+    - custom_add_another
+    - file
+    - filefield_paths
+third_party_settings:
+  filefield_paths:
+    enabled: true
+    file_path:
+      value: ''
+      options:
+        slashes: false
+        pathauto: false
+        transliterate: false
+    redirect: false
+    retroactive_update: false
+    active_updating: false
+    file_name:
+      value: '[file:ffp-name-only-original].[file:ffp-extension-original]'
+      options:
+        slashes: false
+        pathauto: false
+        transliterate: false
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
+id: paragraph.publication_document.field_publication_file
+field_name: field_publication_file
+entity_type: paragraph
+bundle: publication_document
+label: PDF
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: ''
+  file_extensions: pdf
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

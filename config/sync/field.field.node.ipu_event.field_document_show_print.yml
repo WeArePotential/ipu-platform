@@ -1,0 +1,29 @@
+uuid: 86bea55d-0d44-48fb-9c12-6d7618ae0dba
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_document_show_print
+    - node.type.ipu_event
+  module:
+    - custom_add_another
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
+id: node.ipu_event.field_document_show_print
+field_name: field_document_show_print
+entity_type: node
+bundle: ipu_event
+label: 'Show Print Programme Link'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

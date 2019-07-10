@@ -1,0 +1,22 @@
+uuid: 1aa26257-fecb-4fac-8d8d-32a97a611b77
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: taxonomy_term_publication
+label: 'Taxonomy term - Publication'
+type: 'canonical_entities:taxonomy_term'
+pattern: 'resources/publications/[term:name]'
+selection_criteria:
+  -
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      publication: publication
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+selection_logic: and
+weight: 2
+relationships: {  }

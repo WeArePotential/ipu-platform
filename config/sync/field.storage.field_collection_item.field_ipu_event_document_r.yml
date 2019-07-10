@@ -1,0 +1,19 @@
+uuid: 51b7949d-3933-4fd5-a422-3ae8536809d2
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_collection
+id: field_collection_item.field_ipu_event_document_r
+field_name: field_ipu_event_document_r
+entity_type: field_collection_item
+type: entity_reference
+settings:
+  target_type: field_collection_item
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

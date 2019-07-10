@@ -1,0 +1,30 @@
+uuid: 4018355e-a67c-436b-b3f5-95de0289143a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contact_ipu
+    - node.type.article
+  module:
+    - custom_add_another
+    - link
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
+id: node.article.field_contact_ipu
+field_name: field_contact_ipu
+entity_type: node
+bundle: article
+label: 'Contact us'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    url: /contact-us
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 17
+field_type: link

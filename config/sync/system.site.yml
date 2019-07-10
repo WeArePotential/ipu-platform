@@ -1,0 +1,14 @@
+uuid: 1aedb61b-ccae-47db-b9e4-d50003d8639a
+name: 'Inter-Parliamentary Union'
+mail: rod@sereno.co.uk
+slogan: 'For democracy. For everyone.'
+page:
+  403: /
+  404: /node/8277
+  front: /node/172
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI

@@ -1,0 +1,32 @@
+uuid: a9318678-2b2e-42bb-b2d6-fd9556f2a027
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.event_sponsor.field_logo
+    - taxonomy.vocabulary.event_sponsor
+  module:
+    - file
+    - text
+id: taxonomy_term.event_sponsor.default
+targetEntityType: taxonomy_term
+bundle: event_sponsor
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_logo:
+    label: above
+    weight: 0
+    type: file_default
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

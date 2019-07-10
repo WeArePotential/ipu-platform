@@ -1,0 +1,20 @@
+uuid: 8840bb03-6083-4cbd-be05-392817b6a73f
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.geopolitical_group
+  module:
+    - text
+id: taxonomy_term.geopolitical_group.description
+field_name: description
+entity_type: taxonomy_term
+bundle: geopolitical_group
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

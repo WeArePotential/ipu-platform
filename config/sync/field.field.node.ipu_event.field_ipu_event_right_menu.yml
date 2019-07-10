@@ -1,0 +1,69 @@
+uuid: 19884748-83a4-449c-aa9f-f9d64d976b80
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ipu_event_right_menu
+    - node.type.ipu_event
+    - paragraphs.paragraphs_type.ipu_event_right_menu
+  module:
+    - custom_add_another
+    - entity_reference_revisions
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
+id: node.ipu_event.field_ipu_event_right_menu
+field_name: field_ipu_event_right_menu
+entity_type: node
+bundle: ipu_event
+label: Section
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    negate: 0
+    target_bundles:
+      ipu_event_right_menu: ipu_event_right_menu
+    target_bundles_drag_drop:
+      ipu_event_right_menu:
+        enabled: true
+        weight: 1
+      event_sub_page:
+        enabled: false
+        weight: 2
+      ipu_event_document:
+        enabled: false
+        weight: 3
+      ipu_event_document_widget:
+        enabled: false
+        weight: 4
+      ipu_event_section:
+        enabled: false
+        weight: 5
+      ipu_event_sessions:
+        enabled: false
+        weight: 6
+      ipu_event_session_type:
+        enabled: false
+        weight: 7
+      ipu_event_sponsors:
+        enabled: false
+        weight: 8
+      publication_document:
+        enabled: false
+        weight: 9
+      related_content:
+        enabled: false
+        weight: 10
+      related_documents:
+        enabled: false
+        weight: 11
+      sections:
+        enabled: false
+        weight: 12
+  handler: 'default:paragraph'
+field_type: entity_reference_revisions

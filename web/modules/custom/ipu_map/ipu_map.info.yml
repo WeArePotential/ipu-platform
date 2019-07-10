@@ -1,0 +1,16 @@
+name: IPU World Map
+description: Creates a block with map showing all countries
+package: Custom
+
+type: module
+core: 8.x
+
+dependencies:
+  - drupal:link
+  - drupal:taxonomy
+  - block
+
+configure: ipu_map.settings
+
+php: 7.0
+

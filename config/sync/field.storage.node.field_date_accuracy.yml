@@ -1,0 +1,30 @@
+uuid: 66a4533a-e637-4dd7-aca1-63664ea7f229
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_date_accuracy
+field_name: field_date_accuracy
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: day
+      label: day
+    -
+      value: month
+      label: month
+    -
+      value: year
+      label: year
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

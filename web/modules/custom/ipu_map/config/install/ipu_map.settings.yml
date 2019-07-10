@@ -1,0 +1,5 @@
+ipu_map:
+  vocabulary_id: 0
+  ipu_map_parliaments_page: '/parliaments'
+  ipu_map_average_percent_women: 0
+  ipu_map_average_percent_under45: 0

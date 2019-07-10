@@ -1,0 +1,22 @@
+uuid: 0c87c1c4-5815-49fe-b070-98b04eb5fe3d
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.event
+id: taxonomy_term.event.status
+field_name: status
+entity_type: taxonomy_term
+bundle: event
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

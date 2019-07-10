@@ -1,0 +1,21 @@
+uuid: 72d75fa1-da5b-45d1-8abc-bd21dee425c6
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.field_iso_code_for_parliament
+field_name: field_iso_code_for_parliament
+entity_type: taxonomy_term
+type: string
+settings:
+  max_length: 2
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

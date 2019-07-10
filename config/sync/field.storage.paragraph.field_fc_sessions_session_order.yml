@@ -1,0 +1,20 @@
+uuid: d172c10d-bf70-4a7e-8b86-b939d5b45067
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_fc_sessions_session_order
+field_name: field_fc_sessions_session_order
+entity_type: paragraph
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,8 @@
+uuid: 823a16e0-6588-4250-b30e-922d31a615c4
+langcode: en
+status: true
+dependencies: {  }
+id: comment_node_ipu_event
+label: 'Events comment'
+target_entity_type_id: node
+description: null

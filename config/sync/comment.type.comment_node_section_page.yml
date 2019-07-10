@@ -1,0 +1,8 @@
+uuid: 392c5bfb-aa04-48dc-8efc-5fee21a767b6
+langcode: en
+status: true
+dependencies: {  }
+id: comment_node_section_page
+label: 'Section Page comment'
+target_entity_type_id: node
+description: null

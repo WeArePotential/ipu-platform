@@ -1,0 +1,18 @@
+uuid: b497f3d6-a8dc-4b26-890b-8e343ce5ec47
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.ipu_event
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: node.ipu_event
+target_entity_type_id: node
+target_bundle: ipu_event
+default_langcode: current_interface
+language_alterable: true

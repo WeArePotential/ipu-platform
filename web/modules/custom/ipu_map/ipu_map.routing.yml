@@ -1,0 +1,33 @@
+ipu_map.content:
+  path: '/ipu_map'
+  defaults:
+    _controller: '\Drupal\ipu_map\Controller\IpuMapController::content'
+    _title: 'IPU Map demo page'
+  requirements:
+    _permission: 'access content'
+
+ipu_map.admin_form:
+  path: '/admin/config/system/ipu_map'
+  defaults:
+    _form: '\Drupal\ipu_map\Form\SettingsForm'
+    _title: IPU Map Settings
+  requirements:
+    _permission: 'administer content'
+
+ipu_map.country:
+  path: '/parliament/{iso_code}/{country_name}'
+  defaults:
+    _controller: '\Drupal\ipu_map\Controller\IpuMapController::countryContent'
+    _title_callback: '\Drupal\ipu_map\Controller\IpuMapController::getCountryTitle'
+    country_name: ''
+  requirements:
+    _permission: 'access content'
+
+ipu_map.country_fr:
+  path: '/parlement/{iso_code}/{country_name}'
+  defaults:
+    _controller: '\Drupal\ipu_map\Controller\IpuMapController::countryContent'
+    _title_callback: '\Drupal\ipu_map\Controller\IpuMapController::getCountryTitle'
+    country_name: ''
+  requirements:
+    _permission: 'access content'

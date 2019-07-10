@@ -1,0 +1,75 @@
+uuid: 06c917bc-57a9-482a-bb91-135658b0969c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_publication_document
+    - node.type.publication
+    - paragraphs.paragraphs_type.publication_document
+  module:
+    - custom_add_another
+    - entity_reference_revisions
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
+id: node.publication.field_publication_document
+field_name: field_publication_document
+entity_type: node
+bundle: publication
+label: 'Publication PDF'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      publication_document: publication_document
+    target_bundles_drag_drop:
+      publication_document:
+        enabled: true
+        weight: 1
+      event_sub_page:
+        weight: 2
+        enabled: false
+      ipu_event_document:
+        weight: 3
+        enabled: false
+      ipu_event_document_widget:
+        weight: 4
+        enabled: false
+      ipu_event_right_menu:
+        weight: 5
+        enabled: false
+      ipu_event_section:
+        weight: 6
+        enabled: false
+      ipu_event_sessions:
+        weight: 7
+        enabled: false
+      ipu_event_session_type:
+        weight: 8
+        enabled: false
+      ipu_event_sponsors:
+        weight: 9
+        enabled: false
+      related_content:
+        weight: 10
+        enabled: false
+      related_documents:
+        weight: 11
+        enabled: false
+      sections:
+        weight: 12
+        enabled: false
+      sereno_test_paragraph_type:
+        weight: 27
+        enabled: false
+      sereno_test_paragraph_type_2:
+        weight: 28
+        enabled: false
+field_type: entity_reference_revisions

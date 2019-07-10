@@ -1,0 +1,102 @@
+{#
+/**
+ * @file
+ * Template for the main page.
+ */
+#}
+<div class="page">
+
+  <div id="topbar" class="topbar container-fluid" >
+    <div class="d-flex justify-content-between">
+    {% block topbar %}
+      {% if page.topbar_left %}
+          <div class="text-left">{{ page.topbar_left }}</div>
+      {% endif %}
+      {% if page.topbar_right %}
+      <div class="text-right">{{ page.topbar_right }}</div>
+      {% endif %}
+      {% endblock %}
+    </div>
+  </div>
+
+  <div id="#top">
+    <div id="branding">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+          {% block branding %}
+            {% if page.navbar_branding %}
+              <div class="text-left">
+                <a href="/"><img class="logo" src="{{ base_path ~ directory }}/assets/img/IPU-logo.svg" /></a>
+                {# page.navbar_branding #}
+              </div>
+            {% endif %}
+            {% if page.navbar_branding_right %}
+              <div class="text-right">
+                {{ page.navbar_branding_right }}
+              </div>
+            {% endif %}
+          {% endblock %}
+        </div>
+      </div>
+    </div>
+    <div id="main-nav" class="sticky-top">
+      <div class="container">
+        <div class="row">
+          {% block left %}
+            {% if page.navbar_left %}
+              <div id="main-nav-left" class="mr-auto">
+                {{ page.navbar_left }}
+              </div>
+            {% endif %}
+          {% endblock %}
+
+          {% block right %}
+            {% if page.navbar_right %}
+              <div id="main-nav-right" class="text-right d-inline">
+                {{ page.navbar_right }}
+              </div>
+            {% endif %}
+          {% endblock %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main class="pt-2">
+    {#
+        {% embed '@radix/navbar/navbar.twig' with {
+          placement: 'sticky-top',
+          container: 'fixed',
+          color: 'light',
+          utility_classes: ['bg-light'],
+        } %}
+    #}
+      {% block header %}
+        {% if page.header %}
+          <header class="page__header mb-3">
+            <div class="container">
+              {{ page.header }}
+            </div>
+          </header>
+        {% endif %}
+      {% endblock %}
+
+    {#{% endembed %}#}
+
+    {% if page.content %}
+      <div class="page__content">
+        {{ page.content }}
+      </div>
+    {% endif %}
+  </main>
+
+  {% if page.footer %}
+    <footer class="page__footer">
+      <div class="container">
+        <div class="d-flex justify-content-md-between align-items-md-center">
+          {{ page.footer }}
+        </div>
+      </div>
+    </footer>
+  {% endif %}
+</div>

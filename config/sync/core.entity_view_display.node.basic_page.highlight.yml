@@ -1,0 +1,189 @@
+uuid: 960e8a47-db3a-4fd0-b304-e2fba4a2da8a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.highlight
+    - field.field.node.basic_page.body
+    - field.field.node.basic_page.field_caption
+    - field.field.node.basic_page.field_contact_ipu
+    - field.field.node.basic_page.field_media_image
+    - field.field.node.basic_page.field_related_content
+    - field.field.node.basic_page.field_related_documents
+    - field.field.node.basic_page.field_sections
+    - image.style.teaser
+    - node.type.basic_page
+  module:
+    - ds
+    - field_group
+    - image
+    - smart_trim
+    - user
+third_party_settings:
+  field_group:
+    group_image:
+      children:
+        - field_media_image
+        - field_caption
+      parent_name: ''
+      weight: 0
+      label: image
+      format_settings:
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: 'group-image field-group-div'
+      format_type: html_element
+      region: content
+    group_content:
+      children:
+        - node_title
+        - body
+        - node_link
+      parent_name: ''
+      weight: 1
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: card-body
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Content
+      region: content
+  ds:
+    layout:
+      id: layout_onecol
+      library: layout_discovery/onecol
+      disable_css: false
+      entity_classes: all_classes
+      settings: {  }
+    regions:
+      content:
+        - group_image
+        - group_content
+        - node_title
+        - field_media_image
+        - body
+        - field_caption
+        - node_link
+    fields:
+      node_link:
+        plugin_id: node_link
+        weight: 5
+        label: hidden
+        formatter: default
+        settings:
+          'link text': 'Read more'
+          'link class': 'btn btn-outline-primary'
+          wrapper: ''
+          class: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+      node_title:
+        plugin_id: node_title
+        weight: 2
+        label: hidden
+        formatter: default
+        settings:
+          link: true
+          wrapper: h3
+          class: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+id: node.basic_page.highlight
+targetEntityType: node
+bundle: basic_page
+mode: highlight
+content:
+  body:
+    label: hidden
+    weight: 3
+    type: smart_trim
+    settings:
+      trim_length: 40
+      trim_type: words
+      trim_suffix: ''
+      wrap_class: trimmed
+      more_text: more...
+      more_class: more-link
+      summary_handler: full
+      trim_options:
+        text: true
+        trim_zero: false
+      wrap_output: false
+      more_link: false
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    region: content
+  field_caption:
+    type: smart_trim
+    weight: 4
+    region: content
+    label: hidden
+    settings:
+      trim_length: 600
+      trim_type: chars
+      trim_suffix: ''
+      wrap_class: trimmed
+      more_text: More
+      more_class: more-link
+      trim_options:
+        text: true
+        trim_zero: false
+      wrap_output: false
+      more_link: false
+      summary_handler: full
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+  field_media_image:
+    type: image
+    weight: 3
+    region: content
+    label: hidden
+    settings:
+      image_style: teaser
+      image_link: content
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+hidden:
+  field_contact_ipu: true
+  field_related_content: true
+  field_related_documents: true
+  field_sections: true
+  langcode: true
+  links: true

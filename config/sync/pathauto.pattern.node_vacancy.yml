@@ -1,0 +1,22 @@
+uuid: ad32ff7d-6cb6-471e-87e5-38934972a418
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node_vacancy
+label: 'Content - Vacancy'
+type: 'canonical_entities:node'
+pattern: 'about-us/work-with-ipu/vacancies/[node:created:custom:Y-m]/[node:title]'
+selection_criteria:
+  2cbaddea-88d2-406d-a4f6-2dfe1ed1a9eb:
+    id: node_type
+    bundles:
+      vacancy: vacancy
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 2cbaddea-88d2-406d-a4f6-2dfe1ed1a9eb
+selection_logic: and
+weight: -1
+relationships: {  }

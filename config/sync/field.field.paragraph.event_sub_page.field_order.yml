@@ -1,0 +1,29 @@
+uuid: c0231c51-fd1b-4fcc-a720-aaa0b8bf887c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_order
+    - paragraphs.paragraphs_type.event_sub_page
+  module:
+    - custom_add_another
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
+id: paragraph.event_sub_page.field_order
+field_name: field_order
+entity_type: paragraph
+bundle: event_sub_page
+label: Order
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  max: null
+  min: null
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,0 +1,107 @@
+uuid: 0d093218-fd4f-4779-afda-04cd9940d3aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ipu_event_section.field_fc_original_reference
+    - field.field.paragraph.ipu_event_section.field_ie_fc_button_links
+    - field.field.paragraph.ipu_event_section.field_ie_fc_description
+    - field.field.paragraph.ipu_event_section.field_ie_fc_title
+    - field.field.paragraph.ipu_event_section.field_original_fc_id
+    - paragraphs.paragraphs_type.ipu_event_section
+  module:
+    - paragraphs
+label: field_ipu_event_section
+id: field_ipu_event_section
+description: ''
+import_period: -1
+fetcher: upload
+fetcher_configuration:
+  allowed_extensions: 'txt csv tsv xml opml'
+  directory: 'private://feeds'
+parser: csv
+parser_configuration:
+  delimiter: ;
+  no_headers: false
+  line_limit: 100
+processor: 'entity:paragraph'
+processor_configuration:
+  update_existing: 2
+  update_non_existent: _keep
+  expire: -1
+  owner_feed_author: false
+  owner_id: 1566
+  authorize: true
+  skip_hash_check: false
+  values:
+    type: ipu_event_section
+custom_sources:
+  d7_field_collection_item_id:
+    label: ﻿d7_field_collection_item_id
+    value: ﻿d7_field_collection_item_id
+    machine_name: d7_field_collection_item_id
+  field_ipu_event_document_widget_value:
+    label: 'field_ipu_event_document_widget:value'
+    value: 'field_ipu_event_document_widget:value'
+    machine_name: field_ipu_event_document_widget_value
+  field_ie_fc_button_links:
+    label: field_ie_fc_button_links
+    value: field_ie_fc_button_links
+    machine_name: field_ie_fc_button_links
+  field_ie_fc_button_links_title:
+    label: 'field_ie_fc_button_links:title'
+    value: 'field_ie_fc_button_links:title'
+    machine_name: field_ie_fc_button_links_title
+  field_ie_fc_title:
+    label: field_ie_fc_title
+    value: field_ie_fc_title
+    machine_name: field_ie_fc_title
+  d7_fc_item_id_event_section:
+    label: ﻿d7_field_collection_item_id
+    value: ﻿d7_field_collection_item_id
+    machine_name: d7_fc_item_id_event_section
+  field_ipu_event_document_widget_value2:
+    label: 'field_ipu_event_document_widget:value'
+    value: 'field_ipu_event_document_widget:value'
+    machine_name: field_ipu_event_document_widget_value2
+  field_ie_fc_button_links2:
+    label: field_ie_fc_button_links
+    value: field_ie_fc_button_links
+    machine_name: field_ie_fc_button_links2
+  field_ie_fc_button_links_title2:
+    label: 'field_ie_fc_button_links:title'
+    value: 'field_ie_fc_button_links:title'
+    machine_name: field_ie_fc_button_links_title2
+  field_ie_fc_title2:
+    label: field_ie_fc_title
+    value: field_ie_fc_title
+    machine_name: field_ie_fc_title2
+  field_ie_fc_description_value:
+    label: 'field_ie_fc_description:value'
+    value: 'field_ie_fc_description:value'
+    machine_name: field_ie_fc_description_value
+mappings:
+  -
+    target: field_original_fc_id
+    map:
+      value: d7_fc_item_id_event_section
+  -
+    target: field_fc_original_reference
+    map:
+      value: field_ipu_event_document_widget_value2
+  -
+    target: field_ie_fc_button_links
+    map:
+      uri: field_ie_fc_button_links2
+      title: field_ie_fc_button_links_title2
+  -
+    target: field_ie_fc_title
+    map:
+      value: field_ie_fc_title2
+    unique: {  }
+  -
+    target: field_ie_fc_description
+    map:
+      value: field_ie_fc_description_value
+    settings:
+      format: plain_text

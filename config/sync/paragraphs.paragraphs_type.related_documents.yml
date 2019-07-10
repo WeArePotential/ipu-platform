@@ -1,0 +1,9 @@
+uuid: 8ed9e8db-abda-4aa3-936f-06f6aea6d9cc
+langcode: en
+status: true
+dependencies: {  }
+id: related_documents
+label: 'Related documents'
+icon_uuid: null
+description: 'Migrated from field_collection field_related_documents'
+behavior_plugins: {  }

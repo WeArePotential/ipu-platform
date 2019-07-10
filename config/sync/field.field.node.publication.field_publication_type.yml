@@ -1,0 +1,27 @@
+uuid: 24296fcb-48ce-475d-b693-a4ce6d856b9a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_publication_type
+    - node.type.publication
+  module:
+    - custom_add_another
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
+id: node.publication.field_publication_type
+field_name: field_publication_type
+entity_type: node
+bundle: publication
+label: 'Publication type'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings: {  }
+field_type: entity_reference

@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            {% if top.content %}
+                {{ top.content }}
+            {% endif %}
+        </div>
+
+        <div class="col-md-7">
+            {% if left.content %}
+                {{ left.content }}
+            {% endif %}
+        </div>
+
+        <div class="col-md-5">
+            {% if right.content %}
+                {{ right.content }}
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+
+    {% if bottom.content %}
+        {{ bottom.content }}
+    {% endif %}
+
+</div>
+

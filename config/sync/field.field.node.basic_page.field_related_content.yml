@@ -1,0 +1,69 @@
+uuid: ff2ed56c-8bd4-47ba-93a2-ed376bbbe0bb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_related_content
+    - node.type.basic_page
+    - paragraphs.paragraphs_type.related_content
+  module:
+    - custom_add_another
+    - entity_reference_revisions
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
+id: node.basic_page.field_related_content
+field_name: field_related_content
+entity_type: node
+bundle: basic_page
+label: 'See also'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    negate: 0
+    target_bundles:
+      related_content: related_content
+    target_bundles_drag_drop:
+      related_content:
+        enabled: true
+        weight: 1
+      event_sub_page:
+        enabled: false
+        weight: 2
+      ipu_event_document:
+        enabled: false
+        weight: 3
+      ipu_event_document_widget:
+        enabled: false
+        weight: 4
+      ipu_event_right_menu:
+        enabled: false
+        weight: 5
+      ipu_event_section:
+        enabled: false
+        weight: 6
+      ipu_event_sessions:
+        enabled: false
+        weight: 7
+      ipu_event_session_type:
+        enabled: false
+        weight: 8
+      ipu_event_sponsors:
+        enabled: false
+        weight: 9
+      publication_document:
+        enabled: false
+        weight: 10
+      related_documents:
+        enabled: false
+        weight: 11
+      sections:
+        enabled: false
+        weight: 12
+  handler: 'default:paragraph'
+field_type: entity_reference_revisions

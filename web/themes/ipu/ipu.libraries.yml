@@ -1,0 +1,12 @@
+style:
+  version: VERSION
+  css:
+    theme:
+      assets/css/ipu.style.css: {}
+      https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css: { type: external, minified: true}
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.2/jquery.matchHeight-min.js: { type: external, minified: true }
+    assets/js/ipu.script.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal

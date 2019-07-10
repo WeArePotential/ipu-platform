@@ -1,0 +1,26 @@
+uuid: cbcc2624-12e6-49c3-a76e-8f54cd08da79
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - system
+  theme:
+    - radix
+_core:
+  default_config_hash: DweBpscQZdG0-fHkSpUzdYucrNH45G_KF7Z82V-oyQM
+id: radix_account_menu
+theme: radix
+region: navbar_branding
+weight: -6
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'User account menu'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 1
+visibility: {  }

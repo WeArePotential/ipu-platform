@@ -1,0 +1,9 @@
+uuid: 834979f4-82ad-4634-ab30-997f450b62a9
+langcode: en
+status: true
+dependencies: {  }
+id: ipu_event_section
+label: 'Event section'
+icon_uuid: null
+description: 'Migrated from field_collection field_ipu_event_section'
+behavior_plugins: {  }

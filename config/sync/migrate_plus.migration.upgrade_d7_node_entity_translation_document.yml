@@ -1,0 +1,155 @@
+uuid: 8247ef3c-7974-448b-999e-a149e85020ca
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_node_entity_translation_document
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: alterFieldFormatterMigration
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - translation
+  - Content
+  - Multilingual
+migration_group: migrate_drupal_7
+label: 'Node entity translations (Document)'
+source:
+  plugin: d7_node_entity_translation
+  node_type: document
+process:
+  nid:
+    -
+      plugin: get
+      source: entity_id
+  type:
+    -
+      plugin: get
+      source: type
+  langcode:
+    -
+      plugin: get
+      source: language
+  title:
+    -
+      plugin: get
+      source: title
+  uid:
+    -
+      plugin: get
+      source: uid
+  status:
+    -
+      plugin: get
+      source: status
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: changed
+  promote:
+    -
+      plugin: get
+      source: promote
+  sticky:
+    -
+      plugin: get
+      source: sticky
+  revision_uid:
+    -
+      plugin: get
+      source: revision_uid
+  revision_log:
+    -
+      plugin: get
+      source: log
+  revision_timestamp:
+    -
+      plugin: get
+      source: timestamp
+  content_translation_source:
+    -
+      plugin: get
+      source: source
+  content_translation_outdated:
+    -
+      plugin: get
+      source: translate
+  comment_node_document/0/status:
+    -
+      plugin: get
+      source: comment
+  body:
+    -
+      plugin: get
+      source: body
+  field_document_file:
+    -
+      plugin: sub_process
+      source: field_document_file
+      process:
+        target_id: fid
+        display: display
+        description: description
+  field_document_type:
+    -
+      plugin: sub_process
+      source: field_document_type
+      process:
+        target_id: tid
+  field_ipu_structure:
+    -
+      plugin: sub_process
+      source: field_ipu_structure
+      process:
+        target_id: tid
+  field_theme:
+    -
+      plugin: sub_process
+      source: field_theme
+      process:
+        target_id: tid
+  field_country:
+    -
+      plugin: sub_process
+      source: field_country
+      process:
+        target_id: tid
+  field_media_image:
+    -
+      plugin: sub_process
+      source: field_media_image
+      process:
+        target_id: fid
+        alt: alt
+        title: title
+        width: width
+        height: height
+  field_external_link:
+    -
+      plugin: field_link
+      source: field_external_link
+destination:
+  plugin: 'entity:node'
+  translations: true
+  destination_module: content_translation
+  default_bundle: document
+migration_dependencies:
+  required:
+    - upgrade_language
+    - upgrade_d7_entity_translation_settings
+    - upgrade_d7_node_article
+    - upgrade_d7_node_basic_page
+    - upgrade_d7_node_committee_member
+    - upgrade_d7_node_document
+    - upgrade_d7_node_event
+    - upgrade_d7_node_ipu_event
+    - upgrade_d7_node_page
+    - upgrade_d7_node_publication
+    - upgrade_d7_node_section_page
+    - upgrade_d7_node_vacancy
+    - upgrade_d7_node_webform
+    - upgrade_d7_node_document
+  optional: {  }

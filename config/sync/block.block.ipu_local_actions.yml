@@ -1,0 +1,20 @@
+uuid: b3a7b3cc-138e-4b1a-a0f2-a9afec4b77dc
+langcode: en
+status: true
+dependencies:
+  theme:
+    - ipu
+_core:
+  default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
+id: ipu_local_actions
+theme: ipu
+region: content
+weight: -10
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,33 @@
+uuid: 32e42f28-3ed8-4d80-9cab-984f2dae3a50
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.publication_document.field_publication_file
+    - field.field.paragraph.publication_document.field_publication_language
+    - paragraphs.paragraphs_type.publication_document
+  module:
+    - file_entity
+    - options
+id: paragraph.publication_document.default
+targetEntityType: paragraph
+bundle: publication_document
+mode: default
+content:
+  field_publication_file:
+    label: hidden
+    weight: 1
+    type: file_download_link
+    settings:
+      access_message: 'You don''t have access to download this file.'
+      text: 'Download [file:name]'
+    third_party_settings: {  }
+    region: content
+  field_publication_language:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+hidden: {  }

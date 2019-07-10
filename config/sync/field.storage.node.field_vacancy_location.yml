@@ -1,0 +1,19 @@
+uuid: 4358033f-4b50-4696-bf70-17859b283ecf
+langcode: en
+status: true
+dependencies:
+  module:
+    - address
+    - node
+id: node.field_vacancy_location
+field_name: field_vacancy_location
+entity_type: node
+type: address
+settings: {  }
+module: address
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

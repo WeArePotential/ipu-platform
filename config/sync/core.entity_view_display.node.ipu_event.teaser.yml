@@ -1,0 +1,113 @@
+uuid: 8f27b3f0-b307-49ad-a181-40c327a77bb5
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.ipu_event.field_agenda_order_number
+    - field.field.node.ipu_event.field_do_not_display_as_link
+    - field.field.node.ipu_event.field_document_show_print
+    - field.field.node.ipu_event.field_documents_order_number
+    - field.field.node.ipu_event.field_event_computed_date
+    - field.field.node.ipu_event.field_event_sub_page
+    - field.field.node.ipu_event.field_event_theme
+    - field.field.node.ipu_event.field_event_type
+    - field.field.node.ipu_event.field_hide_documents_menu
+    - field.field.node.ipu_event.field_hide_programs_menu
+    - field.field.node.ipu_event.field_ipu_event_right_menu
+    - field.field.node.ipu_event.field_ipu_event_section
+    - field.field.node.ipu_event.field_ipu_event_session_type
+    - field.field.node.ipu_event.field_ipu_event_sessions
+    - field.field.node.ipu_event.field_ipu_event_sponsors
+    - field.field.node.ipu_event.field_location
+    - field.field.node.ipu_event.field_programme_show_print
+    - field.field.node.ipu_event.field_sponsor
+    - field.field.node.ipu_event.field_summary
+    - field.field.node.ipu_event.field_twitter_order
+    - node.type.ipu_event
+  module:
+    - address
+    - datetime
+    - ds
+    - taxonomy
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: bs_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        layout:
+          wrapper: div
+          classes:
+            row: row
+          add_layout_class: 1
+          attributes: ''
+        regions:
+          main:
+            wrapper: div
+            classes:
+              col-sm-12: col-sm-12
+            add_region_classes: 1
+            attributes: ''
+    regions:
+      main:
+        - field_event_type
+        - node_title
+        - field_location
+        - field_event_computed_date
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 1
+        label: hidden
+        formatter: default
+id: node.ipu_event.teaser
+targetEntityType: node
+bundle: ipu_event
+mode: teaser
+content:
+  field_event_computed_date:
+    type: datetime_plain
+    weight: 3
+    region: main
+    label: above
+    settings:
+      timezone_override: ''
+    third_party_settings: {  }
+  field_event_type:
+    type: entity_reference_rss_category
+    weight: 0
+    region: main
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_location:
+    type: address_default
+    weight: 2
+    region: main
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_agenda_order_number: true
+  field_do_not_display_as_link: true
+  field_document_show_print: true
+  field_documents_order_number: true
+  field_event_sub_page: true
+  field_event_theme: true
+  field_hide_documents_menu: true
+  field_hide_programs_menu: true
+  field_ipu_event_right_menu: true
+  field_ipu_event_section: true
+  field_ipu_event_session_type: true
+  field_ipu_event_sessions: true
+  field_ipu_event_sponsors: true
+  field_programme_show_print: true
+  field_sponsor: true
+  field_summary: true
+  field_twitter_order: true
+  langcode: true
+  links: true

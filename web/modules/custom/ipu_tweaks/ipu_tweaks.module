@@ -1,0 +1,123 @@
+<?php
+use Drupal\Core\StringTranslation;
+
+include_once 'inc/utils.inc';
+
+function ipu_tweaks_template_preprocess_default_variables_alter(&$variables) {
+  $current_path = \Drupal::service('path.current')->getPath();
+  $variables['current_path'] = $current_path;
+}
+
+function ipu_tweaks_page_attachments(array &$attachments) {
+  $theme = \Drupal::theme()->getActiveTheme()->getName();
+  //print $theme;
+  if ($theme == 'adminimal_theme') {
+    $attachments['#attached']['library'][] = 'ipu_tweaks/extra-admin';
+  }
+
+  /* Override ultimenu as per https://www.drupal.org/project/ultimenu/issues/2682125
+   * Tweak the js to target the relevant menu
+  */
+  if ($theme == 'ipu') {
+    $attachments['#attached']['library'][] = 'ipu_tweaks/ultimenu-override';
+  }
+}
+
+/* Add current language to all templates */
+function ipu_tweaks_preprocess(&$variables) {
+  $variables['language_id'] = \Drupal::languageManager()->getCurrentLanguage('language_content')->getId();
+}
+
+
+function ipu_tweaks_preprocess_paragraph(&$variables) {
+  /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
+  // Placeholder for amending paragraphs
+  //$paragraph = $variables['paragraph'];
+  //$parentBundle = $paragraph->getParentEntity()->bundle();
+}
+
+function ipu_tweaks_preprocess_paragraph__event_sub_page(&$variables) {
+  /* Add the (unique) paragraph id to each para for targeting as tab panels */
+  $para = $variables['elements']['#paragraph'];
+  $variables['attributes']['id'] = 'field-event-sub-page-tab-'.$para->id();
+}
+
+function ipu_tweaks_preprocess_paragraph__ipu_event_sessions(&$variables) {
+  /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
+  $paragraph = $variables['paragraph'];
+  // Get the parent node? print_r($paragraph->getParentEntity()->toArray());
+  // Get the parent bundle - a content type - in this case ipu_event
+  //$parentBundle = $paragraph->getParentEntity()->bundle();
+
+  // Create any new variables we might want.
+  foreach($variables['content']['field_ipu_event_session_dates'] as $key=>$value) {
+    print $key.'<br/>';
+  }
+  $variables['content']['field_ipu_event_session_dates']['links'] = [];
+  //print_r( $variables['content']['field_ipu_event_session_dates']);
+  //$variables = [];
+
+  // EXAMPLE CODE
+  //Get the value of the image style and add it as a class on the image field.
+  //$style_image = $paragraph->get('field_fc_sessions_closed_session')->value;
+  //$variables['attributes']['class'][] = $style_image;
+
+  $datetime = $paragraph->get('field_ipu_event_session_dates')->value;
+  $datetime_to = $paragraph->get('field_ipu_event_session_dates')->end_value;
+  //print 'PPP'.print_r($paragraph->get('field_ipu_event_session_dates')->getValue(), true).'QQQ';
+  $variables['datetime'] = $datetime;
+  $variables['content']['datetime_text']['#value'] = IpuEventUtils::get_event_session_datetime_text($datetime, $datetime_to, ' -  ', TRUE);
+
+  //$variables['content'] = [];
+  //$variables['links'] = [];
+  //$variables['paragraph'] = [];
+  //$variables['elements'] = [];
+}
+
+function ipu_tweaks_preprocess_field(&$variables) {
+  if (($variables['element']['#field_name'] == 'field_event_sub_page')) {
+    // Placeholder for field preprocess.
+  }
+  if (($variables['element']['#field_name'] == 'field_ipu_event_sessions')) {
+  }
+
+  if ($variables['element']['#field_name'] == 'field_ipu_event_dates') {
+    //\Drupal::messenger()->addStatus('Hello 1'. print_r($variables['element']['#view_mode'],true));
+    //if ($node = \Drupal::routeMatch()->getParameter('node')) {
+    //  $variables['view_mode'] = $node->view_mode;
+    if ($variables['element']['#view_mode'] == 'highlight') {
+      ##\Drupal::messenger()->addStatus('Hello 2 '. print_r($variables['items'][0], true));
+    }
+  }
+  if ($variables['element']['#field_name'] == 'field_event_date') {
+    //\Drupal::messenger()->addStatus('Hello 3'. print_r($variables['element'],true));
+    if ($variables['element']['#view_mode'] == 'highlight') {
+
+    }
+  }
+
+}
+/**
+ * Implements hook_field_attach_view_alter()
+ */
+function ipu_tweaks_entity_display_build_alter(&$output, $context) {
+  // Check we're dealing with a paragraph field.
+  if(!empty($output['paragraph'])) {
+
+    // Check for specific paragraph field.
+    if ($output['paragraph']['#field_name'] === 'field_event_sub_page' ) {
+      // Alter the prefix. This is not working for some reason.
+      //$output['paragraph']['#prefix'] = '<div class="field-collection-container clearfix vivienne">';
+    }
+  }
+
+}
+/* https://www.drupal.org/project/drupal/issues/2955321 */
+function ipu_tweaks_entity_type_alter(array &$entity_types) {
+  foreach ($entity_types as $entity_type)
+  {
+    $constraints = $entity_type->getConstraints();
+    unset($constraints['EntityUntranslatableFields']);
+    $entity_type->setConstraints($constraints);
+  }
+}
