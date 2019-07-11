@@ -121,5 +121,5 @@ crons:
 # Setting for php.ini
 variables:
     php:
-        memory_limit: 256M
+        memory_limit: 512M
         max_input_vars: 10000
