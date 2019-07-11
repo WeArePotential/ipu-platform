@@ -49,6 +49,7 @@ hooks:
         set -e
         php ./drush/platformsh_generate_drush_yml.php
         cd web
+        build
         drush -y cache-rebuild
         drush -y updatedb
         drush -y config-import
