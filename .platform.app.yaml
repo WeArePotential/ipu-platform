@@ -45,10 +45,6 @@ build:
 
 # The hooks executed at various points in the lifecycle of the application.
 hooks:
-    build:
-        cd web
-        composer install
-
     # The deploy hook runs after your application has been deployed and started.
     deploy: |
         set -e

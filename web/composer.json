@@ -131,7 +131,8 @@
         ],
         "merge-plugin": {
             "include": [
-                "core/composer.json"
+                "core/composer.json",
+                "web/composer.json"
             ],
             "recurse": true,
             "replace": false,
