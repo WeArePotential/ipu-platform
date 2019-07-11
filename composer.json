@@ -67,6 +67,14 @@
         "patchLevel": {
             "drupal/core": "-p2"
         },
+        "merge-plugin": {
+            "include": [
+                "web/composer.json"
+            ],
+            "recurse": true,
+            "replace": false,
+            "merge-extra": false
+        },
         "installer-paths": {
             "web/core": ["type:drupal-core"],
             "web/libraries/{$name}": ["type:drupal-library"],
