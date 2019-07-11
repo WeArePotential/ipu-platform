@@ -117,3 +117,8 @@ crons:
     drupal:
         spec: '*/20 * * * *'
         cmd: 'cd web ; drush core-cron'
+
+# Setting for php.ini
+variables:
+    php:
+        memory_limit: 256M
