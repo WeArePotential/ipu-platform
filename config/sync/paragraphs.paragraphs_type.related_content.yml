@@ -1,9 +1,11 @@
 uuid: 53109041-67e7-4a08-82d4-e721c1b820b3
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  content:
+    - 'file:image:a5700a0c-cb65-44d1-993a-5e793cfd1ebe'
 id: related_content
 label: 'Related content'
-icon_uuid: null
+icon_uuid: a5700a0c-cb65-44d1-993a-5e793cfd1ebe
 description: 'Migrated from field_collection field_related_content'
 behavior_plugins: {  }

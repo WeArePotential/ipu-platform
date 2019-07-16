@@ -246,12 +246,12 @@ a {
   }
 }
 
+.block--views-block--theme-list-block-1-5,
 .block--views-block--theme-list-block-1,
 .block--views-block--theme-list-block-1-2 {
   .views-field-description__value {
-    font-size: 0.75rem;
-    line-height: 1em;
     font-weight: 300;
+    font-size: $font-size-sm;
   }
   .col {
     padding-top: 4px;
@@ -260,10 +260,14 @@ a {
 }
 
 .term-icon a {
-  text-transform: uppercase;
-  font-size: 0.85rem;
-  font-weight: 500;
-  letter-spacing: 0.05em;
+  /* Was uppercase and small
+    text-transform: uppercase;
+    font-size: $font-size-sm;
+    letter-spacing: 0.05em;
+  */
+  font-weight: $font-weight-bold;
+  font-size: $font-size-md;
+  line-height: 1;
   &:hover {
     color: color("ipu-orange");
     text-decoration: none;
@@ -319,13 +323,28 @@ span::before {
   }
 }
 
+.viewfield--view__theme_list__block_home_page {
+  .row .col > div {
+    background-color: $light;
+    padding: 10px 10px 0 10px;
+  }
+  .views-field-description__value {
+    font-weight: 300;
+    font-size: $font-size-sm;
+    line-height: 1.1;
+    padding-bottom: 10px !important;
+  }
+}
+
 /* Mega menu Parliaments dropdown */
 .ipu-map-country-select-form .form-item-isocode {
   float: left;
 }
 .ipu-map-country-select-form .button {
   text-transform: uppercase;
-  margin: 0px 4px;
+  margin: 0px;
+  border-radius: 4px;
+  padding: 2px 6px;
 }
 
 /* Subpages section on section pages */
@@ -546,10 +565,18 @@ a.btn {
     position: absolute;
     top: -3px;
     left: -3px;;
-    background-color: $tertiary;
+    background-color: $ipu-grey;
     font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    &.type__press-releases {
+      background-color: $tertiary;
+    }
   }
 
+  .ipu-event__field-event-type {
+    background-color: $tertiary;
+  }
   // Article content for all highlight cards
   .article__type-content,
   .layout__region--content,
@@ -848,7 +875,8 @@ a.btn {
 }
 
 
-.section-page-subpages-section {
+.section-page-subpages-section,
+.viewfield--view__sub_content {
   .row .views-row {
     @extend .col-lg-4;
     @extend .col-md-6;
@@ -869,8 +897,17 @@ a.btn {
       left: 0px;
       background-color: rgb(255, 255, 255, 0.85);
       max-width: calc( 100% - 20px );
+      &:hover {
+        background-color: rgb(255, 255, 255, 0.95);
+        transition: all 300ms ease;
+        a {
+          text-decoration: none;
+          color: $ipu-blue;
+
+        }
+      }
       h3 {
-        line-height: 1.6rem;
+        font-size: $font-size-base;
         padding: 0;
         margin: 0;
         a {
@@ -910,7 +947,8 @@ a.btn {
 }
 
 .node-basic_page,
-.section-page__dynamic-block-fieldnode-section-sub-pages {
+.section-page__dynamic-block-fieldnode-section-sub-pages,
+.viewfield--view__sub_content  {
   @extend .image-with-caption;
   /* Put caption over image */
   .basic-page__field-caption {
@@ -918,7 +956,8 @@ a.btn {
   }
 }
 /* Override when in highlights box */
-.section-page__dynamic-block-fieldnode-section-sub-pages {
+.section-page__dynamic-block-fieldnode-section-sub-pages,
+.viewfield--view__sub_content {
   .group-image {
     margin-top: 0px;
     &:hover {
@@ -959,4 +998,69 @@ a.btn {
       }
     }
   }
+}
+
+.sections__field-section-title {
+  border-bottom: 2px solid $secondary;
+  padding: 10px 0 4px 0;
+}
+
+.field-content-section {
+  .field__item {
+  }
+  .field__item__paragraph__carousel {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: $light;
+  }
+}
+
+
+/* All 'Sections' paras on landing pages are bounded */
+.node-landing_page .landing-page__field-content-section .paragraph--type--sections {
+  @extend .container;
+}
+.node-landing_page {
+  .group-header {
+    @extend .container;
+    .group-header-inner {
+      @extend .row;
+    }
+    .landing-page__node-title {
+      @extend .col-md-12;
+    }
+    .landing-page__field-media-image {
+      @extend .col-md-5;
+    }
+    .landing-page__body {
+      @extend .col-md-7;
+    }
+  }
+}
+.node-172 {
+  .group-header {
+    @extend .container;
+    .group-header-inner {
+      @extend .row;
+    }
+    .landing-page__node-title {
+      display: none;
+    }
+    .landing-page__field-media-image {
+      display: none;
+    }
+    .landing-page__body {
+      @extend .col-md-12;
+    }
+  }
+}
+
+/* Home page */
+.viewfield--view__theme_list__block_home_page {
+  @extend .container;
+}
+
+/* Hide the view-categories field from front-end. */
+.sections__field-view-categories {
+  display: none;
 }

@@ -1,0 +1,43 @@
+diff --git a/core/lib/Drupal/Core/Field/FieldItemList.php b/core/lib/Drupal/Core/Field/FieldItemList.php
+index d3eb205..72eccd9 100644
+--- a/core/lib/Drupal/Core/Field/FieldItemList.php
++++ b/core/lib/Drupal/Core/Field/FieldItemList.php
+@@ -388,6 +388,21 @@ public function equals(FieldItemListInterface $list_to_compare) {
+     $non_computed_properties = array_filter($property_definitions, function (DataDefinitionInterface $property) {
+       return !$property->isComputed();
+     });
++
++    // in the specific case where this is an image field (as recognized by the
++    // array keys) we do not want the width and the height in the comparision
++    // because these are somehow calculated fields no matter what.
++    // @see https://www.drupal.org/node/2941092
++    if (is_array($non_computed_properties)
++      && array_key_exists('target_id',$non_computed_properties)
++      && array_key_exists('alt',$non_computed_properties)
++      && array_key_exists('width',$non_computed_properties)
++      && array_key_exists('height',$non_computed_properties)
++    ) {
++      unset($non_computed_properties['width']);
++      unset($non_computed_properties['height']);
++    }
++
+     $callback = function (&$value) use ($non_computed_properties) {
+       if (is_array($value)) {
+         $value = array_intersect_key($value, $non_computed_properties);
+diff --git a/core/modules/content_translation/src/Plugin/Validation/Constraint/ContentTranslationSynchronizedFieldsConstraintValidator.php b/core/modules/content_translation/src/Plugin/Validation/Constraint/ContentTranslationSynchronizedFieldsConstraintValidator.php
+index 0a508c9..2b855aa 100644
+--- a/core/modules/content_translation/src/Plugin/Validation/Constraint/ContentTranslationSynchronizedFieldsConstraintValidator.php
++++ b/core/modules/content_translation/src/Plugin/Validation/Constraint/ContentTranslationSynchronizedFieldsConstraintValidator.php
+@@ -148,6 +148,12 @@ protected function hasSynchronizedPropertyChanges(ContentEntityInterface $entity
+           return TRUE;
+         }
+         foreach ($items as $delta => $item) {
++          // The width & height properties on image fields should get recomputed
++          // on save when they are empty so can be ignored.
++          if (empty($items[$delta][$property]) && in_array($property, ['width', 'height'], TRUE) && $entity->getFieldDefinition($field_name)->getType() === 'image') {
++            continue;
++          }
++
+           // @todo This loose comparison is not fully reliable. Revisit this
+           //   after https://www.drupal.org/project/drupal/issues/2941092.
+           if ($items[$delta][$property] != $original_items[$delta][$property]) {

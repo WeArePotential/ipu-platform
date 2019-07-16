@@ -3,7 +3,7 @@ ipu_map:
 _core:
   default_config_hash: 6yW9OhCR38tVYFp-2KlFHlHiW2y_GxnyRI1UCCkYosk
 vocabulary_id: country
-ipu_map_parliaments_page: /ipu_map
+ipu_map_parliaments_page: /node/9854
 ipu_map_average_percent_under35: '14.2'
 ipu_map_average_percent_women: '24.3'
 ipu_map_average_percent_under45: '26'

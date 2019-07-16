@@ -1,0 +1,11 @@
+uuid: 7e6ed0c4-9d27-4574-9e77-a9b6bb243dc3
+langcode: en
+status: true
+dependencies:
+  module:
+    - convert_bundles
+id: convert_bundles_on_facets_facet_source
+label: 'Convert Facet source Entity Bundles'
+type: facets_facet_source
+plugin: convert_bundles_action_base
+configuration: {  }

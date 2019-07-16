@@ -1,0 +1,11 @@
+uuid: 16333f9f-fafb-4b37-b521-355a7c09dbdf
+langcode: en
+status: true
+dependencies:
+  module:
+    - convert_bundles
+id: convert_bundles_on_custom_language
+label: 'Convert Custom Language Entity Bundles'
+type: custom_language
+plugin: convert_bundles_action_base
+configuration: {  }

@@ -73,6 +73,7 @@ display:
           label: Actions
         edit_webform_submission:
           label: Actions
+          text: modifier
   embed_review:
     display_options:
       fields:

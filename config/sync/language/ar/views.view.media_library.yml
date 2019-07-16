@@ -19,5 +19,9 @@ display:
             group_items:
               1:
                 title: منشور
+      title: ميديا
   page:
     display_title: الصفحة
+    display_options:
+      menu:
+        title: ميديا

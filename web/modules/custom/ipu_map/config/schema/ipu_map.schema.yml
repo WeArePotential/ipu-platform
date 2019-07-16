@@ -5,3 +5,11 @@ block.settings.ipu_map_block:
     ipu_map_block_settings:
       type: text
       label: 'IPU Map block settings'
+
+block.settings.ipu_node_block:
+  type: block_settings
+  label: 'IPU content block'
+  mapping:
+    ipu_node_block_settings:
+      type: text
+      label: 'IPU node block settings'

@@ -23,5 +23,9 @@ display:
                 title: Publicado
               2:
                 title: 'Sin publicar'
+      title: Multimedia
   page:
     display_title: Página
+    display_options:
+      menu:
+        title: Multimedia

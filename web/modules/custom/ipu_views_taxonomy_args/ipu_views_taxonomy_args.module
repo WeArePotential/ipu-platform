@@ -1,0 +1,36 @@
+<?php
+
+/**
+ * @file
+ * Contains ipu_views_taxonomy_args.module.
+ */
+
+/**
+ * Implements hook_ENTITY_TYPE_presave().
+ * Set the value of the Sections paragraph ViewField arguments from the taxonomy term entity reference field.
+ */
+function ipu_views_taxonomy_args_paragraph_presave(Drupal\Core\Entity\EntityInterface $entity) {
+  if ($entity->bundle() == 'sections' && $entity->hasField('field_view_categories') && $entity->hasField('field_view')) {
+    if ($entity->get('field_view')->first() !== NULL) {
+      $view = $entity->get('field_view')->first()->getValue();
+      if ($view) {
+        if ($entity->get('field_view_categories') !== NULL) {
+          $view['arguments'] = $entity->get('field_view_categories')
+            ->getString();
+        }
+        $entity->set('field_view', $view);
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_field_widget_form_alter().
+ */
+function ipu_views_taxonomy_args_field_widget_form_alter(&$element, \Drupal\Core\Form\FormStateInterface $form_state, $context) {
+  /** @var $field_definition \Drupal\Core\Field\FieldDefinitionInterface **/
+  $field_definition = $context['items']->getFieldDefinition();
+  if ($field_definition->getType() == 'viewfield' && $field_definition->getTargetBundle() == 'sections' && $field_definition->getName() == 'field_view') {
+    $element['arguments']['#disabled'] = TRUE;
+  }
+}

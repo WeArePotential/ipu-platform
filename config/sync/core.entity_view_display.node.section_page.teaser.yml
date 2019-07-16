@@ -7,7 +7,6 @@ dependencies:
     - field.field.node.section_page.body
     - field.field.node.section_page.field_media_image
     - field.field.node.section_page.field_sections
-    - field.field.node.section_page.field_theme
     - node.type.section_page
   module:
     - text
@@ -33,5 +32,4 @@ content:
 hidden:
   field_media_image: true
   field_sections: true
-  field_theme: true
   langcode: true

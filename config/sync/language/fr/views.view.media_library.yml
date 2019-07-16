@@ -23,5 +23,9 @@ display:
                 title: Publié
               2:
                 title: 'Non publié'
+      title: Média
   page:
     display_title: Page
+    display_options:
+      menu:
+        title: Média

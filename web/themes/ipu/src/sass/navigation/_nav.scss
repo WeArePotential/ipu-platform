@@ -115,7 +115,29 @@ ol.breadcrumb {
 /* Right hand column sub-meuu
   Based on normal Drupal classy theme html
   */
-.block--ipu-content ul.menu {
+.block--ipu-content .section-page__dynamic-block-fieldnode-menu-block,
+.block--ipu-content .basic-page__dynamic-block-fieldnode-menu-block,
+.block--ipu-content .page__dynamic-block-fieldnode-menu-block {
+  .field__label {
+    color: $ipu-blue;
+    font-size: 2rem;
+    line-height: 2rem;
+    font-weight: $font-weight-light !important;
+    margin-bottom: 10px;
+    &:before {
+      background: url(../img/theme_icons/gender_equality.svg);
+      content: "";
+      width: 2rem;
+      height: 2rem;
+      display: block;
+      float: left;
+      margin-right: 0.4rem;
+    }
+  }
+}
+
+.block--ipu-content ul.menu,
+.ipu-menu-list ul.nav {
   list-style: none;
   background-color: $white;
   border-width: 0 1px 1px 1px;
@@ -123,10 +145,15 @@ ol.breadcrumb {
   border-style: solid;
   padding-left: 0;
   li.menu-item--active-trail {
-    background-color: $light;
+    a {
+      background-color: $light;
+    }
     li {
       background-color: $light;
     }
+  }
+  a {
+    font-size: $font-size-sm;
   }
   & > li {
     border-top: 1px solid $ipu-very-light-grey;
@@ -137,7 +164,7 @@ ol.breadcrumb {
         @extend .dropdown-toggle;
         white-space: normal;
         &:after {
-          color: $ipu-teal-light;
+          color: $ipu-blue-light;
           transform: rotate(270deg);
           transition: all linear 0.25s;
         }
@@ -151,9 +178,9 @@ ol.breadcrumb {
     }
 
     &.active {
-      background-color: $ipu-teal-light;
+      /*background-color: $ipu-teal-light;*/
       a {
-        font-weight: $font-weight-normal;
+        font-weight: $font-weight-light;
       }
       ul {
         background-color: $light;
@@ -167,7 +194,6 @@ ol.breadcrumb {
       }
     }
     & > a {
-      font-size: 1.1rem;
       font-weight: $font-weight-light;
     }
     /* Sub-menu */
@@ -189,6 +215,105 @@ ol.breadcrumb {
 
 
       }
+    }
+  }
+}
+
+#main-nav .ultimenu__flyout {
+  .ipu-menu-list ul.nav {
+    display: block;
+    li {
+      display: block;
+      border: 0;
+      &.nav-item {
+        margin-left: 0 !important;
+      }
+      a {
+        text-transform: none;
+        border: 0;
+        font-size: $font-size-sm;
+        border-bottom: 1px solid $light;
+        color: $primary;
+        font-weight: $font-weight-light;
+        letter-spacing: 0;
+      }
+    }
+  }
+}
+  /* Styling and layout of content */
+
+.ultimenu__flyout {
+  .region-inner {
+    @extend .row;
+    .block--ipucontentblock {
+      @extend .col-md-4;
+    }
+    .block--views-block--theme-list-block-1-5 {
+      @extend .col-md-8;
+      /* background-colour on theme "boxes" */
+      .row .col > div {
+        background-color: $light;
+        padding: 10px 10px 0 10px;
+      }
+      .views-field-description__value {
+        color: $ipu-dark-grey;
+        padding-bottom: 10px !important;
+      }
+    }
+  }
+}
+
+.ultimenu__flyout {
+  .block > h2 {
+    font-size: $font-size-base;
+    border-bottom: 2px solid $secondary;
+    margin-bottom: 1rem;
+  }
+  .block .section-page__body {
+    color: $ipu-dark-grey;
+  }
+}
+/* Extra buttons */
+.ultimenu__flyout {
+  a.btn-outline-primary {
+    display: none;
+  }
+  .megamenu-cta {
+    @extend .card-body;
+    a.btn-outline-primary {
+      @extend .btn-sm;
+      padding: 2px 6px;
+      display: block;
+    }
+  }
+}
+
+/* Parliaments flyout */
+.ultimenu__item-1 .ultimenu__flyout .block {
+  @extend .col-md-4;
+}
+
+.ultimenu__item {
+  .chosen-container-single .chosen-single {
+    background: none;
+    border: 0 solid;
+    border-radius: 0;
+    color: $ipu-grey;
+    box-shadow: none;
+    div b {
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: none;
+    }
+  }
+}
+.ipu-map-country-select-form {
+  display: flex;
+  .form-item-isocode {
+    margin-bottom: 0 !important;
+    label {
+      display: none;
     }
   }
 }

@@ -6,7 +6,13 @@
 
         attach: function (context, settings) {
             var ipumap = settings.ipu_map;
-            var data = JSON.parse(ipumap.data);
+            try {
+                var data = JSON.parse(ipumap.data);
+            } catch(err) {
+                $(".mapcontainer_un").append('<p>Sorry, could not get data for the map: '+err.message+'</p>');
+                console.log(ipumap.data);
+                return false;
+            }
 
             settings.areas = [];
             for (var index = 0; index < data.length; ++index) {
@@ -16,8 +22,7 @@
                     name: data[index].name,
                     ipu_member: member,
                     description: data[index].description__value,
-                    //Xtooltip: data[index].name + ' :' + memberTxt,
-                    attrs: {"stroke-width": 1, "fill": colour},
+                    attrs: {"stroke-width": 0.4, "fill": colour},
                     href: '/parliament/' + data[index].field_iso_code.toLowerCase(),
                 };
             }
@@ -28,7 +33,7 @@
                 if (iso_code in settings.areas) {
                     var data = settings.areas[iso_code];
                     var memberTxt = ((data.ipu_member) ? 'Member' : 'Non member') + '<br />' + data.description;
-                    tooltip = data.name + ': ' + memberTxt;
+                    tooltip = '<strong>'+data.name + '</strong>: ' + memberTxt;
                 } else {
                     tooltip = 'Country not found for ISO Code ' + iso_code;
                 }

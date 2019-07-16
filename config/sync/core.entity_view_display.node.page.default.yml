@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.page.body
+    - field.field.node.page.field_caption
     - field.field.node.page.field_media_image
     - field.field.node.page.field_sections
     - node.type.page
@@ -61,12 +62,19 @@ third_party_settings:
       right:
         - 'dynamic_block_field:node-menu_block'
         - field_media_image
+        - field_caption
     fields:
       'dynamic_block_field:node-menu_block':
         plugin_id: 'dynamic_block_field:node-menu_block'
         weight: 3
         label: hidden
         formatter: default
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
       node_title:
         plugin_id: node_title
         weight: 0
@@ -96,6 +104,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: left
+  field_caption:
+    weight: 5
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: right
   field_media_image:
     type: responsive_image
     weight: 4

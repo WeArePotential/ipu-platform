@@ -73,6 +73,7 @@ display:
           label: Operaciones
         edit_webform_submission:
           label: Operaciones
+          text: editar
   embed_review:
     display_options:
       fields:

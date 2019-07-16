@@ -1,0 +1,11 @@
+uuid: 7caa2a07-16a8-483a-a5fa-60564a6d832f
+langcode: en
+status: true
+dependencies:
+  module:
+    - convert_bundles
+id: convert_bundles_on_shortcut_set
+label: 'Convert Shortcut set Entity Bundles'
+type: shortcut_set
+plugin: convert_bundles_action_base
+configuration: {  }

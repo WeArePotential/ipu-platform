@@ -17574,6 +17574,8 @@ __webpack_require__.r(__webpack_exports__);
       */
       $('.node--view-mode-highlight .bs-region').matchHeight();
       $('.node--view-mode-highlight .section-page__body').matchHeight();
+      $('.block--views-block--theme-list-block-1-5 .col .views-field-description__value').matchHeight();
+      $('.viewfield--view__theme_list__block_home_page .col .views-field-description__value').matchHeight();
     }
   };
 })(jQuery, Drupal);

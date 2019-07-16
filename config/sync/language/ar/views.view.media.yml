@@ -1,3 +1,4 @@
+label: ميديا
 display:
   default:
     display_title: الرئيسي
@@ -30,3 +31,6 @@ display:
             group_items:
               1:
                 title: منشور
+      title: ميديا
+  media_page_list:
+    display_title: ميديا

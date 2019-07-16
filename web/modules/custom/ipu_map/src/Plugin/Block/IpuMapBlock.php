@@ -3,6 +3,7 @@
 namespace Drupal\ipu_map\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
+use Drupal\Component\Render\FormattableMarkup;
 
 /**
  * Provides an IPU Map Block.
@@ -24,14 +25,16 @@ class IpuMapBlock extends BlockBase {
    */
   public function build() {
 
-    $settings = ['foo' => 'bar'];
-    $markup = '<div id="ipu_map" class="container">'.$this->t('IPU Map demo').'<div class="row mapcontainer_un"><div class="col-12 map">MAP</div></div></div>';
+    $settings = ['data' => ipu_map_get_data_from_view()];
+
+    $markup = '<div id="ipu_map" class="container"><div class="row mapcontainer_un"><div class="map"></div></div></div>';
+    $markup = new FormattableMarkup($markup, [] );
     $build = array(
       '#markup' => $markup
     );
 
     $build['#attached']['library'][] = 'ipu_map/ipu_map';
-    $build['#attached']['drupalSettings']['ipu_map']['ipu_map'] = $settings;
+    $build['#attached']['drupalSettings']['ipu_map'] = $settings;
     return $build;
   }
 

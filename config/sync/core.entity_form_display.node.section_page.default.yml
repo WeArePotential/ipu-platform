@@ -7,7 +7,6 @@ dependencies:
     - field.field.node.section_page.body
     - field.field.node.section_page.field_media_image
     - field.field.node.section_page.field_sections
-    - field.field.node.section_page.field_theme
     - node.type.section_page
   module:
     - entity_browser
@@ -93,20 +92,11 @@ content:
     settings:
       title: Paragraph
       title_plural: Paragraphs
-      edit_mode: open
+      edit_mode: closed
       add_mode: dropdown
       form_display_mode: default
-      default_paragraph_type: ''
+      default_paragraph_type: sections
     third_party_settings: {  }
-  field_theme:
-    weight: 13
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
   langcode:
     type: language_select
     weight: 2

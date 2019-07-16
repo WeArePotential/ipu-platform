@@ -94,12 +94,12 @@ third_party_settings:
       'dynamic_block_field:node-menu_block':
         plugin_id: 'dynamic_block_field:node-menu_block'
         weight: 3
-        label: hidden
+        label: above
         formatter: default
         ft:
           id: default
           settings:
-            lb: ''
+            lb: 'In this section'
             lb-col: false
             classes: {  }
       node_title:

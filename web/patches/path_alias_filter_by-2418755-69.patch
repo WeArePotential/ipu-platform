@@ -1,0 +1,136 @@
+diff --git a/core/lib/Drupal/Core/Path/AliasStorage.php b/core/lib/Drupal/Core/Path/AliasStorage.php
+index a02bc35..35bf3e8 100644
+--- a/core/lib/Drupal/Core/Path/AliasStorage.php
++++ b/core/lib/Drupal/Core/Path/AliasStorage.php
+@@ -349,6 +349,34 @@ public function getAliasesForAdminListing($header, $keys = NULL) {
+   /**
+    * {@inheritdoc}
+    */
++  public function getPathsForAdminListing($header, $keys = NULL) {
++    $query = $this->connection->select(static::TABLE)
++      ->extend('Drupal\Core\Database\Query\PagerSelectExtender')
++      ->extend('Drupal\Core\Database\Query\TableSortExtender');
++    if ($keys) {
++      // Replace wildcards with PDO wildcards.
++      $or = new Condition('OR');
++      $or->condition('alias', '%' . preg_replace('!\*+!', '%', $keys) . '%', 'LIKE');
++      $or->condition('source', '%' . preg_replace('!\*+!', '%', $keys) . '%', 'LIKE');
++      $query->condition($or);
++    }
++    try {
++      return $query
++        ->fields(static::TABLE)
++        ->orderByHeader($header)
++        ->limit(50)
++        ->execute()
++        ->fetchAll();
++    }
++    catch (\Exception $e) {
++      $this->catchException($e);
++      return [];
++    }
++  }
++
++  /**
++   * {@inheritdoc}
++   */
+   public function pathHasMatchingAlias($initial_substring) {
+     $query = $this->connection->select(static::TABLE, 'u');
+     $query->addExpression(1);
+diff --git a/core/lib/Drupal/Core/Path/AliasStorageInterface.php b/core/lib/Drupal/Core/Path/AliasStorageInterface.php
+index 398ce07..4e83b7d 100644
+--- a/core/lib/Drupal/Core/Path/AliasStorageInterface.php
++++ b/core/lib/Drupal/Core/Path/AliasStorageInterface.php
+@@ -151,10 +151,27 @@ public function languageAliasExists();
+    *
+    * @return array
+    *   Array of items to be displayed on the current page.
++   *
++   * @deprecated in Drupal 8.6.0, will be removed before Drupal 9.0.0. Use
++   *   \Drupal\Core\Path\AliasStorageInterface::getPathsForAdminListing() instead.
+    */
+   public function getAliasesForAdminListing($header, $keys = NULL);
+ 
+   /**
++   * Loads paths for admin listing.
++   *
++   * @param array $header
++   *   Table header.
++   * @param string|null $keys
++   *   (optional) Search keyword that may include one or more '*' as wildcard
++   *   values.
++   *
++   * @return array
++   *   Array of items to be displayed on the current page.
++   */
++  public function getPathsForAdminListing($header, $keys = NULL);
++
++  /**
+    * Check if any alias exists starting with $initial_substring.
+    *
+    * @param string $initial_substring
+diff --git a/core/modules/path/src/Controller/PathController.php b/core/modules/path/src/Controller/PathController.php
+index 51f88dd..2841efa 100644
+--- a/core/modules/path/src/Controller/PathController.php
++++ b/core/modules/path/src/Controller/PathController.php
+@@ -79,7 +79,8 @@ public function adminOverview(Request $request) {
+ 
+     $rows = [];
+     $destination = $this->getDestinationArray();
+-    foreach ($this->aliasStorage->getAliasesForAdminListing($header, $keys) as $data) {
++    $paths = $this->aliasStorage->getPathsForAdminListing($header, $keys);
++    foreach ($paths as $data) {
+       $row = [];
+       // @todo Should Path module store leading slashes? See
+       //   https://www.drupal.org/node/2430593.
+diff --git a/core/modules/path/src/Form/PathFilterForm.php b/core/modules/path/src/Form/PathFilterForm.php
+index 52b0ffb..103f279 100644
+--- a/core/modules/path/src/Form/PathFilterForm.php
++++ b/core/modules/path/src/Form/PathFilterForm.php
+@@ -26,13 +26,13 @@ public function buildForm(array $form, FormStateInterface $form_state, $keys = N
+     $form['#attributes'] = ['class' => ['search-form']];
+     $form['basic'] = [
+       '#type' => 'details',
+-      '#title' => $this->t('Filter aliases'),
++      '#title' => $this->t('Filter paths'),
+       '#open' => TRUE,
+       '#attributes' => ['class' => ['container-inline']],
+     ];
+     $form['basic']['filter'] = [
+       '#type' => 'search',
+-      '#title' => $this->t('Path alias'),
++      '#title' => $this->t('Path'),
+       '#title_display' => 'invisible',
+       '#default_value' => $keys,
+       '#maxlength' => 128,
+diff --git a/core/modules/path/tests/src/Functional/PathLanguageUiTest.php b/core/modules/path/tests/src/Functional/PathLanguageUiTest.php
+index c2e3276..ccf562e 100644
+--- a/core/modules/path/tests/src/Functional/PathLanguageUiTest.php
++++ b/core/modules/path/tests/src/Functional/PathLanguageUiTest.php
+@@ -45,7 +45,7 @@ public function testLanguageNeutralUrl() {
+     $this->drupalPostForm('admin/config/search/path/add', $edit, t('Save'));
+ 
+     $this->drupalGet($name);
+-    $this->assertText(t('Filter aliases'), 'Language-neutral URL alias works');
++    $this->assertText(t('Filter paths'), 'Language-neutral URL alias works');
+   }
+ 
+   /**
+@@ -60,7 +60,7 @@ public function testDefaultLanguageUrl() {
+     $this->drupalPostForm('admin/config/search/path/add', $edit, t('Save'));
+ 
+     $this->drupalGet($name);
+-    $this->assertText(t('Filter aliases'), 'English URL alias works');
++    $this->assertText(t('Filter paths'), 'English URL alias works');
+   }
+ 
+   /**
+@@ -75,7 +75,7 @@ public function testNonDefaultUrl() {
+     $this->drupalPostForm('admin/config/search/path/add', $edit, t('Save'));
+ 
+     $this->drupalGet('fr/' . $name);
+-    $this->assertText(t('Filter aliases'), 'Foreign URL alias works');
++    $this->assertText(t('Filter paths'), 'Foreign URL alias works');
+   }
+ 
+ }

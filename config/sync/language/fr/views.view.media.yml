@@ -1,3 +1,4 @@
+label: Média
 display:
   default:
     display_title: Maître
@@ -50,3 +51,6 @@ display:
                 title: Publié
               2:
                 title: 'Non publié'
+      title: Média
+  media_page_list:
+    display_title: Média

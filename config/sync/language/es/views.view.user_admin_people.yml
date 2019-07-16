@@ -22,6 +22,8 @@ display:
       fields:
         status:
           label: Estado
+          settings:
+            format_custom_true: Activo
         operations:
           label: Operaciones
         mail:
@@ -30,5 +32,8 @@ display:
         status:
           group_info:
             label: Estado
+            group_items:
+              1:
+                title: Activo
   page_1:
     display_title: Página

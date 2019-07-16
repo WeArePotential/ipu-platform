@@ -9,7 +9,7 @@
   }
 
   /* Force focus anywhere in li to show  */
-  .ultimenu--hover > li:focus-within > .ultimenu__flyout {
+  .ultimenu--hover > li:focus-within .ultimenu__flyout {
     visibility: visible !important;
   }
 }

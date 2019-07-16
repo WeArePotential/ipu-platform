@@ -1,9 +1,11 @@
 uuid: 595d9751-1608-4345-bf1f-9be78d4d549e
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  content:
+    - 'file:image:963746d2-bad6-4e07-804f-c629f7d58728'
 id: event_sub_page
 label: 'Event sub page'
-icon_uuid: null
+icon_uuid: 963746d2-bad6-4e07-804f-c629f7d58728
 description: 'Migrated from field_collection field_event_sub_page'
 behavior_plugins: {  }

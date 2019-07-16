@@ -5,6 +5,7 @@ dependencies:
   config:
     - entity_browser.browser.browse_files
     - field.field.node.page.body
+    - field.field.node.page.field_caption
     - field.field.node.page.field_media_image
     - field.field.node.page.field_sections
     - node.type.page
@@ -40,7 +41,7 @@ third_party_settings:
       children:
         - field_sections
       parent_name: group_tabs
-      weight: 3
+      weight: 28
       label: Sections
       format_settings:
         formatter: closed
@@ -52,6 +53,7 @@ third_party_settings:
     group_media:
       children:
         - field_media_image
+        - field_caption
       parent_name: ''
       weight: 1
       label: Media
@@ -65,9 +67,10 @@ third_party_settings:
       region: content
     group_tabs:
       children:
+        - group_content
         - group_sections
       parent_name: ''
-      weight: 2
+      weight: 3
       label: Tabs
       format_settings:
         formatter: ''
@@ -75,6 +78,19 @@ third_party_settings:
         classes: node-tabs
         direction: horizontal
       format_type: tabs
+      region: content
+    group_content:
+      children: {  }
+      parent_name: group_tabs
+      weight: 27
+      format_type: tab
+      format_settings:
+        description: ''
+        formatter: open
+        required_fields: true
+        id: ''
+        classes: ''
+      label: Content
       region: content
 _core:
   default_config_hash: sb0qCkzU_8mNq29NehYAU8jCBXWPLeX0UN8sYFVGVcw
@@ -94,10 +110,18 @@ content:
     region: content
   created:
     type: datetime_timestamp
-    weight: 10
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_caption:
+    weight: 8
+    settings:
+      rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
   field_media_image:
     weight: 7
     type: entity_browser_file
@@ -114,15 +138,15 @@ content:
     region: content
   field_sections:
     type: entity_reference_paragraphs
-    weight: 0
+    weight: 21
     region: content
     settings:
       title: Paragraph
       title_plural: Paragraphs
-      edit_mode: open
+      edit_mode: closed
       add_mode: dropdown
       form_display_mode: default
-      default_paragraph_type: ''
+      default_paragraph_type: sections
     third_party_settings: {  }
   langcode:
     type: language_select
@@ -133,7 +157,7 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 30
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -141,21 +165,21 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 15
+    weight: 8
     region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 120
+    weight: 12
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 16
+    weight: 9
     region: content
     third_party_settings: {  }
   title:
@@ -167,7 +191,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   translation:
-    weight: 10
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -181,7 +205,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 50
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }

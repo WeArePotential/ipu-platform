@@ -1,9 +1,11 @@
 uuid: 76620a83-02cf-44e2-b00c-7ec55572c700
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  content:
+    - 'file:image:d2d0d8d6-7951-40a0-9ff3-7509cb4d29d0'
 id: sections
 label: Sections
-icon_uuid: null
+icon_uuid: d2d0d8d6-7951-40a0-9ff3-7509cb4d29d0
 description: 'Migrated from field_collection field_sections'
 behavior_plugins: {  }

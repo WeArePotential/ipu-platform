@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.sections.field_section_block
     - field.field.paragraph.sections.field_section_description
     - field.field.paragraph.sections.field_section_display_options
     - field.field.paragraph.sections.field_section_html
@@ -15,6 +16,7 @@ dependencies:
     - field.field.paragraph.sections.field_view_target_id
     - paragraphs.paragraphs_type.sections
   module:
+    - block_field
     - chosen_field
     - field_group
     - field_layout
@@ -55,6 +57,15 @@ targetEntityType: paragraph
 bundle: sections
 mode: default
 content:
+  field_section_block:
+    weight: 3
+    settings:
+      plugin_id: ''
+      settings: {  }
+      configuration_form: full
+    third_party_settings: {  }
+    type: block_field_default
+    region: content
   field_section_description:
     weight: 1
     type: string_textarea
@@ -64,13 +75,13 @@ content:
     third_party_settings: {  }
     region: content
   field_section_display_options:
-    weight: 5
+    weight: 6
     type: options_buttons
     settings: {  }
     third_party_settings: {  }
     region: content
   field_section_html:
-    weight: 4
+    weight: 5
     type: text_textarea
     settings:
       rows: 20
@@ -78,7 +89,7 @@ content:
     third_party_settings: {  }
     region: content
   field_section_node:
-    weight: 3
+    weight: 4
     type: entity_reference_autocomplete
     settings:
       match_operator: CONTAINS
@@ -131,7 +142,7 @@ content:
     type: string_textfield
     region: content
   translation:
-    weight: 6
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }

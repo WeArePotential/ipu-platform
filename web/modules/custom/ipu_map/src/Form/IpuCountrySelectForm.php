@@ -7,6 +7,7 @@ namespace Drupal\ipu_map\Form;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use Drupal\Core\Url;
 
 class IpuCountrySelectForm extends FormBase {
   /**
@@ -22,6 +23,9 @@ class IpuCountrySelectForm extends FormBase {
     $all_parliaments = t('All parliaments')->render();
     $options = ['XX'=>$all_parliaments];
     $country_terms = ipu_map_get_countries();
+
+    // We have already set the parliaments page in config.
+    $form['#action'] = \Drupal::config('ipu_map.settings')->get('ipu_map_parliaments_page');
 
     $i = 0;
     $language =  \Drupal::languageManager()->getCurrentLanguage()->getId();
@@ -42,7 +46,7 @@ class IpuCountrySelectForm extends FormBase {
       '#type' => 'select',
       '#options'=> $options,
       '#attributes' => array('class' => array('ipu-country-select')), // Add a class if required
-      '#title' => t('Parliament'),
+      '#title' => t('Parliaments'),
       '#chosen' => TRUE,
       '#required' => FALSE,
     );
@@ -57,18 +61,17 @@ class IpuCountrySelectForm extends FormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
+    $language =  \Drupal::languageManager()->getCurrentLanguage()->getId();
+    $stubpath = ($language == 'fr' ? '/parlement' : '/parliament');
     $isocode = $form_state->getValue('isocode');
     if ($isocode) {
-      if ($isocode == 'XX') {
-        $path = '/parliament';
-      } else {
-        $path = '/parliament/'.$isocode;
+      if ($isocode != 'XX') {
+        $path = $stubpath . '/' . $isocode;
+        $form_state->setRedirectUrl(Url::fromUserInput($path));
       }
-    } else {
-      $path = '/parliament';
     }
-    $response = new RedirectResponse($path);
-    $response->send();
+    //$response = new RedirectResponse($path);
+    //$response->send();
     return;
     //drupal_set_message($this->t('@emp_name ,Your application is being submitted!', array('@emp_name' => $form_state->getValue('employee_name'))));
   }

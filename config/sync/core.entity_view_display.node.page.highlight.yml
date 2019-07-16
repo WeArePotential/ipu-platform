@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.highlight
     - field.field.node.page.body
+    - field.field.node.page.field_caption
     - field.field.node.page.field_media_image
     - field.field.node.page.field_sections
     - image.style.teaser
@@ -13,7 +14,7 @@ dependencies:
     - ds
     - field_group
     - image
-    - text
+    - smart_trim
     - user
 third_party_settings:
   ds:
@@ -27,8 +28,10 @@ third_party_settings:
       content:
         - field_media_image
         - node_title
-        - group_content
         - body
+        - field_caption
+        - group_image
+        - group_content
         - node_link
     fields:
       node_link:
@@ -69,7 +72,7 @@ third_party_settings:
         - body
         - node_link
       parent_name: ''
-      weight: 1
+      weight: 2
       format_type: html_element
       format_settings:
         id: ''
@@ -83,6 +86,25 @@ third_party_settings:
         speed: fast
       label: Content
       region: content
+    group_image:
+      children:
+        - field_media_image
+        - field_caption
+      parent_name: ''
+      weight: 1
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: group-image
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Image
+      region: content
 _core:
   default_config_hash: g1S3_GLaxq4l3I9RIca5Mlz02MxI2KmOquZpHw59akM
 id: node.page.highlight
@@ -93,9 +115,20 @@ content:
   body:
     label: hidden
     weight: 1
-    type: text_summary_or_trimmed
+    type: smart_trim
     settings:
-      trim_length: 240
+      trim_length: 60
+      trim_type: words
+      trim_suffix: ''
+      wrap_class: trimmed
+      more_text: More
+      more_class: more-link
+      summary_handler: full
+      trim_options:
+        text: true
+        trim_zero: false
+      wrap_output: false
+      more_link: false
     third_party_settings:
       ds:
         ft:
@@ -105,6 +138,23 @@ content:
             lb-col: false
             classes: {  }
     region: content
+  field_caption:
+    type: smart_trim
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      trim_length: 600
+      trim_type: chars
+      trim_suffix: ''
+      wrap_output: false
+      wrap_class: trimmed
+      more_link: false
+      more_class: more-link
+      more_text: More
+      summary_handler: full
+      trim_options: {  }
+    third_party_settings: {  }
   field_media_image:
     type: image
     weight: 0

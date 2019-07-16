@@ -1,0 +1,11 @@
+uuid: cdba696a-d828-4baf-9fea-f23bc2bd6fcc
+langcode: en
+status: true
+dependencies:
+  module:
+    - convert_bundles
+id: convert_bundles_on_webform_image_select_images
+label: 'Convert Webform images Entity Bundles'
+type: webform_image_select_images
+plugin: convert_bundles_action_base
+configuration: {  }

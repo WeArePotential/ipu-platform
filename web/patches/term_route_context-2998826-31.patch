@@ -1,0 +1,171 @@
+diff --git a/core/modules/taxonomy/src/ContextProvider/TermRouteContext.php b/core/modules/taxonomy/src/ContextProvider/TermRouteContext.php
+new file mode 100644
+index 0000000000..a856936785
+--- /dev/null
++++ b/core/modules/taxonomy/src/ContextProvider/TermRouteContext.php
+@@ -0,0 +1,74 @@
++<?php
++
++namespace Drupal\taxonomy\ContextProvider;
++
++use Drupal\Core\Cache\CacheableMetadata;
++use Drupal\Core\Plugin\Context\Context;
++use Drupal\Core\Plugin\Context\EntityContext;
++use Drupal\Core\Plugin\Context\EntityContextDefinition;
++use Drupal\Core\Plugin\Context\ContextProviderInterface;
++use Drupal\Core\Routing\RouteMatchInterface;
++use Drupal\Core\StringTranslation\StringTranslationTrait;
++use Drupal\taxonomy\Entity\Term;
++
++/**
++ * Sets the current taxonomy term as a context on taxonomy term routes.
++ */
++class TermRouteContext implements ContextProviderInterface {
++
++  use StringTranslationTrait;
++
++  /**
++   * The route match object.
++   *
++   * @var \Drupal\Core\Routing\RouteMatchInterface
++   */
++  protected $routeMatch;
++
++  /**
++   * Constructs a new TermRouteContext.
++   *
++   * @param \Drupal\Core\Routing\RouteMatchInterface $route_match
++   *   The route match object.
++   */
++  public function __construct(RouteMatchInterface $route_match) {
++    $this->routeMatch = $route_match;
++  }
++
++  /**
++   * {@inheritdoc}
++   */
++  public function getRuntimeContexts(array $unqualified_context_ids) {
++    $result = [];
++    $context_definition = EntityContextDefinition::create('taxonomy_term')->setRequired(FALSE);
++    $value = NULL;
++    if (($route_object = $this->routeMatch->getRouteObject()) && ($route_contexts = $route_object->getOption('parameters')) && isset($route_contexts['taxonomy_term'])) {
++      if ($term = $this->routeMatch->getParameter('taxonomy_term')) {
++        $value = $term;
++      }
++    }
++    elseif ($this->routeMatch->getRouteName() == 'entity.taxonomy_term.add_form') {
++      $vocabulary = $this->routeMatch->getParameter('taxonomy_vocabulary');
++      $value = Term::create(['vid' => $vocabulary->id()]);
++    }
++
++    $cacheability = new CacheableMetadata();
++    $cacheability->setCacheContexts(['route']);
++
++    $context = new Context($context_definition, $value);
++    $context->addCacheableDependency($cacheability);
++    $result['taxonomy_term'] = $context;
++
++    return $result;
++  }
++
++  /**
++   * {@inheritdoc}
++   */
++  public function getAvailableContexts() {
++    $context = EntityContext::fromEntityTypeId('taxonomy_term', $this->t('Term from URL'));
++
++    return ['taxonomy_term' => $context];
++  }
++
++}
+diff --git a/core/modules/taxonomy/taxonomy.services.yml b/core/modules/taxonomy/taxonomy.services.yml
+index 3aa2b509e9..b724d27e5c 100644
+--- a/core/modules/taxonomy/taxonomy.services.yml
++++ b/core/modules/taxonomy/taxonomy.services.yml
+@@ -4,3 +4,8 @@ services:
+     arguments: ['@entity_type.manager', '@entity.repository']
+     tags:
+       - { name: breadcrumb_builder, priority: 1002 }
++  taxonomy_term.taxonomy_term_route_context:
++      class: Drupal\taxonomy\ContextProvider\TermRouteContext
++      arguments: ['@current_route_match']
++      tags:
++        - { name: 'context_provider' }
+diff --git a/core/modules/taxonomy/tests/src/Kernel/ContextProvider/TermContextTest.php b/core/modules/taxonomy/tests/src/Kernel/ContextProvider/TermContextTest.php
+new file mode 100644
+index 0000000000..0333b5757b
+--- /dev/null
++++ b/core/modules/taxonomy/tests/src/Kernel/ContextProvider/TermContextTest.php
+@@ -0,0 +1,72 @@
++<?php
++
++namespace Drupal\Tests\taxonomy\Kernel\ContextProvider;
++
++use Drupal\Core\Routing\RouteMatch;
++use Drupal\KernelTests\KernelTestBase;
++use Drupal\taxonomy\ContextProvider\TermRouteContext;
++use Drupal\Tests\taxonomy\Functional\TaxonomyTestTrait;
++
++/**
++ * @coversDefaultClass \Drupal\taxonomy\ContextProvider\TermRouteContext
++ *
++ * @group taxonomy
++ */
++class TermContextTest extends KernelTestBase {
++
++  use TaxonomyTestTrait;
++
++  /**
++   * {@inheritdoc}
++   */
++  public static $modules = ['filter', 'taxonomy', 'text', 'user'];
++
++  /**
++   * {@inheritdoc}
++   */
++  protected function setUp() {
++    parent::setUp();
++    $this->installConfig(['filter']);
++    $this->installEntitySchema('user');
++    $this->installEntitySchema('taxonomy_term');
++  }
++
++  /**
++   * @covers ::getAvailableContexts
++   */
++  public function testGetAvailableContexts() {
++    $context_repository = $this->container->get('context.repository');
++
++    // Test taxonomy_term.taxonomy_term_route_context:taxonomy_term exists.
++    $contexts = $context_repository->getAvailableContexts();
++    $this->assertArrayHasKey('@taxonomy_term.taxonomy_term_route_context:taxonomy_term', $contexts);
++    $this->assertSame('entity:taxonomy_term', $contexts['@taxonomy_term.taxonomy_term_route_context:taxonomy_term']->getContextDefinition()
++      ->getDataType());
++  }
++
++  /**
++   * @covers ::getRuntimeContexts
++   */
++  public function testGetRuntimeContexts() {
++    // Create term.
++    $vocabulary = $this->createVocabulary();
++    $term = $this->createTerm($vocabulary);
++
++    // Create RouteMatch from term entity.
++    $url = $term->toUrl();
++    $route_provider = \Drupal::service('router.route_provider');
++    $route = $route_provider->getRouteByName($url->getRouteName());
++    $route_match = new RouteMatch($url->getRouteName(), $route, [
++      'taxonomy_term' => $term,
++    ]);
++
++    // Initiate TermRouteContext with RouteMatch.
++    $provider = new TermRouteContext($route_match);
++
++    $runtime_contexts = $provider->getRuntimeContexts([]);
++    $this->assertArrayHasKey('taxonomy_term', $runtime_contexts);
++    $this->assertTrue($runtime_contexts['taxonomy_term']->hasContextValue());
++
++  }
++
++}

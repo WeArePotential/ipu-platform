@@ -1,0 +1,11 @@
+uuid: f036057f-fe45-4de9-ae06-f5991fe74560
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'file:image:f0b42bbf-896f-4744-9a31-95e6c536847b'
+id: carousel
+label: Carousel
+icon_uuid: f0b42bbf-896f-4744-9a31-95e6c536847b
+description: 'Carousel items (for home page)'
+behavior_plugins: {  }

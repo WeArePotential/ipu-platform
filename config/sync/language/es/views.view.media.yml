@@ -1,3 +1,4 @@
+label: Multimedia
 display:
   default:
     display_title: Máster
@@ -50,3 +51,6 @@ display:
                 title: Publicado
               2:
                 title: 'Sin publicar'
+      title: Multimedia
+  media_page_list:
+    display_title: Multimedia

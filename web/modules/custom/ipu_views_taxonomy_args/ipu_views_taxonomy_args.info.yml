@@ -1,0 +1,11 @@
+name: 'IPU Views Taxonomy Arguments'
+description: 'Allows setting views arguments in a ViewField through a taxonomy term entity reference field.'
+version: '8.x-1.0'
+package: 'IPU'
+core: 8.x
+type: module
+dependencies:
+  - drupal:views
+  - drupal:field
+  - paragraphs:paragraphs
+  - viewfield:viewfield

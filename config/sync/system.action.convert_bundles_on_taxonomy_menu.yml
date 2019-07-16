@@ -1,0 +1,11 @@
+uuid: 1da2aabc-2b6e-47a6-9040-d93663442cb5
+langcode: en
+status: true
+dependencies:
+  module:
+    - convert_bundles
+id: convert_bundles_on_taxonomy_menu
+label: 'Convert Taxonomy menu Entity Bundles'
+type: taxonomy_menu
+plugin: convert_bundles_action_base
+configuration: {  }

@@ -22,6 +22,8 @@ display:
       fields:
         status:
           label: État
+          settings:
+            format_custom_true: Actif
         operations:
           label: Actions
         mail:
@@ -30,5 +32,8 @@ display:
         status:
           group_info:
             label: État
+            group_items:
+              1:
+                title: Actif
   page_1:
     display_title: Page

@@ -1,0 +1,11 @@
+uuid: b9d150b2-d6c3-4c6e-be6d-11bb4ad1badd
+langcode: en
+status: true
+dependencies:
+  module:
+    - convert_bundles
+id: convert_bundles_on_feeds_feed_type
+label: 'Convert Feed type Entity Bundles'
+type: feeds_feed_type
+plugin: convert_bundles_action_base
+configuration: {  }

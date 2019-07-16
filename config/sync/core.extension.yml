@@ -1,4 +1,5 @@
 module:
+  action: 0
   actions_permissions: 0
   address: 0
   admin_toolbar: 0
@@ -13,8 +14,10 @@ module:
   block: 0
   block_class: 0
   block_content: 0
+  block_field: 0
   blockgroup: 0
   bootstrap_layouts: 0
+  bootstrap_simple_carousel: 0
   breakpoint: 0
   chosen: 0
   chosen_field: 0
@@ -33,6 +36,7 @@ module:
   context_active_trail: 0
   context_ui: 0
   contextual: 0
+  convert_bundles: 0
   convert_media_tags_to_markup: 0
   csv_serialization: 0
   ctools: 0
@@ -92,6 +96,7 @@ module:
   ipu_layouts: 0
   ipu_map: 0
   ipu_tweaks: 0
+  ipu_views_taxonomy_args: 0
   job_scheduler: 0
   lang_dropdown: 0
   language: 0

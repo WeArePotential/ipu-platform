@@ -18,6 +18,13 @@ function ipu_preprocess_html(&$variables) {
     // Add node-TYPE class to the <body> element.
     $variables['attributes']['class'][] = ('node-' . $variables['node_type']);
   }
+  if (isset($variables['node_id'])) {
+    $variables['attributes']['class'][] = ('node-' . $variables['node_id']);
+  }
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if($node) {
+    $variables['attributes']['class'][] = ('node-' . $node->id());
+  }
 }
 function ipu_preprocess_viewfield_item(&$variables) {
   $element = &$variables['element'];

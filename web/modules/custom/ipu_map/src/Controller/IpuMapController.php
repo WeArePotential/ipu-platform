@@ -27,25 +27,14 @@ class IpuMapController extends ControllerBase {
    *   Return markup array.
    */
   public function content() {
-    /* We can obtain the countries infornmation here and pass as js settings.
+    /* We can obtain the countries information here and pass as js settings.
     * Or we can obtain via ajax once the map is loaded.
     * To take advantage of Drupal caching, we'll load here, although this means
     * there's a lot of data to pass through settings.
     */
-    $data = '';
-    $view = Views::getView('map_data');
-    if (is_object($view)) {
-      // json or xml. We choose XML
-      $view->setDisplay('data_export_countries_json');
-      $view->preExecute();
-      $view->execute();
-      //$data = simplexml_load_string($view->render()['#markup']);
-      $data = $view->render()['#markup'];
-    }
+    $data = ipu_map_get_data_from_view();
     $settings = ['data' => $data];
-
     $markup = '<div id="ipu_map" class="container">' . $this->t('IPU Map demo') . '<div class="row mapcontainer_un"><div class="col-12 map">MAP</div></div></div>';
-    //$markup .= '<div><pre>' . print_r($data, TRUE) . '</pre></div>';
 
     $content = [
       '#type' => 'markup',

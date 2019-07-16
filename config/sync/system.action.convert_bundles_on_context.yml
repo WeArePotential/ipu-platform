@@ -1,0 +1,11 @@
+uuid: eddcab39-2bf7-4200-a3f1-6fb54a1973ae
+langcode: en
+status: true
+dependencies:
+  module:
+    - convert_bundles
+id: convert_bundles_on_context
+label: 'Convert Context Entity Bundles'
+type: context
+plugin: convert_bundles_action_base
+configuration: {  }

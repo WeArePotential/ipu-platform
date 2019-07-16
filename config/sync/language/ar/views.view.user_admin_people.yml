@@ -15,11 +15,16 @@ display:
       fields:
         status:
           label: الحالة
+          settings:
+            format_custom_true: نشط
         operations:
           label: عمليات
       filters:
         status:
           group_info:
             label: الحالة
+            group_items:
+              1:
+                title: نشط
   page_1:
     display_title: الصفحة

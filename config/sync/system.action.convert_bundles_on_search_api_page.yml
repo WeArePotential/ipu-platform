@@ -1,0 +1,11 @@
+uuid: 68ef7cd5-7e67-48fa-a621-27de230cfa69
+langcode: en
+status: true
+dependencies:
+  module:
+    - convert_bundles
+id: convert_bundles_on_search_api_page
+label: 'Convert Search page Entity Bundles'
+type: search_api_page
+plugin: convert_bundles_action_base
+configuration: {  }

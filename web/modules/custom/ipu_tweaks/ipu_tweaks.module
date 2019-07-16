@@ -121,3 +121,4 @@ function ipu_tweaks_entity_type_alter(array &$entity_types) {
     $entity_type->setConstraints($constraints);
   }
 }
+

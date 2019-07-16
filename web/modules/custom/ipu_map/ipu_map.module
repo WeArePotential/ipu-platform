@@ -6,6 +6,8 @@ use Drupal\Core\Url;
 use Drupal\Component\Render\FormattableMarkup;
 use Drupal\taxonomy\Entity\Vocabulary;
 //use Drupal\Core\Entity\EntityInterface;
+use Drupal\views\Views;
+
 
 /**
  * Implements hook_help().
@@ -231,6 +233,21 @@ function ipu_map_get_data() {
   $url = 'data/countries.xml';
 }
 
+function ipu_map_get_data_from_view() {
+  // Get list of countries as JSON or XML.
+  // This comes from a view
+  $data = '';
+  $view = Views::getView('map_data');
+  if (is_object($view)) {
+    // json or xml. We choose XML
+    $view->setDisplay('data_export_countries_json');
+    $view->preExecute();
+    $view->execute();
+    //$data = simplexml_load_string($view->render()['#markup']);
+    $data = $view->render()['#markup'];
+  }
+  return $data;
+}
 /* Get a flag image url from ISO code */
 function ipu_map_get_flag_url($isocode) {
   $geonames_url = 'https://img.geonames.org/flags/x/' . trim(strtolower($isocode)) . '.gif';

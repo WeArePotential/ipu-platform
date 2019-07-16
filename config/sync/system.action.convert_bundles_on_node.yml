@@ -1,0 +1,11 @@
+uuid: 0fcfee8a-2a97-47be-8505-c184d4339595
+langcode: en
+status: true
+dependencies:
+  module:
+    - convert_bundles
+id: convert_bundles_on_node
+label: 'Convert Content Entity Bundles'
+type: node
+plugin: convert_bundles_action_base
+configuration: {  }

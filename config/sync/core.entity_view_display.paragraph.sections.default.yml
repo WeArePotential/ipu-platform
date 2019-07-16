@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.sections.field_section_block
     - field.field.paragraph.sections.field_section_description
     - field.field.paragraph.sections.field_section_display_options
     - field.field.paragraph.sections.field_section_html
@@ -15,6 +16,7 @@ dependencies:
     - field.field.paragraph.sections.field_view_target_id
     - paragraphs.paragraphs_type.sections
   module:
+    - block_field
     - ds
     - text
     - viewfield
@@ -23,6 +25,13 @@ targetEntityType: paragraph
 bundle: sections
 mode: default
 content:
+  field_section_block:
+    weight: 6
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: block_field
+    region: content
   field_section_description:
     label: hidden
     weight: 1

@@ -9,12 +9,12 @@ dependencies:
 id: parliamentselectblock
 theme: ipu
 region: ultimenu_mega_76d8ed14
-weight: -14
+weight: -15
 provider: null
 plugin: ipu_country_select_block
 settings:
   id: ipu_country_select_block
-  label: 'Parliament select block'
+  label: 'Find a country parliament'
   provider: ipu_map
-  label_display: '0'
+  label_display: visible
 visibility: {  }
