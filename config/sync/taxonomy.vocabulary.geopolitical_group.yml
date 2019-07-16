@@ -5,5 +5,4 @@ dependencies: {  }
 name: 'Geopolitical Group'
 vid: geopolitical_group
 description: ''
-hierarchy: 0
 weight: -6

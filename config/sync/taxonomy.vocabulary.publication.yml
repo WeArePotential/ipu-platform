@@ -5,5 +5,4 @@ dependencies: {  }
 name: Publication
 vid: publication
 description: ''
-hierarchy: 0
 weight: -4

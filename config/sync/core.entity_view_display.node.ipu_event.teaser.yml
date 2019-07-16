@@ -5,6 +5,8 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.ipu_event.field_agenda_order_number
+    - field.field.node.ipu_event.field_country
+    - field.field.node.ipu_event.field_date_accuracy
     - field.field.node.ipu_event.field_do_not_display_as_link
     - field.field.node.ipu_event.field_document_show_print
     - field.field.node.ipu_event.field_documents_order_number
@@ -14,6 +16,7 @@ dependencies:
     - field.field.node.ipu_event.field_event_type
     - field.field.node.ipu_event.field_hide_documents_menu
     - field.field.node.ipu_event.field_hide_programs_menu
+    - field.field.node.ipu_event.field_ipu_event_dates
     - field.field.node.ipu_event.field_ipu_event_right_menu
     - field.field.node.ipu_event.field_ipu_event_section
     - field.field.node.ipu_event.field_ipu_event_session_type
@@ -93,6 +96,8 @@ content:
     third_party_settings: {  }
 hidden:
   field_agenda_order_number: true
+  field_country: true
+  field_date_accuracy: true
   field_do_not_display_as_link: true
   field_document_show_print: true
   field_documents_order_number: true
@@ -100,6 +105,7 @@ hidden:
   field_event_theme: true
   field_hide_documents_menu: true
   field_hide_programs_menu: true
+  field_ipu_event_dates: true
   field_ipu_event_right_menu: true
   field_ipu_event_section: true
   field_ipu_event_session_type: true

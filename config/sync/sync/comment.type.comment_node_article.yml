@@ -1,8 +1,0 @@
-uuid: 2547a74a-279f-421e-a206-b3e122be4a7d
-langcode: en
-status: true
-dependencies: {  }
-id: comment_node_article
-label: 'News and Stories comment'
-target_entity_type_id: node
-description: null

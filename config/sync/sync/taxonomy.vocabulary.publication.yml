@@ -1,9 +1,0 @@
-uuid: db2dad92-8c4f-4333-97df-61c1d72907be
-langcode: en
-status: true
-dependencies: {  }
-name: Publication
-vid: publication
-description: ''
-hierarchy: 0
-weight: -4

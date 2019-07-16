@@ -1,8 +1,0 @@
-uuid: 2803f96b-31a3-4489-b9ec-77f2430a49ce
-langcode: en
-status: true
-dependencies: {  }
-id: g3XYqcXbSKPVBDODwnT6pq7oqhCFkPryj4vVqrl_Kfc
-label: 'http://default/'
-context:
-  language: en

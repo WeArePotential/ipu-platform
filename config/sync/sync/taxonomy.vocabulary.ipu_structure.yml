@@ -1,9 +1,0 @@
-uuid: d9d68155-8108-4a85-8dad-fd0500b0aaac
-langcode: en
-status: true
-dependencies: {  }
-name: 'IPU Structure'
-vid: ipu_structure
-description: ''
-hierarchy: 1
-weight: -5

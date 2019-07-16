@@ -134,6 +134,7 @@ module:
   options: 0
   override_node_options: 0
   page_cache: 0
+  paragraphs_preview_helper: 0
   path: 0
   pathologic: 0
   quickedit: 0

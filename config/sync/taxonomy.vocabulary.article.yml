@@ -5,5 +5,4 @@ dependencies: {  }
 name: 'News and Stories'
 vid: article
 description: ''
-hierarchy: 0
 weight: -10

@@ -5,5 +5,4 @@ dependencies: {  }
 name: 'IPU Structure'
 vid: ipu_structure
 description: ''
-hierarchy: 1
 weight: -5

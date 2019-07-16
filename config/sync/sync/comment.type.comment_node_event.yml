@@ -1,8 +1,0 @@
-uuid: 784027be-44ed-4efe-9c52-dec846499345
-langcode: en
-status: true
-dependencies: {  }
-id: comment_node_event
-label: 'Archive Event comment'
-target_entity_type_id: node
-description: null

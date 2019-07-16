@@ -1,8 +1,0 @@
-uuid: 97dab807-32b9-4412-97a4-9669c5ec4c95
-langcode: en
-status: true
-dependencies: {  }
-id: comment_node_committee_member
-label: 'Committee Member comment'
-target_entity_type_id: node
-description: null

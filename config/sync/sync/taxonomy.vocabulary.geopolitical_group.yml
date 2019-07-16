@@ -1,9 +1,0 @@
-uuid: f1e45983-56df-478b-b2c5-e90b4b0bdff6
-langcode: en
-status: true
-dependencies: {  }
-name: 'Geopolitical Group'
-vid: geopolitical_group
-description: ''
-hierarchy: 0
-weight: -6

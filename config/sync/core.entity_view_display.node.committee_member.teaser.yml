@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.committee_member.field_country_cm
     - field.field.node.committee_member.field_custom_date_range_text
     - field.field.node.committee_member.field_designation_cm
+    - field.field.node.committee_member.field_end_of_mandate
     - field.field.node.committee_member.field_parent_node_cm
     - field.field.node.committee_member.field_photo_cm
     - node.type.committee_member
@@ -26,6 +27,7 @@ hidden:
   field_country_cm: true
   field_custom_date_range_text: true
   field_designation_cm: true
+  field_end_of_mandate: true
   field_parent_node_cm: true
   field_photo_cm: true
   langcode: true

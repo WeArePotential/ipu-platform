@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.full
     - field.field.node.ipu_event.field_agenda_order_number
+    - field.field.node.ipu_event.field_country
     - field.field.node.ipu_event.field_date_accuracy
     - field.field.node.ipu_event.field_do_not_display_as_link
     - field.field.node.ipu_event.field_document_show_print
@@ -320,6 +321,7 @@ content:
     third_party_settings: {  }
     region: top
 hidden:
+  field_country: true
   field_event_computed_date: true
   langcode: true
   links: true

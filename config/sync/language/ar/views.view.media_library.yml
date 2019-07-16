@@ -25,3 +25,15 @@ display:
     display_options:
       menu:
         title: ميديا
+  widget:
+    display_options:
+      arguments:
+        bundle:
+          exception:
+            title: الكل
+  widget_table:
+    display_options:
+      arguments:
+        bundle:
+          exception:
+            title: الكل

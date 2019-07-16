@@ -1,8 +1,0 @@
-uuid: 5f7651f4-4a3c-4bae-b523-a0015bc7c25b
-langcode: en
-status: true
-dependencies: {  }
-id: mega-menu
-label: 'Mega menu'
-description: 'Big dropdown menu'
-locked: false

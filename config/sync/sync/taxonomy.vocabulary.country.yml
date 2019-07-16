@@ -1,9 +1,0 @@
-uuid: c9831d15-6602-483e-bc15-3dab63ec443f
-langcode: en
-status: true
-dependencies: {  }
-name: Country
-vid: country
-description: ''
-hierarchy: 0
-weight: -9

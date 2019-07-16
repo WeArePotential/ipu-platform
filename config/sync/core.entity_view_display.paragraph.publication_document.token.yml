@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.paragraph.token
     - field.field.paragraph.publication_document.field_publication_file
+    - field.field.paragraph.publication_document.field_publication_language
     - paragraphs.paragraphs_type.publication_document
   module:
     - file_entity
@@ -22,4 +23,5 @@ content:
       text: 'Download [file:name]'
     third_party_settings: {  }
     region: content
-hidden: {  }
+hidden:
+  field_publication_language: true

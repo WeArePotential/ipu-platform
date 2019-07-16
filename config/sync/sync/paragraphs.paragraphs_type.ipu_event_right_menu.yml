@@ -1,9 +1,0 @@
-uuid: 6acd6512-0fa1-43b8-9ce2-c74490ee5e81
-langcode: en
-status: true
-dependencies: {  }
-id: ipu_event_right_menu
-label: 'Event right menu'
-icon_uuid: null
-description: 'Migrated from field_collection field_ipu_event_right_menu'
-behavior_plugins: {  }

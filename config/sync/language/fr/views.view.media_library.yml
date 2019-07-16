@@ -29,3 +29,15 @@ display:
     display_options:
       menu:
         title: Média
+  widget:
+    display_options:
+      arguments:
+        bundle:
+          exception:
+            title: Tout
+  widget_table:
+    display_options:
+      arguments:
+        bundle:
+          exception:
+            title: Tout

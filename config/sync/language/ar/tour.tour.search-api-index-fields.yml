@@ -3,3 +3,5 @@ tips:
     label: التسمية
   search-api-index-fields-type:
     label: النوع
+  search-api-index-fields-submit:
+    label: 'حفظ التغييرات'

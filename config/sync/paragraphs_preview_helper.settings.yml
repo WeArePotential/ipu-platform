@@ -1,0 +1,2 @@
+paragraph_types:
+  ipu_event_sessions: '[paragraph:field_ipu_event_session_dates:start_date:short]-[paragraph:field_ipu_event_session_dates:end_date:short]: [paragraph:field_fc_sessions_session_title]'

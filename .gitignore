@@ -23,4 +23,5 @@
 # Ignore .env files as they are personal
 /.env
 
+# Local scripts for DB updates
 /sereno

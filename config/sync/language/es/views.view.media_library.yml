@@ -29,3 +29,15 @@ display:
     display_options:
       menu:
         title: Multimedia
+  widget:
+    display_options:
+      arguments:
+        bundle:
+          exception:
+            title: Todo(s)
+  widget_table:
+    display_options:
+      arguments:
+        bundle:
+          exception:
+            title: Todo(s)

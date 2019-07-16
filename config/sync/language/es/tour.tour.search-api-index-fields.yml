@@ -3,3 +3,5 @@ tips:
     label: Etiqueta
   search-api-index-fields-type:
     label: Tipo
+  search-api-index-fields-submit:
+    label: 'Guardar cambios'

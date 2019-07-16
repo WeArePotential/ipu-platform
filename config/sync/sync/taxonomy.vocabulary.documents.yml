@@ -1,9 +1,0 @@
-uuid: 7fa934d6-8c25-45b0-86ce-b2a826a28121
-langcode: en
-status: true
-dependencies: {  }
-name: Document
-vid: documents
-description: ''
-hierarchy: 0
-weight: -8

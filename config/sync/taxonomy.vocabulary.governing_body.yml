@@ -5,5 +5,4 @@ dependencies: {  }
 name: 'Governing Body'
 vid: governing_body
 description: ''
-hierarchy: 0
 weight: 0
