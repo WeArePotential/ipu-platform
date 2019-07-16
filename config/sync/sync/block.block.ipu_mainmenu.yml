@@ -1,0 +1,27 @@
+uuid: 3b373032-24f8-4a6c-a33d-251b150a5fc5
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - menu_block
+  theme:
+    - ipu
+id: ipu_mainmenu
+theme: ipu
+region: navbar_right
+weight: -10
+provider: null
+plugin: 'menu_block:main'
+settings:
+  id: 'menu_block:main'
+  label: 'Sub menu'
+  provider: menu_block
+  label_display: '0'
+  level: 1
+  depth: 2
+  expand: 1
+  parent: 'main:'
+  suggestion: main
+visibility: {  }

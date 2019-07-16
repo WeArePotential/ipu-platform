@@ -1,0 +1,29 @@
+uuid: f478b2d0-f214-47ff-8f67-60bf2f8c4b46
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_mark_as_other
+    - paragraphs.paragraphs_type.ipu_event_session_type
+  module:
+    - custom_add_another
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
+id: paragraph.ipu_event_session_type.field_mark_as_other
+field_name: field_mark_as_other
+entity_type: paragraph
+bundle: ipu_event_session_type
+label: 'Other Session'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

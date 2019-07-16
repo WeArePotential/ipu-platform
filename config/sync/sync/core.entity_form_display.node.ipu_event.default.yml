@@ -1,0 +1,412 @@
+uuid: e09f577d-4514-4986-9f83-5c77b25afadf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.ipu_event.field_agenda_order_number
+    - field.field.node.ipu_event.field_country
+    - field.field.node.ipu_event.field_date_accuracy
+    - field.field.node.ipu_event.field_do_not_display_as_link
+    - field.field.node.ipu_event.field_document_show_print
+    - field.field.node.ipu_event.field_documents_order_number
+    - field.field.node.ipu_event.field_event_computed_date
+    - field.field.node.ipu_event.field_event_sub_page
+    - field.field.node.ipu_event.field_event_theme
+    - field.field.node.ipu_event.field_event_type
+    - field.field.node.ipu_event.field_hide_documents_menu
+    - field.field.node.ipu_event.field_hide_programs_menu
+    - field.field.node.ipu_event.field_ipu_event_dates
+    - field.field.node.ipu_event.field_ipu_event_right_menu
+    - field.field.node.ipu_event.field_ipu_event_section
+    - field.field.node.ipu_event.field_ipu_event_session_type
+    - field.field.node.ipu_event.field_ipu_event_sessions
+    - field.field.node.ipu_event.field_ipu_event_sponsors
+    - field.field.node.ipu_event.field_location
+    - field.field.node.ipu_event.field_programme_show_print
+    - field.field.node.ipu_event.field_sponsor
+    - field.field.node.ipu_event.field_summary
+    - field.field.node.ipu_event.field_twitter_order
+    - node.type.ipu_event
+  module:
+    - address
+    - datetime
+    - datetime_range
+    - field_group
+    - field_layout
+    - layout_discovery
+    - paragraphs
+    - path
+    - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+  field_group:
+    group_tabs:
+      children:
+        - group_basic_information
+        - group_sub_pages
+        - group_documents
+        - group_agenda
+        - group_right_menu
+      parent_name: ''
+      weight: 0
+      format_type: tabs
+      format_settings:
+        id: ''
+        classes: ''
+        direction: horizontal
+      label: Tabs
+      region: content
+    group_basic_information:
+      children:
+        - title
+        - field_event_type
+        - field_do_not_display_as_link
+        - field_event_theme
+        - field_location
+        - field_country
+        - field_ipu_event_dates
+        - field_date_accuracy
+        - field_event_computed_date
+        - field_summary
+      parent_name: group_tabs
+      weight: 20
+      format_type: tab
+      format_settings:
+        description: ''
+        formatter: open
+        required_fields: true
+        id: ''
+        classes: ''
+      label: 'Basic information'
+      region: content
+    group_sub_pages:
+      children:
+        - field_event_sub_page
+        - field_hide_documents_menu
+        - field_hide_programs_menu
+      parent_name: group_tabs
+      weight: 21
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: 'Sub pages'
+      region: content
+    group_documents:
+      children:
+        - field_ipu_event_section
+        - field_documents_order_number
+        - field_document_show_print
+      parent_name: group_tabs
+      weight: 23
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: Documents
+      region: content
+    group_agenda:
+      children:
+        - field_ipu_event_session_type
+        - field_ipu_event_sessions
+        - field_agenda_order_number
+        - field_programme_show_print
+      parent_name: group_tabs
+      weight: 24
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: Programmes
+      region: content
+    group_right_menu:
+      children:
+        - field_sponsor
+        - field_ipu_event_sponsors
+        - field_twitter_order
+        - field_ipu_event_right_menu
+      parent_name: group_tabs
+      weight: 25
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: 'Right menu'
+      region: content
+id: node.ipu_event.default
+targetEntityType: node
+bundle: ipu_event
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_agenda_order_number:
+    weight: 11
+    type: string_textfield
+    settings:
+      size: 20
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_country:
+    weight: 6
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete_tags
+    region: content
+  field_date_accuracy:
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_do_not_display_as_link:
+    weight: 3
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    region: content
+  field_document_show_print:
+    weight: 9
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    region: content
+  field_documents_order_number:
+    weight: 7
+    type: string_textfield
+    settings:
+      size: 20
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_event_computed_date:
+    weight: 9
+    type: datetime_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_event_sub_page:
+    type: entity_reference_paragraphs
+    weight: 15
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+  field_event_theme:
+    weight: 4
+    type: options_select
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_event_type:
+    weight: 2
+    type: options_select
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_hide_documents_menu:
+    weight: 16
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    region: content
+  field_hide_programs_menu:
+    weight: 17
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    region: content
+  field_ipu_event_dates:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: daterange_default
+    region: content
+  field_ipu_event_right_menu:
+    type: entity_reference_paragraphs
+    weight: 6
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+  field_ipu_event_section:
+    weight: 6
+    type: entity_reference_paragraphs
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_ipu_event_session_type:
+    weight: 9
+    type: entity_reference_paragraphs
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_ipu_event_sessions:
+    type: entity_reference_paragraphs
+    weight: 10
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+  field_ipu_event_sponsors:
+    type: entity_reference_paragraphs
+    weight: 4
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+  field_location:
+    weight: 5
+    type: address_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_programme_show_print:
+    weight: 12
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    region: content
+  field_sponsor:
+    weight: 3
+    type: options_select
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_summary:
+    weight: 10
+    type: text_textarea
+    settings:
+      rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_twitter_order:
+    weight: 5
+    type: string_textfield
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  langcode:
+    type: language_select
+    weight: 1
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 6
+    region: content
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 10
+    region: content
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 7
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 2
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+  url_redirects:
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

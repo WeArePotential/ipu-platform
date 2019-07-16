@@ -1,0 +1,11 @@
+uuid: c58e008f-ba13-420b-9c2a-8fe6a4b3a7b1
+langcode: en
+status: true
+dependencies:
+  module:
+    - convert_bundles
+id: convert_bundles_on_xmlsitemap
+label: 'Convert XML sitemap Entity Bundles'
+type: xmlsitemap
+plugin: convert_bundles_action_base
+configuration: {  }

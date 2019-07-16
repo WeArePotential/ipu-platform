@@ -1,0 +1,39 @@
+uuid: 1e700b51-d5a0-4ad4-aa28-283885c18a29
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ipu_event_session_type.field_fc_session_closed_session
+    - field.field.paragraph.ipu_event_session_type.field_fc_session_type_title
+    - field.field.paragraph.ipu_event_session_type.field_mark_as_other
+    - paragraphs.paragraphs_type.ipu_event_session_type
+  module:
+    - options
+id: paragraph.ipu_event_session_type.default
+targetEntityType: paragraph
+bundle: ipu_event_session_type
+mode: default
+content:
+  field_fc_session_closed_session:
+    label: above
+    weight: 1
+    type: list_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_fc_session_type_title:
+    label: above
+    weight: 0
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_mark_as_other:
+    label: above
+    weight: 2
+    type: list_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

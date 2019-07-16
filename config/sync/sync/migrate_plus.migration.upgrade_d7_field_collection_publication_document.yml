@@ -1,0 +1,37 @@
+uuid: b220d143-7861-401d-bb84-ba04854e1c61
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_field_collection_publication_document
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: alterFieldFormatterMigration
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - 'Field Collection Content'
+migration_group: migrate_drupal_7
+label: 'Field Collections (Publication document)'
+source:
+  plugin: d7_field_collection_item
+  field_name: field_publication_document
+process:
+  type:
+    -
+      plugin: get
+      source: bundle
+  field_publication_file:
+    -
+      plugin: sub_process
+      source: field_publication_file
+      process:
+        target_id: fid
+        display: display
+        description: description
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+  default_bundle: publication_document
+migration_dependencies:
+  required:
+    - upgrade_d7_field_collection_type
+  optional:
+    - upgrade_d7_field_instance

@@ -1,0 +1,14 @@
+uuid: 03a338ce-6555-4187-bc7b-1b40db04c212
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.web_editor
+  module:
+    - user
+id: user_remove_role_action.web_editor
+label: 'Remove the web editor role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: web_editor

@@ -1,0 +1,31 @@
+uuid: 276c399b-391e-4d50-a11d-2c87890dda8c
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.committee_member.field_country_cm
+    - field.field.node.committee_member.field_custom_date_range_text
+    - field.field.node.committee_member.field_designation_cm
+    - field.field.node.committee_member.field_parent_node_cm
+    - field.field.node.committee_member.field_photo_cm
+    - node.type.committee_member
+  module:
+    - user
+id: node.committee_member.teaser
+targetEntityType: node
+bundle: committee_member
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_country_cm: true
+  field_custom_date_range_text: true
+  field_designation_cm: true
+  field_parent_node_cm: true
+  field_photo_cm: true
+  langcode: true

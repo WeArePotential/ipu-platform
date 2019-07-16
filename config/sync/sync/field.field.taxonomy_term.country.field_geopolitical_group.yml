@@ -1,0 +1,35 @@
+uuid: c52db1dc-bc64-4134-ad2f-b039a6c48ce8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_geopolitical_group
+    - taxonomy.vocabulary.country
+    - taxonomy.vocabulary.geopolitical_group
+  module:
+    - custom_add_another
+third_party_settings:
+  custom_add_another:
+    custom_add_another: 'Add group'
+    custom_remove: 'Remove group'
+id: taxonomy_term.country.field_geopolitical_group
+field_name: field_geopolitical_group
+entity_type: taxonomy_term
+bundle: country
+label: 'Geopolitical group'
+description: 'The geopolitical groups of which this country is a member'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      geopolitical_group: geopolitical_group
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

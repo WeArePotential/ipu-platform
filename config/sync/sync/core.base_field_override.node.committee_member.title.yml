@@ -1,0 +1,18 @@
+uuid: b24f505c-baaa-434a-9ea4-f170d20afb78
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.committee_member
+id: node.committee_member.title
+field_name: title
+entity_type: node
+bundle: committee_member
+label: Title
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

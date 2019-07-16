@@ -1,0 +1,25 @@
+uuid: 501025b4-f89e-4e31-90d5-259a271dd700
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:089612b5-c27c-409d-b1e1-8a227e0d98d8'
+  module:
+    - block_content
+  theme:
+    - ipu
+id: crosssitenavigation
+theme: ipu
+region: topbar_left
+weight: 0
+provider: null
+plugin: 'block_content:089612b5-c27c-409d-b1e1-8a227e0d98d8'
+settings:
+  id: 'block_content:089612b5-c27c-409d-b1e1-8a227e0d98d8'
+  label: 'Cross-site navigation'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

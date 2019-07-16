@@ -1,0 +1,219 @@
+uuid: 067752cc-7a99-4b89-8ca7-299ea0ebd40c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.ipu_event.field_agenda_order_number
+    - field.field.node.ipu_event.field_country
+    - field.field.node.ipu_event.field_date_accuracy
+    - field.field.node.ipu_event.field_do_not_display_as_link
+    - field.field.node.ipu_event.field_document_show_print
+    - field.field.node.ipu_event.field_documents_order_number
+    - field.field.node.ipu_event.field_event_computed_date
+    - field.field.node.ipu_event.field_event_sub_page
+    - field.field.node.ipu_event.field_event_theme
+    - field.field.node.ipu_event.field_event_type
+    - field.field.node.ipu_event.field_hide_documents_menu
+    - field.field.node.ipu_event.field_hide_programs_menu
+    - field.field.node.ipu_event.field_ipu_event_dates
+    - field.field.node.ipu_event.field_ipu_event_right_menu
+    - field.field.node.ipu_event.field_ipu_event_section
+    - field.field.node.ipu_event.field_ipu_event_session_type
+    - field.field.node.ipu_event.field_ipu_event_sessions
+    - field.field.node.ipu_event.field_ipu_event_sponsors
+    - field.field.node.ipu_event.field_location
+    - field.field.node.ipu_event.field_programme_show_print
+    - field.field.node.ipu_event.field_sponsor
+    - field.field.node.ipu_event.field_summary
+    - field.field.node.ipu_event.field_twitter_order
+    - node.type.ipu_event
+  module:
+    - address
+    - datetime
+    - datetime_range
+    - entity_reference_revisions
+    - options
+    - text
+    - user
+id: node.ipu_event.default
+targetEntityType: node
+bundle: ipu_event
+mode: default
+content:
+  field_agenda_order_number:
+    label: above
+    weight: 12
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_country:
+    weight: 104
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_date_accuracy:
+    weight: 102
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_document_show_print:
+    label: above
+    weight: 21
+    type: boolean
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    region: content
+  field_documents_order_number:
+    label: above
+    weight: 11
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_event_computed_date:
+    label: above
+    weight: 15
+    type: datetime_default
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    region: content
+  field_event_sub_page:
+    label: above
+    weight: 4
+    type: entity_reference_revisions_entity_view
+    settings:
+      view_mode: full
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_hide_documents_menu:
+    label: above
+    weight: 18
+    type: boolean
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    region: content
+  field_hide_programs_menu:
+    label: above
+    weight: 17
+    type: boolean
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    region: content
+  field_ipu_event_dates:
+    weight: 103
+    label: inline
+    settings:
+      separator: '-'
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: daterange_default
+    region: content
+  field_ipu_event_right_menu:
+    label: above
+    weight: 10
+    type: entity_reference_revisions_entity_view
+    settings:
+      view_mode: full
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_ipu_event_section:
+    label: above
+    weight: 9
+    type: entity_reference_revisions_entity_view
+    settings:
+      view_mode: full
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_ipu_event_session_type:
+    label: above
+    weight: 5
+    type: entity_reference_revisions_entity_view
+    settings:
+      view_mode: full
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_ipu_event_sessions:
+    label: above
+    weight: 6
+    type: entity_reference_revisions_entity_view
+    settings:
+      view_mode: full
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_ipu_event_sponsors:
+    label: above
+    weight: 20
+    type: entity_reference_revisions_entity_view
+    settings:
+      view_mode: full
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_location:
+    label: above
+    weight: 0
+    type: address_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_programme_show_print:
+    label: above
+    weight: 22
+    type: boolean
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    region: content
+  field_summary:
+    label: hidden
+    weight: 3
+    type: text_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_twitter_order:
+    label: above
+    weight: 19
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_do_not_display_as_link: true
+  field_event_theme: true
+  field_event_type: true
+  field_sponsor: true
+  langcode: true

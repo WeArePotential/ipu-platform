@@ -1,0 +1,25 @@
+uuid: c4fed313-db52-436f-903e-0188267d9e2c
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: committee_members_assembly_
+label: 'Committee Members'
+handler: multiple
+handler_configuration: {  }
+entity_settings:
+  target_type: node
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      committee_member: committee_member
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+queue_settings:
+  min_size: 0
+  max_size: 0
+  act_as_queue: false
+  reverse_in_admin: true

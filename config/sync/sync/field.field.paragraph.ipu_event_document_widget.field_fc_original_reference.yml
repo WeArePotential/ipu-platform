@@ -1,0 +1,29 @@
+uuid: 60d4a425-0ebc-498d-b704-5b3f2fd068c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_fc_original_reference
+    - paragraphs.paragraphs_type.ipu_event_document_widget
+  module:
+    - custom_add_another
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
+id: paragraph.ipu_event_document_widget.field_fc_original_reference
+field_name: field_fc_original_reference
+entity_type: paragraph
+bundle: ipu_event_document_widget
+label: fc_original_reference
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

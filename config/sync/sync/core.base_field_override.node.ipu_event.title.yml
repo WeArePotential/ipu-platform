@@ -1,0 +1,18 @@
+uuid: ac185a9e-b120-465a-94f7-fad6a0799b1f
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.ipu_event
+id: node.ipu_event.title
+field_name: title
+entity_type: node
+bundle: ipu_event
+label: Title
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

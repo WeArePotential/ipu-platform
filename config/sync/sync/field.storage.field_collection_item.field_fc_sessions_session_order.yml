@@ -1,0 +1,20 @@
+uuid: d732a308-d4ca-4e75-8b77-b4287fd4e388
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_collection
+id: field_collection_item.field_fc_sessions_session_order
+field_name: field_fc_sessions_session_order
+entity_type: field_collection_item
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,26 @@
+uuid: 1d76b51b-caef-4690-a08d-ea1c14d5b8c5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_fc_session_date
+    - paragraphs.paragraphs_type.ipu_event_sessions
+  module:
+    - custom_add_another
+    - datetime
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
+id: paragraph.ipu_event_sessions.field_fc_session_date
+field_name: field_fc_session_date
+entity_type: paragraph
+bundle: ipu_event_sessions
+label: Date
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

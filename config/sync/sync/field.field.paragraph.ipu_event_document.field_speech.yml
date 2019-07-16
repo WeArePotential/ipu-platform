@@ -1,0 +1,29 @@
+uuid: add7b840-d13e-4b3c-b975-f6b6ba53306f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_speech
+    - paragraphs.paragraphs_type.ipu_event_document
+  module:
+    - custom_add_another
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
+id: paragraph.ipu_event_document.field_speech
+field_name: field_speech
+entity_type: paragraph
+bundle: ipu_event_document
+label: 'Document uploaded is a speech'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

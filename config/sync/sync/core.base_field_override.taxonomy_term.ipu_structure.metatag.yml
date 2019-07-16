@@ -1,0 +1,18 @@
+uuid: cd097afa-1be0-43e0-9d4a-9309a33ffe92
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.ipu_structure
+id: taxonomy_term.ipu_structure.metatag
+field_name: metatag
+entity_type: taxonomy_term
+bundle: ipu_structure
+label: Metatags
+description: 'The meta tags for the entity.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

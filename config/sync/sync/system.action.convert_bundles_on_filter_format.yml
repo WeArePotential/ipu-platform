@@ -1,0 +1,11 @@
+uuid: 4842b511-386f-4e48-a84f-39ef2149ec16
+langcode: en
+status: true
+dependencies:
+  module:
+    - convert_bundles
+id: convert_bundles_on_filter_format
+label: 'Convert Text format Entity Bundles'
+type: filter_format
+plugin: convert_bundles_action_base
+configuration: {  }

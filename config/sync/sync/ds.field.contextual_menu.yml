@@ -1,0 +1,21 @@
+id: contextual_menu
+label: 'Contextual menu'
+ui_limit: "basic_page|default\r\nbasic_page|full\r\nsection_page|default\r\nsection_page|full\r\npage|default\r\npage|full"
+properties:
+  block: 'menu_block:mega-menu'
+  use_block_title: true
+  add_block_wrappers: true
+  config:
+    id: 'menu_block:mega-menu'
+    label: ''
+    provider: menu_block
+    label_display: visible
+    level: 2
+    depth: 0
+    expand: 0
+    parent: 'mega-menu:menu_link_content:7deea3a9-0284-4575-91a7-04bc620a83c0'
+    suggestion: mega_menu
+type: block
+type_label: 'Block field'
+entities:
+  node: node

@@ -1,0 +1,22 @@
+uuid: 522b5c37-3358-4ed1-8786-a99b6bca6b02
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.governing_body
+id: taxonomy_term.governing_body.status
+field_name: status
+entity_type: taxonomy_term
+bundle: governing_body
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

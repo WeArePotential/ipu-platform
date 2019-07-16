@@ -1,0 +1,22 @@
+uuid: 3725bf8c-5dba-490e-98d8-7ac3ea9711e9
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: taxonomy_term_article
+label: 'Taxonomy term - News and Stories'
+type: 'canonical_entities:taxonomy_term'
+pattern: 'news/[term:parents]/[term:name]'
+selection_criteria:
+  -
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      article: article
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+selection_logic: and
+weight: 1
+relationships: {  }

@@ -1,0 +1,30 @@
+uuid: a37ad74d-7803-4489-8db7-6122ca245b29
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_vacancy_location
+    - node.type.vacancy
+  module:
+    - address
+    - custom_add_another
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
+id: node.vacancy.field_vacancy_location
+field_name: field_vacancy_location
+entity_type: node
+bundle: vacancy
+label: Location
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  available_countries: {  }
+  langcode_override: ''
+  field_overrides: {  }
+  fields: {  }
+field_type: address

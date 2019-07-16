@@ -1,0 +1,11 @@
+uuid: 7b3958e7-f7d2-4507-803e-fed1d53f8b32
+langcode: en
+status: true
+dependencies:
+  module:
+    - convert_bundles
+id: convert_bundles_on_comment
+label: 'Convert Comment Entity Bundles'
+type: comment
+plugin: convert_bundles_action_base
+configuration: {  }

@@ -1,0 +1,18 @@
+uuid: e23157bd-1a0c-4c49-aecc-3790a5d5429d
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comment_node_ipu_event
+id: comment.comment_node_ipu_event.mail
+field_name: mail
+entity_type: comment
+bundle: comment_node_ipu_event
+label: Email
+description: 'The comment author''s email address.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

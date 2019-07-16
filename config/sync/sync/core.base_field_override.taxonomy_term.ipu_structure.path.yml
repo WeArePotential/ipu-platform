@@ -1,0 +1,20 @@
+uuid: 6a09908d-d524-4be9-b3ae-de0a36fd65a9
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.ipu_structure
+  module:
+    - path
+id: taxonomy_term.ipu_structure.path
+field_name: path
+entity_type: taxonomy_term
+bundle: ipu_structure
+label: 'URL alias'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

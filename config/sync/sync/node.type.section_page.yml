@@ -1,0 +1,21 @@
+uuid: 62c404e5-91e7-4eeb-8ecb-9f10b097cdbd
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+      - mega-menu
+    parent: 'main:'
+  title:
+    display_configurable_title: true
+name: 'Section Page'
+type: section_page
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

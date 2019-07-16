@@ -1,0 +1,11 @@
+uuid: 278ddf42-1de5-4380-beab-9b9ab08bfd63
+langcode: en
+status: true
+dependencies:
+  module:
+    - convert_bundles
+id: convert_bundles_on_mailchimp_campaign
+label: 'Convert Mailchimp Campaign Entity Bundles'
+type: mailchimp_campaign
+plugin: convert_bundles_action_base
+configuration: {  }

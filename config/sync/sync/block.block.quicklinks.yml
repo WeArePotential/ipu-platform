@@ -1,0 +1,25 @@
+uuid: eb640657-8ca9-4802-b006-b43e5ef22f93
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:35d7eeaf-18c9-4265-991e-6b6c4eca799d'
+  module:
+    - block_content
+  theme:
+    - ipu
+id: quicklinks
+theme: ipu
+region: footer
+weight: -13
+provider: null
+plugin: 'block_content:35d7eeaf-18c9-4265-991e-6b6c4eca799d'
+settings:
+  id: 'block_content:35d7eeaf-18c9-4265-991e-6b6c4eca799d'
+  label: 'Quick links'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

@@ -1,0 +1,110 @@
+uuid: 9dfd3092-3607-4989-8f72-d02a9926aa02
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.vacancy.body
+    - field.field.node.vacancy.field_contact_ipu
+    - field.field.node.vacancy.field_deadline
+    - field.field.node.vacancy.field_home_based
+    - field.field.node.vacancy.field_how_to_apply
+    - field.field.node.vacancy.field_media_image
+    - field.field.node.vacancy.field_vacancy_location
+    - field.field.node.vacancy.field_vacancy_type
+    - node.type.vacancy
+  module:
+    - address
+    - datetime
+    - field_group
+    - link
+    - options
+    - text
+    - user
+third_party_settings:
+  field_group:
+    group_details:
+      children:
+        - field_deadline
+        - field_vacancy_type
+        - field_vacancy_location
+        - field_home_based
+      parent_name: ''
+      weight: 3
+      label: Details
+      format_settings:
+        formatter: collapsible
+        description: ''
+        show_label: 1
+        label_element: h3
+        effect: none
+        speed: fast
+        classes: 'group-details field-group-div'
+        id: ''
+        element: div
+        attributes: ''
+        required_fields: 1
+      format_type: html-element
+      region: content
+id: node.vacancy.default
+targetEntityType: node
+bundle: vacancy
+mode: default
+content:
+  body:
+    label: hidden
+    weight: 4
+    type: text_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_contact_ipu:
+    label: hidden
+    weight: 1
+    type: link
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    region: content
+  field_deadline:
+    label: inline
+    weight: 8
+    type: datetime_default
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    region: content
+  field_home_based:
+    label: inline
+    weight: 9
+    type: list_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_how_to_apply:
+    label: above
+    weight: 6
+    type: text_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_vacancy_location:
+    label: inline
+    weight: 10
+    type: address_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_media_image: true
+  field_vacancy_type: true
+  langcode: true

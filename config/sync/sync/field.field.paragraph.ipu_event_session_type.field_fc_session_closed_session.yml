@@ -1,0 +1,29 @@
+uuid: 76448dcf-6ba5-4bdc-bfd5-9923948d2f35
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_fc_session_closed_session
+    - paragraphs.paragraphs_type.ipu_event_session_type
+  module:
+    - custom_add_another
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
+id: paragraph.ipu_event_session_type.field_fc_session_closed_session
+field_name: field_fc_session_closed_session
+entity_type: paragraph
+bundle: ipu_event_session_type
+label: 'Closed Session'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

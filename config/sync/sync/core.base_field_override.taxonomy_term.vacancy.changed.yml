@@ -1,0 +1,18 @@
+uuid: d39d528d-7476-4ce4-a8d2-5d157746629c
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.vacancy
+id: taxonomy_term.vacancy.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: vacancy
+label: Changed
+description: 'The time that the term was last edited.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

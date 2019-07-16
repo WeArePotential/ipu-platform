@@ -1,0 +1,71 @@
+uuid: 0ffa5216-12d3-4218-84d9-b7794ac39ca6
+langcode: en
+status: true
+dependencies:
+  module:
+    - lang_dropdown
+    - language
+  theme:
+    - ipu
+id: languagedropdownswitchercontent
+theme: ipu
+region: topbar_left
+weight: 0
+provider: null
+plugin: 'language_dropdown_block:language_content'
+settings:
+  id: 'language_dropdown_block:language_content'
+  label: 'Language dropdown switcher (Content)'
+  provider: lang_dropdown
+  label_display: '0'
+  showall: 0
+  tohome: 0
+  width: '165'
+  display: '1'
+  widget: '0'
+  msdropdown:
+    visible_rows: '5'
+    rounded: 1
+    animation: slideDown
+    event: click
+    skin: ldsSkin
+    custom_skin: ''
+  chosen:
+    disable_search: 1
+    no_results_text: 'No language match'
+  ddslick:
+    ddslick_height: '0'
+    showSelectedHTML: 1
+    imagePosition: left
+    skin: ddsDefault
+    custom_skin: ''
+  languageicons:
+    flag_position: 1
+  hidden_languages:
+    anonymous:
+      - es
+      - ar
+    authenticated:
+      - es
+      - ar
+    administrator:
+      - es
+      - ar
+    product_owner:
+      - es
+      - ar
+    web_editor:
+      - es
+      - ar
+    writer:
+      - es
+      - ar
+visibility:
+  language:
+    id: language
+    langcodes:
+      en: en
+      fr: fr
+    negate: false
+    context_mapping:
+      language: '@language.current_language_context:language_content'

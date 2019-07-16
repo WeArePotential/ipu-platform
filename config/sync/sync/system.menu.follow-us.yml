@@ -1,0 +1,8 @@
+uuid: c7778e25-60c8-42f8-a155-4f4104379009
+langcode: en
+status: true
+dependencies: {  }
+id: follow-us
+label: 'Follow us'
+description: 'The list of social media accounts for visitors to follow. Displayed on top bar'
+locked: false

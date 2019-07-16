@@ -1,0 +1,70 @@
+uuid: 9a732a33-2b95-4fac-bf5f-c444cabcc29d
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_field_collection_event_sub_page
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: alterFieldFormatterMigration
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - 'Field Collection Content'
+migration_group: migrate_drupal_7
+label: 'Field Collections (Event sub page)'
+source:
+  plugin: d7_field_collection_item
+  field_name: field_event_sub_page
+process:
+  type:
+    -
+      plugin: get
+      source: bundle
+  field_ipu_event_section:
+    -
+      plugin: sub_process
+      source: field_ipu_event_section
+      process:
+        target_id:
+          -
+            plugin: paragraphs_lookup
+            tags: 'Field Collection Content'
+            source: value
+          -
+            plugin: extract
+            index:
+              - id
+        target_revision_id:
+          -
+            plugin: paragraphs_lookup
+            tags:
+              - 'Field Collection Revisions Content'
+              - 'Field Collection Content'
+            tag_ids:
+              'Field Collection Revisions Content':
+                - revision_id
+              'Field Collection Content':
+                - value
+          -
+            plugin: extract
+            index:
+              - revision_id
+  field_order:
+    -
+      plugin: get
+      source: field_order
+  field_title:
+    -
+      plugin: get
+      source: field_title
+  field_sub_page_show_print:
+    -
+      plugin: get
+      source: field_sub_page_show_print
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+  default_bundle: event_sub_page
+migration_dependencies:
+  required:
+    - upgrade_d7_field_collection_type
+  optional:
+    - upgrade_d7_field_instance

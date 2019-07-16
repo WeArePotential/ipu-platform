@@ -1,0 +1,38 @@
+uuid: dce6e81e-ef47-4596-8850-89d757923096
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.publication_document.field_publication_file
+    - field.field.paragraph.publication_document.field_publication_language
+    - paragraphs.paragraphs_type.publication_document
+  module:
+    - field_layout
+    - file
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+id: paragraph.publication_document.default
+targetEntityType: paragraph
+bundle: publication_document
+mode: default
+content:
+  field_publication_file:
+    weight: 0
+    type: file_generic
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    region: content
+  field_publication_language:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+hidden:
+  created: true
+  status: true
+  translation: true

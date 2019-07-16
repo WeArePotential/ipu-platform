@@ -1,0 +1,15 @@
+uuid: 1c098e76-be37-4056-8147-72e024eb5855
+langcode: en
+status: true
+dependencies: {  }
+name: publication-landscape
+label: Publication-landscape
+effects:
+  f16da8c1-4b40-4d41-a7d5-f31f84581c4c:
+    uuid: f16da8c1-4b40-4d41-a7d5-f31f84581c4c
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 450
+      height: 300
+      anchor: center-center

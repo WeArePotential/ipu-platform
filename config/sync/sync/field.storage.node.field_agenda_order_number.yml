@@ -1,0 +1,21 @@
+uuid: 72ed191f-2682-4581-9480-0d1341ac29e2
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_agenda_order_number
+field_name: field_agenda_order_number
+entity_type: node
+type: string
+settings:
+  max_length: 50
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

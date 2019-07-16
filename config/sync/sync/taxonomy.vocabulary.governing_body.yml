@@ -1,0 +1,9 @@
+uuid: 3a4ba31c-c5b6-406f-a180-79f6e1dee4f5
+langcode: en
+status: true
+dependencies: {  }
+name: 'Governing Body'
+vid: governing_body
+description: ''
+hierarchy: 0
+weight: 0

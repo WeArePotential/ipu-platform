@@ -1,0 +1,18 @@
+uuid: 1171594a-bc40-480b-ae28-1845fbcca02a
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.ipu_event_session_type
+id: paragraph.ipu_event_session_type.created
+field_name: created
+entity_type: paragraph
+bundle: ipu_event_session_type
+label: 'Authored on'
+description: 'The time that the Paragraph was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

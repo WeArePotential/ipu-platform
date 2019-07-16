@@ -1,0 +1,62 @@
+uuid: 06db1c6e-6fb0-4911-a24b-302c7748201a
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_field_collection_ipu_event_document_widget
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: alterFieldFormatterMigration
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - 'Field Collection Content'
+migration_group: migrate_drupal_7
+label: 'Field Collections (Ipu event document widget)'
+source:
+  plugin: d7_field_collection_item
+  field_name: field_ipu_event_document_widget
+process:
+  type:
+    -
+      plugin: get
+      source: bundle
+  field_ipu_event_document:
+    -
+      plugin: sub_process
+      source: field_ipu_event_document
+      process:
+        target_id:
+          -
+            plugin: paragraphs_lookup
+            tags: 'Field Collection Content'
+            source: value
+          -
+            plugin: extract
+            index:
+              - id
+        target_revision_id:
+          -
+            plugin: paragraphs_lookup
+            tags:
+              - 'Field Collection Revisions Content'
+              - 'Field Collection Content'
+            tag_ids:
+              'Field Collection Revisions Content':
+                - revision_id
+              'Field Collection Content':
+                - value
+          -
+            plugin: extract
+            index:
+              - revision_id
+  field_ipu_event_document_r:
+    -
+      plugin: get
+      source: field_ipu_event_document_r
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+  default_bundle: ipu_event_document_widget
+migration_dependencies:
+  required:
+    - upgrade_d7_field_collection_type
+  optional:
+    - upgrade_d7_field_instance

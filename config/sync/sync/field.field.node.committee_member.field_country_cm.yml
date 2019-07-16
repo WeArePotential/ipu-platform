@@ -1,0 +1,30 @@
+uuid: d1ff4af3-d123-4986-9c8d-de45cc7753c5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_country_cm
+    - node.type.committee_member
+  module:
+    - address
+    - custom_add_another
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
+id: node.committee_member.field_country_cm
+field_name: field_country_cm
+entity_type: node
+bundle: committee_member
+label: Country
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  available_countries: {  }
+  langcode_override: ''
+  field_overrides: {  }
+  fields: {  }
+field_type: address

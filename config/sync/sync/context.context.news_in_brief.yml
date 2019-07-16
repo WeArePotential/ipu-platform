@@ -1,0 +1,35 @@
+uuid: e7e26960-fa4f-4981-aedb-31ed6ebcde97
+langcode: en
+status: true
+dependencies:
+  module:
+    - context_active_trail
+    - ctools
+name: news_in_brief
+label: 'News in brief'
+group: 'News menu'
+description: 'News in brief menu parent'
+requireAllConditions: false
+disabled: false
+conditions:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      article: article
+    negate: 0
+    uuid: 425e85f1-ed62-4403-86fc-7c4e1b03767a
+    context_mapping:
+      node: '@node.node_route_context:node'
+reactions:
+  menu:
+    id: menu
+    menu:
+      - 'main:menu_link_content:6a80c18f-2a9a-4cd0-bae6-efb73a223fb2'
+    saved: false
+  active_trail:
+    id: active_trail
+    trail: 'main:menu_link_content:e305309d-8770-4f7e-816f-3b9ad736ac9d'
+    breadcrumbs: 1
+    breadcrumb_title: 0
+    uuid: bf4b203a-58c3-4f54-ac9a-a6e1f7e8a522
+weight: 0

@@ -1,0 +1,238 @@
+uuid: 7e849391-9154-4618-af1d-732d40e85d14
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.event.body
+    - field.field.node.event.field_country
+    - field.field.node.event.field_document
+    - field.field.node.event.field_event_date
+    - field.field.node.event.field_event_type
+    - field.field.node.event.field_event_url
+    - field.field.node.event.field_ipu_structure
+    - field.field.node.event.field_location
+    - field.field.node.event.field_media_image
+    - field.field.node.event.field_theme
+    - node.type.event
+  module:
+    - address
+    - datetime
+    - entity_browser
+    - field_group
+    - field_layout
+    - file
+    - layout_discovery
+    - link
+    - path
+    - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+  field_group:
+    group_taxonomy:
+      children:
+        - field_event_type
+        - field_theme
+        - field_country
+        - field_ipu_structure
+      parent_name: ''
+      weight: 2
+      label: Taxonomy
+      format_settings:
+        label: Taxonomy
+        formatter: open
+        required_fields: true
+        id: ''
+        classes: 'group-taxonomy field-group-fieldset node-taxonomy'
+        description: ''
+      format_type: fieldset
+      region: content
+    group_basic_info:
+      children:
+        - field_event_url
+        - body
+      parent_name: ''
+      weight: 1
+      label: 'Basic information'
+      format_settings:
+        label: 'Basic information'
+        formatter: open
+        required_fields: true
+        id: ''
+        classes: node-basic
+        description: ''
+      format_type: fieldset
+      region: content
+    group_tabs:
+      children:
+        - group_related_documents
+      parent_name: ''
+      weight: 7
+      label: Tabs
+      format_settings:
+        label: Tabs
+        id: ''
+        classes: 'group-tabs field-group-htabs node-tabs'
+        direction: horizontal
+      format_type: tabs
+      region: content
+    group_related_documents:
+      children: {  }
+      parent_name: group_tabs
+      weight: 14
+      label: 'Related documents'
+      format_settings:
+        formatter: closed
+        description: ''
+        classes: 'group-related-documents field-group-htab'
+        required_fields: true
+      format_type: tab
+      region: content
+id: node.event.default
+targetEntityType: node
+bundle: event
+mode: default
+content:
+  body:
+    weight: 4
+    type: text_textarea_with_summary
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  created:
+    type: datetime_timestamp
+    weight: 11
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_country:
+    weight: 10
+    type: options_select
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_document:
+    weight: 6
+    type: file_generic
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    region: content
+  field_event_date:
+    weight: 4
+    type: datetime_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_event_type:
+    weight: 8
+    type: options_select
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_event_url:
+    weight: 3
+    type: link_default
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    region: content
+  field_ipu_structure:
+    weight: 11
+    type: options_select
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_location:
+    weight: 5
+    type: address_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_media_image:
+    weight: 9
+    type: entity_browser_file
+    settings:
+      entity_browser: null
+      open: false
+      field_widget_edit: true
+      field_widget_remove: true
+      field_widget_replace: false
+      selection_mode: selection_append
+      view_mode: default
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    region: content
+  field_theme:
+    weight: 9
+    type: options_select
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  langcode:
+    type: language_select
+    weight: 3
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 15
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 12
+    region: content
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 17
+    region: content
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 13
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 8
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+  url_redirects:
+    weight: 16
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

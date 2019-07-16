@@ -1,0 +1,9 @@
+uuid: 0664f9c5-7115-447f-b326-42271cb05a22
+langcode: en
+status: true
+dependencies: {  }
+id: publication_document
+label: 'Publication document'
+icon_uuid: null
+description: 'Migrated from field_collection field_publication_document'
+behavior_plugins: {  }

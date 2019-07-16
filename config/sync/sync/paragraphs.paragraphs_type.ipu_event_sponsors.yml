@@ -1,0 +1,9 @@
+uuid: 927e78ab-c02b-4481-9311-9faa7cd0e271
+langcode: en
+status: true
+dependencies: {  }
+id: ipu_event_sponsors
+label: 'Event sponsors'
+icon_uuid: null
+description: 'Migrated from field_collection field_ipu_event_sponsors'
+behavior_plugins: {  }

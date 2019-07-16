@@ -1,0 +1,26 @@
+uuid: a0a38a3c-c877-4241-9f75-a591075cdcdc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_caption
+    - node.type.page
+  module:
+    - custom_add_another
+    - text
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
+id: node.page.field_caption
+field_name: field_caption
+entity_type: node
+bundle: page
+label: Caption
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

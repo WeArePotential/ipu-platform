@@ -1,0 +1,28 @@
+uuid: 601587cf-84b7-4243-8285-2613112434bb
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comment_node_ipu_event
+    - field.field.comment.comment_node_ipu_event.comment_body
+  module:
+    - text
+id: comment.comment_node_ipu_event.default
+targetEntityType: comment
+bundle: comment_node_ipu_event
+mode: default
+content:
+  comment_body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

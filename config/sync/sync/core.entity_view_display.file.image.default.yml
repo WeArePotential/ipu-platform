@@ -1,0 +1,87 @@
+uuid: 4a89c751-119c-46e1-8a40-5894931896a5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.file.image.field_image_alt_text
+    - field.field.file.image.field_image_title_text
+    - file_entity.type.image
+    - image.style.medium
+  module:
+    - ds
+    - file_entity
+_core:
+  default_config_hash: _Bf428kqU4oErwcNNTL2Wj4HQfES94Bs4usKnK3iL2Q
+id: file.image.default
+targetEntityType: file
+bundle: image
+mode: default
+content:
+  field_image_alt_text:
+    type: string
+    weight: 3
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    label: inline
+    region: content
+  field_image_title_text:
+    type: string
+    weight: 4
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    label: inline
+    region: content
+  filemime:
+    type: string
+    weight: 5
+    region: content
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  filename:
+    type: string
+    label: hidden
+    weight: 0
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  filesize:
+    type: file_size
+    weight: 6
+    region: content
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+  langcode:
+    type: language
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+      native_language: false
+    third_party_settings: {  }
+  uri:
+    type: file_image
+    label: hidden
+    weight: 1
+    region: content
+    settings:
+      image_style: medium
+      title: field_image_title_text
+      alt: field_image_alt_text
+      image_link: ''
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+hidden:
+  uid: true

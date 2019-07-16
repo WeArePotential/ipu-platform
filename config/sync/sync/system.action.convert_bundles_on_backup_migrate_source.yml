@@ -1,0 +1,11 @@
+uuid: 7d9b8ab8-aa64-4551-8565-49473c1c6be4
+langcode: en
+status: true
+dependencies:
+  module:
+    - convert_bundles
+id: convert_bundles_on_backup_migrate_source
+label: 'Convert Backup Source Entity Bundles'
+type: backup_migrate_source
+plugin: convert_bundles_action_base
+configuration: {  }

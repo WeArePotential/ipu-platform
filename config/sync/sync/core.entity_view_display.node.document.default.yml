@@ -1,0 +1,72 @@
+uuid: 657a9d4b-6fd9-4027-b9ae-de2ac9e85e16
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.document.body
+    - field.field.node.document.field_country
+    - field.field.node.document.field_document_file
+    - field.field.node.document.field_document_type
+    - field.field.node.document.field_external_link
+    - field.field.node.document.field_ipu_structure
+    - field.field.node.document.field_media_image
+    - field.field.node.document.field_theme
+    - node.type.document
+  module:
+    - file
+    - image
+    - link
+    - text
+    - user
+id: node.document.default
+targetEntityType: node
+bundle: document
+mode: default
+content:
+  body:
+    label: hidden
+    weight: 1
+    type: text_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_document_file:
+    label: above
+    weight: 4
+    type: file_default
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    region: content
+  field_external_link:
+    label: above
+    weight: 9
+    type: link
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    region: content
+  field_media_image:
+    label: above
+    weight: 7
+    type: image
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_country: true
+  field_document_type: true
+  field_ipu_structure: true
+  field_theme: true
+  langcode: true

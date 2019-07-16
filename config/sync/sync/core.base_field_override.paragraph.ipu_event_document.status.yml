@@ -1,0 +1,22 @@
+uuid: 3ce322e6-af1b-46e8-a2b8-e959f12fa8e8
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.ipu_event_document
+id: paragraph.ipu_event_document.status
+field_name: status
+entity_type: paragraph
+bundle: ipu_event_document
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

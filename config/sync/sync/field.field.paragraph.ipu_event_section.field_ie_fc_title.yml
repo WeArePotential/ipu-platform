@@ -1,0 +1,25 @@
+uuid: 2ad93949-a898-4984-b444-3290c6f24596
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ie_fc_title
+    - paragraphs.paragraphs_type.ipu_event_section
+  module:
+    - custom_add_another
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
+id: paragraph.ipu_event_section.field_ie_fc_title
+field_name: field_ie_fc_title
+entity_type: paragraph
+bundle: ipu_event_section
+label: Title
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

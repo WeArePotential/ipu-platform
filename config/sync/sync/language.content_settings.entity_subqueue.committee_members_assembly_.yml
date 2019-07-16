@@ -1,0 +1,11 @@
+uuid: de5d876e-6aaf-4c64-8ae3-da3507bd1488
+langcode: en
+status: true
+dependencies:
+  config:
+    - entityqueue.entity_queue.committee_members_assembly_
+id: entity_subqueue.committee_members_assembly_
+target_entity_type_id: entity_subqueue
+target_bundle: committee_members_assembly_
+default_langcode: site_default
+language_alterable: false

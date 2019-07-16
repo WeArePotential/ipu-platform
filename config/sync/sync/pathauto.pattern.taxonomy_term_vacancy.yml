@@ -1,0 +1,22 @@
+uuid: bb0cddb9-50f3-4a13-936c-908f123d0b8d
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: taxonomy_term_vacancy
+label: 'Taxonomy term - Vacancy'
+type: 'canonical_entities:taxonomy_term'
+pattern: 'about-us/work-with-ipu/vacancies/[term:name]'
+selection_criteria:
+  -
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      vacancy: vacancy
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+selection_logic: and
+weight: 3
+relationships: {  }

@@ -1,0 +1,28 @@
+uuid: 5357e582-4699-48e5-816e-a15f1c33b32e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.feeds_item
+    - paragraphs.paragraphs_type.ipu_event_section
+  module:
+    - custom_add_another
+    - feeds
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
+id: paragraph.ipu_event_section.feeds_item
+field_name: feeds_item
+entity_type: paragraph
+bundle: ipu_event_section
+label: 'Feeds item'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:feeds_feed'
+  handler_settings: {  }
+field_type: feeds_item

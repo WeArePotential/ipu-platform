@@ -1,0 +1,11 @@
+uuid: 20acace8-763c-4a91-b243-7063cf4dcdc9
+langcode: en
+status: true
+dependencies:
+  module:
+    - convert_bundles
+id: convert_bundles_on_metatag_defaults
+label: 'Convert Metatag defaults Entity Bundles'
+type: metatag_defaults
+plugin: convert_bundles_action_base
+configuration: {  }

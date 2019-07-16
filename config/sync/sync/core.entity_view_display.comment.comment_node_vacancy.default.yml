@@ -1,0 +1,28 @@
+uuid: 0ed5c635-0ddd-4e34-bab4-7b4b008e360a
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comment_node_vacancy
+    - field.field.comment.comment_node_vacancy.comment_body
+  module:
+    - text
+id: comment.comment_node_vacancy.default
+targetEntityType: comment
+bundle: comment_node_vacancy
+mode: default
+content:
+  comment_body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

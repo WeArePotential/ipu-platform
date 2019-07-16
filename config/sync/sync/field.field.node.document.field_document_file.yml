@@ -1,0 +1,32 @@
+uuid: 5783a83c-7fbf-4a31-8a90-0ba1c125eb00
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_document_file
+    - node.type.document
+  module:
+    - custom_add_another
+    - file
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
+id: node.document.field_document_file
+field_name: field_document_file
+entity_type: node
+bundle: document
+label: 'Document file'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: documents
+  file_extensions: 'pdf doc docx xls xlsx xml txt sxw odt ott ods odp'
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

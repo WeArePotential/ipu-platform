@@ -1,0 +1,19 @@
+uuid: 2e7f848b-b631-46d6-8d86-6c4e93264c60
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+id: paragraph.field_ipu_event_section_desc
+field_name: field_ipu_event_section_desc
+entity_type: paragraph
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,17 @@
+uuid: 950f26a2-e642-4621-abff-687aa4596879
+langcode: en
+status: true
+dependencies:
+  module:
+    - flickr_filter
+name: Flickr
+format: flickr
+weight: -6
+filters:
+  flickr_filter:
+    id: flickr_filter
+    provider: flickr_filter
+    status: true
+    weight: 9
+    settings:
+      flickr_filter_imagesize: '200'

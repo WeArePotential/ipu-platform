@@ -1,0 +1,183 @@
+uuid: 80ac0c80-aef0-44c2-b5bc-7b3beff8a20b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.event.body
+    - field.field.node.event.field_country
+    - field.field.node.event.field_document
+    - field.field.node.event.field_event_date
+    - field.field.node.event.field_event_type
+    - field.field.node.event.field_event_url
+    - field.field.node.event.field_ipu_structure
+    - field.field.node.event.field_location
+    - field.field.node.event.field_media_image
+    - field.field.node.event.field_theme
+    - node.type.event
+  module:
+    - address
+    - datetime
+    - ds
+    - file_entity
+    - image
+    - link
+    - text
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: bs_2col_stacked
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        layout:
+          wrapper: div
+          classes:
+            row: row
+          add_layout_class: 1
+          attributes: ''
+        regions:
+          top:
+            wrapper: div
+            classes:
+              col-sm-12: col-sm-12
+            add_region_classes: 1
+            attributes: ''
+          left:
+            wrapper: div
+            classes:
+              col-sm-6: col-sm-6
+            add_region_classes: 1
+            attributes: ''
+          right:
+            wrapper: div
+            classes:
+              col-sm-6: col-sm-6
+            add_region_classes: 1
+            attributes: ''
+          bottom:
+            wrapper: div
+            classes:
+              col-sm-12: col-sm-12
+            add_region_classes: 1
+            attributes: ''
+    regions:
+      top:
+        - field_document
+        - field_location
+        - field_event_date
+        - body
+        - field_event_type
+        - field_event_url
+        - field_media_image
+        - langcode
+        - field_country
+        - field_ipu_structure
+        - field_theme
+        - links
+id: node.event.default
+targetEntityType: node
+bundle: event
+mode: default
+content:
+  body:
+    label: above
+    weight: 3
+    type: text_default
+    settings: {  }
+    third_party_settings: {  }
+    region: top
+  field_country:
+    type: entity_reference_label
+    weight: 9
+    region: top
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+  field_document:
+    label: above
+    weight: 0
+    type: file_download_link
+    settings:
+      access_message: 'You don''t have access to download this file.'
+      text: 'Download [file:name]'
+    third_party_settings: {  }
+    region: top
+  field_event_date:
+    label: above
+    weight: 2
+    type: datetime_default
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    region: top
+  field_event_type:
+    label: hidden
+    weight: 4
+    type: entity_reference_label
+    settings:
+      link: true
+    third_party_settings: {  }
+    region: top
+  field_event_url:
+    label: above
+    weight: 5
+    type: link
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    region: top
+  field_ipu_structure:
+    type: entity_reference_label
+    weight: 10
+    region: top
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+  field_location:
+    label: hidden
+    weight: 1
+    type: address_default
+    settings: {  }
+    third_party_settings: {  }
+    region: top
+  field_media_image:
+    label: above
+    weight: 6
+    type: image
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    region: top
+  field_theme:
+    type: entity_reference_label
+    weight: 11
+    region: top
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+  langcode:
+    type: language
+    weight: 8
+    region: top
+    label: above
+    settings:
+      link_to_entity: false
+      native_language: false
+    third_party_settings: {  }
+  links:
+    weight: 12
+    region: top
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

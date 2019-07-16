@@ -1,0 +1,35 @@
+uuid: 43228b27-b769-4d34-9996-f83099b25df5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ipu_structure
+    - node.type.event
+    - taxonomy.vocabulary.ipu_structure
+  module:
+    - custom_add_another
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
+id: node.event.field_ipu_structure
+field_name: field_ipu_structure
+entity_type: node
+bundle: event
+label: 'IPU structure'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      ipu_structure: ipu_structure
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

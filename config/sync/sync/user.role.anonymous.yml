@@ -1,0 +1,20 @@
+uuid: 3231fb0c-0d22-463e-b707-3ee877673087
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: j5zLMOdJBqC0bMvSdth5UebkprJB8g_2FXHqhfpJzow
+id: anonymous
+label: 'anonymous user'
+weight: 0
+is_admin: false
+permissions:
+  - 'access content'
+  - 'access mailchimp signup pages'
+  - 'download any audio files'
+  - 'download any document files'
+  - 'download any image files'
+  - 'download any video files'
+  - 'search content'
+  - 'use advanced search'
+  - 'use text format filtered_html'

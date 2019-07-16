@@ -1,0 +1,18 @@
+uuid: 411ac78a-dfd5-40ba-8e00-73b8d10d8740
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.governing_body
+id: taxonomy_term.governing_body.metatag
+field_name: metatag
+entity_type: taxonomy_term
+bundle: governing_body
+label: Metatags
+description: 'The meta tags for the entity.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

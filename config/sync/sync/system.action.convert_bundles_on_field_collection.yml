@@ -1,0 +1,11 @@
+uuid: 11b6480c-7f81-42cd-9fef-ec1108b05a83
+langcode: en
+status: true
+dependencies:
+  module:
+    - convert_bundles
+id: convert_bundles_on_field_collection
+label: 'Convert Field collection Entity Bundles'
+type: field_collection
+plugin: convert_bundles_action_base
+configuration: {  }

@@ -1,0 +1,11 @@
+uuid: 75c65255-9bea-45c5-bb0c-54c87541de84
+langcode: en
+status: true
+dependencies:
+  module:
+    - convert_bundles
+id: convert_bundles_on_backup_migrate_settings
+label: 'Convert Settings Profile Entity Bundles'
+type: backup_migrate_settings
+plugin: convert_bundles_action_base
+configuration: {  }

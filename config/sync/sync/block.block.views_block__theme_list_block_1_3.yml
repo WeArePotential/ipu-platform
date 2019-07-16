@@ -1,0 +1,24 @@
+uuid: 4b4d4449-58e4-414d-a696-1aab157774bc
+langcode: en
+status: false
+dependencies:
+  config:
+    - views.view.theme_list
+  module:
+    - views
+  theme:
+    - ipu
+id: views_block__theme_list_block_1_3
+theme: ipu
+region: topbar_left
+weight: 0
+provider: null
+plugin: 'views_block:theme_list-block_1'
+settings:
+  id: 'views_block:theme_list-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility: {  }

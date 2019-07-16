@@ -1,0 +1,22 @@
+uuid: a88f74cc-a4e8-4873-b5f3-c93c6af8d0d4
+langcode: en
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - ipu
+_core:
+  default_config_hash: za-39d5WDUg6XvbyqSnuVYEeq6QM4qKJxW8MnoAha5A
+id: ipu_search
+theme: ipu
+region: navbar_branding_right
+weight: -14
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: Search
+  provider: search
+  label_display: '0'
+visibility: {  }

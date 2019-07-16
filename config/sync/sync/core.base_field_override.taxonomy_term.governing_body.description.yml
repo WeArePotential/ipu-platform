@@ -1,0 +1,20 @@
+uuid: 7893d00f-9cb3-4f7d-aa67-1ce0b49f2a65
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.governing_body
+  module:
+    - text
+id: taxonomy_term.governing_body.description
+field_name: description
+entity_type: taxonomy_term
+bundle: governing_body
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

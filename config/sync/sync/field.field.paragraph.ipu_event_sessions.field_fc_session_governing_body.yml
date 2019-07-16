@@ -1,0 +1,35 @@
+uuid: 5051998c-4763-4c3c-8bed-17ddac7e80c3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_fc_session_governing_body
+    - paragraphs.paragraphs_type.ipu_event_sessions
+    - taxonomy.vocabulary.governing_body
+  module:
+    - custom_add_another
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
+id: paragraph.ipu_event_sessions.field_fc_session_governing_body
+field_name: field_fc_session_governing_body
+entity_type: paragraph
+bundle: ipu_event_sessions
+label: 'Governing Body'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      governing_body: governing_body
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

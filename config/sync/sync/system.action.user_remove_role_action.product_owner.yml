@@ -1,0 +1,14 @@
+uuid: 7ba3f221-8a72-4462-92d9-7febe31e092f
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.product_owner
+  module:
+    - user
+id: user_remove_role_action.product_owner
+label: 'Remove the product owner role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: product_owner

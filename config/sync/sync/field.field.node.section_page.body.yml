@@ -1,0 +1,27 @@
+uuid: 103f7183-ccfb-4853-b1f3-36d10023a681
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.section_page
+  module:
+    - custom_add_another
+    - text
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
+id: node.section_page.body
+field_name: body
+entity_type: node
+bundle: section_page
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

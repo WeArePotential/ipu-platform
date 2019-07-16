@@ -1,0 +1,37 @@
+uuid: 13cea09b-e47b-4aac-a0ca-d1433963f9d9
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_field_collection_related_content
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: alterFieldFormatterMigration
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - 'Field Collection Content'
+migration_group: migrate_drupal_7
+label: 'Field Collections (Related content)'
+source:
+  plugin: d7_field_collection_item
+  field_name: field_related_content
+process:
+  type:
+    -
+      plugin: get
+      source: bundle
+  field_external_link:
+    -
+      plugin: field_link
+      source: field_external_link
+  field_node:
+    -
+      plugin: get
+      source: field_node
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+  default_bundle: related_content
+migration_dependencies:
+  required:
+    - upgrade_d7_field_collection_type
+  optional:
+    - upgrade_d7_field_instance
