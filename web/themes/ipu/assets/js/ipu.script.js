@@ -17600,8 +17600,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\peter\www\ipu.org\ipu-migration\web\themes\ipu\src\js\ipu.script.js */"./src/js/ipu.script.js");
-module.exports = __webpack_require__(/*! C:\Users\peter\www\ipu.org\ipu-migration\web\themes\ipu\src\sass\ipu.style.scss */"./src/sass/ipu.style.scss");
+__webpack_require__(/*! C:\Users\peter\www\ipu.org\ipu-platform\web\themes\ipu\src\js\ipu.script.js */"./src/js/ipu.script.js");
+module.exports = __webpack_require__(/*! C:\Users\peter\www\ipu.org\ipu-platform\web\themes\ipu\src\sass\ipu.style.scss */"./src/sass/ipu.style.scss");
 
 
 /***/ })
