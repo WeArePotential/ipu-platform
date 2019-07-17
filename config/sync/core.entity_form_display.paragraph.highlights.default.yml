@@ -1,0 +1,40 @@
+uuid: ae3af703-67b3-4234-8e44-253c2267f12a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.highlights.field_node
+    - field.field.paragraph.highlights.field_section_title
+    - paragraphs.paragraphs_type.highlights
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+id: paragraph.highlights.default
+targetEntityType: paragraph
+bundle: highlights
+mode: default
+content:
+  field_node:
+    weight: 1
+    settings:
+      match_operator: STARTS_WITH
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_section_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

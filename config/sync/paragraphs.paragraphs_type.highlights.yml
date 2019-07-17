@@ -1,0 +1,11 @@
+uuid: f0188499-f9cb-48ff-9212-393ff8b3f6c1
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'file:image:960d47a7-ab7d-4732-9088-64331e8805bb'
+id: highlights
+label: Highlights
+icon_uuid: 960d47a7-ab7d-4732-9088-64331e8805bb
+description: 'A set of mixed content  shown in a highlights section on a landing page'
+behavior_plugins: {  }

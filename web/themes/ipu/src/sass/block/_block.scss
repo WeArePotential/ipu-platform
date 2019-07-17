@@ -606,7 +606,7 @@ a.btn {
     height: 100px;
     // line-height: 75px;
     text-align: center;
-    color: $white;
+    color: $ipu-white;
     font-weight: $font-weight-bold;
     // font-size: $font-size-lg;
     border: 4px solid #f2f2f2;
@@ -948,6 +948,55 @@ a.btn {
   }
 }
 
+.field__item__paragraph__highlights {
+  background-color: $ipu-teal-light;
+  .paragraph--type--highlights {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    @extend .container;
+    .highlights__field-section-title {
+      @extend .sections__field-section-title;
+    }
+    .highlights__field-node {
+      @extend .row;
+    }
+    .field__item {
+      @extend .col-sm-6;
+      @extend .col-md-4;
+      /* Try this for mixed sizes */
+      /*@extend .col-lg-3;
+      &:first-child {
+        @extend .col-lg-6;
+      }*/
+      /* Or hide the last one? */
+      @extend .col-lg-3;
+      @include media-breakpoint-up(lg) {
+        &:last-child {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.node--type-publication.node--view-mode-highlight {
+  .group-header {
+    @extend .card-body
+  }
+  .group-content-wrapper {
+    @extend .d-flex;
+  }
+  .publication__field-media-image {
+    @extend .col-4;
+    padding-right: 0;
+    padding-left: 10px;
+  }
+  .group-content {
+    @extend .card-body;
+    @extend .col-8;
+  }
+}
+
 .node-basic_page,
 .section-page__dynamic-block-fieldnode-section-sub-pages,
 .viewfield--view__sub_content  {
@@ -1002,6 +1051,7 @@ a.btn {
   }
 }
 
+.highlights__field-section-title,
 .sections__field-section-title {
   border-bottom: 2px solid $secondary;
   padding: 10px 0 4px 0;

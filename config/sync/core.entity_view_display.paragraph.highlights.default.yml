@@ -1,0 +1,41 @@
+uuid: fd50ca7e-21cd-4e38-b6b8-8f990c307082
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.highlights.field_node
+    - field.field.paragraph.highlights.field_section_title
+    - paragraphs.paragraphs_type.highlights
+  module:
+    - ds
+id: paragraph.highlights.default
+targetEntityType: paragraph
+bundle: highlights
+mode: default
+content:
+  field_node:
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: highlight
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: '5'
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_section_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

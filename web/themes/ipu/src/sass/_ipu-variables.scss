@@ -1,6 +1,23 @@
 // Add fonts
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,300i,400,500&display=swap");
 
+$grid-breakpoints: (
+        xs: 0,
+        sm: 576px,
+        md: 768px,
+        lg: 992px,
+        xl: 1200px,
+        xxl: 1900px
+);
+
+$container-max-widths: (
+        sm: 540px,
+        md: 720px,
+        lg: 960px,
+        xl: 1140px,
+        xxl: 1610px
+);
+
 // Font family styles
 $font-family-sans-serif: Roboto, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
   Arial, sans-serif !default;

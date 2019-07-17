@@ -1,0 +1,48 @@
+uuid: a98ca3fd-ad08-49c9-b5b6-ff00b37efcf5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_node
+    - node.type.article
+    - node.type.basic_page
+    - node.type.ipu_event
+    - node.type.landing_page
+    - node.type.page
+    - node.type.publication
+    - node.type.section_page
+    - node.type.vacancy
+    - paragraphs.paragraphs_type.highlights
+  module:
+    - custom_add_another
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
+id: paragraph.highlights.field_node
+field_name: field_node
+entity_type: paragraph
+bundle: highlights
+label: 'Content item'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      basic_page: basic_page
+      ipu_event: ipu_event
+      landing_page: landing_page
+      article: article
+      page: page
+      publication: publication
+      section_page: section_page
+      vacancy: vacancy
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: basic_page
+field_type: entity_reference

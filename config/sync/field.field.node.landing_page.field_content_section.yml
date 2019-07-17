@@ -6,6 +6,7 @@ dependencies:
     - field.storage.node.field_content_section
     - node.type.landing_page
     - paragraphs.paragraphs_type.carousel
+    - paragraphs.paragraphs_type.highlights
     - paragraphs.paragraphs_type.sections
   module:
     - custom_add_another
@@ -30,11 +31,15 @@ settings:
     negate: 0
     target_bundles:
       carousel: carousel
+      highlights: highlights
       sections: sections
     target_bundles_drag_drop:
       carousel:
         enabled: true
         weight: 14
+      highlights:
+        enabled: true
+        weight: 15
       event_sub_page:
         weight: 15
         enabled: false
