@@ -17380,13 +17380,15 @@ a {
 
 .block--views-block--theme-list-block-1-5 .views-field-description__value,
 .block--views-block--theme-list-block-1 .views-field-description__value,
-.block--views-block--theme-list-block-1-2 .views-field-description__value {
+.block--views-block--theme-list-block-1-2 .views-field-description__value,
+.viewfield--view__theme_list__block_home_page .views-field-description__value {
   font-weight: 300;
   font-size: 0.875rem;
 }
 .block--views-block--theme-list-block-1-5 .col,
 .block--views-block--theme-list-block-1 .col,
-.block--views-block--theme-list-block-1-2 .col {
+.block--views-block--theme-list-block-1-2 .col,
+.viewfield--view__theme_list__block_home_page .col {
   padding-top: 4px;
   padding-bottom: 4px;
   margin-bottom: 10px;
