@@ -54,3 +54,16 @@ strong {
 small {
 
 }
+
+table {
+  @extend .table;
+  @extend .table-responsive;
+  @extend .table-hover;
+  @extend .table-sm;
+  clear: left;
+  &:after {
+    content: '';
+    clear: left;
+    display: table;
+  }
+}

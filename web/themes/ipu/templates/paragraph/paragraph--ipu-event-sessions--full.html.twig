@@ -4,17 +4,13 @@
  * Default template for a field.
  */
 #}
-<ol>
+
+{# A bit of debuggin <ol>
   {% for key, val in _context  %}
     <li>{{ key }}: </li>
   {% endfor %}
 </ol>
-
-
-xx
-yy
-zz
-
+#}
 {%
   set classes = [
   'container',
@@ -29,37 +25,13 @@ zz
   label_display == 'visually_hidden' ? 'visually-hidden',
 ]
 %}
+{% set x = content.field_fc_sessions_session_title[0]|raw %}
 
+  <div data-toggle="collapse" data-target="#{{ x|render|clean_id }}"><strong>{{ content.field_fc_sessions_session_title[0]|raw }}</strong></div>
 
-{{ content.field_fc_sessions_session_title }}
-
-{#% items.0.content.field_fc_sessions_hide_time %#}
-
-{% if label_hidden %}
-  {% if multiple %}
-    <div{{ attributes.addClass(classes) }}>
-      {% for item in items %}
-        <div{{ item.attributes.addClass('field__item') }}>{{ item.content }}</div>
-      {% endfor %}
-    </div>
-  {% else %}
-    {% for item in items %}
-      <div{{ attributes.addClass(classes) }}>{{ item.content }}</div>
-    {% endfor %}
-  {% endif %}
-{% else %}
-  <div{{ attributes.addClass(classes) }}>
-    <div{{ title_attributes.addClass(title_classes) }}>
-      {{ label }}{% if label_display == 'inline' %}<span class="field__label__suffix mr-1">:</span>{% endif %}
-    </div>
-    {% if multiple %}
-    <div class="field__items">
-      {% endif %}
-      {% for item in items %}
-        <div{{ item.attributes.addClass('field__item') }}>{{ item.content }}</div>
-      {% endfor %}
-      {% if multiple %}
-    </div>
-    {% endif %}
+  <div style="background-color: #f9f9f9;" id="{{ x|render|clean_id }}" class="collapse">
+    {{ content }}
   </div>
-{% endif %}
+
+
+

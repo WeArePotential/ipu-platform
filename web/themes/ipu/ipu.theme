@@ -26,6 +26,11 @@ function ipu_preprocess_html(&$variables) {
     $variables['attributes']['class'][] = ('node-' . $node->id());
   }
 }
+
+/**
+ * Add variables for the view field so we know which view it is displaying and
+ * can add as classes in twig.
+ */
 function ipu_preprocess_viewfield_item(&$variables) {
   $element = &$variables['element'];
   $variables['view_id'] = $element['#view_id'];

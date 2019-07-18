@@ -51,7 +51,7 @@ function ipu_tweaks_preprocess_paragraph__ipu_event_sessions(&$variables) {
 
   // Create any new variables we might want.
   foreach($variables['content']['field_ipu_event_session_dates'] as $key=>$value) {
-    print $key.'<br/>';
+    //print $key.'<br/>';
   }
   $variables['content']['field_ipu_event_session_dates']['links'] = [];
   //print_r( $variables['content']['field_ipu_event_session_dates']);
@@ -75,16 +75,13 @@ function ipu_tweaks_preprocess_paragraph__ipu_event_sessions(&$variables) {
 }
 
 function ipu_tweaks_preprocess_field(&$variables) {
-  if (($variables['element']['#field_name'] == 'field_event_sub_page')) {
-    // Placeholder for field preprocess.
-  }
-  if (($variables['element']['#field_name'] == 'field_ipu_event_sessions')) {
-  }
+//  if (($variables['element']['#field_name'] == 'field_event_sub_page')) {
+//    // Placeholder for field preprocess.
+//  }
+//  if (($variables['element']['#field_name'] == 'field_ipu_event_sessions')) {
+//  }
 
   if ($variables['element']['#field_name'] == 'field_ipu_event_dates') {
-    //\Drupal::messenger()->addStatus('Hello 1'. print_r($variables['element']['#view_mode'],true));
-    //if ($node = \Drupal::routeMatch()->getParameter('node')) {
-    //  $variables['view_mode'] = $node->view_mode;
     if ($variables['element']['#view_mode'] == 'highlight') {
       ##\Drupal::messenger()->addStatus('Hello 2 '. print_r($variables['items'][0], true));
     }
@@ -92,7 +89,6 @@ function ipu_tweaks_preprocess_field(&$variables) {
   if ($variables['element']['#field_name'] == 'field_event_date') {
     //\Drupal::messenger()->addStatus('Hello 3'. print_r($variables['element'],true));
     if ($variables['element']['#view_mode'] == 'highlight') {
-
     }
   }
 
