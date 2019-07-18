@@ -7,6 +7,7 @@ dependencies:
     - node.type.article
     - node.type.basic_page
     - node.type.event
+    - node.type.landing_page
     - node.type.page
     - node.type.publication
     - node.type.section_page
@@ -34,6 +35,7 @@ settings:
     target_bundles:
       event: event
       basic_page: basic_page
+      landing_page: landing_page
       article: article
       page: page
       publication: publication

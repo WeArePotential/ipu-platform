@@ -887,11 +887,22 @@ a.btn {
       @extend .card;
       position: relative;
       height: 100%;
+      .layout__region--content {
+        height: 100%;
+        .card-body {
+          height: auto;
+          display: flex;
+          .body {
+            margin-top: auto;
+          }
+        }
+      }
     }
     .section-page__node-link,
     .basic-page__node-link {
       display: none;
     }
+
     .section-page__node-title,
     .basic-page__node-title {
       position: absolute;

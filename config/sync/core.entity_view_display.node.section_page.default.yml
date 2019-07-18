@@ -61,7 +61,6 @@ third_party_settings:
             attributes: ''
     regions:
       top:
-        - field_theme
         - node_title
       left:
         - body
@@ -74,7 +73,7 @@ third_party_settings:
     fields:
       'dynamic_block_field:node-menu_block':
         plugin_id: 'dynamic_block_field:node-menu_block'
-        weight: 3
+        weight: 2
         label: above
         formatter: default
         ft:
@@ -85,7 +84,7 @@ third_party_settings:
             classes: {  }
       'dynamic_block_field:node-section_sub_pages':
         plugin_id: 'dynamic_block_field:node-section_sub_pages'
-        weight: 6
+        weight: 5
         label: above
         formatter: default
         ft:
@@ -96,7 +95,7 @@ third_party_settings:
             classes: {  }
       node_title:
         plugin_id: node_title
-        weight: 1
+        weight: 0
         label: hidden
         formatter: default
         settings:
@@ -116,14 +115,14 @@ mode: default
 content:
   body:
     label: hidden
-    weight: 2
+    weight: 1
     type: text_default
     settings: {  }
     third_party_settings: {  }
     region: left
   field_media_image:
     type: responsive_image
-    weight: 4
+    weight: 3
     region: right
     label: hidden
     settings:
@@ -139,7 +138,7 @@ content:
             classes: {  }
   field_sections:
     label: hidden
-    weight: 5
+    weight: 4
     type: entity_reference_revisions_entity_view
     settings:
       view_mode: full
