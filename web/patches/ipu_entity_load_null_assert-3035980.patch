@@ -1,0 +1,11 @@
+diff --git a/core/lib/Drupal/Core/Entity/EntityStorageBase.php b/core/lib/Drupal/Core/Entity/EntityStorageBase.php
+--- a/core/lib/Drupal/Core/Entity/EntityStorageBase.php
++++ b/core/lib/Drupal/Core/Entity/EntityStorageBase.php
+@@ -246,6 +246,7 @@ protected function doCreate(array $values) {
+    * {@inheritdoc}
+    */
+   public function load($id) {
+-    assert(!is_null($id), 'Cannot load a NULL ID.');
+     $entities = $this->loadMultiple([$id]);
+     return isset($entities[$id]) ? $entities[$id] : NULL;
+   }
