@@ -1,7 +1,7 @@
 diff --git a/core/lib/Drupal/Core/Entity/EntityStorageBase.php b/core/lib/Drupal/Core/Entity/EntityStorageBase.php
 --- a/core/lib/Drupal/Core/Entity/EntityStorageBase.php
 +++ b/core/lib/Drupal/Core/Entity/EntityStorageBase.php
-@@ -246,6 +246,7 @@ protected function doCreate(array $values) {
+@@ -246,7 +246,6 @@ protected function doCreate(array $values) {
     * {@inheritdoc}
     */
    public function load($id) {
