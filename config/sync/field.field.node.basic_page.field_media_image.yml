@@ -30,9 +30,9 @@ third_party_settings:
         transliterate: false
   content_translation:
     translation_sync:
-      file: file
-      alt: '0'
-      title: '0'
+      alt: alt
+      title: title
+      file: '0'
   custom_add_another:
     custom_add_another: ''
     custom_remove: ''
@@ -53,7 +53,7 @@ settings:
   max_resolution: ''
   min_resolution: ''
   alt_field: true
-  alt_field_required: true
+  alt_field_required: false
   title_field: true
   title_field_required: false
   default_image:

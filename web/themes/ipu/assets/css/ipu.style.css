@@ -18534,8 +18534,8 @@ a {
     font-size: $font-size-sm;
     letter-spacing: 0.05em;
   */
-  font-weight: 500;
-  font-size: 1.2rem;
+  font-weight: 300;
+  font-size: 1.4rem;
   line-height: 1;
 }
 .term-icon a:hover {

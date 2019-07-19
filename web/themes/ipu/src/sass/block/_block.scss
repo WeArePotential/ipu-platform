@@ -267,8 +267,8 @@ a {
     font-size: $font-size-sm;
     letter-spacing: 0.05em;
   */
-  font-weight: $font-weight-bold;
-  font-size: $font-size-md;
+  font-weight: $font-weight-light;
+  font-size: 1.4rem;
   line-height: 1;
   &:hover {
     color: color("ipu-orange");
