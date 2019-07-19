@@ -18582,7 +18582,7 @@ https://www.drupal.org/project/drupal/issues/2929888
 }
 .term-icon-231 a::before,
 .term-icon-231 span::before {
-  background: url("../img/theme_icons/parliamentary_dialogue.svg");
+  background: url("../img/theme_icons/international_relations.svg");
 }
 .term-icon-139 a::before,
 .term-icon-139 span::before {
@@ -18595,6 +18595,10 @@ https://www.drupal.org/project/drupal/issues/2929888
 .term-icon-117 a::before,
 .term-icon-117 span::before {
   background: url("../img/theme_icons/youth.svg");
+}
+.term-icon-337 a::before,
+.term-icon-337 span::before {
+  background: url("../img/theme_icons/parliamentary_dialogue.svg");
 }
 
 .viewfield--view__theme_list__block_home_page .row .col > div, .viewfield--view__theme_list__block_home_page .ultimenu__flyout .region-inner .col > div, .ultimenu__flyout .viewfield--view__theme_list__block_home_page .region-inner .col > div, .viewfield--view__theme_list__block_home_page .node-172 .group-header .group-header-inner .col > div, .node-172 .group-header .viewfield--view__theme_list__block_home_page .group-header-inner .col > div, .viewfield--view__theme_list__block_home_page .node-landing_page .group-header .group-header-inner .col > div, .node-landing_page .group-header .viewfield--view__theme_list__block_home_page .group-header-inner .col > div, .viewfield--view__theme_list__block_home_page .field__item__paragraph__highlights .paragraph--type--highlights .highlights__field-node .col > div, .field__item__paragraph__highlights .paragraph--type--highlights .viewfield--view__theme_list__block_home_page .highlights__field-node .col > div, .viewfield--view__theme_list__block_home_page .paragraph--type--sections .field--type-viewfield .views-element-container > div .col > div, .paragraph--type--sections .field--type-viewfield .viewfield--view__theme_list__block_home_page .views-element-container > div .col > div, .viewfield--view__theme_list__block_home_page .node-article .group-related > div .field__item .views-element-container > div .col > div, .node-article .group-related > div .field__item .viewfield--view__theme_list__block_home_page .views-element-container > div .col > div, .viewfield--view__theme_list__block_home_page .page__footer .region-inner .col > div, .page__footer .viewfield--view__theme_list__block_home_page .region-inner .col > div {
@@ -20710,11 +20714,14 @@ ol.breadcrumb {
 .block--ipu-content ul.menu-top-level .menu-item.menu-item--active-trail.menu-item--route-node-240 a > span:before {
   background: url(../img/theme_icons/peace_building.svg);
 }
+.block--ipu-content ul.menu-top-level .menu-item.menu-item--active-trail.menu-item--route-node-239 {
+  /* Sustainable development */
+}
 .block--ipu-content ul.menu-top-level .menu-item.menu-item--active-trail.menu-item--route-node-239 a > span:before {
   background: url(../img/theme_icons/global_development.svg);
 }
-.block--ipu-content ul.menu-top-level .menu-item.menu-item--active-trail.menu-item--route-node-xxx a > span:before {
-  background: url(../img/theme_icons/parliamentary_dialogue.svg);
+.block--ipu-content ul.menu-top-level .menu-item.menu-item--active-trail.menu-item--route-node-241 a > span:before {
+  background: url(../img/theme_icons/international_relations.svg);
 }
 .block--ipu-content ul.menu-top-level .menu-item.menu-item--active-trail.menu-item--route-node-242 a > span:before {
   background: url(../img/theme_icons/youth.svg);
