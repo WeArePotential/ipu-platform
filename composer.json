@@ -203,6 +203,9 @@
             },
             "drupal/entity_browser": {
                 "Warning: key() expects parameter 1 to be array, null given in Drupal\\entity_browser\\Plugin\\Field\\FieldWidget\\EntityReferenceBrowserWidget::processEntityBrowser()": "https://www.drupal.org/files/issues/2018-07-17/entity_browser-key-2914385-6.patch"
+            },
+            "drupal/menu_block": {
+                "Render menu parent in Menu Block": "web/patches/menu_block-render_parent_option-2884514-5.patch"
             }
         },
         "drupal-scaffold": {

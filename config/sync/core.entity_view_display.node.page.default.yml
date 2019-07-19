@@ -56,6 +56,7 @@ third_party_settings:
     regions:
       top:
         - node_title
+        - 'dynamic_block_field:node-top_level_menu_item'
       left:
         - body
       right:
@@ -67,7 +68,7 @@ third_party_settings:
     fields:
       'dynamic_block_field:node-menu_block':
         plugin_id: 'dynamic_block_field:node-menu_block'
-        weight: 2
+        weight: 3
         label: hidden
         formatter: default
         ft:
@@ -76,6 +77,11 @@ third_party_settings:
             lb: ''
             lb-col: false
             classes: {  }
+      'dynamic_block_field:node-top_level_menu_item':
+        plugin_id: 'dynamic_block_field:node-top_level_menu_item'
+        weight: 2
+        label: hidden
+        formatter: default
       node_title:
         plugin_id: node_title
         weight: 0
@@ -106,7 +112,7 @@ content:
     third_party_settings: {  }
     region: left
   field_caption:
-    weight: 4
+    weight: 5
     label: hidden
     settings: {  }
     third_party_settings: {  }
@@ -114,7 +120,7 @@ content:
     region: right
   field_media_image:
     type: responsive_image
-    weight: 3
+    weight: 4
     region: right
     label: hidden
     settings:
@@ -123,7 +129,7 @@ content:
     third_party_settings: {  }
   field_sections:
     label: hidden
-    weight: 5
+    weight: 6
     type: entity_reference_revisions_entity_view
     settings:
       view_mode: full

@@ -112,30 +112,79 @@ ol.breadcrumb {
 }
 
 
-/* Right hand column sub-meuu
-  Based on normal Drupal classy theme html
-  */
-.block--ipu-content .section-page__dynamic-block-fieldnode-menu-block,
-.block--ipu-content .basic-page__dynamic-block-fieldnode-menu-block,
-.block--ipu-content .page__dynamic-block-fieldnode-menu-block {
-  .field__label {
-    color: $ipu-blue;
-    font-size: 2rem;
-    line-height: 2rem;
-    font-weight: $font-weight-light !important;
-    margin-bottom: 10px;
-    &:before {
-      background: url(../img/theme_icons/gender_equality.svg);
-      content: "";
-      width: 2rem;
-      height: 2rem;
-      display: block;
-      float: left;
-      margin-right: 0.4rem;
+/**
+* Right hand column sub-meuu
+* Based on normal Drupal classy theme html
+**/
+
+.block--ipu-content ul.menu-top-level {
+  padding-left: 0;
+  margin-bottom: 4px;
+  list-style: none;
+  background-color: $white;
+  border-width: 0;
+  .menu-item {
+    display: none;
+  }
+  .menu-item.menu-item--active-trail {
+    display: block;
+
+    a {
+      color: $ipu-blue;
+      font-size: 2rem;
+      line-height: 2rem;
+      font-weight: $font-weight-light !important;
+      margin-bottom: 10px;
+      text-decoration: none;
+      span:before {
+        background: none;
+        content: "";
+        width: 2rem;
+        height: 2rem;
+        display: block;
+        float: left;
+        margin-right: 0.4rem;
+      }
+    }
+    &.menu-item--route-node-237 {
+      a > span:before {
+        background: url(../img/theme_icons/gender_equality.svg);
+      }
+    }
+    &.menu-item--route-node-236 {
+      a > span:before {
+        background: url(../img/theme_icons/strong_parliaments.svg);
+      }
+    }
+    &.menu-item--route-node-238 {
+      a > span:before {
+        background: url(../img/theme_icons/human_rights.svg);
+      }
+    }
+    &.menu-item--route-node-240 {
+      a > span:before {
+        background: url(../img/theme_icons/peace_building.svg);
+      }
+    }
+    &.menu-item--route-node-239 {
+      a > span:before {
+        background: url(../img/theme_icons/global_development.svg);
+      }
+    }
+    &.menu-item--route-node-xxx {
+      a > span:before {
+        background: url(../img/theme_icons/parliamentary_dialogue.svg);
+      }
+    }
+    &.menu-item--route-node-242 {
+       a > span:before {
+         background: url(../img/theme_icons/youth.svg);
+       }
     }
   }
 }
 
+/* Excludes top-level */
 .block--ipu-content ul.menu,
 .ipu-menu-list ul.nav {
   list-style: none;

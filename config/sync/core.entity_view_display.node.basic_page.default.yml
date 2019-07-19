@@ -26,7 +26,7 @@ third_party_settings:
         - field_media_image
         - field_caption
       parent_name: ''
-      weight: 4
+      weight: 5
       label: image
       format_settings:
         element: div
@@ -84,17 +84,18 @@ third_party_settings:
         - body
         - field_sections
       right:
+        - 'dynamic_block_field:node-top_level_menu_item'
         - 'dynamic_block_field:node-menu_block'
         - field_media_image
         - group_image
-        - field_related_content
         - field_caption
+        - field_related_content
         - field_related_documents
     fields:
       'dynamic_block_field:node-menu_block':
         plugin_id: 'dynamic_block_field:node-menu_block'
-        weight: 3
-        label: above
+        weight: 4
+        label: hidden
         formatter: default
         ft:
           id: default
@@ -102,6 +103,11 @@ third_party_settings:
             lb: 'In this section'
             lb-col: false
             classes: {  }
+      'dynamic_block_field:node-top_level_menu_item':
+        plugin_id: 'dynamic_block_field:node-top_level_menu_item'
+        weight: 3
+        label: hidden
+        formatter: default
       node_title:
         plugin_id: node_title
         weight: 0
@@ -131,7 +137,7 @@ content:
     region: left
   field_caption:
     label: hidden
-    weight: 5
+    weight: 6
     type: text_default
     settings: {  }
     third_party_settings: {  }
@@ -147,7 +153,7 @@ content:
     third_party_settings: {  }
   field_related_content:
     label: above
-    weight: 5
+    weight: 6
     type: entity_reference_revisions_entity_view
     settings:
       view_mode: full
@@ -156,7 +162,7 @@ content:
     region: right
   field_related_documents:
     type: entity_reference_revisions_entity_view
-    weight: 6
+    weight: 7
     region: right
     label: above
     settings:

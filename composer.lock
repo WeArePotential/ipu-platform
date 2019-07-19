@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b5109bc7a7b85f487645cf39bf7031cc",
+    "content-hash": "5cbed403aee0cafd356fe72a8514be97",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -4739,6 +4739,7 @@
                     "merge-extra": false
                 },
                 "patches_applied": {
+                    "IPU: Entity load null assert breaks paragraph add ajax See issue 3035980": "web/patches/ipu_entity_load_null_assert-3035980.patch",
                     "Ignore width height on untranslatable field": "https://www.drupal.org/files/issues/2019-02-11/ignore_width_height_on_untranslatable_field_comparision_2941092_8.patch",
                     "Path alias filter by system path": "https://www.drupal.org/files/issues/2018-03-24/path_alias_filter_by-2418755-69.patch",
                     "Term route context": "https://www.drupal.org/files/issues/2019-04-12/term_route_context-2998826-31.patch"
@@ -7899,6 +7900,9 @@
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "patches_applied": {
+                    "Render menu parent in Menu Block": "web/patches/menu_block-render_parent_option-2884514-5.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",

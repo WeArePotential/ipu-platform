@@ -20664,22 +20664,33 @@ ol.breadcrumb {
   background-color: #f8f9fa;
 }
 
-/* Right hand column sub-meuu
-  Based on normal Drupal classy theme html
-  */
-.block--ipu-content .section-page__dynamic-block-fieldnode-menu-block .field__label,
-.block--ipu-content .basic-page__dynamic-block-fieldnode-menu-block .field__label,
-.block--ipu-content .page__dynamic-block-fieldnode-menu-block .field__label {
+/**
+* Right hand column sub-meuu
+* Based on normal Drupal classy theme html
+**/
+.block--ipu-content ul.menu-top-level {
+  padding-left: 0;
+  margin-bottom: 4px;
+  list-style: none;
+  background-color: #fff;
+  border-width: 0;
+}
+.block--ipu-content ul.menu-top-level .menu-item {
+  display: none;
+}
+.block--ipu-content ul.menu-top-level .menu-item.menu-item--active-trail {
+  display: block;
+}
+.block--ipu-content ul.menu-top-level .menu-item.menu-item--active-trail a {
   color: #0066a1;
   font-size: 2rem;
   line-height: 2rem;
   font-weight: 300 !important;
   margin-bottom: 10px;
+  text-decoration: none;
 }
-.block--ipu-content .section-page__dynamic-block-fieldnode-menu-block .field__label:before,
-.block--ipu-content .basic-page__dynamic-block-fieldnode-menu-block .field__label:before,
-.block--ipu-content .page__dynamic-block-fieldnode-menu-block .field__label:before {
-  background: url(../img/theme_icons/gender_equality.svg);
+.block--ipu-content ul.menu-top-level .menu-item.menu-item--active-trail a span:before {
+  background: none;
   content: "";
   width: 2rem;
   height: 2rem;
@@ -20687,7 +20698,29 @@ ol.breadcrumb {
   float: left;
   margin-right: 0.4rem;
 }
+.block--ipu-content ul.menu-top-level .menu-item.menu-item--active-trail.menu-item--route-node-237 a > span:before {
+  background: url(../img/theme_icons/gender_equality.svg);
+}
+.block--ipu-content ul.menu-top-level .menu-item.menu-item--active-trail.menu-item--route-node-236 a > span:before {
+  background: url(../img/theme_icons/strong_parliaments.svg);
+}
+.block--ipu-content ul.menu-top-level .menu-item.menu-item--active-trail.menu-item--route-node-238 a > span:before {
+  background: url(../img/theme_icons/human_rights.svg);
+}
+.block--ipu-content ul.menu-top-level .menu-item.menu-item--active-trail.menu-item--route-node-240 a > span:before {
+  background: url(../img/theme_icons/peace_building.svg);
+}
+.block--ipu-content ul.menu-top-level .menu-item.menu-item--active-trail.menu-item--route-node-239 a > span:before {
+  background: url(../img/theme_icons/global_development.svg);
+}
+.block--ipu-content ul.menu-top-level .menu-item.menu-item--active-trail.menu-item--route-node-xxx a > span:before {
+  background: url(../img/theme_icons/parliamentary_dialogue.svg);
+}
+.block--ipu-content ul.menu-top-level .menu-item.menu-item--active-trail.menu-item--route-node-242 a > span:before {
+  background: url(../img/theme_icons/youth.svg);
+}
 
+/* Excludes top-level */
 .block--ipu-content ul.menu,
 .ipu-menu-list ul.nav {
   list-style: none;

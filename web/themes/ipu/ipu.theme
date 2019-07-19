@@ -36,3 +36,4 @@ function ipu_preprocess_viewfield_item(&$variables) {
   $variables['view_id'] = $element['#view_id'];
   $variables['display_id'] = $element['#display_id'];
 }
+
