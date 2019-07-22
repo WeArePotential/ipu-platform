@@ -1,0 +1,176 @@
+uuid: 02b1512e-815a-4fb3-b930-ec6c336dcd9b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.slide
+    - field.field.node.landing_page.body
+    - field.field.node.landing_page.field_caption
+    - field.field.node.landing_page.field_content_section
+    - field.field.node.landing_page.field_media_image
+    - field.field.node.landing_page.field_theme
+    - node.type.landing_page
+    - responsive_image.styles.wide
+  module:
+    - ds
+    - field_group
+    - responsive_image
+    - smart_trim
+    - text
+    - user
+third_party_settings:
+  field_group:
+    group_image:
+      children:
+        - field_media_image
+        - field_caption
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: group-image
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Image
+      region: hidden
+    group_content:
+      children:
+        - node_title
+        - body
+        - node_link
+      parent_name: ''
+      weight: 4
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: group-content
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Content
+      region: hidden
+  ds:
+    layout:
+      id: bs_2col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        layout:
+          wrapper: div
+          classes: {  }
+          add_layout_class: 1
+          attributes: ''
+        regions:
+          left:
+            wrapper: div
+            classes:
+              col-md-6: col-md-6
+            add_region_classes: 1
+            attributes: ''
+          right:
+            wrapper: div
+            classes:
+              col-md-6: col-md-6
+            add_region_classes: 1
+            attributes: ''
+    regions:
+      left:
+        - group_image
+        - field_media_image
+        - field_caption
+      right:
+        - group_content
+        - node_title
+        - body
+        - node_link
+    fields:
+      node_link:
+        plugin_id: node_link
+        weight: 19
+        label: hidden
+        formatter: default
+      node_title:
+        plugin_id: node_title
+        weight: 17
+        label: hidden
+        formatter: default
+        settings:
+          link: true
+          wrapper: h3
+          class: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+id: node.landing_page.slide
+targetEntityType: node
+bundle: landing_page
+mode: slide
+content:
+  body:
+    label: hidden
+    type: smart_trim
+    weight: 18
+    settings:
+      trim_length: 40
+      trim_type: chars
+      trim_suffix: ''
+      wrap_class: trimmed
+      more_text: More
+      more_class: more-link
+      summary_handler: full
+      trim_options:
+        text: true
+        trim_zero: false
+      wrap_output: false
+      more_link: false
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    region: right
+  field_caption:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: left
+  field_media_image:
+    weight: 1
+    label: hidden
+    settings:
+      responsive_image_style: wide
+      image_link: content
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: responsive_image
+    region: left
+hidden:
+  field_content_section: true
+  field_theme: true
+  langcode: true
+  links: true

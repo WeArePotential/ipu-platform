@@ -42,13 +42,13 @@ third_party_settings:
           left:
             wrapper: div
             classes:
-              col-sm-6: col-sm-6
+              col-md-6: col-md-6
             add_region_classes: 1
             attributes: ''
           right:
             wrapper: div
             classes:
-              col-sm-6: col-sm-6
+              col-md-6: col-md-6
             add_region_classes: 1
             attributes: ''
     regions:
@@ -57,8 +57,8 @@ third_party_settings:
         - field_media_image
         - field_caption
       right:
-        - group_content
         - field_article_type
+        - group_content
         - node_title
         - node_post_date
         - body
@@ -74,9 +74,9 @@ third_party_settings:
         label: hidden
         formatter: default
         settings:
+          link: true
           wrapper: h3
           class: ''
-          link: false
         ft:
           id: default
           settings:
