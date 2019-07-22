@@ -6,7 +6,6 @@ dependencies:
     - field.field.paragraph.carousel.field_section_node
     - paragraphs.paragraphs_type.carousel
   module:
-    - chosen_field
     - field_layout
     - layout_discovery
 third_party_settings:
@@ -20,9 +19,12 @@ mode: default
 content:
   field_section_node:
     weight: 0
-    settings: {  }
+    settings:
+      match_operator: STARTS_WITH
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-    type: chosen_select
+    type: entity_reference_autocomplete
     region: content
   status:
     type: boolean_checkbox

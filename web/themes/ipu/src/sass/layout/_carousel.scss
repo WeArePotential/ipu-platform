@@ -2,11 +2,24 @@
 .carousel {
   @extend .container;
 }
-.carousel-control {
-  font-size: 2.6rem;
-  color: $secondary;
-  &:hover {
-    color: $tertiary;
+.carousel-controls {
+  position: relative;
+  height: 40px;
+  .carousel-control {
+    width: auto;
+    font-size: 2.6rem;
+    color: $secondary;
+    &.carousel-control-prev {
+      right: 30px;
+      left: inherit;
+    }
+    &:hover {
+      color: $tertiary;
+    }
+    i {
+      bottom: 0;
+      right: 0;
+    }
   }
 }
 .carousel-indicators {
@@ -18,29 +31,41 @@
   height: 20px;
   li {
     color: $ipu-blue;
-    -moz-border-radius: 12px/12px;
-    -webkit-border-radius: 12px 12px;
-    border-radius: 12px/12px;
-    border: solid 6px $ipu-blue;
-    width: 12px;
-    height: 12px;
+    -moz-border-radius: 6px/6px;
+    -webkit-border-radius: 6px 6px;
+    border-radius: 6px/6px;
+    border: solid 3px $ipu-blue;
+    width: 6px;
+    height: 6px;
   }
 }
 
 .carousel-item {
+
   .node--view-mode-slide {
     @extend .align-items-center;
+    &.bs-2col {
+      @extend .row;
+    }
   }
 }
-.node--type-article.node--view-mode-slide {
-  & > div > div:not(.group-image) {
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
-    position: relative;
-    left: -85px;
-  }
-  .article__body {
-    font-size: $font-size-sm;
+.carousel-item {
+  .node--view-mode-slide {
+      & > div > div:not(.group-image) {
+        padding-top: 40px;
+      }
+      @include media-breakpoint-up(md) {
+
+      & > div > div:not(.group-image) {
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+        position: relative;
+        left: -85px;
+      }
+    }
+    .body {
+      font-size: $font-size-sm;
+    }
   }
 }
