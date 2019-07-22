@@ -7,7 +7,7 @@ $grid-breakpoints: (
         md: 768px,
         lg: 992px,
         xl: 1200px,
-        xxl: 1900px
+        xxl: 1440px
 );
 
 $container-max-widths: (
@@ -15,8 +15,9 @@ $container-max-widths: (
         md: 720px,
         lg: 960px,
         xl: 1140px,
-        xxl: 1610px
+        xxl: 1390px
 );
+$grid-gutter-width: 12px;
 
 // Font family styles
 $font-family-sans-serif: Roboto, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",

@@ -1,0 +1,35 @@
+{#
+/**
+ * @file
+ * Bootstrap Layouts: "1 Column" template.
+ *
+ * Available layout variables:
+ * - wrapper: Wrapper element for the layout container.
+ * - attributes: Wrapper attributes for the layout container.
+ *
+ * Available region variables:
+ * - main
+ *
+ * Each region variable contains the following properties:
+ * - wrapper: The HTML element to use to wrap this region.
+ * - attributes: The HTML attributes to use on the wrapper for this region.
+ * - content: The content to go inside the wrapper for this region.
+
+ MAKE THE IMAGE A BACKGROUND
+
+
+{% if node.field_media_image.entity is defined %}
+   {% if node.field_media_image.entity.uri.value is not null %}
+        {% set url = 'url(' ~ node.field_media_image.entity.uri.value|image_style('teaser') ~ ')' %}
+       {% endif %}
+{% endif %}
+
+ */
+#}
+{% set url = 'none' %}
+<{{ wrapper }}{{ attributes }}>
+{{ title_suffix.contextual_links }}
+<{{ main.wrapper }}{{ main.attributes.setAttribute('style', 'background-image: ' ~ url) }}>
+{{ main.content }}
+</{{ main.wrapper }}>
+</{{ wrapper }}>

@@ -24,7 +24,7 @@ third_party_settings:
       children:
         - group_header_inner
       parent_name: ''
-      weight: 1
+      weight: 14
       format_type: html_element
       format_settings:
         element: div
@@ -67,10 +67,9 @@ third_party_settings:
       settings: {  }
     regions:
       content:
-        - langcode
         - field_theme
-        - field_media_image
         - field_content_section
+        - field_media_image
         - field_caption
         - links
         - body
@@ -94,7 +93,7 @@ content:
     type: text_default
     region: content
   field_content_section:
-    weight: 2
+    weight: 1
     label: hidden
     settings:
       view_mode: default
@@ -133,18 +132,10 @@ content:
     label: above
     settings: {  }
     third_party_settings: {  }
-  langcode:
-    type: language
-    weight: 0
-    region: content
-    label: above
-    settings:
-      link_to_entity: false
-      native_language: false
-    third_party_settings: {  }
   links:
-    weight: 3
+    weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  langcode: true

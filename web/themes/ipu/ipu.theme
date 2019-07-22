@@ -37,3 +37,19 @@ function ipu_preprocess_viewfield_item(&$variables) {
   $variables['display_id'] = $element['#display_id'];
 }
 
+function ipu_preprocess_field(&$variables) {
+
+  if ($variables['field_name'] == 'field_media_image') {
+
+    if ($variables['element']['#view_mode'] == 'highlight') {
+
+      $node = $variables['element']['#object'];
+      //$field_image = field_get_items('node', $node, 'field_media_image');
+      //if (!$paragraph->field_my_image_field->isEmpty()) {
+      $image = $node->field_media_image->entity->url();
+      $variables['attributes']['style'][] = 'background-image: url("' . $image . '");';
+      $variables['attributes']['style'][] = 'background-size: cover;';
+      $variables['attributes']['style'][] = 'background-position: center center;';
+    }
+  }
+}

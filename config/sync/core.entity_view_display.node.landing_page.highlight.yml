@@ -38,7 +38,7 @@ third_party_settings:
         effect: none
         speed: fast
       label: Image
-      region: content
+      region: hidden
     group_content:
       children:
         - node_title
@@ -48,8 +48,6 @@ third_party_settings:
       weight: 1
       format_type: html_element
       format_settings:
-        id: ''
-        classes: card-body
         element: div
         show_label: false
         label_element: h3
@@ -57,17 +55,30 @@ third_party_settings:
         attributes: ''
         effect: none
         speed: fast
+        id: ''
+        classes: group-content
       label: Content
-      region: content
+      region: hidden
   ds:
     layout:
-      id: layout_onecol
-      library: layout_discovery/onecol
+      id: bs_1col
+      library: null
       disable_css: false
       entity_classes: all_classes
-      settings: {  }
+      settings:
+        layout:
+          wrapper: div
+          classes: {  }
+          add_layout_class: 1
+          attributes: ''
+        regions:
+          main:
+            wrapper: div
+            classes: {  }
+            add_region_classes: 1
+            attributes: ''
     regions:
-      content:
+      main:
         - group_image
         - group_content
         - field_media_image
@@ -137,14 +148,14 @@ content:
             lb: ''
             lb-col: false
             classes: {  }
-    region: content
+    region: main
   field_caption:
     weight: 4
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
-    region: content
+    region: main
   field_media_image:
     weight: 2
     label: hidden
@@ -160,7 +171,7 @@ content:
             lb-col: false
             classes: {  }
     type: image
-    region: content
+    region: main
 hidden:
   field_content_section: true
   field_theme: true

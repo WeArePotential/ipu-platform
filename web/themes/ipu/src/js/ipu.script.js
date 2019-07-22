@@ -25,13 +25,14 @@ import 'bootstrap';
 
   Drupal.behaviors.equalHeights = {
     attach: function (context) {
-      /*
-      * Only go to the link when dropdown is already open (if the dropdown is a link)
-      */
+
       $('.node--view-mode-highlight .bs-region').matchHeight();
+      $('.node--view-mode-highlight .article__type-content').matchHeight();
       $('.node--view-mode-highlight .section-page__body').matchHeight();
       $('.block--views-block--theme-list-block-1-5 .col .views-field-description__value').matchHeight();
-      $('.viewfield--view__theme_list__block_home_page .col .views-field-description__value').matchHeight();
+      $('.viewfield--view__theme_list__block_home_page .col .term-icon').matchHeight({'byRow': false});
+      $('.viewfield--view__theme_list__block_home_page .col .views-field-description__value').matchHeight({'byRow': false});
+      $('.carousel .group-content').matchHeight();
     }
   };
 

@@ -260,7 +260,9 @@ a {
     margin-bottom: 10px;
   }
 }
-
+.term-icon {
+  display: block;
+}
 .term-icon a {
   /* Was uppercase and small
     text-transform: uppercase;
@@ -270,6 +272,7 @@ a {
   font-weight: $font-weight-light;
   font-size: 1.4rem;
   line-height: 1;
+  display: block;
   &:hover {
     color: color("ipu-orange");
     text-decoration: none;
@@ -329,6 +332,11 @@ span::before {
 }
 
 .viewfield--view__theme_list__block_home_page {
+
+  .term-icon a::before {
+    width: 32px !important;
+    height: 32px !important;
+  }
   .row .col > div {
     background-color: $light;
     padding: 10px 10px 0 10px;
@@ -338,6 +346,7 @@ span::before {
     font-size: $font-size-sm;
     line-height: 1.1;
     padding-bottom: 10px !important;
+    padding-left: 46px !important;
   }
 }
 
@@ -356,10 +365,28 @@ span::before {
 .section-page-subpages-section {
   background-color: color("ipu-very-light-grey");
   padding: 20px 0;
-  margin: 10px -15px 0 -15px; /* Push to edge of container-fluid without row */
+  margin: 10px -10px 0 -10px; /* Push to edge of container-fluid without row */
   .field__label {
     @extend h2;
     margin: 30px 0;
+  }
+}
+
+/* Generic layout */
+.field-content-section {
+  .paragraph--type--sections {
+    .field--type-viewfield {
+      .views-element-container > div {
+        @extend .row;
+      }
+      .views-row {
+        @extend .col-md-4;
+      }
+
+      .events-card .views-row {
+        @extend .col-md-6;
+      }
+    }
   }
 }
 
@@ -582,6 +609,8 @@ a.btn {
   .ipu-event__field-event-type {
     background-color: $tertiary;
   }
+
+
   // Article content for all highlight cards
   .article__type-content,
   .layout__region--content,
@@ -590,6 +619,12 @@ a.btn {
     @extend .card-body;
   }
 
+  .article__type-content {
+    .bs.region--main {
+      display: flex;
+      flex-direction: column;
+    }
+  }
   .article__node-link a {
     &:hover,
     &:focus {
@@ -649,6 +684,7 @@ a.btn {
 // Read more link base styles
 .article__node-link a,
 .ipu-event__node-link a {
+  @extend .btn-outline-primary;
   @extend .btn;
   @extend .btn-sm;
 
@@ -675,23 +711,54 @@ a.btn {
   .node--view-mode-highlight {
     @extend .text-white;
     @extend .bg-primary;
-
+    .article__body {
+      padding: 10px 0;
+    }
     a {
       @extend .text-white;
     }
   }
+  /*& > .col-md-6 > .col-md-12 {
+    height: 100%;
+    & > div {
+      height: 100%;
+    }
+  }*/
 
-  .article__field-media-image + .article__type-content {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    background-color: rgba($primary, 0.8);
+  .node--view-mode-highlight .article__type-content {
+    &:hover {
+      .article__body {
+        /* Show/hide description
+        Doesn't work if descriptions are too big
+
+        visibility: visible;
+        height: auto;
+        opacity: 1;
+        transition: all 1s ease-in-out;
+        background-color: rgba($primary, 1);
+        */
+      }
+    }
+
+    .article__field-media-image + .article__type-content {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background-color: rgba($primary, 0.8);
+
+      .article__body {
+        visibility: hidden;
+        opacity: 0;
+        height: 0;
+      }
+    }
+
   }
 
   .article__node-link a {
     @extend .btn-outline-light;
   }
-  
+
 }
 .viewfield--view__articles {
   h3 {
@@ -948,19 +1015,6 @@ a.btn {
   }
 }
 
-.paragraph--type--sections {
-  .field--type-viewfield {
-    .views-element-container > div {
-      @extend .row;
-    }
-    .views-row {
-      @extend .col-md-4;
-    }
-    .events-card .views-row {
-      @extend .col-md-6;
-    }
-  }
-}
 
 .field__item__paragraph__highlights {
   background-color: $ipu-teal-light;
@@ -975,27 +1029,46 @@ a.btn {
       @extend .row;
     }
     .field__item {
+      &:nth-child(-n + 2) {
+        @extend .col-md-6;
+        @extend .col-xl-5ths;
+      }
       @extend .col-sm-6;
       @extend .col-md-4;
+      @extend .col-xl-5ths;
+      /* Make first two children bigger */
+
       /* Try this for mixed sizes */
       /*@extend .col-lg-3;
       &:first-child {
         @extend .col-lg-6;
       }*/
-      /* Or hide the last one? */
-      @extend .col-lg-3;
-      @include media-breakpoint-up(lg) {
+
+      /* Or show/hide the last one?
+      @include media-breakpoint-up(xxl) {
         &:last-child {
-          display: none;
+          display: block;
         }
-      }
+      }*/
     }
+  }
+}
+
+
+.node--type-landing-page.node--view-mode-highlight {
+  .group-content {
+    padding-top: 10px;
+  }
+  .node-link a {
+    @extend .btn-sm;
   }
 }
 
 .node--type-publication.node--view-mode-highlight {
   .group-header {
-    @extend .card-body
+    @extend .card-body;
+    background-color: $ipu-white;
+    padding-top: 0;
   }
   .group-content-wrapper {
     @extend .d-flex;
@@ -1008,7 +1081,9 @@ a.btn {
   .group-content {
     @extend .card-body;
     @extend .col-8;
+    background-color: $ipu-white;
   }
+
 }
 
 .node-basic_page,
@@ -1086,7 +1161,7 @@ a.btn {
 .node-landing_page .landing-page__field-content-section .paragraph--type--sections {
   @extend .container;
 }
-.node-landing_page {
+.node-landing_page:not(.node-172) {
   .group-header {
     @extend .container;
     .group-header-inner {
@@ -1105,9 +1180,10 @@ a.btn {
 }
 .node-172 {
   .group-header {
-    @extend .container;
+    @extend .container-fluid;
+    background-color: $light;
     .group-header-inner {
-      @extend .row;
+      @extend .container;
     }
     .landing-page__node-title {
       display: none;
@@ -1117,6 +1193,16 @@ a.btn {
     }
     .landing-page__body {
       @extend .col-md-12;
+      padding: 20px 0;
+      h2 {
+        color: $ipu-grey;
+      }
+      p {
+        color: $ipu-grey;
+        margin-bottom: 0;
+        font-size: $font-size-md;
+        line-height: 1.2;
+      }
     }
   }
 }
@@ -1129,4 +1215,17 @@ a.btn {
 /* Hide the view-categories field from front-end. */
 .sections__field-view-categories {
   display: none;
+}
+
+.in-the-section {
+  margin-top: 20px;
+  padding: 20px 0;
+  background-color: $light;
+  h2 {
+    padding-bottom: 4px;
+    border-bottom: 1px solid $secondary;
+  }
+  .views-row {
+    @extend .col-md-4;
+  }
 }

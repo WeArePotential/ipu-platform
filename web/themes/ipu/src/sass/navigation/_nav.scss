@@ -289,7 +289,23 @@ ol.breadcrumb {
     }
   }
 }
-  /* Styling and layout of content */
+
+@include media-breakpoint-down(md) {
+  #main-nav-left {
+    ul.ultimenu,
+    .block--ipu-content ul.menu,
+    .ipu-menu-list ul.nav {
+      & > li {
+        width: 50%;
+        min-width: 50%;
+        float: left;
+        border-width: 0 !important;
+      }
+    }
+  }
+}
+
+/* Styling and layout of content in menus*/
 
 .ultimenu__flyout {
   .region-inner {

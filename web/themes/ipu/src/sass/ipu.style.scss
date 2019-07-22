@@ -5,6 +5,7 @@
 @import "~bootstrap/scss/functions";
 @import "base/variables";
 
+
 // This is needed after variables SASS, to add  to non !default values
 $theme-colors: map_merge($theme-colors, (
     "tertiary":    $tertiary
@@ -86,4 +87,47 @@ $spacers: map-merge(
 @import "navigation/nav";
 @import "content/node.page";
 @import "content/node.article";
+
+/* Add 5 card layouts */
+.col-xs-5ths,
+.col-sm-5ths,
+.col-md-5ths,
+.col-lg-5ths {
+    position: relative;
+    min-height: 1px;
+    padding-right: $grid-gutter-width;
+    padding-left: $grid-gutter-width;
+}
+
+@mixin one-fifth() {
+    flex: 0 0 20%;
+    max-width: 20%;
+}
+.col-xs-5ths {
+    /* Not this: width: 20%;
+    float: left;
+    This: */
+    @include one-fifth();
+}
+
+@include media-breakpoint-up(md) {
+    .col-sm-5ths {
+        @include one-fifth();
+    }
+}
+@include media-breakpoint-up(lg) {
+    .col-md-5ths {
+        @include one-fifth();
+    }
+}
+@include media-breakpoint-up(xl) {
+    .col-lg-5ths {
+        @include one-fifth();
+    }
+}
+@include media-breakpoint-up(xxl) {
+    .col-xl-5ths {
+        @include one-fifth();
+    }
+}
 
