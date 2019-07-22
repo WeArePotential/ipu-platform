@@ -118,6 +118,7 @@
         "drupal/taxonomy_menu": "^3.4",
         "drupal/text_resize": "^1.1",
         "drupal/token": "^1.5",
+        "drupal/twig_tweak": "^2.4",
         "drupal/twitter_block": "^2.1",
         "drupal/ultimenu": "^2.0",
         "drupal/viewfield": "^3.0@alpha",
