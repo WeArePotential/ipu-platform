@@ -75,6 +75,11 @@ class IpuMapController extends ControllerBase {
     // Rendering of the block is done in the theming, so no need to run $markup .= \Drupal::service('renderer')->render($content);
 
     $events_block = ipu_map_get_events($country->get('tid')->value);
+    $geogroups = [];
+    foreach($country->field_geopolitical_group->getValue() as $term) {
+      $geogroups[] = $term['target_id'];
+    };
+    $geogroups_block = ipu_map_get_geogroups(implode(', ', $geogroups));
 
     $page = [
       '#theme' => 'ipu-map-country',
@@ -86,6 +91,7 @@ class IpuMapController extends ControllerBase {
         'news_and_stories' => $news_block,
         'case_studies' => $case_studies_block,
         'events' => $events_block,
+        'geogroups' => $geogroups_block,
       ],
     ];
     return $page;

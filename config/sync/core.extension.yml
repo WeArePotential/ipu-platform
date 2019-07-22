@@ -165,6 +165,7 @@ module:
   token: 0
   toolbar: 0
   tour: 0
+  twig_tweak: 0
   twitter_block: 0
   ultimenu: 0
   update: 0

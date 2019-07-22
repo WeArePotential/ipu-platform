@@ -190,7 +190,14 @@ function ipu_map_get_country_case_studies($country_term_id) {
   }
   return false;
 }
-
+function ipu_map_get_geogroups($geo_term_ids) {
+  // Uses an in-built view. We use the pre_reneder below to change the sort order here.
+  $checkempty = views_get_view_result('geopolitical_group', 'node_by_geo_id', $geo_term_ids);
+  if (!empty($checkempty)) {
+    return views_embed_view('geopolitical_group', 'node_by_geo_id', $geo_term_ids);
+  }
+  return false;
+}
 function ipu_map_get_events($country_term_id) {
   // Uses an in-built view. We use the pre_reneder below to change the sort order here.
   $checkempty = views_get_view_result('events', 'latest_2_events_country', $country_term_id);

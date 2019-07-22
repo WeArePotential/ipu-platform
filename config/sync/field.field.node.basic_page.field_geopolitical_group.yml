@@ -1,0 +1,35 @@
+uuid: feee6be4-52d9-4e0d-bd6e-0c4ffc016416
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_geopolitical_group
+    - node.type.basic_page
+    - taxonomy.vocabulary.geopolitical_group
+  module:
+    - custom_add_another
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
+id: node.basic_page.field_geopolitical_group
+field_name: field_geopolitical_group
+entity_type: node
+bundle: basic_page
+label: 'Geopolitical group'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      geopolitical_group: geopolitical_group
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

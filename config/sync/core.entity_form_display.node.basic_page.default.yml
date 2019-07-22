@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.basic_page.body
     - field.field.node.basic_page.field_caption
     - field.field.node.basic_page.field_contact_ipu
+    - field.field.node.basic_page.field_geopolitical_group
     - field.field.node.basic_page.field_media_image
     - field.field.node.basic_page.field_related_content
     - field.field.node.basic_page.field_related_documents
@@ -38,7 +39,7 @@ third_party_settings:
       children:
         - field_related_documents
       parent_name: group_tabs
-      weight: 6
+      weight: 9
       format_type: tab
       format_settings:
         id: ''
@@ -52,7 +53,7 @@ third_party_settings:
       children:
         - field_related_content
       parent_name: group_tabs
-      weight: 5
+      weight: 8
       label: 'See also'
       format_settings:
         description: ''
@@ -66,7 +67,7 @@ third_party_settings:
       children:
         - field_sections
       parent_name: group_tabs
-      weight: 8
+      weight: 10
       format_type: tab
       format_settings:
         id: ''
@@ -82,6 +83,7 @@ third_party_settings:
         - title
         - body
         - field_contact_ipu
+        - field_geopolitical_group
       parent_name: ''
       weight: 0
       label: 'Basic information'
@@ -157,6 +159,12 @@ content:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
+    region: ds_content
+  field_geopolitical_group:
+    weight: 11
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
     region: ds_content
   field_media_image:
     weight: 8
