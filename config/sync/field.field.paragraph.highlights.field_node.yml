@@ -26,7 +26,7 @@ bundle: highlights
 label: 'Content item'
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

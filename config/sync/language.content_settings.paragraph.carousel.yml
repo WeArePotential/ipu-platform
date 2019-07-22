@@ -1,18 +1,18 @@
-uuid: a20888b8-51da-4868-a24e-ca799ca74248
+uuid: 89745105-15fd-4b8f-8aaf-a61f15cf85a6
 langcode: en
 status: true
 dependencies:
   config:
-    - node.type.landing_page
+    - paragraphs.paragraphs_type.carousel
   module:
     - content_translation
 third_party_settings:
   content_translation:
-    enabled: true
+    enabled: false
     bundle_settings:
       untranslatable_fields_hide: '0'
-id: node.landing_page
-target_entity_type_id: node
-target_bundle: landing_page
+id: paragraph.carousel
+target_entity_type_id: paragraph
+target_bundle: carousel
 default_langcode: site_default
-language_alterable: false
+language_alterable: true

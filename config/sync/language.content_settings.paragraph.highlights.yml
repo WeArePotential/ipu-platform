@@ -1,9 +1,9 @@
-uuid: a20888b8-51da-4868-a24e-ca799ca74248
+uuid: d9fbe058-ee79-4007-8bf8-364572d1924a
 langcode: en
 status: true
 dependencies:
   config:
-    - node.type.landing_page
+    - paragraphs.paragraphs_type.highlights
   module:
     - content_translation
 third_party_settings:
@@ -11,8 +11,8 @@ third_party_settings:
     enabled: true
     bundle_settings:
       untranslatable_fields_hide: '0'
-id: node.landing_page
-target_entity_type_id: node
-target_bundle: landing_page
+id: paragraph.highlights
+target_entity_type_id: paragraph
+target_bundle: highlights
 default_langcode: site_default
-language_alterable: false
+language_alterable: true

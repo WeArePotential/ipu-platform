@@ -1,17 +1,17 @@
-uuid: d8819f39-f48d-4309-aab7-2ec984fb362e
+uuid: 3e724ba5-205e-4f07-82c1-ca6bb0d4b7d8
 langcode: en
 status: true
 dependencies:
   config:
-    - block_content.type.basic
-id: block_content.basic.status
+    - paragraphs.paragraphs_type.carousel
+id: paragraph.carousel.status
 field_name: status
-entity_type: block_content
-bundle: basic
+entity_type: paragraph
+bundle: carousel
 label: Published
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value:
   -
     value: 1
