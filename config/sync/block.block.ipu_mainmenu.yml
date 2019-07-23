@@ -23,5 +23,6 @@ settings:
   depth: 2
   expand: 1
   parent: 'main:'
+  render_parent: false
   suggestion: main
 visibility: {  }

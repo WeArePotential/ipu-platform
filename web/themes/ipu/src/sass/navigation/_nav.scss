@@ -382,3 +382,8 @@ ol.breadcrumb {
     }
   }
 }
+
+/* Events flyout */
+.ultimenu__item-2 .ultimenu__flyout .block {
+  @extend .col-md-4;
+}

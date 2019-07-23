@@ -1,0 +1,24 @@
+uuid: 87e27199-bbdf-4a74-a878-09a2eb3d50b9
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.events
+  module:
+    - views
+  theme:
+    - ipu
+id: views_block__events_latest_assembly_for_menu
+theme: ipu
+region: ultimenu_mega_fb9f2222
+weight: -16
+provider: null
+plugin: 'views_block:events-latest_assembly_for_menu'
+settings:
+  id: 'views_block:events-latest_assembly_for_menu'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility: {  }

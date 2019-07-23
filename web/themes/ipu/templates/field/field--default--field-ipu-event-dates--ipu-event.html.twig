@@ -66,10 +66,11 @@
   {% else %}
     {% for item in items %}
       <div{{ attributes.addClass(classes) }}>
+        {{  item.content }}
         {% if item.content.end_date.value is same as (null) %}
-          {% set date_value = item.content.start_date.value %}
+          {% set date_value = item.content.start_date['#value'] %}
         {% else %}
-          {% set date_value = item.content.end_date.value %}
+          {% set date_value = item.content.end_date['#value'] %}
         {% endif %}
         <span class="event-dates-part event-dates-month">{{ date_value|date(format='M') }}</span>
         <span class="event-dates-part event-dates-day">{{ date_value|date(format='d') }}</span>

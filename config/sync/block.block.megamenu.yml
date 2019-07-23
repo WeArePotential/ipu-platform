@@ -23,5 +23,6 @@ settings:
   depth: 1
   expand: 0
   parent: 'mega-menu:menu_link_content:d6891800-b362-4edc-87c7-5f04a5708a27'
+  render_parent: false
   suggestion: mega_menu
 visibility: {  }

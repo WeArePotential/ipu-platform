@@ -11,7 +11,7 @@ dependencies:
 id: megamenu_2
 theme: ipu
 region: ultimenu_mega_fb9f2222
-weight: 0
+weight: -17
 provider: null
 plugin: 'menu_block:mega-menu'
 settings:
@@ -23,5 +23,6 @@ settings:
   depth: 1
   expand: 0
   parent: 'mega-menu:menu_link_content:3310ff71-4264-4d76-818f-13e0826d43d1'
+  render_parent: false
   suggestion: mega_menu
 visibility: {  }

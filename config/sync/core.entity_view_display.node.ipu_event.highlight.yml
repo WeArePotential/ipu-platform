@@ -58,16 +58,15 @@ third_party_settings:
             attributes: ''
     regions:
       main:
-        - group_content
-        - field_ipu_event_dates
-        - group_date
-        - field_event_type
         - group_wrapper
+        - group_content
+        - group_date
+        - field_ipu_event_dates
+        - field_event_type
         - node_title
         - field_location
         - field_summary
         - node_link
-        - field_do_not_display_as_link
     fields:
       node_link:
         plugin_id: node_link
@@ -97,7 +96,6 @@ third_party_settings:
         - field_location
         - field_summary
         - node_link
-        - field_do_not_display_as_link
       parent_name: group_wrapper
       weight: 0
       format_type: html_element
@@ -118,7 +116,7 @@ third_party_settings:
         - group_content
         - group_date
       parent_name: ''
-      weight: 2
+      weight: 0
       format_type: html_element
       format_settings:
         id: ''
@@ -155,16 +153,6 @@ targetEntityType: node
 bundle: ipu_event
 mode: highlight
 content:
-  field_do_not_display_as_link:
-    type: boolean
-    weight: 7
-    region: main
-    label: inline
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
   field_event_type:
     type: entity_reference_label
     weight: 2
@@ -234,6 +222,7 @@ hidden:
   field_agenda_order_number: true
   field_country: true
   field_date_accuracy: true
+  field_do_not_display_as_link: true
   field_document_show_print: true
   field_documents_order_number: true
   field_event_computed_date: true

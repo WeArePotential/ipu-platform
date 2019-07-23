@@ -23,5 +23,6 @@ settings:
   depth: 1
   expand: 0
   parent: 'follow-us:'
+  render_parent: false
   suggestion: follow_us
 visibility: {  }
