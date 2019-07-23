@@ -29,6 +29,7 @@ dependencies:
     - node.type.ipu_event
   module:
     - address
+    - chosen_field
     - datetime
     - datetime_range
     - field_group
@@ -168,12 +169,9 @@ content:
     region: content
   field_country:
     weight: 6
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete_tags
+    type: chosen_select
     region: content
   field_date_accuracy:
     weight: 8
@@ -328,7 +326,7 @@ content:
     region: content
   field_sponsor:
     weight: 3
-    type: options_select
+    type: chosen_select
     settings: {  }
     third_party_settings: {  }
     region: content

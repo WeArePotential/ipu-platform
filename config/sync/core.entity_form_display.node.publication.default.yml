@@ -16,6 +16,7 @@ dependencies:
     - field.field.node.publication.field_theme
     - node.type.publication
   module:
+    - chosen_field
     - datetime
     - entity_browser
     - field_group
@@ -40,7 +41,6 @@ third_party_settings:
       weight: 2
       label: Taxonomy
       format_settings:
-        label: Taxonomy
         formatter: open
         required_fields: true
         id: ''
@@ -57,7 +57,6 @@ third_party_settings:
       weight: 1
       label: 'Basic information'
       format_settings:
-        label: 'Basic information'
         formatter: open
         required_fields: true
         id: ''
@@ -69,10 +68,9 @@ third_party_settings:
       children:
         - field_media_image
       parent_name: ''
-      weight: 4
+      weight: 5
       label: Media
       format_settings:
-        label: Media
         formatter: open
         required_fields: true
         id: ''
@@ -81,7 +79,8 @@ third_party_settings:
       format_type: fieldset
       region: content
     group_pdf:
-      children: {  }
+      children:
+        - field_publication_document
       parent_name: group_tabs
       weight: 4
       label: PDF
@@ -96,10 +95,9 @@ third_party_settings:
       children:
         - group_pdf
       parent_name: ''
-      weight: 17
+      weight: 4
       label: Tabs
       format_settings:
-        label: Tabs
         id: ''
         classes: 'group-tabs field-group-htabs node-tabs'
         direction: horizontal
@@ -135,18 +133,18 @@ content:
     region: content
   field_country:
     weight: 10
-    type: options_select
+    type: chosen_select
     settings: {  }
     third_party_settings: {  }
     region: content
   field_ipu_structure:
     weight: 11
-    type: options_select
+    type: chosen_select
     settings: {  }
     third_party_settings: {  }
     region: content
   field_media_image:
-    weight: 12
+    weight: 7
     type: entity_browser_file
     settings:
       entity_browser: browse_files_modal
@@ -167,7 +165,7 @@ content:
     region: content
   field_publication_document:
     type: entity_reference_paragraphs
-    weight: 6
+    weight: 7
     region: content
     settings:
       title: Paragraph
@@ -191,7 +189,7 @@ content:
     region: content
   field_theme:
     weight: 9
-    type: options_select
+    type: chosen_select
     settings: {  }
     third_party_settings: {  }
     region: content
@@ -204,7 +202,7 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 13
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -219,7 +217,7 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 15
+    weight: 14
     region: content
     third_party_settings: {  }
   sticky:
@@ -244,7 +242,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 6
     settings:
       match_operator: CONTAINS
       size: 60
@@ -252,7 +250,7 @@ content:
     region: content
     third_party_settings: {  }
   url_redirects:
-    weight: 14
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
