@@ -24,6 +24,11 @@ settings:
             - Subscript
             - '-'
             - RemoveFormat
+            - SpecialChar
+            - Cut
+            - Copy
+            - PasteText
+            - PasteFromWord
         -
           name: Linking
           items:
@@ -46,6 +51,8 @@ settings:
           name: 'Block Formatting'
           items:
             - Format
+            - Indent
+            - Outdent
         -
           name: Tools
           items:
