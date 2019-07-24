@@ -1238,11 +1238,10 @@ a.btn {
     &.font-weight-bold {
       font-weight: $font-weight-light !important;
     }
-
   }
   .field__items {
     @extend .row;
-    .field__item {
+    & > .field__item {
       @extend .col-md-4;
       .paragraph--type--member {
         padding: 10px;

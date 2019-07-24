@@ -5,6 +5,7 @@ dependencies:
   config:
     - entity_browser.browser.browse_files_modal
     - field.field.node.section_page.body
+    - field.field.node.section_page.field_committee_members
     - field.field.node.section_page.field_media_image
     - field.field.node.section_page.field_sections
     - node.type.section_page
@@ -71,6 +72,18 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_committee_members:
+    weight: 3
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings: {  }
+    type: entity_reference_paragraphs
+    region: content
   field_media_image:
     weight: 5
     type: entity_browser_file
@@ -95,7 +108,7 @@ content:
       edit_mode: closed
       add_mode: dropdown
       form_display_mode: default
-      default_paragraph_type: sections
+      default_paragraph_type: _none
     third_party_settings: {  }
   langcode:
     type: language_select
@@ -106,7 +119,7 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 10
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -121,7 +134,7 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 12
+    weight: 11
     region: content
     third_party_settings: {  }
   sticky:
@@ -154,7 +167,7 @@ content:
     region: content
     third_party_settings: {  }
   url_redirects:
-    weight: 11
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }

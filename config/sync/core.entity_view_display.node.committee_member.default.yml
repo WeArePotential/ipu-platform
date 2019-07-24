@@ -3,32 +3,68 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.committee_member.field_country
     - field.field.node.committee_member.field_country_cm
     - field.field.node.committee_member.field_custom_date_range_text
     - field.field.node.committee_member.field_designation_cm
     - field.field.node.committee_member.field_end_of_mandate
     - field.field.node.committee_member.field_parent_node_cm
     - field.field.node.committee_member.field_photo_cm
+    - image.style.medium
     - node.type.committee_member
   module:
     - address
     - datetime
+    - ds
+    - field_group
     - image
     - user
+third_party_settings:
+  field_group:
+    group_old_:
+      children:
+        - field_parent_node_cm
+        - field_country_cm
+        - field_end_of_mandate
+        - field_designation_cm
+        - field_custom_date_range_text
+      parent_name: ''
+      weight: 4
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Old fields'
+      region: content
 id: node.committee_member.default
 targetEntityType: node
 bundle: committee_member
 mode: default
 content:
+  field_country:
+    weight: 2
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
   field_country_cm:
-    label: above
-    weight: 3
+    label: inline
+    weight: 4
     type: address_default
     settings: {  }
     third_party_settings: {  }
     region: content
   field_custom_date_range_text:
-    label: above
+    label: inline
     weight: 7
     type: string
     settings:
@@ -36,16 +72,16 @@ content:
     third_party_settings: {  }
     region: content
   field_designation_cm:
-    label: above
-    weight: 2
+    label: inline
+    weight: 6
     type: string
     settings:
       link_to_entity: false
     third_party_settings: {  }
     region: content
   field_end_of_mandate:
-    weight: 101
-    label: above
+    weight: 5
+    label: inline
     settings:
       format_type: medium
       timezone_override: ''
@@ -53,26 +89,33 @@ content:
     type: datetime_default
     region: content
   field_parent_node_cm:
-    label: above
-    weight: 6
+    label: inline
+    weight: 3
     type: entity_reference_label
     settings:
       link: true
     third_party_settings: {  }
     region: content
   field_photo_cm:
-    label: above
-    weight: 5
+    label: hidden
+    weight: 1
     type: image
     settings:
-      image_style: ''
+      image_style: medium
       image_link: ''
-    third_party_settings: {  }
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
     region: content
   links:
-    weight: 100
+    weight: 5
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
 hidden:
   langcode: true

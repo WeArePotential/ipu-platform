@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.committee_member.field_country
     - field.field.node.committee_member.field_country_cm
     - field.field.node.committee_member.field_custom_date_range_text
     - field.field.node.committee_member.field_designation_cm
@@ -13,7 +14,6 @@ dependencies:
     - node.type.committee_member
     - responsive_image.styles.narrow
   module:
-    - address
     - ds
     - responsive_image
     - user
@@ -42,7 +42,7 @@ third_party_settings:
       main:
         - field_photo_cm
         - node_title
-        - field_country_cm
+        - field_country
     fields:
       node_title:
         plugin_id: node_title
@@ -64,13 +64,22 @@ targetEntityType: node
 bundle: committee_member
 mode: teaser
 content:
-  field_country_cm:
-    type: address_plain
+  field_country:
+    type: entity_reference_label
     weight: 2
     region: main
     label: hidden
-    settings: {  }
-    third_party_settings: {  }
+    settings:
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
   field_photo_cm:
     type: responsive_image
     weight: 0
@@ -88,6 +97,7 @@ content:
             lb-col: false
             classes: {  }
 hidden:
+  field_country_cm: true
   field_custom_date_range_text: true
   field_designation_cm: true
   field_end_of_mandate: true
