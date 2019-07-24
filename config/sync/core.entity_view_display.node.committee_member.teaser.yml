@@ -11,23 +11,86 @@ dependencies:
     - field.field.node.committee_member.field_parent_node_cm
     - field.field.node.committee_member.field_photo_cm
     - node.type.committee_member
+    - responsive_image.styles.narrow
   module:
+    - address
+    - ds
+    - responsive_image
     - user
+third_party_settings:
+  ds:
+    layout:
+      id: bs_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        layout:
+          wrapper: div
+          classes:
+            row: row
+          add_layout_class: 1
+          attributes: ''
+        regions:
+          main:
+            wrapper: div
+            classes:
+              col-sm-12: col-sm-12
+            add_region_classes: 1
+            attributes: ''
+    regions:
+      main:
+        - field_photo_cm
+        - node_title
+        - field_country_cm
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 1
+        label: hidden
+        formatter: default
+        settings:
+          wrapper: h3
+          class: ''
+          link: false
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
 id: node.committee_member.teaser
 targetEntityType: node
 bundle: committee_member
 mode: teaser
 content:
-  links:
-    weight: 100
+  field_country_cm:
+    type: address_plain
+    weight: 2
+    region: main
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-    region: content
+  field_photo_cm:
+    type: responsive_image
+    weight: 0
+    region: main
+    label: hidden
+    settings:
+      responsive_image_style: narrow
+      image_link: ''
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
 hidden:
-  field_country_cm: true
   field_custom_date_range_text: true
   field_designation_cm: true
   field_end_of_mandate: true
   field_parent_node_cm: true
-  field_photo_cm: true
   langcode: true
+  links: true

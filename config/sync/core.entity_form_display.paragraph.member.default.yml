@@ -1,0 +1,49 @@
+uuid: 3200a3e9-8a9e-4e07-8e70-90a397489df8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.member.field_end_of_mandate
+    - field.field.paragraph.member.field_person
+    - field.field.paragraph.member.field_position
+    - paragraphs.paragraphs_type.member
+  module:
+    - chosen_field
+    - datetime
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+id: paragraph.member.default
+targetEntityType: paragraph
+bundle: member
+mode: default
+content:
+  field_end_of_mandate:
+    weight: 2
+    settings:
+      date_order: DMY
+      time_type: none
+      increment: 15
+    third_party_settings: {  }
+    type: datetime_datelist
+    region: content
+  field_person:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: chosen_select
+    region: content
+  field_position:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

@@ -6,6 +6,7 @@ dependencies:
     - entity_browser.browser.browse_files_modal
     - field.field.node.basic_page.body
     - field.field.node.basic_page.field_caption
+    - field.field.node.basic_page.field_committee_members
     - field.field.node.basic_page.field_contact_ipu
     - field.field.node.basic_page.field_geopolitical_group
     - field.field.node.basic_page.field_media_image
@@ -115,6 +116,7 @@ third_party_settings:
         - group_related_articles
         - group_related_documents
         - group_sections
+        - group_committee
       parent_name: ''
       weight: 2
       format_type: tabs
@@ -123,6 +125,20 @@ third_party_settings:
         classes: ''
         direction: horizontal
       label: Tabs
+      region: ds_content
+    group_committee:
+      children:
+        - field_committee_members
+      parent_name: group_tabs
+      weight: 11
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: Committee
       region: ds_content
 id: node.basic_page.default
 targetEntityType: node
@@ -150,6 +166,18 @@ content:
     settings:
       rows: 4
       placeholder: ''
+    third_party_settings: {  }
+    region: ds_content
+  field_committee_members:
+    type: entity_reference_paragraphs
+    weight: 26
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: member
     third_party_settings: {  }
     region: ds_content
   field_contact_ipu:

@@ -8,7 +8,7 @@ id: node.committee_member.title
 field_name: title
 entity_type: node
 bundle: committee_member
-label: Title
+label: Name
 description: ''
 required: false
 translatable: true

@@ -1,0 +1,20 @@
+uuid: 9864b4c3-d43a-49b0-a4f8-18caa0ce0921
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime
+    - paragraphs
+id: paragraph.field_end_of_mandate
+field_name: field_end_of_mandate
+entity_type: paragraph
+type: datetime
+settings:
+  datetime_type: date
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
