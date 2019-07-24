@@ -19723,6 +19723,14 @@ a.more-data-parline, .article__node-link a,
   opacity: 0;
   height: 0;
 }
+.node--type-article.node--view-mode-full .row, .node--type-article.node--view-mode-full .ultimenu__flyout .region-inner, .ultimenu__flyout .node--type-article.node--view-mode-full .region-inner, .node--type-article.node--view-mode-full .field-committee-members .field__items, .field-committee-members .node--type-article.node--view-mode-full .field__items, .node--type-article.node--view-mode-full .node-landing_page:not(.node-172) .group-header .group-header-inner, .node-landing_page:not(.node-172) .group-header .node--type-article.node--view-mode-full .group-header-inner, .node--type-article.node--view-mode-full .field__item__paragraph__highlights .paragraph--type--highlights .highlights__field-node, .field__item__paragraph__highlights .paragraph--type--highlights .node--type-article.node--view-mode-full .highlights__field-node, .node--type-article.node--view-mode-full .node-article .group-related > div .field__item .views-element-container > div, .node-article .group-related > div .field__item .node--type-article.node--view-mode-full .views-element-container > div, .node--type-article.node--view-mode-full .carousel-item .node--view-mode-slide.bs-2col, .carousel-item .node--type-article.node--view-mode-full .node--view-mode-slide.bs-2col, .node--type-article.node--view-mode-full .page__footer .region-inner, .page__footer .node--type-article.node--view-mode-full .region-inner, .node--type-article.node--view-mode-full .field-content-section .paragraph--type--sections .field--type-viewfield .views-element-container > div, .field-content-section .paragraph--type--sections .field--type-viewfield .node--type-article.node--view-mode-full .views-element-container > div {
+  margin-bottom: 40px;
+}
+.node--type-article.node--view-mode-full .row .article__node-post-date, .node--type-article.node--view-mode-full .ultimenu__flyout .region-inner .article__node-post-date, .ultimenu__flyout .node--type-article.node--view-mode-full .region-inner .article__node-post-date, .node--type-article.node--view-mode-full .field-committee-members .field__items .article__node-post-date, .field-committee-members .node--type-article.node--view-mode-full .field__items .article__node-post-date, .node--type-article.node--view-mode-full .node-landing_page:not(.node-172) .group-header .group-header-inner .article__node-post-date, .node-landing_page:not(.node-172) .group-header .node--type-article.node--view-mode-full .group-header-inner .article__node-post-date, .node--type-article.node--view-mode-full .field__item__paragraph__highlights .paragraph--type--highlights .highlights__field-node .article__node-post-date, .field__item__paragraph__highlights .paragraph--type--highlights .node--type-article.node--view-mode-full .highlights__field-node .article__node-post-date, .node--type-article.node--view-mode-full .node-article .group-related > div .field__item .views-element-container > div .article__node-post-date, .node-article .group-related > div .field__item .node--type-article.node--view-mode-full .views-element-container > div .article__node-post-date, .node--type-article.node--view-mode-full .carousel-item .node--view-mode-slide.bs-2col .article__node-post-date, .carousel-item .node--type-article.node--view-mode-full .node--view-mode-slide.bs-2col .article__node-post-date, .node--type-article.node--view-mode-full .page__footer .region-inner .article__node-post-date, .page__footer .node--type-article.node--view-mode-full .region-inner .article__node-post-date, .node--type-article.node--view-mode-full .field-content-section .paragraph--type--sections .field--type-viewfield .views-element-container > div .article__node-post-date, .field-content-section .paragraph--type--sections .field--type-viewfield .node--type-article.node--view-mode-full .views-element-container > div .article__node-post-date {
+  background-color: #f8f9fa;
+  padding: 4px 10px;
+}
+
 .viewfield--view__articles h3, .viewfield--view__articles .basic-page__field-related-content .field__label, .basic-page__field-related-content .viewfield--view__articles .field__label {
   font-size: 1rem;
 }
@@ -19826,7 +19834,7 @@ a.more-data-parline, .article__node-link a,
 .node-article .article__field-caption p {
   margin-bottom: 0;
 }
-.node-article .article__body {
+.node-article XXX.article__body {
   margin: 30px 0;
 }
 @media (min-width: 768px) {
