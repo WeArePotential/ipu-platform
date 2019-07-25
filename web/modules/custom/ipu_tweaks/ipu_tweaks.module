@@ -83,11 +83,17 @@ function ipu_tweaks_preprocess_field(&$variables) {
 
   if ($variables['element']['#field_name'] == 'field_ipu_event_dates') {
     if ($variables['element']['#view_mode'] == 'highlight') {
-      ##\Drupal::messenger()->addStatus('Hello 2 '. print_r($variables['items'][0], true));
+      foreach ($variables['items'] as &$item) {
+        $start_date = strtotime($item['content']['start_date']['#attributes']['datetime']);
+        $item['content']['start_date_d'] = format_date((int)$start_date, 'custom', 'd');
+        $item['content']['start_date_M'] = format_date((int)$start_date, 'custom', 'M');
+        $item['content']['start_date_Y'] = format_date((int)$start_date, 'custom', 'Y');
+      }
+      //\Drupal::messenger()->addStatus('Hello 2 '. print_r($variables['items'][0], true));
     }
   }
   if ($variables['element']['#field_name'] == 'field_event_date') {
-    //\Drupal::messenger()->addStatus('Hello 3'. print_r($variables['element'],true));
+    \Drupal::messenger()->addStatus('Hello 3'. print_r($variables['element'],true));
     if ($variables['element']['#view_mode'] == 'highlight') {
     }
   }
@@ -117,4 +123,5 @@ function ipu_tweaks_entity_type_alter(array &$entity_types) {
     $entity_type->setConstraints($constraints);
   }
 }
+
 

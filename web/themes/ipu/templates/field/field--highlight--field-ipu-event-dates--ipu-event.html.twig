@@ -66,13 +66,32 @@
   {% else %}
     {% for item in items %}
       <div{{ attributes.addClass(classes) }}>
-        {% if item.content.start_date_M is defined %}
-        <span class="event-dates-part event-dates-month">{{ item.content.start_date_M }}</span>
-        <span class="event-dates-part event-dates-day">{{ item.content.start_date_d }}</span>
-        <span class="event-dates-part event-dates-year">{{ item.content.start_date_Y }}</span>
+
+        {% if item.content.start_date is same as (NULL) %}
+          {% if  item.content.end_date is same as (NULL) %}
+            {% set date_value = NULL %}
           {% else %}
-            <div class="event-dates-full">{{ item.content }}</div>
+            {% set date_value = item.content.end_date['#markup']%}
+          {% endif %}
+        {% else %}
+          {% set date_value = item.content.start_date['#markup'] %}
         {% endif %}
+
+        {% set date_value = item.content.start_date['#markup'] %}
+
+        {% if date_value is same as (NULL) %}
+          {#INVALID DATE: {{ item.content }}#}
+          {% set date_value = item.content['#markup'] %}
+        {% else %}
+          {#Got {{ date_value }} from {{ item.content }}#}
+        {% endif %}
+
+        {% set date_value = date_value|date('U')  %}
+
+        <span class="event-dates-part event-dates-month">{{  date_value|format_date('custom','M') }}</span>
+        <span class="event-dates-part event-dates-day">{{  date_value|format_date('custom','d') }}</span>
+        <span class="event-dates-part event-dates-year">{{  date_value|format_date('custom','Y') }}</span>
+
       </div>
     {% endfor %}
   {% endif %}
