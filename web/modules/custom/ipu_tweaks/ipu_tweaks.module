@@ -89,15 +89,37 @@ function ipu_tweaks_preprocess_field(&$variables) {
         $item['content']['start_date_M'] = format_date((int)$start_date, 'custom', 'M');
         $item['content']['start_date_Y'] = format_date((int)$start_date, 'custom', 'Y');
       }
-      //\Drupal::messenger()->addStatus('Hello 2 '. print_r($variables['items'][0], true));
     }
   }
   if ($variables['element']['#field_name'] == 'field_event_date') {
-    \Drupal::messenger()->addStatus('Hello 3'. print_r($variables['element'],true));
     if ($variables['element']['#view_mode'] == 'highlight') {
     }
   }
+  if ($variables['element']['#field_name'] == 'node_title' && $variables['element']['#bundle'] == 'landing_page') {
+    //\Drupal::messenger()->addMessage('View mode'. print_r(array_keys($variables['element']),true));
 
+    if ($variables['element']['#view_mode'] == 'full' || ( $variables['element']['#view_mode'] == '_custom' && $variables['element']['#ds_view_mode'] == 'full' )) {
+      //\Drupal::messenger()->addMessage('View mode: '. print_r($variables['element']['#ds_view_mode'],true));
+      $node = $variables['element']['#object'];
+      // Should already be available $variables['#node'] = $node;
+      $image = $node->field_media_image;
+      if ($image->entity != NULL) {
+        $image_path = $image->entity->getFileUri();
+        $image_url = \Drupal\image\Entity\ImageStyle::load('max_1300x1300')->buildUrl($image_path);
+        $variables['attributes']['style'] = [];
+        $variables['attributes']['style'][] = 'background-image: url("' . $image_url . '");';
+        $variables['attributes']['style'][] = 'background-size: cover;';
+        $variables['attributes']['style'][] = 'background-position: center center;';
+        $theme_terms = $node->field_theme->getValue();
+        if ($theme_terms != NULL) {
+          $variables['attributes']['class'][] = 'theme-landing-page';
+          foreach ($theme_terms as $term) {
+            $variables['attributes']['class'][] = 'theme-term-id-' . $term['target_id'];
+          }
+        }
+      }
+    }
+  }
 }
 /**
  * Implements hook_field_attach_view_alter()

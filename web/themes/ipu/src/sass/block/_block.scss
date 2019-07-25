@@ -1173,19 +1173,79 @@ a.btn {
   @extend .container;
 }
 .node-landing_page:not(.node-172) {
+  main {
+    padding-top: 0 !important;
+    position: relative;
+  }
+  .block--ipu-breadcrumbs {
+    display: none;
+  }
   .group-header {
-    @extend .container;
+    @extend .container-fluid;
     .group-header-inner {
       @extend .row;
     }
-    .landing-page__node-title {
-      @extend .col-md-12;
+    .landing-page__node-title.theme-landing-page {
+      width: 100%;
+      min-height: 60vh;
+      .field-node-title-inner {
+        @extend .container;
+        position: relative;
+        height: 100%;
+
+        h1 {
+          position: absolute;
+          bottom: 40px;
+          @extend .col-12;
+          display: inline-block;
+          background-color: rgba(255, 255, 255, 0.8);
+          padding: 10px;
+
+          &:before {
+            content: "";
+            width: 40px;
+            height: 40px;
+            display: block;
+            float: left;
+            margin: 0.4rem;
+          }
+        }
+      }
+      &.theme-term-id-88 h1:before {
+        background: url("../img/theme_icons/gender_equality.svg");
+      }
+      &.theme-term-id-139 h1:before {
+        background: url("../img/theme_icons/peace_building.svg");
+      }
+      &.theme-term-id-82 h1:before {
+        background: url("../img/theme_icons/human_rights.svg");
+      }
+      &.theme-term-id-198 h1:before {
+        background: url("../img/theme_icons/global_development.svg");
+      }
+      &.theme-term-id-231 h1:before {
+        background: url("../img/theme_icons/international_relations.svg");
+      }
+      &.theme-term-id-139 h1:before {
+        background: url("../img/theme_icons/peace_building.svg");
+      }
+      &.theme-term-id-19 h1:before {
+        background: url("../img/theme_icons/strong_parliaments.svg");
+      }
+      &.theme-term-id-117 h1:before {
+        background: url("../img/theme_icons/youth.svg");
+      }
+      &.theme-term-id-337 h1:before {
+        background: url("../img/theme_icons/parliamentary_dialogue.svg");
+      }
     }
     .landing-page__field-media-image {
-      @extend .col-md-5;
+      display: none;
     }
     .landing-page__body {
-      @extend .col-md-7;
+      margin-top: 20px;
+      @extend .col-sm-8;
+      @extend .offset-sm-2;
     }
   }
 }
