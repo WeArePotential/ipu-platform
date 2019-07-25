@@ -1185,9 +1185,16 @@ a.btn {
     .group-header-inner {
       @extend .row;
     }
+    .landing-page__node-title:not(.theme-landing-page) {
+      @extend .container;
+      @extend .pt-2;
+      background-image: none;
+    }
     .landing-page__node-title.theme-landing-page {
       width: 100%;
       min-height: 60vh;
+      background-position: center center;
+      background-size: cover;
       .field-node-title-inner {
         @extend .container;
         position: relative;

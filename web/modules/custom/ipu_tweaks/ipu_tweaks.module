@@ -108,8 +108,6 @@ function ipu_tweaks_preprocess_field(&$variables) {
         $image_url = \Drupal\image\Entity\ImageStyle::load('max_1300x1300')->buildUrl($image_path);
         $variables['attributes']['style'] = [];
         $variables['attributes']['style'][] = 'background-image: url("' . $image_url . '");';
-        $variables['attributes']['style'][] = 'background-size: cover;';
-        $variables['attributes']['style'][] = 'background-position: center center;';
         $theme_terms = $node->field_theme->getValue();
         if ($theme_terms != NULL) {
           $variables['attributes']['class'][] = 'theme-landing-page';

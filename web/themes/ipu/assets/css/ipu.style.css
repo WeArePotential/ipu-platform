@@ -66,7 +66,7 @@ h3,
     min-width: 992px !important;
   }
 
-  .container, .viewfield--view__theme_list__block_home_page, .node-172 .group-header .group-header-inner, .node-landing_page:not(.node-172) .group-header .landing-page__node-title.theme-landing-page .field-node-title-inner, .node-landing_page .landing-page__field-content-section .paragraph--type--sections, .field__item__paragraph__highlights .paragraph--type--highlights, .node-article .group-related > div, .carousel {
+  .container, .viewfield--view__theme_list__block_home_page, .node-172 .group-header .group-header-inner, .node-landing_page:not(.node-172) .group-header .landing-page__node-title.theme-landing-page .field-node-title-inner, .node-landing_page:not(.node-172) .group-header .landing-page__node-title:not(.theme-landing-page), .node-landing_page .landing-page__field-content-section .paragraph--type--sections, .field__item__paragraph__highlights .paragraph--type--highlights, .node-article .group-related > div, .carousel {
     min-width: 992px !important;
   }
 
@@ -610,7 +610,7 @@ pre code {
   overflow-y: scroll;
 }
 
-.container, .viewfield--view__theme_list__block_home_page, .node-172 .group-header .group-header-inner, .node-landing_page:not(.node-172) .group-header .landing-page__node-title.theme-landing-page .field-node-title-inner, .node-landing_page .landing-page__field-content-section .paragraph--type--sections, .field__item__paragraph__highlights .paragraph--type--highlights, .node-article .group-related > div, .carousel {
+.container, .viewfield--view__theme_list__block_home_page, .node-172 .group-header .group-header-inner, .node-landing_page:not(.node-172) .group-header .landing-page__node-title.theme-landing-page .field-node-title-inner, .node-landing_page:not(.node-172) .group-header .landing-page__node-title:not(.theme-landing-page), .node-landing_page .landing-page__field-content-section .paragraph--type--sections, .field__item__paragraph__highlights .paragraph--type--highlights, .node-article .group-related > div, .carousel {
   width: 100%;
   padding-right: 7.5px;
   padding-left: 7.5px;
@@ -618,27 +618,27 @@ pre code {
   margin-left: auto;
 }
 @media (min-width: 576px) {
-  .container, .viewfield--view__theme_list__block_home_page, .node-172 .group-header .group-header-inner, .node-landing_page:not(.node-172) .group-header .landing-page__node-title.theme-landing-page .field-node-title-inner, .node-landing_page .landing-page__field-content-section .paragraph--type--sections, .field__item__paragraph__highlights .paragraph--type--highlights, .node-article .group-related > div, .carousel {
+  .container, .viewfield--view__theme_list__block_home_page, .node-172 .group-header .group-header-inner, .node-landing_page:not(.node-172) .group-header .landing-page__node-title.theme-landing-page .field-node-title-inner, .node-landing_page:not(.node-172) .group-header .landing-page__node-title:not(.theme-landing-page), .node-landing_page .landing-page__field-content-section .paragraph--type--sections, .field__item__paragraph__highlights .paragraph--type--highlights, .node-article .group-related > div, .carousel {
     max-width: 540px;
   }
 }
 @media (min-width: 768px) {
-  .container, .viewfield--view__theme_list__block_home_page, .node-172 .group-header .group-header-inner, .node-landing_page:not(.node-172) .group-header .landing-page__node-title.theme-landing-page .field-node-title-inner, .node-landing_page .landing-page__field-content-section .paragraph--type--sections, .field__item__paragraph__highlights .paragraph--type--highlights, .node-article .group-related > div, .carousel {
+  .container, .viewfield--view__theme_list__block_home_page, .node-172 .group-header .group-header-inner, .node-landing_page:not(.node-172) .group-header .landing-page__node-title.theme-landing-page .field-node-title-inner, .node-landing_page:not(.node-172) .group-header .landing-page__node-title:not(.theme-landing-page), .node-landing_page .landing-page__field-content-section .paragraph--type--sections, .field__item__paragraph__highlights .paragraph--type--highlights, .node-article .group-related > div, .carousel {
     max-width: 720px;
   }
 }
 @media (min-width: 992px) {
-  .container, .viewfield--view__theme_list__block_home_page, .node-172 .group-header .group-header-inner, .node-landing_page:not(.node-172) .group-header .landing-page__node-title.theme-landing-page .field-node-title-inner, .node-landing_page .landing-page__field-content-section .paragraph--type--sections, .field__item__paragraph__highlights .paragraph--type--highlights, .node-article .group-related > div, .carousel {
+  .container, .viewfield--view__theme_list__block_home_page, .node-172 .group-header .group-header-inner, .node-landing_page:not(.node-172) .group-header .landing-page__node-title.theme-landing-page .field-node-title-inner, .node-landing_page:not(.node-172) .group-header .landing-page__node-title:not(.theme-landing-page), .node-landing_page .landing-page__field-content-section .paragraph--type--sections, .field__item__paragraph__highlights .paragraph--type--highlights, .node-article .group-related > div, .carousel {
     max-width: 960px;
   }
 }
 @media (min-width: 1200px) {
-  .container, .viewfield--view__theme_list__block_home_page, .node-172 .group-header .group-header-inner, .node-landing_page:not(.node-172) .group-header .landing-page__node-title.theme-landing-page .field-node-title-inner, .node-landing_page .landing-page__field-content-section .paragraph--type--sections, .field__item__paragraph__highlights .paragraph--type--highlights, .node-article .group-related > div, .carousel {
+  .container, .viewfield--view__theme_list__block_home_page, .node-172 .group-header .group-header-inner, .node-landing_page:not(.node-172) .group-header .landing-page__node-title.theme-landing-page .field-node-title-inner, .node-landing_page:not(.node-172) .group-header .landing-page__node-title:not(.theme-landing-page), .node-landing_page .landing-page__field-content-section .paragraph--type--sections, .field__item__paragraph__highlights .paragraph--type--highlights, .node-article .group-related > div, .carousel {
     max-width: 1140px;
   }
 }
 @media (min-width: 1440px) {
-  .container, .viewfield--view__theme_list__block_home_page, .node-172 .group-header .group-header-inner, .node-landing_page:not(.node-172) .group-header .landing-page__node-title.theme-landing-page .field-node-title-inner, .node-landing_page .landing-page__field-content-section .paragraph--type--sections, .field__item__paragraph__highlights .paragraph--type--highlights, .node-article .group-related > div, .carousel {
+  .container, .viewfield--view__theme_list__block_home_page, .node-172 .group-header .group-header-inner, .node-landing_page:not(.node-172) .group-header .landing-page__node-title.theme-landing-page .field-node-title-inner, .node-landing_page:not(.node-172) .group-header .landing-page__node-title:not(.theme-landing-page), .node-landing_page .landing-page__field-content-section .paragraph--type--sections, .field__item__paragraph__highlights .paragraph--type--highlights, .node-article .group-related > div, .carousel {
     max-width: 1390px;
   }
 }
@@ -4693,7 +4693,7 @@ input[type=button].btn-block {
   justify-content: space-between;
   padding: 0.5rem 1rem;
 }
-.navbar > .container, .navbar > .viewfield--view__theme_list__block_home_page, .node-172 .group-header .navbar > .group-header-inner, .node-landing_page:not(.node-172) .group-header .landing-page__node-title.theme-landing-page .navbar > .field-node-title-inner, .node-landing_page .landing-page__field-content-section .navbar > .paragraph--type--sections, .field__item__paragraph__highlights .navbar > .paragraph--type--highlights, .node-article .group-related.navbar > div, .navbar > .carousel,
+.navbar > .container, .navbar > .viewfield--view__theme_list__block_home_page, .node-172 .group-header .navbar > .group-header-inner, .node-landing_page:not(.node-172) .group-header .landing-page__node-title.theme-landing-page .navbar > .field-node-title-inner, .node-landing_page:not(.node-172) .group-header .navbar > .landing-page__node-title:not(.theme-landing-page), .node-landing_page .landing-page__field-content-section .navbar > .paragraph--type--sections, .field__item__paragraph__highlights .navbar > .paragraph--type--highlights, .node-article .group-related.navbar > div, .navbar > .carousel,
 .navbar > .container-fluid,
 .node-172 .navbar > .group-header,
 .node-landing_page:not(.node-172) .navbar > .group-header {
@@ -4767,7 +4767,7 @@ input[type=button].btn-block {
 }
 
 @media (max-width: 575.98px) {
-  .navbar-expand-sm > .container, .navbar-expand-sm > .viewfield--view__theme_list__block_home_page, .node-172 .group-header .navbar-expand-sm > .group-header-inner, .node-landing_page:not(.node-172) .group-header .landing-page__node-title.theme-landing-page .navbar-expand-sm > .field-node-title-inner, .node-landing_page .landing-page__field-content-section .navbar-expand-sm > .paragraph--type--sections, .field__item__paragraph__highlights .navbar-expand-sm > .paragraph--type--highlights, .node-article .group-related.navbar-expand-sm > div, .navbar-expand-sm > .carousel,
+  .navbar-expand-sm > .container, .navbar-expand-sm > .viewfield--view__theme_list__block_home_page, .node-172 .group-header .navbar-expand-sm > .group-header-inner, .node-landing_page:not(.node-172) .group-header .landing-page__node-title.theme-landing-page .navbar-expand-sm > .field-node-title-inner, .node-landing_page:not(.node-172) .group-header .navbar-expand-sm > .landing-page__node-title:not(.theme-landing-page), .node-landing_page .landing-page__field-content-section .navbar-expand-sm > .paragraph--type--sections, .field__item__paragraph__highlights .navbar-expand-sm > .paragraph--type--highlights, .node-article .group-related.navbar-expand-sm > div, .navbar-expand-sm > .carousel,
 .navbar-expand-sm > .container-fluid,
 .node-172 .navbar-expand-sm > .group-header,
 .node-landing_page:not(.node-172) .navbar-expand-sm > .group-header {
@@ -4790,7 +4790,7 @@ input[type=button].btn-block {
     padding-right: 0.5rem;
     padding-left: 0.5rem;
   }
-  .navbar-expand-sm > .container, .navbar-expand-sm > .viewfield--view__theme_list__block_home_page, .node-172 .group-header .navbar-expand-sm > .group-header-inner, .node-landing_page:not(.node-172) .group-header .landing-page__node-title.theme-landing-page .navbar-expand-sm > .field-node-title-inner, .node-landing_page .landing-page__field-content-section .navbar-expand-sm > .paragraph--type--sections, .field__item__paragraph__highlights .navbar-expand-sm > .paragraph--type--highlights, .node-article .group-related.navbar-expand-sm > div, .navbar-expand-sm > .carousel,
+  .navbar-expand-sm > .container, .navbar-expand-sm > .viewfield--view__theme_list__block_home_page, .node-172 .group-header .navbar-expand-sm > .group-header-inner, .node-landing_page:not(.node-172) .group-header .landing-page__node-title.theme-landing-page .navbar-expand-sm > .field-node-title-inner, .node-landing_page:not(.node-172) .group-header .navbar-expand-sm > .landing-page__node-title:not(.theme-landing-page), .node-landing_page .landing-page__field-content-section .navbar-expand-sm > .paragraph--type--sections, .field__item__paragraph__highlights .navbar-expand-sm > .paragraph--type--highlights, .node-article .group-related.navbar-expand-sm > div, .navbar-expand-sm > .carousel,
 .navbar-expand-sm > .container-fluid,
 .node-172 .navbar-expand-sm > .group-header,
 .node-landing_page:not(.node-172) .navbar-expand-sm > .group-header {
@@ -4805,7 +4805,7 @@ input[type=button].btn-block {
   }
 }
 @media (max-width: 767.98px) {
-  .navbar-expand-md > .container, .navbar-expand-md > .viewfield--view__theme_list__block_home_page, .node-172 .group-header .navbar-expand-md > .group-header-inner, .node-landing_page:not(.node-172) .group-header .landing-page__node-title.theme-landing-page .navbar-expand-md > .field-node-title-inner, .node-landing_page .landing-page__field-content-section .navbar-expand-md > .paragraph--type--sections, .field__item__paragraph__highlights .navbar-expand-md > .paragraph--type--highlights, .node-article .group-related.navbar-expand-md > div, .navbar-expand-md > .carousel,
+  .navbar-expand-md > .container, .navbar-expand-md > .viewfield--view__theme_list__block_home_page, .node-172 .group-header .navbar-expand-md > .group-header-inner, .node-landing_page:not(.node-172) .group-header .landing-page__node-title.theme-landing-page .navbar-expand-md > .field-node-title-inner, .node-landing_page:not(.node-172) .group-header .navbar-expand-md > .landing-page__node-title:not(.theme-landing-page), .node-landing_page .landing-page__field-content-section .navbar-expand-md > .paragraph--type--sections, .field__item__paragraph__highlights .navbar-expand-md > .paragraph--type--highlights, .node-article .group-related.navbar-expand-md > div, .navbar-expand-md > .carousel,
 .navbar-expand-md > .container-fluid,
 .node-172 .navbar-expand-md > .group-header,
 .node-landing_page:not(.node-172) .navbar-expand-md > .group-header {
@@ -4828,7 +4828,7 @@ input[type=button].btn-block {
     padding-right: 0.5rem;
     padding-left: 0.5rem;
   }
-  .navbar-expand-md > .container, .navbar-expand-md > .viewfield--view__theme_list__block_home_page, .node-172 .group-header .navbar-expand-md > .group-header-inner, .node-landing_page:not(.node-172) .group-header .landing-page__node-title.theme-landing-page .navbar-expand-md > .field-node-title-inner, .node-landing_page .landing-page__field-content-section .navbar-expand-md > .paragraph--type--sections, .field__item__paragraph__highlights .navbar-expand-md > .paragraph--type--highlights, .node-article .group-related.navbar-expand-md > div, .navbar-expand-md > .carousel,
+  .navbar-expand-md > .container, .navbar-expand-md > .viewfield--view__theme_list__block_home_page, .node-172 .group-header .navbar-expand-md > .group-header-inner, .node-landing_page:not(.node-172) .group-header .landing-page__node-title.theme-landing-page .navbar-expand-md > .field-node-title-inner, .node-landing_page:not(.node-172) .group-header .navbar-expand-md > .landing-page__node-title:not(.theme-landing-page), .node-landing_page .landing-page__field-content-section .navbar-expand-md > .paragraph--type--sections, .field__item__paragraph__highlights .navbar-expand-md > .paragraph--type--highlights, .node-article .group-related.navbar-expand-md > div, .navbar-expand-md > .carousel,
 .navbar-expand-md > .container-fluid,
 .node-172 .navbar-expand-md > .group-header,
 .node-landing_page:not(.node-172) .navbar-expand-md > .group-header {
@@ -4843,7 +4843,7 @@ input[type=button].btn-block {
   }
 }
 @media (max-width: 991.98px) {
-  .navbar-expand-lg > .container, .navbar-expand-lg > .viewfield--view__theme_list__block_home_page, .node-172 .group-header .navbar-expand-lg > .group-header-inner, .node-landing_page:not(.node-172) .group-header .landing-page__node-title.theme-landing-page .navbar-expand-lg > .field-node-title-inner, .node-landing_page .landing-page__field-content-section .navbar-expand-lg > .paragraph--type--sections, .field__item__paragraph__highlights .navbar-expand-lg > .paragraph--type--highlights, .node-article .group-related.navbar-expand-lg > div, .navbar-expand-lg > .carousel,
+  .navbar-expand-lg > .container, .navbar-expand-lg > .viewfield--view__theme_list__block_home_page, .node-172 .group-header .navbar-expand-lg > .group-header-inner, .node-landing_page:not(.node-172) .group-header .landing-page__node-title.theme-landing-page .navbar-expand-lg > .field-node-title-inner, .node-landing_page:not(.node-172) .group-header .navbar-expand-lg > .landing-page__node-title:not(.theme-landing-page), .node-landing_page .landing-page__field-content-section .navbar-expand-lg > .paragraph--type--sections, .field__item__paragraph__highlights .navbar-expand-lg > .paragraph--type--highlights, .node-article .group-related.navbar-expand-lg > div, .navbar-expand-lg > .carousel,
 .navbar-expand-lg > .container-fluid,
 .node-172 .navbar-expand-lg > .group-header,
 .node-landing_page:not(.node-172) .navbar-expand-lg > .group-header {
@@ -4866,7 +4866,7 @@ input[type=button].btn-block {
     padding-right: 0.5rem;
     padding-left: 0.5rem;
   }
-  .navbar-expand-lg > .container, .navbar-expand-lg > .viewfield--view__theme_list__block_home_page, .node-172 .group-header .navbar-expand-lg > .group-header-inner, .node-landing_page:not(.node-172) .group-header .landing-page__node-title.theme-landing-page .navbar-expand-lg > .field-node-title-inner, .node-landing_page .landing-page__field-content-section .navbar-expand-lg > .paragraph--type--sections, .field__item__paragraph__highlights .navbar-expand-lg > .paragraph--type--highlights, .node-article .group-related.navbar-expand-lg > div, .navbar-expand-lg > .carousel,
+  .navbar-expand-lg > .container, .navbar-expand-lg > .viewfield--view__theme_list__block_home_page, .node-172 .group-header .navbar-expand-lg > .group-header-inner, .node-landing_page:not(.node-172) .group-header .landing-page__node-title.theme-landing-page .navbar-expand-lg > .field-node-title-inner, .node-landing_page:not(.node-172) .group-header .navbar-expand-lg > .landing-page__node-title:not(.theme-landing-page), .node-landing_page .landing-page__field-content-section .navbar-expand-lg > .paragraph--type--sections, .field__item__paragraph__highlights .navbar-expand-lg > .paragraph--type--highlights, .node-article .group-related.navbar-expand-lg > div, .navbar-expand-lg > .carousel,
 .navbar-expand-lg > .container-fluid,
 .node-172 .navbar-expand-lg > .group-header,
 .node-landing_page:not(.node-172) .navbar-expand-lg > .group-header {
@@ -4881,7 +4881,7 @@ input[type=button].btn-block {
   }
 }
 @media (max-width: 1199.98px) {
-  .navbar-expand-xl > .container, .navbar-expand-xl > .viewfield--view__theme_list__block_home_page, .node-172 .group-header .navbar-expand-xl > .group-header-inner, .node-landing_page:not(.node-172) .group-header .landing-page__node-title.theme-landing-page .navbar-expand-xl > .field-node-title-inner, .node-landing_page .landing-page__field-content-section .navbar-expand-xl > .paragraph--type--sections, .field__item__paragraph__highlights .navbar-expand-xl > .paragraph--type--highlights, .node-article .group-related.navbar-expand-xl > div, .navbar-expand-xl > .carousel,
+  .navbar-expand-xl > .container, .navbar-expand-xl > .viewfield--view__theme_list__block_home_page, .node-172 .group-header .navbar-expand-xl > .group-header-inner, .node-landing_page:not(.node-172) .group-header .landing-page__node-title.theme-landing-page .navbar-expand-xl > .field-node-title-inner, .node-landing_page:not(.node-172) .group-header .navbar-expand-xl > .landing-page__node-title:not(.theme-landing-page), .node-landing_page .landing-page__field-content-section .navbar-expand-xl > .paragraph--type--sections, .field__item__paragraph__highlights .navbar-expand-xl > .paragraph--type--highlights, .node-article .group-related.navbar-expand-xl > div, .navbar-expand-xl > .carousel,
 .navbar-expand-xl > .container-fluid,
 .node-172 .navbar-expand-xl > .group-header,
 .node-landing_page:not(.node-172) .navbar-expand-xl > .group-header {
@@ -4904,7 +4904,7 @@ input[type=button].btn-block {
     padding-right: 0.5rem;
     padding-left: 0.5rem;
   }
-  .navbar-expand-xl > .container, .navbar-expand-xl > .viewfield--view__theme_list__block_home_page, .node-172 .group-header .navbar-expand-xl > .group-header-inner, .node-landing_page:not(.node-172) .group-header .landing-page__node-title.theme-landing-page .navbar-expand-xl > .field-node-title-inner, .node-landing_page .landing-page__field-content-section .navbar-expand-xl > .paragraph--type--sections, .field__item__paragraph__highlights .navbar-expand-xl > .paragraph--type--highlights, .node-article .group-related.navbar-expand-xl > div, .navbar-expand-xl > .carousel,
+  .navbar-expand-xl > .container, .navbar-expand-xl > .viewfield--view__theme_list__block_home_page, .node-172 .group-header .navbar-expand-xl > .group-header-inner, .node-landing_page:not(.node-172) .group-header .landing-page__node-title.theme-landing-page .navbar-expand-xl > .field-node-title-inner, .node-landing_page:not(.node-172) .group-header .navbar-expand-xl > .landing-page__node-title:not(.theme-landing-page), .node-landing_page .landing-page__field-content-section .navbar-expand-xl > .paragraph--type--sections, .field__item__paragraph__highlights .navbar-expand-xl > .paragraph--type--highlights, .node-article .group-related.navbar-expand-xl > div, .navbar-expand-xl > .carousel,
 .navbar-expand-xl > .container-fluid,
 .node-172 .navbar-expand-xl > .group-header,
 .node-landing_page:not(.node-172) .navbar-expand-xl > .group-header {
@@ -4919,7 +4919,7 @@ input[type=button].btn-block {
   }
 }
 @media (max-width: 1439.98px) {
-  .navbar-expand-xxl > .container, .navbar-expand-xxl > .viewfield--view__theme_list__block_home_page, .node-172 .group-header .navbar-expand-xxl > .group-header-inner, .node-landing_page:not(.node-172) .group-header .landing-page__node-title.theme-landing-page .navbar-expand-xxl > .field-node-title-inner, .node-landing_page .landing-page__field-content-section .navbar-expand-xxl > .paragraph--type--sections, .field__item__paragraph__highlights .navbar-expand-xxl > .paragraph--type--highlights, .node-article .group-related.navbar-expand-xxl > div, .navbar-expand-xxl > .carousel,
+  .navbar-expand-xxl > .container, .navbar-expand-xxl > .viewfield--view__theme_list__block_home_page, .node-172 .group-header .navbar-expand-xxl > .group-header-inner, .node-landing_page:not(.node-172) .group-header .landing-page__node-title.theme-landing-page .navbar-expand-xxl > .field-node-title-inner, .node-landing_page:not(.node-172) .group-header .navbar-expand-xxl > .landing-page__node-title:not(.theme-landing-page), .node-landing_page .landing-page__field-content-section .navbar-expand-xxl > .paragraph--type--sections, .field__item__paragraph__highlights .navbar-expand-xxl > .paragraph--type--highlights, .node-article .group-related.navbar-expand-xxl > div, .navbar-expand-xxl > .carousel,
 .navbar-expand-xxl > .container-fluid,
 .node-172 .navbar-expand-xxl > .group-header,
 .node-landing_page:not(.node-172) .navbar-expand-xxl > .group-header {
@@ -4942,7 +4942,7 @@ input[type=button].btn-block {
     padding-right: 0.5rem;
     padding-left: 0.5rem;
   }
-  .navbar-expand-xxl > .container, .navbar-expand-xxl > .viewfield--view__theme_list__block_home_page, .node-172 .group-header .navbar-expand-xxl > .group-header-inner, .node-landing_page:not(.node-172) .group-header .landing-page__node-title.theme-landing-page .navbar-expand-xxl > .field-node-title-inner, .node-landing_page .landing-page__field-content-section .navbar-expand-xxl > .paragraph--type--sections, .field__item__paragraph__highlights .navbar-expand-xxl > .paragraph--type--highlights, .node-article .group-related.navbar-expand-xxl > div, .navbar-expand-xxl > .carousel,
+  .navbar-expand-xxl > .container, .navbar-expand-xxl > .viewfield--view__theme_list__block_home_page, .node-172 .group-header .navbar-expand-xxl > .group-header-inner, .node-landing_page:not(.node-172) .group-header .landing-page__node-title.theme-landing-page .navbar-expand-xxl > .field-node-title-inner, .node-landing_page:not(.node-172) .group-header .navbar-expand-xxl > .landing-page__node-title:not(.theme-landing-page), .node-landing_page .landing-page__field-content-section .navbar-expand-xxl > .paragraph--type--sections, .field__item__paragraph__highlights .navbar-expand-xxl > .paragraph--type--highlights, .node-article .group-related.navbar-expand-xxl > div, .navbar-expand-xxl > .carousel,
 .navbar-expand-xxl > .container-fluid,
 .node-172 .navbar-expand-xxl > .group-header,
 .node-landing_page:not(.node-172) .navbar-expand-xxl > .group-header {
@@ -4960,7 +4960,7 @@ input[type=button].btn-block {
   flex-flow: row nowrap;
   justify-content: flex-start;
 }
-.navbar-expand > .container, .navbar-expand > .viewfield--view__theme_list__block_home_page, .node-172 .group-header .navbar-expand > .group-header-inner, .node-landing_page:not(.node-172) .group-header .landing-page__node-title.theme-landing-page .navbar-expand > .field-node-title-inner, .node-landing_page .landing-page__field-content-section .navbar-expand > .paragraph--type--sections, .field__item__paragraph__highlights .navbar-expand > .paragraph--type--highlights, .node-article .group-related.navbar-expand > div, .navbar-expand > .carousel,
+.navbar-expand > .container, .navbar-expand > .viewfield--view__theme_list__block_home_page, .node-172 .group-header .navbar-expand > .group-header-inner, .node-landing_page:not(.node-172) .group-header .landing-page__node-title.theme-landing-page .navbar-expand > .field-node-title-inner, .node-landing_page:not(.node-172) .group-header .navbar-expand > .landing-page__node-title:not(.theme-landing-page), .node-landing_page .landing-page__field-content-section .navbar-expand > .paragraph--type--sections, .field__item__paragraph__highlights .navbar-expand > .paragraph--type--highlights, .node-article .group-related.navbar-expand > div, .navbar-expand > .carousel,
 .navbar-expand > .container-fluid,
 .node-172 .navbar-expand > .group-header,
 .node-landing_page:not(.node-172) .navbar-expand > .group-header {
@@ -4977,7 +4977,7 @@ input[type=button].btn-block {
   padding-right: 0.5rem;
   padding-left: 0.5rem;
 }
-.navbar-expand > .container, .navbar-expand > .viewfield--view__theme_list__block_home_page, .node-172 .group-header .navbar-expand > .group-header-inner, .node-landing_page:not(.node-172) .group-header .landing-page__node-title.theme-landing-page .navbar-expand > .field-node-title-inner, .node-landing_page .landing-page__field-content-section .navbar-expand > .paragraph--type--sections, .field__item__paragraph__highlights .navbar-expand > .paragraph--type--highlights, .node-article .group-related.navbar-expand > div, .navbar-expand > .carousel,
+.navbar-expand > .container, .navbar-expand > .viewfield--view__theme_list__block_home_page, .node-172 .group-header .navbar-expand > .group-header-inner, .node-landing_page:not(.node-172) .group-header .landing-page__node-title.theme-landing-page .navbar-expand > .field-node-title-inner, .node-landing_page:not(.node-172) .group-header .navbar-expand > .landing-page__node-title:not(.theme-landing-page), .node-landing_page .landing-page__field-content-section .navbar-expand > .paragraph--type--sections, .field__item__paragraph__highlights .navbar-expand > .paragraph--type--highlights, .node-article .group-related.navbar-expand > div, .navbar-expand > .carousel,
 .navbar-expand > .container-fluid,
 .node-172 .navbar-expand > .group-header,
 .node-landing_page:not(.node-172) .navbar-expand > .group-header {
@@ -10551,7 +10551,7 @@ button.bg-tertiary:focus {
   padding: 0.5rem !important;
 }
 
-.pt-2,
+.pt-2, .node-landing_page:not(.node-172) .group-header .landing-page__node-title:not(.theme-landing-page),
 .py-2 {
   padding-top: 0.5rem !important;
 }
@@ -21540,9 +21540,14 @@ a.more-data-parline, .article__node-link a,
 .node-landing_page:not(.node-172) .block--ipu-breadcrumbs {
   display: none;
 }
+.node-landing_page:not(.node-172) .group-header .landing-page__node-title:not(.theme-landing-page) {
+  background-image: none;
+}
 .node-landing_page:not(.node-172) .group-header .landing-page__node-title.theme-landing-page {
   width: 100%;
   min-height: 60vh;
+  background-position: center center;
+  background-size: cover;
 }
 .node-landing_page:not(.node-172) .group-header .landing-page__node-title.theme-landing-page .field-node-title-inner {
   position: relative;
