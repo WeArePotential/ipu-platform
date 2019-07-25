@@ -8,6 +8,7 @@ dependencies:
     - field.field.taxonomy_term.country.field_ipu_member
     - field.field.taxonomy_term.country.field_iso_code
     - field.field.taxonomy_term.country.field_iso_code_for_parliament
+    - field.field.taxonomy_term.country.field_no_parliament_page
     - field.field.taxonomy_term.country.field_principles_signatory
     - taxonomy.vocabulary.country
   module:
@@ -67,6 +68,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
+  field_no_parliament_page:
+    weight: 11
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
     region: content
   field_principles_signatory:
     weight: 7
