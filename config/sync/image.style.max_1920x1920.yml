@@ -1,0 +1,15 @@
+uuid: 93fefa06-27d9-4763-b2d3-404c4f2919c8
+langcode: en
+status: true
+dependencies: {  }
+name: max_1920x1920
+label: 'Max 1920x1920'
+effects:
+  b1927fb8-cd72-4400-8a22-956051d2befc:
+    uuid: b1927fb8-cd72-4400-8a22-956051d2befc
+    id: image_scale
+    weight: 1
+    data:
+      width: 1920
+      height: null
+      upscale: true

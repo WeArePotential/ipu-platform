@@ -19,7 +19,7 @@ bundle: landing_page
 label: 'Landing page for theme'
 description: 'Select the theme for which this is the landing page'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
