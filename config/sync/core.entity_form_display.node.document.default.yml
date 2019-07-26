@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - entity_browser.browser.browse_files_modal
     - field.field.node.document.body
     - field.field.node.document.field_country
     - field.field.node.document.field_document_file
@@ -11,14 +12,12 @@ dependencies:
     - field.field.node.document.field_ipu_structure
     - field.field.node.document.field_media_image
     - field.field.node.document.field_theme
-    - image.style.thumbnail
     - node.type.document
   module:
     - chosen_field
+    - entity_browser
     - field_group
     - field_layout
-    - file
-    - image
     - layout_discovery
     - link
     - path
@@ -116,9 +115,16 @@ content:
     region: content
   field_document_file:
     weight: 5
-    type: file_generic
+    type: entity_browser_file
     settings:
-      progress_indicator: throbber
+      entity_browser: browse_files_modal
+      field_widget_edit: true
+      field_widget_remove: true
+      selection_mode: selection_append
+      view_mode: default
+      field_widget_replace: false
+      open: false
+      preview_image_style: thumbnail
     third_party_settings: {  }
     region: content
   field_document_type:
@@ -143,10 +149,16 @@ content:
     region: content
   field_media_image:
     weight: 4
-    type: image_image
+    type: entity_browser_file
     settings:
+      entity_browser: browse_files_modal
+      field_widget_edit: true
+      field_widget_remove: true
+      selection_mode: selection_append
+      view_mode: default
+      field_widget_replace: false
+      open: false
       preview_image_style: thumbnail
-      progress_indicator: throbber
     third_party_settings: {  }
     region: content
   field_theme:

@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - entity_browser.browser.browse_files_modal
     - field.field.node.event.body
     - field.field.node.event.field_country
     - field.field.node.event.field_document
@@ -13,16 +14,14 @@ dependencies:
     - field.field.node.event.field_location
     - field.field.node.event.field_media_image
     - field.field.node.event.field_theme
-    - image.style.thumbnail
     - node.type.event
   module:
     - address
     - chosen_field
     - datetime
+    - entity_browser
     - field_group
     - field_layout
-    - file
-    - image
     - layout_discovery
     - link
     - path
@@ -116,9 +115,16 @@ content:
     region: content
   field_document:
     weight: 6
-    type: file_generic
+    type: entity_browser_file
     settings:
-      progress_indicator: throbber
+      entity_browser: browse_files_modal
+      field_widget_edit: true
+      field_widget_remove: true
+      selection_mode: selection_append
+      view_mode: default
+      field_widget_replace: false
+      open: false
+      preview_image_style: thumbnail
     third_party_settings: {  }
     region: content
   field_event_date:
@@ -155,10 +161,16 @@ content:
     region: content
   field_media_image:
     weight: 9
-    type: image_image
+    type: entity_browser_file
     settings:
+      entity_browser: browse_files_modal
+      field_widget_edit: true
+      field_widget_remove: true
+      selection_mode: selection_append
+      view_mode: default
+      field_widget_replace: false
+      open: false
       preview_image_style: thumbnail
-      progress_indicator: throbber
     third_party_settings: {  }
     region: content
   field_theme:
