@@ -1,0 +1,5 @@
+label: 'Signataire des principes'
+description: 'Adhésion aux Principes communs en matière d''assistance aux parlements'
+settings:
+  on_label: Signataire
+  off_label: 'Non signataire'

@@ -18,7 +18,7 @@ bundle: country
 label: 'ISO code'
 description: 'The 2 character ISO code for this country or territory. See <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2</a> for more details'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }

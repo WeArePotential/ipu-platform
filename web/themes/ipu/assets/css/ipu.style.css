@@ -21656,6 +21656,39 @@ a.more-data-parline, .article__node-link a,
   font-weight: 400;
 }
 
+.mapael .mapTooltip {
+  border: 1px solid #0066a1;
+  box-shadow: #cccccc;
+}
+
+.viewfield--view__countries__block_1 h3, .viewfield--view__countries__block_1 .basic-page__field-related-content .field__label, .basic-page__field-related-content .viewfield--view__countries__block_1 .field__label {
+  clear: left;
+  float: left;
+  width: 40px;
+  padding: 2px 10px;
+  text-align: center;
+}
+.viewfield--view__countries__block_1 .item-list {
+  width: 100%;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #cccccc;
+  margin-bottom: 4px;
+}
+.viewfield--view__countries__block_1 ul {
+  float: left;
+  list-style: none;
+  width: calc(100% - 50px);
+  padding: 0;
+  margin: 0;
+}
+.viewfield--view__countries__block_1 ul li {
+  list-style: none;
+  display: inline-block;
+}
+.viewfield--view__countries__block_1 ul li a.non-member {
+  font-weight: 300;
+}
+
 #main-nav {
   background-color: #fff;
   border-width: 1px 0 4px 0;
