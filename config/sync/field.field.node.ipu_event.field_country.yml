@@ -19,7 +19,7 @@ bundle: ipu_event
 label: Country
 description: 'Hidden country field, to ensure events are linked to the relevant country (The location of the event is specified elsewhere)'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

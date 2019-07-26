@@ -47,7 +47,7 @@ import 'bootstrap';
 
       $('.viewfield--view__countries__block_1 .views-field-name a').on("click", function () {
         if ($(this).data("iso-code-for-parliament") != '') {
-          $(this).attr('href', "/parliament" + $(this).data("iso-code-for-parliament"));
+          $(this).attr('href', "/parliament/" + $(this).data("iso-code-for-parliament"));
         }
         if ($(this).data("no-parliament-page") == 'True') {
           return false;
