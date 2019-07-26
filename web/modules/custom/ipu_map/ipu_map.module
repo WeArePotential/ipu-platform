@@ -49,8 +49,10 @@ function ipu_map_get_countries() {
         $term = $term->getTranslation($language_id);
       }
     }
-    $terms_sorted[$term->getName()] = $term;
-    $term_names[] = $term->getName();
+    if ($term->field_no_parliament_page->value != 1 ) {
+      $terms_sorted[$term->getName()] = $term;
+      $term_names[] = $term->getName();
+    }
   }
   // We need to sort French a little differently, to accommodate accents.
   if ($language_id == 'fr') {
