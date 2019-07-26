@@ -354,7 +354,7 @@ ol.breadcrumb {
 }
 
 /* Parliaments flyout */
-.ultimenu__item-1 .ultimenu__flyout .block {
+.ultimenu__item-1 .ultimenu__flyout > .region-inner > .block {
   @extend .col-md-4;
 }
 
@@ -380,6 +380,15 @@ ol.breadcrumb {
     label {
       display: none;
     }
+  }
+}
+.parliaments-menu-cta-node {
+  margin-top: 20px;
+  .group-image {
+    display: none;
+  }
+  .node--view-mode-highlight {
+    border: 0 !important;
   }
 }
 

@@ -8,6 +8,7 @@ use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Drupal\Core\Url;
+use Drupal\core\Render\RendererInterface;
 
 class IpuCountrySelectForm extends FormBase {
   /**
@@ -55,6 +56,14 @@ class IpuCountrySelectForm extends FormBase {
       '#value' => t('Go'),
       '#button_type' => 'primary',
     );
+
+    $block_manager = \Drupal::service('plugin.manager.block');
+    $config = ['nid'=> 236, 'link_text'=>'Our support for parliaments', 'view_mode'=>'highlight', 'current'=>FALSE];// You can hard code configuration or you load from settings.
+    $plugin_block = $block_manager->createInstance('ipu_node_block', $config);
+    $render = $plugin_block->build();
+    $html = \Drupal::service('renderer')->renderRoot($render);
+    $form['#suffix'] = '<div class="parliaments-menu-cta-node">'.$html.'</div>';
+
     return $form;
   }
   /**
