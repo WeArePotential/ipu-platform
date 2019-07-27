@@ -1207,7 +1207,7 @@ a.btn {
     .landing-page__node-title:not(.theme-landing-page) {
       @extend .container;
       @extend .pt-2;
-      background-image: none;
+      background-image: none !important;
     }
     .landing-page__node-title.theme-landing-page {
       width: 100%;

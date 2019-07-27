@@ -21574,7 +21574,7 @@ a.more-data-parline, .article__node-link a,
   display: none;
 }
 .node-landing_page:not(.node-172) .group-header .landing-page__node-title:not(.theme-landing-page) {
-  background-image: none;
+  background-image: none !important;
 }
 .node-landing_page:not(.node-172) .group-header .landing-page__node-title.theme-landing-page {
   width: 100%;
@@ -22073,7 +22073,8 @@ ol.breadcrumb {
   border-bottom: 2px solid #00a8b4;
   margin-bottom: 1rem;
 }
-.ultimenu__flyout .block .section-page__body {
+.ultimenu__flyout .block .section-page__body,
+.ultimenu__flyout .block .landing-page__body {
   color: #333333;
 }
 

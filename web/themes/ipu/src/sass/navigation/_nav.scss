@@ -334,7 +334,8 @@ ol.breadcrumb {
     border-bottom: 2px solid $secondary;
     margin-bottom: 1rem;
   }
-  .block .section-page__body {
+  .block .section-page__body,
+  .block .landing-page__body {
     color: $ipu-dark-grey;
   }
 }
