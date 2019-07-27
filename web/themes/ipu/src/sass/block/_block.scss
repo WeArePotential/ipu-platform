@@ -469,11 +469,25 @@ a.btn {
   content: "|";
 }
 
-// Country page
+// Country page and data points on home page
 
 // Data points
 .data-point-title {
   font-weight: $font-weight-bold;
+}
+
+.ipu-tweaks-data-points {
+  margin: 40px 0;
+  .col-md-3 {
+    transition: .4s, transform .4s ease;
+    -moz-transition: .4s, transform .4s ease;
+    -webkit-transition: .4s, transform .4s ease;
+    &:hover {
+      -ms-transform: scale(1.02); /* IE 9 */
+      -webkit-transform: scale(1.02); /* Safari */
+      transform: scale(1.02);
+    }
+  }
 }
 
 // Statistics components
@@ -542,7 +556,12 @@ a.btn {
   color: $white;
   font-weight: $font-weight-bold;
   font-size: $font-size-lg;
-  margin-right: 10px;
+}
+
+.card-members .stats-circle {
+  background-color: $light;
+  border: 2px solid $primary;
+  color: $primary;
 }
 
 .stats-title {

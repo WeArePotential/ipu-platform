@@ -2,3 +2,6 @@ name: IPU Tweaks
 description: Minor overrides for IPU
 core: 8.x
 type: module
+
+dependencies:
+  - block

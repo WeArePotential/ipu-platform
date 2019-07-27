@@ -27,6 +27,7 @@ use Drupal\Core\Url;
  */
 class IpuNodeBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
+
   /**
    * The entity view builder interface.
    *

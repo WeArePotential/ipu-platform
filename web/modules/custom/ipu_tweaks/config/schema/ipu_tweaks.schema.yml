@@ -1,0 +1,7 @@
+block.settings.ipu_stats_block:
+  type: block_settings
+  label: 'IPU statistics block'
+  mapping:
+    ipu_stats_block_settings:
+      type: text
+      label: 'IPU Stats block settings'

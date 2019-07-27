@@ -144,4 +144,18 @@ function ipu_tweaks_entity_type_alter(array &$entity_types) {
   }
 }
 
-
+function ipu_tweaks_theme($existing, $type, $theme, $path) {
+  return [
+    'ipu-tweaks-data-points' => [
+      'template' => 'ipu-tweaks-data-points',
+      'path' => $path . '/templates',
+      'variables' => [
+        'stats' => '',
+        'humanrights' => '',
+        'womsn' => '',
+        'under45' => '',
+        'members' => '',
+      ],
+    ],
+  ];
+}
