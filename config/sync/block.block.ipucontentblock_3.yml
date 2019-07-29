@@ -1,0 +1,24 @@
+uuid: 63beb2ec-c697-4f48-8d7e-ed83f64c96f7
+langcode: en
+status: true
+dependencies:
+  module:
+    - ipu_map
+  theme:
+    - ipu
+id: ipucontentblock_3
+theme: ipu
+region: ultimenu_mega_fb9f2222
+weight: -15
+provider: null
+plugin: ipu_node_block
+settings:
+  id: ipu_node_block
+  label: 'IPU content block'
+  provider: ipu_map
+  label_display: '0'
+  current: 0
+  nid: '9838'
+  link_text: 'Get involved'
+  view_mode: highlight
+visibility: {  }

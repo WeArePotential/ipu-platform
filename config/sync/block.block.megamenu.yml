@@ -5,9 +5,13 @@ dependencies:
   config:
     - system.menu.mega-menu
   module:
+    - block_class
     - menu_block
   theme:
     - ipu
+third_party_settings:
+  block_class:
+    classes: ipu-menu-list
 id: megamenu
 theme: ipu
 region: ultimenu_mega_b7d13355

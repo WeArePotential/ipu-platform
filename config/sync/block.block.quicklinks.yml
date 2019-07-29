@@ -1,25 +1,28 @@
-uuid: eb640657-8ca9-4802-b006-b43e5ef22f93
+uuid: e79b44d6-bb8e-4bdf-859a-4809d97432bb
 langcode: en
 status: true
 dependencies:
-  content:
-    - 'block_content:basic:35d7eeaf-18c9-4265-991e-6b6c4eca799d'
+  config:
+    - system.menu.quick-links
   module:
-    - block_content
+    - menu_block
   theme:
     - ipu
 id: quicklinks
 theme: ipu
 region: footer
-weight: -13
+weight: -14
 provider: null
-plugin: 'block_content:35d7eeaf-18c9-4265-991e-6b6c4eca799d'
+plugin: 'menu_block:quick-links'
 settings:
-  id: 'block_content:35d7eeaf-18c9-4265-991e-6b6c4eca799d'
+  id: 'menu_block:quick-links'
   label: 'Quick links'
-  provider: block_content
+  provider: menu_block
   label_display: visible
-  status: true
-  info: ''
-  view_mode: full
+  level: 1
+  depth: 1
+  expand: 0
+  parent: 'quick-links:'
+  render_parent: false
+  suggestion: quick_links
 visibility: {  }
