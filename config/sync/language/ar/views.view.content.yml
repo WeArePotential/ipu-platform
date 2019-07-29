@@ -1,3 +1,4 @@
+label: المحتوى
 display:
   default:
     display_options:
@@ -32,6 +33,12 @@ display:
             group_items:
               1:
                 title: منشور
+      title: المحتوى
     display_title: الرئيسي
   page_1:
+    display_options:
+      menu:
+        title: المحتوى
+      tab_options:
+        title: المحتوى
     display_title: الصفحة

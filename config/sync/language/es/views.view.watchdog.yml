@@ -20,6 +20,7 @@ display:
         type:
           label: Tipo
         name:
+          label: Usuario
           separator: ', '
         link:
           label: Operaciones

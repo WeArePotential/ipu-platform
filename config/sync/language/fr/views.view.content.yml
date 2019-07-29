@@ -1,3 +1,4 @@
+label: Contenu
 display:
   default:
     display_options:
@@ -43,6 +44,12 @@ display:
                 title: Publié
               2:
                 title: 'Non publié'
+      title: Contenu
     display_title: Maître
   page_1:
+    display_options:
+      menu:
+        title: Contenu
+      tab_options:
+        title: Contenu
     display_title: Page

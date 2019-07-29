@@ -41,6 +41,7 @@ third_party_settings:
       region: hidden
     group_content:
       children:
+        - node_links
         - node_title
         - body
         - node_link
@@ -80,6 +81,7 @@ third_party_settings:
     regions:
       main:
         - group_image
+        - node_links
         - group_content
         - field_media_image
         - node_title
@@ -94,7 +96,7 @@ third_party_settings:
         formatter: default
         settings:
           'link text': 'Read more'
-          'link class': 'btn btn-outline-primary'
+          'link class': 'btn btn-outline-primary btn-sm'
           wrapper: ''
           class: ''
         ft:
@@ -103,6 +105,11 @@ third_party_settings:
             lb: ''
             lb-col: false
             classes: {  }
+      node_links:
+        plugin_id: node_links
+        weight: 0
+        label: hidden
+        formatter: default
       node_title:
         plugin_id: node_title
         weight: 4

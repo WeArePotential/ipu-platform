@@ -40,6 +40,9 @@ display:
             items_per_page_label: 'Elementos por página'
             items_per_page_options_all_label: '- Todo -'
             offset_label: Desplazamiento
+      fields:
+        entity_label:
+          label: Entidad
       arguments:
         fid:
           exception:

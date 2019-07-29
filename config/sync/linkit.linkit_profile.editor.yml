@@ -1,0 +1,30 @@
+uuid: f7b77b67-5ebf-48a8-b8a6-830fe1e1db2c
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: editor
+label: Editor
+description: 'Editing Full HTML fields, linking to any content.'
+matchers:
+  bea34060-2be8-47a6-9c1e-3d91e109a88b:
+    uuid: bea34060-2be8-47a6-9c1e-3d91e109a88b
+    id: 'entity:node'
+    weight: 0
+    settings:
+      bundles:
+        article: article
+        basic_page: basic_page
+        ipu_event: ipu_event
+        landing_page: landing_page
+        page: page
+        publication: publication
+        section_page: section_page
+        vacancy: vacancy
+        webform: webform
+      group_by_bundle: true
+      include_unpublished: true
+      substitution_type: canonical
+      metadata: ''
+      limit: 100

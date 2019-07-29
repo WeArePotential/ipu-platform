@@ -38,6 +38,8 @@ display:
             items_per_page_options_all_label: '- Todo -'
             offset_label: Desplazamiento
       fields:
+        entity_label:
+          label: Entidad
         count:
           format_plural_string: !!binary MQNAY291bnQ=
       arguments:

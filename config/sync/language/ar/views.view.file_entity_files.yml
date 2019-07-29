@@ -32,6 +32,9 @@ display:
         options:
           expose:
             items_per_page_options_all_label: '- الكل -'
+      fields:
+        entity_label:
+          label: الكيان
       arguments:
         fid:
           exception:

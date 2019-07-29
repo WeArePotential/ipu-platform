@@ -16,8 +16,8 @@ id: node.ipu_event.field_country
 field_name: field_country
 entity_type: node
 bundle: ipu_event
-label: Country
-description: 'Hidden country field, to ensure events are linked to the relevant country (The location of the event is specified elsewhere)'
+label: 'Country category'
+description: 'Hidden country field, to ensure events are linked to the relevant country.  The location of the event is specified elsewhere.'
 required: false
 translatable: false
 default_value: {  }

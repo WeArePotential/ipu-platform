@@ -9,3 +9,6 @@ display:
           exposed_sorts_label: 'الترتيب حسب'
           sort_asc_label: تصاعدي
           sort_desc_label: تنازلي
+  block_1:
+    display_options:
+      block_category: المستخدم

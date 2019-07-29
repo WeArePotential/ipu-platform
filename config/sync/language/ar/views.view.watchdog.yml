@@ -17,6 +17,8 @@ display:
           admin_label: أيقونة
         type:
           label: النوع
+        name:
+          label: المستخدم
         link:
           label: عمليات
       filters:
