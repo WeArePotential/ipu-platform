@@ -67,9 +67,7 @@ third_party_settings:
         - field_event_theme
         - field_location
         - field_country
-        - field_ipu_event_dates
-        - field_date_accuracy
-        - field_event_computed_date
+        - group_dates
         - field_summary
       parent_name: group_tabs
       weight: 20
@@ -88,7 +86,7 @@ third_party_settings:
         - field_hide_documents_menu
         - field_hide_programs_menu
       parent_name: group_tabs
-      weight: 21
+      weight: 22
       format_type: tab
       format_settings:
         id: ''
@@ -148,6 +146,21 @@ third_party_settings:
         required_fields: true
       label: 'Right menu'
       region: content
+    group_dates:
+      children:
+        - field_ipu_event_dates
+        - field_date_accuracy
+        - field_event_computed_date
+      parent_name: group_basic_information
+      weight: 7
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: Dates
+      region: content
 id: node.ipu_event.default
 targetEntityType: node
 bundle: ipu_event
@@ -160,7 +173,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_agenda_order_number:
-    weight: 11
+    weight: 12
     type: string_textfield
     settings:
       size: 20
@@ -174,7 +187,7 @@ content:
     type: chosen_select
     region: content
   field_date_accuracy:
-    weight: 8
+    weight: 9
     settings: {  }
     third_party_settings: {  }
     type: options_select
@@ -202,7 +215,7 @@ content:
     third_party_settings: {  }
     region: content
   field_event_computed_date:
-    weight: 9
+    weight: 10
     type: datetime_default
     settings: {  }
     third_party_settings: {  }
@@ -246,14 +259,14 @@ content:
     third_party_settings: {  }
     region: content
   field_ipu_event_dates:
-    weight: 7
+    weight: 8
     settings: {  }
     third_party_settings: {  }
     type: daterange_default
     region: content
   field_ipu_event_right_menu:
     type: entity_reference_paragraphs
-    weight: 6
+    weight: 7
     region: content
     settings:
       title: Paragraph
@@ -289,7 +302,7 @@ content:
     region: content
   field_ipu_event_sessions:
     type: entity_reference_paragraphs
-    weight: 10
+    weight: 11
     region: content
     settings:
       title: Paragraph
@@ -318,7 +331,7 @@ content:
     third_party_settings: {  }
     region: content
   field_programme_show_print:
-    weight: 12
+    weight: 13
     type: boolean_checkbox
     settings:
       display_label: true
@@ -331,7 +344,7 @@ content:
     third_party_settings: {  }
     region: content
   field_summary:
-    weight: 10
+    weight: 11
     type: text_textarea
     settings:
       rows: 3
@@ -339,7 +352,7 @@ content:
     third_party_settings: {  }
     region: content
   field_twitter_order:
-    weight: 5
+    weight: 6
     type: string_textfield
     settings:
       size: 60
@@ -395,7 +408,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 2
+    weight: 3
     settings:
       match_operator: CONTAINS
       size: 60

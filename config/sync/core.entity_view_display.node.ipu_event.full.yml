@@ -91,8 +91,6 @@ third_party_settings:
         - field_hide_programs_menu
         - field_hide_documents_menu
         - field_twitter_order
-        - field_document_show_print
-        - field_programme_show_print
         - field_event_sub_page
       left:
         - field_ipu_event_sessions
@@ -131,22 +129,19 @@ content:
     type: boolean
     weight: 6
     region: top
-    label: inline
+    label: hidden
     settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-  field_document_show_print:
-    label: inline
-    weight: 14
-    type: boolean
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    region: top
+      format: custom
+      format_custom_true: 'Link not displayed on list pages'
+      format_custom_false: 'Link displayed on list pages'
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
   field_documents_order_number:
     label: inline
     weight: 9
@@ -157,7 +152,7 @@ content:
     region: top
   field_event_sub_page:
     label: above
-    weight: 16
+    weight: 14
     type: entity_reference_revisions_entity_view
     settings:
       view_mode: full
@@ -176,29 +171,43 @@ content:
     type: entity_reference_label
     weight: 0
     region: top
-    label: inline
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
   field_hide_documents_menu:
-    label: above
+    label: inline
     weight: 12
     type: boolean
     settings:
-      format: default
-      format_custom_false: ''
+      format: yes-no
       format_custom_true: ''
-    third_party_settings: {  }
+      format_custom_false: ''
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
     region: top
   field_hide_programs_menu:
-    label: above
+    label: inline
     weight: 11
     type: boolean
     settings:
-      format: default
-      format_custom_false: ''
+      format: yes-no
       format_custom_true: ''
-    third_party_settings: {  }
+      format_custom_false: ''
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
     region: top
   field_ipu_event_dates:
     type: daterange_plain
@@ -227,7 +236,7 @@ content:
     region: top
   field_ipu_event_section:
     label: above
-    weight: 21
+    weight: 19
     type: entity_reference_revisions_entity_view
     settings:
       view_mode: full
@@ -236,7 +245,7 @@ content:
     region: right
   field_ipu_event_session_type:
     label: above
-    weight: 18
+    weight: 16
     type: entity_reference_revisions_entity_view
     settings:
       view_mode: full
@@ -245,7 +254,7 @@ content:
     region: right
   field_ipu_event_sessions:
     label: above
-    weight: 17
+    weight: 15
     type: entity_reference_revisions_entity_view
     settings:
       view_mode: full
@@ -262,7 +271,7 @@ content:
     region: left
   field_ipu_event_sponsors:
     label: above
-    weight: 20
+    weight: 18
     type: entity_reference_revisions_entity_view
     settings:
       view_mode: full
@@ -276,19 +285,9 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: top
-  field_programme_show_print:
-    label: inline
-    weight: 15
-    type: boolean
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    region: top
   field_sponsor:
     type: entity_reference_entity_view
-    weight: 19
+    weight: 17
     region: right
     label: inline
     settings:
@@ -322,6 +321,8 @@ content:
     region: top
 hidden:
   field_country: true
+  field_document_show_print: true
   field_event_computed_date: true
+  field_programme_show_print: true
   langcode: true
   links: true
