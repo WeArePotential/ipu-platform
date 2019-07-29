@@ -1,0 +1,8 @@
+uuid: 9c7d0f19-a29f-4f3d-ac5a-b38868aaccf1
+langcode: en
+status: true
+dependencies: {  }
+id: quick-links
+label: 'Quick links'
+description: 'Quick links menu for Knowledge mega-menu and footer'
+locked: false
