@@ -271,6 +271,7 @@ ol.breadcrumb {
 #main-nav .ultimenu__flyout {
   .ipu-menu-list ul.nav {
     display: block;
+    border-top-width: 1px;
     li {
       display: block;
       border: 0;
@@ -351,6 +352,10 @@ ol.breadcrumb {
       padding: 2px 6px;
       display: block;
     }
+  }
+  /* Take border off embedded nodes */
+  .node--view-mode-highlight {
+    border: 0px;
   }
 }
 

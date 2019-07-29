@@ -19696,6 +19696,7 @@ a.more-data-parline, .article__node-link a,
   background-position: 100% 50%;
   background-size: 36px;
   line-height: 1.1em;
+  z-index: 2;
 }
 .node--view-mode-highlight .ipu-event__dates .event-dates-part,
 .node--view-mode-highlight .event__date .event-dates-part {
@@ -22027,6 +22028,7 @@ ol.breadcrumb {
 
 #main-nav .ultimenu__flyout .ipu-menu-list ul.nav {
   display: block;
+  border-top-width: 1px;
 }
 #main-nav .ultimenu__flyout .ipu-menu-list ul.nav li {
   display: block;
@@ -22079,6 +22081,9 @@ ol.breadcrumb {
 }
 
 /* Extra buttons */
+.ultimenu__flyout {
+  /* Take border off embedded nodes */
+}
 .ultimenu__flyout a.btn-outline-primary, .ultimenu__flyout .article__node-link a, .article__node-link .ultimenu__flyout a,
 .ultimenu__flyout .ipu-event__node-link a,
 .ipu-event__node-link .ultimenu__flyout a,
@@ -22091,6 +22096,9 @@ ol.breadcrumb {
 .ultimenu__flyout .megamenu-cta a.more-data-parline {
   padding: 2px 6px;
   display: block;
+}
+.ultimenu__flyout .node--view-mode-highlight {
+  border: 0px;
 }
 
 /* Parliaments flyout */
