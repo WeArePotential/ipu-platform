@@ -595,6 +595,30 @@ a.btn {
   margin: 20px 0;
 }
 
+.event-date-circle {
+  border-radius: 50%;
+  background-color: $tertiary;
+  width: 100px;
+  height: 100px;
+  // line-height: 75px;
+  text-align: center;
+  color: $ipu-white;
+  font-weight: $font-weight-bold;
+  // font-size: $font-size-lg;
+  border: 4px solid #f2f2f2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background-image: url(../img/icons/calendar.png);
+  background-position: 100% 50%;
+  background-size: 36px;
+  line-height: 1.1em;
+  z-index: 2;
+}
+
+
+
 // Highlight cards base styles
 .node--view-mode-highlight {
   position: relative;
@@ -656,32 +680,8 @@ a.btn {
   }
   // Styling date element
   .ipu-event__dates,
-  .event__date{
-    border-radius: 50%;
-    background-color: $tertiary;
-    width: 100px;
-    height: 100px;
-    // line-height: 75px;
-    text-align: center;
-    color: $ipu-white;
-    font-weight: $font-weight-bold;
-    // font-size: $font-size-lg;
-    border: 4px solid #f2f2f2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    background-image: url(../img/icons/calendar.png);
-    background-position: 100% 50%;
-    background-size: 36px;
-    line-height: 1.1em;
-    z-index: 2;
-    // time {
-    //   display: flex;
-    //   height: 100%;
-    //   background-color: $tertiary;
-    //   border-radius: 50%;
-    // }
+  .event__date {
+    @extend .event-date-circle;
     .event-dates-part {
       display: block;
     }
@@ -1113,6 +1113,45 @@ a.btn {
     @extend .card-body;
     @extend .col-8;
     background-color: $ipu-white;
+  }
+
+}
+
+
+
+.node--view-mode-teaser {
+  position: relative;
+  margin-bottom: $spacer;
+
+}
+.node--type-ipu-event.node--view-mode-teaser {
+  .bs-region {
+    @extend .d-flex;
+    @extend .justify-content-between;
+  }
+  .group-event-date {
+    .ipu-event__field-event-computed-date {
+      @extend .event-date-circle;
+      .event-dates-day {
+        font-size: $font-size-lg;
+      }
+    }
+  }
+  .group-content {
+  }
+}
+
+// Events listings
+.viewfield--view__events {
+  // Upcoming and prev
+  &.viewfield--view__events__block {
+    .views-element-container > div > h3 {
+      border-bottom: 1px solid $secondary;
+      padding-top: 20px;
+    }
+    .ipu-event__node-title h3 a {
+      font-size: $font-size-md;
+    }
   }
 
 }

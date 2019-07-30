@@ -9031,7 +9031,7 @@ button.bg-tertiary:focus {
   display: table-cell !important;
 }
 
-.d-flex, .node--type-publication.node--view-mode-highlight .group-content-wrapper {
+.d-flex, .node--type-ipu-event.node--view-mode-teaser .bs-region, .node--type-publication.node--view-mode-highlight .group-content-wrapper {
   display: flex !important;
 }
 
@@ -9362,7 +9362,7 @@ button.bg-tertiary:focus {
   justify-content: center !important;
 }
 
-.justify-content-between {
+.justify-content-between, .node--type-ipu-event.node--view-mode-teaser .bs-region {
   justify-content: space-between !important;
 }
 
@@ -19641,6 +19641,27 @@ a.more-data-parline, .article__node-link a,
   margin: 20px 0;
 }
 
+.event-date-circle, .node--type-ipu-event.node--view-mode-teaser .group-event-date .ipu-event__field-event-computed-date, .node--view-mode-highlight .ipu-event__dates,
+.node--view-mode-highlight .event__date {
+  border-radius: 50%;
+  background-color: #e98300;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  color: #ffffff;
+  font-weight: 500;
+  border: 4px solid #f2f2f2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background-image: url(../img/icons/calendar.png);
+  background-position: 100% 50%;
+  background-size: 36px;
+  line-height: 1.1em;
+  z-index: 2;
+}
+
 .node--view-mode-highlight {
   position: relative;
   margin-bottom: 1rem;
@@ -19677,26 +19698,6 @@ a.more-data-parline, .article__node-link a,
 }
 .node--view-mode-highlight .group-event-wrapper {
   margin-top: -10px;
-}
-.node--view-mode-highlight .ipu-event__dates,
-.node--view-mode-highlight .event__date {
-  border-radius: 50%;
-  background-color: #e98300;
-  width: 100px;
-  height: 100px;
-  text-align: center;
-  color: #ffffff;
-  font-weight: 500;
-  border: 4px solid #f2f2f2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  background-image: url(../img/icons/calendar.png);
-  background-position: 100% 50%;
-  background-size: 36px;
-  line-height: 1.1em;
-  z-index: 2;
 }
 .node--view-mode-highlight .ipu-event__dates .event-dates-part,
 .node--view-mode-highlight .event__date .event-dates-part {
@@ -21510,6 +21511,22 @@ a.more-data-parline, .article__node-link a,
 }
 .node--type-publication.node--view-mode-highlight .group-content {
   background-color: #ffffff;
+}
+
+.node--view-mode-teaser {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.node--type-ipu-event.node--view-mode-teaser .group-event-date .ipu-event__field-event-computed-date .event-dates-day {
+  font-size: 1.75rem;
+}
+.viewfield--view__events.viewfield--view__events__block .views-element-container > div > h3, .viewfield--view__events.viewfield--view__events__block .basic-page__field-related-content .views-element-container > div > .field__label, .basic-page__field-related-content .viewfield--view__events.viewfield--view__events__block .views-element-container > div > .field__label {
+  border-bottom: 1px solid #00a8b4;
+  padding-top: 20px;
+}
+.viewfield--view__events.viewfield--view__events__block .ipu-event__node-title h3 a, .viewfield--view__events.viewfield--view__events__block .ipu-event__node-title .basic-page__field-related-content .field__label a, .basic-page__field-related-content .viewfield--view__events.viewfield--view__events__block .ipu-event__node-title .field__label a {
+  font-size: 1.2rem;
 }
 
 .node-basic_page,
