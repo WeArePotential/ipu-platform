@@ -67,8 +67,20 @@
     {% for item in items %}
       <div{{ attributes.addClass(classes) }}>
 
+        {% set accuracy = element['#object'].field_date_accuracy.value  %}
+        {% if accuracy == 'year' %}
+          <span class="event-dates-part event-dates-year">{{ item.content.start_date_Y }}</span>
+        {% elseif accuracy == 'month' %}
+          <span class="event-dates-part event-dates-month">{{ item.content.start_date_M }}</span>
+          <span class="event-dates-part event-dates-year">{{ item.content.start_date_Y }}</span>
+        {% else %}
+          <span class="event-dates-part event-dates-month">{{ item.content.start_date_M }}</span>
+          <span class="event-dates-part event-dates-day">{{ item.content.start_date_d }}</span>
+          <span class="event-dates-part event-dates-year">{{ item.content.start_date_Y }}</span>
+        {% endif %}
+
         {% if item.content.start_date is same as (NULL) %}
-          {% if  item.content.end_date is same as (NULL) %}
+          {% if item.content.end_date is same as (NULL) %}
             {% set date_value = NULL %}
           {% else %}
             {% set date_value = item.content.end_date['#markup']%}

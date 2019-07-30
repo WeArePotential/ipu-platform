@@ -1,0 +1,8 @@
+uuid: 34bfcce0-b718-4acb-b291-176f2181f4b1
+langcode: en
+status: true
+dependencies: {  }
+name: 'Event Session Type'
+vid: event_session_type
+description: 'Categorisation of event sessions'
+weight: 0

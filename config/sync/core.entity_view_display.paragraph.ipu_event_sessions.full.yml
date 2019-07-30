@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.paragraph.full
+    - field.field.paragraph.ipu_event_sessions.field_event_session_types
     - field.field.paragraph.ipu_event_sessions.field_fc_original_reference
     - field.field.paragraph.ipu_event_sessions.field_fc_session_date
     - field.field.paragraph.ipu_event_sessions.field_fc_session_governing_body
@@ -22,15 +23,31 @@ dependencies:
   module:
     - datetime
     - datetime_range
+    - ds
     - entity_reference_revisions
 id: paragraph.ipu_event_sessions.full
 targetEntityType: paragraph
 bundle: ipu_event_sessions
 mode: full
 content:
+  field_event_session_types:
+    type: entity_reference_label
+    weight: 3
+    region: content
+    label: inline
+    settings:
+      link: false
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
   field_fc_session_date:
     label: inline
-    weight: 3
+    weight: 4
     type: datetime_default
     settings:
       format_type: medium
@@ -39,7 +56,7 @@ content:
     region: content
   field_fc_session_room:
     label: inline
-    weight: 6
+    weight: 7
     type: string
     settings:
       link_to_entity: false
@@ -47,7 +64,7 @@ content:
     region: content
   field_fc_sessions_closed_session:
     label: inline
-    weight: 5
+    weight: 6
     type: boolean
     settings:
       format: default
@@ -57,7 +74,7 @@ content:
     region: content
   field_fc_sessions_custom_label:
     label: inline
-    weight: 9
+    weight: 10
     type: string
     settings:
       link_to_entity: false
@@ -72,7 +89,7 @@ content:
     region: content
   field_fc_sessions_hide_time:
     label: inline
-    weight: 4
+    weight: 5
     type: boolean
     settings:
       format: default
@@ -82,7 +99,7 @@ content:
     region: content
   field_fc_sessions_session_order:
     label: inline
-    weight: 8
+    weight: 9
     type: number_integer
     settings:
       thousand_separator: ''
@@ -99,7 +116,7 @@ content:
     region: content
   field_ipu_event_document_widget:
     label: above
-    weight: 7
+    weight: 8
     type: entity_reference_revisions_entity_view
     settings:
       view_mode: full

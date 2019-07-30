@@ -18,7 +18,7 @@ field_name: field_fc_session_types
 entity_type: paragraph
 bundle: ipu_event_sessions
 label: 'Session Type'
-description: ''
+description: 'OLD session type field, no longer used'
 required: false
 translatable: false
 default_value: {  }
@@ -39,11 +39,17 @@ settings:
       ipu_event_document_widget:
         weight: 15
         enabled: false
+      carousel:
+        weight: 16
+        enabled: false
       ipu_event_right_menu:
         weight: 16
         enabled: false
       ipu_event_section:
         weight: 17
+        enabled: false
+      highlights:
+        weight: 18
         enabled: false
       ipu_event_session_type:
         enabled: true
@@ -65,5 +71,8 @@ settings:
         enabled: false
       sections:
         weight: 24
+        enabled: false
+      member:
+        weight: 26
         enabled: false
 field_type: entity_reference_revisions

@@ -1,0 +1,35 @@
+uuid: ff0c69d7-4c0e-47a3-aa3b-263d4d80417f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_event_session_types
+    - paragraphs.paragraphs_type.ipu_event_sessions
+    - taxonomy.vocabulary.event_session_type
+  module:
+    - custom_add_another
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
+id: paragraph.ipu_event_sessions.field_event_session_types
+field_name: field_event_session_types
+entity_type: paragraph
+bundle: ipu_event_sessions
+label: 'Session Type'
+description: 'New session type field'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      event_session_type: event_session_type
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

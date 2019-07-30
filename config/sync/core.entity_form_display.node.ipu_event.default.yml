@@ -122,12 +122,12 @@ third_party_settings:
       weight: 24
       format_type: tab
       format_settings:
-        id: ''
-        classes: ''
         description: ''
         formatter: closed
         required_fields: true
-      label: Programmes
+        id: ''
+        classes: ''
+      label: 'Programme sessions'
       region: content
     group_right_menu:
       children:

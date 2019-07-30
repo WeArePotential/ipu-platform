@@ -76,19 +76,17 @@ function ipu_tweaks_preprocess_paragraph__ipu_event_sessions(&$variables) {
 }
 
 function ipu_tweaks_preprocess_field(&$variables) {
-//  if (($variables['element']['#field_name'] == 'field_event_sub_page')) {
-//    // Placeholder for field preprocess.
-//  }
-//  if (($variables['element']['#field_name'] == 'field_ipu_event_sessions')) {
-//  }
 
+  // Split event start date into constituent parts
   if ($variables['element']['#field_name'] == 'field_ipu_event_dates') {
     if ($variables['element']['#view_mode'] == 'highlight') {
       foreach ($variables['items'] as &$item) {
-        $start_date = strtotime($item['content']['start_date']['#attributes']['datetime']);
-        $item['content']['start_date_d'] = format_date((int)$start_date, 'custom', 'd');
-        $item['content']['start_date_M'] = format_date((int)$start_date, 'custom', 'M');
-        $item['content']['start_date_Y'] = format_date((int)$start_date, 'custom', 'Y');
+        if (isset($item['content']['start_date']['#attributes']['datetime'])) {
+          $start_date = strtotime($item['content']['start_date']['#attributes']['datetime']);
+          $item['content']['start_date_d'] = format_date((int) $start_date, 'custom', 'd');
+          $item['content']['start_date_M'] = format_date((int) $start_date, 'custom', 'M');
+          $item['content']['start_date_Y'] = format_date((int) $start_date, 'custom', 'Y');
+        }
       }
     }
   }

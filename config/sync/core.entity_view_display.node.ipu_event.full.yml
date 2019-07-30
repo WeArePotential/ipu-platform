@@ -95,10 +95,11 @@ third_party_settings:
       left:
         - field_ipu_event_sessions
       right:
-        - field_ipu_event_session_type
         - field_sponsor
         - field_ipu_event_sponsors
         - field_ipu_event_section
+      bottom:
+        - field_ipu_event_session_type
     fields:
       node_title:
         plugin_id: node_title
@@ -236,7 +237,7 @@ content:
     region: top
   field_ipu_event_section:
     label: above
-    weight: 19
+    weight: 18
     type: entity_reference_revisions_entity_view
     settings:
       view_mode: full
@@ -245,13 +246,13 @@ content:
     region: right
   field_ipu_event_session_type:
     label: above
-    weight: 16
+    weight: 19
     type: entity_reference_revisions_entity_view
     settings:
       view_mode: full
       link: ''
     third_party_settings: {  }
-    region: right
+    region: bottom
   field_ipu_event_sessions:
     label: above
     weight: 15
@@ -271,7 +272,7 @@ content:
     region: left
   field_ipu_event_sponsors:
     label: above
-    weight: 18
+    weight: 17
     type: entity_reference_revisions_entity_view
     settings:
       view_mode: full
@@ -287,7 +288,7 @@ content:
     region: top
   field_sponsor:
     type: entity_reference_entity_view
-    weight: 17
+    weight: 16
     region: right
     label: inline
     settings:

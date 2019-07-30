@@ -69,9 +69,18 @@
 
         {% set date_value = item.content['#markup'] %}
         {% set date_value = date_value|date('U') %}
-        <span class="event-dates-part event-dates-month">{{  date_value|format_date('custom','M') }}</span>
-        <span class="event-dates-part event-dates-day">{{   date_value|format_date('custom','d') }}</span>
+
+        {% set accuracy = element['#object'].field_date_accuracy.value  %}
+        {% if accuracy == 'year' %}
         <span class="event-dates-part event-dates-year">{{   date_value|format_date('custom','Y') }}</span>
+        {% elseif accuracy == 'month' %}
+          <span class="event-dates-part event-dates-month">{{  date_value|format_date('custom','M') }}</span>
+          <span class="event-dates-part event-dates-year">{{   date_value|format_date('custom','Y') }}</span>
+        {% else %}
+          <span class="event-dates-part event-dates-month">{{  date_value|format_date('custom','M') }}</span>
+          <span class="event-dates-part event-dates-day">{{   date_value|format_date('custom','d') }}</span>
+          <span class="event-dates-part event-dates-year">{{   date_value|format_date('custom','Y') }}</span>
+          {% endif %}
 
       </div>
     {% endfor %}
