@@ -161,46 +161,60 @@ function ipu_tweaks_theme($existing, $type, $theme, $path) {
   ];
 }
 
+
+/*
+ * Set the ipu_event > field_event_computed_date to the last possible date of the start of the event
+ */
 function ipu_tweaks_entity_presave(Drupal\Core\Entity\EntityInterface $entity) {
-  /*
-   * Set the ipu_event > field_event_computed_date to the last possible date of the start of the event
-   */
-  if ($entity->getEntityTypeId()=='node'){
+
+  if ($entity->getEntityTypeId()=='node') {
     if ($entity->bundle() == 'ipu_event') {
-      $dates = $entity->get('field_ipu_event_dates')->getValue();
-      //\Drupal::messenger()->addMessage('Dates: '. print_r($dates,true));
-      foreach ($dates as $date) {
-        $st = strtotime($date['value']);
-        $start_date = new DateTime("@$st");
-      }
       $accuracy = $entity->get('field_date_accuracy')->value;
-
-
-      $computed_date = new DateTime();
-
-      if ($accuracy == 'year') {
-        $computed_date->setDate($start_date->format('Y'), 12, 31);
-      }
-      if ($accuracy == 'month') {
-        // Get last day of this month.
-        $computed_date->setDate($start_date->format('Y'), $start_date->format('m'), $start_date->format('t'));
-      }
-      if ($accuracy == 'day') {
-        $computed_date = $start_date;
-      };
-
-      $dtime = DateTime::createFromFormat("Y-m-d", $computed_date->format('Y-m-d')); // not needed
-      $dtime->setTimezone(new \DateTimezone(DateTimeItemInterface::STORAGE_TIMEZONE));
-      $dtimeFormat = $dtime->format(DateTimeItemInterface::DATE_STORAGE_FORMAT);
-      // Doesn't work!!! $entity->set('field_event_sort_date', $computed_date->format('Y-m-d\T00:00:00'));
-      $entity->set('field_event_computed_date', $dtimeFormat);
-
-      \Drupal::messenger()
-        ->addMessage('Event date accuracy is "' . $accuracy . '", so the computed date has been set to ' . print_r($entity->get('field_event_computed_date')->value, TRUE));
+      ipu_tweaks_update_computed_date($entity);
+      \Drupal::messenger()->addMessage('Event date accuracy is "' . $accuracy . '", so the computed date has been set to ' . print_r($entity->get('field_event_computed_date')->value, TRUE));
     }
   }
 }
 
+/*
+ * Update ipu_event computed date based on start date and accuracy fields
+ */
+function ipu_tweaks_update_computed_date(&$entity) {
+  $dates = $entity->get('field_ipu_event_dates')->getValue();
+  //\Drupal::messenger()->addMessage('Date storage timezone ' . DateTimeItemInterface::STORAGE_TIMEZONE);
+  //\Drupal::messenger()->addMessage('Date storage format ' . DateTimeItemInterface::DATE_STORAGE_FORMAT);
+
+  //\Drupal::messenger()->addMessage('Dates: '. print_r($dates,true));
+  foreach ($dates as $date) {
+    $st = strtotime($date['value']);
+    $start_date = new DateTime("@$st");
+  }
+  $accuracy = $entity->get('field_date_accuracy')->value;
+  $computed_date = new DateTime();
+
+  if ($accuracy == 'year') {
+    $computed_date->setDate($start_date->format('Y'), 12, 31);
+  }
+  if ($accuracy == 'month') {
+    // Get last day of this month.
+    $computed_date->setDate($start_date->format('Y'), $start_date->format('m'), $start_date->format('t'));
+  }
+  if ($accuracy == 'day') {
+    $computed_date = $start_date;
+  };
+
+  $dtime = DateTime::createFromFormat("Y-m-d", $computed_date->format('Y-m-d')); // not needed
+  $dtime = $computed_date;
+  $dtime->setTimezone(new \DateTimezone(drupal_get_user_timezone()));
+  $dtimeFormat = $dtime->format(DateTimeItemInterface::DATE_STORAGE_FORMAT);
+  // Doesn't work!!! $entity->set('field_event_sort_date', $computed_date->format('Y-m-d\T00:00:00'));
+  $entity->set('field_event_computed_date', $dtimeFormat);
+  return NULL;
+}
+
+/*
+ * Disable the Event computed date on node add/edit forms
+ */
 function ipu_tweaks_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
   switch ($form_id) {
     case 'node_ipu_event_edit_form':
