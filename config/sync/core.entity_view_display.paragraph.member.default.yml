@@ -4,8 +4,8 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.member.field_end_of_mandate
+    - field.field.paragraph.member.field_member_position
     - field.field.paragraph.member.field_person
-    - field.field.paragraph.member.field_position
     - paragraphs.paragraphs_type.member
   module:
     - datetime
@@ -31,6 +31,21 @@ content:
             classes: {  }
     type: datetime_custom
     region: content
+  field_member_position:
+    weight: 1
+    label: hidden
+    settings:
+      link: false
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: entity_reference_label
+    region: content
   field_person:
     weight: 0
     label: hidden
@@ -46,13 +61,5 @@ content:
             lb-col: false
             classes: {  }
     type: entity_reference_entity_view
-    region: content
-  field_position:
-    weight: 1
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
     region: content
 hidden: {  }

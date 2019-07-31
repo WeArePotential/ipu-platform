@@ -21710,6 +21710,9 @@ a.more-data-parline, .article__node-link a,
 .field-committee-members .field__label.font-weight-bold {
   font-weight: 300 !important;
 }
+.field-committee-members .field__items > .field__item {
+  margin-bottom: 10px;
+}
 .field-committee-members .field__items > .field__item .paragraph--type--member {
   padding: 10px;
   background-color: #f8f9fa;

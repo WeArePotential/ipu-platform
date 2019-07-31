@@ -17580,6 +17580,7 @@ __webpack_require__.r(__webpack_exports__);
         'byRow': false
       });
       $('.carousel .group-content').matchHeight();
+      $('.field-committee-members .field__item .paragraph--type--member').matchHeight();
     }
   };
   Drupal.behaviors.countryClick = {

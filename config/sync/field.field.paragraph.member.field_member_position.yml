@@ -1,0 +1,35 @@
+uuid: aeea33fa-4459-4029-bdcc-bd274549c3c3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_member_position
+    - paragraphs.paragraphs_type.member
+    - taxonomy.vocabulary.member_role
+  module:
+    - custom_add_another
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
+id: paragraph.member.field_member_position
+field_name: field_member_position
+entity_type: paragraph
+bundle: member
+label: 'Member position'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      member_role: member_role
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,8 @@
+uuid: 360e2eb4-0071-4b77-bda9-68a2d3a766e2
+langcode: en
+status: true
+dependencies: {  }
+name: 'Member role'
+vid: member_role
+description: 'Position or role of committee members'
+weight: 0

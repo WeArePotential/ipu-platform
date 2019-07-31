@@ -1391,6 +1391,7 @@ a.btn {
     @extend .row;
     & > .field__item {
       @extend .col-md-4;
+      margin-bottom: 10px;
       .paragraph--type--member {
         padding: 10px;
         background-color: $light;

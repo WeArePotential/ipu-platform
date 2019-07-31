@@ -33,6 +33,7 @@ import 'bootstrap';
       $('.viewfield--view__theme_list__block_home_page .col .term-icon').matchHeight({'byRow': false});
       $('.viewfield--view__theme_list__block_home_page .col .views-field-description__value').matchHeight({'byRow': false});
       $('.carousel .group-content').matchHeight();
+      $('.field-committee-members .field__item .paragraph--type--member').matchHeight();
     }
   };
 

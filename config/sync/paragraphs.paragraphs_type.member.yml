@@ -5,5 +5,5 @@ dependencies: {  }
 id: member
 label: Member
 icon_uuid: null
-description: ''
+description: 'Members of  IPU committees'
 behavior_plugins: {  }
