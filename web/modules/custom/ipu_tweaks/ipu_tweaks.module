@@ -117,6 +117,15 @@ function ipu_tweaks_preprocess_field(&$variables) {
       }
     }
   }
+
+  /*
+   * Remove link from node titles on ipu_events where the flag has been set.
+  */
+  if ($variables['element']['#field_name'] == 'node_title' && $variables['element']['#bundle'] == 'ipu_event') {
+    if ($variables['element']['#ds_view_mode'] != 'full') {
+      //print_r(json_decode(json_encode($variables['element'])),true);
+    }
+  }
 }
 /**
  * Implements hook_field_attach_view_alter()

@@ -889,6 +889,7 @@ a.btn {
   position: relative;
   .event__type-content {
     max-width: calc(100% - 60px);
+    padding-top: 20px;
   }
   .ipu-event__field-location {
     font-size: $font-size-sm;
@@ -1149,11 +1150,21 @@ a.btn {
       border-bottom: 1px solid $secondary;
       padding-top: 20px;
     }
+
+    .ipu-event__node-title h3,
     .ipu-event__node-title h3 a {
       font-size: $font-size-md;
     }
   }
-
+  .field-event-type {
+    font-size: 0.6rem;
+    background: $ipu-grey;
+    text-transform: uppercase;
+    color: $ipu-white;
+    letter-spacing: 0.05rem;
+    padding: 1px 4px;
+    display: inline-block;
+  }
 }
 
 .node-basic_page,
