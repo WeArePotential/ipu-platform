@@ -23,12 +23,9 @@ mode: default
 content:
   field_end_of_mandate:
     weight: 2
-    settings:
-      date_order: DMY
-      time_type: none
-      increment: 15
+    settings: {  }
     third_party_settings: {  }
-    type: datetime_datelist
+    type: datetime_default
     region: content
   field_person:
     weight: 0
