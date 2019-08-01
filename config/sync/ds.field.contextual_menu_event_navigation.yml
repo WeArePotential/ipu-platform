@@ -1,0 +1,22 @@
+id: contextual_menu_event_navigation
+label: 'Contextual menu events'
+ui_limit: "page|*\r\nbasic_page|*\r\nsection_page|*"
+properties:
+  block: 'menu_block:mega-menu'
+  use_block_title: false
+  add_block_wrappers: true
+  config:
+    id: 'menu_block:mega-menu'
+    label: ''
+    provider: menu_block
+    label_display: visible
+    level: 1
+    depth: 0
+    expand: 0
+    parent: 'mega-menu:menu_link_content:3310ff71-4264-4d76-818f-13e0826d43d1'
+    render_parent: true
+    suggestion: mega_menu_events
+type: block
+type_label: 'Block field'
+entities:
+  node: node

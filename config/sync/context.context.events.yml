@@ -24,7 +24,7 @@ conditions:
 reactions:
   active_trail:
     id: active_trail
-    trail: 'mega-menu:views_view:views.events.page_1'
+    trail: 'mega-menu:menu_link_content:3310ff71-4264-4d76-818f-13e0826d43d1'
     breadcrumbs: 1
     breadcrumb_title: 0
     uuid: 6f115bb0-478b-44e5-858c-dfaf755221a9

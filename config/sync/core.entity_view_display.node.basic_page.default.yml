@@ -28,7 +28,7 @@ third_party_settings:
         - field_media_image
         - field_caption
       parent_name: ''
-      weight: 6
+      weight: 7
       label: image
       format_settings:
         element: div
@@ -90,11 +90,17 @@ third_party_settings:
         - 'dynamic_block_field:node-top_level_menu_item'
         - field_media_image
         - 'dynamic_block_field:node-menu_block'
-        - group_image
+        - 'dynamic_block_field:node-contextual_menu_event_navigation'
         - field_caption
+        - group_image
         - field_related_content
         - field_related_documents
     fields:
+      'dynamic_block_field:node-contextual_menu_event_navigation':
+        plugin_id: 'dynamic_block_field:node-contextual_menu_event_navigation'
+        weight: 6
+        label: hidden
+        formatter: default
       'dynamic_block_field:node-menu_block':
         plugin_id: 'dynamic_block_field:node-menu_block'
         weight: 5
@@ -173,7 +179,7 @@ content:
     third_party_settings: {  }
   field_related_content:
     label: above
-    weight: 7
+    weight: 8
     type: entity_reference_revisions_entity_view
     settings:
       view_mode: full
@@ -182,7 +188,7 @@ content:
     region: right
   field_related_documents:
     type: entity_reference_revisions_entity_view
-    weight: 8
+    weight: 9
     region: right
     label: above
     settings:
