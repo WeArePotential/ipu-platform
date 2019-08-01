@@ -22147,7 +22147,8 @@ ol.breadcrumb {
   margin-bottom: 1rem;
 }
 .ultimenu__flyout .block .section-page__body,
-.ultimenu__flyout .block .landing-page__body {
+.ultimenu__flyout .block .landing-page__body,
+.ultimenu__flyout .block .ipu-event__field-summary {
   color: #333333;
 }
 
@@ -22169,7 +22170,11 @@ ol.breadcrumb {
   display: block;
 }
 .ultimenu__flyout .node--view-mode-highlight {
-  border: 0px;
+  border-width: 0px;
+}
+.ultimenu__flyout .node--view-mode-highlight.node--type-ipu-event {
+  border-width: 1px;
+  width: calc( 100% - 20px);
 }
 
 /* Parliaments flyout */

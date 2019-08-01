@@ -336,7 +336,8 @@ ol.breadcrumb {
     margin-bottom: 1rem;
   }
   .block .section-page__body,
-  .block .landing-page__body {
+  .block .landing-page__body,
+  .block .ipu-event__field-summary {
     color: $ipu-dark-grey;
   }
 }
@@ -355,7 +356,11 @@ ol.breadcrumb {
   }
   /* Take border off embedded nodes */
   .node--view-mode-highlight {
-    border: 0px;
+    border-width: 0px;
+  }
+  .node--view-mode-highlight.node--type-ipu-event {
+    border-width: 1px;
+    width: calc( 100% - 20px);
   }
 }
 
