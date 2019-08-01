@@ -16,8 +16,8 @@ name: browse_files_modal
 label: 'Browser for files (modal)'
 display: modal
 display_configuration:
-  width: '1100'
-  height: '650'
+  width: ''
+  height: ''
   link_text: 'Select the files'
   auto_open: false
 selection_display: multi_step_display
@@ -25,9 +25,9 @@ selection_display_configuration:
   entity_type: file
   display: thumbnail
   display_settings:
-    image_style: file_entity_browser_small
+    image_style: thumbnail
   select_text: 'Use selected'
-  selection_hidden: false
+  selection_hidden: true
 widget_selector: tabs
 widget_selector_configuration: {  }
 widgets:
@@ -45,8 +45,8 @@ widgets:
     settings:
       upload_location: 'public://'
       dropzone_description: 'Click or drop files here to upload them'
-      max_filesize: 8M
-      extensions: 'jpg jpeg gif png txt doc xls pdf ppt pps odt ods odp'
+      max_filesize: 32M
+      extensions: 'jpg jpeg gif png txt doc docx xls xlsx pptx pdf ppt pps odt ods odp'
       clientside_resize: false
       resize_width: null
       resize_height: null
