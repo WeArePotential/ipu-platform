@@ -21522,24 +21522,62 @@ a.more-data-parline, .article__node-link a,
 .node--type-ipu-event.node--view-mode-teaser .group-event-date .ipu-event__field-event-computed-date .event-dates-day {
   font-size: 1.75rem;
 }
-.viewfield--view__events.viewfield--view__events__block .views-element-container > div > h3, .viewfield--view__events.viewfield--view__events__block .basic-page__field-related-content .views-element-container > div > .field__label, .basic-page__field-related-content .viewfield--view__events.viewfield--view__events__block .views-element-container > div > .field__label {
+.viewfield--view__events.viewfield--view__events__block .node--type-ipu-event, .viewfield--view__events.viewfield--view__events__block_upcoming .node--type-ipu-event {
+  margin-top: 20px;
+  border: 1px solid #cccccc;
+  width: calc(100% - 60px);
+}
+.viewfield--view__events.viewfield--view__events__block .group-content, .viewfield--view__events.viewfield--view__events__block_upcoming .group-content {
+  padding-top: 1rem;
+}
+.viewfield--view__events.viewfield--view__events__block .group-event-date, .viewfield--view__events.viewfield--view__events__block_upcoming .group-event-date {
+  margin: -10px -60px 0 0;
+}
+.viewfield--view__events.viewfield--view__events__block .views-element-container > div > h3, .viewfield--view__events.viewfield--view__events__block .basic-page__field-related-content .views-element-container > div > .field__label, .basic-page__field-related-content .viewfield--view__events.viewfield--view__events__block .views-element-container > div > .field__label, .viewfield--view__events.viewfield--view__events__block_upcoming .views-element-container > div > h3, .viewfield--view__events.viewfield--view__events__block_upcoming .basic-page__field-related-content .views-element-container > div > .field__label, .basic-page__field-related-content .viewfield--view__events.viewfield--view__events__block_upcoming .views-element-container > div > .field__label {
   border-bottom: 1px solid #00a8b4;
-  padding-top: 20px;
+  padding-top: 40px;
+}
+.viewfield--view__events.viewfield--view__events__block .ipu-event__field-location:before, .viewfield--view__events.viewfield--view__events__block_upcoming .ipu-event__field-location:before {
+  content: " ";
+  margin-right: 10px;
+}
+.viewfield--view__events.viewfield--view__events__block .ipu-event__dates, .viewfield--view__events.viewfield--view__events__block .ipu-event__field-location, .viewfield--view__events.viewfield--view__events__block_upcoming .ipu-event__dates, .viewfield--view__events.viewfield--view__events__block_upcoming .ipu-event__field-location {
+  display: inline-block;
+  font-weight: 500;
 }
 .viewfield--view__events.viewfield--view__events__block .ipu-event__node-title h3, .viewfield--view__events.viewfield--view__events__block .ipu-event__node-title .basic-page__field-related-content .field__label, .basic-page__field-related-content .viewfield--view__events.viewfield--view__events__block .ipu-event__node-title .field__label,
 .viewfield--view__events.viewfield--view__events__block .ipu-event__node-title h3 a,
 .viewfield--view__events.viewfield--view__events__block .ipu-event__node-title .basic-page__field-related-content .field__label a,
-.basic-page__field-related-content .viewfield--view__events.viewfield--view__events__block .ipu-event__node-title .field__label a {
+.basic-page__field-related-content .viewfield--view__events.viewfield--view__events__block .ipu-event__node-title .field__label a, .viewfield--view__events.viewfield--view__events__block_upcoming .ipu-event__node-title h3, .viewfield--view__events.viewfield--view__events__block_upcoming .ipu-event__node-title .basic-page__field-related-content .field__label, .basic-page__field-related-content .viewfield--view__events.viewfield--view__events__block_upcoming .ipu-event__node-title .field__label,
+.viewfield--view__events.viewfield--view__events__block_upcoming .ipu-event__node-title h3 a,
+.viewfield--view__events.viewfield--view__events__block_upcoming .ipu-event__node-title .basic-page__field-related-content .field__label a,
+.basic-page__field-related-content .viewfield--view__events.viewfield--view__events__block_upcoming .ipu-event__node-title .field__label a {
   font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+.viewfield--view__events.viewfield--view__events__block .ipu-event__field-summary, .viewfield--view__events.viewfield--view__events__block_upcoming .ipu-event__field-summary {
+  font-size: 0.875rem;
 }
 .viewfield--view__events .field-event-type {
   font-size: 0.6rem;
+  line-height: 1;
   background: #747678;
   text-transform: uppercase;
   color: #ffffff;
   letter-spacing: 0.05rem;
-  padding: 1px 4px;
+  padding: 3px;
   display: inline-block;
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  background-color: #747678;
+}
+.viewfield--view__events .field-event-type.field-event-type__assembly {
+  background-color: #e98300;
+}
+.viewfield--view__events .event-currency-past .group-event-date .ipu-event__field-event-computed-date {
+  background-color: #747678;
 }
 
 .node-basic_page,

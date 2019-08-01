@@ -1,4 +1,5 @@
 <?php
+
 use Drupal\Core\StringTranslation;
 use Drupal\datetime\Plugin\Field\FieldType\DateTimeItemInterface;
 
@@ -26,7 +27,9 @@ function ipu_tweaks_page_attachments(array &$attachments) {
 
 /* Add current language to all templates */
 function ipu_tweaks_preprocess(&$variables) {
-  $variables['language_id'] = \Drupal::languageManager()->getCurrentLanguage('language_content')->getId();
+  $variables['language_id'] = \Drupal::languageManager()
+    ->getCurrentLanguage('language_content')
+    ->getId();
 }
 
 
@@ -40,7 +43,7 @@ function ipu_tweaks_preprocess_paragraph(&$variables) {
 function ipu_tweaks_preprocess_paragraph__event_sub_page(&$variables) {
   /* Add the (unique) paragraph id to each para for targeting as tab panels */
   $para = $variables['elements']['#paragraph'];
-  $variables['attributes']['id'] = 'field-event-sub-page-tab-'.$para->id();
+  $variables['attributes']['id'] = 'field-event-sub-page-tab-' . $para->id();
 }
 
 function ipu_tweaks_preprocess_paragraph__ipu_event_sessions(&$variables) {
@@ -51,7 +54,7 @@ function ipu_tweaks_preprocess_paragraph__ipu_event_sessions(&$variables) {
   //$parentBundle = $paragraph->getParentEntity()->bundle();
 
   // Create any new variables we might want.
-  foreach($variables['content']['field_ipu_event_session_dates'] as $key=>$value) {
+  foreach ($variables['content']['field_ipu_event_session_dates'] as $key => $value) {
     //print $key.'<br/>';
   }
   $variables['content']['field_ipu_event_session_dates']['links'] = [];
@@ -97,14 +100,15 @@ function ipu_tweaks_preprocess_field(&$variables) {
   if ($variables['element']['#field_name'] == 'node_title' && $variables['element']['#bundle'] == 'landing_page') {
     //\Drupal::messenger()->addMessage('View mode'. print_r(array_keys($variables['element']),true));
 
-    if ($variables['element']['#view_mode'] == 'full' || ( $variables['element']['#view_mode'] == '_custom' && $variables['element']['#ds_view_mode'] == 'full' )) {
+    if ($variables['element']['#view_mode'] == 'full' || ($variables['element']['#view_mode'] == '_custom' && $variables['element']['#ds_view_mode'] == 'full')) {
       //\Drupal::messenger()->addMessage('View mode: '. print_r($variables['element']['#ds_view_mode'],true));
       $node = $variables['element']['#object'];
       // Should already be available $variables['#node'] = $node;
       $image = $node->field_media_image;
       if ($image->entity != NULL) {
         $image_path = $image->entity->getFileUri();
-        $image_url = \Drupal\image\Entity\ImageStyle::load('max_1920x1920')->buildUrl($image_path);
+        $image_url = \Drupal\image\Entity\ImageStyle::load('max_1920x1920')
+          ->buildUrl($image_path);
         $variables['attributes']['style'] = [];
         $variables['attributes']['style'][] = 'background-image: url("' . $image_url . '");';
         $theme_terms = $node->field_theme->getValue();
@@ -127,25 +131,26 @@ function ipu_tweaks_preprocess_field(&$variables) {
     }
   }
 }
+
 /**
  * Implements hook_field_attach_view_alter()
  */
 function ipu_tweaks_entity_display_build_alter(&$output, $context) {
   // Check we're dealing with a paragraph field.
-  if(!empty($output['paragraph'])) {
+  if (!empty($output['paragraph'])) {
 
     // Check for specific paragraph field.
-    if ($output['paragraph']['#field_name'] === 'field_event_sub_page' ) {
+    if ($output['paragraph']['#field_name'] === 'field_event_sub_page') {
       // Alter the prefix. This is not working for some reason.
       //$output['paragraph']['#prefix'] = '<div class="field-collection-container clearfix vivienne">';
     }
   }
 
 }
+
 /* https://www.drupal.org/project/drupal/issues/2955321 */
 function ipu_tweaks_entity_type_alter(array &$entity_types) {
-  foreach ($entity_types as $entity_type)
-  {
+  foreach ($entity_types as $entity_type) {
     $constraints = $entity_type->getConstraints();
     unset($constraints['EntityUntranslatableFields']);
     $entity_type->setConstraints($constraints);
@@ -174,11 +179,12 @@ function ipu_tweaks_theme($existing, $type, $theme, $path) {
  */
 function ipu_tweaks_entity_presave(Drupal\Core\Entity\EntityInterface $entity) {
 
-  if ($entity->getEntityTypeId()=='node') {
+  if ($entity->getEntityTypeId() == 'node') {
     if ($entity->bundle() == 'ipu_event') {
       $accuracy = $entity->get('field_date_accuracy')->value;
       ipu_tweaks_update_computed_date($entity);
-      \Drupal::messenger()->addMessage('Event date accuracy is "' . $accuracy . '", so the computed date has been set to ' . print_r($entity->get('field_event_computed_date')->value, TRUE));
+      \Drupal::messenger()
+        ->addMessage('Event date accuracy is "' . $accuracy . '", so the computed date has been set to ' . print_r($entity->get('field_event_computed_date')->value, TRUE));
     }
   }
 }
@@ -229,3 +235,4 @@ function ipu_tweaks_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $for
       break;
   }
 }
+

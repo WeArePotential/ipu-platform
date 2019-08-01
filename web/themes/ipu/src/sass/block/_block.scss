@@ -1145,25 +1145,62 @@ a.btn {
 // Events listings
 .viewfield--view__events {
   // Upcoming and prev
-  &.viewfield--view__events__block {
+  &.viewfield--view__events__block, &.viewfield--view__events__block_upcoming {
+    .node--type-ipu-event {
+      margin-top: 20px;
+      border: 1px solid $ipu-light-grey;
+      width: calc(100% - 60px);
+    }
+    .group-content {
+      padding-top: 1rem;
+    }
+    .group-event-date {
+      margin: -10px -60px 0 0;
+    }
     .views-element-container > div > h3 {
       border-bottom: 1px solid $secondary;
-      padding-top: 20px;
+      padding-top: 40px;
     }
-
+    .ipu-event__field-location:before {
+      content: ' ';
+      margin-right: 10px;
+    }
+    .ipu-event__dates, .ipu-event__field-location {
+      display: inline-block;
+      font-weight: $font-weight-bold;
+    }
     .ipu-event__node-title h3,
     .ipu-event__node-title h3 a {
       font-size: $font-size-md;
+      font-weight: $font-weight-bold;
+      margin-bottom: 0;
+    }
+    .ipu-event__field-summary {
+      font-size: $font-size-sm;
     }
   }
   .field-event-type {
     font-size: 0.6rem;
+    line-height: 1;
     background: $ipu-grey;
     text-transform: uppercase;
     color: $ipu-white;
     letter-spacing: 0.05rem;
-    padding: 1px 4px;
+    padding: 3px;
     display: inline-block;
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    background-color: $ipu-grey;
+
+    &.field-event-type__assembly {
+      background-color: $tertiary;
+    }
+  }
+  .event-currency-past {
+    .group-event-date .ipu-event__field-event-computed-date {
+      background-color: $ipu-grey;
+    }
   }
 }
 

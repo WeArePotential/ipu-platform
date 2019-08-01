@@ -15,15 +15,27 @@
  * @see template_preprocess_views_view_unformatted()
  */
 #}
+
 {% if title and rows|length %}
   <h3>{{ title }}</h3>
 {% endif %}
 <div class="events-card row">
 {% for row in rows %}
   {# TODO: Check total items, and changed column widths #}
+
+  {# Check if the date is future or past, and add a class #}
+  {%
+    set computed_date = row.content['#row']._entity.field_event_computed_date.value|raw
+   %}
+  {% if (date(computed_date) < date()) %}
+    {% set time_class = 'event-currency-past' %}
+  {% else %}
+    {% set time_class = 'event-currency-future ' %}
+  {% endif %}
+
   {%
     set row_classes = [
-      default_row_class ? 'views-row col-sm-12 view-mode-highlight-sm',
+      default_row_class ? 'views-row col-sm-12 view-mode-highlight-sm ' ~ time_class,
     ]
   %}
   

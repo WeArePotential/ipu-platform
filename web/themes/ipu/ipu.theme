@@ -68,17 +68,3 @@ function ipu_preprocess_page_title(&$variables) {
     }
   }
 }
-/*function ipu_preprocess_node(&$variables) {
-  \Drupal::messenger()->addMessage(print_r($variables,true), 'status');
-  if ($node = \Drupal::routeMatch()->getParameter('node')) {
-    $variables['mason'] = 'peter';
-    $variables['masony'] = 'petery';
-    \Drupal::messenger()->addMessage(print_r($variables,true), 'status');
-
-    if (isset($node->field_media_image)) {
-      $image = $node->field_media_image->entity->url();
-      //$variables['page_title_bgimage'] = $node->get('field_image')->view('full');
-      $variables['page_title_bgimage_url'] = $image;
-    }
-  }
-}*/
