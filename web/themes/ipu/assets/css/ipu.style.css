@@ -9378,7 +9378,7 @@ button.bg-tertiary:focus {
   align-items: flex-end !important;
 }
 
-.align-items-center, .carousel-item .node--view-mode-slide {
+.align-items-center, .carousel-item .node--view-mode-slide, .carousel-item .slide-wrapper {
   align-items: center !important;
 }
 
@@ -13233,6 +13233,8 @@ table:after {
 .carousel-controls {
   position: relative;
   height: 40px;
+  margin-top: -40px;
+  margin-bottom: 20px;
 }
 .carousel-controls .carousel-control {
   width: auto;
@@ -13267,6 +13269,38 @@ table:after {
   height: 6px;
 }
 
+.carousel-item .slide-wrapper .slide-right .slide-inner {
+  padding-top: 40px;
+}
+.carousel-item .slide-wrapper h2, .carousel-item .slide-wrapper .field-committee-members .field__label, .field-committee-members .carousel-item .slide-wrapper .field__label, .carousel-item .slide-wrapper .node-article .group-related .field__label, .node-article .group-related .carousel-item .slide-wrapper .field__label, .carousel-item .slide-wrapper .sections__field-section-title, .carousel-item .slide-wrapper .field__item__paragraph__highlights .paragraph--type--highlights .highlights__field-section-title, .field__item__paragraph__highlights .paragraph--type--highlights .carousel-item .slide-wrapper .highlights__field-section-title, .carousel-item .slide-wrapper .section-page-subpages-section .field__label, .section-page-subpages-section .carousel-item .slide-wrapper .field__label {
+  color: #747678;
+}
+@media (min-width: 768px) {
+  .carousel-item .slide-wrapper .slide-right .slide-inner {
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+    position: relative;
+    left: -85px;
+  }
+}
+.carousel-item .slide-wrapper .field-link-text {
+  display: inline-block;
+}
+.carousel-item .slide-wrapper .field-summary {
+  font-size: 0.875rem;
+}
+.carousel-item .slide-wrapper .button {
+  margin: 10px 0 0;
+}
+.carousel-item .slide-wrapper .button a {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  border-radius: 0.2rem;
+}
+
+/* USED FOR ALTERNATIVE SLIDER, LINKING TO INTERNAL CONTENT */
 .carousel-item .node--view-mode-slide > div > div:not(.group-image) {
   padding-top: 40px;
 }
@@ -19571,6 +19605,7 @@ a.more-data-parline, .article__node-link a,
   letter-spacing: 0.05rem;
   padding: 0.125rem 0.5rem;
   width: 100%;
+  margin-top: 10px;
 }
 
 .stats-women {
@@ -21522,6 +21557,21 @@ a.more-data-parline, .article__node-link a,
 .node--type-ipu-event.node--view-mode-teaser .group-event-date .ipu-event__field-event-computed-date .event-dates-day {
   font-size: 1.75rem;
 }
+.viewfield--view__events .form-item-field-event-type-target-id {
+  background-color: #f8f9fa;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+.viewfield--view__events .form-item-field-event-type-target-id label {
+  font-size: 0.825rem;
+  margin: 0;
+}
+.viewfield--view__events .form-item-field-event-type-target-id select {
+  width: auto;
+  margin-left: 10px;
+  font-size: 0.825rem;
+}
 .viewfield--view__events.viewfield--view__events__block .node--type-ipu-event, .viewfield--view__events.viewfield--view__events__block_upcoming .node--type-ipu-event {
   margin-top: 20px;
   border: 1px solid #cccccc;
@@ -21557,7 +21607,9 @@ a.more-data-parline, .article__node-link a,
   margin-bottom: 0;
 }
 .viewfield--view__events.viewfield--view__events__block .ipu-event__field-summary, .viewfield--view__events.viewfield--view__events__block_upcoming .ipu-event__field-summary {
-  font-size: 0.875rem;
+  font-size: 1rem;
+  line-height: 1.1rem;
+  padding-bottom: 10px;
 }
 .viewfield--view__events .field-event-type {
   font-size: 0.6rem;
@@ -21628,7 +21680,8 @@ a.more-data-parline, .article__node-link a,
   padding: 10px 0 4px 0;
 }
 
-.field-content-section .field__item__paragraph__carousel {
+.field-content-section .field__item__paragraph__carousel,
+.field-content-section .field__item__paragraph__carousel-slides {
   padding-top: 20px;
   padding-bottom: 20px;
   background-color: #f8f9fa;

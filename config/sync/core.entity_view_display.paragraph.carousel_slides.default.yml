@@ -1,0 +1,33 @@
+uuid: a932aa29-b21d-4867-a1c5-6eadceb334d4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.carousel_slides.field_slide
+    - paragraphs.paragraphs_type.carousel_slides
+  module:
+    - ds
+    - entity_reference_revisions
+id: paragraph.carousel_slides.default
+targetEntityType: paragraph
+bundle: carousel_slides
+mode: default
+content:
+  field_slide:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    region: content
+hidden: {  }

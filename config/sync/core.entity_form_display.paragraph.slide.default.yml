@@ -1,0 +1,92 @@
+uuid: edbd3c43-0e83-4050-8f6f-dde76b24e2d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - entity_browser.browser.browse_files_modal
+    - field.field.paragraph.slide.field_image
+    - field.field.paragraph.slide.field_link_text
+    - field.field.paragraph.slide.field_node
+    - field.field.paragraph.slide.field_summary
+    - field.field.paragraph.slide.field_title
+    - paragraphs.paragraphs_type.slide
+  module:
+    - bootstrap_layouts
+    - chosen_field
+    - entity_browser
+    - field_layout
+third_party_settings:
+  field_layout:
+    id: bs_2col
+    settings:
+      layout:
+        wrapper: div
+        classes:
+          row: row
+        add_layout_class: 1
+        attributes: ''
+      regions:
+        left:
+          wrapper: div
+          classes:
+            col-sm-6: col-sm-6
+          add_region_classes: 1
+          attributes: ''
+        right:
+          wrapper: div
+          classes:
+            col-sm-6: col-sm-6
+          add_region_classes: 1
+          attributes: ''
+id: paragraph.slide.default
+targetEntityType: paragraph
+bundle: slide
+mode: default
+content:
+  field_image:
+    weight: 2
+    settings:
+      entity_browser: browse_files_modal
+      field_widget_edit: true
+      field_widget_remove: true
+      selection_mode: selection_append
+      view_mode: default
+      field_widget_replace: false
+      open: false
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: entity_browser_file
+    region: left
+  field_link_text:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: left
+  field_node:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: chosen_select
+    region: left
+  field_summary:
+    weight: 1
+    settings:
+      rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: left
+  field_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: left
+hidden:
+  created: true
+  status: true

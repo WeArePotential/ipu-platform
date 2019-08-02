@@ -5,6 +5,8 @@
 .carousel-controls {
   position: relative;
   height: 40px;
+  margin-top: -40px;
+  margin-bottom: 20px;
   .carousel-control {
     width: auto;
     font-size: 2.6rem;
@@ -41,7 +43,44 @@
 }
 
 .carousel-item {
+  .slide-wrapper {
+    @extend .align-items-center;
+    .slide-right .slide-inner {
+      padding-top: 40px;
+    }
+    h2 {
+      color: $ipu-grey;
+    }
+    @include media-breakpoint-up(md) {
+      .slide-right .slide-inner {
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+        position: relative;
+        left: -85px;
+      }
+    }
+    .field-link-text {
+      display: inline-block;
+    }
 
+    .field-summary {
+      font-size: $font-size-sm;
+    }
+    .button {
+      margin: 10px 0 0;
+      a {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.875rem;
+        line-height: 1.5;
+        border-radius: 0.2rem;
+      }
+    }
+  }
+}
+
+/* USED FOR ALTERNATIVE SLIDER, LINKING TO INTERNAL CONTENT */
+.carousel-item {
   .node--view-mode-slide {
     @extend .align-items-center;
     &.bs-2col {

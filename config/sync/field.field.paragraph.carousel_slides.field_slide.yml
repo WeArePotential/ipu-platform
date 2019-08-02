@@ -1,14 +1,11 @@
-uuid: ed3b547b-2b1e-482b-ada8-5f50339151ff
+uuid: 3635dc82-4e80-4fa1-b3eb-2e3a6b831372
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_content_section
-    - node.type.landing_page
-    - paragraphs.paragraphs_type.carousel
+    - field.storage.paragraph.field_slide
     - paragraphs.paragraphs_type.carousel_slides
-    - paragraphs.paragraphs_type.highlights
-    - paragraphs.paragraphs_type.sections
+    - paragraphs.paragraphs_type.slide
   module:
     - custom_add_another
     - entity_reference_revisions
@@ -16,11 +13,11 @@ third_party_settings:
   custom_add_another:
     custom_add_another: ''
     custom_remove: ''
-id: node.landing_page.field_content_section
-field_name: field_content_section
-entity_type: node
-bundle: landing_page
-label: 'Content sections'
+id: paragraph.carousel_slides.field_slide
+field_name: field_slide
+entity_type: paragraph
+bundle: carousel_slides
+label: Slide
 description: ''
 required: false
 translatable: false
@@ -31,60 +28,57 @@ settings:
   handler_settings:
     negate: 0
     target_bundles:
-      carousel: carousel
-      highlights: highlights
-      carousel_slides: carousel_slides
-      sections: sections
+      slide: slide
     target_bundles_drag_drop:
-      carousel:
-        enabled: true
-        weight: 14
-      event_sub_page:
-        weight: 15
-        enabled: false
-      highlights:
-        enabled: true
-        weight: 15
-      ipu_event_document:
-        weight: 16
-        enabled: false
-      ipu_event_document_widget:
-        weight: 17
-        enabled: false
       carousel_slides:
-        enabled: true
-        weight: 18
-      ipu_event_right_menu:
         weight: 18
         enabled: false
-      ipu_event_section:
+      carousel:
         weight: 19
         enabled: false
-      ipu_event_sessions:
+      event_sub_page:
         weight: 20
         enabled: false
-      ipu_event_session_type:
+      highlights:
         weight: 21
         enabled: false
-      ipu_event_sponsors:
+      ipu_event_document:
         weight: 22
         enabled: false
-      publication_document:
+      ipu_event_document_widget:
         weight: 23
         enabled: false
-      related_content:
+      ipu_event_right_menu:
         weight: 24
         enabled: false
-      related_documents:
+      ipu_event_section:
         weight: 25
         enabled: false
-      sections:
-        enabled: true
+      ipu_event_session_type:
         weight: 26
+        enabled: false
+      ipu_event_sessions:
+        weight: 27
+        enabled: false
+      ipu_event_sponsors:
+        weight: 28
+        enabled: false
       member:
         weight: 29
         enabled: false
-      slide:
-        weight: 34
+      publication_document:
+        weight: 30
         enabled: false
+      related_content:
+        weight: 31
+        enabled: false
+      related_documents:
+        weight: 32
+        enabled: false
+      sections:
+        weight: 33
+        enabled: false
+      slide:
+        enabled: true
+        weight: 34
 field_type: entity_reference_revisions

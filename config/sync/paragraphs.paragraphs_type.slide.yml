@@ -1,0 +1,9 @@
+uuid: 187d335a-ef3e-4467-9c88-796606e32cb1
+langcode: en
+status: true
+dependencies: {  }
+id: slide
+label: Slide
+icon_uuid: null
+description: 'A slide for a carousel'
+behavior_plugins: {  }
