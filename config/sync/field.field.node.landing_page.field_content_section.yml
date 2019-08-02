@@ -31,60 +31,60 @@ settings:
   handler_settings:
     negate: 0
     target_bundles:
-      carousel: carousel
+      sections: sections
       highlights: highlights
       carousel_slides: carousel_slides
-      sections: sections
+      carousel: carousel
     target_bundles_drag_drop:
-      carousel:
-        enabled: true
-        weight: 14
-      event_sub_page:
-        weight: 15
-        enabled: false
-      highlights:
-        enabled: true
-        weight: 15
-      ipu_event_document:
-        weight: 16
-        enabled: false
-      ipu_event_document_widget:
-        weight: 17
-        enabled: false
-      carousel_slides:
-        enabled: true
-        weight: 18
-      ipu_event_right_menu:
-        weight: 18
-        enabled: false
-      ipu_event_section:
-        weight: 19
-        enabled: false
-      ipu_event_sessions:
-        weight: 20
-        enabled: false
-      ipu_event_session_type:
-        weight: 21
-        enabled: false
-      ipu_event_sponsors:
-        weight: 22
-        enabled: false
-      publication_document:
-        weight: 23
-        enabled: false
-      related_content:
-        weight: 24
-        enabled: false
-      related_documents:
-        weight: 25
-        enabled: false
       sections:
         enabled: true
-        weight: 26
+        weight: -35
+      highlights:
+        enabled: true
+        weight: -34
+      carousel_slides:
+        enabled: true
+        weight: -33
+      carousel:
+        enabled: true
+        weight: -32
+      event_sub_page:
+        weight: -31
+        enabled: false
+      ipu_event_document:
+        weight: -30
+        enabled: false
+      ipu_event_document_widget:
+        weight: -29
+        enabled: false
+      ipu_event_right_menu:
+        weight: -28
+        enabled: false
+      ipu_event_section:
+        weight: -27
+        enabled: false
+      ipu_event_sessions:
+        weight: -26
+        enabled: false
+      ipu_event_session_type:
+        weight: -25
+        enabled: false
+      ipu_event_sponsors:
+        weight: -24
+        enabled: false
+      publication_document:
+        weight: -23
+        enabled: false
+      related_content:
+        weight: -22
+        enabled: false
+      related_documents:
+        weight: -21
+        enabled: false
       member:
-        weight: 29
+        weight: -20
         enabled: false
       slide:
-        weight: 34
+        weight: -19
         enabled: false
 field_type: entity_reference_revisions
