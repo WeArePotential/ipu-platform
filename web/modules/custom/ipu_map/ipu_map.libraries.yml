@@ -8,8 +8,26 @@ ipu_map:
     js/raphael-min.js: {}
     js/jquery.mapael.min.js: {}
     js/world_countries_un.js: {}
-    #js/countries_data.js: {}
     js/ipu_map.js: {}
+
+  dependencies:
+    - core/jquery
+    - core/drupal.ajax
+    - core/drupal
+    - core/jquery.once
+    - core/drupalSettings
+
+ipu_signatory_map:
+  version: 1.x
+  css:
+    theme:
+      css/ipu_map.css: {}
+  js:
+    js/jquery.mousewheel.min.js: {}
+    js/raphael-min.js: {}
+    js/jquery.mapael.min.js: {}
+    js/world_countries_un.js: {}
+    js/ipu_signatory_map.js: {}
 
   dependencies:
     - core/jquery

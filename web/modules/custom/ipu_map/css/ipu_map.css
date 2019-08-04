@@ -1,9 +1,11 @@
 #ipu_map {
+  margin: 10px 0;
 }
 
 .mapael .map {
     position: relative;
     border-color:white;
+    z-index: 3;
 }
 
 /* For all zoom buttons */
