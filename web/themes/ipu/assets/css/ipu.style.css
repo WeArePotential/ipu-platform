@@ -22042,7 +22042,7 @@ a.more-data-parline, .article__node-link a,
   font-weight: 900;
   line-height: 1;
   content: "";
-  padding: 4px 0;
+  padding: 0px 0;
 }
 .basic-page__field-related-documents .document__file .file--application-pdf a:before {
   content: "\F1C1";
@@ -22055,7 +22055,7 @@ a.more-data-parline, .article__node-link a,
 .basic-page__field-related-documents .document__file .file-size {
   white-space: nowrap;
   font-size: 0.875rem;
-  padding: 2px 0;
+  padding: 0 0 0 8px;
 }
 
 .highlights__field-section-title,

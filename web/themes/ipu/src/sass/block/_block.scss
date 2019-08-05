@@ -1336,7 +1336,7 @@ a.btn {
       font-weight: 900;
       line-height: 1;
       content: '';
-      padding: 4px 0;
+      padding: 0px 0;
     }
     .file--application-pdf a:before {
       content: '\f1c1';
@@ -1349,7 +1349,7 @@ a.btn {
     .file-size {
       white-space: nowrap;
       font-size: $font-size-sm;
-      padding: 2px 0;
+      padding: 0 0 0 8px;
     }
   }
 }
