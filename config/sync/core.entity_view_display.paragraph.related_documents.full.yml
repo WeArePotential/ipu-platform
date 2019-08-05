@@ -1,18 +1,19 @@
-uuid: e88ea74d-7f1d-466f-982f-740455af08e0
+uuid: 1737d557-3d97-4d48-be1f-754127fffc9b
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.paragraph.full
     - field.field.paragraph.related_documents.field_external_link
     - field.field.paragraph.related_documents.field_related_document
     - paragraphs.paragraphs_type.related_documents
   module:
     - ds
     - link
-id: paragraph.related_documents.default
+id: paragraph.related_documents.full
 targetEntityType: paragraph
 bundle: related_documents
-mode: default
+mode: full
 content:
   field_external_link:
     label: hidden

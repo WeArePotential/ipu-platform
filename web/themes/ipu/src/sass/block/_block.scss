@@ -1284,6 +1284,70 @@ a.btn {
     }
   }
 }
+.basic-page__field-related-documents {
+  margin-bottom: 20px;
+  .field__label {
+    @extend h3;
+    border-bottom: 1px solid $secondary;
+  }
+  .field__item .related-documents__field-external-link {
+    a {
+      display: flex;
+      &:before {
+        font-family: "Font Awesome 5 Free", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        display: inline-block;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: 900;
+        line-height: 1;
+        padding: 4px 0;
+        content: '\f0ac';
+        margin-right: 4px;
+      }
+    }
+  }
+  .node--view-mode-teaser {
+    margin: 0;
+    padding: 4px 0;
+    border-bottom: 1px solid $ipu-light-grey;
+  }
+
+  .document__file {
+    .file {
+      display: flex;
+    }
+    .file a {
+      display: flex;
+    }
+    .file a:before {
+      font-family: "Font Awesome 5 Free", sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      display: inline-block;
+      font-style: normal;
+      font-variant: normal;
+      font-weight: 900;
+      line-height: 1;
+      content: '';
+      padding: 4px 0;
+    }
+    .file--application-pdf a:before {
+      content: '\f1c1';
+      margin-right: 4px;
+    }
+    .file--mime-application-msword a:before {
+      content: '\f1c2';
+      margin-right: 4px;
+    }
+    .file-size {
+      white-space: nowrap;
+      font-size: $font-size-sm;
+      padding: 2px 0;
+    }
+  }
+}
 
 .highlights__field-section-title,
 .sections__field-section-title {
