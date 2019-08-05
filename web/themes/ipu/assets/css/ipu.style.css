@@ -21999,9 +21999,12 @@ a.more-data-parline, .article__node-link a,
 }
 .basic-page__field-related-documents .field__label {
   border-bottom: 1px solid #00a8b4;
+  font-weight: 400 !important;
 }
 .basic-page__field-related-documents .field__item .related-documents__field-external-link a {
   display: flex;
+  font-weight: 400;
+  line-height: 1.2rem;
 }
 .basic-page__field-related-documents .field__item .related-documents__field-external-link a:before {
   font-family: "Font Awesome 5 Free", sans-serif;
@@ -22026,6 +22029,8 @@ a.more-data-parline, .article__node-link a,
 }
 .basic-page__field-related-documents .document__file .file a {
   display: flex;
+  font-weight: 400;
+  line-height: 1.2rem;
 }
 .basic-page__field-related-documents .document__file .file a:before {
   font-family: "Font Awesome 5 Free", sans-serif;

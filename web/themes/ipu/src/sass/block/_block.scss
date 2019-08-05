@@ -1289,10 +1289,13 @@ a.btn {
   .field__label {
     @extend h3;
     border-bottom: 1px solid $secondary;
+    font-weight: $font-weight-normal !important;
   }
   .field__item .related-documents__field-external-link {
     a {
       display: flex;
+      font-weight: $font-weight-normal;
+      line-height: 1.2rem;
       &:before {
         font-family: "Font Awesome 5 Free", sans-serif;
         -webkit-font-smoothing: antialiased;
@@ -1320,6 +1323,8 @@ a.btn {
     }
     .file a {
       display: flex;
+      font-weight: $font-weight-normal;
+      line-height: 1.2rem;
     }
     .file a:before {
       font-family: "Font Awesome 5 Free", sans-serif;
