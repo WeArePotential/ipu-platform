@@ -21893,6 +21893,7 @@ a.more-data-parline, .article__node-link a,
   margin-top: 20px;
   border: 1px solid #cccccc;
   width: calc(100% - 60px);
+  margin-left: 3px;
 }
 .viewfield--view__events.viewfield--view__events__block .group-content, .viewfield--view__events.viewfield--view__events__block_upcoming .group-content, .viewfield--view__events.viewfield--view__events__block_past .group-content {
   padding-top: 1rem;
@@ -22609,7 +22610,8 @@ ol.breadcrumb {
 }
 .ultimenu__flyout .block .section-page__body,
 .ultimenu__flyout .block .landing-page__body,
-.ultimenu__flyout .block .ipu-event__field-summary {
+.ultimenu__flyout .block .ipu-event__field-summary,
+.ultimenu__flyout .block .ipu-event__field-location {
   color: #333333;
 }
 
