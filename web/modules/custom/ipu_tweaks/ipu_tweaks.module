@@ -104,6 +104,7 @@ function ipu_tweaks_preprocess_field(&$variables) {
       //\Drupal::messenger()->addMessage('View mode: '. print_r($variables['element']['#ds_view_mode'],true));
       $node = $variables['element']['#object'];
       // Should already be available $variables['#node'] = $node;
+
       $image = $node->field_media_image;
       if ($image->entity != NULL) {
         $image_path = $image->entity->getFileUri();
@@ -116,6 +117,9 @@ function ipu_tweaks_preprocess_field(&$variables) {
           $variables['attributes']['class'][] = 'theme-landing-page';
           foreach ($theme_terms as $term) {
             $variables['attributes']['class'][] = 'theme-term-id-' . $term['target_id'];
+            $term_entity = \Drupal\taxonomy\Entity\Term::load($term['target_id']);
+            $variables['theme_description'] = $term_entity->getDescription();
+            $variables['title_suffix'] = '<h2>'.$term_entity->getDescription().'</h2>';
           }
         }
       }

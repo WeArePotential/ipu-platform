@@ -268,6 +268,11 @@ ol.breadcrumb {
   }
 }
 
+/* On events contextual menu, make first item bigger */
+.dynamic-block-fieldnode-contextual-menu-event-navigation ul.menu > li:first-child > a {
+  font-size: 1.4rem;
+}
+
 #main-nav .ultimenu__flyout {
   .ipu-menu-list ul.nav {
     display: block;

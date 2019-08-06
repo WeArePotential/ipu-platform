@@ -1170,7 +1170,9 @@ a.btn {
     }
   }
 
-  &.viewfield--view__events__block, &.viewfield--view__events__block_upcoming {
+  &.viewfield--view__events__block,
+  &.viewfield--view__events__block_upcoming,
+  &.viewfield--view__events__block_past {
     .node--type-ipu-event {
       margin-top: 20px;
       border: 1px solid $ipu-light-grey;
@@ -1194,14 +1196,18 @@ a.btn {
       display: inline-block;
       font-weight: $font-weight-bold;
     }
+    .ipu-event__node-title h3 {
+      color: $ipu-grey;
+    }
+
     .ipu-event__node-title h3,
     .ipu-event__node-title h3 a {
       font-size: $font-size-md;
-      font-weight: $font-weight-bold;
+      font-weight: $font-weight-normal;
       margin-bottom: 0;
     }
     .ipu-event__field-summary {
-      font-size: $font-size-base;
+      font-size: $font-size-sm;
       line-height: 1.1rem;
       padding-bottom: 10px;
     }
@@ -1350,6 +1356,7 @@ a.btn {
       white-space: nowrap;
       font-size: $font-size-sm;
       padding: 0 0 0 8px;
+      align-self: end;
     }
   }
 }
@@ -1399,20 +1406,24 @@ a.btn {
       min-height: 60vh;
       background-position: center center;
       background-size: cover;
-      .field-node-title-inner {
+      .field-node-title-wrapper {
         @extend .container;
         position: relative;
         height: 100%;
 
-        h1 {
+        .field-node-title-inner {
           position: absolute;
           bottom: 40px;
           @extend .col-12;
           display: inline-block;
           background-color: rgba(255, 255, 255, 0.8);
           padding: 10px;
-
-          &:before {
+          border-bottom: 4px solid $secondary;
+          h1 {
+            border-bottom-width: 0px;
+            margin-bottom: 0;
+          }
+          h1:before {
             content: "";
             width: 40px;
             height: 40px;
@@ -1420,9 +1431,13 @@ a.btn {
             float: left;
             margin: 0.4rem;
           }
+          .field-node-title-theme-description {
+            margin-left: calc( 40px + 1rem );
+            font-size: $font-size-md;
+          }
         }
       }
-      &.theme-term-id-88 h1:before {
+      &.theme-term-id-88 .h1:before {
         background: url("../img/theme_icons/gender_equality.svg");
       }
       &.theme-term-id-139 h1:before {
