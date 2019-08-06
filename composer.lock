@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e93f775ff3b92087499a29a57c1ab0b5",
+    "content-hash": "d6dd4cdebf204c252969e62c78ed9e78",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -8002,7 +8002,7 @@
                     }
                 },
                 "patches_applied": {
-                    "Render menu parent in Menu Block": "https://www.drupal.org/files/issues/2018-09-18/menu_block-render_parent_option-2884514-5.patch"
+                    "Follow active trail": "https://www.drupal.org/files/issues/2018-08-08/menu_block-follow-2756675-55.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -8944,6 +8944,66 @@
             "homepage": "https://www.drupal.org/project/pathologic",
             "support": {
                 "source": "https://git.drupalcode.org/project/pathologic"
+            }
+        },
+        {
+            "name": "drupal/pdfpreview",
+            "version": "1.0.0-rc1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/pdfpreview.git",
+                "reference": "8.x-1.0-rc1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/pdfpreview-8.x-1.0-rc1.zip",
+                "reference": "8.x-1.0-rc1",
+                "shasum": "2f9a6b7ccc3765ccf7acc908f21565ffdb6a531c"
+            },
+            "require": {
+                "drupal/core": "*",
+                "drupal/imagemagick": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-rc1",
+                    "datestamp": "1521501480",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "RC releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "floeschie",
+                    "homepage": "https://www.drupal.org/user/1628402"
+                },
+                {
+                    "name": "juanjo_vlc",
+                    "homepage": "https://www.drupal.org/user/354856"
+                },
+                {
+                    "name": "mstrelan",
+                    "homepage": "https://www.drupal.org/user/314289"
+                },
+                {
+                    "name": "pbuyle",
+                    "homepage": "https://www.drupal.org/user/215342"
+                }
+            ],
+            "description": "PDFPreview lets you show a preview of PDF files.",
+            "homepage": "https://www.drupal.org/project/pdfpreview",
+            "support": {
+                "source": "https://git.drupalcode.org/project/pdfpreview"
             }
         },
         {
@@ -16994,6 +17054,7 @@
         "drupal/job_scheduler": 15,
         "drupal/lang_dropdown": 10,
         "drupal/pathologic": 15,
+        "drupal/pdfpreview": 5,
         "drupal/radix": 20,
         "drupal/roleassign": 15,
         "drupal/search_api_page": 15,

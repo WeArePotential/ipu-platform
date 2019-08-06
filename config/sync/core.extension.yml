@@ -139,6 +139,7 @@ module:
   paragraphs_preview_helper: 0
   path: 0
   pathologic: 0
+  pdfpreview: 0
   quickedit: 0
   rdf: 0
   redirect: 0
