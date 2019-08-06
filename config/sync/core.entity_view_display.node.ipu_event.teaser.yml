@@ -64,9 +64,9 @@ third_party_settings:
         - field_event_type
         - node_title
         - field_event_computed_date
+        - field_summary
         - field_ipu_event_dates
         - field_location
-        - field_summary
     fields:
       node_title:
         plugin_id: node_title
@@ -106,9 +106,9 @@ third_party_settings:
       children:
         - field_event_type
         - node_title
+        - field_summary
         - field_ipu_event_dates
         - field_location
-        - field_summary
       parent_name: ''
       weight: 0
       format_type: html_element
@@ -154,7 +154,7 @@ content:
             classes: {  }
   field_ipu_event_dates:
     type: daterange_default
-    weight: 3
+    weight: 4
     region: main
     label: hidden
     settings:
@@ -171,14 +171,14 @@ content:
             classes: {  }
   field_location:
     type: address_plain
-    weight: 4
+    weight: 5
     region: main
     label: hidden
     settings: {  }
     third_party_settings: {  }
   field_summary:
     type: smart_trim
-    weight: 5
+    weight: 3
     region: main
     label: hidden
     settings:

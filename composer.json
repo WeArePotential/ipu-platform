@@ -86,7 +86,7 @@
         "drupal/mailchimp_signup": "^1.8",
         "drupal/media_entity_browser": "^2.0",
         "drupal/menu_admin_per_menu": "^1.0",
-        "drupal/menu_block": "^1.5",
+        "drupal/menu_block": "1.5",
         "drupal/menu_link_attributes": "^1.0",
         "drupal/metatag_twitter_cards": "^1.8",
         "drupal/metatag_verification": "^1.8",
@@ -102,7 +102,6 @@
         "drupal/paragraphs_preview_helper": "^1.1",
         "drupal/pathauto": "^1.4",
         "drupal/pathologic": "^1.0@alpha",
-        "drupal/pdfpreview": "1.x-dev",
         "drupal/radix": "4.x-dev",
         "drupal/redirect": "^1.3",
         "drupal/redis": "^1.1",
@@ -209,7 +208,7 @@
                 "Warning: key() expects parameter 1 to be array, null given in Drupal\\entity_browser\\Plugin\\Field\\FieldWidget\\EntityReferenceBrowserWidget::processEntityBrowser()": "https://www.drupal.org/files/issues/2018-07-17/entity_browser-key-2914385-6.patch"
             },
             "drupal/menu_block": {
-                "Render menu parent in Menu Block": "web/patches/menu_block-render_parent_option-2884514-5.patch"
+                "Follow active trail": "https://www.drupal.org/files/issues/2018-08-08/menu_block-follow-2756675-55.patch"
             }
         },
         "drupal-scaffold": {
