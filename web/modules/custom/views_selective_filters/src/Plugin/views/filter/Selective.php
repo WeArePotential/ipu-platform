@@ -13,6 +13,7 @@ use Drupal\Core\Form\FormState;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\views\Plugin\views\display\DisplayPluginBase;
 use Drupal\views\Plugin\views\filter\InOperator;
+use Drupal\Core\TypedData\TranslatableInterface;
 use Drupal\views\ViewExecutable;
 use Drupal\views\Views;
 
@@ -460,7 +461,12 @@ class Selective extends InOperator {
                         $entity = $entityTypeStorage->load($key);
 
                         if ($entity) {
+                          if ($entity instanceof TranslatableInterface && count($entity->getTranslationLanguages()) > 1) {
+                            $translation = \Drupal::service('entity.repository')->getTranslationFromContext($entity);
+                            $value = $translation->label();
+                          } else{
                             $value = $entity->label();
+                          }
                         }
                     }
                     else {
