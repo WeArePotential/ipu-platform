@@ -1,0 +1,25 @@
+Index: web/modules/contrib/menu_block/src/Plugin/Block/MenuBlock.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- web/modules/contrib/menu_block/src/Plugin/Block/MenuBlock.php	(date 1565280262253)
++++ web/modules/contrib/menu_block/src/Plugin/Block/MenuBlock.php	(date 1565280262253)
+@@ -248,7 +248,7 @@
+         // If the starting level is 1, we always want the child links to appear,
+         // but the requested tree may be empty if the tree does not contain the
+         // active trail.
+-        if ($level === 1 || $level === '1') {
++        /*if ($level === 1 || $level === '1') {
+           // Check if the tree contains links.
+            $tree = $this->menuTree->load($menu_name, $parameters);
+           if (empty($tree)) {
+@@ -260,7 +260,7 @@
+             // Re-load the tree.
+             $tree = $this->menuTree->load(NULL, $parameters);
+           }
+-        }
++        }*/
+       }
+       // end custom
+     }

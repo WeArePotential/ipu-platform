@@ -209,7 +209,8 @@
                 "Warning: key() expects parameter 1 to be array, null given in Drupal\\entity_browser\\Plugin\\Field\\FieldWidget\\EntityReferenceBrowserWidget::processEntityBrowser()": "https://www.drupal.org/files/issues/2018-07-17/entity_browser-key-2914385-6.patch"
             },
             "drupal/menu_block": {
-                "Follow active trail": "https://www.drupal.org/files/issues/2018-08-08/menu_block-follow-2756675-55.patch"
+                "Recognise don't need to show menu when not in active trail": "https://www.drupal.org/files/issues/2018-05-02/menu_block_follow-2756675-45.patch",
+                "IPU - Don't show menu if not in trail, even if at level 1": "web/patches/menu_block_hide_non_trail_level_1.patch"
             }
         },
         "drupal-scaffold": {
