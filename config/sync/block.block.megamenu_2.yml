@@ -23,10 +23,12 @@ settings:
   label: 'Mega menu'
   provider: menu_block
   label_display: '0'
+  follow: 0
+  follow_parent: child
   level: 1
   depth: 1
   expand: 0
   parent: 'mega-menu:menu_link_content:3310ff71-4264-4d76-818f-13e0826d43d1'
-  render_parent: false
   suggestion: mega_menu
+  render_parent: false
 visibility: {  }

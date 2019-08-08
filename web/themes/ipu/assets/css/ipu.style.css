@@ -7,7 +7,7 @@ a {
 .btn-sm, .ultimenu__flyout .megamenu-cta a.btn-outline-primary, .ultimenu__flyout .megamenu-cta .article__node-link a, .article__node-link .ultimenu__flyout .megamenu-cta a,
 .ultimenu__flyout .megamenu-cta .ipu-event__node-link a,
 .ipu-event__node-link .ultimenu__flyout .megamenu-cta a,
-.ultimenu__flyout .megamenu-cta a.more-data-parline, .ultimenu__flyout .megamenu-cta .node--type-publication.node--view-mode-highlight .publication__node-link a, .node--type-publication.node--view-mode-highlight .publication__node-link .ultimenu__flyout .megamenu-cta a, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a, .node--type-publication.node--view-mode-highlight .publication__node-link a, .node--type-landing-page.node--view-mode-highlight .node-link a,
+.ultimenu__flyout .megamenu-cta a.more-data-parline, .ultimenu__flyout .megamenu-cta .node--type-publication.node--view-mode-highlight .publication__node-link a, .node--type-publication.node--view-mode-highlight .publication__node-link .ultimenu__flyout .megamenu-cta a, .view-publications.view-display-id-page_1 #views-exposed-form-publications-page-1 input.form-submit, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a, .node--type-publication.node--view-mode-highlight .publication__node-link a, .node--type-landing-page.node--view-mode-highlight .node-link a,
 .more-data-parline, .article__node-link a,
 .ipu-event__node-link a, .stats-more-link, .btn-group-sm > .btn,
 .btn-group-sm > .more-data-parline, .article__node-link .btn-group-sm > a,
@@ -2202,7 +2202,7 @@ table .table-active:hover > th {
   border: 0;
 }
 
-.form-control {
+.form-control, form input[type=text], form input[type=search], form select {
   display: block;
   width: 100%;
   height: calc(1.75em + 0.25rem + 2px);
@@ -2218,43 +2218,43 @@ table .table-active:hover > th {
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
-  .form-control {
+  .form-control, form input[type=text], form input[type=search], form select {
     transition: none;
   }
 }
-.form-control::-ms-expand {
+.form-control::-ms-expand, form input[type=text]::-ms-expand, form input[type=search]::-ms-expand, form select::-ms-expand {
   background-color: transparent;
   border: 0;
 }
-.form-control:focus {
+.form-control:focus, form input[type=text]:focus, form input[type=search]:focus, form select:focus {
   color: #495057;
   background-color: #fff;
   border-color: #22aeff;
   outline: 0;
   box-shadow: 0 0 0 0.2rem rgba(0, 102, 161, 0.25);
 }
-.form-control::-webkit-input-placeholder {
+.form-control::-webkit-input-placeholder, form input[type=text]::-webkit-input-placeholder, form input[type=search]::-webkit-input-placeholder, form select::-webkit-input-placeholder {
   color: #6c757d;
   opacity: 1;
 }
-.form-control:-ms-input-placeholder {
+.form-control:-ms-input-placeholder, form input[type=text]:-ms-input-placeholder, form input[type=search]:-ms-input-placeholder, form select:-ms-input-placeholder {
   color: #6c757d;
   opacity: 1;
 }
-.form-control::-ms-input-placeholder {
+.form-control::-ms-input-placeholder, form input[type=text]::-ms-input-placeholder, form input[type=search]::-ms-input-placeholder, form select::-ms-input-placeholder {
   color: #6c757d;
   opacity: 1;
 }
-.form-control::placeholder {
+.form-control::placeholder, form input[type=text]::placeholder, form input[type=search]::placeholder, form select::placeholder {
   color: #6c757d;
   opacity: 1;
 }
-.form-control:disabled, .form-control[readonly] {
+.form-control:disabled, form input[type=text]:disabled, form input[type=search]:disabled, form select:disabled, .form-control[readonly], form input[readonly][type=text], form input[readonly][type=search], form select[readonly] {
   background-color: #e9ecef;
   opacity: 1;
 }
 
-select.form-control:focus::-ms-value {
+select.form-control:focus::-ms-value, form select:focus::-ms-value {
   color: #495057;
   background-color: #fff;
 }
@@ -2320,7 +2320,7 @@ select.form-control:focus::-ms-value {
   border-radius: 0.3rem;
 }
 
-select.form-control[size], select.form-control[multiple] {
+select.form-control[size], form select[size], select.form-control[multiple], form select[multiple] {
   height: auto;
 }
 
@@ -2404,7 +2404,7 @@ textarea.form-control {
   border-radius: 0;
 }
 
-.was-validated .form-control:valid, .form-control.is-valid {
+.was-validated .form-control:valid, .was-validated form input[type=text]:valid, form .was-validated input[type=text]:valid, .was-validated form input[type=search]:valid, form .was-validated input[type=search]:valid, .was-validated form select:valid, form .was-validated select:valid, .form-control.is-valid, form input.is-valid[type=text], form input.is-valid[type=search], form select.is-valid {
   border-color: #28a745;
   padding-right: calc(1.75em + 0.25rem);
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%2328a745' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
@@ -2412,13 +2412,22 @@ textarea.form-control {
   background-position: center right calc(0.4375em + 0.0625rem);
   background-size: calc(0.875em + 0.125rem) calc(0.875em + 0.125rem);
 }
-.was-validated .form-control:valid:focus, .form-control.is-valid:focus {
+.was-validated .form-control:valid:focus, .was-validated form input[type=text]:valid:focus, form .was-validated input[type=text]:valid:focus, .was-validated form input[type=search]:valid:focus, form .was-validated input[type=search]:valid:focus, .was-validated form select:valid:focus, form .was-validated select:valid:focus, .form-control.is-valid:focus, form input.is-valid[type=text]:focus, form input.is-valid[type=search]:focus, form select.is-valid:focus {
   border-color: #28a745;
   box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
 }
-.was-validated .form-control:valid ~ .valid-feedback,
-.was-validated .form-control:valid ~ .valid-tooltip, .form-control.is-valid ~ .valid-feedback,
-.form-control.is-valid ~ .valid-tooltip {
+.was-validated .form-control:valid ~ .valid-feedback, .was-validated form input[type=text]:valid ~ .valid-feedback, form .was-validated input[type=text]:valid ~ .valid-feedback, .was-validated form input[type=search]:valid ~ .valid-feedback, form .was-validated input[type=search]:valid ~ .valid-feedback, .was-validated form select:valid ~ .valid-feedback, form .was-validated select:valid ~ .valid-feedback,
+.was-validated .form-control:valid ~ .valid-tooltip,
+.was-validated form input[type=text]:valid ~ .valid-tooltip,
+form .was-validated input[type=text]:valid ~ .valid-tooltip,
+.was-validated form input[type=search]:valid ~ .valid-tooltip,
+form .was-validated input[type=search]:valid ~ .valid-tooltip,
+.was-validated form select:valid ~ .valid-tooltip,
+form .was-validated select:valid ~ .valid-tooltip, .form-control.is-valid ~ .valid-feedback, form input.is-valid[type=text] ~ .valid-feedback, form input.is-valid[type=search] ~ .valid-feedback, form select.is-valid ~ .valid-feedback,
+.form-control.is-valid ~ .valid-tooltip,
+form input.is-valid[type=text] ~ .valid-tooltip,
+form input.is-valid[type=search] ~ .valid-tooltip,
+form select.is-valid ~ .valid-tooltip {
   display: block;
 }
 
@@ -2515,7 +2524,7 @@ textarea.form-control {
   border-radius: 0;
 }
 
-.was-validated .form-control:invalid, .form-control.is-invalid {
+.was-validated .form-control:invalid, .was-validated form input[type=text]:invalid, form .was-validated input[type=text]:invalid, .was-validated form input[type=search]:invalid, form .was-validated input[type=search]:invalid, .was-validated form select:invalid, form .was-validated select:invalid, .form-control.is-invalid, form input.is-invalid[type=text], form input.is-invalid[type=search], form select.is-invalid {
   border-color: #dc3545;
   padding-right: calc(1.75em + 0.25rem);
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23dc3545' viewBox='-2 -2 7 7'%3e%3cpath stroke='%23dc3545' d='M0 0l3 3m0-3L0 3'/%3e%3ccircle r='.5'/%3e%3ccircle cx='3' r='.5'/%3e%3ccircle cy='3' r='.5'/%3e%3ccircle cx='3' cy='3' r='.5'/%3e%3c/svg%3E");
@@ -2523,13 +2532,22 @@ textarea.form-control {
   background-position: center right calc(0.4375em + 0.0625rem);
   background-size: calc(0.875em + 0.125rem) calc(0.875em + 0.125rem);
 }
-.was-validated .form-control:invalid:focus, .form-control.is-invalid:focus {
+.was-validated .form-control:invalid:focus, .was-validated form input[type=text]:invalid:focus, form .was-validated input[type=text]:invalid:focus, .was-validated form input[type=search]:invalid:focus, form .was-validated input[type=search]:invalid:focus, .was-validated form select:invalid:focus, form .was-validated select:invalid:focus, .form-control.is-invalid:focus, form input.is-invalid[type=text]:focus, form input.is-invalid[type=search]:focus, form select.is-invalid:focus {
   border-color: #dc3545;
   box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
 }
-.was-validated .form-control:invalid ~ .invalid-feedback,
-.was-validated .form-control:invalid ~ .invalid-tooltip, .form-control.is-invalid ~ .invalid-feedback,
-.form-control.is-invalid ~ .invalid-tooltip {
+.was-validated .form-control:invalid ~ .invalid-feedback, .was-validated form input[type=text]:invalid ~ .invalid-feedback, form .was-validated input[type=text]:invalid ~ .invalid-feedback, .was-validated form input[type=search]:invalid ~ .invalid-feedback, form .was-validated input[type=search]:invalid ~ .invalid-feedback, .was-validated form select:invalid ~ .invalid-feedback, form .was-validated select:invalid ~ .invalid-feedback,
+.was-validated .form-control:invalid ~ .invalid-tooltip,
+.was-validated form input[type=text]:invalid ~ .invalid-tooltip,
+form .was-validated input[type=text]:invalid ~ .invalid-tooltip,
+.was-validated form input[type=search]:invalid ~ .invalid-tooltip,
+form .was-validated input[type=search]:invalid ~ .invalid-tooltip,
+.was-validated form select:invalid ~ .invalid-tooltip,
+form .was-validated select:invalid ~ .invalid-tooltip, .form-control.is-invalid ~ .invalid-feedback, form input.is-invalid[type=text] ~ .invalid-feedback, form input.is-invalid[type=search] ~ .invalid-feedback, form select.is-invalid ~ .invalid-feedback,
+.form-control.is-invalid ~ .invalid-tooltip,
+form input.is-invalid[type=text] ~ .invalid-tooltip,
+form input.is-invalid[type=search] ~ .invalid-tooltip,
+form select.is-invalid ~ .invalid-tooltip {
   display: block;
 }
 
@@ -2625,7 +2643,7 @@ textarea.form-control {
     align-items: center;
     margin-bottom: 0;
   }
-  .form-inline .form-control {
+  .form-inline .form-control, .form-inline form input[type=text], form .form-inline input[type=text], .form-inline form input[type=search], form .form-inline input[type=search], .form-inline form select, form .form-inline select {
     display: inline-block;
     width: auto;
     vertical-align: middle;
@@ -3415,7 +3433,7 @@ fieldset:disabled a.stats-more-link {
 .btn-sm, .ultimenu__flyout .megamenu-cta a.btn-outline-primary, .ultimenu__flyout .megamenu-cta .article__node-link a, .article__node-link .ultimenu__flyout .megamenu-cta a,
 .ultimenu__flyout .megamenu-cta .ipu-event__node-link a,
 .ipu-event__node-link .ultimenu__flyout .megamenu-cta a,
-.ultimenu__flyout .megamenu-cta a.more-data-parline, .ultimenu__flyout .megamenu-cta .node--type-publication.node--view-mode-highlight .publication__node-link a, .node--type-publication.node--view-mode-highlight .publication__node-link .ultimenu__flyout .megamenu-cta a, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a, .node--type-publication.node--view-mode-highlight .publication__node-link a, .node--type-landing-page.node--view-mode-highlight .node-link a,
+.ultimenu__flyout .megamenu-cta a.more-data-parline, .ultimenu__flyout .megamenu-cta .node--type-publication.node--view-mode-highlight .publication__node-link a, .node--type-publication.node--view-mode-highlight .publication__node-link .ultimenu__flyout .megamenu-cta a, .view-publications.view-display-id-page_1 #views-exposed-form-publications-page-1 input.form-submit, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a, .node--type-publication.node--view-mode-highlight .publication__node-link a, .node--type-landing-page.node--view-mode-highlight .node-link a,
 .more-data-parline, .article__node-link a,
 .ipu-event__node-link a, .stats-more-link, .btn-group-sm > .btn,
 .btn-group-sm > .more-data-parline, .article__node-link .btn-group-sm > a,
@@ -3876,7 +3894,7 @@ input[type=button].btn-block {
 .btn-sm + .dropdown-toggle-split, .ultimenu__flyout .megamenu-cta a.btn-outline-primary + .dropdown-toggle-split, .ultimenu__flyout .megamenu-cta .article__node-link a + .dropdown-toggle-split, .article__node-link .ultimenu__flyout .megamenu-cta a + .dropdown-toggle-split,
 .ultimenu__flyout .megamenu-cta .ipu-event__node-link a + .dropdown-toggle-split,
 .ipu-event__node-link .ultimenu__flyout .megamenu-cta a + .dropdown-toggle-split,
-.ultimenu__flyout .megamenu-cta a.more-data-parline + .dropdown-toggle-split, .ultimenu__flyout .megamenu-cta .node--type-publication.node--view-mode-highlight .publication__node-link a + .dropdown-toggle-split, .node--type-publication.node--view-mode-highlight .publication__node-link .ultimenu__flyout .megamenu-cta a + .dropdown-toggle-split, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a + .dropdown-toggle-split, .node--type-publication.node--view-mode-highlight .publication__node-link a + .dropdown-toggle-split, .node--type-landing-page.node--view-mode-highlight .node-link a + .dropdown-toggle-split,
+.ultimenu__flyout .megamenu-cta a.more-data-parline + .dropdown-toggle-split, .ultimenu__flyout .megamenu-cta .node--type-publication.node--view-mode-highlight .publication__node-link a + .dropdown-toggle-split, .node--type-publication.node--view-mode-highlight .publication__node-link .ultimenu__flyout .megamenu-cta a + .dropdown-toggle-split, .view-publications.view-display-id-page_1 #views-exposed-form-publications-page-1 input.form-submit + .dropdown-toggle-split, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a + .dropdown-toggle-split, .node--type-publication.node--view-mode-highlight .publication__node-link a + .dropdown-toggle-split, .node--type-landing-page.node--view-mode-highlight .node-link a + .dropdown-toggle-split,
 .more-data-parline + .dropdown-toggle-split, .article__node-link a + .dropdown-toggle-split,
 .ipu-event__node-link a + .dropdown-toggle-split, .stats-more-link + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .btn-group-sm > a + .dropdown-toggle-split, .node--type-publication.node--view-mode-highlight .publication__node-link .btn-group-sm > a + .dropdown-toggle-split,
 .btn-group-sm > .more-data-parline + .dropdown-toggle-split, .article__node-link .btn-group-sm > a + .dropdown-toggle-split,
@@ -3972,7 +3990,7 @@ input[type=button].btn-block {
   align-items: stretch;
   width: 100%;
 }
-.input-group > .form-control,
+.input-group > .form-control, form .input-group > input[type=text], form .input-group > input[type=search], form .input-group > select,
 .input-group > .form-control-plaintext,
 .input-group > .custom-select,
 .input-group > .custom-file {
@@ -3981,21 +3999,36 @@ input[type=button].btn-block {
   width: 1%;
   margin-bottom: 0;
 }
-.input-group > .form-control + .form-control,
+.input-group > .form-control + .form-control, form .input-group > input[type=text] + .form-control, form .input-group > input[type=search] + .form-control, form .input-group > select + .form-control, form .input-group > .form-control + input[type=text], form .input-group > input[type=text] + input[type=text], form .input-group > input[type=search] + input[type=text], form .input-group > select + input[type=text], form .input-group > .form-control + input[type=search], form .input-group > input[type=text] + input[type=search], form .input-group > input[type=search] + input[type=search], form .input-group > select + input[type=search], form .input-group > .form-control + select, form .input-group > input[type=text] + select, form .input-group > input[type=search] + select, form .input-group > select + select,
 .input-group > .form-control + .custom-select,
+form .input-group > input[type=text] + .custom-select,
+form .input-group > input[type=search] + .custom-select,
+form .input-group > select + .custom-select,
 .input-group > .form-control + .custom-file,
+form .input-group > input[type=text] + .custom-file,
+form .input-group > input[type=search] + .custom-file,
+form .input-group > select + .custom-file,
 .input-group > .form-control-plaintext + .form-control,
+form .input-group > .form-control-plaintext + input[type=text],
+form .input-group > .form-control-plaintext + input[type=search],
+form .input-group > .form-control-plaintext + select,
 .input-group > .form-control-plaintext + .custom-select,
 .input-group > .form-control-plaintext + .custom-file,
 .input-group > .custom-select + .form-control,
+form .input-group > .custom-select + input[type=text],
+form .input-group > .custom-select + input[type=search],
+form .input-group > .custom-select + select,
 .input-group > .custom-select + .custom-select,
 .input-group > .custom-select + .custom-file,
 .input-group > .custom-file + .form-control,
+form .input-group > .custom-file + input[type=text],
+form .input-group > .custom-file + input[type=search],
+form .input-group > .custom-file + select,
 .input-group > .custom-file + .custom-select,
 .input-group > .custom-file + .custom-file {
   margin-left: -1px;
 }
-.input-group > .form-control:focus,
+.input-group > .form-control:focus, form .input-group > input[type=text]:focus, form .input-group > input[type=search]:focus, form .input-group > select:focus,
 .input-group > .custom-select:focus,
 .input-group > .custom-file .custom-file-input:focus ~ .custom-file-label {
   z-index: 3;
@@ -4003,12 +4036,12 @@ input[type=button].btn-block {
 .input-group > .custom-file .custom-file-input:focus {
   z-index: 4;
 }
-.input-group > .form-control:not(:last-child),
+.input-group > .form-control:not(:last-child), form .input-group > input[type=text]:not(:last-child), form .input-group > input[type=search]:not(:last-child), form .input-group > select:not(:last-child),
 .input-group > .custom-select:not(:last-child) {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
-.input-group > .form-control:not(:first-child),
+.input-group > .form-control:not(:first-child), form .input-group > input[type=text]:not(:first-child), form .input-group > input[type=search]:not(:first-child), form .input-group > select:not(:first-child),
 .input-group > .custom-select:not(:first-child) {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
@@ -4295,12 +4328,12 @@ input[type=button].btn-block {
   margin-top: 0;
 }
 
-.input-group-lg > .form-control:not(textarea),
+.input-group-lg > .form-control:not(textarea), form .input-group-lg > input[type=text]:not(textarea), form .input-group-lg > input[type=search]:not(textarea), form .input-group-lg > select:not(textarea),
 .input-group-lg > .custom-select {
   height: calc(1.5em + 1rem + 2px);
 }
 
-.input-group-lg > .form-control,
+.input-group-lg > .form-control, form .input-group-lg > input[type=text], form .input-group-lg > input[type=search], form .input-group-lg > select,
 .input-group-lg > .custom-select,
 .input-group-lg > .input-group-prepend > .input-group-text,
 .input-group-lg > .input-group-append > .input-group-text,
@@ -4324,12 +4357,12 @@ input[type=button].btn-block {
   border-radius: 0.3rem;
 }
 
-.input-group-sm > .form-control:not(textarea),
+.input-group-sm > .form-control:not(textarea), form .input-group-sm > input[type=text]:not(textarea), form .input-group-sm > input[type=search]:not(textarea), form .input-group-sm > select:not(textarea),
 .input-group-sm > .custom-select {
   height: calc(1.5em + 0.5rem + 2px);
 }
 
-.input-group-sm > .form-control,
+.input-group-sm > .form-control, form .input-group-sm > input[type=text], form .input-group-sm > input[type=search], form .input-group-sm > select,
 .input-group-sm > .custom-select,
 .input-group-sm > .input-group-prepend > .input-group-text,
 .input-group-sm > .input-group-append > .input-group-text,
@@ -4545,7 +4578,7 @@ input[type=button].btn-block {
   padding: 0.125rem 1.125rem 0.125rem 0.125rem;
   font-size: 1rem;
   font-weight: 300;
-  line-height: 1.75;
+  line-height: 1.6rem;
   color: #495057;
   vertical-align: middle;
   background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right 0.125rem center/8px 10px;
@@ -20337,7 +20370,7 @@ a.more-data-parline, .article__node-link a,
   color: #fff;
 }
 
-.form-search {
+#branding .form-search {
   border: 0;
 }
 
@@ -22608,13 +22641,31 @@ a.more-data-parline, .article__node-link a,
   padding: 4px;
 }
 
+.view-publications.view-display-id-page_1 header {
+  font-weight: 400;
+  padding: 7.5px;
+}
 .view-publications.view-display-id-page_1 #views-exposed-form-publications-page-1 {
-  background-color: rgba(0, 168, 180, 0.3);
+  background-color: #f8f9fa;
   padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -20px;
   margin-bottom: 10px;
+}
+.view-publications.view-display-id-page_1 #views-exposed-form-publications-page-1 .form-group {
+  display: inline-block;
+  margin-left: 10px;
+  margin-bottom: 0;
+}
+.view-publications.view-display-id-page_1 #views-exposed-form-publications-page-1 label {
+  font-size: 0.875rem;
 }
 .view-publications.view-display-id-page_1 #views-exposed-form-publications-page-1 select {
   width: auto;
+}
+.view-publications.view-display-id-page_1 #views-exposed-form-publications-page-1 input.form-submit {
+  margin-left: 10px;
 }
 
 .node--view-mode-teaser {
@@ -22997,11 +23048,11 @@ a.more-data-parline, .article__node-link a,
   margin-bottom: 4px;
 }
 .viewfield--view__countries__block_1 ul {
-  float: left;
   list-style: none;
   width: calc(100% - 50px);
   padding: 0;
   margin: 0;
+  display: inline-block;
 }
 .viewfield--view__countries__block_1 ul li {
   list-style: none;
@@ -23436,6 +23487,10 @@ ol.breadcrumb {
 }
 
 /* Events flyout */
+form input[type=text], form input[type=search], form select {
+  padding: 0.125rem 0.5rem !important;
+}
+
 /* Add 5 card layouts */
 .col-xs-5ths,
 .col-sm-5ths,

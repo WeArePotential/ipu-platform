@@ -866,7 +866,7 @@ a.btn {
 }
 
 // Search styles
-.form-search {
+#branding .form-search {
   border: 0;
 }
 
@@ -1222,13 +1222,34 @@ a.btn {
       @extend .col-sm-6;
     }
   }
+  header {
+    font-weight: $font-weight-normal;
+    padding: $grid-gutter-width/2;
+  }
   #views-exposed-form-publications-page-1 {
-    background-color: $ipu-teal-light;
+    background-color: $light;
     padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    // Line up with page title
+    margin-top: -20px;
+    .form-group {
+      display: inline-block;
+      margin-left: 10px;
+      margin-bottom: 0;
+    }
+    label {
+      font-size: $font-size-sm;
+    }
     select {
       width: auto;
     }
+    input.form-submit {
+      @extend .btn-sm;
+      margin-left: 10px;
+    }
     margin-bottom: 10px;
+
   }
 }
 
@@ -1687,11 +1708,11 @@ a.btn {
     margin-bottom: 4px;
   }
   ul {
-    float: left;
     list-style: none;
     width: calc(100% - 50px);
     padding: 0;
     margin: 0;
+    display: inline-block;
     li {
       list-style: none;
       display: inline-block;

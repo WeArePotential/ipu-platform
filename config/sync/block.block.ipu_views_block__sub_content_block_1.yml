@@ -12,7 +12,7 @@ dependencies:
 id: ipu_views_block__sub_content_block_1
 theme: ipu
 region: content
-weight: -4
+weight: -10
 provider: null
 plugin: 'views_block:sub_content-block_1'
 settings:

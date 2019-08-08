@@ -19,10 +19,12 @@ settings:
   label: 'Quick links'
   provider: menu_block
   label_display: visible
+  follow: 0
+  follow_parent: child
   level: 1
   depth: 1
   expand: 0
   parent: 'quick-links:'
-  render_parent: false
   suggestion: quick_links
+  render_parent: false
 visibility: {  }

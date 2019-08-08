@@ -33,7 +33,6 @@ dependencies:
     - datetime_range
     - ds
     - entity_reference_revisions
-    - options
     - smart_trim
     - user
 third_party_settings:
@@ -80,10 +79,8 @@ third_party_settings:
         - field_event_type
         - node_title
         - field_ipu_event_dates
-        - field_date_accuracy
         - field_location
         - field_summary
-        - field_do_not_display_as_link
         - field_event_theme
         - field_ipu_event_right_menu
         - field_documents_order_number
@@ -113,39 +110,15 @@ mode: full
 content:
   field_agenda_order_number:
     label: inline
-    weight: 10
+    weight: 8
     type: string
     settings:
       link_to_entity: false
     third_party_settings: {  }
     region: top
-  field_date_accuracy:
-    type: list_key
-    weight: 3
-    region: top
-    label: inline
-    settings: {  }
-    third_party_settings: {  }
-  field_do_not_display_as_link:
-    type: boolean
-    weight: 6
-    region: top
-    label: hidden
-    settings:
-      format: custom
-      format_custom_true: 'Link not displayed on list pages'
-      format_custom_false: 'Link displayed on list pages'
-    third_party_settings:
-      ds:
-        ft:
-          id: default
-          settings:
-            lb: ''
-            lb-col: false
-            classes: {  }
   field_documents_order_number:
     label: inline
-    weight: 9
+    weight: 7
     type: string
     settings:
       link_to_entity: false
@@ -153,7 +126,7 @@ content:
     region: top
   field_event_sub_page:
     label: above
-    weight: 14
+    weight: 12
     type: entity_reference_revisions_entity_view
     settings:
       view_mode: full
@@ -162,7 +135,7 @@ content:
     region: top
   field_event_theme:
     type: entity_reference_label
-    weight: 7
+    weight: 5
     region: top
     label: inline
     settings:
@@ -178,7 +151,7 @@ content:
     third_party_settings: {  }
   field_hide_documents_menu:
     label: inline
-    weight: 12
+    weight: 10
     type: boolean
     settings:
       format: yes-no
@@ -195,7 +168,7 @@ content:
     region: top
   field_hide_programs_menu:
     label: inline
-    weight: 11
+    weight: 9
     type: boolean
     settings:
       format: yes-no
@@ -228,16 +201,24 @@ content:
             classes: {  }
   field_ipu_event_right_menu:
     label: above
-    weight: 8
+    weight: 6
     type: entity_reference_revisions_entity_view
     settings:
       view_mode: full
       link: ''
-    third_party_settings: {  }
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: Sections
+            lb-col: false
+            classes: {  }
     region: top
   field_ipu_event_section:
     label: above
-    weight: 18
+    weight: 16
     type: entity_reference_revisions_entity_view
     settings:
       view_mode: full
@@ -246,7 +227,7 @@ content:
     region: right
   field_ipu_event_session_type:
     label: above
-    weight: 19
+    weight: 17
     type: entity_reference_revisions_entity_view
     settings:
       view_mode: full
@@ -255,7 +236,7 @@ content:
     region: bottom
   field_ipu_event_sessions:
     label: above
-    weight: 15
+    weight: 13
     type: entity_reference_revisions_entity_view
     settings:
       view_mode: full
@@ -272,7 +253,7 @@ content:
     region: left
   field_ipu_event_sponsors:
     label: above
-    weight: 17
+    weight: 15
     type: entity_reference_revisions_entity_view
     settings:
       view_mode: full
@@ -281,14 +262,14 @@ content:
     region: right
   field_location:
     label: inline
-    weight: 4
+    weight: 3
     type: address_default
     settings: {  }
     third_party_settings: {  }
     region: top
   field_sponsor:
     type: entity_reference_entity_view
-    weight: 16
+    weight: 14
     region: right
     label: inline
     settings:
@@ -297,7 +278,7 @@ content:
     third_party_settings: {  }
   field_summary:
     type: smart_trim
-    weight: 5
+    weight: 4
     region: top
     label: hidden
     settings:
@@ -314,7 +295,7 @@ content:
     third_party_settings: {  }
   field_twitter_order:
     label: above
-    weight: 13
+    weight: 11
     type: string
     settings:
       link_to_entity: false
@@ -322,6 +303,8 @@ content:
     region: top
 hidden:
   field_country: true
+  field_date_accuracy: true
+  field_do_not_display_as_link: true
   field_document_show_print: true
   field_event_computed_date: true
   field_programme_show_print: true

@@ -1,0 +1,6 @@
+form {
+  input[type='text'], input[type='search'], select {
+    @extend .form-control;
+    padding: 0.125rem 0.5rem !important;
+  }
+}

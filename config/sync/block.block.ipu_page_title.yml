@@ -1,6 +1,6 @@
 uuid: 9f6a002f-b7b2-4459-b0aa-fdbcb71ad438
 langcode: en
-status: false
+status: true
 dependencies:
   theme:
     - ipu
@@ -8,8 +8,8 @@ _core:
   default_config_hash: 7rR9chwXvdM2H8OYMAYx9Zj3GGlPMrZp_M3ZA4thYTk
 id: ipu_page_title
 theme: ipu
-region: header
-weight: -10
+region: content
+weight: -16
 provider: null
 plugin: page_title_block
 settings:

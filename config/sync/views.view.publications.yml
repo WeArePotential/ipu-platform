@@ -50,14 +50,14 @@ display:
         type: views_query
         options:
           disable_sql_rewrite: false
-          distinct: false
+          distinct: true
           replica: false
           query_comment: ''
           query_tags: {  }
       exposed_form:
         type: bef
         options:
-          submit_button: Apply
+          submit_button: Find
           reset_button: false
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
@@ -73,7 +73,7 @@ display:
               autosubmit: false
               autosubmit_exclude_textfield: false
               autosubmit_hide: false
-            field_country_target_id:
+            field_theme_target_id_selective:
               bef_format: default
               more_options:
                 bef_select_all_none: false
@@ -81,7 +81,7 @@ display:
                 is_secondary: false
                 rewrite:
                   filter_rewrite_values: ''
-            field_theme_target_id:
+            field_country_target_id_selective:
               bef_format: default
               more_options:
                 bef_select_all_none: false
@@ -683,7 +683,7 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           selective_display_field: field_theme
-          selective_entity_type: ''
+          selective_entity_type: taxonomy_term
           selective_display_sort: ASC
           selective_aggregated_fields: ''
           selective_items_limit: '100'
@@ -2109,6 +2109,18 @@ display:
           plugin_id: rendered_entity
       defaults:
         fields: false
+        header: false
+      header:
+        result:
+          id: result
+          table: views
+          field: result
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          content: '@total publications'
+          plugin_id: result
     cache_metadata:
       max-age: -1
       contexts:
