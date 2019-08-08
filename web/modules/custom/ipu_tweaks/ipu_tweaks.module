@@ -278,7 +278,7 @@ function ipu_tweaks_block_access(Block $block, $operation, AccountInterface $acc
     }
     $current_url = Url::fromRoute('<current>');
     $path  = explode('/', $current_url->getInternalPath());
-    if ($path[0] == 'parliament') {
+    if ($path[0] == 'parliament' || $path[0] == 'parlement' ) {
       return AccessResult::forbidden();
     }
   }
