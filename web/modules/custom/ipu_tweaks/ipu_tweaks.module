@@ -240,3 +240,46 @@ function ipu_tweaks_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $for
   }
 }
 
+/**
+ * Hide the page title for some node types while still showing it
+ * on all other node types, and non-node pages.
+ *
+ * This is required, as hiding page title on any content types also hides on Views and other pages!
+ * See https://www.drupal.org/project/drupal/issues/2887071
+ *
+ * Implements hook_block_access().
+ */
+use Drupal\Core\Session\AccountInterface;
+use Drupal\node\NodeInterface;
+use Drupal\Core\Access\AccessResult;
+use Drupal\block\Entity\Block;
+use Drupal\Core\Url;
+
+function ipu_tweaks_block_access(Block $block, $operation, AccountInterface $account) {
+  $disallowedTypes = [
+    'article',
+    'event',
+    'ipu_event',
+    'landing_page',
+    'basic_page',
+    'page',
+    'section_page',
+    'publication',
+    'vacancy'
+  ];
+
+  if ($operation === 'view' && $block->getPluginId() == 'page_title_block') {
+    $node = \Drupal::routeMatch()->getParameter('node');
+    if ($node instanceof NodeInterface) {
+      if (in_array($node->bundle(), $disallowedTypes)) {
+        return AccessResult::forbidden();
+      }
+    }
+    $current_url = Url::fromRoute('<current>');
+    $path  = explode('/', $current_url->getInternalPath());
+    if ($path[0] == 'parliament') {
+      return AccessResult::forbidden();
+    }
+  }
+  return AccessResult::neutral();
+}

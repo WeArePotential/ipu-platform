@@ -1,0 +1,16 @@
+{#
+/**
+ * @file
+ * Template for the page title.
+ *
+ * Remove class "display-4"
+ * Add class "container"
+ */
+#}
+<div class="container">
+{{ title_prefix }}
+{% if title %}
+  <h1{{ title_attributes.addClass('') }}>{{ title }}</h1>
+{% endif %}
+{{ title_suffix }}
+</div>
