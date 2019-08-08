@@ -22660,6 +22660,7 @@ a.more-data-parline, .article__node-link a,
 }
 .view-publications.view-display-id-page_1 #views-exposed-form-publications-page-1 label {
   font-size: 0.875rem;
+  font-weight: 400;
 }
 .view-publications.view-display-id-page_1 #views-exposed-form-publications-page-1 select {
   width: auto;
