@@ -17,7 +17,7 @@ field_name: field_event_session_types
 entity_type: paragraph
 bundle: ipu_event_sessions
 label: 'Session Type'
-description: 'New session type field'
+description: 'Enter session types, separated by commas. If a session type does not exist, it will be automatically created to use next time.'
 required: false
 translatable: false
 default_value: {  }

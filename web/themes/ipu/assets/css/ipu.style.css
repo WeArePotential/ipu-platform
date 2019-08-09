@@ -22591,12 +22591,15 @@ a.more-data-parline, .article__node-link a,
 .node--type-publication.node--view-mode-highlight .publication__node-link {
   margin-top: 10px;
 }
+.node-publication .block--ipu-content {
+  margin-bottom: 20px;
+}
 .node-publication .page__content .ds-2col-stacked-right > div {
   border-bottom: 1px solid #cccccc;
   padding: 8px 0;
 }
 .node-publication .page__content .ds-2col-stacked-right > div .field__label {
-  width: 40%;
+  width: 50%;
 }
 .node-publication .page__content .ds-2col-stacked-right > div .field__label .field__label__suffix {
   display: none;
@@ -22608,7 +22611,7 @@ a.more-data-parline, .article__node-link a,
   font-weight: 400;
 }
 .node-publication .page__content .ds-2col-stacked-right > div .field__item {
-  width: 60%;
+  width: 50%;
 }
 .node-publication .page__content .ds-2col-stacked-right > div .field__items {
   width: 100%;

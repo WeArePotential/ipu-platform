@@ -1144,6 +1144,9 @@ a.btn {
 }
 
 .node-publication {
+  .block--ipu-content {
+    margin-bottom: 20px;
+  }
   .page__content {
     // .col-md-5 is the right-hand column
     .ds-2col-stacked-right {
@@ -1151,7 +1154,7 @@ a.btn {
         border-bottom: 1px solid $ipu-light-grey;
         padding: 8px 0;
         .field__label {
-          width: 40%;
+          width: 50%;
           .field__label__suffix {
             display: none;
           }
@@ -1163,7 +1166,7 @@ a.btn {
           font-weight: $font-weight-normal;
         }
         .field__item {
-          width: 60%;
+          width: 50%;
         }
         .field__items {
           width: 100%;

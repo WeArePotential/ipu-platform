@@ -237,7 +237,7 @@ function ipu_tweaks_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $for
   switch ($form_id) {
     case 'node_ipu_event_edit_form':
       $form['field_event_computed_date']['#disabled'] = 'disabled';
-      break;
+      $form['ipu_event_session_type']['#disabled'] = 'disabled';
   }
 }
 

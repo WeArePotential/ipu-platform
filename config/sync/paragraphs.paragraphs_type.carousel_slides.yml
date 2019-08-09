@@ -5,5 +5,5 @@ dependencies: {  }
 id: carousel_slides
 label: 'Carousel slides'
 icon_uuid: null
-description: ''
+description: 'Carousel with bespoke slides, containing title and image.'
 behavior_plugins: {  }

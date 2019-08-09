@@ -5,7 +5,7 @@ dependencies:
   content:
     - 'file:image:f0b42bbf-896f-4744-9a31-95e6c536847b'
 id: carousel
-label: Carousel
+label: 'Carousel content'
 icon_uuid: f0b42bbf-896f-4744-9a31-95e6c536847b
-description: 'Carousel items (for landing pages.) Up to 5 items will be displayed.'
+description: 'Carousel items (for landing pages.) linked to content. Up to 5 items will be displayed.'
 behavior_plugins: {  }

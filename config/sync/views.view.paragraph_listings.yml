@@ -6,6 +6,7 @@ dependencies:
     - field.storage.paragraph.field_event_document
     - field.storage.paragraph.field_event_document_description
     - field.storage.paragraph.field_event_document_title
+    - field.storage.paragraph.field_event_session_types
     - field.storage.paragraph.field_fc_original_event_document
     - field.storage.paragraph.field_fc_original_reference
     - field.storage.paragraph.field_fc_session_closed_session
@@ -38,7 +39,6 @@ dependencies:
     - paragraphs.paragraphs_type.ipu_event_document
     - paragraphs.paragraphs_type.ipu_event_document_widget
     - paragraphs.paragraphs_type.ipu_event_section
-    - paragraphs.paragraphs_type.ipu_event_session_type
     - paragraphs.paragraphs_type.ipu_event_sessions
     - paragraphs.paragraphs_type.sections
   module:
@@ -91,7 +91,7 @@ display:
       pager:
         type: full
         options:
-          items_per_page: 250
+          items_per_page: 100
           offset: 0
           id: 0
           total_pages: null
@@ -4751,7 +4751,7 @@ display:
     display_options:
       display_extenders:
         metatag_display_extender: {  }
-      path: paragraph-listings/event-session
+      path: paragraph-listings/event-session-type
       display_description: ''
       filters:
         type:
@@ -4763,7 +4763,7 @@ display:
           admin_label: ''
           operator: in
           value:
-            ipu_event_session_type: ipu_event_session_type
+            ipu_event_sessions: ipu_event_sessions
           group: 1
           exposed: false
           expose:
@@ -5243,6 +5243,258 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
+        field_fc_sessions_session_title:
+          id: field_fc_sessions_session_title
+          table: paragraph__field_fc_sessions_session_title
+          field: field_fc_sessions_session_title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: 'Session Title'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_fc_session_type_title_1:
+          id: field_fc_session_type_title_1
+          table: paragraph__field_fc_session_type_title
+          field: field_fc_session_type_title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: Title
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_fc_session_types:
+          id: field_fc_session_types
+          table: paragraph__field_fc_session_types
+          field: field_fc_session_types
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: 'Session Type'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_revisions_entity_view
+          settings:
+            view_mode: default
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_event_session_types:
+          id: field_event_session_types
+          table: paragraph__field_event_session_types
+          field: field_event_session_types
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: 'Session Type'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: true
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
       title: 'Paragraph listings - Event session'
       sorts:
         field_fc_session_type_title_value:
@@ -5279,7 +5531,10 @@ display:
         - 'languages:language_interface'
         - url.query_args
       tags:
+        - 'config:field.storage.paragraph.field_event_session_types'
         - 'config:field.storage.paragraph.field_fc_original_reference'
         - 'config:field.storage.paragraph.field_fc_session_type_title'
+        - 'config:field.storage.paragraph.field_fc_session_types'
+        - 'config:field.storage.paragraph.field_fc_sessions_session_title'
         - 'config:field.storage.paragraph.field_ie_fc_title'
         - 'config:field.storage.paragraph.field_section_title'

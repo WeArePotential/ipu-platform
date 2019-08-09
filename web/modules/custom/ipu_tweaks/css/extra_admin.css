@@ -14,3 +14,11 @@
 #field-event-sub-page-values > th {
   background-color: rgba(0, 168, 180, 0.3);
 }
+
+/* Hide old session types on node edit forms */
+.node-ipu-event-edit-form .field--name-field-fc-session-types,
+.node-ipu-event-edit-form .field--name-field-ipu-event-session-type,
+.node-ipu-event-form .field--name-field-fc-session-types,
+.node-ipu-event-form .field--name-field-ipu-event-session-type{
+  display: none;
+}
