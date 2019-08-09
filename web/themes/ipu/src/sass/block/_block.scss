@@ -1162,9 +1162,11 @@ a.btn {
         .field__item {
           font-weight: $font-weight-normal;
         }
-        .field__item,
-        .field__items {
+        .field__item {
           width: 60%;
+        }
+        .field__items {
+          width: 100%;
         }
         .field__items > .field__item {
           width: 100%;
@@ -1196,6 +1198,9 @@ a.btn {
             }
           }
         }
+      }
+      .publication__document > .field__label {
+        @extend .sr-only;
       }
     }
     .publication-body-and-image {

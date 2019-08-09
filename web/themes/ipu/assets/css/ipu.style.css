@@ -10758,7 +10758,7 @@ button.bg-tertiary:focus {
   }
 }
 
-.sr-only {
+.sr-only, .node-publication .page__content .ds-2col-stacked-right .publication__document > .field__label {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -19512,7 +19512,7 @@ readers do not read off random characters that represent icons */
   content: "\F63F";
 }
 
-.sr-only {
+.sr-only, .node-publication .page__content .ds-2col-stacked-right .publication__document > .field__label {
   border: 0;
   clip: rect(0, 0, 0, 0);
   height: 1px;
@@ -22607,9 +22607,11 @@ a.more-data-parline, .article__node-link a,
 .node-publication .page__content .ds-2col-stacked-right > div .field__item {
   font-weight: 400;
 }
-.node-publication .page__content .ds-2col-stacked-right > div .field__item,
-.node-publication .page__content .ds-2col-stacked-right > div .field__items {
+.node-publication .page__content .ds-2col-stacked-right > div .field__item {
   width: 60%;
+}
+.node-publication .page__content .ds-2col-stacked-right > div .field__items {
+  width: 100%;
 }
 .node-publication .page__content .ds-2col-stacked-right > div .field__items > .field__item {
   width: 100%;
