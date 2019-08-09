@@ -17,10 +17,13 @@ field_name: field_publication_date
 entity_type: node
 bundle: publication
 label: 'Year of publication'
-description: ''
+description: 'Enter the date of publication, if known, otherwise 01/01/year. Only the year is displayed to users.'
 required: false
 translatable: false
-default_value: {  }
+default_value:
+  -
+    default_date_type: now
+    default_date: now
 default_value_callback: ''
 settings: {  }
 field_type: datetime

@@ -1121,6 +1121,9 @@ a.btn {
       padding-top: 0;
     }
   }
+  .publication__date.date {
+    float: right;
+  }
   .publication__field-media-image {
     @extend .col-lg-5;
     @extend .no-gutters;

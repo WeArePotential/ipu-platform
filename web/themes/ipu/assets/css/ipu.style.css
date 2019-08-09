@@ -22582,6 +22582,9 @@ a.more-data-parline, .article__node-link a,
 .node--type-publication.node--view-mode-highlight .group-content-wrapper .bs-region--main, .node--type-publication.node--view-mode-highlight .group-content-wrapper .group-header {
   padding-top: 0;
 }
+.node--type-publication.node--view-mode-highlight .publication__date.date {
+  float: right;
+}
 .node--type-publication.node--view-mode-highlight .group-content {
   background-color: #ffffff;
 }
