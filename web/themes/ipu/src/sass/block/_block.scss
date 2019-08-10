@@ -1310,7 +1310,8 @@ a.btn {
   &.viewfield--view__events__block,
   &.viewfield--view__events__block_upcoming,
   &.viewfield--view__events__block_past,
-  &.viewfield--view__events__assembly_listing {
+  &.viewfield--view__events__assembly_listing,
+  &.viewfield--view__events__multiple_ids {
     .node--type-ipu-event {
       margin-top: 20px;
       border: 1px solid $ipu-light-grey;
