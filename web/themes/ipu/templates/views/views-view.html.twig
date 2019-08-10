@@ -60,7 +60,7 @@
     {{ attachment_before }}
 
     {% if rows -%}
-        <div class="views-inner">{{ rows }}</div>
+        {{ rows }}
     {% elseif empty -%}
         {{ empty }}
     {% endif %}
