@@ -26,7 +26,12 @@
           {% block branding %}
             {% if page.navbar_branding %}
               <div class="text-left">
-                <a href="/"><img class="logo" src="{{ base_path ~ directory }}/assets/img/IPU-logo.svg" /></a>
+                {%  if language_id == 'en' %}
+                  {% set logo = 'IPU-logo-130-EN.png' %}
+                {% else %}
+                  {% set logo = 'IPU-logo-130-FR.png' %}
+                {% endif %}
+                <a href="/"><img class="logo" src="{{ base_path ~ directory ~ '/assets/img/' ~ logo }}" /></a>
                 {# page.navbar_branding #}
               </div>
             {% endif %}
