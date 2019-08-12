@@ -1,0 +1,8 @@
+uuid: f8d4ae17-534a-4939-9849-6c27a43e6f45
+langcode: en
+status: true
+dependencies: {  }
+name: 'Geographic region'
+vid: geographic_region
+description: 'Vocabulary for organising countries into regions'
+weight: 0

@@ -1,0 +1,19 @@
+uuid: 400e7fe0-1b06-4f3e-8bb4-70259373e7d6
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.field_geographic_region
+field_name: field_geographic_region
+entity_type: taxonomy_term
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.taxonomy_term.country.field_geographic_region
     - field.field.taxonomy_term.country.field_geopolitical_group
     - field.field.taxonomy_term.country.field_human_rights_cases
     - field.field.taxonomy_term.country.field_ipu_member
@@ -12,6 +13,7 @@ dependencies:
     - field.field.taxonomy_term.country.field_principles_signatory
     - taxonomy.vocabulary.country
   module:
+    - chosen_field
     - field_layout
     - layout_discovery
     - path
@@ -33,6 +35,12 @@ content:
       rows: 3
       placeholder: ''
     third_party_settings: {  }
+  field_geographic_region:
+    weight: 9
+    settings: {  }
+    third_party_settings: {  }
+    type: chosen_select
+    region: content
   field_geopolitical_group:
     weight: 8
     settings: {  }
@@ -70,7 +78,7 @@ content:
     type: string_textfield
     region: content
   field_no_parliament_page:
-    weight: 11
+    weight: 12
     settings:
       display_label: true
     third_party_settings: {  }
@@ -100,12 +108,12 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 9
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
   translation:
-    weight: 10
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }

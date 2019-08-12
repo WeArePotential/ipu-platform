@@ -724,7 +724,7 @@ pre code {
 .viewfield--view__sub_content .field-content-section .paragraph--type--sections .field--type-viewfield .views-element-container > div .views-row,
 .field-content-section .paragraph--type--sections .field--type-viewfield .viewfield--view__sub_content .views-element-container > div .views-row,
 .viewfield--view__sub_content .node-article .group-related > div .field__item .views-element-container > div .views-row,
-.node-article .group-related > div .field__item .viewfield--view__sub_content .views-element-container > div .views-row, .field-content-section .paragraph--type--sections .field--type-viewfield .events-card .views-row, .col-md-5, .col-md-4, .ultimenu__item-2 .ultimenu__flyout .block, .ultimenu__item-1 .ultimenu__flyout > .region-inner > .block, .ultimenu__flyout .region-inner .block--ipucontentblock, .field-committee-members .field__items > .field__item, .in-the-section .views-row, .view-publications.view-display-id-page_1 .views-inner .views-row, .field__item__paragraph__highlights .paragraph--type--highlights .field__item, .field-content-section .paragraph--type--sections .field--type-viewfield .views-row, .col-md-3, .page__footer .region-inner > .block, .col-md-2, .col-md-1, .col-sm,
+.node-article .group-related > div .field__item .viewfield--view__sub_content .views-element-container > div .views-row, .col-md-5, .col-md-4, .ultimenu__item-2 .ultimenu__flyout .block, .ultimenu__item-1 .ultimenu__flyout > .region-inner > .block, .ultimenu__flyout .region-inner .block--ipucontentblock, .field-committee-members .field__items > .field__item, .in-the-section .views-row, .view-publications.view-display-id-page_1 .views-inner .views-row, .field__item__paragraph__highlights .paragraph--type--highlights .field__item, .field-content-section .paragraph--type--sections .field--type-viewfield .views-row, .col-md-3, .page__footer .region-inner > .block, .col-md-2, .col-md-1, .col-sm,
 .col-sm-auto, .col-sm-12, .col-sm-11, .col-sm-10, .col-sm-9, .col-sm-8, .node-landing_page:not(.node-172) .group-header .landing-page__body, .col-sm-7, .col-sm-6, .view-publications.view-display-id-page_1 .views-inner .views-row, .field__item__paragraph__highlights .paragraph--type--highlights .field__item, .col-sm-5, .col-sm-4, .col-sm-3, .col-sm-2, .col-sm-1, .col,
 .col-auto, .col-12, .node-landing_page:not(.node-172) .group-header .landing-page__node-title.theme-landing-page .field-node-title-wrapper .field-node-title-inner, .col-11, .col-10, .col-9, .col-8, .col-7, .col-6, .col-5, .col-4, .col-3, .col-2, .col-1 {
   position: relative;
@@ -1145,7 +1145,7 @@ pre code {
 .viewfield--view__sub_content .page__footer .region-inner .views-row,
 .page__footer .viewfield--view__sub_content .region-inner .views-row,
 .viewfield--view__sub_content .field-content-section .paragraph--type--sections .field--type-viewfield .views-element-container > div .views-row,
-.field-content-section .paragraph--type--sections .field--type-viewfield .viewfield--view__sub_content .views-element-container > div .views-row, .node-article .group-related > div .field__item .views-element-container > div .views-row, .field-content-section .paragraph--type--sections .field--type-viewfield .events-card .views-row {
+.field-content-section .paragraph--type--sections .field--type-viewfield .viewfield--view__sub_content .views-element-container > div .views-row, .node-article .group-related > div .field__item .views-element-container > div .views-row {
     flex: 0 0 50%;
     max-width: 50%;
   }
@@ -19980,6 +19980,9 @@ https://www.drupal.org/project/drupal/issues/2929888
 }
 
 /* Generic layout */
+.field-content-section .paragraph--type--sections .field--type-viewfield {
+  /* Fixed events? */
+}
 .paragraph--type--sections {
   margin-top: 10px;
 }
