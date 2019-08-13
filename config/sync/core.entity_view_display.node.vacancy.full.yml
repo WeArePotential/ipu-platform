@@ -1,8 +1,9 @@
-uuid: 9dfd3092-3607-4989-8f72-d02a9926aa02
+uuid: c471899e-c714-47a8-836e-1bf6408b72ff
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.full
     - field.field.node.vacancy.body
     - field.field.node.vacancy.field_contact_ipu
     - field.field.node.vacancy.field_deadline
@@ -15,19 +16,18 @@ dependencies:
   module:
     - address
     - datetime
+    - ds
     - field_group
+    - responsive_image
+    - taxonomy
     - text
     - user
 third_party_settings:
   field_group:
     group_details:
-      children:
-        - field_deadline
-        - field_home_based
-        - field_vacancy_location
-        - field_vacancy_type
+      children: {  }
       parent_name: ''
-      weight: 0
+      weight: 11
       label: Details
       format_settings:
         formatter: collapsible
@@ -42,22 +42,46 @@ third_party_settings:
         attributes: ''
         required_fields: 1
       format_type: accordion
-      region: content
-id: node.vacancy.default
+      region: hidden
+  ds:
+    layout:
+      id: layout_onecol
+      library: layout_discovery/onecol
+      disable_css: false
+      entity_classes: all_classes
+      settings: {  }
+    regions:
+      content:
+        - field_vacancy_type
+        - node_title
+        - field_deadline
+        - field_home_based
+        - field_vacancy_location
+        - field_media_image
+        - body
+        - field_how_to_apply
+        - links
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 1
+        label: hidden
+        formatter: default
+id: node.vacancy.full
 targetEntityType: node
 bundle: vacancy
-mode: default
+mode: full
 content:
   body:
     label: hidden
-    weight: 1
+    weight: 6
     type: text_default
     settings: {  }
     third_party_settings: {  }
     region: content
   field_deadline:
     label: inline
-    weight: 8
+    weight: 2
     type: datetime_default
     settings:
       format_type: medium
@@ -66,7 +90,7 @@ content:
     region: content
   field_home_based:
     label: inline
-    weight: 9
+    weight: 3
     type: boolean
     settings:
       format: default
@@ -76,25 +100,39 @@ content:
     region: content
   field_how_to_apply:
     label: above
-    weight: 2
+    weight: 7
     type: text_default
     settings: {  }
     third_party_settings: {  }
     region: content
+  field_media_image:
+    type: responsive_image
+    weight: 5
+    region: content
+    label: hidden
+    settings:
+      responsive_image_style: ''
+      image_link: ''
+    third_party_settings: {  }
   field_vacancy_location:
     label: inline
-    weight: 10
+    weight: 4
     type: address_default
     settings: {  }
     third_party_settings: {  }
     region: content
+  field_vacancy_type:
+    type: entity_reference_rss_category
+    weight: 0
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
   links:
-    weight: 3
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
   field_contact_ipu: true
-  field_media_image: true
-  field_vacancy_type: true
   langcode: true

@@ -14,32 +14,117 @@ dependencies:
     - field.field.node.vacancy.field_vacancy_type
     - node.type.vacancy
   module:
-    - text
+    - address
+    - datetime
+    - ds
+    - smart_trim
     - user
+third_party_settings:
+  ds:
+    layout:
+      id: layout_onecol
+      library: layout_discovery/onecol
+      disable_css: false
+      entity_classes: all_classes
+      settings: {  }
+    regions:
+      content:
+        - field_vacancy_type
+        - node_title
+        - body
+        - field_deadline
+        - field_home_based
+        - field_vacancy_location
+        - node_link
+    fields:
+      node_link:
+        plugin_id: node_link
+        weight: 6
+        label: hidden
+        formatter: default
+      node_title:
+        plugin_id: node_title
+        weight: 1
+        label: hidden
+        formatter: default
+        settings:
+          link: true
+          wrapper: h3
+          class: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
 id: node.vacancy.teaser
 targetEntityType: node
 bundle: vacancy
 mode: teaser
 content:
   body:
-    label: hidden
-    weight: 1
-    type: text_summary_or_trimmed
-    settings:
-      trim_length: 600
-    third_party_settings: {  }
+    type: smart_trim
+    weight: 2
     region: content
-  links:
-    weight: 100
+    label: hidden
+    settings:
+      trim_length: 40
+      trim_type: words
+      trim_suffix: ''
+      wrap_class: trimmed
+      more_text: More
+      more_class: more-link
+      summary_handler: full
+      trim_options:
+        text: true
+        trim_zero: false
+      wrap_output: false
+      more_link: false
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+  field_deadline:
+    type: datetime_default
+    weight: 3
+    region: content
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+  field_home_based:
+    type: boolean
+    weight: 4
+    region: content
+    label: inline
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+  field_vacancy_location:
+    type: address_default
+    weight: 5
+    region: content
+    label: inline
     settings: {  }
     third_party_settings: {  }
+  field_vacancy_type:
+    type: entity_reference_label
+    weight: 0
     region: content
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
 hidden:
   field_contact_ipu: true
-  field_deadline: true
-  field_home_based: true
   field_how_to_apply: true
   field_media_image: true
-  field_vacancy_location: true
-  field_vacancy_type: true
   langcode: true
+  links: true
