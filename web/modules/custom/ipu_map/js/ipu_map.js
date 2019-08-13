@@ -29,6 +29,7 @@
                     iso_code_for_parliament = data[index].field_iso_code_for_parliament;
                 }
                 var colour = ((member) ? '#00A6B6' : '#6F7376');
+                colour = ((no_parliament_page) ? '#85edfc' : colour);
                 var attr = {
                     name: data[index].name,
                     ipu_member: member,

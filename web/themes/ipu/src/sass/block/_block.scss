@@ -1464,7 +1464,17 @@ a.btn {
     border-bottom: 1px solid $secondary;
     font-weight: $font-weight-normal !important;
   }
+  .document__body {
+    font-size: $font-size-sm;
+    line-height: 1rem;
+    margin-left: 16px;
+  }
+
   .field__item .related-documents__field-external-link {
+    border-bottom: 1px solid $ipu-very-light-grey;
+    @extend .col-12;
+    padding-top: 4px;
+    padding-bottom: 4px;
     a {
       display: flex;
       font-weight: $font-weight-normal;
@@ -1522,6 +1532,7 @@ a.btn {
     .file-size {
       white-space: nowrap;
       font-size: $font-size-sm;
+      line-height: 1.2rem;
       padding: 0 0 0 8px;
       align-self: end;
     }
