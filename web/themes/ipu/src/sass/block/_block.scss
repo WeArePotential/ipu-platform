@@ -1559,9 +1559,15 @@ a.btn {
   }
 }
 
+/* Just in case there is some floated content in a para */
+.paragraph--type--sections:after {
+  content: '';
+  display: table;
+  clear: both;
+}
 
 /* All 'Sections' paras on landing pages are bounded */
-.node-landing_page .landing-page__field-content-section .paragraph--type--sections {
+.node-landing_page .landing-page__field-content-section .p  aragraph--type--sections {
   @extend .container;
 }
 .node-landing_page:not(.node-172) {
