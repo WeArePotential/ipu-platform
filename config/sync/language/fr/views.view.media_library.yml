@@ -37,6 +37,9 @@ display:
             title: Tout
   widget_table:
     display_options:
+      fields:
+        thumbnail__target_id:
+          label: Vignette
       arguments:
         bundle:
           exception:

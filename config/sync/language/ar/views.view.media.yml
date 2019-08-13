@@ -14,6 +14,8 @@ display:
           expose:
             items_per_page_options_all_label: '- الكل -'
       fields:
+        thumbnail__target_id:
+          label: 'النسخة المصغرة'
         bundle:
           label: النوع
         status:

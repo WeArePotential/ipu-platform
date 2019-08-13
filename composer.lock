@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d6dd4cdebf204c252969e62c78ed9e78",
+    "content-hash": "40369555a8c992282a8c89ccb8e9aa38",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -3592,7 +3592,7 @@
             "version": "8.3.5",
             "source": {
                 "type": "git",
-                "url": "https://git.drupal.org/project/coder.git",
+                "url": "https://git.drupalcode.org/project/coder.git",
                 "reference": "35277fc8675b6a2cbb194f8880145a9c85c845c4"
             },
             "require": {
@@ -8002,7 +8002,7 @@
                     }
                 },
                 "patches_applied": {
-                    "Follow active trail": "https://www.drupal.org/files/issues/2018-08-08/menu_block-follow-2756675-55.patch"
+                    "Recognise don't need to show menu when not in active trail": "https://www.drupal.org/files/issues/2018-05-02/menu_block_follow-2756675-45.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -9604,6 +9604,60 @@
             "homepage": "https://www.drupal.org/project/shield",
             "support": {
                 "source": "https://git.drupalcode.org/project/shield"
+            }
+        },
+        {
+            "name": "drupal/similarterms",
+            "version": "1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/similarterms.git",
+                "reference": "8.x-1.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/similarterms-8.x-1.3.zip",
+                "reference": "8.x-1.3",
+                "shasum": "46f2c36340e3bb2c40a250ff3a3de29947cdd609"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.3",
+                    "datestamp": "1469824139",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                },
+                "patches_applied": {
+                    "PHP fatal error, SimilarTermsArgument::query() must be compatible with NumericArgument": "https://www.drupal.org/files/issues/query_4.patch"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "rmiddle",
+                    "homepage": "https://www.drupal.org/user/192183"
+                },
+                {
+                    "name": "takim",
+                    "homepage": "https://www.drupal.org/user/252386"
+                }
+            ],
+            "description": "Use Views to show similar content based on taxonomy terms",
+            "homepage": "https://www.drupal.org/project/similarterms",
+            "support": {
+                "source": "https://git.drupalcode.org/project/similarterms"
             }
         },
         {

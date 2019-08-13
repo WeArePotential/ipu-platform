@@ -37,6 +37,9 @@ display:
             title: Todo(s)
   widget_table:
     display_options:
+      fields:
+        thumbnail__target_id:
+          label: Miniatura
       arguments:
         bundle:
           exception:

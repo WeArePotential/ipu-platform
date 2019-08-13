@@ -872,7 +872,6 @@ display:
     cache_metadata:
       max-age: -1
       contexts:
-        - 'languages:language_content'
         - 'languages:language_interface'
         - url
         - url.query_args
@@ -933,7 +932,7 @@ display:
   multiple_ids:
     display_plugin: block
     id: multiple_ids
-    display_title: 'latest4[#id1,#id2..]'
+    display_title: 'Latest 3'
     position: 3
     display_options:
       display_extenders:
@@ -1010,7 +1009,7 @@ display:
       pager:
         type: some
         options:
-          items_per_page: 4
+          items_per_page: 3
           offset: 0
       link_display: page_1
       link_url: ''
@@ -1597,10 +1596,10 @@ display:
           view_mode: highlight
           entity_type: node
           plugin_id: rendered_entity
+      block_description: 'Latest 3'
     cache_metadata:
       max-age: -1
       contexts:
-        - 'languages:language_content'
         - 'languages:language_interface'
         - url
         - 'user.node_grants:view'
@@ -2171,7 +2170,6 @@ display:
     cache_metadata:
       max-age: -1
       contexts:
-        - 'languages:language_content'
         - 'languages:language_interface'
         - url
         - url.query_args

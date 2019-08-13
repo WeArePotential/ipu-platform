@@ -33,6 +33,9 @@ display:
             title: الكل
   widget_table:
     display_options:
+      fields:
+        thumbnail__target_id:
+          label: 'النسخة المصغرة'
       arguments:
         bundle:
           exception:

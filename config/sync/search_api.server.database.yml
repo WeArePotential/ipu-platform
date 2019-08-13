@@ -1,0 +1,17 @@
+uuid: 2f1e2042-5b77-43df-84e8-d2dc7926f585
+langcode: en
+status: true
+dependencies:
+  module:
+    - search_api_db
+id: database
+name: Database
+description: 'Use Drupal core database as a search engine.'
+backend: search_api_db
+backend_config:
+  database: 'default:default'
+  min_chars: 3
+  matching: partial
+  autocomplete:
+    suggest_suffix: true
+    suggest_words: true

@@ -2,17 +2,18 @@ id: related_news_and_stories
 label: 'Related news and stories'
 ui_limit: article|full
 properties:
-  block: 'views_block:articles-block_1'
+  block: 'views_block:articles-related_news'
   use_block_title: true
   add_block_wrappers: false
   config:
-    id: 'views_block:articles-block_1'
+    id: 'views_block:articles-related_news'
     label: ''
     provider: views
     label_display: visible
     views_label: ''
     items_per_page: none
-    context_mapping: {  }
+    context_mapping:
+      tid: '@taxonomy_term.taxonomy_term_route_context:taxonomy_term'
 type: block
 type_label: 'Block field'
 entities:

@@ -1476,7 +1476,7 @@ display:
   block:
     display_plugin: block
     id: block
-    display_title: 'Upcoming and previous'
+    display_title: 'Upcoming and previous page'
     position: 2
     display_options:
       display_extenders:
@@ -2415,6 +2415,7 @@ display:
           field_api_classes: false
           plugin_id: field
       group_by: false
+      block_description: 'Upcoming and previous page'
     cache_metadata:
       max-age: -1
       contexts:
@@ -4234,7 +4235,7 @@ display:
   latest_2_events_country:
     display_plugin: block
     id: latest_2_events_country
-    display_title: latest2_country
+    display_title: 'Latest country'
     position: 7
     display_options:
       display_extenders:
@@ -4426,12 +4427,12 @@ display:
   latest_assembly_for_menu:
     display_plugin: block
     id: latest_assembly_for_menu
-    display_title: 'Latest promoted assembly'
+    display_title: 'Latest promoted event'
     position: 1
     display_options:
       display_extenders:
         metatag_display_extender: {  }
-      display_description: 'Most recent assembly event marked as promoted'
+      display_description: 'Most recent event marked as promoted'
       pager:
         type: some
         options:
@@ -4599,7 +4600,7 @@ display:
         operator: AND
         groups:
           1: AND
-      block_description: 'Latest promoted assembly'
+      block_description: 'Latest promoted event'
       allow:
         items_per_page: false
     cache_metadata:
@@ -4615,7 +4616,7 @@ display:
   multiple_ids:
     display_plugin: block
     id: multiple_ids
-    display_title: 'Upcoming and previous filtered #4'
+    display_title: 'Upcoming and past 3'
     position: 2
     display_options:
       display_extenders:
@@ -5463,7 +5464,7 @@ display:
       pager:
         type: some
         options:
-          items_per_page: 4
+          items_per_page: 3
           offset: 0
     cache_metadata:
       max-age: -1
@@ -5531,6 +5532,7 @@ display:
       display_extenders:
         metatag_display_extender: {  }
       display_description: ''
+      enabled: false
     cache_metadata:
       max-age: -1
       contexts:
@@ -5754,6 +5756,7 @@ display:
             group_field_function: ''
           advanced_fieldset:
             advanced: false
+      enabled: false
     cache_metadata:
       max-age: -1
       contexts:
@@ -6505,6 +6508,7 @@ display:
           view_mode: teaser
           entity_type: node
           plugin_id: rendered_entity
+      enabled: false
     cache_metadata:
       max-age: -1
       contexts:
