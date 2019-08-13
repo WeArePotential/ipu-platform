@@ -1,0 +1,24 @@
+Index: web/modules/contrib/viewfield/src/Plugin/Field/FieldFormatter/ViewfieldFormatterTitle.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- web/modules/contrib/viewfield/src/Plugin/Field/FieldFormatter/ViewfieldFormatterTitle.php	(date 1565702143023)
++++ web/modules/contrib/viewfield/src/Plugin/Field/FieldFormatter/ViewfieldFormatterTitle.php	(date 1565702143023)
+@@ -27,6 +27,16 @@
+       $display_id = $value['display_id'];
+       $arguments = $value['arguments'];
+       $view = Views::getView($target_id);
++      if (isNull($view)) {
++        $title = t('Missing or empty view');
++        $elements[$delta] = [
++          '#theme' => 'item_list',
++          '#items' => [
++            $this->t('Missing or broken view/display'),
++          ],
++        ];
++        continue;
++      };
+       $title = $view->getTitle();
+       $display = $view->displayHandlers->get($display_id);
+       if (!$display) {

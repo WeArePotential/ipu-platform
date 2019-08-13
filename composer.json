@@ -215,7 +215,11 @@
             },
             "drupal/similarterms": {
                 "PHP fatal error, SimilarTermsArgument::query() must be compatible with NumericArgument": "https://www.drupal.org/files/issues/query_4.patch"
+            },
+            "drupal/viewfield": {
+                "Display missing view instead of title in viewfield": "web/patches/missing_view_in_viewfield.patch"
             }
+
         },
         "drupal-scaffold": {
             "initial": {
