@@ -125,6 +125,7 @@
         "drupal/twig_tweak": "^2.4",
         "drupal/twitter_block": "^2.1",
         "drupal/ultimenu": "^2.0",
+        "drupal/video_embed_field": "^2.2",
         "drupal/viewfield": "^3.0@alpha",
         "drupal/views_bootstrap": "^4.1",
         "drupal/views_bulk_operations": "^2.5",
