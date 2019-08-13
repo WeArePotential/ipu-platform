@@ -19,7 +19,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 -          ],
 -        ];
 -        continue;
-+      if (isNull($view)) {
++      if ($view == NULL) {
 +        $title = t('Missing or empty view');
 +        $elements[$delta] = [
 +          '#theme' => 'item_list',
