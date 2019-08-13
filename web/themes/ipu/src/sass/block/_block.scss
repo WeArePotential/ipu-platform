@@ -182,6 +182,36 @@ a {
   display: inline-block;
 }
 
+.block--languageswitchercontent {
+  margin-left: 20px;
+  .es, .ar {
+    display: none;
+  }
+  a:hover {
+    color: #fff !important;
+  }
+  a:hover:before {
+    color: $tertiary;
+  }
+  a:before {
+    font-family: "Font Awesome 5 Free", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 900;
+    line-height: 1;
+    content: '\f111'; /* f192 = doughnut */
+    margin-right: 4px;
+  }
+  a.is-active {
+    font-weight: $font-weight-bold;
+    &:before {
+      color: $tertiary;
+    }
+  }
+}
 // Font awesome icons
 .example-download,
 #branding .form-actions {

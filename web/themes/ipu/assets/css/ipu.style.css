@@ -19780,6 +19780,38 @@ a {
   display: inline-block;
 }
 
+.block--languageswitchercontent {
+  margin-left: 20px;
+}
+.block--languageswitchercontent .es, .block--languageswitchercontent .ar {
+  display: none;
+}
+.block--languageswitchercontent a:hover {
+  color: #fff !important;
+}
+.block--languageswitchercontent a:hover:before {
+  color: #e98300;
+}
+.block--languageswitchercontent a:before {
+  font-family: "Font Awesome 5 Free", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 900;
+  line-height: 1;
+  content: "\F111";
+  /* f192 = doughnut */
+  margin-right: 4px;
+}
+.block--languageswitchercontent a.is-active {
+  font-weight: 500;
+}
+.block--languageswitchercontent a.is-active:before {
+  color: #e98300;
+}
+
 .example-download::after, .example-download::before,
 #branding .form-actions::after,
 #branding .form-actions::before {

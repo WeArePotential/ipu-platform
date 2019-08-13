@@ -23,12 +23,15 @@ settings:
   label: 'Geo-political groups'
   provider: menu_block
   label_display: visible
-  follow: 0
-  follow_parent: child
   level: 1
+  custom_level: 1
+  hide_children: 0
   depth: 1
   expand: 0
+  expand_only_active_trails: 0
   parent: 'main:menu_link_content:4757d068-316e-4037-9af9-5ab9185972d7'
   suggestion: main
+  follow: 0
+  follow_parent: child
   render_parent: false
 visibility: {  }

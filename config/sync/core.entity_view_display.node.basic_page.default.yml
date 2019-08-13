@@ -87,11 +87,11 @@ third_party_settings:
         - field_committee_members
         - field_sections
       right:
-        - 'dynamic_block_field:node-top_level_menu_item'
         - field_media_image
+        - 'dynamic_block_field:node-top_level_menu_item'
         - 'dynamic_block_field:node-menu_block'
-        - 'dynamic_block_field:node-contextual_menu_event_navigation'
         - field_caption
+        - 'dynamic_block_field:node-contextual_menu_event_navigation'
         - group_image
         - field_related_content
         - field_related_documents
@@ -101,6 +101,12 @@ third_party_settings:
         weight: 6
         label: hidden
         formatter: default
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
       'dynamic_block_field:node-menu_block':
         plugin_id: 'dynamic_block_field:node-menu_block'
         weight: 5

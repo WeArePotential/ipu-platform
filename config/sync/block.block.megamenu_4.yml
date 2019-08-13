@@ -19,12 +19,15 @@ settings:
   label: 'Our impact'
   provider: menu_block
   label_display: visible
-  follow: 0
-  follow_parent: child
   level: 1
+  custom_level: 1
+  hide_children: 0
   depth: 1
   expand: 0
+  expand_only_active_trails: 0
   parent: 'mega-menu:menu_link_content:7deea3a9-0284-4575-91a7-04bc620a83c0'
   suggestion: mega_menu
+  follow: 0
+  follow_parent: child
   render_parent: false
 visibility: {  }

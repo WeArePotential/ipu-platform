@@ -156,6 +156,7 @@ module:
   serialization: 0
   shield: 0
   shortcut: 0
+  similarterms: 0
   site_status_message: 0
   sitemap: 0
   smart_trim: 0
