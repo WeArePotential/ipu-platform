@@ -3,12 +3,22 @@ IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
---- web/modules/contrib/viewfield/src/Plugin/Field/FieldFormatter/ViewfieldFormatterTitle.php	(date 1565702143023)
-+++ web/modules/contrib/viewfield/src/Plugin/Field/FieldFormatter/ViewfieldFormatterTitle.php	(date 1565702143023)
-@@ -27,6 +27,16 @@
+--- web/modules/contrib/viewfield/src/Plugin/Field/FieldFormatter/ViewfieldFormatterTitle.php	(date 1565702797897)
++++ web/modules/contrib/viewfield/src/Plugin/Field/FieldFormatter/ViewfieldFormatterTitle.php	(date 1565702797897)
+@@ -27,16 +27,27 @@
        $display_id = $value['display_id'];
        $arguments = $value['arguments'];
        $view = Views::getView($target_id);
+-      $title = $view->getTitle();
+-      $display = $view->displayHandlers->get($display_id);
+-      if (!$display) {
+-        $elements[$delta] = [
+-          '#theme' => 'item_list',
+-          '#items' => [
+-            $this->t('Missing or broken view/display'),
+-          ],
+-        ];
+-        continue;
 +      if (isNull($view)) {
 +        $title = t('Missing or empty view');
 +        $elements[$delta] = [
@@ -18,7 +28,18 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 +          ],
 +        ];
 +        continue;
-+      };
-       $title = $view->getTitle();
-       $display = $view->displayHandlers->get($display_id);
-       if (!$display) {
++      } else {
++        $title = $view->getTitle();
++        $display = $view->displayHandlers->get($display_id);
++        if (!$display) {
++          $elements[$delta] = [
++            '#theme' => 'item_list',
++            '#items' => [
++              $this->t('Missing or broken view/display'),
++            ],
++          ];
++          continue;
++        }
+       }
+       $display_name = $display->pluginTitle();
+       $elements[$delta] = [
