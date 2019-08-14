@@ -22,7 +22,7 @@ function ipu_preprocess_html(&$variables) {
     $variables['attributes']['class'][] = ('node-' . $variables['node_id']);
   }
   $node = \Drupal::routeMatch()->getParameter('node');
-  if($node) {
+  if ($node) {
     $variables['attributes']['class'][] = ('node-' . $node->id());
   }
 }
@@ -64,7 +64,43 @@ function ipu_preprocess_field(&$variables) {
 function ipu_preprocess_page_title(&$variables) {
   if ($node = \Drupal::routeMatch()->getParameter('node')) {
     if (isset($node->field_media_image)) {
-      $variables['page_title_image'] = $node->get('field_media_image')->view('full');
+      $variables['page_title_image'] = $node->get('field_media_image')
+        ->view('full');
     }
   }
+}
+
+
+/**
+ * Implements hook_theme_registry_alter().
+ *
+ * @param $theme_registry
+ */
+function ipu_theme_registry_alter(&$theme_registry) {
+  $theme_registry['menu']['variables']['top_parent'] = [];
+}
+
+/**
+ * Implements hook_preprocess_block__menu_block().
+ *
+ * @param $variables
+ */
+function ipu_preprocess_block__menu_block(&$variables) {
+  //print '<pre>'.print_r(array_keys($variables), true).'</pre>';
+  //print '<pre>'.print_r(json_decode(json_encode($variables['elements')), true).'</pre>';
+
+//  foreach (['id', 'plugin_id', 'base_plugin_id', 'derivative_plugin_id', 'current_path'] as $field) {
+//    if (!empty(($variables[$field]))) {
+//      print '<pre>' . print_r(($variables[$field]), TRUE) . '</pre>';
+//    }
+//  }
+
+  if (!empty($variables['elements']['content']['#items'])) {
+    $variables['content']['#top_parent'] = [
+      'current_path' => $variables['current_path'] ? $variables['current_path'] : '',
+    ];
+  }
+
+  // code removed
+
 }
