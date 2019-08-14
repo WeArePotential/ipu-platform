@@ -25,13 +25,23 @@ import 'bootstrap';
 
   Drupal.behaviors.equalHeights = {
     attach: function (context) {
+      $('.paragraph--type--highlights .node--view-mode-highlight .bs-region').matchHeight();
 
-      $('.node--view-mode-highlight .bs-region').matchHeight();
-      $('.node--view-mode-highlight .article__type-content').matchHeight();
-      $('.node--view-mode-highlight .section-page__body').matchHeight();
+      $('.view-display-id-latest_5_generic .row .row .node--view-mode-highlight .bs-region').matchHeight();
+      $('.view-display-id-latest_3_generic .node--view-mode-highlight .bs-region').matchHeight();
+
+      $('.view-publications .node--view-mode-highlight .bs-region').matchHeight();
+
+      // Events?
+      // $('.view-events view-id-events.view-display-id-multiple_ids .node--view-mode-highlight
+
+      //$('.node--view-mode-highlight .article__type-content').matchHeight();
+      //$('.node--view-mode-highlight .section-page__body').matchHeight();
+
       $('.block--views-block--theme-list-block-1-5 .col .views-field-description__value').matchHeight();
       $('.viewfield--view__theme_list__block_home_page .col .term-icon').matchHeight({'byRow': false});
       $('.viewfield--view__theme_list__block_home_page .col .views-field-description__value').matchHeight({'byRow': false});
+
       $('.carousel .group-content').matchHeight();
       $('.field-committee-members .field__item .paragraph--type--member').matchHeight();
     }

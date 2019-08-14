@@ -56,11 +56,11 @@
             set row_classes = []
           %}
           {% if loop.index == 1 %}
-            <div class="col-md-6">
-            {% set row_classes = row_classes|merge(['col-md-12']) %}
-              <div{{ row.attributes.addClass(row_classes) }}>
+            <div class="col-md-6 d-flex align-items-stretch">
+            {% set row_classes = row_classes|merge([]) %}
+              {#<div{{ row.attributes.addClass(row_classes) }}>#}
                 {{ row.content }}
-              </div>
+              {#</div>#}
             </div>
           {% else %}
 
