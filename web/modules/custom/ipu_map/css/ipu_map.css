@@ -1,11 +1,20 @@
 #ipu_map {
-  margin: 10px 0;
+    margin: 10px 0;
+    width: 100%;
+    height: auto;
+}
+
+.mapcontainer_un {
+    width: 100%;
 }
 
 .mapael .map {
     position: relative;
     border-color:white;
     z-index: 3;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 /* For all zoom buttons */

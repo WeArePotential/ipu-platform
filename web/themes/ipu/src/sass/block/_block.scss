@@ -177,9 +177,18 @@ a {
   height: 90px;
   width: auto;
   padding: $navbar-padding-x $navbar-padding-y;
+  @include media-breakpoint-down(md) {
+    height: auto;
+    max-width: 100%;
+  }
 }
 #branding .block--ipu-search {
   display: inline-block;
+  @include media-breakpoint-down(sm) {
+    input.form-search {
+      display: none;
+    }
+  }
 }
 
 .block--languageswitchercontent {
@@ -899,6 +908,9 @@ a.btn {
 
 .form-inline {
   border-bottom: 1px solid $dark;
+  @include media-breakpoint-down(sm) {
+    border-bottom-width: 0px;
+  }
 }
 
 #branding .form-actions::after {

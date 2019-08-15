@@ -19775,9 +19775,20 @@ a {
   width: auto;
   padding: 1rem 0.5rem;
 }
+@media (max-width: 991.98px) {
+  #branding img.logo {
+    height: auto;
+    max-width: 100%;
+  }
+}
 
 #branding .block--ipu-search {
   display: inline-block;
+}
+@media (max-width: 767.98px) {
+  #branding .block--ipu-search input.form-search {
+    display: none;
+  }
 }
 
 .block--languageswitchercontent {
@@ -20411,6 +20422,11 @@ a.more-data-parline, .article__node-link a,
 
 .form-inline {
   border-bottom: 1px solid #747678;
+}
+@media (max-width: 767.98px) {
+  .form-inline {
+    border-bottom-width: 0px;
+  }
 }
 
 #branding .form-actions::after {
