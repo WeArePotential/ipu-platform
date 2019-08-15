@@ -202,7 +202,8 @@
                 "IPU: Entity load null assert breaks paragraph add ajax See issue 3035980": "web/patches/ipu_entity_load_null_assert-3035980.patch",
                 "Ignore width height on untranslatable field": "https://www.drupal.org/files/issues/2019-02-11/ignore_width_height_on_untranslatable_field_comparision_2941092_8.patch",
                 "Path alias filter by system path": "https://www.drupal.org/files/issues/2018-03-24/path_alias_filter_by-2418755-69.patch",
-                "Term route context": "https://www.drupal.org/files/issues/2019-04-12/term_route_context-2998826-31.patch"
+                "Term route context": "https://www.drupal.org/files/issues/2019-04-12/term_route_context-2998826-31.patch",
+                "Exception thrown by responsive srcset images when the image is not yet in the file system": "https://www.drupal.org/files/issues/2827921-remove-missing-responsive-image-width-exception.patch"
             },
             "drupal/pathauto": {
                 "Pathauto token for node menu hierarchy not working after updating parent node": "https://www.drupal.org/files/issues/2019-05-07/pathauto-update_child_aliases-3016532-8.patch"
