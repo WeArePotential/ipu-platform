@@ -25,8 +25,8 @@ runtime:
         - redis
 
 # The size of the persistent disk of the application (in MB).
-# 5GB
-disk: 5120
+# 6GB
+disk: 6144
 
 # The 'mounts' describe writable, persistent filesystem mounts in the application. The keys are
 # directory paths, relative to the application root. The values are strings such as
