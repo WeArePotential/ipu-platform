@@ -10,7 +10,7 @@
 
 .mapael .map {
     position: relative;
-    border-color:white;
+    border: 1px solid #eee;
     z-index: 3;
     width: 90%;
     margin-left: 5%;

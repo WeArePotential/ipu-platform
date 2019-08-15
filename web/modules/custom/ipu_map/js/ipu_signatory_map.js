@@ -68,7 +68,12 @@
                     name: "world_countries_un",
                     zoom: {
                         enabled: true,
-                        maxLevel: 15
+                        maxLevel: 20,
+                        init: {
+                            level: 1,
+                            latitude: 45,
+                            longitude: -10,
+                        }
                     },
                     defaultArea: {
                         attrs: {
