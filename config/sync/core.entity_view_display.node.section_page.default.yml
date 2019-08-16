@@ -77,12 +77,12 @@ third_party_settings:
     fields:
       'dynamic_block_field:node-contextual_menu_event_navigation':
         plugin_id: 'dynamic_block_field:node-contextual_menu_event_navigation'
-        weight: 5
+        weight: 4
         label: hidden
         formatter: default
       'dynamic_block_field:node-menu_block':
         plugin_id: 'dynamic_block_field:node-menu_block'
-        weight: 4
+        weight: 3
         label: hidden
         formatter: default
         ft:
@@ -104,7 +104,7 @@ third_party_settings:
             classes: {  }
       'dynamic_block_field:node-top_level_menu_item':
         plugin_id: 'dynamic_block_field:node-top_level_menu_item'
-        weight: 3
+        weight: 2
         label: hidden
         formatter: default
         ft:
@@ -135,14 +135,14 @@ mode: default
 content:
   body:
     label: hidden
-    weight: 2
+    weight: 1
     type: text_default
     settings: {  }
     third_party_settings: {  }
     region: left
   field_committee_members:
-    weight: 1
-    label: above
+    weight: 7
+    label: hidden
     settings:
       view_mode: default
       link: ''
@@ -151,7 +151,7 @@ content:
     region: top
   field_media_image:
     type: responsive_image
-    weight: 6
+    weight: 5
     region: right
     label: hidden
     settings:
@@ -167,7 +167,7 @@ content:
             classes: {  }
   field_sections:
     label: hidden
-    weight: 7
+    weight: 6
     type: entity_reference_revisions_entity_view
     settings:
       view_mode: full
