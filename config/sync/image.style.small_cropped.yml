@@ -1,0 +1,23 @@
+uuid: 684563f7-8682-4c3f-89f0-bf9665da69a9
+langcode: en
+status: true
+dependencies: {  }
+name: small_cropped
+label: 'Small (350x230) cropped'
+effects:
+  62b6414f-290c-475d-84bf-1fc3487e83f0:
+    uuid: 62b6414f-290c-475d-84bf-1fc3487e83f0
+    id: image_scale
+    weight: 1
+    data:
+      width: 350
+      height: null
+      upscale: false
+  7ef6b7bc-1a4c-4d51-b975-bac8f32d048e:
+    uuid: 7ef6b7bc-1a4c-4d51-b975-bac8f32d048e
+    id: image_crop
+    weight: 2
+    data:
+      width: 350
+      height: 230
+      anchor: center-center

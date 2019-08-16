@@ -9,7 +9,7 @@ dependencies:
     - field.field.paragraph.slide.field_summary
     - field.field.paragraph.slide.field_title
     - paragraphs.paragraphs_type.slide
-    - responsive_image.styles.wide
+    - responsive_image.styles.slide
   module:
     - ds
     - responsive_image
@@ -22,7 +22,7 @@ content:
     weight: 0
     label: hidden
     settings:
-      responsive_image_style: wide
+      responsive_image_style: slide
       image_link: ''
     third_party_settings:
       ds:

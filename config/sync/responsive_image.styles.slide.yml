@@ -1,0 +1,23 @@
+uuid: f2b1557a-9887-4cfe-b47b-504ff30e70bd
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.large_cropped
+    - image.style.medium_cropped
+    - image.style.small_cropped
+id: slide
+label: Slide
+image_style_mappings:
+  -
+    breakpoint_id: responsive_image.viewport_sizing
+    multiplier: 1x
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: '(min-width:800px) 800px 90vw'
+      sizes_image_styles:
+        - large_cropped
+        - medium_cropped
+        - small_cropped
+breakpoint_group: responsive_image
+fallback_image_style: small_cropped

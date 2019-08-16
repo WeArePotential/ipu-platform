@@ -1,0 +1,23 @@
+uuid: 366d0938-e8b7-498b-856c-d63441c03912
+langcode: en
+status: true
+dependencies: {  }
+name: medium_cropped
+label: 'Medium (640x410) cropped'
+effects:
+  0b0c2790-db76-4bc4-8ae6-db5b6effc19e:
+    uuid: 0b0c2790-db76-4bc4-8ae6-db5b6effc19e
+    id: image_scale
+    weight: 1
+    data:
+      width: 640
+      height: null
+      upscale: true
+  ba179708-8a4a-428c-9cc7-a2bdebe48d35:
+    uuid: ba179708-8a4a-428c-9cc7-a2bdebe48d35
+    id: image_crop
+    weight: 2
+    data:
+      width: 640
+      height: 410
+      anchor: center-center

@@ -1,0 +1,23 @@
+uuid: 9cbc9118-610e-44ed-8006-304731fba563
+langcode: en
+status: true
+dependencies: {  }
+name: large_cropped
+label: 'Large (850x550 cropped)'
+effects:
+  a7704aaa-2e77-434c-bb4f-b258e2b7b424:
+    uuid: a7704aaa-2e77-434c-bb4f-b258e2b7b424
+    id: image_scale
+    weight: 1
+    data:
+      width: 850
+      height: null
+      upscale: true
+  a1c8c651-ed5d-4af5-bf83-1ad17e430bb9:
+    uuid: a1c8c651-ed5d-4af5-bf83-1ad17e430bb9
+    id: image_crop
+    weight: 2
+    data:
+      width: 850
+      height: 550
+      anchor: center-center
