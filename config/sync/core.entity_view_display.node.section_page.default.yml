@@ -63,7 +63,6 @@ third_party_settings:
     regions:
       top:
         - node_title
-        - field_committee_members
       left:
         - body
       right:
@@ -73,6 +72,7 @@ third_party_settings:
         - field_media_image
       bottom:
         - field_sections
+        - field_committee_members
         - 'dynamic_block_field:node-section_sub_pages'
     fields:
       'dynamic_block_field:node-contextual_menu_event_navigation':
@@ -148,7 +148,7 @@ content:
       link: ''
     third_party_settings: {  }
     type: entity_reference_revisions_entity_view
-    region: top
+    region: bottom
   field_media_image:
     type: responsive_image
     weight: 5
