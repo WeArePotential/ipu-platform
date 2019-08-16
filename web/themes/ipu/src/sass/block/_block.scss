@@ -1726,6 +1726,11 @@ a.btn {
   }
 }
 
+.section-page__field-committee-members.field-committee-members {
+  @extend .container;
+  padding: 20px 0;
+}
+
 .field-committee-members {
   .field__label {
     @extend h2;

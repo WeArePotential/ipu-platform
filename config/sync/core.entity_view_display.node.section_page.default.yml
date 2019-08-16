@@ -142,11 +142,19 @@ content:
     region: left
   field_committee_members:
     weight: 7
-    label: hidden
+    label: above
     settings:
       view_mode: default
       link: ''
-    third_party_settings: {  }
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: Composition
+            lb-col: false
+            classes: {  }
     type: entity_reference_revisions_entity_view
     region: bottom
   field_media_image:
