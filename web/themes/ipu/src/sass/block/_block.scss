@@ -1726,11 +1726,6 @@ a.btn {
   }
 }
 
-.section-page__field-committee-members.field-committee-members {
-  @extend .container;
-  padding: 20px 0;
-}
-
 .field-committee-members {
   .field__label {
     @extend h2;
@@ -1760,8 +1755,18 @@ a.btn {
   }
 }
 
-//Countries and maps
+.section-page__field-committee-members.field-committee-members {
+  @extend .container;
+  padding: 20px 0;
+  .field__items {
+     @extend .row;
+     & > .field__item {
+       @extend .col-md-3;
+     }
+  }
+}
 
+//Countries and maps
 .mapael .mapTooltip {
   border: 1px solid $primary;
   box-shadow: color("ipu-light-grey");
