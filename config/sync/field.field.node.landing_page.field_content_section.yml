@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_content_section
     - node.type.landing_page
+    - paragraphs.paragraphs_type.callout_strip
     - paragraphs.paragraphs_type.carousel
     - paragraphs.paragraphs_type.carousel_slides
     - paragraphs.paragraphs_type.highlights
@@ -34,57 +35,64 @@ settings:
       sections: sections
       highlights: highlights
       carousel_slides: carousel_slides
+      callout_strip: callout_strip
       carousel: carousel
     target_bundles_drag_drop:
       sections:
         enabled: true
-        weight: -35
+        weight: -39
       highlights:
         enabled: true
-        weight: -34
+        weight: -38
       carousel_slides:
         enabled: true
-        weight: -33
+        weight: -37
+      callout_strip:
+        enabled: true
+        weight: -36
       carousel:
         enabled: true
-        weight: -32
+        weight: -35
       event_sub_page:
-        weight: -31
+        weight: -34
         enabled: false
       ipu_event_document:
-        weight: -30
+        weight: -33
         enabled: false
       ipu_event_document_widget:
-        weight: -29
+        weight: -32
         enabled: false
       ipu_event_right_menu:
-        weight: -28
+        weight: -31
         enabled: false
       ipu_event_section:
-        weight: -27
+        weight: -30
         enabled: false
       ipu_event_sessions:
-        weight: -26
+        weight: -29
         enabled: false
       ipu_event_session_type:
-        weight: -25
+        weight: -28
         enabled: false
       ipu_event_sponsors:
-        weight: -24
+        weight: -27
         enabled: false
       publication_document:
-        weight: -23
+        weight: -26
         enabled: false
       related_content:
-        weight: -22
+        weight: -25
         enabled: false
       related_documents:
-        weight: -21
+        weight: -24
         enabled: false
       member:
-        weight: -20
+        weight: -23
         enabled: false
       slide:
-        weight: -19
+        weight: -22
+        enabled: false
+      call_to_action:
+        weight: -21
         enabled: false
 field_type: entity_reference_revisions

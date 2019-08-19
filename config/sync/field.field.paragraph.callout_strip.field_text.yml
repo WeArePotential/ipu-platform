@@ -1,0 +1,26 @@
+uuid: de263419-66b3-4cc0-ab1a-4b61e4be3b32
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text
+    - paragraphs.paragraphs_type.callout_strip
+  module:
+    - custom_add_another
+    - text
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
+id: paragraph.callout_strip.field_text
+field_name: field_text
+entity_type: paragraph
+bundle: callout_strip
+label: Text
+description: 'Heading (h2) and  text for callout'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,52 @@
+uuid: 209f36d9-ccc4-49a6-bc8a-c43302384d64
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.callout_strip.field_background_image
+    - field.field.paragraph.callout_strip.field_link
+    - field.field.paragraph.callout_strip.field_text
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.callout_strip
+  module:
+    - field_layout
+    - image
+    - layout_discovery
+    - link
+    - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+id: paragraph.callout_strip.default
+targetEntityType: paragraph
+bundle: callout_strip
+mode: default
+content:
+  field_background_image:
+    weight: 2
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_link:
+    weight: 1
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_text:
+    weight: 0
+    settings:
+      rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+hidden:
+  created: true
+  status: true

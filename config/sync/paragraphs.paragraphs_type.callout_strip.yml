@@ -1,0 +1,11 @@
+uuid: e91e89b9-036b-446e-9ac8-4c9ccbb6b3c2
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'file:image:ec5575fe-328a-431f-acac-e74a619fc971'
+id: callout_strip
+label: 'Callout strip'
+icon_uuid: ec5575fe-328a-431f-acac-e74a619fc971
+description: 'Full-width call to action for section pages'
+behavior_plugins: {  }

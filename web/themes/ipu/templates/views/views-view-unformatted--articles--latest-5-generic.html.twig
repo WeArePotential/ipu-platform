@@ -63,27 +63,22 @@
               {#</div>#}
             </div>
           {% else %}
+            {% if loop.index == 2 %}
 
-
-        {% if loop.index == 2 %}
-
-          <div class="col-md-6">
-            <div class="container">
-              <div class="row">
-        {% endif %}
-
+                <div class="col-md-6">
+                    <div class="container">
+                        <div class="row">
+            {% endif %}
 
             {% set row_classes = row_classes|merge(['col-md-6', 'view-mode-highlight-sm']) %}
-              <div{{ row.attributes.addClass(row_classes) }}>
+            <div{{ row.attributes.addClass(row_classes) }}>
                 {{- row.content -}}
-              </div>
-
-
-              {% if loop.index == loop.count %}
-              </div>
-                </div>
-                  </div>
-              {% endif %}
+            </div>
+            {% if loop.index == loop.length %}
+                      </div><!-- end row -->
+                    </div><!-- end container -->
+                  </div><!-- end col-md-6 -->
+            {% endif %}
 
           {% endif %}
 
@@ -92,7 +87,7 @@
 
   {% endif %}
 
-    </div>
+</div><!-- end articles-latest-5 -->
 
 
 

@@ -70,6 +70,27 @@ function ipu_preprocess_page_title(&$variables) {
   }
 }
 
+// Background image for Callout paragraphs
+use Drupal\file\Entity\File;
+use Drupal\image\Entity\ImageStyle;
+function ipu_preprocess_paragraph__callout_strip(&$variables) {
+  $paragraph = $variables['paragraph'];
+  if (!$paragraph->field_background_image->isEmpty()) {
+
+    $fid = $paragraph->field_background_image->target_id;
+    $file = File::load($fid);
+    $file_uri = $file->getFileUri();
+    // With the URI, generate a url for non-image style background image.
+    $image_path = file_url_transform_relative(file_create_url($file_uri));
+    $variables['background_image_url'] = $image_path;
+    $url_with_style = ImageStyle::load('medium')->buildUrl($file_uri);
+    $variables['background_image_url_styled'] = $url_with_style;
+//    $variables['attributes']['style'][] = 'background-image: url("' . $image_path. '");';
+//    $variables['attributes']['style'][] = 'background-size: auto 100%;';
+//    $variables['attributes']['style'][] = 'background-position: center right;';
+//    $variables['attributes']['style'][] = 'background-repeat: no-repeat;';
+  }
+}
 
 /**
  * Implements hook_theme_registry_alter().
