@@ -1,0 +1,90 @@
+uuid: 3f87c4d6-9e5d-4e0e-b46e-fde3798dd258
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.cta_block
+    - field.storage.block_content.field_ctas
+    - paragraphs.paragraphs_type.call_to_action
+  module:
+    - custom_add_another
+    - entity_reference_revisions
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
+id: block_content.cta_block.field_ctas
+field_name: field_ctas
+entity_type: block_content
+bundle: cta_block
+label: CTAs
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      call_to_action: call_to_action
+    target_bundles_drag_drop:
+      callout_strip:
+        weight: 20
+        enabled: false
+      call_to_action:
+        enabled: true
+        weight: 21
+      carousel:
+        weight: 22
+        enabled: false
+      carousel_slides:
+        weight: 23
+        enabled: false
+      event_sub_page:
+        weight: 24
+        enabled: false
+      highlights:
+        weight: 25
+        enabled: false
+      ipu_event_document:
+        weight: 26
+        enabled: false
+      ipu_event_document_widget:
+        weight: 27
+        enabled: false
+      ipu_event_right_menu:
+        weight: 28
+        enabled: false
+      ipu_event_section:
+        weight: 29
+        enabled: false
+      ipu_event_sessions:
+        weight: 30
+        enabled: false
+      ipu_event_session_type:
+        weight: 31
+        enabled: false
+      ipu_event_sponsors:
+        weight: 32
+        enabled: false
+      member:
+        weight: 33
+        enabled: false
+      publication_document:
+        weight: 34
+        enabled: false
+      related_content:
+        weight: 35
+        enabled: false
+      related_documents:
+        weight: 36
+        enabled: false
+      sections:
+        weight: 37
+        enabled: false
+      slide:
+        weight: 38
+        enabled: false
+field_type: entity_reference_revisions

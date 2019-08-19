@@ -1,0 +1,25 @@
+uuid: 2a0d0a28-b66b-4804-a3c7-a9e6681a1948
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:cta_block:7c4b6128-62ec-4f24-a2d4-f08f8e351f80'
+  module:
+    - block_content
+  theme:
+    - ipu
+id: knowledgectas
+theme: ipu
+region: ultimenu_mega_b7d13355
+weight: 0
+provider: null
+plugin: 'block_content:7c4b6128-62ec-4f24-a2d4-f08f8e351f80'
+settings:
+  id: 'block_content:7c4b6128-62ec-4f24-a2d4-f08f8e351f80'
+  label: 'Knowledge CTAs'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

@@ -1819,3 +1819,35 @@ a.btn {
     }
   }
 }
+
+.paragraph--type--call-to-action {
+  background-color: color("white");
+  border: 1px solid color("ipu-light-grey");
+  box-shadow: 0 0 3px 0 color("ipu-light-grey");
+  margin-bottom: 10px;
+  padding: 8px;
+  font-size: $font-size-sm;
+  &:hover {
+    background-color: $tertiary;
+  }
+  a {
+    font-size: $font-size-md;
+    color: $ipu-dark-grey;
+    font-weight: $font-weight-normal;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+  a:after {
+    font-family: "Font Awesome 5 Free", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 900;
+    line-height: 1;
+    content: '\f061';
+    margin-left: 4px;
+  }
+}

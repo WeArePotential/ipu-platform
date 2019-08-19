@@ -1,0 +1,25 @@
+uuid: 906d1a30-4f99-4624-97a1-b0320a26c6e1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_description
+    - paragraphs.paragraphs_type.call_to_action
+  module:
+    - custom_add_another
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
+id: paragraph.call_to_action.field_description
+field_name: field_description
+entity_type: paragraph
+bundle: call_to_action
+label: 'Short description'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

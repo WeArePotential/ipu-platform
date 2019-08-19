@@ -1,0 +1,11 @@
+uuid: 0da9d8f9-3027-4783-bdcc-ee6cd7d5083d
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'file:image:d54ce877-a087-459e-ae40-a4232db7f489'
+id: call_to_action
+label: 'Call to action'
+icon_uuid: d54ce877-a087-459e-ae40-a4232db7f489
+description: 'Full-width call to action for landing pages'
+behavior_plugins: {  }

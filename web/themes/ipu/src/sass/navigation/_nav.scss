@@ -413,3 +413,8 @@ ol.breadcrumb {
 .ultimenu__item-2 .ultimenu__flyout .block {
   @extend .col-md-4;
 }
+
+/* Resources flyout */
+.ultimenu__item-3 .ultimenu__flyout .block {
+  @extend .col-md-6;
+}

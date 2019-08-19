@@ -70,7 +70,7 @@ third_party_settings:
       'dynamic_block_field:node-contextual_menu_event_navigation':
         plugin_id: 'dynamic_block_field:node-contextual_menu_event_navigation'
         weight: 4
-        label: above
+        label: hidden
         formatter: default
         ft:
           id: default

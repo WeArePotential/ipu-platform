@@ -1,6 +1,6 @@
 uuid: 22c5aa09-41c3-4d02-95fc-b27f4b4b55fd
 langcode: fr
-status: true
+status: false
 dependencies:
   config:
     - system.menu.mega-menu

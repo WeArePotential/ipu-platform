@@ -1,0 +1,24 @@
+uuid: 191d7a68-9d37-448e-9aa9-e4f0345b8d6a
+langcode: en
+status: true
+dependencies:
+  module:
+    - ipu_map
+  theme:
+    - ipu
+id: ipucontentblock_4
+theme: ipu
+region: ultimenu_mega_b7d13355
+weight: 0
+provider: null
+plugin: ipu_node_block
+settings:
+  id: ipu_node_block
+  label: 'IPU content block'
+  provider: ipu_map
+  label_display: '0'
+  current: 0
+  nid: '8689'
+  link_text: More
+  view_mode: highlight
+visibility: {  }
