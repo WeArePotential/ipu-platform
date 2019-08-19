@@ -19,7 +19,7 @@ bundle: callout_strip
 label: Text
 description: 'Heading (h2) and  text for callout'
 required: true
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }

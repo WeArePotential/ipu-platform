@@ -1,0 +1,22 @@
+uuid: 69378e64-c1d5-4529-9dfd-184a595c44cd
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.callout_strip
+id: paragraph.callout_strip.status
+field_name: status
+entity_type: paragraph
+bundle: callout_strip
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
