@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.landing_page.body
     - field.field.node.landing_page.field_caption
     - field.field.node.landing_page.field_content_section
+    - field.field.node.landing_page.field_data_points_for_theme
     - field.field.node.landing_page.field_media_image
     - field.field.node.landing_page.field_theme
     - image.style.max_1300x1300
@@ -108,6 +109,15 @@ content:
             lb-col: false
             classes: {  }
     type: entity_reference_revisions_entity_view
+    region: content
+  field_data_points_for_theme:
+    type: entity_reference_revisions_entity_view
+    weight: 15
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
     region: content
   field_media_image:
     weight: 1

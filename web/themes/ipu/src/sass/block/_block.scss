@@ -1636,7 +1636,7 @@ a.btn {
           }
         }
       }
-      &.theme-term-id-88 .h1:before {
+      &.theme-term-id-88 h1:before {
         background: url("../img/theme_icons/gender_equality.svg");
       }
       &.theme-term-id-139 h1:before {
@@ -1667,10 +1667,51 @@ a.btn {
     .landing-page__field-media-image {
       display: none;
     }
+
     .landing-page__body {
-      margin-top: 20px;
       @extend .col-sm-8;
-      @extend .offset-sm-2;
+    }
+    .group-body-and-data {
+      @extend .row;
+      align-items: center;
+      margin: 20px auto;
+      @extend .container;
+      .landing-page__field-data-points-for-theme {
+        @extend .col-sm-4;
+        .field__item {
+          margin-bottom: 20px;
+          .paragraph {
+            @extend .card;
+            /* Add flex-direction row to allow value and desc to site side by side */
+            flex-direction: row;
+            flex-wrap: wrap;
+          }
+        }
+        .field-title {
+          @extend .card-header;
+          @extend .data-point-title;
+          flex-basis: 100%;
+        }
+        .field-data-value {
+          @extend .stats-circle;
+          margin: 10px;
+          flex-basis: 75px;
+        }
+        .field-description {
+          padding: 10px 10px 10px 0;
+          flex-basis: calc(100% - 95px);
+          font-size: $font-size-sm;
+          align-self: center;
+        }
+        .field-link {
+          flex-basis: 100%;
+          margin: 10px;
+          align-self: center;
+          a {
+            @extend .stats-more-link;
+          }
+        }
+      }
     }
   }
 }

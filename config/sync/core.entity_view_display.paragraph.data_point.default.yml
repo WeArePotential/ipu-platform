@@ -1,0 +1,54 @@
+uuid: 57b2d3db-4c01-4cad-9982-dab628793bde
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.data_point.field_data_value
+    - field.field.paragraph.data_point.field_description
+    - field.field.paragraph.data_point.field_link
+    - field.field.paragraph.data_point.field_title
+    - paragraphs.paragraphs_type.data_point
+  module:
+    - link
+id: paragraph.data_point.default
+targetEntityType: paragraph
+bundle: data_point
+mode: default
+content:
+  field_data_value:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_description:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_link:
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

@@ -1,0 +1,11 @@
+uuid: f724186d-94fa-4604-83f6-1257242b9de0
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'file:image:77885c10-1cfe-4dbe-b18f-4188697e4622'
+id: data_point
+label: 'Data point'
+icon_uuid: 77885c10-1cfe-4dbe-b18f-4188697e4622
+description: 'An impact data point for thematic landing pages'
+behavior_plugins: {  }

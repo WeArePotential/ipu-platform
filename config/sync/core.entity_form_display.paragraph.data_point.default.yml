@@ -1,0 +1,58 @@
+uuid: bd21a581-2d97-4f27-bdd9-086bf5676bb4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.data_point.field_data_value
+    - field.field.paragraph.data_point.field_description
+    - field.field.paragraph.data_point.field_link
+    - field.field.paragraph.data_point.field_title
+    - paragraphs.paragraphs_type.data_point
+  module:
+    - field_layout
+    - layout_discovery
+    - link
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+id: paragraph.data_point.default
+targetEntityType: paragraph
+bundle: data_point
+mode: default
+content:
+  field_data_value:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_description:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_link:
+    weight: 3
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

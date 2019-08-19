@@ -18,7 +18,7 @@ settings:
   provider: ipu_map
   label_display: '0'
   current: 0
-  nid: '8689'
-  link_text: More
+  nid: '374'
+  link_text: 'Read more'
   view_mode: highlight
 visibility: {  }

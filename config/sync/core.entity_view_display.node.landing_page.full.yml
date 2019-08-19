@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.landing_page.body
     - field.field.node.landing_page.field_caption
     - field.field.node.landing_page.field_content_section
+    - field.field.node.landing_page.field_data_points_for_theme
     - field.field.node.landing_page.field_media_image
     - field.field.node.landing_page.field_theme
     - image.style.max_1300x1300
@@ -24,7 +25,7 @@ third_party_settings:
       children:
         - group_header_inner
       parent_name: ''
-      weight: 1
+      weight: 0
       format_type: html_element
       format_settings:
         element: div
@@ -43,7 +44,7 @@ third_party_settings:
         - node_title
         - field_media_image
         - field_caption
-        - body
+        - group_body_and_data
       parent_name: group_header
       weight: 2
       format_type: html_element
@@ -59,6 +60,25 @@ third_party_settings:
         speed: fast
       label: 'Header inner'
       region: content
+    group_body_and_data:
+      children:
+        - body
+        - field_data_points_for_theme
+      parent_name: group_header_inner
+      weight: 3
+      format_type: html_element
+      format_settings:
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: group-body-and-data
+      label: 'Body and data'
+      region: content
   ds:
     layout:
       id: layout_onecol
@@ -68,13 +88,15 @@ third_party_settings:
       settings: {  }
     regions:
       content:
-        - node_title
-        - field_media_image
         - group_header
-        - group_header_inner
+        - node_title
         - field_content_section
+        - field_media_image
+        - group_header_inner
         - field_caption
+        - group_body_and_data
         - body
+        - field_data_points_for_theme
     fields:
       node_title:
         plugin_id: node_title
@@ -99,7 +121,7 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 3
+    weight: 4
     settings: {  }
     third_party_settings: {  }
     region: content
@@ -111,7 +133,7 @@ content:
     type: text_default
     region: content
   field_content_section:
-    weight: 2
+    weight: 1
     label: hidden
     settings:
       view_mode: default
@@ -127,6 +149,15 @@ content:
             classes: {  }
     type: entity_reference_revisions_entity_view
     region: content
+  field_data_points_for_theme:
+    type: entity_reference_revisions_entity_view
+    weight: 5
+    region: content
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
   field_media_image:
     weight: 1
     label: hidden

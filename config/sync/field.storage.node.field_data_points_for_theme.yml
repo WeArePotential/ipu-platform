@@ -1,0 +1,21 @@
+uuid: 34a82fa5-46d5-4358-9108-40ea7abe8ec5
+langcode: en
+status: true
+dependencies:
+  module:
+    - entity_reference_revisions
+    - node
+    - paragraphs
+id: node.field_data_points_for_theme
+field_name: field_data_points_for_theme
+entity_type: node
+type: entity_reference_revisions
+settings:
+  target_type: paragraph
+module: entity_reference_revisions
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
