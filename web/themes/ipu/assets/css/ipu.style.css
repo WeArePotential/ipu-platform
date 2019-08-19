@@ -24692,14 +24692,21 @@ a.more-data-parline, .article__node-link a,
 
 .field__item__paragraph__callout-strip {
   background-color: #00a8b4;
-  padding: 20px 0;
   border-top: 4px solid #e98300;
   margin-top: 20px;
   margin-bottom: 20px;
 }
-.field__item__paragraph__callout-strip .field-text, .field__item__paragraph__callout-strip .field-text > * {
+.field__item__paragraph__callout-strip .field-text {
+  padding: 20px 0;
   color: #ffffff !important;
 }
+.field__item__paragraph__callout-strip .field-text > * {
+  color: #ffffff !important;
+}
+.field__item__paragraph__callout-strip .field-link a {
+  margin-bottom: 20px;
+}
+
 .paragraph--type--call-to-action {
   background-color: #fff;
   border: 1px solid #cccccc;

@@ -51,8 +51,9 @@
         view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
     ]
 %}
-<div{{ attributes.addClass(classes) }}>
-    <div class="container" style="background-image: url('{{ background_image_url }}'); background-size: auto 100%; background-position: center right; background-repeat: no-repeat;">
+<div{{ attributes.addClass(classes) }}
+        style="background-image: url('{{ background_image_url }}'); background-size: auto 100%; background-position: center right; background-repeat: no-repeat;">
+    <div class="container">
         <div class="row">
             <div class="col-md-8">
                 {{ content }}

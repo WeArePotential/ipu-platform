@@ -1845,18 +1845,22 @@ a.btn {
 
 .field__item__paragraph__callout-strip {
   background-color: $secondary;
-  padding: 20px 0;
   border-top: 4px solid $tertiary;
   margin-top: 20px;
   margin-bottom: 20px;
-  .field-text, .field-text > * {
+  .field-text {
+    padding: 20px 0;
     color: $ipu-white !important;
+    & > * {
+      color: $ipu-white !important;
+    }
   }
   .field-link {
     a {
       @extend .btn;
       @extend .btn-primary;
       @extend .btn-sm;
+      margin-bottom: 20px;
     }
   }
 }
