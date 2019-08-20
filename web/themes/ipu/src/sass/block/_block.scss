@@ -160,6 +160,17 @@ a {
       display: block;
     }
   }
+  .text-right-alt {
+    display: none;
+  }
+  @include media-breakpoint-down(sm) {
+    .text-right {
+      display: none;
+    }
+    .text-right-alt {
+      display: block;
+    }
+  }
   ul.cross-site-navigation {
     white-space: nowrap;
   }

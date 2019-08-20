@@ -102,7 +102,6 @@ function ipu_map_get_parline_data($isocode, $description, $membership_status, $p
       $stats['#url'] = $chamber->url;
       // Some fields are common across languages...as they are non-lang specific.
       $stats['#population_in_millions'] = number_format(round($chamber->field_population_in_thousands / 1000, 4), 2, '.', '');
-      $stats['#members_per_country'] = $chamber->members_per_country;
       // Some have multiple values and so are passed as an arrey
       $stats['#structure_of_parliament'] = $chamber->field_structure_of_parliament;
       if ($chamber->parliamentary_name) {
@@ -121,7 +120,7 @@ function ipu_map_get_parline_data($isocode, $description, $membership_status, $p
     curl_setopt($ch, CURLOPT_URL, $chamber_url);
     $result = curl_exec($ch);
     $decoded = json_decode($result);
-    $link = Link::fromTextAndUrl($parline_url, Url::fromUri($chamber_url));
+    $link = Link::fromTextAndUrl($chamber_url, Url::fromUri($chamber_url));
     \Drupal::messenger()->addStatus(t('Secondary Data from Parline: @s', ['@s' => new FormattableMarkup($link->toString(), [])]));
 
     foreach ($decoded->list as $key => $chamber) {
@@ -131,14 +130,31 @@ function ipu_map_get_parline_data($isocode, $description, $membership_status, $p
       $gen_sec_url = 'https://data.ipu.org/api/field_collection_item.json?item_id=' . $gen_sec_id;
       curl_setopt($ch, CURLOPT_URL, $gen_sec_url);
       */
-      if ($chamber->field_chamber_name) {
+      /*if ($chamber->field_chamber_name) {
         $data['#parliamentary_name'][] = $chamber->field_chamber_name;
+      }*/
+      if ($chamber->field_struct_parl_status->id != 17) {
+        if ($chamber->chamber_name) {
+          $data['#parliamentary_name'][] = $chamber->chamber_name;
+        }
+        if ($chamber->field_parliamentary_website_url) {
+          foreach($chamber->field_parliamentary_website_url as $url) {
+            $url_txt = str_ireplace('http://', '', str_ireplace('https://','', $url->value));
+            $url_txt = rtrim($url_txt,"/");
+            $link = Link::fromTextAndUrl($url_txt, Url::fromUri($url->value));
+            $stats['#website_link'][] = new FormattableMarkup($link->toString(), []);
+          }
+        } else {
+          $stats['#website_link'] = 'Not available';
+        }
       }
+
       $stats['#chambers'][] = array(
         'struct_parl_status' => $chamber->field_struct_parl_status->id,
-        'parliament_house' => (($chamber->field_struct_parl_status->id == 17) ? t('Upper') : t('Lower'))
+        'parliament_house' => (($chamber->field_struct_parl_status->id == 17) ? t('Upper') : t('Lower')),
       );
       if ($chamber->field_struct_parl_status->id != 17) {
+        $stats['#members_per_country'] = $chamber->field_statutory_members_number;
         $data['#current_women_percent'] = $chamber->current_women_percent;
         $data['#total_younger_45_percentage'] = $chamber->total_younger_45_percentage;
         $election_nid = $chamber->latest_election->id;
@@ -291,6 +307,7 @@ function ipu_map_theme($existing, $type, $theme, $path) {
         'chambers' => [],
         'flag' => '',
         'url' => '',
+        'website_link' => '',
         'last_election_date' => '',
       ),
     ),

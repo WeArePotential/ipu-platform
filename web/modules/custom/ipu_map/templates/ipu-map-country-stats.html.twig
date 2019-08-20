@@ -13,6 +13,7 @@
 
 <div class="ipu-map-parline-data">
     <ul class="list-unstyled">
+        {#<li>{{ dump(_context) }}</li>#}
         <li class="d-flex justify-content-between ipu-border-bottom">
             <span class="stats-title">Population</span>
             <span class="stats-content">{{ population_in_millions }}
@@ -55,7 +56,7 @@
         </li>
         <li class="d-flex justify-content-between ipu-border-bottom">
             <span class="stats-title">Website</span>
-            <span class="stats-content">Not available yet</span>
+            <span class="stats-content">{{ website_link|join('<br />')|raw }}</span>
         </li>
 
         <li>

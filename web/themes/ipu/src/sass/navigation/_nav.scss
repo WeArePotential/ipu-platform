@@ -296,7 +296,7 @@ ol.breadcrumb {
   }
 }
 
-@include media-breakpoint-down(md) {
+/*@include media-breakpoint-down(md) {
   #main-nav-left {
     ul.ultimenu,
     .block--ipu-content ul.menu,
@@ -309,8 +309,20 @@ ol.breadcrumb {
       }
     }
   }
+}*/
+@include media-breakpoint-down(md) {
+  #main-nav-left {
+    ul.ultimenu,
+    .block--ipu-content ul.menu,
+    .ipu-menu-list ul.nav {
+      & > li,
+      & > li a {
+        width: auto !important;
+        min-width: auto !important;
+      }
+    }
+  }
 }
-
 /* Styling and layout of content in menus*/
 
 .ultimenu__flyout {

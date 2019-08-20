@@ -20880,6 +20880,17 @@ a {
   padding: 0.25em;
   display: block;
 }
+.topbar .text-right-alt {
+  display: none;
+}
+@media (max-width: 767.98px) {
+  .topbar .text-right {
+    display: none;
+  }
+  .topbar .text-right-alt {
+    display: block;
+  }
+}
 .topbar ul.cross-site-navigation {
   white-space: nowrap;
 }
@@ -25068,14 +25079,28 @@ ol.breadcrumb {
   letter-spacing: 0;
 }
 
+/*@include media-breakpoint-down(md) {
+  #main-nav-left {
+    ul.ultimenu,
+    .block--ipu-content ul.menu,
+    .ipu-menu-list ul.nav {
+      & > li {
+        width: 50%;
+        min-width: 50%;
+        float: left;
+        border-width: 0 !important;
+      }
+    }
+  }
+}*/
 @media (max-width: 991.98px) {
-  #main-nav-left ul.ultimenu > li,
+  #main-nav-left ul.ultimenu > li, #main-nav-left ul.ultimenu > li a,
 #main-nav-left .block--ipu-content ul.menu > li,
-#main-nav-left .ipu-menu-list ul.nav > li {
-    width: 50%;
-    min-width: 50%;
-    float: left;
-    border-width: 0 !important;
+#main-nav-left .block--ipu-content ul.menu > li a,
+#main-nav-left .ipu-menu-list ul.nav > li,
+#main-nav-left .ipu-menu-list ul.nav > li a {
+    width: auto !important;
+    min-width: auto !important;
   }
 }
 /* Styling and layout of content in menus*/
