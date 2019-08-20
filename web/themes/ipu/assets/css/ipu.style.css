@@ -24579,7 +24579,6 @@ a.more-data-parline, .article__node-link a,
   display: none;
 }
 .node-landing_page:not(.node-172) .group-header .group-body-and-data {
-  align-items: center;
   margin: 20px auto;
 }
 .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field__item {
