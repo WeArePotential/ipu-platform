@@ -85,3 +85,42 @@ function ipu_theme_suggestions_field_alter(&$suggestions, $variables) {
   $suggestions[] = 'field__' . $entity_type . '__' . $field_name . '__' . $view_mode;
   $suggestions[] = 'field__' . $entity_type . '__' . $bundle . '__' . $field_name . '__' . $view_mode;
 }
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function ipu_theme_suggestions_container_alter(&$suggestions, $variables) {
+  // Add template suggestions for views since we need to get rid of that damn container div
+  // around the event sub pages view to get the BS tabs to work properly in the event template.
+  if (isset($variables['element']['#view'])) {
+    $suggestions[] = 'container__views__' . $variables['element']['#name'];
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function ipu_theme_suggestions_eva_display_entity_view_alter(&$suggestions, $variables) {
+  // We don't seem to get any template suggestions from EVA, so let's add some.
+  /** @var $view Drupal\views\ViewExecutable **/
+  $view = $variables['view'];
+  $suggestions[] = 'eva_display_entity_view__' . $view->id();
+  $suggestions[] = 'eva_display_entity_view__' . $view->id() . '__' . $view->current_display;
+}
+
+/**
+ * Implements template_preprocess_views_view_unformatted().
+ */
+function ipu_preprocess_views_view_unformatted(&$variables) {
+  $view = $variables['view'];
+  $displays = [
+    'sub_page_content_eva',
+    'sub_page_content_eva_2',
+  ];
+  if ($view->id() == "event_sub_pages" && in_array($view->current_display, $displays)) {
+    // Add a Paragraph ID variable to the row.
+    foreach ($variables['rows'] as $index => $row) {
+      $variables['rows'][$index]['id'] = $row['content']['#paragraph']->id();
+    }
+  }
+}
