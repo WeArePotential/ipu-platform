@@ -1,0 +1,44 @@
+{#
+/**
+ * @file
+ * Bootstrap Layouts: "2 Columns" template.
+ *
+ * Available layout variables:
+ * - wrapper: Wrapper element for the layout container.
+ * - attributes: Wrapper attributes for the layout container.
+ *
+ * Available region variables:
+ * - left
+ * - right
+ *
+ * Each region variable contains the following properties:
+ * - wrapper: The HTML element to use to wrap this region.
+ * - attributes: The HTML attributes to use on the wrapper for this region.
+ * - content: The content to go inside the wrapper for this region.
+ */
+#}
+<div class="container">
+  <{{ wrapper }}{{ attributes }}>
+    {{ title_suffix.contextual_links }}
+
+    {% if right_sub_page_content.content %}
+      <div class="col-md-9 order-md-2">
+        {{ right.content }}
+        <div class="tab-content" id="v-pills-tabContent">
+          {{ right_sub_page_content.content }}
+        </div>
+      </div>
+    {% endif %}
+
+    {% if left_sub_page_menu.content %}
+      <div class="col-md-3 order-md-1">
+        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+          {{ left_sub_page_menu.content }}
+        </div>
+        {{ left.content }}
+      </div>
+    {% endif %}
+    
+  </{{ wrapper }}>
+
+</div>
