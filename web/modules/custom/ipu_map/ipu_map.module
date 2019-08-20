@@ -78,7 +78,7 @@ function ipu_map_get_parline_data($isocode, $description, $membership_status, $p
 
   $parline_url = 'https://data.ipu.org/api/node.json?type=country&field_country_data=' . $isocode;
   $link = Link::fromTextAndUrl($parline_url, Url::fromUri($parline_url));
-  \Drupal::messenger()->addStatus(t('Data from Parline: @s', ['@s' => new FormattableMarkup($link->toString(), [])]));
+  //\Drupal::messenger()->addStatus(t('Data from Parline: @s', ['@s' => new FormattableMarkup($link->toString(), [])]));
 
   $ch = curl_init();
   curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
@@ -121,7 +121,7 @@ function ipu_map_get_parline_data($isocode, $description, $membership_status, $p
     $result = curl_exec($ch);
     $decoded = json_decode($result);
     $link = Link::fromTextAndUrl($chamber_url, Url::fromUri($chamber_url));
-    \Drupal::messenger()->addStatus(t('Secondary Data from Parline: @s', ['@s' => new FormattableMarkup($link->toString(), [])]));
+    //\Drupal::messenger()->addStatus(t('Secondary Data from Parline: @s', ['@s' => new FormattableMarkup($link->toString(), [])]));
 
     foreach ($decoded->list as $key => $chamber) {
       // TODO: Get contact details (of secretary general?) Forbidden, cannot use
