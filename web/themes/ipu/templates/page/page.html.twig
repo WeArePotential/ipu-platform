@@ -101,7 +101,17 @@
         <div class="d-flex justify-content-md-between align-items-md-center">
           {{ page.footer }}
         </div>
+        {% set terms = link('Terms of use'|t, 'internal:/node/375')|render %}
+        {% set privacy = link('Privacy statement'|t, 'internal:/node/9571')|render %}
+        {% set year = "now"|date("Y") %}
+        {% trans %}
+          <p>© Copyright IPU {{ year }}, {{ terms }}&nbsp;and {{ privacy }}</a></p>
+
+        {% endtrans %}
+
+
+
       </div>
-    </footer>
+      </footer>
   {% endif %}
 </div>

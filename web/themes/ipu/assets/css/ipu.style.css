@@ -20775,9 +20775,15 @@ a {
 
 .page__footer {
   background-color: #747678;
+  padding: 40px 0 20px 0;
 }
-.page__footer .region-inner {
-  padding: 40px 0;
+.page__footer .container > p, .page__footer .section-page__field-committee-members.field-committee-members > p, .page__footer .viewfield--view__theme_list__block_home_page > p, .page__footer .node-172 .group-header .group-header-inner > p, .node-172 .group-header .page__footer .group-header-inner > p, .page__footer .node-landing_page:not(.node-172) .group-header .group-body-and-data > p, .node-landing_page:not(.node-172) .group-header .page__footer .group-body-and-data > p, .page__footer .node-landing_page:not(.node-172) .group-header .landing-page__node-title.theme-landing-page .field-node-title-wrapper > p, .node-landing_page:not(.node-172) .group-header .landing-page__node-title.theme-landing-page .page__footer .field-node-title-wrapper > p, .page__footer .node-landing_page:not(.node-172) .group-header .landing-page__node-title:not(.theme-landing-page) > p, .node-landing_page:not(.node-172) .group-header .page__footer .landing-page__node-title:not(.theme-landing-page) > p, .page__footer .node-landing_page .landing-page__field-content-section .paragraph--type--sections > p, .node-landing_page .landing-page__field-content-section .page__footer .paragraph--type--sections > p, .page__footer .field__item__paragraph__highlights .paragraph--type--highlights > p, .field__item__paragraph__highlights .page__footer .paragraph--type--highlights > p, .page__footer .node-article .group-related > div > p, .node-article .page__footer .group-related > div > p, .page__footer .carousel > p {
+  font-size: 0.875rem;
+  color: #ffffff;
+}
+.page__footer .container > p a, .page__footer .section-page__field-committee-members.field-committee-members > p a, .page__footer .viewfield--view__theme_list__block_home_page > p a, .page__footer .node-172 .group-header .group-header-inner > p a, .node-172 .group-header .page__footer .group-header-inner > p a, .page__footer .node-landing_page:not(.node-172) .group-header .group-body-and-data > p a, .node-landing_page:not(.node-172) .group-header .page__footer .group-body-and-data > p a, .page__footer .node-landing_page:not(.node-172) .group-header .landing-page__node-title.theme-landing-page .field-node-title-wrapper > p a, .node-landing_page:not(.node-172) .group-header .landing-page__node-title.theme-landing-page .page__footer .field-node-title-wrapper > p a, .page__footer .node-landing_page:not(.node-172) .group-header .landing-page__node-title:not(.theme-landing-page) > p a, .node-landing_page:not(.node-172) .group-header .page__footer .landing-page__node-title:not(.theme-landing-page) > p a, .page__footer .node-landing_page .landing-page__field-content-section .paragraph--type--sections > p a, .node-landing_page .landing-page__field-content-section .page__footer .paragraph--type--sections > p a, .page__footer .field__item__paragraph__highlights .paragraph--type--highlights > p a, .field__item__paragraph__highlights .page__footer .paragraph--type--highlights > p a, .page__footer .node-article .group-related > div > p a, .node-article .page__footer .group-related > div > p a, .page__footer .carousel > p a {
+  font-weight: 400;
+  color: #ffffff;
 }
 .page__footer .region-inner > .block {
   margin-bottom: 20px;

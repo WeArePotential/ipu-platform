@@ -48,8 +48,16 @@ a {
 }
 .page__footer {
   background-color: theme-color("dark");
+  padding: 40px 0 20px 0;
+  .container > p {
+    font-size: $font-size-sm;
+    color: $ipu-white;
+    a {
+      font-weight: $font-weight-normal;
+      color: $ipu-white;
+    }
+  }
   .region-inner {
-    padding: 40px 0;
     @extend .row;
     & > .block {
       @extend .col-md-3;
