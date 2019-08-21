@@ -1,7 +1,10 @@
 body {
   /*background-color: theme-color("light");*/
 }
-
+.hamburger {
+  background-color: $tertiary;
+  color: $ipu-white;
+}
 main {
   background-color: $white !important;
 }
@@ -1824,7 +1827,8 @@ a.btn {
   box-shadow: color("ipu-light-grey");
 }
 
-.viewfield--view__countries__block_1 {
+.viewfield--view__countries__block_1,
+.viewfield--view__countries__block_members {
   h3 {
     clear: left;
     float: left;
@@ -1850,6 +1854,22 @@ a.btn {
       a.non-member {
         font-weight: $font-weight-light;
       }
+    }
+  }
+}
+.viewfield--view__countries__block_members {
+  li a:after {
+    content: ', ';
+  }
+  li:last-child a:after {
+    content: '';
+  }
+  .views-field-name .field-content {
+    a {
+      font-weight: $font-weight-normal;
+    }
+    span {
+      display: none;
     }
   }
 }

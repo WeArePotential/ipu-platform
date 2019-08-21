@@ -536,7 +536,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<a href=\"/parliament/{{ field_iso_code_1 }}\" class=\"{{ field_ipu_member_1 }}\" data-iso-code=\"{{ field_iso_code_1 }}\" data-iso-code-for-parliament=\"{{ field_iso_code_for_parliament_1 }}\" data-no-parliament-page=\"{{ field_no_parliament_page }}\">{{ name }}</a>{{ field_iso_code }}\r\n"
+            text: "<a href=\"/parliament/{{ field_iso_code_1 }}\" class=\"{{ field_ipu_member_1 }}\" data-iso-code=\"{{ field_iso_code_1 }}\" data-iso-code-for-parliament=\"{{ field_iso_code_for_parliament_1 }}\" data-no-parliament-page=\"{{ field_no_parliament_page }}\">{{ name }}</a><span>{{ field_iso_code }}</span>\r\n"
             make_link: false
             path: ''
             absolute: false
@@ -870,6 +870,7 @@ display:
       arguments: {  }
       display_extenders:
         metatag_display_extender: {  }
+      group_by: true
     cache_metadata:
       max-age: -1
       contexts:
@@ -889,6 +890,133 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - user.permissions
+      tags:
+        - 'config:field.storage.taxonomy_term.field_ipu_member'
+        - 'config:field.storage.taxonomy_term.field_iso_code'
+        - 'config:field.storage.taxonomy_term.field_iso_code_for_parliament'
+        - 'config:field.storage.taxonomy_term.field_no_parliament_page'
+        - 'config:field.storage.taxonomy_term.field_principles_signatory'
+  block_members:
+    display_plugin: block
+    id: block_members
+    display_title: 'List of members'
+    position: 1
+    display_options:
+      display_extenders:
+        metatag_display_extender: {  }
+      display_description: ''
+      title: 'Member parliaments'
+      defaults:
+        title: false
+        filters: false
+        filter_groups: false
+      filters:
+        status:
+          value: '1'
+          table: taxonomy_term_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: taxonomy_term
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+          group: 1
+        vid:
+          id: vid
+          table: taxonomy_term_field_data
+          field: vid
+          value:
+            country: country
+          entity_type: taxonomy_term
+          entity_field: vid
+          plugin_id: bundle
+        langcode:
+          id: langcode
+          table: taxonomy_term_field_data
+          field: langcode
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
+          value:
+            '***LANGUAGE_language_content***': '***LANGUAGE_language_content***'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: taxonomy_term
+          entity_field: langcode
+          plugin_id: language
+        field_ipu_member_value:
+          id: field_ipu_member_value
+          table: taxonomy_term__field_ipu_member
+          field: field_ipu_member_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: '1'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: boolean
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
     cache_metadata:
       max-age: -1
       contexts:
