@@ -19,6 +19,10 @@
 .node-ipu-event-edit-form .field--name-field-fc-session-types,
 .node-ipu-event-edit-form .field--name-field-ipu-event-session-type,
 .node-ipu-event-form .field--name-field-fc-session-types,
-.node-ipu-event-form .field--name-field-ipu-event-session-type{
+.node-ipu-event-form .field--name-field-ipu-event-session-type {
   display: none;
+}
+/* Arguments for viewfields */
+.field--name-field-sections .form-disabled {
+  display: none !important;
 }

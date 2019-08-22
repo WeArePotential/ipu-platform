@@ -30,9 +30,9 @@ third_party_settings:
         transliterate: false
   content_translation:
     translation_sync:
-      alt: alt
-      title: title
-      file: '0'
+      file: file
+      alt: '0'
+      title: '0'
   custom_add_another:
     custom_add_another: ''
     custom_remove: ''

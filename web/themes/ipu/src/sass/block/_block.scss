@@ -1921,3 +1921,8 @@ a.btn {
     margin-left: 4px;
   }
 }
+
+// Hide image on structure page as it's used as a main image too
+.node-90 .col-md-5 .section-page__field-media-image {
+  display: none;
+}

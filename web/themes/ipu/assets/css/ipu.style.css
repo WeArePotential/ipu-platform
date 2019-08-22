@@ -24766,6 +24766,10 @@ a.more-data-parline, .article__node-link a,
   margin-left: 4px;
 }
 
+.node-90 .col-md-5 .section-page__field-media-image {
+  display: none;
+}
+
 .off-canvas {
   display: none;
 }
