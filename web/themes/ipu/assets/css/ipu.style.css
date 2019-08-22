@@ -24779,10 +24779,6 @@ a.more-data-parline, .article__node-link a,
     display: block;
     background-color: #e98300;
     color: #ffffff;
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 2;
   }
 }
 #main-nav {

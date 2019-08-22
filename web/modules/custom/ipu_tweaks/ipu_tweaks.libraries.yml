@@ -6,6 +6,6 @@ ultimenu-override:
   css:
     theme:
       css/ultimenu_override.css: {}
+      css/metisMenu.css: {}
   js:
     js/ultimenu_override.js: {}
-

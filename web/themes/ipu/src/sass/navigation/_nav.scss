@@ -4,7 +4,6 @@
   display: none;
 }
 @include media-breakpoint-down(sm) {
-
   .topbar .block--followus {
     display: none;
   }
@@ -12,12 +11,7 @@
     display: block;
     background-color: $tertiary;
     color: $ipu-white;
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 2;
   }
-
 }
 
 

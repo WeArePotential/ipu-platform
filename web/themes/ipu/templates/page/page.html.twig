@@ -13,7 +13,13 @@
           <div class="text-left">{{ page.topbar_left }}</div>
       {% endif %}
       {% if page.topbar_right %}
-      <div class="text-right">{{ page.topbar_right }}</div>
+      <div class="text-right">{{ page.topbar_right }}
+        {% if page.off_canvas %}
+          <div class="off-canvas">
+            {{ page.off_canvas }}
+          </div>
+        {% endif %}
+      </div>
       {% endif %}
       {% endblock %}
     </div>
@@ -115,9 +121,4 @@
       </footer>
   {% endif %}
 
-  {% if page.off_canvas %}
-    <div class="off-canvas">
-      {{ page.off_canvas }}
-    </div>
-  {% endif %}
 </div>
