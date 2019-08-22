@@ -6,6 +6,7 @@ dependencies:
     - entity_browser.browser.browse_files_modal
     - field.field.paragraph.slide.field_image
     - field.field.paragraph.slide.field_link_text
+    - field.field.paragraph.slide.field_media
     - field.field.paragraph.slide.field_node
     - field.field.paragraph.slide.field_summary
     - field.field.paragraph.slide.field_title
@@ -15,6 +16,7 @@ dependencies:
     - chosen_field
     - entity_browser
     - field_layout
+    - media_library
 third_party_settings:
   field_layout:
     id: bs_2col
@@ -65,6 +67,13 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: left
+  field_media:
+    type: media_library_widget
+    weight: 11
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: left
   field_node:
     weight: 4
     settings: {  }
@@ -86,6 +95,11 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: left
+  translation:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
     region: left
 hidden:
   created: true

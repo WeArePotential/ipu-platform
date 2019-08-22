@@ -19,6 +19,7 @@ regions:
   content: Content
   page_bottom: Page bottom
   footer: Footer
+  off_canvas: Off-canvas
 
 libraries:
   - radix/style

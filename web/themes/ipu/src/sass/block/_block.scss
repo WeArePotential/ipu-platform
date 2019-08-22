@@ -1,10 +1,7 @@
 body {
   /*background-color: theme-color("light");*/
 }
-.hamburger {
-  background-color: $tertiary;
-  color: $ipu-white;
-}
+
 main {
   background-color: $white !important;
 }
@@ -168,17 +165,6 @@ a {
     justify-content: flex-start;
     a {
       padding: 0.25em;
-      display: block;
-    }
-  }
-  .text-right-alt {
-    display: none;
-  }
-  @include media-breakpoint-down(sm) {
-    .text-right {
-      display: none;
-    }
-    .text-right-alt {
       display: block;
     }
   }

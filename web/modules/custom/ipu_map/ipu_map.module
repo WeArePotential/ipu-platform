@@ -193,7 +193,7 @@ function ipu_map_get_parline_data($isocode, $description, $membership_status, $p
 }
 
 function ipu_map_get_country_news($country_term_id) {
-  // Uses an in-built view. We use the pre_reneder below to change the sort order here.
+  // NOT USED: Uses an in-built view. We use the pre_reneder below to change the sort order here.
   $checkempty = views_get_view_result('articles', 'latest_4_news_pr_country', $country_term_id);
   if (!empty($checkempty)) {
     return views_embed_view('articles', 'latest_4_news_pr_country', $country_term_id);
@@ -208,7 +208,6 @@ function ipu_map_get_country_case_studies($country_term_id) {
   return false;
 }
 function ipu_map_get_geogroups($geo_term_ids) {
-  // Uses an in-built view. We use the pre_reneder below to change the sort order here.
   $checkempty = views_get_view_result('geopolitical_group', 'node_by_geo_id', $geo_term_ids);
   if (!empty($checkempty)) {
     return views_embed_view('geopolitical_group', 'node_by_geo_id', $geo_term_ids);
@@ -216,30 +215,30 @@ function ipu_map_get_geogroups($geo_term_ids) {
   return false;
 }
 function ipu_map_get_events($country_term_id) {
-  // Uses an in-built view. We use the pre_reneder below to change the sort order here.
   $checkempty = views_get_view_result('events', 'latest_2_events_country', $country_term_id);
   if (!empty($checkempty)) {
     return views_embed_view('events', 'latest_2_events_country', $country_term_id);
   }
 }
-return false;
-function ipu_map_views_pre_render(\Drupal\views\ViewExecutable $view) {
-  // Change the order of the news items; show the features first, if there are any, in the last 4 items.
-  if ($view->id() == 'articles') {
-    if ($view->current_display == 'latest_4_news_pr_country') {
-      $sorted_view = [];
-      foreach ($view->result as $key => $result) {
-        //print_r($result->_entity->toArray());
-        $type = $result->_entity->get('field_article_type')->entity->name->value;
-        $type .= $result->_entity->get('created')->value;
-        $sorted_view[$type] = $result;
-      }
 
-      krsort($sorted_view);
-      $view->result = $sorted_view; //$update_view;
-    }
-    //return $view;
-  }
+function ipu_map_views_pre_render(\Drupal\views\ViewExecutable $view) {
+
+  // Change the order of the news items; show the features first, if there are any, in the last 4 items.
+//  if ($view->id() == 'articles') {
+//    if ($view->current_display == 'latest_4_news_pr_country') {
+//      $sorted_view = [];
+//      foreach ($view->result as $key => $result) {
+//        //print_r($result->_entity->toArray());
+//        $type = $result->_entity->get('field_article_type')->entity->name->value;
+//        $type .= $result->_entity->get('created')->value;
+//        $sorted_view[$type] = $result;
+//      }
+//
+//      krsort($sorted_view);
+//      $view->result = $sorted_view; //$update_view;
+//    }
+//    //return $view;
+//  }
 }
 
 function ipu_map_get_flag($isocode) {

@@ -1,0 +1,16 @@
+Index: web/core/lib/Drupal/Core/Entity/EntityAutocompleteMatcher.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- web/core/lib/Drupal/Core/Entity/EntityAutocompleteMatcher.php	(date 1566387371760)
++++ web/core/lib/Drupal/Core/Entity/EntityAutocompleteMatcher.php	(date 1566387371760)
+@@ -61,7 +61,7 @@
+     if (isset($string)) {
+       // Get an array of matching entities.
+       $match_operator = !empty($selection_settings['match_operator']) ? $selection_settings['match_operator'] : 'CONTAINS';
+-      $entity_labels = $handler->getReferenceableEntities($string, $match_operator, 10);
++      $entity_labels = $handler->getReferenceableEntities($string, $match_operator, 30);
+ 
+       // Loop through the entities and convert them into autocomplete output.
+       foreach ($entity_labels as $values) {

@@ -1,4 +1,27 @@
 
+//Toggle superfish (off canvas) and social media icons
+.off-canvas {
+  display: none;
+}
+@include media-breakpoint-down(sm) {
+
+  .topbar .block--followus {
+    display: none;
+  }
+  .off-canvas {
+    display: block;
+    background-color: $tertiary;
+    color: $ipu-white;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+  }
+
+}
+
+
+
 #main-nav {
   background-color: color("white");
   border-width: 1px 0 4px 0;
