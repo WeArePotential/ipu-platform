@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.field.paragraph.slide.field_image
     - field.field.paragraph.slide.field_link_text
-    - field.field.paragraph.slide.field_media
     - field.field.paragraph.slide.field_node
     - field.field.paragraph.slide.field_summary
     - field.field.paragraph.slide.field_title
@@ -42,22 +41,6 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-    region: content
-  field_media:
-    type: entity_reference_entity_view
-    weight: 1
-    label: hidden
-    settings:
-      view_mode: default
-      link: false
-    third_party_settings:
-      ds:
-        ft:
-          id: default
-          settings:
-            lb: ''
-            lb-col: false
-            classes: {  }
     region: content
   field_node:
     weight: 4
