@@ -14,15 +14,15 @@
         </div>
         <div class="col-md-8">
            {% if content.news_and_stories|length %}
-            <h2>News from {{ content.title }}</h2>
+            <h2>{{ 'News from'|t }} {{ content.title }}</h2>
                 {{ content.news_and_stories }}
             {% endif %}
             {% if content.case_studies|length %}
-            <h2>Case studies</h2>
+            <h2>{{ 'Case studies'|t }}</h2>
                 {{ content.case_studies }}
             {% endif %}
             {% if content.events|length %}
-                <h2>Events in {{ content.title }}</h2>
+                <h2>{{ 'Events in'|t }} {{ content.title }}</h2>
                 {{ content.events }}
             {% endif %}
         </div>
