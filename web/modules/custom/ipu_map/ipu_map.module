@@ -196,7 +196,7 @@ function ipu_map_get_parline_data($isocode, $description, $membership_status, $p
 
   $stats['#data_provenance'] = [
     '#type' => 'processed_text',
-    '#text' => $data_provenance['value'],
+    '#text' => t($data_provenance['value']),
     '#format' => $data_provenance['format'],
   ];
 
