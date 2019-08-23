@@ -22,7 +22,7 @@
 .node-ipu-event-form .field--name-field-ipu-event-session-type {
   display: none;
 }
-/* Arguments for viewfields */
+/* Arguments for viewfields is hidden*/
 .field--name-field-sections .form-disabled {
   display: none !important;
 }

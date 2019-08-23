@@ -177,6 +177,8 @@ function ipu_map_get_parline_data($isocode, $description, $membership_status, $p
   }
 
 
+  $config = \Drupal::config('ipu_map.settings');
+
   $stats['#membership_status'] = ($membership_status ? true : false);
   $stats['#membership_status_text'] = ($membership_status ? t('Is an IPU member') : t('Is not an PU member'));
   $stats['#principles_signatory'] = ($principles_signatory ? true : false);
@@ -184,8 +186,19 @@ function ipu_map_get_parline_data($isocode, $description, $membership_status, $p
 
   $data['#human_rights_cases'] = ($human_rights_cases ? $human_rights_cases : 0);
   $data['#description'] = $description;
+  $data['#ipu_map_gender_link'] = ($config->get('ipu_map_gender_link') ? \Drupal::service('path.alias_manager')->getAliasByPath($config->get('ipu_map_gender_link'), $current_language_id) : '');
+  $data['#ipu_map_youth_link'] = ($config->get('ipu_map_youth_link') ? \Drupal::service('path.alias_manager')->getAliasByPath($config->get('ipu_map_youth_link'), $current_language_id) : '');
+  $data['#ipu_map_hr_link'] = ($config->get('ipu_map_hr_link') ? \Drupal::service('path.alias_manager')->getAliasByPath($config->get('ipu_map_hr_link'), $current_language_id) : '');
 
   $data['#parliamentary_name'] = array_unique($data['#parliamentary_name']);
+
+  $data_provenance = $config->get('ipu_map_data_provenance');
+
+  $stats['#data_provenance'] = [
+    '#type' => 'processed_text',
+    '#text' => $data_provenance['value'],
+    '#format' => $data_provenance['format'],
+  ];
 
   $data['#theme'] = 'ipu-map-parline-data';
   $stats['#theme'] = 'ipu-map-country-stats';
@@ -289,6 +302,9 @@ function ipu_map_theme($existing, $type, $theme, $path) {
         'description' => '',
         'current_women_percent' => '',
         'total_younger_45_percentage' => '',
+        'ipu_map_gender_link' => '',
+        'ipu_map_youth_link' => '',
+        'ipu_map_hr_link' => '',
       ),
     ),
     'ipu-map-country-stats' => array(
@@ -308,6 +324,7 @@ function ipu_map_theme($existing, $type, $theme, $path) {
         'url' => '',
         'website_link' => '',
         'last_election_date' => '',
+        'data_provenance' => '',
       ),
     ),
     'ipu-map-flag' => array(

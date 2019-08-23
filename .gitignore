@@ -25,3 +25,6 @@
 
 # Local scripts for DB updates
 /sereno
+
+# Mail error log
+/web/mail_error_log.log

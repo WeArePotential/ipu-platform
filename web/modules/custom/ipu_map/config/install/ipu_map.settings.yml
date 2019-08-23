@@ -2,4 +2,12 @@ ipu_map:
   vocabulary_id: 0
   ipu_map_parliaments_page: '/parliaments'
   ipu_map_average_percent_women: 0
+  ipu_map_gender_link: ''
+
   ipu_map_average_percent_under45: 0
+  ipu_map_youth_link: ''
+
+  ipu_map_hr_link: ''
+  ipu_map_data_provenance:
+    value: '<p>This page contains the latest IPU news and data for this parliament. The percentage of women in parliament and the percentage of youth participation correspond to the lower chamber if the parliament is bicameral. The number of MP human rights cases corresponds to the latest decisions of the IPU Committee on the Human Rights of Parliamentarians.</p>'
+    format: 'full_html'

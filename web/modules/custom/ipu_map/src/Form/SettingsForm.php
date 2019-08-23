@@ -59,7 +59,25 @@ class SettingsForm extends ConfigFormBase {
       '#required' => TRUE,
       ];
 
-    $form['ipu_map_average_percent_women'] = [
+    $form['ipu_map_data_provenance'] = array(
+      '#type' => 'text_format',
+      '#title' => 'Provenance',
+      '#format' => $config->get('ipu_map_data_provenance.format', 'full_html'),
+      '#default_value' => $config->get('ipu_map_data_provenance.value', ''),
+      '#allowed_formats' => [
+        $config->get('ipu_map_data_provenance.format') => 'full_html',
+      ],
+    );
+
+    $form['data_points'] = [
+      '#type' => 'fieldset',
+      '#title' => $this->t('Data points'),
+    ];
+    $form['data_points']['gender'] = [
+      '#type' => 'fieldset',
+      '#title' => $this->t('Gender'),
+    ];
+    $form['data_points']['gender']['ipu_map_average_percent_women'] = [
       '#type' => 'number',
       '#min' => 0,
       '#max' => 100,
@@ -69,8 +87,20 @@ class SettingsForm extends ConfigFormBase {
       '#default_value' => $config->get('ipu_map_average_percent_women', 100),
       '#required' => TRUE,
     ];
+    $form['data_points']['gender']['ipu_map_gender_link'] = [
+      '#title' => $this->t('Link'),
+      '#type' => 'linkit',
+      '#autocomplete_route_name' => 'linkit.autocomplete',
+      '#autocomplete_route_parameters' => [ 'linkit_profile_id' => 'editor'],
+      '#default_value' => $config->get('ipu_map_gender_link', 100),
+    ];
 
-    $form['ipu_map_average_percent_under45'] = [
+    $form['data_points']['youth'] = [
+      '#type' => 'fieldset',
+      '#title' => $this->t('Youth'),
+    ];
+
+    $form['data_points']['youth']['ipu_map_average_percent_under45'] = [
       '#type' => 'number',
       '#min' => 0,
       '#max' => 100,
@@ -79,6 +109,31 @@ class SettingsForm extends ConfigFormBase {
       '#title' => $this->t('Global average MPs under 35 (%).'),
       '#default_value' => $config->get('ipu_map_average_percent_under45', 0),
       '#required' => TRUE,
+    ];
+    $form['data_points']['youth']['ipu_map_youth_link'] = [
+      '#title' => $this->t('Link'),
+      '#type' => 'linkit',
+      '#autocomplete_route_name' => 'linkit.autocomplete',
+      '#autocomplete_route_parameters' => [ 'linkit_profile_id' => 'editor'],
+      '#default_value' => $config->get('ipu_map_youth_link', 100),
+    ];
+
+    $form['data_points']['hr'] = [
+      '#type' => 'fieldset',
+      '#title' => $this->t('Human rights'),
+    ];
+
+    $form['data_points']['hr']['ipu_map_hr_data'] = [
+      '#type' => 'markup',
+      '#markup' => 'This data point is set by editing individual countries',
+    ];
+
+    $form['data_points']['hr']['ipu_map_hr_link'] = [
+      '#title' => $this->t('Link'),
+      '#type' => 'linkit',
+      '#autocomplete_route_name' => 'linkit.autocomplete',
+      '#autocomplete_route_parameters' => ['id' => '0', 'linkit_profile_id' => 'editor'],
+      '#default_value' => $config->get('ipu_map_hr_link', 100),
     ];
     /*$ipu_map_origin_dir = $config->get('origin_dir');
     if (!$ipu_map_origin_dir) {
@@ -135,16 +190,22 @@ class SettingsForm extends ConfigFormBase {
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $config = $this->config('ipu_map.settings');
-
+    $values = $form_state->getValues();
     $keys = [
       'vocabulary_id',
       'ipu_map_parliaments_page',
       'ipu_map_average_percent_under45',
       'ipu_map_average_percent_women',
+      'ipu_map_youth_link',
+      'ipu_map_hr_link',
+      'ipu_map_gender_link',
     ];
     foreach ($keys as $key) {
       $config->set($key, $form_state->getValue($key));
     }
+    $config->set('ipu_map_data_provenance.value', $values['ipu_map_data_provenance']['value']);
+    $config->set('ipu_map_data_provenance.format', $values['ipu_map_data_provenance']['format']);
+
     $config->save();
   }
 

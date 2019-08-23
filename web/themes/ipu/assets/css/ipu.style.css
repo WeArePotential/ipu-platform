@@ -21512,6 +21512,15 @@ a.more-data-parline, .article__node-link a,
   width: 100%;
 }
 
+.data-provenance {
+  padding: 10px;
+  background-color: #f8f9fa;
+  margin: 30px 0 20px 0;
+}
+.data-provenance p {
+  font-size: 0.875rem;
+}
+
 .node--view-mode-highlight.row, .ultimenu__flyout .node--view-mode-highlight.region-inner, .field-committee-members .node--view-mode-highlight.field__items, .node-landing_page:not(.node-172) .group-header .node--view-mode-highlight.group-body-and-data, .node-landing_page:not(.node-172) .group-header .node--view-mode-highlight.group-header-inner, .view-publications.view-display-id-page_1 .node--view-mode-highlight.views-inner, .field__item__paragraph__highlights .paragraph--type--highlights .node--view-mode-highlight.highlights__field-node, .node-article .group-related > div .field__item .views-element-container > div.node--view-mode-highlight, .carousel-item .node--view-mode-highlight.node--view-mode-slide.bs-2col, .page__footer .node--view-mode-highlight.region-inner, .field-content-section .paragraph--type--sections .field--type-viewfield .views-element-container > div.node--view-mode-highlight {
   margin-left: 0;
   margin-right: 0;
