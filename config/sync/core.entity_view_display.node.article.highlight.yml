@@ -16,7 +16,7 @@ dependencies:
     - field.field.node.article.field_tags
     - field.field.node.article.field_theme
     - node.type.article
-    - responsive_image.styles.wide
+    - responsive_image.styles.news
   module:
     - ds
     - field_group
@@ -172,7 +172,7 @@ content:
     region: main
     label: hidden
     settings:
-      responsive_image_style: wide
+      responsive_image_style: news
       image_link: content
     third_party_settings:
       ds:

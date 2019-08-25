@@ -56,21 +56,21 @@
             set row_classes = []
           %}
           {% if loop.index == 1 %}
-            <div class="col-md-6 d-flex align-items-stretch">
-            {% set row_classes = row_classes|merge([]) %}
-              {#<div{{ row.attributes.addClass(row_classes) }}>#}
+            <div class="col-lg-6 col-md-12 articles-first-row">
+            {% set row_classes = row_classes|merge(['view-mode-highlight-lg']) %}
+              <div{{ row.attributes.addClass(row_classes) }}>
                 {{ row.content }}
-              {#</div>#}
+              </div>
             </div>
           {% else %}
             {% if loop.index == 2 %}
 
-                <div class="col-md-6">
+                <div class="col-lg-6">
                     <div class="container">
                         <div class="row">
             {% endif %}
 
-            {% set row_classes = row_classes|merge(['col-md-6', 'view-mode-highlight-sm']) %}
+            {% set row_classes = row_classes|merge(['col-sm-6', 'view-mode-highlight-sm']) %}
             <div{{ row.attributes.addClass(row_classes) }}>
                 {{- row.content -}}
             </div>

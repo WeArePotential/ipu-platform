@@ -1,0 +1,23 @@
+uuid: 6f5e7aba-346e-43b9-bf85-982f7a93cb49
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.large_cropped
+    - image.style.medium_cropped
+    - image.style.teaser_280x180_cropped
+id: news
+label: News
+image_style_mappings:
+  -
+    breakpoint_id: responsive_image.viewport_sizing
+    multiplier: 1x
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: '(min-width: 1290px) 50vw, (min-width: 851px) 90vw, (min-width: 560px) 100vw'
+      sizes_image_styles:
+        - large_cropped
+        - medium_cropped
+        - teaser_280x180_cropped
+breakpoint_group: responsive_image
+fallback_image_style: large_cropped

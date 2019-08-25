@@ -19,19 +19,30 @@ dependencies:
 third_party_settings:
   ds:
     layout:
-      id: layout_onecol
-      library: layout_discovery/onecol
+      id: bs_1col
+      library: null
       disable_css: false
       entity_classes: all_classes
-      settings: {  }
+      settings:
+        layout:
+          wrapper: div
+          classes: {  }
+          add_layout_class: 1
+          attributes: ''
+        regions:
+          main:
+            wrapper: div
+            classes: {  }
+            add_region_classes: 1
+            attributes: ''
     regions:
-      content:
+      main:
+        - group_image
         - field_media_image
         - node_title
-        - body
         - field_caption
-        - group_image
         - group_content
+        - body
         - node_link
     fields:
       node_link:
@@ -41,9 +52,9 @@ third_party_settings:
         formatter: default
         settings:
           'link text': 'Read more'
-          'link class': 'btn btn-primary-outline'
+          'link class': ''
           wrapper: ''
-          class: ''
+          class: 'btn btn-outline-primary btn-sm'
         ft:
           id: default
           settings:
@@ -72,11 +83,9 @@ third_party_settings:
         - body
         - node_link
       parent_name: ''
-      weight: 2
+      weight: 1
       format_type: html_element
       format_settings:
-        id: ''
-        classes: card-body
         element: div
         show_label: false
         label_element: h3
@@ -84,14 +93,16 @@ third_party_settings:
         attributes: ''
         effect: none
         speed: fast
+        id: ''
+        classes: group-content
       label: Content
-      region: content
+      region: hidden
     group_image:
       children:
         - field_media_image
         - field_caption
       parent_name: ''
-      weight: 1
+      weight: 0
       format_type: html_element
       format_settings:
         id: ''
@@ -104,7 +115,7 @@ third_party_settings:
         effect: none
         speed: fast
       label: Image
-      region: content
+      region: hidden
 _core:
   default_config_hash: g1S3_GLaxq4l3I9RIca5Mlz02MxI2KmOquZpHw59akM
 id: node.page.highlight
@@ -137,11 +148,11 @@ content:
             lb: ''
             lb-col: false
             classes: {  }
-    region: content
+    region: main
   field_caption:
     type: smart_trim
     weight: 1
-    region: content
+    region: main
     label: hidden
     settings:
       trim_length: 600
@@ -158,7 +169,7 @@ content:
   field_media_image:
     type: image
     weight: 0
-    region: content
+    region: main
     label: hidden
     settings:
       image_style: teaser

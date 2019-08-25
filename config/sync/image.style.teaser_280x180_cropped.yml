@@ -1,0 +1,23 @@
+uuid: c5205c77-07cd-4ca2-b263-127dff8d0d68
+langcode: en
+status: true
+dependencies: {  }
+name: teaser_280x180_cropped
+label: 'Teaser (280x180) cropped'
+effects:
+  2da2077c-a254-4e51-b010-15fb2a3575da:
+    uuid: 2da2077c-a254-4e51-b010-15fb2a3575da
+    id: image_scale
+    weight: 1
+    data:
+      width: 280
+      height: 180
+      upscale: true
+  1d0cda84-29d1-43f3-9ba0-57fcbd7effc5:
+    uuid: 1d0cda84-29d1-43f3-9ba0-57fcbd7effc5
+    id: image_crop
+    weight: 2
+    data:
+      width: 280
+      height: 180
+      anchor: center-center

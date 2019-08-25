@@ -6,7 +6,9 @@ dependencies:
     - core.entity_view_mode.node.highlight
     - field.field.node.basic_page.body
     - field.field.node.basic_page.field_caption
+    - field.field.node.basic_page.field_committee_members
     - field.field.node.basic_page.field_contact_ipu
+    - field.field.node.basic_page.field_geopolitical_group
     - field.field.node.basic_page.field_media_image
     - field.field.node.basic_page.field_related_content
     - field.field.node.basic_page.field_related_documents
@@ -38,7 +40,7 @@ third_party_settings:
         id: ''
         classes: 'group-image field-group-div'
       format_type: html_element
-      region: content
+      region: hidden
     group_content:
       children:
         - node_title
@@ -48,8 +50,6 @@ third_party_settings:
       weight: 1
       format_type: html_element
       format_settings:
-        id: ''
-        classes: card-body
         element: div
         show_label: false
         label_element: h3
@@ -57,17 +57,30 @@ third_party_settings:
         attributes: ''
         effect: none
         speed: fast
+        id: ''
+        classes: group-content
       label: Content
-      region: content
+      region: hidden
   ds:
     layout:
-      id: layout_onecol
-      library: layout_discovery/onecol
+      id: bs_1col
+      library: null
       disable_css: false
       entity_classes: all_classes
-      settings: {  }
+      settings:
+        layout:
+          wrapper: div
+          classes: {  }
+          add_layout_class: 1
+          attributes: ''
+        regions:
+          main:
+            wrapper: div
+            classes: {  }
+            add_region_classes: 1
+            attributes: ''
     regions:
-      content:
+      main:
         - group_image
         - group_content
         - node_title
@@ -137,11 +150,11 @@ content:
             lb: ''
             lb-col: false
             classes: {  }
-    region: content
+    region: main
   field_caption:
     type: smart_trim
     weight: 4
-    region: content
+    region: main
     label: hidden
     settings:
       trim_length: 600
@@ -167,7 +180,7 @@ content:
   field_media_image:
     type: image
     weight: 3
-    region: content
+    region: main
     label: hidden
     settings:
       image_style: teaser
@@ -181,7 +194,9 @@ content:
             lb-col: false
             classes: {  }
 hidden:
+  field_committee_members: true
   field_contact_ipu: true
+  field_geopolitical_group: true
   field_related_content: true
   field_related_documents: true
   field_sections: true

@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.highlight
     - field.field.node.section_page.body
+    - field.field.node.section_page.field_committee_members
     - field.field.node.section_page.field_media_image
     - field.field.node.section_page.field_sections
     - image.style.teaser
@@ -18,13 +19,13 @@ dependencies:
 third_party_settings:
   ds:
     layout:
-      id: layout_onecol
+      id: bs_1col
       library: layout_discovery/onecol
       disable_css: false
       entity_classes: all_classes
       settings: {  }
     regions:
-      content:
+      main:
         - field_media_image
         - node_title
         - group_content
@@ -72,8 +73,6 @@ third_party_settings:
       weight: 1
       format_type: html_element
       format_settings:
-        id: ''
-        classes: card-body
         element: div
         show_label: false
         label_element: h3
@@ -81,6 +80,8 @@ third_party_settings:
         attributes: ''
         effect: none
         speed: fast
+        id: ''
+        classes: group-content
       label: Content
       region: content
 id: node.section_page.highlight
@@ -131,6 +132,7 @@ content:
             lb-col: false
             classes: {  }
 hidden:
+  field_committee_members: true
   field_sections: true
   langcode: true
   links: true

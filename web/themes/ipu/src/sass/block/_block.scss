@@ -691,7 +691,7 @@ a.btn {
     @extend .badge-tertiary;
     position: absolute;
     top: -3px;
-    left: -3px;;
+    left: -3px;
     background-color: $ipu-grey;
     font-size: 0.6rem;
     text-transform: uppercase;
@@ -712,6 +712,17 @@ a.btn {
   .event__type-content,
   .bs-region--main {
     @extend .card-body;
+  }
+  &.node--type-landing-page,
+  &.node--type-basic-page,
+  &.node--type-page,
+  &.node--type-section-page {
+    .bs-region--main {
+      padding: 0;
+      .group-content {
+        padding: 10px;
+      }
+    }
   }
 
   .article__type-content {
@@ -774,7 +785,6 @@ a.btn {
     line-height: 1;
   }
 
-  
 }
 
 // News specific (Brand blue)
@@ -797,20 +807,32 @@ a.btn {
     }
   }*/
 
-  .node--view-mode-highlight .article__type-content {
-    &:hover {
-      .article__body {
-        /* Show/hide description
-        Doesn't work if descriptions are too big
+  .node--view-mode-highlight {
+    .article__type-content {
+      &:hover {
+        .article__body {
+          /* Show/hide description
+          Doesn't work if descriptions are too big
 
-        visibility: visible;
-        height: auto;
-        opacity: 1;
-        transition: all 1s ease-in-out;
-        background-color: rgba($primary, 1);
-        */
+          visibility: visible;
+          height: auto;
+          opacity: 1;
+          transition: all 1s ease-in-out;
+          background-color: rgba($primary, 1);
+          */
+        }
       }
     }
+    .article__field-media-image {
+       margin-bottom: 30%;
+     }
+    @include media-breakpoint-down(lg) {
+      .article__field-media-image {
+        margin-bottom: 50%;
+      }
+    }
+
+
 
     .article__field-media-image + .article__type-content {
       position: absolute;
@@ -818,11 +840,13 @@ a.btn {
       width: 100%;
       background-color: rgba($primary, 0.8);
 
+      /* This is dealt with by making the box .view-mode-highlight-sm so don't need it here
       .article__body {
         visibility: hidden;
         opacity: 0;
         height: 0;
       }
+      */
     }
 
   }
@@ -831,6 +855,17 @@ a.btn {
     @extend .btn-outline-light;
   }
 
+}
+
+//This forces the first item to span the right four items, but not at smaller screen sizes
+.articles-card-news {
+  .articles-first-row {
+    @extend .d-flex;
+    @extend .align-items-stretch;
+    @include media-breakpoint-down(md) {
+      display: block !important;
+    }
+  }
 }
 
 .node--type-article.node--view-mode-full {
@@ -904,11 +939,17 @@ a.btn {
 
 // NOTE: May want to remove in Drupal
 // Hide some things for now, where it would need a whole new template
-
-.view-mode-highlight-sm .article__body {
+.node--view-mode-highlight .article__body {
   display: none;
 }
-
+.view-mode-highlight-lg .node--view-mode-highlight {
+  .article__body {
+    display: block;
+  }
+  h3 {
+    font-size: $font-size-md;
+  }
+}
 
 .articles-card-case-study .article__node-post-date {
   display: none;
@@ -1020,9 +1061,8 @@ a.btn {
     }
   }
 }
+
 /* Standard cards with h3 arrows and images with captions over*/
-
-
 .image-with-caption {
   .group-image {
     position: relative;
@@ -1049,7 +1089,7 @@ a.btn {
     @extend .col-lg-4;
     @extend .col-md-6;
     margin-bottom: 20px;
-    .layout--onecol {
+    .bs-1col {
       @extend .card;
       position: relative;
       height: 100%;
@@ -1069,22 +1109,34 @@ a.btn {
       display: none;
     }
 
-    .section-page__node-title,
-    .basic-page__node-title {
-      position: absolute;
-      top: 20px;
-      left: 0px;
-      background-color: rgb(255, 255, 255, 0.85);
-      max-width: calc( 100% - 20px );
-      &:hover {
-        background-color: rgb(255, 255, 255, 0.95);
-        transition: all 300ms ease;
-        a {
-          text-decoration: none;
-          color: $ipu-blue;
+    // Quite complex! Only move the title over the image if here is one. Requires the image or the group it's in
+    // to have a sibling of group-content, in which there's a title.
+    .field-media-image ~ .group-content,
+    .group-image ~ .group-content {
 
+      .section-page__node-title,
+      .basic-page__node-title,
+      .landing-page__node-title,
+      .page__node-title {
+        position: absolute;
+        top: 20px;
+        left: 0px;
+        background-color: rgb(255, 255, 255, 0.85);
+        max-width: calc(100% - 20px);
+
+        &:hover {
+          background-color: rgb(255, 255, 255, 0.95);
+          transition: all 300ms ease;
+
+          a {
+            text-decoration: none;
+            color: $ipu-blue;
+          }
         }
       }
+    }
+    .field-media-image ~ .group-content,
+    .group-image ~ .group-content {
       h3 {
         font-size: $font-size-base;
         padding: 0;
@@ -1093,7 +1145,7 @@ a.btn {
           padding: 4px 8px;
           display:block;
           font-weight: 400;
-          &::after {
+          &:after {
             padding-left: 4px;
             font-family: "Font Awesome 5 Free", sans-serif;
             -webkit-font-smoothing: antialiased;
@@ -1107,6 +1159,7 @@ a.btn {
           }
         }
       }
+
     }
   }
 }
@@ -1151,12 +1204,18 @@ a.btn {
 }
 
 
-.node--type-landing-page.node--view-mode-highlight {
-  .group-content {
-    padding-top: 10px;
-  }
-  .node-link a {
-    @extend .btn-sm;
+.node--type-landing-page,
+.node--type-basic-page,
+.node--type-section-page,
+.node--type-page {
+  &.node--view-mode-highlight {
+    .group-content {
+      padding-top: 10px;
+    }
+
+    .node-link a {
+      @extend .btn-sm;
+    }
   }
 }
 
