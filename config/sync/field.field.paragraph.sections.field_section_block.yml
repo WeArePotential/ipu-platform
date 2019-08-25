@@ -19,9 +19,35 @@ bundle: sections
 label: Block
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
-  plugin_ids: {  }
+  plugin_ids:
+    bootstrap_simple_carousel_block: bootstrap_simple_carousel_block
+    ipu_node_block: ipu_node_block
+    ipu_imagemap_block: ipu_imagemap_block
+    ipu_stats_block: ipu_stats_block
+    'block_content:c126d0fa-1423-488a-9434-6d677314c556': 'block_content:c126d0fa-1423-488a-9434-6d677314c556'
+    'block_content:0ee9e965-445c-422b-a7f1-93f1b25669ba': 'block_content:0ee9e965-445c-422b-a7f1-93f1b25669ba'
+    'block_content:a21f0c9e-2219-47a0-b64a-0a6fde01c417': 'block_content:a21f0c9e-2219-47a0-b64a-0a6fde01c417'
+    'block_content:508de549-2722-4ccf-8cd4-540d46076b6b': 'block_content:508de549-2722-4ccf-8cd4-540d46076b6b'
+    'block_content:859e86b1-1beb-477d-a581-fdc9a8276d5a': 'block_content:859e86b1-1beb-477d-a581-fdc9a8276d5a'
+    'block_content:f543ac42-b193-4a3f-9998-6b982d402954': 'block_content:f543ac42-b193-4a3f-9998-6b982d402954'
+    'block_content:741134fe-3365-48a3-926c-10a92bef1640': 'block_content:741134fe-3365-48a3-926c-10a92bef1640'
+    'block_content:7ccf118f-2e43-4ae6-8c8b-1a281ffa98c9': 'block_content:7ccf118f-2e43-4ae6-8c8b-1a281ffa98c9'
+    'block_content:7c4b6128-62ec-4f24-a2d4-f08f8e351f80': 'block_content:7c4b6128-62ec-4f24-a2d4-f08f8e351f80'
+    'block_content:35d7eeaf-18c9-4265-991e-6b6c4eca799d': 'block_content:35d7eeaf-18c9-4265-991e-6b6c4eca799d'
+    flickr_block: flickr_block
+    ipu_map_block: ipu_map_block
+    ipu_map_signatory_block: ipu_map_signatory_block
+    ipu_country_select_block: ipu_country_select_block
+    'views_block:vacancies-vacancy_list': 'views_block:vacancies-vacancy_list'
+    'views_block:events-latest_assembly_for_menu': 'views_block:events-latest_assembly_for_menu'
+    'views_block:sub_content-block_1': 'views_block:sub_content-block_1'
+    'views_block:theme_list-block_1': 'views_block:theme_list-block_1'
+    'views_block:theme_list-block_home_page': 'views_block:theme_list-block_home_page'
+    sitemap: sitemap
+    twitter_block: twitter_block
+    webform_block: webform_block
 field_type: block_field
