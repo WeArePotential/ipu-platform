@@ -1,0 +1,21 @@
+Index: web/modules/contrib/convert_media_tags_to_markup/src/ConvertMediaTagsToMarkup/App.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- web/modules/contrib/convert_media_tags_to_markup/src/ConvertMediaTagsToMarkup/App.php	(date 1566747318620)
++++ web/modules/contrib/convert_media_tags_to_markup/src/ConvertMediaTagsToMarkup/App.php	(date 1566747318620)
+@@ -81,11 +81,12 @@
+       $width = empty($tag_info['attributes']['width']) ? '' : 'width="' . $tag_info['attributes']['width'] . '"';
+       $class = empty($tag_info['attributes']['class']) ? '' : $tag_info['attributes']['class'];
+       $style = empty($tag_info['attributes']['style']) ? '' : $tag_info['attributes']['style'];
++      $usemap = empty($tag_info['attributes']['usemap']) ? '' : $tag_info['attributes']['usemap'];
+       $output = '
+       <div class="media media-element-container media-default">
+         <div id="file-' . $tag_info['fid'] . '" class="file file-image">
+           <div class="content">
+-            <img style="' . $style . '" alt="' . $alt . '" title="' . $title . '" class="' . $class . '" src="' . $filepath . '" ' . $height . ' ' . $width . '>
++            <img style="' . $style . '" alt="' . $alt . '" title="' . $title . '" usemap="'. $usemap . '" class="' . $class . '" src="' . $filepath . '" ' . $height . ' ' . $width . '>
+           </div>
+         </div>
+       </div>';

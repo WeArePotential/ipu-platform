@@ -51,6 +51,9 @@ settings:
           name: 'Block Formatting'
           items:
             - Format
+            - JustifyLeft
+            - JustifyCenter
+            - JustifyRight
             - Indent
             - Outdent
         -

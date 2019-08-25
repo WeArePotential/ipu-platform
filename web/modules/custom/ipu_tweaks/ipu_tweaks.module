@@ -33,7 +33,6 @@ function ipu_tweaks_preprocess(&$variables) {
     ->getId();
 }
 
-
 function ipu_tweaks_preprocess_paragraph(&$variables) {
   /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
   // Placeholder for amending paragraphs
