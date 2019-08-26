@@ -17570,8 +17570,10 @@ __webpack_require__.r(__webpack_exports__);
   Drupal.behaviors.equalHeights = {
     attach: function attach(context) {
       $('.paragraph--type--highlights .node--view-mode-highlight .bs-region').matchHeight();
+      $('.view-display-id-latest_4_country .node--view-mode-highlight .bs-region').matchHeight();
+      $('.view-display-id-latest_3_generic .node--view-mode-highlight .bs-region').matchHeight(); // Special version for one big, 4 small
+
       $('.view-display-id-latest_5_generic .row .row .node--view-mode-highlight .bs-region').matchHeight();
-      $('.view-display-id-latest_3_generic .node--view-mode-highlight .bs-region').matchHeight();
       $('.view-publications .node--view-mode-highlight .bs-region').matchHeight(); // Events?
       // $('.view-events view-id-events.view-display-id-multiple_ids .node--view-mode-highlight
       //$('.node--view-mode-highlight .article__type-content').matchHeight();

@@ -207,9 +207,9 @@ function ipu_map_get_parline_data($isocode, $description, $membership_status, $p
 
 function ipu_map_get_country_news($country_term_id) {
   // NOT USED: Uses an in-built view. We use the pre_reneder below to change the sort order here.
-  $checkempty = views_get_view_result('articles', 'latest_4_news_pr_country', $country_term_id);
+  $checkempty = views_get_view_result('articles', 'latest_4_country', $country_term_id);
   if (!empty($checkempty)) {
-    return views_embed_view('articles', 'latest_4_news_pr_country', $country_term_id);
+    return views_embed_view('articles', 'latest_4_country', $country_term_id);
   }
   return false;
 }
@@ -233,7 +233,18 @@ function ipu_map_get_events($country_term_id) {
     return views_embed_view('events', 'latest_2_events_country', $country_term_id);
   }
 }
+function ipu_map_get_callout() {
+  $element = [];
+  $link = \Drupal::service('path.alias_manager')->getAliasByPath('/node/174', \Drupal::languageManager()->getCurrentLanguage('language_content')->getId());
+  $link_text = t('Get in touch');
+  $element['#title'] = t('Support for your parliament');
+  $element['#description'] = 'We offer a range support to parliaments';
+  $element['#link'] = $link;
+  $element['#link_text'] = $link_text;
+  $element['#theme'] = 'ipu-map-callout';
+  return $element;
 
+}
 function ipu_map_views_pre_render(\Drupal\views\ViewExecutable $view) {
 
   // Change the order of the news items; show the features first, if there are any, in the last 4 items.
@@ -332,6 +343,16 @@ function ipu_map_theme($existing, $type, $theme, $path) {
       'path' => $path . '/templates',
       'variables' => array(
         'flag_url' => '',
+      ),
+    ),
+    'ipu-map-callout' => array(
+      'template' => 'ipu-map-callout',
+      'path' => $path . '/templates',
+      'variables' => array(
+        'link' => '',
+        'link_text' => '',
+        'title' => '',
+        'description' => ''
       ),
     ),
     'ipu-map-country' => array(
