@@ -824,14 +824,20 @@ a.btn {
       }
     }
     .article__field-media-image {
+       // Broken images? min-height: 120px;
        margin-bottom: 30%;
      }
-    @include media-breakpoint-down(lg) {
+    @include media-breakpoint-down(md) {
       .article__field-media-image {
-        margin-bottom: 50%;
+        margin-bottom: 40%;
       }
     }
-
+    /* Single column */
+    @include media-breakpoint-down(sm) {
+      .article__field-media-image {
+        margin-bottom: 10%;
+      }
+    }
 
 
     .article__field-media-image + .article__type-content {
