@@ -189,13 +189,13 @@ class IpuStatsBlock extends BlockBase implements ContainerFactoryPluginInterface
 
     // TO DO: Get from count of human righta field in country vocab
     $form['humanrights'] = [
-      '#title' => t('MPs\'s human rights'),
+      '#title' => t("MPs' human rights"),
       '#type' => 'fieldset',
     ];
     $form['humanrights']['title'] = [
       '#title' => t('Title'),
       '#type' => 'textfield',
-      '#default_value' => t(isset($config['humanrights']['title']) ? $config['humanrights']['title'] : 'MPs\'s human rights'),
+      '#default_value' => t(isset($config['humanrights']['title']) ? $config['humanrights']['title'] : "MPs' human rights"),
       '#size' => 20,
       '#maxlen' => 20,
       '#required' => TRUE,
@@ -258,18 +258,20 @@ class IpuStatsBlock extends BlockBase implements ContainerFactoryPluginInterface
     $stats= [];
     $config = $this->getConfiguration();
 
+    $language_id =  \Drupal::languageManager()->getCurrentLanguage('language_content')->getId();
+
     $stats['members'] = $config['members'];
     $ipu_map_config = \Drupal::config('ipu_map.settings');
-    $stats['members']['link'] = \Drupal::service('path.alias_manager')->getAliasByPath($ipu_map_config->get('ipu_map_parliaments_page'));
+    $stats['members']['link'] = (($language_id != 'en') ? '/'. $language_id : '') . \Drupal::service('path.alias_manager')->getAliasByPath($ipu_map_config->get('ipu_map_parliaments_page'), $language_id);
 
     $stats['women'] = $config['women'];
-    $stats['women']['link'] = \Drupal::service('path.alias_manager')->getAliasByPath('/node/'.$config['women']['nid']);
+    $stats['women']['link'] = (($language_id != 'en') ? '/'. $language_id : '') . \Drupal::service('path.alias_manager')->getAliasByPath('/node/'.$config['women']['nid'], $language_id);
 
     $stats['under45'] = $config['under45'];
-    $stats['under45']['link'] = \Drupal::service('path.alias_manager')->getAliasByPath('/node/'.$config['under45']['nid']);
+    $stats['under45']['link'] = (($language_id != 'en') ? '/'. $language_id : '') . \Drupal::service('path.alias_manager')->getAliasByPath('/node/'.$config['under45']['nid'], $language_id);
 
     $stats['humanrights'] = $config['humanrights'];
-    $stats['humanrights']['link'] = \Drupal::service('path.alias_manager')->getAliasByPath('/node/'.$config['humanrights']['nid']);
+    $stats['humanrights']['link'] = (($language_id != 'en') ? '/'. $language_id : '') . \Drupal::service('path.alias_manager')->getAliasByPath('/node/'.$config['humanrights']['nid'], $language_id);
 
     $build = [
       '#theme'      => 'ipu-tweaks-data-points',

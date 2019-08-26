@@ -186,9 +186,10 @@ function ipu_map_get_parline_data($isocode, $description, $membership_status, $p
 
   $data['#human_rights_cases'] = ($human_rights_cases ? $human_rights_cases : 0);
   $data['#description'] = $description;
-  $data['#ipu_map_gender_link'] = ($config->get('ipu_map_gender_link') ? \Drupal::service('path.alias_manager')->getAliasByPath($config->get('ipu_map_gender_link'), $current_language_id) : '');
-  $data['#ipu_map_youth_link'] = ($config->get('ipu_map_youth_link') ? \Drupal::service('path.alias_manager')->getAliasByPath($config->get('ipu_map_youth_link'), $current_language_id) : '');
-  $data['#ipu_map_hr_link'] = ($config->get('ipu_map_hr_link') ? \Drupal::service('path.alias_manager')->getAliasByPath($config->get('ipu_map_hr_link'), $current_language_id) : '');
+
+  $data['#ipu_map_gender_link'] = ($config->get('ipu_map_gender_link') ? (($current_language_id != 'en') ? '/'. $current_language_id : '') . \Drupal::service('path.alias_manager')->getAliasByPath($config->get('ipu_map_gender_link'), $current_language_id) : '');
+  $data['#ipu_map_youth_link'] = ($config->get('ipu_map_youth_link') ? (($current_language_id != 'en') ? '/'. $current_language_id : '') . \Drupal::service('path.alias_manager')->getAliasByPath($config->get('ipu_map_youth_link'), $current_language_id) : '');
+  $data['#ipu_map_hr_link'] = ($config->get('ipu_map_hr_link') ? (($current_language_id != 'en') ? '/'. $current_language_id : '') . \Drupal::service('path.alias_manager')->getAliasByPath($config->get('ipu_map_hr_link'), $current_language_id) : '');
 
   $data['#parliamentary_name'] = array_unique($data['#parliamentary_name']);
 
