@@ -10,6 +10,6 @@ ipu_map_average_percent_under45: '26'
 ipu_map_data_provenance:
   value: "<p>This page contains the latest IPU news and data for this parliament. The percentage of women in parliament and the percentage of youth participation correspond to the lower chamber if the parliament is bicameral. The number of MP human rights cases corresponds to the latest decisions of the IPU Committee on the Human Rights of Parliamentarians.</p>\r\n"
   format: full_html
-ipu_map_youth_link: /node/90
-ipu_map_hr_link: /node/3659
+ipu_map_youth_link: /node/242
+ipu_map_hr_link: /node/238
 ipu_map_gender_link: /node/237
