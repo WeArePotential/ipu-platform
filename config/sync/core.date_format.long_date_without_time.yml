@@ -1,0 +1,8 @@
+uuid: 0d631cb8-de81-45e5-9705-55433eb0bb0d
+langcode: en
+status: true
+dependencies: {  }
+id: long_date_without_time
+label: 'Long date without time'
+locked: false
+pattern: 'l, j F Y'
