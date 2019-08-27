@@ -25,14 +25,17 @@
                 var signatory = (data[index].field_principles_signatory != 'False');
                 var no_parliament_page = (data[index].field_no_parliament_page == 'True');
                 var iso_code_for_parliament = data[index].field_iso_code;
+                var has_parent_parliament = false;
                 if (data[index].field_iso_code_for_parliament != '') {
                     iso_code_for_parliament = data[index].field_iso_code_for_parliament;
+                    has_parent_parliament = true;
                 }
                 var colour = ((signatory) ? '#E98300' : '#6F7376');
                 var attr = {
                     name: data[index].name,
                     ipu_member: member,
                     principles_signatory: signatory,
+                    has_parent_parliament: has_parent_parliament,
                     description: data[index].description__value,
                     attrs: {"stroke-width": 0.4, "fill": colour},
                 };
@@ -52,6 +55,11 @@
                     var data = settings.areas[iso_code];
                     var memberTxt = '<div class="text">' + ((data.ipu_member) ? 'IPU member' : 'Not an IPU member') + '</div>';
                     var signatoryTxt = ((data.principles_signatory) ? '<div class="text">Signatory to common princples</div>' : '')
+                    if (data.has_parent_parliament) {
+                        // Don't show notes if there's a parent parliament
+                        memberTxt = '';
+                        signatoryTxt = '';
+                    }
                     var descTxt = '<div class="text country-description">' + data.description + '</div>';
 
                     var tooltip = '<div class="country-name">' + data.name + '</div>';
