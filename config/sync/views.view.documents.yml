@@ -573,7 +573,7 @@ display:
             multiple: 1
             bundles: {  }
             access: false
-          break_phrase: false
+          break_phrase: true
           add_table: false
           require_value: false
           reduce_duplicates: false
@@ -617,7 +617,6 @@ display:
     cache_metadata:
       max-age: -1
       contexts:
-        - 'languages:language_content'
         - 'languages:language_interface'
         - url
         - url.query_args
@@ -637,7 +636,6 @@ display:
     cache_metadata:
       max-age: -1
       contexts:
-        - 'languages:language_content'
         - 'languages:language_interface'
         - url.query_args
         - 'user.node_grants:view'
