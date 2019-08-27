@@ -23,6 +23,12 @@
   display: none;
 }
 /* Arguments for viewfields is hidden*/
-.field--name-field-sections .form-disabled {
+/*.field--name-field-sections .form-disabled {
   display: none !important;
+}*/
+
+.chosen-container-multi.form-select.chosen-enable,
+.chosen-drop {
+  max-width: 100% !important;
+  width: 100% !important;
 }

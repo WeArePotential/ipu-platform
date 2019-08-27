@@ -20,7 +20,7 @@ bundle: carousel_slides
 label: Slide
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
@@ -39,8 +39,14 @@ settings:
       event_sub_page:
         weight: 20
         enabled: false
+      call_to_action:
+        weight: 21
+        enabled: false
       highlights:
         weight: 21
+        enabled: false
+      callout_strip:
+        weight: 22
         enabled: false
       ipu_event_document:
         weight: 22
@@ -52,6 +58,9 @@ settings:
         weight: 24
         enabled: false
       ipu_event_section:
+        weight: 25
+        enabled: false
+      data_point:
         weight: 25
         enabled: false
       ipu_event_session_type:

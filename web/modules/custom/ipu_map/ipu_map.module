@@ -239,7 +239,7 @@ function ipu_map_get_callout() {
   $link = \Drupal::service('path.alias_manager')->getAliasByPath('/node/174', \Drupal::languageManager()->getCurrentLanguage('language_content')->getId());
   $link_text = t('Get in touch');
   $element['#title'] = t('Support for your parliament');
-  $element['#description'] = 'We offer a range support to parliaments';
+  $element['#description'] = 'Contact us for more information on how we can support your parliament';
   $element['#link'] = $link;
   $element['#link_text'] = $link_text;
   $element['#theme'] = 'ipu-map-callout';

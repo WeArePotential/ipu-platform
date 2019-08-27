@@ -1,5 +1,5 @@
 // Add fonts
-@import url("https://fonts.googleapis.com/css?family=Roboto:300,300i,400,500&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,300i,400,500,500i&display=swap");
 
 $grid-breakpoints: (
         xs: 0,
@@ -39,6 +39,9 @@ $font-weight-base: $font-weight-light;
 
 a {
   font-weight: $font-weight-bold;
+}
+a > em {
+  font-weight: $font-weight-bold !important;
 }
 
 /* Colours */

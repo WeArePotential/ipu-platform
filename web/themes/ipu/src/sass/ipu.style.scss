@@ -5,7 +5,6 @@
 @import "~bootstrap/scss/functions";
 @import "base/variables";
 
-
 // This is needed after variables SASS, to add  to non !default values
 $theme-colors: map_merge($theme-colors, (
     "tertiary":    $tertiary
