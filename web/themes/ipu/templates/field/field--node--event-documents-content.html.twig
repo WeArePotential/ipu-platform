@@ -1,0 +1,12 @@
+{#
+/**
+ * @file
+ * Render the event document content as BS tab content.
+ */
+#}
+
+{% for item in items %}
+  <div id="event-sub-page-documents" role="tabpanel" class="tab-pane fade">
+    {{ item.content }}
+  </div>
+{% endfor %}

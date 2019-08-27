@@ -14,3 +14,24 @@ country_page:
       label: Right
     bottom:
       label: Bottom
+
+events_page:
+  label: 'Events page'
+  category: 'IPU Layouts'
+  class: '\Drupal\bootstrap_layouts\Plugin\Layout\BootstrapLayoutsBase'
+  type: partial
+  icon: images/2col.png
+  template: templates/events-page
+  regions:
+    left:
+      label: 'Left'
+      classes:
+        - col-md-3
+    left_sub_page_menu:
+      label: 'Left sub page menu'
+    right:
+      label: 'Right'
+      classes:
+        - col-md-9
+    right_sub_page_content:
+      label: 'Right sub page content'

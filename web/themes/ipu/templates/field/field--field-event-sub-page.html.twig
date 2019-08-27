@@ -21,79 +21,80 @@
 %}
 
 {% if label_hidden %}
-
-  <ul class="nav nav-tabs" role="tablist">
-    {% for item in items %}
-      {% if loop.first %}
-        {% set item_classes = ['active'] %}
-      {% else %}
-        {% set item_classes = [] %}
-      {% endif %}
-      <li class="nav-item">
-        <a href="#field-event-sub-page-tab-{{ item.content['#paragraph'].id.value }}"
-           {{ item.attributes.addClass(['nav-link']).addClass(item_classes) }}
-           data-toggle="tab">{{ item.content['#paragraph'].field_title.value }}</a>
-      </li>
-    {% endfor %}
-  </ul>
-
-  {% if multiple %}
-    <div{{ attributes.addClass(classes) }}>
-      {% for item in items %}
-        <div id="field-event-sub-page-tab-{{ item.content['#paragraph'].id.value }}"
-             role="tabpanel"
-                {{ item.attributes.addClass('field__item').addClass(['tab-pane', 'fade']) }}>{{ item.content }}</div>
-      {% endfor %}
-    </div>
-  {% else %}
-    {% for item in items %}
-      {% if loop.first %}
-        {% set item_classes = ['active', 'show'] %}
-      {% else %}
-        {% set item_classes = [] %}
-      {% endif %}
-      <div id="field-event-sub-page-tab-{{ item.content['#paragraph'].id.value }}"
-             role="tabpanel"
-                {{ attributes.addClass(classes).addClass(item_classes).addClass(['tab-pane', 'fade']) }}>{{ item.content }}</div>
-    {% endfor %}
-  {% endif %}
-{% else %}
-  <div{{ attributes.addClass(classes) }}>
-    <div{{ title_attributes.addClass(title_classes) }}>
-      {{ label }}{% if label_display == 'inline' %}<span class="field__label__suffix mr-1">:</span>{% endif %}
-    </div>
-
-    <ul class="nav nav-tabs" role="tablist">
-      {% for item in items %}
-        {% if loop.first %}
-          {% set item_classes = ['active', 'show'] %}
-        {% else %}
-          {% set item_classes = [] %}
-        {% endif %}
-        <li class="nav-item">
-          <a href="#field-event-sub-page-tab-{{ item.content['#paragraph'].id.value }}"
-             {{ item.attributes.addClass(['nav-link']).addClass(item_classes) }}
-             data-toggle="tab">{{ item.content['#paragraph'].field_title.value }}</a>
-        </li>
-      {% endfor %}
-    </ul>
-
+  <div class="d-none d-md-block">
     {% if multiple %}
-
-    <div class="field__items tab-content">
-      {% endif %}
-      {% for item in items %}
-        {% if loop.first %}
-          {% set item_classes = ['active', 'show'] %}
-        {% else %}
-          {% set item_classes = [] %}
-        {% endif %}
-        <div id="field-event-sub-page-tab-{{ item.content['#paragraph'].id.value }}"
-             role="tabpanel"
-                {{ item.attributes.addClass('field__item').addClass(['tab-pane', 'fade']).addClass(item_classes) }}>{{ item.content }}</div>
-      {% endfor %}
-      {% if multiple %}
-    </div>
+      <div class="tab-contentfield__items tab-content">
+    {% endif %}
+        {% for item in items %}
+          {% if loop.first %}
+            {% set item_classes = ['active', 'show'] %}
+          {% else %}
+            {% set item_classes = [] %}
+          {% endif %}
+          <div id="field-event-sub-page-tab-{{ item.content['#paragraph'].id.value }}" role="tabpanel" {{ item.attributes.addClass('field__item').addClass(['tab-pane', 'fade']).addClass(item_classes) }}>{{ item.content }}</div>
+        {% endfor %}
+    {% if multiple %}
+      </div>
     {% endif %}
   </div>
+  
+  <div class="d-md-none">
+    <div class="accordion" id="events-sub-page-accordion">
+      {% for item in items %}
+        {% if loop.first %}
+          {% set item_classes = ['collapse', 'show'] %}
+        {% else %}
+          {% set item_classes = ['collapse'] %}
+        {% endif %}
+        <div class="card">
+          <div class="card-header" id="event-sub-page-accordion-heading-{{ item.content['#paragraph'].id.value }}">
+            <h2 class="mb-0">
+              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#event-sub-page-collapse-{{ item.content['#paragraph'].id.value }}" aria-expanded="true" aria-controls="event-sub-page-collapse-{{ item.content['#paragraph'].id.value }}">
+                {{ item.content['#paragraph'].field_title.value }}
+              </button>
+            </h2>
+          </div>
+          <div id="event-sub-page-collapse-{{ item.content['#paragraph'].id.value }}" {{ item.attributes.addClass('field__item').addClass(['tab-pane', 'fade']).addClass(item_classes) }} aria-labelledby="event-sub-page-accordion-heading-{{ item.content['#paragraph'].id.value }}" data-parent="#events-sub-page-accordion">
+            <div class="card-body">
+              {{ item.content }}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  
+{% else %}
+
+  <div class="row">
+    <div class="col-3">
+      <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+        {% for item in items %}
+          {% if loop.first %}
+            {% set item_classes = ['active', 'show'] %}
+          {% else %}
+            {% set item_classes = [] %}
+          {% endif %}
+            <a href="#field-event-sub-page-tab-{{ item.content['#paragraph'].id.value }}" {{ item.attributes.addClass(['nav-link']).addClass(item_classes) }} data-toggle="tab">{{ item.content['#paragraph'].field_title.value }}</a>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="col-9">
+      {% if multiple %}
+        <div class=" tab-contentfield__items tab-content">
+      {% endif %}
+          {% for item in items %}
+            {% if loop.first %}
+              {% set item_classes = ['active', 'show'] %}
+            {% else %}
+              {% set item_classes = [] %}
+            {% endif %}
+            <div id="field-event-sub-page-tab-{{ item.content['#paragraph'].id.value }}" role="tabpanel" {{ item.attributes.addClass('field__item').addClass(['tab-pane', 'fade']).addClass(item_classes) }}>{{ item.content }}</div>
+          {% endfor %}
+      {% if multiple %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+  
 {% endif %}
