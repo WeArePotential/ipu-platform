@@ -1,0 +1,8 @@
+name: 'IPU Events'
+description: 'Customisations needed for Events.'
+version: '8.x-1.0'
+package: 'IPU'
+core: 8.x
+type: module
+dependencies:
+  - paragraphs:paragraphs

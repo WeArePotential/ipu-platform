@@ -1,0 +1,48 @@
+<?php
+
+/**
+ * @file
+ * Contains ipu_events.module.
+ */
+
+use Drupal\Core\Session\AccountInterface;
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\views\ViewExecutable;
+
+/**
+ * Implements hook_ENTITY_TYPE_access().
+ */
+function ipu_events_paragraph_access(EntityInterface $entity, $operation, AccountInterface $account) {
+
+  if ($operation == 'view' && $entity->bundle() == 'ipu_event_document') {
+    // Empty paragraphs seem to be showing up, so if there isn't a document remove it.
+    if ($entity->get('field_publication_language')->isEmpty()) {
+      return AccessResult::forbidden();
+    }
+    // If there is a document remove the ones that aren't assigned to the current language.
+    else {
+      $current_language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+      $document_lanagage = $entity->get('field_publication_language')->value;
+      if ($current_language != $document_lanagage) {
+        return AccessResult::forbidden();
+      }
+    }
+  }
+
+  return AccessResult::neutral();
+}
+
+/**
+ * Implements hook_theme().
+ * Add a template for the event documents just in case we need special theming somewhere.
+ */
+function ipu_events_theme() {
+  return [
+    'ipu_events_event_documents' => [
+      'variables' => [
+        'content' => '',
+      ],
+    ],
+  ];
+}
