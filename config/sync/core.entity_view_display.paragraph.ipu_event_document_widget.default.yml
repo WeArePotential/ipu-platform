@@ -17,7 +17,7 @@ bundle: ipu_event_document_widget
 mode: default
 content:
   field_ipu_event_document:
-    label: above
+    label: hidden
     weight: 0
     type: entity_reference_revisions_entity_view
     settings:
@@ -25,15 +25,8 @@ content:
       link: ''
     third_party_settings: {  }
     region: content
-  field_ipu_event_document_r:
-    label: above
-    weight: 1
-    type: entity_reference_label
-    settings:
-      link: true
-    third_party_settings: {  }
-    region: content
 hidden:
   field_fc_original_event_document: true
   field_fc_original_reference: true
+  field_ipu_event_document_r: true
   field_original_fc_id: true

@@ -13,7 +13,7 @@ dependencies:
     - paragraphs.paragraphs_type.ipu_event_document
   module:
     - ds
-    - options
+    - file_entity
 id: paragraph.ipu_event_document.default
 targetEntityType: paragraph
 bundle: ipu_event_document
@@ -21,67 +21,11 @@ mode: default
 content:
   field_event_document:
     label: hidden
-    weight: 2
-    type: entity_reference_entity_view
-    settings:
-      view_mode: thumbnail
-      link: false
-    third_party_settings:
-      ds:
-        ft:
-          id: default
-          settings:
-            lb: ''
-            lb-col: false
-            classes: {  }
-    region: content
-  field_event_document_description:
-    label: hidden
-    weight: 3
-    type: basic_string
-    settings: {  }
-    third_party_settings: {  }
-    region: content
-  field_event_document_title:
-    label: hidden
     weight: 0
-    type: string
+    type: file_download_link
     settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    region: content
-  field_outcome:
-    weight: 5
-    label: hidden
-    settings:
-      format: custom
-      format_custom_true: '(Outcome document)'
-      format_custom_false: ''
-    third_party_settings:
-      ds:
-        ft:
-          id: default
-          settings:
-            lb: ''
-            lb-col: false
-            classes: {  }
-    type: boolean
-    region: content
-  field_publication_language:
-    weight: 1
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: list_default
-    region: content
-  field_speech:
-    label: hidden
-    weight: 4
-    type: boolean
-    settings:
-      format: custom
-      format_custom_true: (Speech)
-      format_custom_false: ''
+      access_message: 'You don''t have access to download this file.'
+      text: '[paragraph:field_event_document_title]'
     third_party_settings:
       ds:
         ft:
@@ -92,4 +36,9 @@ content:
             classes: {  }
     region: content
 hidden:
+  field_event_document_description: true
+  field_event_document_title: true
   field_original_fc_id: true
+  field_outcome: true
+  field_publication_language: true
+  field_speech: true
