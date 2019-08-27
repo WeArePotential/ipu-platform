@@ -1,11 +1,7 @@
 uuid: 2a0d0a28-b66b-4804-a3c7-a9e6681a1948
 langcode: en
-status: true
+status: false
 dependencies:
-  content:
-    - 'block_content:cta_block:7c4b6128-62ec-4f24-a2d4-f08f8e351f80'
-  module:
-    - block_content
   theme:
     - ipu
 id: knowledgectas

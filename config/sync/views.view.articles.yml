@@ -14,7 +14,9 @@ dependencies:
     - taxonomy.vocabulary.ipu_structure
     - taxonomy.vocabulary.theme
   content:
+    - 'taxonomy_term:article:23a0dc24-0be9-4018-8461-13155c9ed9d9'
     - 'taxonomy_term:article:8e9c6cea-89d4-433e-90e3-9902c0124c59'
+    - 'taxonomy_term:article:8fdd6cc3-a15e-4a24-ae2b-a8307be184e4'
     - 'taxonomy_term:article:eea30751-1398-4ebf-b123-67829e882a63'
     - 'taxonomy_term:theme:7a54cadf-21e0-4cd9-b05f-82c84ac442c7'
   module:
@@ -834,6 +836,8 @@ display:
           admin_label: ''
           operator: or
           value:
+            414: 414
+            413: 413
             43: 43
             276: 276
           group: 1
@@ -1118,6 +1122,8 @@ display:
           admin_label: ''
           operator: or
           value:
+            414: 414
+            413: 413
             43: 43
             276: 276
           group: 1
@@ -1282,6 +1288,8 @@ display:
           admin_label: ''
           operator: or
           value:
+            414: 414
+            413: 413
             43: 43
             276: 276
           group: 1
@@ -1348,6 +1356,7 @@ display:
     cache_metadata:
       max-age: -1
       contexts:
+        - 'languages:language_content'
         - 'languages:language_interface'
         - url
         - 'user.node_grants:view'
@@ -1436,6 +1445,7 @@ display:
     cache_metadata:
       max-age: -1
       contexts:
+        - 'languages:language_content'
         - 'languages:language_interface'
         - url
         - url.query_args
@@ -2014,6 +2024,7 @@ display:
     cache_metadata:
       max-age: -1
       contexts:
+        - 'languages:language_content'
         - 'languages:language_interface'
         - url
         - 'user.node_grants:view'

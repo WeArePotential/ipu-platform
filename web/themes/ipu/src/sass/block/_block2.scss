@@ -11,3 +11,9 @@
     @extend .col-sm-6;
   }
 }
+
+.node-ipu_event {
+  .ipu-event__node-title h2 {
+    @extend h1;
+  }
+}
