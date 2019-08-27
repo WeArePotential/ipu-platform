@@ -51,9 +51,10 @@
 
     {{ exposed }}
     {{ attachment_before }}
-
     {% if rows -%}
+        <div class="views-rows-wrapper">
         {{ rows }}
+        </div>
     {% elseif empty -%}
         {{ empty }}
     {% endif %}

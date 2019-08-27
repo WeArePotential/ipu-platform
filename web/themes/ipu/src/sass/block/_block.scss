@@ -789,7 +789,8 @@ a.btn {
 
 // News specific (Brand blue)
 .articles-card-news,
-.viewfield--view__articles {
+.viewfield--view__articles,
+.taxonomy-list-article .views-rows-wrapper {
   .node--view-mode-highlight {
     @extend .text-white;
     @extend .bg-primary;
@@ -884,7 +885,8 @@ a.btn {
   }
 }
 
-.viewfield--view__articles {
+.viewfield--view__articles,
+.taxonomy-list-article .views-rows-wrapper {
   h3 {
     font-size: $font-size-base;
   }

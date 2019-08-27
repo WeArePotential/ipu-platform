@@ -3,6 +3,7 @@
  * @file
  * Theme functions
  */
+use Drupal\Component\Utility\Html;
 
 // Include all files from the includes directory.
 $includes_path = dirname(__FILE__) . '/includes/*.inc';
@@ -24,6 +25,13 @@ function ipu_preprocess_html(&$variables) {
   $node = \Drupal::routeMatch()->getParameter('node');
   if ($node) {
     $variables['attributes']['class'][] = ('node-' . $node->id());
+  }
+ if (\Drupal::routeMatch()->getRouteName() == 'entity.taxonomy_term.canonical') {
+    // load the term entity and get the data from there
+    $term = \Drupal::routeMatch()->getParameter('taxonomy_term');
+    $variables['term_id'] = $term->id();
+    $variables['vocabulary_id'] = $term->bundle();
+    $variables['attributes']['class'][] = 'taxonomy-list-'. Html::cleanCssIdentifier($term->bundle());
   }
 }
 

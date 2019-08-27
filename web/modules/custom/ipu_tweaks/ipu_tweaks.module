@@ -283,3 +283,16 @@ function ipu_tweaks_block_access(Block $block, $operation, AccountInterface $acc
   }
   return AccessResult::neutral();
 }
+
+/**
+ * Implements hook_entity_view_mode_alter().
+ *
+ * Change the teaser view mode of news articles to highlight (for taxonomy list page)
+ */
+function ipu_tweaks_entity_view_mode_alter(&$view_mode, \Drupal\Core\Entity\EntityInterface $entity, $context) {
+
+  // Change the view mode to teaser on full page view for node ID 123.
+  if ($entity->getEntityTypeId() == 'node' && $entity->bundle() == 'article' && $view_mode == 'teaser') {
+    $view_mode = 'highlight';
+  }
+}
