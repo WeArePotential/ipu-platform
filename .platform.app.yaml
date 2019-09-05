@@ -55,7 +55,7 @@ hooks:
         drush -y updatedb
         drush -y config-import
         if [ "$PLATFORM_BRANCH" = master ]; then
-            # Use Drush to disable the stage_file_proxy module on the Master environment.
+            # Use Drush to disable the stage_file_proxy module on the Master environment
             drush dis stage_file_proxy -y
         fi
 
