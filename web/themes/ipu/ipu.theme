@@ -188,4 +188,29 @@ function ipu_preprocess_views_view_unformatted(&$variables) {
       $variables['rows'][$index]['id'] = $row['content']['#paragraph']->id();
     }
   }
+
+}
+
+/**
+ * Implements template_preprocess_views_view().
+ */
+function ipu_preprocess_views_view(&$variables) {
+
+
+  $view = $variables['view'];
+  if ($view->id() == 'countries' && in_array($view->current_display, ['block_parliaments'])) {
+    foreach ($variables['rows'] as $index => $row) {
+      //$variables['rows'][$index]['field_iso_code_for_parliament'] =
+      foreach($row['#rows'] as $rowindex => $country) {
+        //print_r(array_keys($country));
+        if ($country['#row']->taxonomy_term__field_iso_code_for_parliament_field_iso_code_ != '') {
+          //$country['#row'] = NULL;
+          $variables['rows'][$index]['#rows'][$rowindex] = NULL;
+        }
+        //print_r(json_decode(json_encode($country['#row'])));
+      }
+      //print_r($row['field_iso_code_for_parliament']);
+    }
+  };
+
 }

@@ -55,11 +55,15 @@ class IpuMapController extends ControllerBase {
     // TODO: Remove styling and add to css. This will mean we can remove the use of #children
     $markup = '';
     $flag = ipu_map_get_flag($iso_code);
+    $title = $country->title;
     //$flag_markup = Markup::create($flag);
     $flag_markup = \Drupal::service('renderer')->render($flag);
 
     if (!empty($country->field_iso_code_for_parliament->value)) {
       $parliament_iso_code = $country->get('field_iso_code_for_parliament')->value;
+      $flag = ipu_map_get_flag($parliament_iso_code);
+      $parent = $this->getCountryTerm($parliament_iso_code);
+      $title = $parent->title;
     }
     else {
       $parliament_iso_code = $iso_code;
@@ -117,6 +121,9 @@ class IpuMapController extends ControllerBase {
     // This will set the breadcrumb and html page title. The content title is set
     // in the #title of the content
     $country = $this->getCountryTerm($iso_code);
+    if ($country->field_iso_code_for_parliament->value != '') {
+      $country = $this->getCountryTerm($country->field_iso_code_for_parliament->value);
+    }
     return $this->title;
   }
 

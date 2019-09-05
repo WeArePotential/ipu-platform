@@ -49,7 +49,20 @@ function ipu_map_get_countries() {
         $term = $term->getTranslation($language_id);
       }
     }
-    if ($term->field_no_parliament_page->value != 1 ) {
+    $display = TRUE;
+    // Only show parliaments which don't have a parent in the dropdown.
+    if ($term->field_iso_code_for_parliament) {
+      if ($term->field_iso_code_for_parliament->value != '') {
+        // Doesn't appear in dropdown if has parent.
+        $display = FALSE;
+      }
+    }
+
+    if ($term->field_no_parliament_page->value == 1 ) {
+      $display = FALSE;
+    }
+
+    if ($display) {
       $terms_sorted[$term->getName()] = $term;
       $term_names[] = $term->getName();
     }
@@ -91,7 +104,7 @@ function ipu_map_get_parline_data($isocode, $description, $membership_status, $p
   $chamber_nids = [];
   $data['#parliamentary_name'] = array();
   if (sizeof($decoded->list) == 0) {
-    \Drupal::messenger()->addStatus(t('No data available from Parline: @s', ['@s' => new FormattableMarkup($link->toString(), [])]));
+    \Drupal::messenger()->addStatus(t('Sorry, no data is available from Parline for @s', ['@s' => new FormattableMarkup($link->toString(), [])]));
   }
   foreach ($decoded->list as $chamber) {
     // TODO Multilingual

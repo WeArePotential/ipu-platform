@@ -26238,7 +26238,12 @@ a.more-data-parline, .article__node-link a,
 .viewfield--view__countries__block_members .basic-page__field-related-content .field__label,
 .basic-page__field-related-content .viewfield--view__countries__block_members .field__label,
 .viewfield--view__countries__block_members .basic-page__field-related-documents .field__label,
-.basic-page__field-related-documents .viewfield--view__countries__block_members .field__label {
+.basic-page__field-related-documents .viewfield--view__countries__block_members .field__label,
+.viewfield--view__countries__block_parliaments h3,
+.viewfield--view__countries__block_parliaments .basic-page__field-related-content .field__label,
+.basic-page__field-related-content .viewfield--view__countries__block_parliaments .field__label,
+.viewfield--view__countries__block_parliaments .basic-page__field-related-documents .field__label,
+.basic-page__field-related-documents .viewfield--view__countries__block_parliaments .field__label {
   clear: left;
   float: left;
   width: 40px;
@@ -26246,14 +26251,16 @@ a.more-data-parline, .article__node-link a,
   text-align: center;
 }
 .viewfield--view__countries__block_1 .item-list,
-.viewfield--view__countries__block_members .item-list {
+.viewfield--view__countries__block_members .item-list,
+.viewfield--view__countries__block_parliaments .item-list {
   width: 100%;
   padding-bottom: 4px;
   border-bottom: 1px solid #cccccc;
   margin-bottom: 4px;
 }
 .viewfield--view__countries__block_1 ul,
-.viewfield--view__countries__block_members ul {
+.viewfield--view__countries__block_members ul,
+.viewfield--view__countries__block_parliaments ul {
   list-style: none;
   width: calc(100% - 50px);
   padding: 0;
@@ -26261,25 +26268,31 @@ a.more-data-parline, .article__node-link a,
   display: inline-block;
 }
 .viewfield--view__countries__block_1 ul li,
-.viewfield--view__countries__block_members ul li {
+.viewfield--view__countries__block_members ul li,
+.viewfield--view__countries__block_parliaments ul li {
   list-style: none;
   display: inline-block;
 }
 .viewfield--view__countries__block_1 ul li a.non-member,
-.viewfield--view__countries__block_members ul li a.non-member {
+.viewfield--view__countries__block_members ul li a.non-member,
+.viewfield--view__countries__block_parliaments ul li a.non-member {
   font-weight: 300;
 }
 
-.viewfield--view__countries__block_members li a:after {
+.viewfield--view__countries__block_members li a:after,
+.viewfield--view__countries__block_parliaments li a:after {
   content: ", ";
 }
-.viewfield--view__countries__block_members li:last-child a:after {
+.viewfield--view__countries__block_members li:last-child a:after,
+.viewfield--view__countries__block_parliaments li:last-child a:after {
   content: "";
 }
-.viewfield--view__countries__block_members .views-field-name .field-content a {
+.viewfield--view__countries__block_members .views-field-name .field-content a,
+.viewfield--view__countries__block_parliaments .views-field-name .field-content a {
   font-weight: 400;
 }
-.viewfield--view__countries__block_members .views-field-name .field-content span {
+.viewfield--view__countries__block_members .views-field-name .field-content span,
+.viewfield--view__countries__block_parliaments .views-field-name .field-content span {
   display: none;
 }
 

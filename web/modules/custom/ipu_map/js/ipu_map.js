@@ -37,11 +37,12 @@
                     ipu_member: member,
                     principles_signatory: signatory,
                     has_parent_parliament: has_parent_parliament,
+                    no_parliament_page: no_parliament_page,
                     description: data[index].description__value,
                     attrs: {"stroke-width": 0.4, "fill": colour},
                 };
                 if (no_parliament_page) {
-                    attr.description = attr.description + '<p>No data available.</p>';
+                    // attr.description = attr.description + '<p>No data available.</p>';
                 } else {
                     attr.href = '/parliament/' + iso_code_for_parliament.toLowerCase();
                 }
@@ -55,7 +56,7 @@
                     var data = settings.areas[iso_code];
                     var memberTxt = '<div class="text">' + ((data.ipu_member) ? 'IPU member' : 'Not an IPU member') + '</div>';
                     var signatoryTxt = ((data.principles_signatory) ? '<div class="text">Signatory to common princples</div>' : '')
-                    if (data.has_parent_parliament) {
+                    if (data.has_parent_parliament || data.no_parliament_page) {
                         // Don't show notes if there's a parent parliament
                         memberTxt = '';
                         signatoryTxt = '';

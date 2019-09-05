@@ -1898,7 +1898,8 @@ a.btn {
 }
 
 .viewfield--view__countries__block_1,
-.viewfield--view__countries__block_members {
+.viewfield--view__countries__block_members,
+.viewfield--view__countries__block_parliaments {
   h3 {
     clear: left;
     float: left;
@@ -1927,7 +1928,8 @@ a.btn {
     }
   }
 }
-.viewfield--view__countries__block_members {
+.viewfield--view__countries__block_members,
+.viewfield--view__countries__block_parliaments {
   li a:after {
     content: ', ';
   }
