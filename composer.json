@@ -231,8 +231,10 @@
             },
             "drupal/devel_debug_log": {
                 "Empty message if being called from drush": "https://www.drupal.org/files/issues/2802681-make-drush-compatible.patch"
+            },
+            "drupal/stage_file_proxy": {
+                "Disable stage file proxy on live": "https://www.drupal.org/files/issues/disable_fetching-2864016-16.patch"
             }
-
         },
         "drupal-scaffold": {
             "initial": {

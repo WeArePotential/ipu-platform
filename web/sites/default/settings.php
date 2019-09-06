@@ -36,6 +36,9 @@ $config_directories[CONFIG_SYNC_DIRECTORY] = '../config/sync';
 if (file_exists($app_root . '/' . $site_path . '/settings.platformsh.php')) {
   include $app_root . '/' . $site_path . '/settings.platformsh.php';
 }
+if (strtolower(getenv('PLATFORM_ENVIRONMENT')) == 'master') {
+  $config['stage_file_proxy.settings']['disabled'] = 1;
+}
 
 // Local settings. These come last so that they can override anything.
 if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
