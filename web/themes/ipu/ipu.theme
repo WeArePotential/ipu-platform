@@ -124,7 +124,9 @@ function ipu_theme_suggestions_container_alter(&$suggestions, $variables) {
   // Add template suggestions for views since we need to get rid of that damn container div
   // around the event sub pages view to get the BS tabs to work properly in the event template.
   if (isset($variables['element']['#view'])) {
-    $suggestions[] = 'container__views__' . $variables['element']['#name'];
+    if (isset($variables['element']['#name'])) {
+      $suggestions[] = 'container__views__' . $variables['element']['#name'];
+    }
   }
 }
 

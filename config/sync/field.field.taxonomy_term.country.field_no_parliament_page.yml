@@ -16,7 +16,7 @@ field_name: field_no_parliament_page
 entity_type: taxonomy_term
 bundle: country
 label: 'No parliament page'
-description: 'Select  to  ensure there is no parliament page generated, and that the country does not appear in the drop down list. The area will still show on the map but not be linked. Other content may still be tagged with this country'
+description: 'Select  to  ensure there is no parliament page generated, and that the country does not appear in the drop down list. The area will still show on the map but not be linked. Other content may still be tagged with this country. <strong>This is ignored where a parent parliament is given</strong>'
 required: false
 translatable: false
 default_value:
