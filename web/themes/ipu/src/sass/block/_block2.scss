@@ -18,6 +18,10 @@
   }
   .tab-pane {
     padding-bottom: 20px;
+    h2 {
+      margin-top: 10px;
+      border-bottom: 1px solid $ipu-teal;
+    }
   }
   .ipu-event__sponsors, .ipu-event__field-sponsor {
     margin: 10px 0;

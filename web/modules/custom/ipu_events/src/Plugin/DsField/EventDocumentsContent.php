@@ -92,6 +92,9 @@ class EventDocumentsContent extends DsFieldBase {
         foreach ($sections as $section) {
           if (!$section->field_ipu_event_document_widget->isEmpty()) {
             $document_widgets = $section->field_ipu_event_document_widget->referencedEntities();
+            if ($section->field_ie_fc_title->value != '') {
+              $other_documents[] = '<h2>' . $section->field_ie_fc_title->value . '</h2>';
+            }
             foreach ($document_widgets as $document_widget) {
               if (!$document_widget->field_ipu_event_document->isEmpty()) {
                 $documents = $document_widget->field_ipu_event_document->referencedEntities();
@@ -114,7 +117,7 @@ class EventDocumentsContent extends DsFieldBase {
       return [
         '#type' => 'event_documents',
         '#content' => $grouped_documents_render,
-        '#suffix' => implode('', $other_documents),
+        '#suffix' => (count($other_documents) > 0 ? implode('', $other_documents) : ''),
       ];
     }
 		

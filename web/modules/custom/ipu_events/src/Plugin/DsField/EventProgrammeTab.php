@@ -26,6 +26,11 @@ class EventProgrammeTab extends DsFieldBase {
     $have_sessions = FALSE;
     $node = $this->entity();
 
+    if ($node->field_hide_programs_menu->value == 1) {
+      $have_sessions = FALSE;
+      return [];
+    }
+
     if ($node->bundle() == 'ipu_event') {
       $current_language = \Drupal::languageManager()
         ->getCurrentLanguage()

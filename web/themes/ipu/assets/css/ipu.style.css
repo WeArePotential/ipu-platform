@@ -26684,6 +26684,10 @@ a.more-data-parline, .article__node-link a,
 .node-ipu_event .tab-pane {
   padding-bottom: 20px;
 }
+.node-ipu_event .tab-pane h2, .node-ipu_event .tab-pane .section-page-subpages-section .field__label, .section-page-subpages-section .node-ipu_event .tab-pane .field__label, .node-ipu_event .tab-pane .sections__field-section-title, .node-ipu_event .tab-pane .node-article .group-related .field__label, .node-article .group-related .node-ipu_event .tab-pane .field__label, .node-ipu_event .tab-pane .field__item__paragraph__highlights .paragraph--type--highlights .highlights__field-section-title, .field__item__paragraph__highlights .paragraph--type--highlights .node-ipu_event .tab-pane .highlights__field-section-title, .node-ipu_event .tab-pane .field-committee-members .field__label, .field-committee-members .node-ipu_event .tab-pane .field__label {
+  margin-top: 10px;
+  border-bottom: 1px solid #00a8b4;
+}
 .node-ipu_event .ipu-event__sponsors, .node-ipu_event .ipu-event__field-sponsor {
   margin: 10px 0;
   border-bottom: 1px solid #cccccc;

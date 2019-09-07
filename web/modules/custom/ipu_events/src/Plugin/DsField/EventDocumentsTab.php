@@ -59,15 +59,15 @@ class EventDocumentsTab extends DsFieldBase {
 
       if (!$node->field_event_sub_page->isEmpty()) {
         $subpages = $node->field_event_sub_page->referencedEntities();
-        foreach($subpages as $subpage) {
+        foreach ($subpages as $subpage) {
           if (!$subpage->field_ipu_event_section->isEmpty()) {
             $sections = $node->field_ipu_event_section->referencedEntities();
-             foreach ($sections as $section) {
-             if (!$section->field_ipu_event_document_widget->isEmpty()) {
-               $have_documents = TRUE;
-             }
-           }
-         }
+            foreach ($sections as $section) {
+              if (!$section->field_ipu_event_document_widget->isEmpty()) {
+                $have_documents = TRUE;
+              }
+            }
+          }
         }
       }
 
