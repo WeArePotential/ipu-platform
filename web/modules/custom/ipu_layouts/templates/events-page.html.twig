@@ -21,8 +21,14 @@
   <{{ wrapper }}{{ attributes }}>
     {{ title_suffix.contextual_links }}
 
+  {% if top.content %}
+    <div class="col-12">
+      {{ top.content }}
+    </div>
+  {% endif %}
+
     {% if right_sub_page_content.content %}
-      <div class="col-md-9 order-md-2">
+      <div class="col-md-8 order-md-1">
         {{ right.content }}
         <div class="tab-content" id="v-pills-tabContent">
           {{ right_sub_page_content.content }}
@@ -31,14 +37,20 @@
     {% endif %}
 
     {% if left_sub_page_menu.content %}
-      <div class="col-md-3 order-md-1">
+      <div class="col-md-4 order-md-2">
         <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
           {{ left_sub_page_menu.content }}
         </div>
         {{ left.content }}
       </div>
     {% endif %}
-    
+
+  {% if bottom.content %}
+    <div class="col-12">
+      {{ bottom.content }}
+    </div>
+  {% endif %}
+
   </{{ wrapper }}>
 
 </div>

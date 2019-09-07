@@ -21,11 +21,61 @@ class EventDocumentsTab extends DsFieldBase {
   /**
    * {@inheritdoc}
    */
-	public function build(){
+	public function build() {
     // @todo Check if there are any documents before returning the tab content.
-    return [
-      '#markup' => $this->t('Documents'),
-    ];
-	}
+    /** @var $node Drupal\node\Entity\Node * */
+    $have_documents = FALSE;
+    $node = $this->entity();
 
+    if ($node->bundle() == 'ipu_event') {
+      $all_documents = [];
+      $current_language = \Drupal::languageManager()
+        ->getCurrentLanguage()
+        ->getId();
+
+      if ($node->field_hide_documents_menu->value == 1) {
+        $have_documents = FALSE;
+        return [];
+      }
+
+      // Get the session paragraphs.
+      if (!$node->field_ipu_event_sessions->isEmpty()) {
+        $sessions = $node->field_ipu_event_sessions->referencedEntities();
+        foreach ($sessions as $session) {
+          if (!$session->field_ipu_event_document_widget->isEmpty()) {
+            $have_documents = TRUE;
+          }
+        }
+      }
+
+      if (!$node->field_ipu_event_section->isEmpty()) {
+        $sections = $node->field_ipu_event_section->referencedEntities();
+        foreach ($sections as $section) {
+          if (!$section->field_ipu_event_document_widget->isEmpty()) {
+            $have_documents = TRUE;
+          }
+        }
+      }
+
+      if (!$node->field_event_sub_page->isEmpty()) {
+        $subpages = $node->field_event_sub_page->referencedEntities();
+        foreach($subpages as $subpage) {
+          if (!$subpage->field_ipu_event_section->isEmpty()) {
+            $sections = $node->field_ipu_event_section->referencedEntities();
+             foreach ($sections as $section) {
+             if (!$section->field_ipu_event_document_widget->isEmpty()) {
+               $have_documents = TRUE;
+             }
+           }
+         }
+        }
+      }
+
+    }
+    if ($have_documents) {
+      return ['#markup' => $this->t('Documents')];
+    } else {
+      return [];
+    }
+  }
 }

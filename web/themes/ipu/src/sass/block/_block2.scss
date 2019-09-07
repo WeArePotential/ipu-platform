@@ -16,4 +16,61 @@
   .ipu-event__node-title h2 {
     @extend h1;
   }
+  .tab-pane {
+    padding-bottom: 20px;
+  }
+  .ipu-event__sponsors, .ipu-event__field-sponsor {
+    margin: 10px 0;
+    border-bottom: 1px solid $ipu-light-grey;
+    .field__label {
+      font-weight: $font-weight-normal !important;
+      border-bottom: 1px solid $ipu-light-grey;
+    }
+    .paragraphs-content-wrapper {
+      height: auto;
+      word-break: normal;
+      &:after {
+        display: none;
+      }
+    }
+  }
+  .ipu-event__field-sponsor {
+    .image__uri {
+      margin-bottom: 6px;
+    }
+    .image__filename {
+      display: none;
+    }
+  }
+  .ipu-event__dates {
+    font-weight: $font-weight-normal;
+  }
+  .ipu-event__field-location {
+    p.address {
+      br {
+        content: '';
+      }
+      span {
+        display: inline-block;
+
+        &:not(:first-child) {
+          margin-left: -.3em;
+        }
+
+        /* no need to display empty elements */
+        &:empty {
+          display: none;
+        }
+
+        &:not(:first-child):before {
+          content: ", ";
+        }
+      }
+    }
+  }
+
+  .field-ipu-event-button a {
+    margin: 10px 0;
+    @extend .btn-cta;
+  }
 }

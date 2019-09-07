@@ -32,6 +32,8 @@ dependencies:
     - address
     - datetime_range
     - ds
+    - entity_reference_revisions
+    - paragraphs
     - user
 third_party_settings:
   ds:
@@ -48,6 +50,11 @@ third_party_settings:
           add_layout_class: 1
           attributes: ''
         regions:
+          top:
+            wrapper: div
+            classes: {  }
+            add_region_classes: 1
+            attributes: ''
           left:
             wrapper: div
             classes:
@@ -70,14 +77,24 @@ third_party_settings:
             classes: {  }
             add_region_classes: 1
             attributes: ''
+          bottom:
+            wrapper: div
+            classes: {  }
+            add_region_classes: 1
+            attributes: ''
     regions:
+      top:
+        - node_title
+      left:
+        - field_sponsor
+        - field_ipu_event_sponsors
+        - field_ipu_event_right_menu
       left_sub_page_menu:
         - event_sub_pages_sub_page_titles_eva
         - event_programme_tab
         - event_documents_tab
         - event_sub_pages_sub_page_titles_eva_2
       right:
-        - node_title
         - field_ipu_event_dates
         - field_location
       right_sub_page_content:
@@ -88,22 +105,28 @@ third_party_settings:
     fields:
       event_documents_content:
         plugin_id: event_documents_content
-        weight: 9
-        label: hidden
+        weight: 12
+        label: above
         formatter: default
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
       event_documents_tab:
         plugin_id: event_documents_tab
-        weight: 2
+        weight: 6
         label: hidden
         formatter: default
       event_programme_tab:
         plugin_id: event_programme_tab
-        weight: 1
+        weight: 5
         label: hidden
         formatter: default
       node_title:
         plugin_id: node_title
-        weight: 4
+        weight: 0
         label: hidden
         formatter: default
 id: node.ipu_event.full
@@ -112,33 +135,33 @@ bundle: ipu_event
 mode: full
 content:
   event_session_paragraphs_entity_view_1:
-    weight: 8
+    weight: 11
     region: right_sub_page_content
     settings: {  }
     third_party_settings: {  }
   event_sub_pages_sub_page_content_eva:
-    weight: 7
-    region: right_sub_page_content
-    settings: {  }
-    third_party_settings: {  }
-  event_sub_pages_sub_page_content_eva_2:
     weight: 10
     region: right_sub_page_content
     settings: {  }
     third_party_settings: {  }
+  event_sub_pages_sub_page_content_eva_2:
+    weight: 13
+    region: right_sub_page_content
+    settings: {  }
+    third_party_settings: {  }
   event_sub_pages_sub_page_titles_eva:
-    weight: 0
+    weight: 4
     region: left_sub_page_menu
     settings: {  }
     third_party_settings: {  }
   event_sub_pages_sub_page_titles_eva_2:
-    weight: 3
+    weight: 7
     region: left_sub_page_menu
     settings: {  }
     third_party_settings: {  }
   field_ipu_event_dates:
     type: daterange_default
-    weight: 5
+    weight: 8
     region: right
     label: hidden
     settings:
@@ -154,13 +177,46 @@ content:
             lb: ''
             lb-col: false
             classes: {  }
+  field_ipu_event_right_menu:
+    type: entity_reference_revisions_entity_view
+    weight: 3
+    region: left
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+  field_ipu_event_sponsors:
+    type: paragraph_summary
+    weight: 2
+    region: left
+    label: above
+    settings: {  }
+    third_party_settings: {  }
   field_location:
     type: address_default
-    weight: 6
+    weight: 9
     region: right
     label: hidden
     settings: {  }
     third_party_settings: {  }
+  field_sponsor:
+    type: entity_reference_entity_view
+    weight: 1
+    region: left
+    label: above
+    settings:
+      view_mode: full
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
 hidden:
   event_session_documents_entity_view_1: true
   event_sessions_entity_view_1: true
@@ -176,13 +232,10 @@ hidden:
   field_event_type: true
   field_hide_documents_menu: true
   field_hide_programs_menu: true
-  field_ipu_event_right_menu: true
   field_ipu_event_section: true
   field_ipu_event_session_type: true
   field_ipu_event_sessions: true
-  field_ipu_event_sponsors: true
   field_programme_show_print: true
-  field_sponsor: true
   field_summary: true
   field_twitter_order: true
   langcode: true

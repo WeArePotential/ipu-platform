@@ -23,15 +23,19 @@ events_page:
   icon: images/2col.png
   template: templates/events-page
   regions:
+    top:
+      label: 'Top'
     left:
       label: 'Left'
       classes:
-        - col-md-3
+        - col-md-8
     left_sub_page_menu:
       label: 'Left sub page menu'
     right:
       label: 'Right'
       classes:
-        - col-md-9
+        - col-md-4
     right_sub_page_content:
       label: 'Right sub page content'
+    bottom:
+      label: 'Bottom'

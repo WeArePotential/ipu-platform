@@ -3,7 +3,7 @@
 namespace Drupal\ipu_events\Plugin\DsField;
 
 use Drupal\ds\Plugin\DsField\DsFieldBase;
-
+use Drupal\core\Render;
 /**
  * Plugin for a DS field containing event documents content.
  *
@@ -85,9 +85,36 @@ class EventDocumentsContent extends DsFieldBase {
         ];
       }
 
+      // Other documents
+      $other_documents = [];
+      if (!$node->field_ipu_event_section->isEmpty()) {
+        $sections = $node->field_ipu_event_section->referencedEntities();
+        foreach ($sections as $section) {
+          if (!$section->field_ipu_event_document_widget->isEmpty()) {
+            $document_widgets = $section->field_ipu_event_document_widget->referencedEntities();
+            foreach ($document_widgets as $document_widget) {
+              if (!$document_widget->field_ipu_event_document->isEmpty()) {
+                $documents = $document_widget->field_ipu_event_document->referencedEntities();
+                foreach ($documents as $document) {
+                  $document_lanagage = $document->get('field_publication_language')->value;
+                  if ($current_language == $document_lanagage) {
+                    $view_builder = \Drupal::entityTypeManager()->getViewBuilder($document->getEntityTypeId());
+                    $document_view = $view_builder->view($document, 'full');
+                    $other_documents[] = render($document_view);
+                  }
+                  // $other_documents[] = $document->id(). '-'. $document_lanagage;
+                }
+              }
+            }
+          }
+        }
+      }
+
+
       return [
         '#type' => 'event_documents',
         '#content' => $grouped_documents_render,
+        '#suffix' => implode('', $other_documents),
       ];
     }
 		

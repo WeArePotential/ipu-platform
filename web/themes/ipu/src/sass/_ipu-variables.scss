@@ -78,9 +78,6 @@ $secondary: $ipu-teal;
 $tertiary:  $ipu-orange;
 $dark:      $ipu-grey;
 
-.btn-sm {
-  padding: 0.1rem 0.5rem;
-}
 $custom-select-line-height: 1.6rem;
 
 $input-btn-padding-y: 0.125rem !default;
@@ -97,3 +94,11 @@ $border-radius: 0;
 $card-spacer-y: 10px;
 $card-spacer-x: 10px;
 
+.btn-sm {
+  padding: 0.1rem 0.5rem;
+}
+.btn-cta {
+  @extend .btn;
+  @extend .btn-primary;
+  @extend .btn-sm;
+}

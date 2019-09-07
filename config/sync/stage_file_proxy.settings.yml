@@ -1,7 +1,8 @@
 hotlink: false
-origin: 'https://ipu.org'
+origin: 'https://master-7rqtwti-gcaqeen3me7bi.eu-2.platformsh.site'
 origin_dir: sites/default/files
 use_imagecache_root: true
 verify: true
 _core:
   default_config_hash: CQLKbL2AgHGqE2ilC8yF4Mhg142d5_lgO6nJF7Ws66w
+disabled: 0

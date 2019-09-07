@@ -11,6 +11,7 @@ dependencies:
     - field.field.paragraph.ipu_event_right_menu.field_raw_fc_field_target_id
     - paragraphs.paragraphs_type.ipu_event_right_menu
   module:
+    - ds
     - entity_reference_revisions
     - link
     - text
@@ -20,7 +21,7 @@ bundle: ipu_event_right_menu
 mode: default
 content:
   field_ipu_event_button:
-    label: above
+    label: hidden
     weight: 3
     type: link
     settings:
@@ -38,39 +39,79 @@ content:
     settings:
       view_mode: full
       link: ''
-    third_party_settings: {  }
+    third_party_settings:
+      ds:
+        ft:
+          id: expert
+          settings:
+            lb: ''
+            prefix: ''
+            lbw: true
+            lbw-el: h3
+            lbw-cl: ''
+            lbw-at: ''
+            ow-el: ''
+            ow-cl: ''
+            ow-at: ''
+            fis-el: ''
+            fis-cl: ''
+            fis-at: ''
+            fi-el: ''
+            fi-cl: ''
+            fi-at: ''
+            suffix: ''
+            lb-col: false
+            ow: false
+            ow-def-at: false
+            ow-def-cl: false
+            fis: false
+            fis-def-at: false
+            fi: false
+            fi-def-at: false
     region: content
   field_ipu_event_section_desc:
-    label: above
+    label: hidden
     weight: 1
     type: text_default
     settings: {  }
     third_party_settings: {  }
     region: content
   field_ipu_event_section_title:
-    label: above
+    label: hidden
     weight: 0
     type: string
     settings:
       link_to_entity: false
-    third_party_settings: {  }
+    third_party_settings:
+      ds:
+        ft:
+          id: expert
+          settings:
+            lb: ''
+            prefix: ''
+            lbw-el: ''
+            lbw-cl: ''
+            lbw-at: ''
+            ow-el: ''
+            ow-cl: ''
+            ow-at: ''
+            fis-el: ''
+            fis-cl: ''
+            fis-at: ''
+            fi: true
+            fi-el: h2
+            fi-cl: ''
+            fi-at: ''
+            suffix: ''
+            lbw: false
+            lb-col: false
+            ow: false
+            ow-def-at: false
+            ow-def-cl: false
+            fis: false
+            fis-def-at: false
+            fi-def-at: false
     region: content
-  field_original_fc_id:
-    weight: 4
-    label: above
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
-    third_party_settings: {  }
-    type: number_integer
-    region: content
-  field_raw_fc_field_target_id:
-    weight: 5
-    label: above
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
-    third_party_settings: {  }
-    type: number_integer
-    region: content
-hidden: {  }
+hidden:
+  field_original_fc_id: true
+  field_raw_fc_field_target_id: true

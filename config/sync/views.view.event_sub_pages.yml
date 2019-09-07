@@ -240,6 +240,7 @@ display:
           plugin_id: string
       display_extenders:
         metatag_display_extender: {  }
+      css_class: ''
     cache_metadata:
       max-age: -1
       contexts:
@@ -267,6 +268,8 @@ display:
           offset: 0
       defaults:
         pager: false
+        css_class: false
+      css_class: ipu_event-subpage-home
     cache_metadata:
       max-age: -1
       contexts:
@@ -327,6 +330,7 @@ display:
         row: false
         fields: false
         pager: false
+        css_class: true
       row:
         type: fields
         options:

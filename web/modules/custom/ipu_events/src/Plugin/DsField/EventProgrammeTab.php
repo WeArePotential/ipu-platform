@@ -21,11 +21,26 @@ class EventProgrammeTab extends DsFieldBase {
   /**
    * {@inheritdoc}
    */
-	public function build(){
+	public function build() {
     // @todo Check if there are any sessions before returning the tab content.
-    return [
-      '#markup' => $this->t('Programme'),
-    ];
+    $have_sessions = FALSE;
+    $node = $this->entity();
+
+    if ($node->bundle() == 'ipu_event') {
+      $current_language = \Drupal::languageManager()
+        ->getCurrentLanguage()
+        ->getId();
+
+      if (!$node->field_ipu_event_sessions->isEmpty()) {
+        $have_sessions = TRUE;
+      }
+    }
+
+    if ($have_sessions) {
+      return ['#markup' => $this->t('Programme'),];
+    } else {
+      return [];
+    }
 	}
 
 }

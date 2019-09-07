@@ -23,7 +23,7 @@
 {% if label_hidden %}
   <div class="d-none d-md-block">
     {% if multiple %}
-      <div class="tab-contentfield__items tab-content">
+      <div class="tab-contentfield__items tab-content {{ classes }}">
     {% endif %}
         {% for item in items %}
           {% if loop.first %}
@@ -68,7 +68,7 @@
 
   <div class="row">
     <div class="col-3">
-      <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+      <div class="nav flex-column nav-pills ipu-menu-list" id="v-pills-tab" role="tablist" aria-orientation="vertical">
         {% for item in items %}
           {% if loop.first %}
             {% set item_classes = ['active', 'show'] %}

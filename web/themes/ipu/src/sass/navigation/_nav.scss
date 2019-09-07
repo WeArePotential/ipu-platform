@@ -201,6 +201,34 @@ ol.breadcrumb {
   }
 }
 
+.node-ipu_event .ipu_event-subpage-home .event-sub-page__title {
+  display: none;
+}
+.node-ipu_event .nav-pills {
+  background-color: $white;
+  border-width: 0 1px 1px 1px;
+  border-color: $ipu-very-light-grey;
+  border-style: solid;
+  margin-bottom: 20px;
+  a {
+    display: block;
+    padding: 2px 8px;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-light;
+    color: $primary;
+    background-color: $light;
+    &.active {
+      background-color: $ipu-teal-light;
+      color: $primary;
+    }
+    &:hover {
+      background-color: $secondary;
+      color: $ipu-white;
+      text-decoration: underline;
+    }
+  }
+}
+
 /* Excludes top-level */
 .block--ipu-content ul.menu,
 .ipu-menu-list ul.nav {

@@ -6,7 +6,7 @@ dependencies:
     - field.field.taxonomy_term.event_sponsor.field_logo
     - taxonomy.vocabulary.event_sponsor
   module:
-    - file
+    - ds
     - text
 id: taxonomy_term.event_sponsor.default
 targetEntityType: taxonomy_term
@@ -21,12 +21,20 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_logo:
-    label: above
+    label: hidden
     weight: 0
-    type: file_default
+    type: entity_reference_entity_view
     settings:
-      use_description_as_link_text: true
-    third_party_settings: {  }
+      view_mode: default
+      link: false
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
     region: content
 hidden:
   langcode: true

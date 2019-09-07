@@ -18,7 +18,7 @@ a > em {
 .more-data-parline, .article__node-link a,
 .ipu-event__node-link a, .stats-more-link, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link a, .btn-group-sm > .btn,
 .btn-group-sm > .more-data-parline, .article__node-link .btn-group-sm > a,
-.ipu-event__node-link .btn-group-sm > a, .btn-group-sm > .stats-more-link {
+.ipu-event__node-link .btn-group-sm > a, .btn-group-sm > .stats-more-link, .btn-group-sm > .btn-cta, .btn-cta, .node-ipu_event .field-ipu-event-button a, .carousel-item .slide-wrapper .button a {
   padding: 0.1rem 0.5rem;
 }
 
@@ -30,7 +30,7 @@ a > em {
     box-shadow: none !important;
   }
 
-  a:not(.btn):not(.more-data-parline):not(.stats-more-link) {
+  a:not(.btn):not(.more-data-parline):not(.stats-more-link):not(.btn-cta) {
     text-decoration: underline;
   }
 
@@ -2707,7 +2707,7 @@ form select.is-invalid ~ .invalid-tooltip {
 
 .btn, .field__item__paragraph__callout-strip .field-link a, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a, .node--type-publication.node--view-mode-highlight .publication__node-link a,
 .more-data-parline, .article__node-link a,
-.ipu-event__node-link a, .stats-more-link, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link a {
+.ipu-event__node-link a, .stats-more-link, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link a, .btn-cta, .node-ipu_event .field-ipu-event-button a, .carousel-item .slide-wrapper .button a {
   display: inline-block;
   font-weight: 400;
   color: #212529;
@@ -2728,34 +2728,34 @@ form select.is-invalid ~ .invalid-tooltip {
 @media (prefers-reduced-motion: reduce) {
   .btn, .field__item__paragraph__callout-strip .field-link a, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a, .node--type-publication.node--view-mode-highlight .publication__node-link a,
 .more-data-parline, .article__node-link a,
-.ipu-event__node-link a, .stats-more-link, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link a {
+.ipu-event__node-link a, .stats-more-link, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link a, .btn-cta, .node-ipu_event .field-ipu-event-button a, .carousel-item .slide-wrapper .button a {
     transition: none;
   }
 }
 .btn:hover, .field__item__paragraph__callout-strip .field-link a:hover, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a:hover, .node--type-publication.node--view-mode-highlight .publication__node-link a:hover,
 .more-data-parline:hover, .article__node-link a:hover,
-.ipu-event__node-link a:hover, .stats-more-link:hover, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link a:hover {
+.ipu-event__node-link a:hover, .stats-more-link:hover, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link a:hover, .btn-cta:hover, .node-ipu_event .field-ipu-event-button a:hover, .carousel-item .slide-wrapper .button a:hover {
   color: #212529;
   text-decoration: none;
 }
 .btn:focus, .field__item__paragraph__callout-strip .field-link a:focus, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a:focus, .node--type-publication.node--view-mode-highlight .publication__node-link a:focus,
 .more-data-parline:focus, .article__node-link a:focus,
-.ipu-event__node-link a:focus, .stats-more-link:focus, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link a:focus, .btn.focus, .field__item__paragraph__callout-strip .field-link a.focus, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a.focus, .node--type-publication.node--view-mode-highlight .publication__node-link a.focus,
+.ipu-event__node-link a:focus, .stats-more-link:focus, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link a:focus, .btn-cta:focus, .node-ipu_event .field-ipu-event-button a:focus, .carousel-item .slide-wrapper .button a:focus, .btn.focus, .field__item__paragraph__callout-strip .field-link a.focus, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a.focus, .node--type-publication.node--view-mode-highlight .publication__node-link a.focus,
 .focus.more-data-parline, .article__node-link a.focus,
-.ipu-event__node-link a.focus, .focus.stats-more-link, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link a.focus {
+.ipu-event__node-link a.focus, .focus.stats-more-link, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link a.focus, .focus.btn-cta, .node-ipu_event .field-ipu-event-button a.focus, .carousel-item .slide-wrapper .button a.focus {
   outline: 0;
   box-shadow: 0 0 0 0.2rem rgba(0, 102, 161, 0.25);
 }
 .btn.disabled, .field__item__paragraph__callout-strip .field-link a.disabled, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a.disabled, .node--type-publication.node--view-mode-highlight .publication__node-link a.disabled,
 .disabled.more-data-parline, .article__node-link a.disabled,
-.ipu-event__node-link a.disabled, .disabled.stats-more-link, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link a.disabled, .btn:disabled, .field__item__paragraph__callout-strip .field-link a:disabled, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a:disabled, .node--type-publication.node--view-mode-highlight .publication__node-link a:disabled,
+.ipu-event__node-link a.disabled, .disabled.stats-more-link, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link a.disabled, .disabled.btn-cta, .node-ipu_event .field-ipu-event-button a.disabled, .carousel-item .slide-wrapper .button a.disabled, .btn:disabled, .field__item__paragraph__callout-strip .field-link a:disabled, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a:disabled, .node--type-publication.node--view-mode-highlight .publication__node-link a:disabled,
 .more-data-parline:disabled, .article__node-link a:disabled,
-.ipu-event__node-link a:disabled, .stats-more-link:disabled, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link a:disabled {
+.ipu-event__node-link a:disabled, .stats-more-link:disabled, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link a:disabled, .btn-cta:disabled, .node-ipu_event .field-ipu-event-button a:disabled, .carousel-item .slide-wrapper .button a:disabled {
   opacity: 0.65;
 }
 a.btn.disabled, .field__item__paragraph__callout-strip .field-link a.disabled, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a.disabled, .node--type-publication.node--view-mode-highlight .publication__node-link a.disabled,
 a.disabled.more-data-parline, .article__node-link a.disabled,
-.ipu-event__node-link a.disabled, a.disabled.stats-more-link, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link a.disabled,
+.ipu-event__node-link a.disabled, a.disabled.stats-more-link, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link a.disabled, a.disabled.btn-cta, .node-ipu_event .field-ipu-event-button a.disabled, .carousel-item .slide-wrapper .button a.disabled,
 fieldset:disabled a.btn,
 fieldset:disabled .field__item__paragraph__callout-strip .field-link a,
 .field__item__paragraph__callout-strip .field-link fieldset:disabled a,
@@ -2770,29 +2770,34 @@ fieldset:disabled .ipu-event__node-link a,
 .ipu-event__node-link fieldset:disabled a,
 fieldset:disabled a.stats-more-link,
 fieldset:disabled .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link a,
-.node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link fieldset:disabled a {
+.node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link fieldset:disabled a,
+fieldset:disabled a.btn-cta,
+fieldset:disabled .node-ipu_event .field-ipu-event-button a,
+.node-ipu_event .field-ipu-event-button fieldset:disabled a,
+fieldset:disabled .carousel-item .slide-wrapper .button a,
+.carousel-item .slide-wrapper .button fieldset:disabled a {
   pointer-events: none;
 }
 
-.btn-primary, .field__item__paragraph__callout-strip .field-link a, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a {
+.btn-primary, .field__item__paragraph__callout-strip .field-link a, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a, .btn-cta, .node-ipu_event .field-ipu-event-button a, .carousel-item .slide-wrapper .button a {
   color: #fff;
   background-color: #0066a1;
   border-color: #0066a1;
 }
-.btn-primary:hover, .field__item__paragraph__callout-strip .field-link a:hover, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a:hover {
+.btn-primary:hover, .field__item__paragraph__callout-strip .field-link a:hover, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a:hover, .btn-cta:hover, .node-ipu_event .field-ipu-event-button a:hover, .carousel-item .slide-wrapper .button a:hover {
   color: #fff;
   background-color: #004e7b;
   border-color: #00466e;
 }
-.btn-primary:focus, .field__item__paragraph__callout-strip .field-link a:focus, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a:focus, .btn-primary.focus, .field__item__paragraph__callout-strip .field-link a.focus, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a.focus {
+.btn-primary:focus, .field__item__paragraph__callout-strip .field-link a:focus, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a:focus, .btn-cta:focus, .node-ipu_event .field-ipu-event-button a:focus, .carousel-item .slide-wrapper .button a:focus, .btn-primary.focus, .field__item__paragraph__callout-strip .field-link a.focus, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a.focus, .focus.btn-cta, .node-ipu_event .field-ipu-event-button a.focus, .carousel-item .slide-wrapper .button a.focus {
   box-shadow: 0 0 0 0.2rem rgba(38, 125, 175, 0.5);
 }
-.btn-primary.disabled, .field__item__paragraph__callout-strip .field-link a.disabled, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a.disabled, .btn-primary:disabled, .field__item__paragraph__callout-strip .field-link a:disabled, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a:disabled {
+.btn-primary.disabled, .field__item__paragraph__callout-strip .field-link a.disabled, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a.disabled, .disabled.btn-cta, .node-ipu_event .field-ipu-event-button a.disabled, .carousel-item .slide-wrapper .button a.disabled, .btn-primary:disabled, .field__item__paragraph__callout-strip .field-link a:disabled, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a:disabled, .btn-cta:disabled, .node-ipu_event .field-ipu-event-button a:disabled, .carousel-item .slide-wrapper .button a:disabled {
   color: #fff;
   background-color: #0066a1;
   border-color: #0066a1;
 }
-.btn-primary:not(:disabled):not(.disabled):active, .field__item__paragraph__callout-strip .field-link a:not(:disabled):not(.disabled):active, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .field__item__paragraph__callout-strip .field-link a:not(:disabled):not(.disabled).active, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a:not(:disabled):not(.disabled).active, .show > .btn-primary.dropdown-toggle, .block--ipu-content ul.menu > li.menu-item--collapsed.show > a.btn-primary, .block--ipu-content ul.menu > li.menu-item--expanded.show > a.btn-primary,
+.btn-primary:not(:disabled):not(.disabled):active, .field__item__paragraph__callout-strip .field-link a:not(:disabled):not(.disabled):active, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a:not(:disabled):not(.disabled):active, .btn-cta:not(:disabled):not(.disabled):active, .node-ipu_event .field-ipu-event-button a:not(:disabled):not(.disabled):active, .carousel-item .slide-wrapper .button a:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .field__item__paragraph__callout-strip .field-link a:not(:disabled):not(.disabled).active, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a:not(:disabled):not(.disabled).active, .btn-cta:not(:disabled):not(.disabled).active, .node-ipu_event .field-ipu-event-button a:not(:disabled):not(.disabled).active, .carousel-item .slide-wrapper .button a:not(:disabled):not(.disabled).active, .show > .btn-primary.dropdown-toggle, .block--ipu-content ul.menu > li.menu-item--collapsed.show > a.btn-primary, .block--ipu-content ul.menu > li.menu-item--expanded.show > a.btn-primary,
 .ipu-menu-list ul.nav > li.menu-item--collapsed.show > a.btn-primary,
 .ipu-menu-list ul.nav > li.menu-item--expanded.show > a.btn-primary, .field__item__paragraph__callout-strip .field-link .show > a.dropdown-toggle, .field__item__paragraph__callout-strip .field-link .block--ipu-content ul.menu > li.menu-item--collapsed.show > a, .block--ipu-content .field__item__paragraph__callout-strip .field-link ul.menu > li.menu-item--collapsed.show > a, .field__item__paragraph__callout-strip .field-link .block--ipu-content ul.menu > li.menu-item--expanded.show > a, .block--ipu-content .field__item__paragraph__callout-strip .field-link ul.menu > li.menu-item--expanded.show > a,
 .field__item__paragraph__callout-strip .field-link .ipu-menu-list ul.nav > li.menu-item--collapsed.show > a,
@@ -2802,12 +2807,22 @@ fieldset:disabled .node-landing_page:not(.node-172) .group-header .group-body-an
 .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .ipu-menu-list ul.nav > li.menu-item--collapsed.show > a,
 .ipu-menu-list .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file ul.nav > li.menu-item--collapsed.show > a,
 .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .ipu-menu-list ul.nav > li.menu-item--expanded.show > a,
-.ipu-menu-list .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file ul.nav > li.menu-item--expanded.show > a {
+.ipu-menu-list .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file ul.nav > li.menu-item--expanded.show > a, .show > .dropdown-toggle.btn-cta, .block--ipu-content ul.menu > li.menu-item--collapsed.show > a.btn-cta, .block--ipu-content ul.menu > li.menu-item--expanded.show > a.btn-cta,
+.ipu-menu-list ul.nav > li.menu-item--collapsed.show > a.btn-cta,
+.ipu-menu-list ul.nav > li.menu-item--expanded.show > a.btn-cta, .node-ipu_event .field-ipu-event-button .show > a.dropdown-toggle, .node-ipu_event .field-ipu-event-button .block--ipu-content ul.menu > li.menu-item--collapsed.show > a, .block--ipu-content .node-ipu_event .field-ipu-event-button ul.menu > li.menu-item--collapsed.show > a, .node-ipu_event .field-ipu-event-button .block--ipu-content ul.menu > li.menu-item--expanded.show > a, .block--ipu-content .node-ipu_event .field-ipu-event-button ul.menu > li.menu-item--expanded.show > a,
+.node-ipu_event .field-ipu-event-button .ipu-menu-list ul.nav > li.menu-item--collapsed.show > a,
+.ipu-menu-list .node-ipu_event .field-ipu-event-button ul.nav > li.menu-item--collapsed.show > a,
+.node-ipu_event .field-ipu-event-button .ipu-menu-list ul.nav > li.menu-item--expanded.show > a,
+.ipu-menu-list .node-ipu_event .field-ipu-event-button ul.nav > li.menu-item--expanded.show > a, .carousel-item .slide-wrapper .button .show > a.dropdown-toggle, .carousel-item .slide-wrapper .button .block--ipu-content ul.menu > li.menu-item--collapsed.show > a, .block--ipu-content .carousel-item .slide-wrapper .button ul.menu > li.menu-item--collapsed.show > a, .carousel-item .slide-wrapper .button .block--ipu-content ul.menu > li.menu-item--expanded.show > a, .block--ipu-content .carousel-item .slide-wrapper .button ul.menu > li.menu-item--expanded.show > a,
+.carousel-item .slide-wrapper .button .ipu-menu-list ul.nav > li.menu-item--collapsed.show > a,
+.ipu-menu-list .carousel-item .slide-wrapper .button ul.nav > li.menu-item--collapsed.show > a,
+.carousel-item .slide-wrapper .button .ipu-menu-list ul.nav > li.menu-item--expanded.show > a,
+.ipu-menu-list .carousel-item .slide-wrapper .button ul.nav > li.menu-item--expanded.show > a {
   color: #fff;
   background-color: #00466e;
   border-color: #003e61;
 }
-.btn-primary:not(:disabled):not(.disabled):active:focus, .field__item__paragraph__callout-strip .field-link a:not(:disabled):not(.disabled):active:focus, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus, .field__item__paragraph__callout-strip .field-link a:not(:disabled):not(.disabled).active:focus, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a:not(:disabled):not(.disabled).active:focus, .show > .btn-primary.dropdown-toggle:focus, .block--ipu-content ul.menu > li.menu-item--collapsed.show > a.btn-primary:focus, .block--ipu-content ul.menu > li.menu-item--expanded.show > a.btn-primary:focus,
+.btn-primary:not(:disabled):not(.disabled):active:focus, .field__item__paragraph__callout-strip .field-link a:not(:disabled):not(.disabled):active:focus, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a:not(:disabled):not(.disabled):active:focus, .btn-cta:not(:disabled):not(.disabled):active:focus, .node-ipu_event .field-ipu-event-button a:not(:disabled):not(.disabled):active:focus, .carousel-item .slide-wrapper .button a:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus, .field__item__paragraph__callout-strip .field-link a:not(:disabled):not(.disabled).active:focus, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a:not(:disabled):not(.disabled).active:focus, .btn-cta:not(:disabled):not(.disabled).active:focus, .node-ipu_event .field-ipu-event-button a:not(:disabled):not(.disabled).active:focus, .carousel-item .slide-wrapper .button a:not(:disabled):not(.disabled).active:focus, .show > .btn-primary.dropdown-toggle:focus, .block--ipu-content ul.menu > li.menu-item--collapsed.show > a.btn-primary:focus, .block--ipu-content ul.menu > li.menu-item--expanded.show > a.btn-primary:focus,
 .ipu-menu-list ul.nav > li.menu-item--collapsed.show > a.btn-primary:focus,
 .ipu-menu-list ul.nav > li.menu-item--expanded.show > a.btn-primary:focus, .field__item__paragraph__callout-strip .field-link .show > a.dropdown-toggle:focus, .field__item__paragraph__callout-strip .field-link .block--ipu-content ul.menu > li.menu-item--collapsed.show > a:focus, .block--ipu-content .field__item__paragraph__callout-strip .field-link ul.menu > li.menu-item--collapsed.show > a:focus, .field__item__paragraph__callout-strip .field-link .block--ipu-content ul.menu > li.menu-item--expanded.show > a:focus, .block--ipu-content .field__item__paragraph__callout-strip .field-link ul.menu > li.menu-item--expanded.show > a:focus,
 .field__item__paragraph__callout-strip .field-link .ipu-menu-list ul.nav > li.menu-item--collapsed.show > a:focus,
@@ -2817,7 +2832,17 @@ fieldset:disabled .node-landing_page:not(.node-172) .group-header .group-body-an
 .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .ipu-menu-list ul.nav > li.menu-item--collapsed.show > a:focus,
 .ipu-menu-list .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file ul.nav > li.menu-item--collapsed.show > a:focus,
 .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .ipu-menu-list ul.nav > li.menu-item--expanded.show > a:focus,
-.ipu-menu-list .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file ul.nav > li.menu-item--expanded.show > a:focus {
+.ipu-menu-list .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file ul.nav > li.menu-item--expanded.show > a:focus, .show > .dropdown-toggle.btn-cta:focus, .block--ipu-content ul.menu > li.menu-item--collapsed.show > a.btn-cta:focus, .block--ipu-content ul.menu > li.menu-item--expanded.show > a.btn-cta:focus,
+.ipu-menu-list ul.nav > li.menu-item--collapsed.show > a.btn-cta:focus,
+.ipu-menu-list ul.nav > li.menu-item--expanded.show > a.btn-cta:focus, .node-ipu_event .field-ipu-event-button .show > a.dropdown-toggle:focus, .node-ipu_event .field-ipu-event-button .block--ipu-content ul.menu > li.menu-item--collapsed.show > a:focus, .block--ipu-content .node-ipu_event .field-ipu-event-button ul.menu > li.menu-item--collapsed.show > a:focus, .node-ipu_event .field-ipu-event-button .block--ipu-content ul.menu > li.menu-item--expanded.show > a:focus, .block--ipu-content .node-ipu_event .field-ipu-event-button ul.menu > li.menu-item--expanded.show > a:focus,
+.node-ipu_event .field-ipu-event-button .ipu-menu-list ul.nav > li.menu-item--collapsed.show > a:focus,
+.ipu-menu-list .node-ipu_event .field-ipu-event-button ul.nav > li.menu-item--collapsed.show > a:focus,
+.node-ipu_event .field-ipu-event-button .ipu-menu-list ul.nav > li.menu-item--expanded.show > a:focus,
+.ipu-menu-list .node-ipu_event .field-ipu-event-button ul.nav > li.menu-item--expanded.show > a:focus, .carousel-item .slide-wrapper .button .show > a.dropdown-toggle:focus, .carousel-item .slide-wrapper .button .block--ipu-content ul.menu > li.menu-item--collapsed.show > a:focus, .block--ipu-content .carousel-item .slide-wrapper .button ul.menu > li.menu-item--collapsed.show > a:focus, .carousel-item .slide-wrapper .button .block--ipu-content ul.menu > li.menu-item--expanded.show > a:focus, .block--ipu-content .carousel-item .slide-wrapper .button ul.menu > li.menu-item--expanded.show > a:focus,
+.carousel-item .slide-wrapper .button .ipu-menu-list ul.nav > li.menu-item--collapsed.show > a:focus,
+.ipu-menu-list .carousel-item .slide-wrapper .button ul.nav > li.menu-item--collapsed.show > a:focus,
+.carousel-item .slide-wrapper .button .ipu-menu-list ul.nav > li.menu-item--expanded.show > a:focus,
+.ipu-menu-list .carousel-item .slide-wrapper .button ul.nav > li.menu-item--expanded.show > a:focus {
   box-shadow: 0 0 0 0.2rem rgba(38, 125, 175, 0.5);
 }
 
@@ -3498,7 +3523,7 @@ fieldset:disabled .node-landing_page:not(.node-172) .group-header .group-body-an
 
 .btn-lg, .btn-group-lg > .btn, .field__item__paragraph__callout-strip .field-link .btn-group-lg > a, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .btn-group-lg > a, .node--type-publication.node--view-mode-highlight .publication__node-link .btn-group-lg > a,
 .btn-group-lg > .more-data-parline, .article__node-link .btn-group-lg > a,
-.ipu-event__node-link .btn-group-lg > a, .btn-group-lg > .stats-more-link, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .btn-group-lg > a {
+.ipu-event__node-link .btn-group-lg > a, .btn-group-lg > .stats-more-link, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .btn-group-lg > a, .btn-group-lg > .btn-cta, .node-ipu_event .field-ipu-event-button .btn-group-lg > a, .carousel-item .slide-wrapper .button .btn-group-lg > a {
   padding: 0.5rem 1rem;
   font-size: 1.75rem;
   line-height: 1.5;
@@ -3515,7 +3540,7 @@ fieldset:disabled .node-landing_page:not(.node-172) .group-header .group-body-an
 .more-data-parline, .article__node-link a,
 .ipu-event__node-link a, .stats-more-link, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link a, .btn-group-sm > .btn,
 .btn-group-sm > .more-data-parline, .article__node-link .btn-group-sm > a,
-.ipu-event__node-link .btn-group-sm > a, .btn-group-sm > .stats-more-link {
+.ipu-event__node-link .btn-group-sm > a, .btn-group-sm > .stats-more-link, .btn-group-sm > .btn-cta, .btn-cta, .node-ipu_event .field-ipu-event-button a, .carousel-item .slide-wrapper .button a {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
   line-height: 1.5;
@@ -3862,7 +3887,7 @@ input[type=button].btn-block {
 }
 .btn-group > .btn, .field__item__paragraph__callout-strip .field-link .btn-group > a, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .btn-group > a, .node--type-publication.node--view-mode-highlight .publication__node-link .btn-group > a,
 .btn-group > .more-data-parline, .article__node-link .btn-group > a,
-.ipu-event__node-link .btn-group > a, .btn-group > .stats-more-link, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .btn-group > a,
+.ipu-event__node-link .btn-group > a, .btn-group > .stats-more-link, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .btn-group > a, .btn-group > .btn-cta, .node-ipu_event .field-ipu-event-button .btn-group > a, .carousel-item .slide-wrapper .button .btn-group > a,
 .btn-group-vertical > .btn,
 .field__item__paragraph__callout-strip .field-link .btn-group-vertical > a,
 .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .btn-group-vertical > a,
@@ -3871,13 +3896,16 @@ input[type=button].btn-block {
 .article__node-link .btn-group-vertical > a,
 .ipu-event__node-link .btn-group-vertical > a,
 .btn-group-vertical > .stats-more-link,
-.node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .btn-group-vertical > a {
+.node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .btn-group-vertical > a,
+.btn-group-vertical > .btn-cta,
+.node-ipu_event .field-ipu-event-button .btn-group-vertical > a,
+.carousel-item .slide-wrapper .button .btn-group-vertical > a {
   position: relative;
   flex: 1 1 auto;
 }
 .btn-group > .btn:hover, .field__item__paragraph__callout-strip .field-link .btn-group > a:hover, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .btn-group > a:hover, .node--type-publication.node--view-mode-highlight .publication__node-link .btn-group > a:hover,
 .btn-group > .more-data-parline:hover, .article__node-link .btn-group > a:hover,
-.ipu-event__node-link .btn-group > a:hover, .btn-group > .stats-more-link:hover, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .btn-group > a:hover,
+.ipu-event__node-link .btn-group > a:hover, .btn-group > .stats-more-link:hover, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .btn-group > a:hover, .btn-group > .btn-cta:hover, .node-ipu_event .field-ipu-event-button .btn-group > a:hover, .carousel-item .slide-wrapper .button .btn-group > a:hover,
 .btn-group-vertical > .btn:hover,
 .field__item__paragraph__callout-strip .field-link .btn-group-vertical > a:hover,
 .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .btn-group-vertical > a:hover,
@@ -3886,16 +3914,19 @@ input[type=button].btn-block {
 .article__node-link .btn-group-vertical > a:hover,
 .ipu-event__node-link .btn-group-vertical > a:hover,
 .btn-group-vertical > .stats-more-link:hover,
-.node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .btn-group-vertical > a:hover {
+.node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .btn-group-vertical > a:hover,
+.btn-group-vertical > .btn-cta:hover,
+.node-ipu_event .field-ipu-event-button .btn-group-vertical > a:hover,
+.carousel-item .slide-wrapper .button .btn-group-vertical > a:hover {
   z-index: 1;
 }
 .btn-group > .btn:focus, .field__item__paragraph__callout-strip .field-link .btn-group > a:focus, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .btn-group > a:focus, .node--type-publication.node--view-mode-highlight .publication__node-link .btn-group > a:focus,
 .btn-group > .more-data-parline:focus, .article__node-link .btn-group > a:focus,
-.ipu-event__node-link .btn-group > a:focus, .btn-group > .stats-more-link:focus, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .btn-group > a:focus, .btn-group > .btn:active, .field__item__paragraph__callout-strip .field-link .btn-group > a:active, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .btn-group > a:active, .node--type-publication.node--view-mode-highlight .publication__node-link .btn-group > a:active,
+.ipu-event__node-link .btn-group > a:focus, .btn-group > .stats-more-link:focus, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .btn-group > a:focus, .btn-group > .btn-cta:focus, .node-ipu_event .field-ipu-event-button .btn-group > a:focus, .carousel-item .slide-wrapper .button .btn-group > a:focus, .btn-group > .btn:active, .field__item__paragraph__callout-strip .field-link .btn-group > a:active, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .btn-group > a:active, .node--type-publication.node--view-mode-highlight .publication__node-link .btn-group > a:active,
 .btn-group > .more-data-parline:active, .article__node-link .btn-group > a:active,
-.ipu-event__node-link .btn-group > a:active, .btn-group > .stats-more-link:active, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .btn-group > a:active, .btn-group > .btn.active, .field__item__paragraph__callout-strip .field-link .btn-group > a.active, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .btn-group > a.active, .node--type-publication.node--view-mode-highlight .publication__node-link .btn-group > a.active,
+.ipu-event__node-link .btn-group > a:active, .btn-group > .stats-more-link:active, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .btn-group > a:active, .btn-group > .btn-cta:active, .node-ipu_event .field-ipu-event-button .btn-group > a:active, .carousel-item .slide-wrapper .button .btn-group > a:active, .btn-group > .btn.active, .field__item__paragraph__callout-strip .field-link .btn-group > a.active, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .btn-group > a.active, .node--type-publication.node--view-mode-highlight .publication__node-link .btn-group > a.active,
 .btn-group > .active.more-data-parline, .article__node-link .btn-group > a.active,
-.ipu-event__node-link .btn-group > a.active, .btn-group > .active.stats-more-link, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .btn-group > a.active,
+.ipu-event__node-link .btn-group > a.active, .btn-group > .active.stats-more-link, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .btn-group > a.active, .btn-group > .active.btn-cta, .node-ipu_event .field-ipu-event-button .btn-group > a.active, .carousel-item .slide-wrapper .button .btn-group > a.active,
 .btn-group-vertical > .btn:focus,
 .field__item__paragraph__callout-strip .field-link .btn-group-vertical > a:focus,
 .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .btn-group-vertical > a:focus,
@@ -3905,6 +3936,9 @@ input[type=button].btn-block {
 .ipu-event__node-link .btn-group-vertical > a:focus,
 .btn-group-vertical > .stats-more-link:focus,
 .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .btn-group-vertical > a:focus,
+.btn-group-vertical > .btn-cta:focus,
+.node-ipu_event .field-ipu-event-button .btn-group-vertical > a:focus,
+.carousel-item .slide-wrapper .button .btn-group-vertical > a:focus,
 .btn-group-vertical > .btn:active,
 .field__item__paragraph__callout-strip .field-link .btn-group-vertical > a:active,
 .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .btn-group-vertical > a:active,
@@ -3914,6 +3948,9 @@ input[type=button].btn-block {
 .ipu-event__node-link .btn-group-vertical > a:active,
 .btn-group-vertical > .stats-more-link:active,
 .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .btn-group-vertical > a:active,
+.btn-group-vertical > .btn-cta:active,
+.node-ipu_event .field-ipu-event-button .btn-group-vertical > a:active,
+.carousel-item .slide-wrapper .button .btn-group-vertical > a:active,
 .btn-group-vertical > .btn.active,
 .field__item__paragraph__callout-strip .field-link .btn-group-vertical > a.active,
 .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .btn-group-vertical > a.active,
@@ -3922,7 +3959,10 @@ input[type=button].btn-block {
 .article__node-link .btn-group-vertical > a.active,
 .ipu-event__node-link .btn-group-vertical > a.active,
 .btn-group-vertical > .active.stats-more-link,
-.node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .btn-group-vertical > a.active {
+.node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .btn-group-vertical > a.active,
+.btn-group-vertical > .active.btn-cta,
+.node-ipu_event .field-ipu-event-button .btn-group-vertical > a.active,
+.carousel-item .slide-wrapper .button .btn-group-vertical > a.active {
   z-index: 1;
 }
 
@@ -3937,13 +3977,13 @@ input[type=button].btn-block {
 
 .btn-group > .btn:not(:first-child), .field__item__paragraph__callout-strip .field-link .btn-group > a:not(:first-child), .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .btn-group > a:not(:first-child), .node--type-publication.node--view-mode-highlight .publication__node-link .btn-group > a:not(:first-child),
 .btn-group > .more-data-parline:not(:first-child), .article__node-link .btn-group > a:not(:first-child),
-.ipu-event__node-link .btn-group > a:not(:first-child), .btn-group > .stats-more-link:not(:first-child), .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .btn-group > a:not(:first-child),
+.ipu-event__node-link .btn-group > a:not(:first-child), .btn-group > .stats-more-link:not(:first-child), .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .btn-group > a:not(:first-child), .btn-group > .btn-cta:not(:first-child), .node-ipu_event .field-ipu-event-button .btn-group > a:not(:first-child), .carousel-item .slide-wrapper .button .btn-group > a:not(:first-child),
 .btn-group > .btn-group:not(:first-child) {
   margin-left: -1px;
 }
 .btn-group > .btn:not(:last-child):not(.dropdown-toggle), .field__item__paragraph__callout-strip .field-link .btn-group > a:not(:last-child):not(.dropdown-toggle), .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .btn-group > a:not(:last-child):not(.dropdown-toggle), .node--type-publication.node--view-mode-highlight .publication__node-link .btn-group > a:not(:last-child):not(.dropdown-toggle),
 .btn-group > .more-data-parline:not(:last-child):not(.dropdown-toggle), .article__node-link .btn-group > a:not(:last-child):not(.dropdown-toggle),
-.ipu-event__node-link .btn-group > a:not(:last-child):not(.dropdown-toggle), .btn-group > .stats-more-link:not(:last-child):not(.dropdown-toggle), .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .btn-group > a:not(:last-child):not(.dropdown-toggle),
+.ipu-event__node-link .btn-group > a:not(:last-child):not(.dropdown-toggle), .btn-group > .stats-more-link:not(:last-child):not(.dropdown-toggle), .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .btn-group > a:not(:last-child):not(.dropdown-toggle), .btn-group > .btn-cta:not(:last-child):not(.dropdown-toggle), .node-ipu_event .field-ipu-event-button .btn-group > a:not(:last-child):not(.dropdown-toggle), .carousel-item .slide-wrapper .button .btn-group > a:not(:last-child):not(.dropdown-toggle),
 .btn-group > .btn-group:not(:last-child) > .btn,
 .field__item__paragraph__callout-strip .field-link .btn-group > .btn-group:not(:last-child) > a,
 .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .btn-group > .btn-group:not(:last-child) > a,
@@ -3952,13 +3992,16 @@ input[type=button].btn-block {
 .article__node-link .btn-group > .btn-group:not(:last-child) > a,
 .ipu-event__node-link .btn-group > .btn-group:not(:last-child) > a,
 .btn-group > .btn-group:not(:last-child) > .stats-more-link,
-.node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .btn-group > .btn-group:not(:last-child) > a {
+.node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .btn-group > .btn-group:not(:last-child) > a,
+.btn-group > .btn-group:not(:last-child) > .btn-cta,
+.node-ipu_event .field-ipu-event-button .btn-group > .btn-group:not(:last-child) > a,
+.carousel-item .slide-wrapper .button .btn-group > .btn-group:not(:last-child) > a {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
 .btn-group > .btn:not(:first-child), .field__item__paragraph__callout-strip .field-link .btn-group > a:not(:first-child), .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .btn-group > a:not(:first-child), .node--type-publication.node--view-mode-highlight .publication__node-link .btn-group > a:not(:first-child),
 .btn-group > .more-data-parline:not(:first-child), .article__node-link .btn-group > a:not(:first-child),
-.ipu-event__node-link .btn-group > a:not(:first-child), .btn-group > .stats-more-link:not(:first-child), .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .btn-group > a:not(:first-child),
+.ipu-event__node-link .btn-group > a:not(:first-child), .btn-group > .stats-more-link:not(:first-child), .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .btn-group > a:not(:first-child), .btn-group > .btn-cta:not(:first-child), .node-ipu_event .field-ipu-event-button .btn-group > a:not(:first-child), .carousel-item .slide-wrapper .button .btn-group > a:not(:first-child),
 .btn-group > .btn-group:not(:first-child) > .btn,
 .field__item__paragraph__callout-strip .field-link .btn-group > .btn-group:not(:first-child) > a,
 .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .btn-group > .btn-group:not(:first-child) > a,
@@ -3967,7 +4010,10 @@ input[type=button].btn-block {
 .article__node-link .btn-group > .btn-group:not(:first-child) > a,
 .ipu-event__node-link .btn-group > .btn-group:not(:first-child) > a,
 .btn-group > .btn-group:not(:first-child) > .stats-more-link,
-.node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .btn-group > .btn-group:not(:first-child) > a {
+.node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .btn-group > .btn-group:not(:first-child) > a,
+.btn-group > .btn-group:not(:first-child) > .btn-cta,
+.node-ipu_event .field-ipu-event-button .btn-group > .btn-group:not(:first-child) > a,
+.carousel-item .slide-wrapper .button .btn-group > .btn-group:not(:first-child) > a {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
@@ -3991,16 +4037,16 @@ input[type=button].btn-block {
 .node--type-section-page.node--view-mode-highlight .node-link a + .dropdown-toggle-split,
 .node--type-page.node--view-mode-highlight .node-link a + .dropdown-toggle-split,
 .more-data-parline + .dropdown-toggle-split, .article__node-link a + .dropdown-toggle-split,
-.ipu-event__node-link a + .dropdown-toggle-split, .stats-more-link + .dropdown-toggle-split, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link a + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split, .field__item__paragraph__callout-strip .field-link .btn-group-sm > a + .dropdown-toggle-split, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .btn-group-sm > a + .dropdown-toggle-split, .node--type-publication.node--view-mode-highlight .publication__node-link .btn-group-sm > a + .dropdown-toggle-split,
+.ipu-event__node-link a + .dropdown-toggle-split, .stats-more-link + .dropdown-toggle-split, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link a + .dropdown-toggle-split, .btn-cta + .dropdown-toggle-split, .node-ipu_event .field-ipu-event-button a + .dropdown-toggle-split, .carousel-item .slide-wrapper .button a + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split, .field__item__paragraph__callout-strip .field-link .btn-group-sm > a + .dropdown-toggle-split, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .btn-group-sm > a + .dropdown-toggle-split, .node--type-publication.node--view-mode-highlight .publication__node-link .btn-group-sm > a + .dropdown-toggle-split,
 .btn-group-sm > .more-data-parline + .dropdown-toggle-split, .article__node-link .btn-group-sm > a + .dropdown-toggle-split,
-.ipu-event__node-link .btn-group-sm > a + .dropdown-toggle-split, .btn-group-sm > .stats-more-link + .dropdown-toggle-split, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .btn-group-sm > a + .dropdown-toggle-split {
+.ipu-event__node-link .btn-group-sm > a + .dropdown-toggle-split, .btn-group-sm > .stats-more-link + .dropdown-toggle-split, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .btn-group-sm > a + .dropdown-toggle-split, .btn-group-sm > .btn-cta + .dropdown-toggle-split, .node-ipu_event .field-ipu-event-button .btn-group-sm > a + .dropdown-toggle-split, .carousel-item .slide-wrapper .button .btn-group-sm > a + .dropdown-toggle-split {
   padding-right: 0.375rem;
   padding-left: 0.375rem;
 }
 
 .btn-lg + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split, .field__item__paragraph__callout-strip .field-link .btn-group-lg > a + .dropdown-toggle-split, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .btn-group-lg > a + .dropdown-toggle-split, .node--type-publication.node--view-mode-highlight .publication__node-link .btn-group-lg > a + .dropdown-toggle-split,
 .btn-group-lg > .more-data-parline + .dropdown-toggle-split, .article__node-link .btn-group-lg > a + .dropdown-toggle-split,
-.ipu-event__node-link .btn-group-lg > a + .dropdown-toggle-split, .btn-group-lg > .stats-more-link + .dropdown-toggle-split, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .btn-group-lg > a + .dropdown-toggle-split {
+.ipu-event__node-link .btn-group-lg > a + .dropdown-toggle-split, .btn-group-lg > .stats-more-link + .dropdown-toggle-split, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .btn-group-lg > a + .dropdown-toggle-split, .btn-group-lg > .btn-cta + .dropdown-toggle-split, .node-ipu_event .field-ipu-event-button .btn-group-lg > a + .dropdown-toggle-split, .carousel-item .slide-wrapper .button .btn-group-lg > a + .dropdown-toggle-split {
   padding-right: 0.75rem;
   padding-left: 0.75rem;
 }
@@ -4012,19 +4058,19 @@ input[type=button].btn-block {
 }
 .btn-group-vertical > .btn, .field__item__paragraph__callout-strip .field-link .btn-group-vertical > a, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .btn-group-vertical > a, .node--type-publication.node--view-mode-highlight .publication__node-link .btn-group-vertical > a,
 .btn-group-vertical > .more-data-parline, .article__node-link .btn-group-vertical > a,
-.ipu-event__node-link .btn-group-vertical > a, .btn-group-vertical > .stats-more-link, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .btn-group-vertical > a,
+.ipu-event__node-link .btn-group-vertical > a, .btn-group-vertical > .stats-more-link, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .btn-group-vertical > a, .btn-group-vertical > .btn-cta, .node-ipu_event .field-ipu-event-button .btn-group-vertical > a, .carousel-item .slide-wrapper .button .btn-group-vertical > a,
 .btn-group-vertical > .btn-group {
   width: 100%;
 }
 .btn-group-vertical > .btn:not(:first-child), .field__item__paragraph__callout-strip .field-link .btn-group-vertical > a:not(:first-child), .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .btn-group-vertical > a:not(:first-child), .node--type-publication.node--view-mode-highlight .publication__node-link .btn-group-vertical > a:not(:first-child),
 .btn-group-vertical > .more-data-parline:not(:first-child), .article__node-link .btn-group-vertical > a:not(:first-child),
-.ipu-event__node-link .btn-group-vertical > a:not(:first-child), .btn-group-vertical > .stats-more-link:not(:first-child), .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .btn-group-vertical > a:not(:first-child),
+.ipu-event__node-link .btn-group-vertical > a:not(:first-child), .btn-group-vertical > .stats-more-link:not(:first-child), .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .btn-group-vertical > a:not(:first-child), .btn-group-vertical > .btn-cta:not(:first-child), .node-ipu_event .field-ipu-event-button .btn-group-vertical > a:not(:first-child), .carousel-item .slide-wrapper .button .btn-group-vertical > a:not(:first-child),
 .btn-group-vertical > .btn-group:not(:first-child) {
   margin-top: -1px;
 }
 .btn-group-vertical > .btn:not(:last-child):not(.dropdown-toggle), .field__item__paragraph__callout-strip .field-link .btn-group-vertical > a:not(:last-child):not(.dropdown-toggle), .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .btn-group-vertical > a:not(:last-child):not(.dropdown-toggle), .node--type-publication.node--view-mode-highlight .publication__node-link .btn-group-vertical > a:not(:last-child):not(.dropdown-toggle),
 .btn-group-vertical > .more-data-parline:not(:last-child):not(.dropdown-toggle), .article__node-link .btn-group-vertical > a:not(:last-child):not(.dropdown-toggle),
-.ipu-event__node-link .btn-group-vertical > a:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .stats-more-link:not(:last-child):not(.dropdown-toggle), .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .btn-group-vertical > a:not(:last-child):not(.dropdown-toggle),
+.ipu-event__node-link .btn-group-vertical > a:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .stats-more-link:not(:last-child):not(.dropdown-toggle), .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .btn-group-vertical > a:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .btn-cta:not(:last-child):not(.dropdown-toggle), .node-ipu_event .field-ipu-event-button .btn-group-vertical > a:not(:last-child):not(.dropdown-toggle), .carousel-item .slide-wrapper .button .btn-group-vertical > a:not(:last-child):not(.dropdown-toggle),
 .btn-group-vertical > .btn-group:not(:last-child) > .btn,
 .field__item__paragraph__callout-strip .field-link .btn-group-vertical > .btn-group:not(:last-child) > a,
 .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .btn-group-vertical > .btn-group:not(:last-child) > a,
@@ -4033,13 +4079,16 @@ input[type=button].btn-block {
 .article__node-link .btn-group-vertical > .btn-group:not(:last-child) > a,
 .ipu-event__node-link .btn-group-vertical > .btn-group:not(:last-child) > a,
 .btn-group-vertical > .btn-group:not(:last-child) > .stats-more-link,
-.node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .btn-group-vertical > .btn-group:not(:last-child) > a {
+.node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .btn-group-vertical > .btn-group:not(:last-child) > a,
+.btn-group-vertical > .btn-group:not(:last-child) > .btn-cta,
+.node-ipu_event .field-ipu-event-button .btn-group-vertical > .btn-group:not(:last-child) > a,
+.carousel-item .slide-wrapper .button .btn-group-vertical > .btn-group:not(:last-child) > a {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
 .btn-group-vertical > .btn:not(:first-child), .field__item__paragraph__callout-strip .field-link .btn-group-vertical > a:not(:first-child), .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .btn-group-vertical > a:not(:first-child), .node--type-publication.node--view-mode-highlight .publication__node-link .btn-group-vertical > a:not(:first-child),
 .btn-group-vertical > .more-data-parline:not(:first-child), .article__node-link .btn-group-vertical > a:not(:first-child),
-.ipu-event__node-link .btn-group-vertical > a:not(:first-child), .btn-group-vertical > .stats-more-link:not(:first-child), .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .btn-group-vertical > a:not(:first-child),
+.ipu-event__node-link .btn-group-vertical > a:not(:first-child), .btn-group-vertical > .stats-more-link:not(:first-child), .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .btn-group-vertical > a:not(:first-child), .btn-group-vertical > .btn-cta:not(:first-child), .node-ipu_event .field-ipu-event-button .btn-group-vertical > a:not(:first-child), .carousel-item .slide-wrapper .button .btn-group-vertical > a:not(:first-child),
 .btn-group-vertical > .btn-group:not(:first-child) > .btn,
 .field__item__paragraph__callout-strip .field-link .btn-group-vertical > .btn-group:not(:first-child) > a,
 .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .btn-group-vertical > .btn-group:not(:first-child) > a,
@@ -4048,14 +4097,17 @@ input[type=button].btn-block {
 .article__node-link .btn-group-vertical > .btn-group:not(:first-child) > a,
 .ipu-event__node-link .btn-group-vertical > .btn-group:not(:first-child) > a,
 .btn-group-vertical > .btn-group:not(:first-child) > .stats-more-link,
-.node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .btn-group-vertical > .btn-group:not(:first-child) > a {
+.node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .btn-group-vertical > .btn-group:not(:first-child) > a,
+.btn-group-vertical > .btn-group:not(:first-child) > .btn-cta,
+.node-ipu_event .field-ipu-event-button .btn-group-vertical > .btn-group:not(:first-child) > a,
+.carousel-item .slide-wrapper .button .btn-group-vertical > .btn-group:not(:first-child) > a {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
 
 .btn-group-toggle > .btn, .field__item__paragraph__callout-strip .field-link .btn-group-toggle > a, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .btn-group-toggle > a, .node--type-publication.node--view-mode-highlight .publication__node-link .btn-group-toggle > a,
 .btn-group-toggle > .more-data-parline, .article__node-link .btn-group-toggle > a,
-.ipu-event__node-link .btn-group-toggle > a, .btn-group-toggle > .stats-more-link, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .btn-group-toggle > a,
+.ipu-event__node-link .btn-group-toggle > a, .btn-group-toggle > .stats-more-link, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .btn-group-toggle > a, .btn-group-toggle > .btn-cta, .node-ipu_event .field-ipu-event-button .btn-group-toggle > a, .carousel-item .slide-wrapper .button .btn-group-toggle > a,
 .btn-group-toggle > .btn-group > .btn,
 .field__item__paragraph__callout-strip .field-link .btn-group-toggle > .btn-group > a,
 .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .btn-group-toggle > .btn-group > a,
@@ -4064,12 +4116,15 @@ input[type=button].btn-block {
 .article__node-link .btn-group-toggle > .btn-group > a,
 .ipu-event__node-link .btn-group-toggle > .btn-group > a,
 .btn-group-toggle > .btn-group > .stats-more-link,
-.node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .btn-group-toggle > .btn-group > a {
+.node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .btn-group-toggle > .btn-group > a,
+.btn-group-toggle > .btn-group > .btn-cta,
+.node-ipu_event .field-ipu-event-button .btn-group-toggle > .btn-group > a,
+.carousel-item .slide-wrapper .button .btn-group-toggle > .btn-group > a {
   margin-bottom: 0;
 }
 .btn-group-toggle > .btn input[type=radio], .field__item__paragraph__callout-strip .field-link .btn-group-toggle > a input[type=radio], .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .btn-group-toggle > a input[type=radio], .node--type-publication.node--view-mode-highlight .publication__node-link .btn-group-toggle > a input[type=radio],
 .btn-group-toggle > .more-data-parline input[type=radio], .article__node-link .btn-group-toggle > a input[type=radio],
-.ipu-event__node-link .btn-group-toggle > a input[type=radio], .btn-group-toggle > .stats-more-link input[type=radio], .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .btn-group-toggle > a input[type=radio],
+.ipu-event__node-link .btn-group-toggle > a input[type=radio], .btn-group-toggle > .stats-more-link input[type=radio], .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .btn-group-toggle > a input[type=radio], .btn-group-toggle > .btn-cta input[type=radio], .node-ipu_event .field-ipu-event-button .btn-group-toggle > a input[type=radio], .carousel-item .slide-wrapper .button .btn-group-toggle > a input[type=radio],
 .btn-group-toggle > .btn input[type=checkbox],
 .field__item__paragraph__callout-strip .field-link .btn-group-toggle > a input[type=checkbox],
 .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .btn-group-toggle > a input[type=checkbox],
@@ -4079,6 +4134,9 @@ input[type=button].btn-block {
 .ipu-event__node-link .btn-group-toggle > a input[type=checkbox],
 .btn-group-toggle > .stats-more-link input[type=checkbox],
 .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .btn-group-toggle > a input[type=checkbox],
+.btn-group-toggle > .btn-cta input[type=checkbox],
+.node-ipu_event .field-ipu-event-button .btn-group-toggle > a input[type=checkbox],
+.carousel-item .slide-wrapper .button .btn-group-toggle > a input[type=checkbox],
 .btn-group-toggle > .btn-group > .btn input[type=radio],
 .btn-group-toggle > .btn-group > .btn input[type=checkbox] {
   position: absolute;
@@ -4169,7 +4227,7 @@ form .input-group > .custom-file + select,
 .input-group-prepend .btn, .input-group-prepend .field__item__paragraph__callout-strip .field-link a, .field__item__paragraph__callout-strip .field-link .input-group-prepend a, .input-group-prepend .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .input-group-prepend a, .input-group-prepend .node--type-publication.node--view-mode-highlight .publication__node-link a, .node--type-publication.node--view-mode-highlight .publication__node-link .input-group-prepend a,
 .input-group-prepend .more-data-parline, .input-group-prepend .article__node-link a, .article__node-link .input-group-prepend a,
 .input-group-prepend .ipu-event__node-link a,
-.ipu-event__node-link .input-group-prepend a, .input-group-prepend .stats-more-link, .input-group-prepend .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link a, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .input-group-prepend a,
+.ipu-event__node-link .input-group-prepend a, .input-group-prepend .stats-more-link, .input-group-prepend .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link a, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .input-group-prepend a, .input-group-prepend .btn-cta, .input-group-prepend .node-ipu_event .field-ipu-event-button a, .node-ipu_event .field-ipu-event-button .input-group-prepend a, .input-group-prepend .carousel-item .slide-wrapper .button a, .carousel-item .slide-wrapper .button .input-group-prepend a,
 .input-group-append .btn,
 .input-group-append .field__item__paragraph__callout-strip .field-link a,
 .field__item__paragraph__callout-strip .field-link .input-group-append a,
@@ -4184,14 +4242,19 @@ form .input-group > .custom-file + select,
 .ipu-event__node-link .input-group-append a,
 .input-group-append .stats-more-link,
 .input-group-append .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link a,
-.node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .input-group-append a {
+.node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .input-group-append a,
+.input-group-append .btn-cta,
+.input-group-append .node-ipu_event .field-ipu-event-button a,
+.node-ipu_event .field-ipu-event-button .input-group-append a,
+.input-group-append .carousel-item .slide-wrapper .button a,
+.carousel-item .slide-wrapper .button .input-group-append a {
   position: relative;
   z-index: 2;
 }
 .input-group-prepend .btn:focus, .input-group-prepend .field__item__paragraph__callout-strip .field-link a:focus, .field__item__paragraph__callout-strip .field-link .input-group-prepend a:focus, .input-group-prepend .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a:focus, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .input-group-prepend a:focus, .input-group-prepend .node--type-publication.node--view-mode-highlight .publication__node-link a:focus, .node--type-publication.node--view-mode-highlight .publication__node-link .input-group-prepend a:focus,
 .input-group-prepend .more-data-parline:focus, .input-group-prepend .article__node-link a:focus, .article__node-link .input-group-prepend a:focus,
 .input-group-prepend .ipu-event__node-link a:focus,
-.ipu-event__node-link .input-group-prepend a:focus, .input-group-prepend .stats-more-link:focus, .input-group-prepend .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link a:focus, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .input-group-prepend a:focus,
+.ipu-event__node-link .input-group-prepend a:focus, .input-group-prepend .stats-more-link:focus, .input-group-prepend .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link a:focus, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .input-group-prepend a:focus, .input-group-prepend .btn-cta:focus, .input-group-prepend .node-ipu_event .field-ipu-event-button a:focus, .node-ipu_event .field-ipu-event-button .input-group-prepend a:focus, .input-group-prepend .carousel-item .slide-wrapper .button a:focus, .carousel-item .slide-wrapper .button .input-group-prepend a:focus,
 .input-group-append .btn:focus,
 .input-group-append .field__item__paragraph__callout-strip .field-link a:focus,
 .field__item__paragraph__callout-strip .field-link .input-group-append a:focus,
@@ -4206,7 +4269,12 @@ form .input-group > .custom-file + select,
 .ipu-event__node-link .input-group-append a:focus,
 .input-group-append .stats-more-link:focus,
 .input-group-append .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link a:focus,
-.node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .input-group-append a:focus {
+.node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .input-group-append a:focus,
+.input-group-append .btn-cta:focus,
+.input-group-append .node-ipu_event .field-ipu-event-button a:focus,
+.node-ipu_event .field-ipu-event-button .input-group-append a:focus,
+.input-group-append .carousel-item .slide-wrapper .button a:focus,
+.carousel-item .slide-wrapper .button .input-group-append a:focus {
   z-index: 3;
 }
 .input-group-prepend .btn + .btn, .input-group-prepend .field__item__paragraph__callout-strip .field-link a + .btn, .field__item__paragraph__callout-strip .field-link .input-group-prepend a + .btn, .input-group-prepend .field__item__paragraph__callout-strip .field-link .btn + a, .field__item__paragraph__callout-strip .field-link .input-group-prepend .btn + a, .input-group-prepend .field__item__paragraph__callout-strip .field-link a + a, .field__item__paragraph__callout-strip .field-link .input-group-prepend a + a, .input-group-prepend .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a + .btn, .input-group-prepend .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .field__item__paragraph__callout-strip .field-link a + a, .field__item__paragraph__callout-strip .field-link .input-group-prepend .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a + a, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .input-group-prepend a + .btn, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .input-group-prepend .field__item__paragraph__callout-strip .field-link a + a, .field__item__paragraph__callout-strip .field-link .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .input-group-prepend a + a, .input-group-prepend .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .btn + a, .input-group-prepend .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .field__item__paragraph__callout-strip .field-link a + a, .field__item__paragraph__callout-strip .field-link .input-group-prepend .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a + a, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .input-group-prepend .btn + a, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .input-group-prepend .field__item__paragraph__callout-strip .field-link a + a, .field__item__paragraph__callout-strip .field-link .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .input-group-prepend a + a, .input-group-prepend .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a + a, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .input-group-prepend a + a, .input-group-prepend .node--type-publication.node--view-mode-highlight .publication__node-link a + .btn, .input-group-prepend .node--type-publication.node--view-mode-highlight .publication__node-link .field__item__paragraph__callout-strip .field-link a + a, .field__item__paragraph__callout-strip .field-link .input-group-prepend .node--type-publication.node--view-mode-highlight .publication__node-link a + a, .input-group-prepend .node--type-publication.node--view-mode-highlight .publication__node-link .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a + a, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .input-group-prepend .node--type-publication.node--view-mode-highlight .publication__node-link a + a, .node--type-publication.node--view-mode-highlight .publication__node-link .input-group-prepend a + .btn, .node--type-publication.node--view-mode-highlight .publication__node-link .input-group-prepend .field__item__paragraph__callout-strip .field-link a + a, .field__item__paragraph__callout-strip .field-link .node--type-publication.node--view-mode-highlight .publication__node-link .input-group-prepend a + a, .node--type-publication.node--view-mode-highlight .publication__node-link .input-group-prepend .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a + a, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .node--type-publication.node--view-mode-highlight .publication__node-link .input-group-prepend a + a, .input-group-prepend .node--type-publication.node--view-mode-highlight .publication__node-link .btn + a, .input-group-prepend .node--type-publication.node--view-mode-highlight .publication__node-link .field__item__paragraph__callout-strip .field-link a + a, .field__item__paragraph__callout-strip .field-link .input-group-prepend .node--type-publication.node--view-mode-highlight .publication__node-link a + a, .input-group-prepend .node--type-publication.node--view-mode-highlight .publication__node-link .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a + a, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .input-group-prepend .node--type-publication.node--view-mode-highlight .publication__node-link a + a, .node--type-publication.node--view-mode-highlight .publication__node-link .input-group-prepend .btn + a, .node--type-publication.node--view-mode-highlight .publication__node-link .input-group-prepend .field__item__paragraph__callout-strip .field-link a + a, .field__item__paragraph__callout-strip .field-link .node--type-publication.node--view-mode-highlight .publication__node-link .input-group-prepend a + a, .node--type-publication.node--view-mode-highlight .publication__node-link .input-group-prepend .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a + a, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .node--type-publication.node--view-mode-highlight .publication__node-link .input-group-prepend a + a, .input-group-prepend .node--type-publication.node--view-mode-highlight .publication__node-link a + a, .node--type-publication.node--view-mode-highlight .publication__node-link .input-group-prepend a + a,
@@ -4245,6 +4313,10 @@ form .input-group > .custom-file + select,
 .ipu-event__node-link .input-group-prepend a + .more-data-parline, .input-group-prepend .article__node-link .btn + a, .input-group-prepend .article__node-link .field__item__paragraph__callout-strip .field-link a + a, .field__item__paragraph__callout-strip .field-link .input-group-prepend .article__node-link a + a, .input-group-prepend .article__node-link .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a + a, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .input-group-prepend .article__node-link a + a, .input-group-prepend .article__node-link .node--type-publication.node--view-mode-highlight .publication__node-link a + a, .node--type-publication.node--view-mode-highlight .publication__node-link .input-group-prepend .article__node-link a + a,
 .input-group-prepend .article__node-link .more-data-parline + a, .article__node-link .input-group-prepend .btn + a, .article__node-link .input-group-prepend .field__item__paragraph__callout-strip .field-link a + a, .field__item__paragraph__callout-strip .field-link .article__node-link .input-group-prepend a + a, .article__node-link .input-group-prepend .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a + a, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .article__node-link .input-group-prepend a + a, .article__node-link .input-group-prepend .node--type-publication.node--view-mode-highlight .publication__node-link a + a, .node--type-publication.node--view-mode-highlight .publication__node-link .article__node-link .input-group-prepend a + a,
 .article__node-link .input-group-prepend .more-data-parline + a, .input-group-prepend .article__node-link a + a, .article__node-link .input-group-prepend a + a,
+.input-group-prepend .ipu-event__node-link .article__node-link a + a,
+.article__node-link .input-group-prepend .ipu-event__node-link a + a,
+.ipu-event__node-link .input-group-prepend .article__node-link a + a,
+.article__node-link .ipu-event__node-link .input-group-prepend a + a,
 .input-group-prepend .ipu-event__node-link .btn + a,
 .input-group-prepend .ipu-event__node-link .field__item__paragraph__callout-strip .field-link a + a,
 .field__item__paragraph__callout-strip .field-link .input-group-prepend .ipu-event__node-link a + a,
@@ -4261,6 +4333,10 @@ form .input-group > .custom-file + select,
 .ipu-event__node-link .input-group-prepend .node--type-publication.node--view-mode-highlight .publication__node-link a + a,
 .node--type-publication.node--view-mode-highlight .publication__node-link .ipu-event__node-link .input-group-prepend a + a,
 .ipu-event__node-link .input-group-prepend .more-data-parline + a,
+.input-group-prepend .article__node-link .ipu-event__node-link a + a,
+.ipu-event__node-link .input-group-prepend .article__node-link a + a,
+.article__node-link .input-group-prepend .ipu-event__node-link a + a,
+.ipu-event__node-link .article__node-link .input-group-prepend a + a,
 .input-group-prepend .ipu-event__node-link a + a,
 .ipu-event__node-link .input-group-prepend a + a, .input-group-prepend .stats-more-link + .btn, .input-group-prepend .field__item__paragraph__callout-strip .field-link .stats-more-link + a, .field__item__paragraph__callout-strip .field-link .input-group-prepend .stats-more-link + a, .input-group-prepend .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link a + .btn, .input-group-prepend .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field__item__paragraph__callout-strip .field-link a + a, .field__item__paragraph__callout-strip .input-group-prepend .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link a + a, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .input-group-prepend a + .btn, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field__item__paragraph__callout-strip .field-link .input-group-prepend a + a, .field__item__paragraph__callout-strip .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .input-group-prepend a + a, .input-group-prepend .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .stats-more-link + a, .input-group-prepend .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link a + a, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .input-group-prepend .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a + a, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .input-group-prepend .stats-more-link + a, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .input-group-prepend .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link a + a, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .input-group-prepend a + a, .input-group-prepend .node--type-publication.node--view-mode-highlight .publication__node-link .stats-more-link + a, .input-group-prepend .node--type-publication.node--view-mode-highlight .publication__node-link .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link a + a, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .input-group-prepend .node--type-publication.node--view-mode-highlight .publication__node-link a + a, .node--type-publication.node--view-mode-highlight .publication__node-link .input-group-prepend .stats-more-link + a, .node--type-publication.node--view-mode-highlight .publication__node-link .input-group-prepend .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link a + a, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .node--type-publication.node--view-mode-highlight .publication__node-link .input-group-prepend a + a,
 .input-group-prepend .stats-more-link + .more-data-parline,
@@ -4280,7 +4356,37 @@ form .input-group > .custom-file + select,
 .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .input-group-prepend .ipu-event__node-link a + a,
 .ipu-event__node-link .input-group-prepend a + .stats-more-link,
 .ipu-event__node-link .input-group-prepend .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link a + a,
-.node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .ipu-event__node-link .input-group-prepend a + a, .input-group-prepend .stats-more-link + .stats-more-link, .input-group-prepend .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link a + .stats-more-link, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .input-group-prepend a + .stats-more-link, .input-group-prepend .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .stats-more-link + a, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .input-group-prepend .stats-more-link + a, .input-group-prepend .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link a + a, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .input-group-prepend a + a,
+.node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .ipu-event__node-link .input-group-prepend a + a, .input-group-prepend .stats-more-link + .stats-more-link, .input-group-prepend .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link a + .stats-more-link, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .input-group-prepend a + .stats-more-link, .input-group-prepend .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .stats-more-link + a, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .input-group-prepend .stats-more-link + a, .input-group-prepend .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link a + a, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .input-group-prepend a + a, .input-group-prepend .btn-cta + .btn, .input-group-prepend .node-ipu_event .field-ipu-event-button a + .btn, .node-ipu_event .field-ipu-event-button .input-group-prepend a + .btn, .input-group-prepend .field__item__paragraph__callout-strip .field-link .btn-cta + a, .input-group-prepend .field__item__paragraph__callout-strip .field-link .node-ipu_event .field-ipu-event-button a + a, .node-ipu_event .field-ipu-event-button .input-group-prepend .field__item__paragraph__callout-strip .field-link a + a, .field__item__paragraph__callout-strip .field-link .input-group-prepend .btn-cta + a, .field__item__paragraph__callout-strip .field-link .input-group-prepend .node-ipu_event .field-ipu-event-button a + a, .node-ipu_event .field-ipu-event-button .field__item__paragraph__callout-strip .field-link .input-group-prepend a + a, .input-group-prepend .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .btn-cta + a, .input-group-prepend .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .node-ipu_event .field-ipu-event-button a + a, .node-ipu_event .field-ipu-event-button .input-group-prepend .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a + a, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .input-group-prepend .btn-cta + a, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .input-group-prepend .node-ipu_event .field-ipu-event-button a + a, .node-ipu_event .field-ipu-event-button .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .input-group-prepend a + a, .input-group-prepend .node--type-publication.node--view-mode-highlight .publication__node-link .btn-cta + a, .input-group-prepend .node--type-publication.node--view-mode-highlight .publication__node-link .node-ipu_event .field-ipu-event-button a + a, .node-ipu_event .field-ipu-event-button .input-group-prepend .node--type-publication.node--view-mode-highlight .publication__node-link a + a, .node--type-publication.node--view-mode-highlight .publication__node-link .input-group-prepend .btn-cta + a, .node--type-publication.node--view-mode-highlight .publication__node-link .input-group-prepend .node-ipu_event .field-ipu-event-button a + a, .node-ipu_event .field-ipu-event-button .node--type-publication.node--view-mode-highlight .publication__node-link .input-group-prepend a + a,
+.input-group-prepend .btn-cta + .more-data-parline,
+.input-group-prepend .node-ipu_event .field-ipu-event-button a + .more-data-parline,
+.node-ipu_event .field-ipu-event-button .input-group-prepend a + .more-data-parline, .input-group-prepend .article__node-link .btn-cta + a, .input-group-prepend .article__node-link .node-ipu_event .field-ipu-event-button a + a, .node-ipu_event .field-ipu-event-button .input-group-prepend .article__node-link a + a, .article__node-link .input-group-prepend .btn-cta + a, .article__node-link .input-group-prepend .node-ipu_event .field-ipu-event-button a + a, .node-ipu_event .field-ipu-event-button .article__node-link .input-group-prepend a + a,
+.input-group-prepend .ipu-event__node-link .btn-cta + a,
+.input-group-prepend .ipu-event__node-link .node-ipu_event .field-ipu-event-button a + a,
+.node-ipu_event .field-ipu-event-button .input-group-prepend .ipu-event__node-link a + a,
+.ipu-event__node-link .input-group-prepend .btn-cta + a,
+.ipu-event__node-link .input-group-prepend .node-ipu_event .field-ipu-event-button a + a,
+.node-ipu_event .field-ipu-event-button .ipu-event__node-link .input-group-prepend a + a, .input-group-prepend .btn-cta + .stats-more-link, .input-group-prepend .node-ipu_event .field-ipu-event-button a + .stats-more-link, .node-ipu_event .field-ipu-event-button .input-group-prepend a + .stats-more-link, .input-group-prepend .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .btn-cta + a, .input-group-prepend .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .node-ipu_event .field-ipu-event-button a + a, .node-ipu_event .field-ipu-event-button .input-group-prepend .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link a + a, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .input-group-prepend .btn-cta + a, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .input-group-prepend .node-ipu_event .field-ipu-event-button a + a, .node-ipu_event .field-ipu-event-button .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .input-group-prepend a + a, .input-group-prepend .carousel-item .slide-wrapper .button a + .btn, .input-group-prepend .carousel-item .slide-wrapper .button .field__item__paragraph__callout-strip .field-link a + a, .field__item__paragraph__callout-strip .field-link .input-group-prepend .carousel-item .slide-wrapper .button a + a, .input-group-prepend .carousel-item .slide-wrapper .button .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a + a, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .input-group-prepend .carousel-item .slide-wrapper .button a + a, .input-group-prepend .carousel-item .slide-wrapper .button .node--type-publication.node--view-mode-highlight .publication__node-link a + a, .node--type-publication.node--view-mode-highlight .publication__node-link .input-group-prepend .carousel-item .slide-wrapper .button a + a,
+.input-group-prepend .carousel-item .slide-wrapper .button a + .more-data-parline, .input-group-prepend .carousel-item .slide-wrapper .button .article__node-link a + a, .article__node-link .input-group-prepend .carousel-item .slide-wrapper .button a + a,
+.input-group-prepend .carousel-item .slide-wrapper .button .ipu-event__node-link a + a,
+.ipu-event__node-link .input-group-prepend .carousel-item .slide-wrapper .button a + a, .input-group-prepend .carousel-item .slide-wrapper .button a + .stats-more-link, .input-group-prepend .carousel-item .slide-wrapper .button .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link a + a, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .input-group-prepend .carousel-item .slide-wrapper .button a + a, .carousel-item .slide-wrapper .button .input-group-prepend a + .btn, .carousel-item .slide-wrapper .button .input-group-prepend .field__item__paragraph__callout-strip .field-link a + a, .field__item__paragraph__callout-strip .field-link .carousel-item .slide-wrapper .button .input-group-prepend a + a, .carousel-item .slide-wrapper .button .input-group-prepend .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a + a, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .carousel-item .slide-wrapper .button .input-group-prepend a + a, .carousel-item .slide-wrapper .button .input-group-prepend .node--type-publication.node--view-mode-highlight .publication__node-link a + a, .node--type-publication.node--view-mode-highlight .publication__node-link .carousel-item .slide-wrapper .button .input-group-prepend a + a,
+.carousel-item .slide-wrapper .button .input-group-prepend a + .more-data-parline, .carousel-item .slide-wrapper .button .input-group-prepend .article__node-link a + a, .article__node-link .carousel-item .slide-wrapper .button .input-group-prepend a + a,
+.carousel-item .slide-wrapper .button .input-group-prepend .ipu-event__node-link a + a,
+.ipu-event__node-link .carousel-item .slide-wrapper .button .input-group-prepend a + a, .carousel-item .slide-wrapper .button .input-group-prepend a + .stats-more-link, .carousel-item .slide-wrapper .button .input-group-prepend .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link a + a, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .carousel-item .slide-wrapper .button .input-group-prepend a + a, .input-group-prepend .btn + .btn-cta, .input-group-prepend .node-ipu_event .field-ipu-event-button .btn + a, .node-ipu_event .field-ipu-event-button .input-group-prepend .btn + a, .input-group-prepend .field__item__paragraph__callout-strip .field-link a + .btn-cta, .input-group-prepend .field__item__paragraph__callout-strip .field-link .node-ipu_event .field-ipu-event-button a + a, .node-ipu_event .field-ipu-event-button .input-group-prepend .field__item__paragraph__callout-strip .field-link a + a, .field__item__paragraph__callout-strip .field-link .input-group-prepend a + .btn-cta, .field__item__paragraph__callout-strip .field-link .input-group-prepend .node-ipu_event .field-ipu-event-button a + a, .node-ipu_event .field-ipu-event-button .field__item__paragraph__callout-strip .field-link .input-group-prepend a + a, .input-group-prepend .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a + .btn-cta, .input-group-prepend .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .node-ipu_event .field-ipu-event-button a + a, .node-ipu_event .field-ipu-event-button .input-group-prepend .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a + a, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .input-group-prepend a + .btn-cta, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .input-group-prepend .node-ipu_event .field-ipu-event-button a + a, .node-ipu_event .field-ipu-event-button .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .input-group-prepend a + a, .input-group-prepend .node--type-publication.node--view-mode-highlight .publication__node-link a + .btn-cta, .input-group-prepend .node--type-publication.node--view-mode-highlight .publication__node-link .node-ipu_event .field-ipu-event-button a + a, .node-ipu_event .field-ipu-event-button .input-group-prepend .node--type-publication.node--view-mode-highlight .publication__node-link a + a, .node--type-publication.node--view-mode-highlight .publication__node-link .input-group-prepend a + .btn-cta, .node--type-publication.node--view-mode-highlight .publication__node-link .input-group-prepend .node-ipu_event .field-ipu-event-button a + a, .node-ipu_event .field-ipu-event-button .node--type-publication.node--view-mode-highlight .publication__node-link .input-group-prepend a + a,
+.input-group-prepend .more-data-parline + .btn-cta,
+.input-group-prepend .node-ipu_event .field-ipu-event-button .more-data-parline + a,
+.node-ipu_event .field-ipu-event-button .input-group-prepend .more-data-parline + a, .input-group-prepend .article__node-link a + .btn-cta, .input-group-prepend .article__node-link .node-ipu_event .field-ipu-event-button a + a, .node-ipu_event .field-ipu-event-button .input-group-prepend .article__node-link a + a, .article__node-link .input-group-prepend a + .btn-cta, .article__node-link .input-group-prepend .node-ipu_event .field-ipu-event-button a + a, .node-ipu_event .field-ipu-event-button .article__node-link .input-group-prepend a + a,
+.input-group-prepend .ipu-event__node-link a + .btn-cta,
+.input-group-prepend .ipu-event__node-link .node-ipu_event .field-ipu-event-button a + a,
+.node-ipu_event .field-ipu-event-button .input-group-prepend .ipu-event__node-link a + a,
+.ipu-event__node-link .input-group-prepend a + .btn-cta,
+.ipu-event__node-link .input-group-prepend .node-ipu_event .field-ipu-event-button a + a,
+.node-ipu_event .field-ipu-event-button .ipu-event__node-link .input-group-prepend a + a, .input-group-prepend .stats-more-link + .btn-cta, .input-group-prepend .node-ipu_event .field-ipu-event-button .stats-more-link + a, .node-ipu_event .field-ipu-event-button .input-group-prepend .stats-more-link + a, .input-group-prepend .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link a + .btn-cta, .input-group-prepend .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .node-ipu_event .field-ipu-event-button a + a, .node-ipu_event .field-ipu-event-button .input-group-prepend .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link a + a, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .input-group-prepend a + .btn-cta, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .input-group-prepend .node-ipu_event .field-ipu-event-button a + a, .node-ipu_event .field-ipu-event-button .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .input-group-prepend a + a, .input-group-prepend .carousel-item .slide-wrapper .button .btn + a, .input-group-prepend .carousel-item .slide-wrapper .button .field__item__paragraph__callout-strip .field-link a + a, .field__item__paragraph__callout-strip .field-link .input-group-prepend .carousel-item .slide-wrapper .button a + a, .input-group-prepend .carousel-item .slide-wrapper .button .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a + a, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .input-group-prepend .carousel-item .slide-wrapper .button a + a, .input-group-prepend .carousel-item .slide-wrapper .button .node--type-publication.node--view-mode-highlight .publication__node-link a + a, .node--type-publication.node--view-mode-highlight .publication__node-link .input-group-prepend .carousel-item .slide-wrapper .button a + a,
+.input-group-prepend .carousel-item .slide-wrapper .button .more-data-parline + a, .input-group-prepend .carousel-item .slide-wrapper .button .article__node-link a + a, .article__node-link .input-group-prepend .carousel-item .slide-wrapper .button a + a,
+.input-group-prepend .carousel-item .slide-wrapper .button .ipu-event__node-link a + a,
+.ipu-event__node-link .input-group-prepend .carousel-item .slide-wrapper .button a + a, .input-group-prepend .carousel-item .slide-wrapper .button .stats-more-link + a, .input-group-prepend .carousel-item .slide-wrapper .button .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link a + a, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .input-group-prepend .carousel-item .slide-wrapper .button a + a, .carousel-item .slide-wrapper .button .input-group-prepend .btn + a, .carousel-item .slide-wrapper .button .input-group-prepend .field__item__paragraph__callout-strip .field-link a + a, .field__item__paragraph__callout-strip .field-link .carousel-item .slide-wrapper .button .input-group-prepend a + a, .carousel-item .slide-wrapper .button .input-group-prepend .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a + a, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .carousel-item .slide-wrapper .button .input-group-prepend a + a, .carousel-item .slide-wrapper .button .input-group-prepend .node--type-publication.node--view-mode-highlight .publication__node-link a + a, .node--type-publication.node--view-mode-highlight .publication__node-link .carousel-item .slide-wrapper .button .input-group-prepend a + a,
+.carousel-item .slide-wrapper .button .input-group-prepend .more-data-parline + a, .carousel-item .slide-wrapper .button .input-group-prepend .article__node-link a + a, .article__node-link .carousel-item .slide-wrapper .button .input-group-prepend a + a,
+.carousel-item .slide-wrapper .button .input-group-prepend .ipu-event__node-link a + a,
+.ipu-event__node-link .carousel-item .slide-wrapper .button .input-group-prepend a + a, .carousel-item .slide-wrapper .button .input-group-prepend .stats-more-link + a, .carousel-item .slide-wrapper .button .input-group-prepend .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link a + a, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .carousel-item .slide-wrapper .button .input-group-prepend a + a, .input-group-prepend .btn-cta + .btn-cta, .input-group-prepend .node-ipu_event .field-ipu-event-button a + .btn-cta, .node-ipu_event .field-ipu-event-button .input-group-prepend a + .btn-cta, .input-group-prepend .node-ipu_event .field-ipu-event-button .btn-cta + a, .node-ipu_event .field-ipu-event-button .input-group-prepend .btn-cta + a, .input-group-prepend .node-ipu_event .field-ipu-event-button a + a, .node-ipu_event .field-ipu-event-button .input-group-prepend a + a, .input-group-prepend .carousel-item .slide-wrapper .button a + .btn-cta, .input-group-prepend .carousel-item .slide-wrapper .button .node-ipu_event .field-ipu-event-button a + a, .node-ipu_event .field-ipu-event-button .input-group-prepend .carousel-item .slide-wrapper .button a + a, .carousel-item .slide-wrapper .button .input-group-prepend a + .btn-cta, .carousel-item .slide-wrapper .button .input-group-prepend .node-ipu_event .field-ipu-event-button a + a, .node-ipu_event .field-ipu-event-button .carousel-item .slide-wrapper .button .input-group-prepend a + a, .input-group-prepend .carousel-item .slide-wrapper .button .btn-cta + a, .input-group-prepend .carousel-item .slide-wrapper .button .node-ipu_event .field-ipu-event-button a + a, .node-ipu_event .field-ipu-event-button .input-group-prepend .carousel-item .slide-wrapper .button a + a, .carousel-item .slide-wrapper .button .input-group-prepend .btn-cta + a, .carousel-item .slide-wrapper .button .input-group-prepend .node-ipu_event .field-ipu-event-button a + a, .node-ipu_event .field-ipu-event-button .carousel-item .slide-wrapper .button .input-group-prepend a + a, .input-group-prepend .carousel-item .slide-wrapper .button a + a, .carousel-item .slide-wrapper .button .input-group-prepend a + a,
 .input-group-prepend .btn + .input-group-text,
 .input-group-prepend .field__item__paragraph__callout-strip .field-link a + .input-group-text,
 .field__item__paragraph__callout-strip .field-link .input-group-prepend a + .input-group-text,
@@ -4296,6 +4402,11 @@ form .input-group > .custom-file + select,
 .input-group-prepend .stats-more-link + .input-group-text,
 .input-group-prepend .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link a + .input-group-text,
 .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .input-group-prepend a + .input-group-text,
+.input-group-prepend .btn-cta + .input-group-text,
+.input-group-prepend .node-ipu_event .field-ipu-event-button a + .input-group-text,
+.node-ipu_event .field-ipu-event-button .input-group-prepend a + .input-group-text,
+.input-group-prepend .carousel-item .slide-wrapper .button a + .input-group-text,
+.carousel-item .slide-wrapper .button .input-group-prepend a + .input-group-text,
 .input-group-prepend .input-group-text + .input-group-text,
 .input-group-prepend .input-group-text + .btn,
 .input-group-prepend .field__item__paragraph__callout-strip .field-link .input-group-text + a,
@@ -4312,6 +4423,11 @@ form .input-group > .custom-file + select,
 .input-group-prepend .input-group-text + .stats-more-link,
 .input-group-prepend .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .input-group-text + a,
 .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .input-group-prepend .input-group-text + a,
+.input-group-prepend .input-group-text + .btn-cta,
+.input-group-prepend .node-ipu_event .field-ipu-event-button .input-group-text + a,
+.node-ipu_event .field-ipu-event-button .input-group-prepend .input-group-text + a,
+.input-group-prepend .carousel-item .slide-wrapper .button .input-group-text + a,
+.carousel-item .slide-wrapper .button .input-group-prepend .input-group-text + a,
 .input-group-append .btn + .btn,
 .input-group-append .field__item__paragraph__callout-strip .field-link a + .btn,
 .field__item__paragraph__callout-strip .field-link .input-group-append a + .btn,
@@ -4420,6 +4536,10 @@ form .input-group > .custom-file + select,
 .article__node-link .input-group-append .more-data-parline + a,
 .input-group-append .article__node-link a + a,
 .article__node-link .input-group-append a + a,
+.input-group-append .ipu-event__node-link .article__node-link a + a,
+.article__node-link .input-group-append .ipu-event__node-link a + a,
+.ipu-event__node-link .input-group-append .article__node-link a + a,
+.article__node-link .ipu-event__node-link .input-group-append a + a,
 .input-group-append .ipu-event__node-link .btn + a,
 .input-group-append .ipu-event__node-link .field__item__paragraph__callout-strip .field-link a + a,
 .field__item__paragraph__callout-strip .field-link .input-group-append .ipu-event__node-link a + a,
@@ -4436,6 +4556,10 @@ form .input-group > .custom-file + select,
 .ipu-event__node-link .input-group-append .node--type-publication.node--view-mode-highlight .publication__node-link a + a,
 .node--type-publication.node--view-mode-highlight .publication__node-link .ipu-event__node-link .input-group-append a + a,
 .ipu-event__node-link .input-group-append .more-data-parline + a,
+.input-group-append .article__node-link .ipu-event__node-link a + a,
+.ipu-event__node-link .input-group-append .article__node-link a + a,
+.article__node-link .input-group-append .ipu-event__node-link a + a,
+.ipu-event__node-link .article__node-link .input-group-append a + a,
 .input-group-append .ipu-event__node-link a + a,
 .ipu-event__node-link .input-group-append a + a,
 .input-group-append .stats-more-link + .btn,
@@ -4517,6 +4641,177 @@ form .input-group > .custom-file + select,
 .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .input-group-append .stats-more-link + a,
 .input-group-append .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link a + a,
 .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .input-group-append a + a,
+.input-group-append .btn-cta + .btn,
+.input-group-append .node-ipu_event .field-ipu-event-button a + .btn,
+.node-ipu_event .field-ipu-event-button .input-group-append a + .btn,
+.input-group-append .field__item__paragraph__callout-strip .field-link .btn-cta + a,
+.input-group-append .field__item__paragraph__callout-strip .field-link .node-ipu_event .field-ipu-event-button a + a,
+.node-ipu_event .field-ipu-event-button .input-group-append .field__item__paragraph__callout-strip .field-link a + a,
+.field__item__paragraph__callout-strip .field-link .input-group-append .btn-cta + a,
+.field__item__paragraph__callout-strip .field-link .input-group-append .node-ipu_event .field-ipu-event-button a + a,
+.node-ipu_event .field-ipu-event-button .field__item__paragraph__callout-strip .field-link .input-group-append a + a,
+.input-group-append .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .btn-cta + a,
+.input-group-append .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .node-ipu_event .field-ipu-event-button a + a,
+.node-ipu_event .field-ipu-event-button .input-group-append .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a + a,
+.node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .input-group-append .btn-cta + a,
+.node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .input-group-append .node-ipu_event .field-ipu-event-button a + a,
+.node-ipu_event .field-ipu-event-button .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .input-group-append a + a,
+.input-group-append .node--type-publication.node--view-mode-highlight .publication__node-link .btn-cta + a,
+.input-group-append .node--type-publication.node--view-mode-highlight .publication__node-link .node-ipu_event .field-ipu-event-button a + a,
+.node-ipu_event .field-ipu-event-button .input-group-append .node--type-publication.node--view-mode-highlight .publication__node-link a + a,
+.node--type-publication.node--view-mode-highlight .publication__node-link .input-group-append .btn-cta + a,
+.node--type-publication.node--view-mode-highlight .publication__node-link .input-group-append .node-ipu_event .field-ipu-event-button a + a,
+.node-ipu_event .field-ipu-event-button .node--type-publication.node--view-mode-highlight .publication__node-link .input-group-append a + a,
+.input-group-append .btn-cta + .more-data-parline,
+.input-group-append .node-ipu_event .field-ipu-event-button a + .more-data-parline,
+.node-ipu_event .field-ipu-event-button .input-group-append a + .more-data-parline,
+.input-group-append .article__node-link .btn-cta + a,
+.input-group-append .article__node-link .node-ipu_event .field-ipu-event-button a + a,
+.node-ipu_event .field-ipu-event-button .input-group-append .article__node-link a + a,
+.article__node-link .input-group-append .btn-cta + a,
+.article__node-link .input-group-append .node-ipu_event .field-ipu-event-button a + a,
+.node-ipu_event .field-ipu-event-button .article__node-link .input-group-append a + a,
+.input-group-append .ipu-event__node-link .btn-cta + a,
+.input-group-append .ipu-event__node-link .node-ipu_event .field-ipu-event-button a + a,
+.node-ipu_event .field-ipu-event-button .input-group-append .ipu-event__node-link a + a,
+.ipu-event__node-link .input-group-append .btn-cta + a,
+.ipu-event__node-link .input-group-append .node-ipu_event .field-ipu-event-button a + a,
+.node-ipu_event .field-ipu-event-button .ipu-event__node-link .input-group-append a + a,
+.input-group-append .btn-cta + .stats-more-link,
+.input-group-append .node-ipu_event .field-ipu-event-button a + .stats-more-link,
+.node-ipu_event .field-ipu-event-button .input-group-append a + .stats-more-link,
+.input-group-append .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .btn-cta + a,
+.input-group-append .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .node-ipu_event .field-ipu-event-button a + a,
+.node-ipu_event .field-ipu-event-button .input-group-append .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link a + a,
+.node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .input-group-append .btn-cta + a,
+.node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .input-group-append .node-ipu_event .field-ipu-event-button a + a,
+.node-ipu_event .field-ipu-event-button .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .input-group-append a + a,
+.input-group-append .carousel-item .slide-wrapper .button a + .btn,
+.input-group-append .carousel-item .slide-wrapper .button .field__item__paragraph__callout-strip .field-link a + a,
+.field__item__paragraph__callout-strip .field-link .input-group-append .carousel-item .slide-wrapper .button a + a,
+.input-group-append .carousel-item .slide-wrapper .button .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a + a,
+.node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .input-group-append .carousel-item .slide-wrapper .button a + a,
+.input-group-append .carousel-item .slide-wrapper .button .node--type-publication.node--view-mode-highlight .publication__node-link a + a,
+.node--type-publication.node--view-mode-highlight .publication__node-link .input-group-append .carousel-item .slide-wrapper .button a + a,
+.input-group-append .carousel-item .slide-wrapper .button a + .more-data-parline,
+.input-group-append .carousel-item .slide-wrapper .button .article__node-link a + a,
+.article__node-link .input-group-append .carousel-item .slide-wrapper .button a + a,
+.input-group-append .carousel-item .slide-wrapper .button .ipu-event__node-link a + a,
+.ipu-event__node-link .input-group-append .carousel-item .slide-wrapper .button a + a,
+.input-group-append .carousel-item .slide-wrapper .button a + .stats-more-link,
+.input-group-append .carousel-item .slide-wrapper .button .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link a + a,
+.node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .input-group-append .carousel-item .slide-wrapper .button a + a,
+.carousel-item .slide-wrapper .button .input-group-append a + .btn,
+.carousel-item .slide-wrapper .button .input-group-append .field__item__paragraph__callout-strip .field-link a + a,
+.field__item__paragraph__callout-strip .field-link .carousel-item .slide-wrapper .button .input-group-append a + a,
+.carousel-item .slide-wrapper .button .input-group-append .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a + a,
+.node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .carousel-item .slide-wrapper .button .input-group-append a + a,
+.carousel-item .slide-wrapper .button .input-group-append .node--type-publication.node--view-mode-highlight .publication__node-link a + a,
+.node--type-publication.node--view-mode-highlight .publication__node-link .carousel-item .slide-wrapper .button .input-group-append a + a,
+.carousel-item .slide-wrapper .button .input-group-append a + .more-data-parline,
+.carousel-item .slide-wrapper .button .input-group-append .article__node-link a + a,
+.article__node-link .carousel-item .slide-wrapper .button .input-group-append a + a,
+.carousel-item .slide-wrapper .button .input-group-append .ipu-event__node-link a + a,
+.ipu-event__node-link .carousel-item .slide-wrapper .button .input-group-append a + a,
+.carousel-item .slide-wrapper .button .input-group-append a + .stats-more-link,
+.carousel-item .slide-wrapper .button .input-group-append .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link a + a,
+.node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .carousel-item .slide-wrapper .button .input-group-append a + a,
+.input-group-append .btn + .btn-cta,
+.input-group-append .node-ipu_event .field-ipu-event-button .btn + a,
+.node-ipu_event .field-ipu-event-button .input-group-append .btn + a,
+.input-group-append .field__item__paragraph__callout-strip .field-link a + .btn-cta,
+.input-group-append .field__item__paragraph__callout-strip .field-link .node-ipu_event .field-ipu-event-button a + a,
+.node-ipu_event .field-ipu-event-button .input-group-append .field__item__paragraph__callout-strip .field-link a + a,
+.field__item__paragraph__callout-strip .field-link .input-group-append a + .btn-cta,
+.field__item__paragraph__callout-strip .field-link .input-group-append .node-ipu_event .field-ipu-event-button a + a,
+.node-ipu_event .field-ipu-event-button .field__item__paragraph__callout-strip .field-link .input-group-append a + a,
+.input-group-append .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a + .btn-cta,
+.input-group-append .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .node-ipu_event .field-ipu-event-button a + a,
+.node-ipu_event .field-ipu-event-button .input-group-append .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a + a,
+.node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .input-group-append a + .btn-cta,
+.node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .input-group-append .node-ipu_event .field-ipu-event-button a + a,
+.node-ipu_event .field-ipu-event-button .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .input-group-append a + a,
+.input-group-append .node--type-publication.node--view-mode-highlight .publication__node-link a + .btn-cta,
+.input-group-append .node--type-publication.node--view-mode-highlight .publication__node-link .node-ipu_event .field-ipu-event-button a + a,
+.node-ipu_event .field-ipu-event-button .input-group-append .node--type-publication.node--view-mode-highlight .publication__node-link a + a,
+.node--type-publication.node--view-mode-highlight .publication__node-link .input-group-append a + .btn-cta,
+.node--type-publication.node--view-mode-highlight .publication__node-link .input-group-append .node-ipu_event .field-ipu-event-button a + a,
+.node-ipu_event .field-ipu-event-button .node--type-publication.node--view-mode-highlight .publication__node-link .input-group-append a + a,
+.input-group-append .more-data-parline + .btn-cta,
+.input-group-append .node-ipu_event .field-ipu-event-button .more-data-parline + a,
+.node-ipu_event .field-ipu-event-button .input-group-append .more-data-parline + a,
+.input-group-append .article__node-link a + .btn-cta,
+.input-group-append .article__node-link .node-ipu_event .field-ipu-event-button a + a,
+.node-ipu_event .field-ipu-event-button .input-group-append .article__node-link a + a,
+.article__node-link .input-group-append a + .btn-cta,
+.article__node-link .input-group-append .node-ipu_event .field-ipu-event-button a + a,
+.node-ipu_event .field-ipu-event-button .article__node-link .input-group-append a + a,
+.input-group-append .ipu-event__node-link a + .btn-cta,
+.input-group-append .ipu-event__node-link .node-ipu_event .field-ipu-event-button a + a,
+.node-ipu_event .field-ipu-event-button .input-group-append .ipu-event__node-link a + a,
+.ipu-event__node-link .input-group-append a + .btn-cta,
+.ipu-event__node-link .input-group-append .node-ipu_event .field-ipu-event-button a + a,
+.node-ipu_event .field-ipu-event-button .ipu-event__node-link .input-group-append a + a,
+.input-group-append .stats-more-link + .btn-cta,
+.input-group-append .node-ipu_event .field-ipu-event-button .stats-more-link + a,
+.node-ipu_event .field-ipu-event-button .input-group-append .stats-more-link + a,
+.input-group-append .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link a + .btn-cta,
+.input-group-append .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .node-ipu_event .field-ipu-event-button a + a,
+.node-ipu_event .field-ipu-event-button .input-group-append .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link a + a,
+.node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .input-group-append a + .btn-cta,
+.node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .input-group-append .node-ipu_event .field-ipu-event-button a + a,
+.node-ipu_event .field-ipu-event-button .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .input-group-append a + a,
+.input-group-append .carousel-item .slide-wrapper .button .btn + a,
+.input-group-append .carousel-item .slide-wrapper .button .field__item__paragraph__callout-strip .field-link a + a,
+.field__item__paragraph__callout-strip .field-link .input-group-append .carousel-item .slide-wrapper .button a + a,
+.input-group-append .carousel-item .slide-wrapper .button .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a + a,
+.node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .input-group-append .carousel-item .slide-wrapper .button a + a,
+.input-group-append .carousel-item .slide-wrapper .button .node--type-publication.node--view-mode-highlight .publication__node-link a + a,
+.node--type-publication.node--view-mode-highlight .publication__node-link .input-group-append .carousel-item .slide-wrapper .button a + a,
+.input-group-append .carousel-item .slide-wrapper .button .more-data-parline + a,
+.input-group-append .carousel-item .slide-wrapper .button .article__node-link a + a,
+.article__node-link .input-group-append .carousel-item .slide-wrapper .button a + a,
+.input-group-append .carousel-item .slide-wrapper .button .ipu-event__node-link a + a,
+.ipu-event__node-link .input-group-append .carousel-item .slide-wrapper .button a + a,
+.input-group-append .carousel-item .slide-wrapper .button .stats-more-link + a,
+.input-group-append .carousel-item .slide-wrapper .button .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link a + a,
+.node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .input-group-append .carousel-item .slide-wrapper .button a + a,
+.carousel-item .slide-wrapper .button .input-group-append .btn + a,
+.carousel-item .slide-wrapper .button .input-group-append .field__item__paragraph__callout-strip .field-link a + a,
+.field__item__paragraph__callout-strip .field-link .carousel-item .slide-wrapper .button .input-group-append a + a,
+.carousel-item .slide-wrapper .button .input-group-append .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a + a,
+.node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .carousel-item .slide-wrapper .button .input-group-append a + a,
+.carousel-item .slide-wrapper .button .input-group-append .node--type-publication.node--view-mode-highlight .publication__node-link a + a,
+.node--type-publication.node--view-mode-highlight .publication__node-link .carousel-item .slide-wrapper .button .input-group-append a + a,
+.carousel-item .slide-wrapper .button .input-group-append .more-data-parline + a,
+.carousel-item .slide-wrapper .button .input-group-append .article__node-link a + a,
+.article__node-link .carousel-item .slide-wrapper .button .input-group-append a + a,
+.carousel-item .slide-wrapper .button .input-group-append .ipu-event__node-link a + a,
+.ipu-event__node-link .carousel-item .slide-wrapper .button .input-group-append a + a,
+.carousel-item .slide-wrapper .button .input-group-append .stats-more-link + a,
+.carousel-item .slide-wrapper .button .input-group-append .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link a + a,
+.node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .carousel-item .slide-wrapper .button .input-group-append a + a,
+.input-group-append .btn-cta + .btn-cta,
+.input-group-append .node-ipu_event .field-ipu-event-button a + .btn-cta,
+.node-ipu_event .field-ipu-event-button .input-group-append a + .btn-cta,
+.input-group-append .node-ipu_event .field-ipu-event-button .btn-cta + a,
+.node-ipu_event .field-ipu-event-button .input-group-append .btn-cta + a,
+.input-group-append .node-ipu_event .field-ipu-event-button a + a,
+.node-ipu_event .field-ipu-event-button .input-group-append a + a,
+.input-group-append .carousel-item .slide-wrapper .button a + .btn-cta,
+.input-group-append .carousel-item .slide-wrapper .button .node-ipu_event .field-ipu-event-button a + a,
+.node-ipu_event .field-ipu-event-button .input-group-append .carousel-item .slide-wrapper .button a + a,
+.carousel-item .slide-wrapper .button .input-group-append a + .btn-cta,
+.carousel-item .slide-wrapper .button .input-group-append .node-ipu_event .field-ipu-event-button a + a,
+.node-ipu_event .field-ipu-event-button .carousel-item .slide-wrapper .button .input-group-append a + a,
+.input-group-append .carousel-item .slide-wrapper .button .btn-cta + a,
+.input-group-append .carousel-item .slide-wrapper .button .node-ipu_event .field-ipu-event-button a + a,
+.node-ipu_event .field-ipu-event-button .input-group-append .carousel-item .slide-wrapper .button a + a,
+.carousel-item .slide-wrapper .button .input-group-append .btn-cta + a,
+.carousel-item .slide-wrapper .button .input-group-append .node-ipu_event .field-ipu-event-button a + a,
+.node-ipu_event .field-ipu-event-button .carousel-item .slide-wrapper .button .input-group-append a + a,
+.input-group-append .carousel-item .slide-wrapper .button a + a,
+.carousel-item .slide-wrapper .button .input-group-append a + a,
 .input-group-append .btn + .input-group-text,
 .input-group-append .field__item__paragraph__callout-strip .field-link a + .input-group-text,
 .field__item__paragraph__callout-strip .field-link .input-group-append a + .input-group-text,
@@ -4532,6 +4827,11 @@ form .input-group > .custom-file + select,
 .input-group-append .stats-more-link + .input-group-text,
 .input-group-append .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link a + .input-group-text,
 .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .input-group-append a + .input-group-text,
+.input-group-append .btn-cta + .input-group-text,
+.input-group-append .node-ipu_event .field-ipu-event-button a + .input-group-text,
+.node-ipu_event .field-ipu-event-button .input-group-append a + .input-group-text,
+.input-group-append .carousel-item .slide-wrapper .button a + .input-group-text,
+.carousel-item .slide-wrapper .button .input-group-append a + .input-group-text,
 .input-group-append .input-group-text + .input-group-text,
 .input-group-append .input-group-text + .btn,
 .input-group-append .field__item__paragraph__callout-strip .field-link .input-group-text + a,
@@ -4547,7 +4847,12 @@ form .input-group > .custom-file + select,
 .ipu-event__node-link .input-group-append .input-group-text + a,
 .input-group-append .input-group-text + .stats-more-link,
 .input-group-append .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .input-group-text + a,
-.node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .input-group-append .input-group-text + a {
+.node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .input-group-append .input-group-text + a,
+.input-group-append .input-group-text + .btn-cta,
+.input-group-append .node-ipu_event .field-ipu-event-button .input-group-text + a,
+.node-ipu_event .field-ipu-event-button .input-group-append .input-group-text + a,
+.input-group-append .carousel-item .slide-wrapper .button .input-group-text + a,
+.carousel-item .slide-wrapper .button .input-group-append .input-group-text + a {
   margin-left: -1px;
 }
 
@@ -4597,6 +4902,9 @@ form .input-group > .custom-file + select,
 .ipu-event__node-link .input-group-lg > .input-group-prepend > a,
 .input-group-lg > .input-group-prepend > .stats-more-link,
 .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .input-group-lg > .input-group-prepend > a,
+.input-group-lg > .input-group-prepend > .btn-cta,
+.node-ipu_event .field-ipu-event-button .input-group-lg > .input-group-prepend > a,
+.carousel-item .slide-wrapper .button .input-group-lg > .input-group-prepend > a,
 .input-group-lg > .input-group-append > .btn,
 .field__item__paragraph__callout-strip .field-link .input-group-lg > .input-group-append > a,
 .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .input-group-lg > .input-group-append > a,
@@ -4605,7 +4913,10 @@ form .input-group > .custom-file + select,
 .article__node-link .input-group-lg > .input-group-append > a,
 .ipu-event__node-link .input-group-lg > .input-group-append > a,
 .input-group-lg > .input-group-append > .stats-more-link,
-.node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .input-group-lg > .input-group-append > a {
+.node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .input-group-lg > .input-group-append > a,
+.input-group-lg > .input-group-append > .btn-cta,
+.node-ipu_event .field-ipu-event-button .input-group-lg > .input-group-append > a,
+.carousel-item .slide-wrapper .button .input-group-lg > .input-group-append > a {
   padding: 0.5rem 1rem;
   font-size: 1.75rem;
   line-height: 1.5;
@@ -4630,6 +4941,9 @@ form .input-group > .custom-file + select,
 .ipu-event__node-link .input-group-sm > .input-group-prepend > a,
 .input-group-sm > .input-group-prepend > .stats-more-link,
 .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .input-group-sm > .input-group-prepend > a,
+.input-group-sm > .input-group-prepend > .btn-cta,
+.node-ipu_event .field-ipu-event-button .input-group-sm > .input-group-prepend > a,
+.carousel-item .slide-wrapper .button .input-group-sm > .input-group-prepend > a,
 .input-group-sm > .input-group-append > .btn,
 .field__item__paragraph__callout-strip .field-link .input-group-sm > .input-group-append > a,
 .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .input-group-sm > .input-group-append > a,
@@ -4638,7 +4952,10 @@ form .input-group > .custom-file + select,
 .article__node-link .input-group-sm > .input-group-append > a,
 .ipu-event__node-link .input-group-sm > .input-group-append > a,
 .input-group-sm > .input-group-append > .stats-more-link,
-.node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .input-group-sm > .input-group-append > a {
+.node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .input-group-sm > .input-group-append > a,
+.input-group-sm > .input-group-append > .btn-cta,
+.node-ipu_event .field-ipu-event-button .input-group-sm > .input-group-append > a,
+.carousel-item .slide-wrapper .button .input-group-sm > .input-group-append > a {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
   line-height: 1.5;
@@ -4652,7 +4969,7 @@ form .input-group > .custom-file + select,
 
 .input-group > .input-group-prepend > .btn, .field__item__paragraph__callout-strip .field-link .input-group > .input-group-prepend > a, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .input-group > .input-group-prepend > a, .node--type-publication.node--view-mode-highlight .publication__node-link .input-group > .input-group-prepend > a,
 .input-group > .input-group-prepend > .more-data-parline, .article__node-link .input-group > .input-group-prepend > a,
-.ipu-event__node-link .input-group > .input-group-prepend > a, .input-group > .input-group-prepend > .stats-more-link, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .input-group > .input-group-prepend > a,
+.ipu-event__node-link .input-group > .input-group-prepend > a, .input-group > .input-group-prepend > .stats-more-link, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .input-group > .input-group-prepend > a, .input-group > .input-group-prepend > .btn-cta, .node-ipu_event .field-ipu-event-button .input-group > .input-group-prepend > a, .carousel-item .slide-wrapper .button .input-group > .input-group-prepend > a,
 .input-group > .input-group-prepend > .input-group-text,
 .input-group > .input-group-append:not(:last-child) > .btn,
 .field__item__paragraph__callout-strip .field-link .input-group > .input-group-append:not(:last-child) > a,
@@ -4663,6 +4980,9 @@ form .input-group > .custom-file + select,
 .ipu-event__node-link .input-group > .input-group-append:not(:last-child) > a,
 .input-group > .input-group-append:not(:last-child) > .stats-more-link,
 .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .input-group > .input-group-append:not(:last-child) > a,
+.input-group > .input-group-append:not(:last-child) > .btn-cta,
+.node-ipu_event .field-ipu-event-button .input-group > .input-group-append:not(:last-child) > a,
+.carousel-item .slide-wrapper .button .input-group > .input-group-append:not(:last-child) > a,
 .input-group > .input-group-append:not(:last-child) > .input-group-text,
 .input-group > .input-group-append:last-child > .btn:not(:last-child):not(.dropdown-toggle),
 .field__item__paragraph__callout-strip .field-link .input-group > .input-group-append:last-child > a:not(:last-child):not(.dropdown-toggle),
@@ -4673,6 +4993,9 @@ form .input-group > .custom-file + select,
 .ipu-event__node-link .input-group > .input-group-append:last-child > a:not(:last-child):not(.dropdown-toggle),
 .input-group > .input-group-append:last-child > .stats-more-link:not(:last-child):not(.dropdown-toggle),
 .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .input-group > .input-group-append:last-child > a:not(:last-child):not(.dropdown-toggle),
+.input-group > .input-group-append:last-child > .btn-cta:not(:last-child):not(.dropdown-toggle),
+.node-ipu_event .field-ipu-event-button .input-group > .input-group-append:last-child > a:not(:last-child):not(.dropdown-toggle),
+.carousel-item .slide-wrapper .button .input-group > .input-group-append:last-child > a:not(:last-child):not(.dropdown-toggle),
 .input-group > .input-group-append:last-child > .input-group-text:not(:last-child) {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
@@ -4680,7 +5003,7 @@ form .input-group > .custom-file + select,
 
 .input-group > .input-group-append > .btn, .field__item__paragraph__callout-strip .field-link .input-group > .input-group-append > a, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file .input-group > .input-group-append > a, .node--type-publication.node--view-mode-highlight .publication__node-link .input-group > .input-group-append > a,
 .input-group > .input-group-append > .more-data-parline, .article__node-link .input-group > .input-group-append > a,
-.ipu-event__node-link .input-group > .input-group-append > a, .input-group > .input-group-append > .stats-more-link, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .input-group > .input-group-append > a,
+.ipu-event__node-link .input-group > .input-group-append > a, .input-group > .input-group-append > .stats-more-link, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .input-group > .input-group-append > a, .input-group > .input-group-append > .btn-cta, .node-ipu_event .field-ipu-event-button .input-group > .input-group-append > a, .carousel-item .slide-wrapper .button .input-group > .input-group-append > a,
 .input-group > .input-group-append > .input-group-text,
 .input-group > .input-group-prepend:not(:first-child) > .btn,
 .field__item__paragraph__callout-strip .field-link .input-group > .input-group-prepend:not(:first-child) > a,
@@ -4691,6 +5014,9 @@ form .input-group > .custom-file + select,
 .ipu-event__node-link .input-group > .input-group-prepend:not(:first-child) > a,
 .input-group > .input-group-prepend:not(:first-child) > .stats-more-link,
 .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .input-group > .input-group-prepend:not(:first-child) > a,
+.input-group > .input-group-prepend:not(:first-child) > .btn-cta,
+.node-ipu_event .field-ipu-event-button .input-group > .input-group-prepend:not(:first-child) > a,
+.carousel-item .slide-wrapper .button .input-group > .input-group-prepend:not(:first-child) > a,
 .input-group > .input-group-prepend:not(:first-child) > .input-group-text,
 .input-group > .input-group-prepend:first-child > .btn:not(:first-child),
 .field__item__paragraph__callout-strip .field-link .input-group > .input-group-prepend:first-child > a:not(:first-child),
@@ -4701,6 +5027,9 @@ form .input-group > .custom-file + select,
 .ipu-event__node-link .input-group > .input-group-prepend:first-child > a:not(:first-child),
 .input-group > .input-group-prepend:first-child > .stats-more-link:not(:first-child),
 .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .input-group > .input-group-prepend:first-child > a:not(:first-child),
+.input-group > .input-group-prepend:first-child > .btn-cta:not(:first-child),
+.node-ipu_event .field-ipu-event-button .input-group > .input-group-prepend:first-child > a:not(:first-child),
+.carousel-item .slide-wrapper .button .input-group > .input-group-prepend:first-child > a:not(:first-child),
 .input-group > .input-group-prepend:first-child > .input-group-text:not(:first-child) {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
@@ -9412,7 +9741,14 @@ a.badge:hover, .node--view-mode-highlight a.article__type:hover,
 .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link a .node--view-mode-highlight .ipu-event__field-event-type,
 .node--view-mode-highlight .stats-more-link .ipu-event__field-event-type,
 .node--view-mode-highlight .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link a .ipu-event__field-event-type,
-.node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .node--view-mode-highlight a .ipu-event__field-event-type {
+.node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link .node--view-mode-highlight a .ipu-event__field-event-type, .btn-cta .badge, .node-ipu_event .field-ipu-event-button a .badge, .btn-cta .node--view-mode-highlight .article__type, .node-ipu_event .field-ipu-event-button a .node--view-mode-highlight .article__type, .node--view-mode-highlight .btn-cta .article__type, .node--view-mode-highlight .node-ipu_event .field-ipu-event-button a .article__type, .node-ipu_event .field-ipu-event-button .node--view-mode-highlight a .article__type,
+.btn-cta .node--view-mode-highlight .ipu-event__field-event-type,
+.node-ipu_event .field-ipu-event-button a .node--view-mode-highlight .ipu-event__field-event-type,
+.node--view-mode-highlight .btn-cta .ipu-event__field-event-type,
+.node--view-mode-highlight .node-ipu_event .field-ipu-event-button a .ipu-event__field-event-type,
+.node-ipu_event .field-ipu-event-button .node--view-mode-highlight a .ipu-event__field-event-type, .carousel-item .slide-wrapper .button a .badge, .carousel-item .slide-wrapper .button a .node--view-mode-highlight .article__type, .node--view-mode-highlight .carousel-item .slide-wrapper .button a .article__type,
+.carousel-item .slide-wrapper .button a .node--view-mode-highlight .ipu-event__field-event-type,
+.node--view-mode-highlight .carousel-item .slide-wrapper .button a .ipu-event__field-event-type {
   position: relative;
   top: -1px;
 }
@@ -15289,13 +15625,6 @@ table:after {
 .carousel-item .slide-wrapper .button {
   margin: 10px 0 0;
 }
-.carousel-item .slide-wrapper .button a {
-  padding: 0.25rem 0.5rem;
-  font-size: 0.875rem;
-  line-height: 1.5;
-  border-radius: 0.2rem;
-}
-
 /* USED FOR ALTERNATIVE SLIDER, LINKING TO INTERNAL CONTENT */
 .carousel-item .node--view-mode-slide > div > div:not(.group-image) {
   padding-top: 40px;
@@ -21583,7 +21912,7 @@ dl {
 
 a.btn, .field__item__paragraph__callout-strip .field-link a, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a, .node--type-publication.node--view-mode-highlight .publication__node-link a,
 a.more-data-parline, .article__node-link a,
-.ipu-event__node-link a, a.stats-more-link, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link a {
+.ipu-event__node-link a, a.stats-more-link, .node-landing_page:not(.node-172) .group-header .group-body-and-data .landing-page__field-data-points-for-theme .field-link a, a.btn-cta, .node-ipu_event .field-ipu-event-button a, .carousel-item .slide-wrapper .button a {
   text-decoration: none;
 }
 
@@ -26352,6 +26681,53 @@ a.more-data-parline, .article__node-link a,
 .taxonomy-list-article .block--ipu-content header h3, .taxonomy-list-article .block--ipu-content header .basic-page__field-related-content .field__label, .basic-page__field-related-content .taxonomy-list-article .block--ipu-content header .field__label, .taxonomy-list-article .block--ipu-content header .basic-page__field-related-documents .field__label, .basic-page__field-related-documents .taxonomy-list-article .block--ipu-content header .field__label {
   margin: 10px 0 20px 0;
 }
+.node-ipu_event .tab-pane {
+  padding-bottom: 20px;
+}
+.node-ipu_event .ipu-event__sponsors, .node-ipu_event .ipu-event__field-sponsor {
+  margin: 10px 0;
+  border-bottom: 1px solid #cccccc;
+}
+.node-ipu_event .ipu-event__sponsors .field__label, .node-ipu_event .ipu-event__field-sponsor .field__label {
+  font-weight: 400 !important;
+  border-bottom: 1px solid #cccccc;
+}
+.node-ipu_event .ipu-event__sponsors .paragraphs-content-wrapper, .node-ipu_event .ipu-event__field-sponsor .paragraphs-content-wrapper {
+  height: auto;
+  word-break: normal;
+}
+.node-ipu_event .ipu-event__sponsors .paragraphs-content-wrapper:after, .node-ipu_event .ipu-event__field-sponsor .paragraphs-content-wrapper:after {
+  display: none;
+}
+.node-ipu_event .ipu-event__field-sponsor .image__uri {
+  margin-bottom: 6px;
+}
+.node-ipu_event .ipu-event__field-sponsor .image__filename {
+  display: none;
+}
+.node-ipu_event .ipu-event__dates {
+  font-weight: 400;
+}
+.node-ipu_event .ipu-event__field-location p.address br {
+  content: "";
+}
+.node-ipu_event .ipu-event__field-location p.address span {
+  display: inline-block;
+  /* no need to display empty elements */
+}
+.node-ipu_event .ipu-event__field-location p.address span:not(:first-child) {
+  margin-left: -0.3em;
+}
+.node-ipu_event .ipu-event__field-location p.address span:empty {
+  display: none;
+}
+.node-ipu_event .ipu-event__field-location p.address span:not(:first-child):before {
+  content: ", ";
+}
+.node-ipu_event .field-ipu-event-button a {
+  margin: 10px 0;
+}
+
 .off-canvas {
   display: none;
 }
@@ -26573,6 +26949,35 @@ ol.breadcrumb {
 }
 .block--ipu-content ul.menu-top-level .menu-item.menu-item--active-trail.menu-item--route-node-242 a > span:before {
   background: url(../img/theme_icons/youth.svg);
+}
+
+.node-ipu_event .ipu_event-subpage-home .event-sub-page__title {
+  display: none;
+}
+
+.node-ipu_event .nav-pills {
+  background-color: #fff;
+  border-width: 0 1px 1px 1px;
+  border-color: #eeeeee;
+  border-style: solid;
+  margin-bottom: 20px;
+}
+.node-ipu_event .nav-pills a {
+  display: block;
+  padding: 2px 8px;
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: #0066a1;
+  background-color: #f8f9fa;
+}
+.node-ipu_event .nav-pills a.active {
+  background-color: rgba(0, 168, 180, 0.3);
+  color: #0066a1;
+}
+.node-ipu_event .nav-pills a:hover {
+  background-color: #00a8b4;
+  color: #ffffff;
+  text-decoration: underline;
 }
 
 /* Excludes top-level */
