@@ -22,7 +22,7 @@ class EventDocumentsTab extends DsFieldBase {
    * {@inheritdoc}
    */
 	public function build() {
-    // @todo Check if there are any documents before returning the tab content.
+
     /** @var $node Drupal\node\Entity\Node * */
     $have_documents = FALSE;
     $node = $this->entity();

@@ -28,7 +28,9 @@ class EventDocumentsContent extends DsFieldBase {
     if ($node->bundle() == 'ipu_event') {
       $all_documents = [];
       $current_language = \Drupal::languageManager()->getCurrentLanguage()->getId();
-  
+      // We only show current lannguage, except when not EN or FR
+      $ignore_language = ($current_language == 'fr' ? 'en' : 'fr');
+
       // Get the session paragraphs.
       if (!$node->field_ipu_event_sessions->isEmpty()) {
         $sessions = $node->field_ipu_event_sessions->referencedEntities();
@@ -48,6 +50,11 @@ class EventDocumentsContent extends DsFieldBase {
                   $session_types = $session->field_event_session_types->referencedEntities();
                   /** @var \Drupal\taxonomy\Entity\Term $term **/
                   foreach ($session_types as $term) {
+                    if ($term->isTranslatable()) {} {
+                      if ($term->hasTranslation($current_language)) {
+                        $term = $term->getTranslation($current_language);
+                      }
+                    }
                     $all_documents[$term->id()]['name'] = $term->getName();
                     $all_documents[$term->id()]['sessions'][$session->id()]['title'] = $session->field_fc_sessions_session_title->value;
                     $all_documents[$term->id()]['sessions'][$session->id()]['documents'] = $documents;
@@ -69,10 +76,10 @@ class EventDocumentsContent extends DsFieldBase {
           foreach ($document_group_session['documents'] as $document_group_session_document) {
             // Get rid of the documents that aren't in the current language. I tried setting access on the paragraphs with
             // hook_ENTITY_TYPE_access() but that seems to be ignored when manually sending a render array of paragraphs.
-            $document_lanagage = $document_group_session_document->get('field_publication_language')->value;
-            if ($current_language == $document_lanagage) {
+            $document_language = $document_group_session_document->get('field_publication_language')->value;
+            if ($document_language !== $ignore_language && $document_language !== NULL) {
               $view_builder = \Drupal::entityTypeManager()->getViewBuilder($document_group_session_document->getEntityTypeId());
-              $documents_per_group[] = $view_builder->view($document_group_session_document, 'full');
+              $documents_per_group[] = $view_builder->view($document_group_session_document, 'full', $current_language);
             }
           }
         }
@@ -99,10 +106,10 @@ class EventDocumentsContent extends DsFieldBase {
               if (!$document_widget->field_ipu_event_document->isEmpty()) {
                 $documents = $document_widget->field_ipu_event_document->referencedEntities();
                 foreach ($documents as $document) {
-                  $document_lanagage = $document->get('field_publication_language')->value;
-                  if ($current_language == $document_lanagage) {
-                    $view_builder = \Drupal::entityTypeManager()->getViewBuilder($document->getEntityTypeId());
-                    $document_view = $view_builder->view($document, 'full');
+                  $document_language = $document->get('field_publication_language')->value;
+                  if ($document_language !== $ignore_language && $document_language != NULL) {
+                    $view_builder = \Drupal::entityTypeManager()->getViewBuilder($document->getEntityTypeId() );
+                    $document_view = $view_builder->view($document, 'full', $current_language);
                     $other_documents[] = render($document_view);
                   }
                   // $other_documents[] = $document->id(). '-'. $document_lanagage;
@@ -113,7 +120,6 @@ class EventDocumentsContent extends DsFieldBase {
         }
       }
 
-
       return [
         '#type' => 'event_documents',
         '#content' => $grouped_documents_render,
@@ -121,6 +127,6 @@ class EventDocumentsContent extends DsFieldBase {
       ];
     }
 		
-    return;
+    return [];
 	}
 }

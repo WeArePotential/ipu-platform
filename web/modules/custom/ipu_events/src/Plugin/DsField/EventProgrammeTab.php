@@ -22,8 +22,8 @@ class EventProgrammeTab extends DsFieldBase {
    * {@inheritdoc}
    */
 	public function build() {
-    // @todo Check if there are any sessions before returning the tab content.
-    $have_sessions = FALSE;
+
+	  $have_sessions = FALSE;
     $node = $this->entity();
 
     if ($node->field_hide_programs_menu->value == 1) {
