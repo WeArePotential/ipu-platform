@@ -56,6 +56,7 @@ class EventDocumentsContent extends DsFieldBase {
                       }
                     }
                     $all_documents[$term->id()]['name'] = $term->getName();
+                    $all_documents[$term->id()]['weight'] = $term->getWeight();
                     $all_documents[$term->id()]['sessions'][$session->id()]['title'] = $session->field_fc_sessions_session_title->value;
                     $all_documents[$term->id()]['sessions'][$session->id()]['documents'] = $documents;
                   }
@@ -68,6 +69,9 @@ class EventDocumentsContent extends DsFieldBase {
   
       // Create the render array of the documents grouped by the session type.
       $grouped_documents_render = [];
+      // Sort into weight ascending order - https://stackoverflow.com/questions/1597736/how-to-sort-an-array-of-associative-arrays-by-value-of-a-given-key-in-php
+      $weighted = array_column($all_documents, 'weight');
+      array_multisort($weighted, SORT_ASC, $all_documents);
       foreach ($all_documents as $document_group) {
         $title = $document_group['name'];
         $documents_per_group = [];
