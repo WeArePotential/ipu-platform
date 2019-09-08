@@ -102,3 +102,40 @@ $card-spacer-x: 10px;
   @extend .btn-primary;
   @extend .btn-sm;
 }
+
+// From old site
+.button-blue a, .blue-button a {
+  @extend .btn-cta;
+  &::after {
+    font-family: "Font Awesome 5 Free", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 900;
+    line-height: 1;
+    margin-left: 4px;
+    content: "\F061" !important;
+  }
+}
+.resources-journalists {
+  display: flex;
+}
+.resource-journalists {
+  background-color: #fff;
+  border: 1px solid #cccccc;
+  box-shadow: 0 0 3px 0 #cccccc;
+  margin: 0 5px 10px 5px;
+  padding: 8px;
+  font-size: 0.875rem;
+  .title a {
+    font-size: $font-size-md;
+  }
+  .description {
+    display: none;
+  }
+  .more {
+    display: none;
+  }
+}

@@ -1998,6 +1998,9 @@ a.btn {
     content: '\f061';
     margin-left: 4px;
   }
+  .call-to-action__field-description {
+    color: $ipu-grey;
+  }
 }
 
 // Hide image on structure page as it's used as a main image too

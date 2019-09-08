@@ -29,6 +29,7 @@ settings:
             - Copy
             - PasteText
             - PasteFromWord
+            - Styles
         -
           name: Linking
           items:
@@ -59,6 +60,8 @@ settings:
         -
           name: Tools
           items:
+            - Undo
+            - Redo
             - ShowBlocks
             - Source
   plugins:
@@ -68,7 +71,7 @@ settings:
     language:
       language_list: un
     stylescombo:
-      styles: ''
+      styles: 'a.cta-btn|Call to action link '
 image_upload:
   status: true
   scheme: public
