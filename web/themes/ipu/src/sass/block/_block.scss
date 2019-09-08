@@ -348,7 +348,9 @@ span::before {
     float: left;
     margin-right: 0.4rem;
   }
-
+  .term-icon-198 & {
+    height: 20px;
+  }
   .term-icon-88 & {
     background: url("../img/theme_icons/gender_equality.svg");
   }
@@ -383,6 +385,9 @@ span::before {
   .term-icon a::before {
     width: 32px !important;
     height: 32px !important;
+  }
+  .term-icon-198 a::before {
+    height: 29px !important;
   }
   .row .col > div {
     background-color: $light;
@@ -1722,6 +1727,7 @@ a.btn {
             float: left;
             margin: 0.4rem;
           }
+
           .field-node-title-theme-description {
             margin-left: calc( 40px + 1rem );
             font-size: $font-size-md;
@@ -1739,6 +1745,7 @@ a.btn {
       }
       &.theme-term-id-198 h1:before {
         background: url("../img/theme_icons/global_development.svg");
+        height: 36px !important;
       }
       &.theme-term-id-231 h1:before {
         background: url("../img/theme_icons/international_relations.svg");

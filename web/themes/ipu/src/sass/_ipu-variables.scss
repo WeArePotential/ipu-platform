@@ -97,6 +97,9 @@ $card-spacer-x: 10px;
 .btn-sm {
   padding: 0.1rem 0.5rem;
 }
+.webform-button--submit {
+  @extend .btn-sm;
+}
 .btn-cta {
   @extend .btn;
   @extend .btn-primary;
