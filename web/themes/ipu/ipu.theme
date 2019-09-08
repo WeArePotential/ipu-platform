@@ -200,7 +200,7 @@ function ipu_preprocess_views_view(&$variables) {
 
 
   $view = $variables['view'];
-  if ($view->id() == 'countries' && in_array($view->current_display, ['block_parliaments'])) {
+  if ($view->id() == 'countries' && in_array($view->current_display, ['block_parliaments', 'block_members'])) {
     foreach ($variables['rows'] as $index => $row) {
       //$variables['rows'][$index]['field_iso_code_for_parliament'] =
       foreach($row['#rows'] as $rowindex => $country) {
