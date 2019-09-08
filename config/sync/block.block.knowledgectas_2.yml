@@ -16,7 +16,7 @@ provider: null
 plugin: 'block_content:31badc67-54ef-46da-8c20-59e91369d62c'
 settings:
   id: 'block_content:31badc67-54ef-46da-8c20-59e91369d62c'
-  label: 'Knowledge CTAs'
+  label: 'Discover the IPU''s resources'
   provider: block_content
   label_display: visible
   status: true
