@@ -262,7 +262,8 @@ class IpuStatsBlock extends BlockBase implements ContainerFactoryPluginInterface
 
     $stats['members'] = $config['members'];
     $ipu_map_config = \Drupal::config('ipu_map.settings');
-    $stats['members']['link'] = (($language_id != 'en') ? '/'. $language_id : '') . \Drupal::service('path.alias_manager')->getAliasByPath($ipu_map_config->get('ipu_map_parliaments_page'), $language_id);
+    // @todo Don't hardcode members page nid!
+    $stats['members']['link'] = (($language_id != 'en') ? '/'. $language_id : '') . \Drupal::service('path.alias_manager')->getAliasByPath('/node/188', $language_id);
 
     $stats['women'] = $config['women'];
     $stats['women']['link'] = (($language_id != 'en') ? '/'. $language_id : '') . \Drupal::service('path.alias_manager')->getAliasByPath('/node/'.$config['women']['nid'], $language_id);
