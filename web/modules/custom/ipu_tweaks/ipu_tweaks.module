@@ -118,6 +118,12 @@ function ipu_tweaks_preprocess_field(&$variables) {
           foreach ($theme_terms as $term) {
             $variables['attributes']['class'][] = 'theme-term-id-' . $term['target_id'];
             $term_entity = \Drupal\taxonomy\Entity\Term::load($term['target_id']);
+            if ($term_entity->isTranslatable()) {
+              $current_language = \Drupal::languageManager()->getCurrentLanguage('language_content')->getId();
+              if ($term_entity->hasTranslation($current_language)) {
+                $term_entity = $term_entity->getTranslation($current_language);
+              }
+            }
             $variables['theme_description'] = $term_entity->getDescription();
             $variables['title_suffix'] = '<h2>'.$term_entity->getDescription().'</h2>';
           }
