@@ -9,7 +9,7 @@ dependencies:
 id: ipucontentblock_4
 theme: ipu
 region: ultimenu_mega_b7d13355
-weight: 0
+weight: -16
 provider: null
 plugin: ipu_node_block
 settings:

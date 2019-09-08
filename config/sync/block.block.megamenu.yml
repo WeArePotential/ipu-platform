@@ -15,7 +15,7 @@ third_party_settings:
 id: megamenu
 theme: ipu
 region: ultimenu_mega_b7d13355
-weight: 0
+weight: -13
 provider: null
 plugin: 'menu_block:mega-menu'
 settings:

@@ -11,7 +11,7 @@ dependencies:
 id: knowledgectas_2
 theme: ipu
 region: ultimenu_mega_b7d13355
-weight: 0
+weight: -15
 provider: null
 plugin: 'block_content:31badc67-54ef-46da-8c20-59e91369d62c'
 settings:
