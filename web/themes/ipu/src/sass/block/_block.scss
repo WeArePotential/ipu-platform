@@ -1222,6 +1222,7 @@ a.btn {
     }
 
     .node-link a {
+      @extend .btn-outline-primary;
       @extend .btn-sm;
     }
   }
@@ -1501,24 +1502,31 @@ a.btn {
 }
 
 .node-basic_page,
+.node-page,
 .section-page__dynamic-block-fieldnode-section-sub-pages,
-.viewfield--view__sub_content  {
+.viewfield--view__sub_content,
+.node--view-mode-highlight {
   @extend .image-with-caption;
   /* Put caption over image */
-  .basic-page__field-caption {
+  .basic-page__field-caption,
+  .page__field-caption {
     @extend .image-with-caption-caption;
   }
 }
 /* Override when in highlights box */
+
 .section-page__dynamic-block-fieldnode-section-sub-pages,
-.viewfield--view__sub_content {
+.viewfield--view__sub_content,
+.node--view-mode-highlight {
   .group-image {
     margin-top: 0px;
     &:hover {
+      .page__field-caption,
       .basic-page__field-caption {
         opacity: 1;
       }
     }
+    .page__field-caption,
     .basic-page__field-caption {
       opacity: 0;
       transition: all 700ms ease-in-out;
