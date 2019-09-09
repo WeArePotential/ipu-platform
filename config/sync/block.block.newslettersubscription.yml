@@ -1,9 +1,9 @@
-uuid: a3e790ed-89c3-413d-8e50-261e2a092aee
+uuid: 7c3e2b7e-e789-459f-921c-3020f307c3ec
 langcode: en
 status: true
 dependencies:
   content:
-    - 'block_content:basic:29feac53-50df-4840-ba33-dba5929750e1'
+    - 'block_content:basic:1458f291-0a3c-43d3-9c61-9b3ac92d6d6a'
   module:
     - block_content
   theme:
@@ -13,9 +13,9 @@ theme: ipu
 region: navbar_branding_right
 weight: -16
 provider: null
-plugin: 'block_content:29feac53-50df-4840-ba33-dba5929750e1'
+plugin: 'block_content:1458f291-0a3c-43d3-9c61-9b3ac92d6d6a'
 settings:
-  id: 'block_content:29feac53-50df-4840-ba33-dba5929750e1'
+  id: 'block_content:1458f291-0a3c-43d3-9c61-9b3ac92d6d6a'
   label: 'Newsletter subscription'
   provider: block_content
   label_display: '0'
