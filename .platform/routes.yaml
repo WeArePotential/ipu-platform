@@ -15,3 +15,11 @@
 "https://www.{default}/":
     type: redirect
     to: "https://{default}/"
+
+"http://beta.ipu.org/":
+  type: redirect
+  to: "https://{default}/"
+
+"https://beta.ipu.org/":
+  type: redirect
+  to: "https://{default}/"
