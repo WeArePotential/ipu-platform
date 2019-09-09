@@ -10,10 +10,10 @@
     <div class="d-flex justify-content-between">
     {% block topbar %}
       {% if page.topbar_left %}
-          <div class="text-left">{{ page.topbar_left }}</div>
+          <div class="topbar-left text-left">{{ page.topbar_left }}</div>
       {% endif %}
       {% if page.topbar_right %}
-      <div class="text-right">{{ page.topbar_right }}</div>
+      <div class="topbar-right text-right">{{ page.topbar_right }}</div>
       {% endif %}
       {% endblock %}
     </div>
@@ -25,7 +25,7 @@
         <div class="d-flex justify-content-between align-items-center">
           {% block branding %}
             {% if page.navbar_branding %}
-              <div class="text-left">
+              <div class="branding-left text-left">
                 {%  if language_id == 'en' %}
                   {% set logo = 'IPU-logo-130-EN.png' %}
                   {% set url = '' %}
@@ -38,7 +38,7 @@
               </div>
             {% endif %}
             {% if page.navbar_branding_right %}
-              <div class="text-right">
+              <div class="branding-right text-right">
                 {{ page.navbar_branding_right }}
               </div>
             {% endif %}

@@ -11,7 +11,7 @@ _core:
 id: ipu_zen_ipu_search_form
 theme: ipu
 region: navbar_branding_right
-weight: -13
+weight: -14
 provider: null
 plugin: search_form_block
 settings:

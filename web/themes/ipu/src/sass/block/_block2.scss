@@ -78,3 +78,24 @@
     @extend .btn-cta;
   }
 }
+
+.block--newslettersubscription {
+  a {
+    @extend .btn;
+    @extend .btn-outline-primary;
+    @extend .btn-sm;
+    padding: .1rem .25rem;
+    &:before {
+      font-family: "Font Awesome 5 Free", sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      display: inline-block;
+      font-style: normal;
+      font-variant: normal;
+      font-weight: 900;
+      line-height: 1;
+      content: '\f0e0';
+      margin-right: 4px;
+    }
+  }
+}

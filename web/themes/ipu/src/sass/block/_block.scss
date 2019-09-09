@@ -190,6 +190,16 @@ a {
     max-width: 100%;
   }
 }
+@include media-breakpoint-up(md) {
+  #branding .branding-right .region-inner {
+    display: flex;
+    flex-direction: row;
+    margin: 0 -5px;
+    & > .block {
+      padding: 0 5px;
+    }
+  }
+}
 #branding .block--ipu-search {
   display: inline-block;
   @include media-breakpoint-down(sm) {
@@ -274,6 +284,22 @@ a {
 }
 .follow-instagram::before {
   content: "\f16d" !important;
+}
+footer {
+  .follow-subscribe::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f0e0" !important;
+    font-weight: 900;
+    margin-right: 4px;
+  }
+  .follow-subscribe {
+    border: 1px solid #fff;
+    padding: 0.1rem 0.25rem !important;
+    display: inline-block;
+    margin-top: 10px;
+    border-radius: 3px;
+    font-size: $font-size-sm;
+  }
 }
 
 .cta-link {

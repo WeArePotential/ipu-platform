@@ -1,0 +1,25 @@
+uuid: a3e790ed-89c3-413d-8e50-261e2a092aee
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:29feac53-50df-4840-ba33-dba5929750e1'
+  module:
+    - block_content
+  theme:
+    - ipu
+id: newslettersubscription
+theme: ipu
+region: navbar_branding_right
+weight: -16
+provider: null
+plugin: 'block_content:29feac53-50df-4840-ba33-dba5929750e1'
+settings:
+  id: 'block_content:29feac53-50df-4840-ba33-dba5929750e1'
+  label: 'Newsletter subscription'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }
