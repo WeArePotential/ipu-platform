@@ -1,4 +1,4 @@
-uuid: ce373c6a-8a8c-468b-9326-3f72884ae7c4
+uuid: f883c26f-54e2-4162-87d5-6d7f01a823f0
 langcode: en
 status: true
 dependencies:
@@ -12,20 +12,14 @@ name: Country
 url_alias: country
 weight: 0
 min_count: 1
-show_only_one_result: false
+show_only_one_result: true
 field_identifier: field_country
 facet_source_id: 'search_api:views_page__search__page_1'
 widget:
-  type: links
+  type: dropdown
   config:
     show_numbers: true
-    soft_limit: 20
-    soft_limit_settings:
-      show_less_label: 'Show fewer'
-      show_more_label: 'Show more'
-    show_reset_link: true
-    reset_text: 'Show all'
-    hide_reset_when_no_selection: true
+    default_option_label: Choose
 query_operator: or
 use_hierarchy: false
 expand_hierarchy: false
@@ -34,24 +28,17 @@ hard_limit: 0
 exclude: false
 only_visible_when_facet_source_is_visible: true
 processor_configs:
-  active_widget_order:
-    processor_id: active_widget_order
-    weights:
-      sort: 20
-    settings:
-      sort: DESC
-  count_widget_order:
-    processor_id: count_widget_order
-    weights:
-      sort: 30
-    settings:
-      sort: DESC
   display_value_widget_order:
     processor_id: display_value_widget_order
     weights:
       sort: 40
     settings:
       sort: ASC
+  translate_entity:
+    processor_id: translate_entity
+    weights:
+      build: 5
+    settings: {  }
   url_processor_handler:
     processor_id: url_processor_handler
     weights:

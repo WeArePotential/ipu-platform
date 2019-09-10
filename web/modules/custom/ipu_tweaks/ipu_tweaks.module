@@ -244,8 +244,20 @@ function ipu_tweaks_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $for
     case 'node_ipu_event_edit_form':
       $form['field_event_computed_date']['#disabled'] = 'disabled';
       $form['ipu_event_session_type']['#disabled'] = 'disabled';
+      break;
+
+    case 'search_block_form':
+      $current_language = \Drupal::languageManager()->getCurrentLanguage('language_content')->getId();
+      //$form['actions']['submit']['#value'] = t('Search IPU');
+      if ($current_language == 'fr') {
+        $form['#action'] = '/fr/search';
+      } else {
+        $form['#action'] = '/search';
+      }
+      break;
   }
 }
+
 
 /**
  * Hide the page title for some node types while still showing it
@@ -309,4 +321,33 @@ use Drupal\block_content\Entity\BlockContent;
 function ipu_tweaks_block_content_view_alter(array &$build, BlockContent $custom_block) {
   //drupal_set_message(__FUNCTION__ . "() id: " . $custom_block->id(). $custom_block->label() );
   // Use this to tweak custom blocks
+}
+function ipu_tweaks_preprocess_views_view(&$variables) {
+
+  if ($variables['id'] == 'search' && $variables['display_id'] == 'page_1') {
+
+    $block_manager = \Drupal::service('plugin.manager.block');
+    $config = [];
+    $facets = [];
+    $facets = [
+      'theme' => t('Theme'),
+//      'country' => t('Country'),
+      'news_type' => t('News'),
+      'event_type' => t('Events'),
+      'ipu_structure' => t('IPU'),
+//      'type' => t('Content type'),
+    ];
+    foreach ($facets as $facet_block_id => $facet_title) {
+      $plugin_block = $block_manager->createInstance('facet_block:' . $facet_block_id, $config);
+      $render = $plugin_block->build();
+      if (count($render) > 0) {
+        $facets[] = [
+          'title' => $facet_title,
+          'content' => $render,
+          'class' => 'facet--' . $facet_block_id
+        ];
+      }
+      $variables['facets'] = $facets;
+    }
+  }
 }

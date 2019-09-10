@@ -1,4 +1,4 @@
-uuid: 4c8df143-91f0-4494-b04d-6282227b0503
+uuid: 8e6f37bd-7eb9-4065-9c7c-233c37687d09
 langcode: en
 status: true
 dependencies:
@@ -7,13 +7,13 @@ dependencies:
     - views.view.search
   module:
     - search_api
-id: theme
-name: Theme
-url_alias: theme
+id: ipu_structure
+name: 'IPU structure'
+url_alias: ipu_structure
 weight: 0
-min_count: 1
+min_count: 0
 show_only_one_result: false
-field_identifier: field_theme
+field_identifier: field_ipu_structure
 facet_source_id: 'search_api:views_page__search__page_1'
 widget:
   type: links
@@ -23,29 +23,17 @@ widget:
     soft_limit_settings:
       show_less_label: 'Show less'
       show_more_label: 'Show more'
-    show_reset_link: true
+    show_reset_link: false
     reset_text: 'Show all'
-    hide_reset_when_no_selection: true
+    hide_reset_when_no_selection: false
 query_operator: or
-use_hierarchy: false
+use_hierarchy: true
 expand_hierarchy: false
 enable_parent_when_child_gets_disabled: true
 hard_limit: 0
 exclude: false
 only_visible_when_facet_source_is_visible: true
 processor_configs:
-  count_limit:
-    processor_id: count_limit
-    weights:
-      build: 50
-    settings:
-      minimum_items: 1
-      maximum_items: null
-  list_item:
-    processor_id: list_item
-    weights:
-      build: 5
-    settings: {  }
   term_weight_widget_order:
     processor_id: term_weight_widget_order
     weights:

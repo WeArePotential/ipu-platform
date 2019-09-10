@@ -7,13 +7,11 @@ dependencies:
 _core:
   default_config_hash: 97tvtzGOa8_flb22CzSjgtm_YkiGMHvEBO-6q2K9V_U
 id: node_search
-label: Content
-path: node
+label: ''
+path: site
 weight: -10
 plugin: node_search
 configuration:
   rankings:
-    promote: 0
-    recent: 0
-    relevance: 0
-    sticky: 0
+    recent: 1
+    relevance: 2

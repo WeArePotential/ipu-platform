@@ -1,0 +1,82 @@
+.view-search.view-display-id-page_1 {
+  header {
+    font-weight: $font-weight-base;
+    margin-bottom: 10px;
+    border-bottom: 1px solid $ipu-light-grey;
+  }
+  .views-row {
+    margin: 10px 0;
+    padding: 10px 0;
+    border-bottom: 1px solid $ipu-light-grey;
+  }
+  .views-field-type {
+
+  }
+  .views-field-search-api-excerpt {
+    line-height: 1.4;
+  }
+
+  .views-field-type, .views-field-field-theme, .views-field-field-country, .views-field-created {
+    font-size: $font-size-sm;
+  }
+  .views-field-field-theme, .views-field-field-country {
+    font-style: italic;
+  }
+  .views-field-created {
+    float: right;
+  }
+}
+
+#views-exposed-form-search-page-1 {
+  background-color: $light;
+  padding: 10px;
+  margin-top: -20px;
+  display: flex;
+
+  .form-group {
+    display: flex;
+    margin-bottom: 0;
+    align-items: center;
+  }
+  label {
+    font-size: $font-size-sm;
+    font-weight: $font-weight-normal;
+    margin: 0px 4px;
+  }
+  .form-item-country label {
+    margin-left: 10px;
+  }
+  select {
+    width: auto;
+  }
+  input.form-submit {
+    @extend .btn-sm;
+    margin-left: 10px;
+  }
+  margin-bottom: 10px;
+
+}
+.search-facets {
+  .search-facet {
+    //background-color: $light;
+    //padding: 10px;
+    .facets-widget-links ul {
+      list-style: none;
+      margin: 0 0 10px 0;
+      padding: 0;
+      a {
+        font-weight: $font-weight-light;
+        font-size: $font-size-sm;
+        line-height: 1.45;
+        display: block;
+      }
+    }
+
+    h3 {
+      margin: 0 0 4px 0;
+      border-bottom: 1px solid $ipu-teal;
+      //background-color: $ipu-teal-light;
+    }
+
+  }
+}

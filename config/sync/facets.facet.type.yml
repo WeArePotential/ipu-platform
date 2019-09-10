@@ -1,4 +1,4 @@
-uuid: 4c8df143-91f0-4494-b04d-6282227b0503
+uuid: c5c319aa-4936-471b-a7cf-b7faa422809f
 langcode: en
 status: true
 dependencies:
@@ -7,25 +7,25 @@ dependencies:
     - views.view.search
   module:
     - search_api
-id: theme
-name: Theme
-url_alias: theme
+id: type
+name: Type
+url_alias: type
 weight: 0
 min_count: 1
 show_only_one_result: false
-field_identifier: field_theme
+field_identifier: type
 facet_source_id: 'search_api:views_page__search__page_1'
 widget:
   type: links
   config:
-    show_numbers: true
+    show_numbers: false
     soft_limit: 0
     soft_limit_settings:
       show_less_label: 'Show less'
       show_more_label: 'Show more'
-    show_reset_link: true
+    show_reset_link: false
     reset_text: 'Show all'
-    hide_reset_when_no_selection: true
+    hide_reset_when_no_selection: false
 query_operator: or
 use_hierarchy: false
 expand_hierarchy: false
@@ -34,22 +34,22 @@ hard_limit: 0
 exclude: false
 only_visible_when_facet_source_is_visible: true
 processor_configs:
-  count_limit:
-    processor_id: count_limit
+  active_widget_order:
+    processor_id: active_widget_order
     weights:
-      build: 50
+      sort: 20
     settings:
-      minimum_items: 1
-      maximum_items: null
-  list_item:
-    processor_id: list_item
+      sort: DESC
+  count_widget_order:
+    processor_id: count_widget_order
     weights:
-      build: 5
-    settings: {  }
-  term_weight_widget_order:
-    processor_id: term_weight_widget_order
+      sort: 30
+    settings:
+      sort: DESC
+  display_value_widget_order:
+    processor_id: display_value_widget_order
     weights:
-      sort: 60
+      sort: 40
     settings:
       sort: ASC
   translate_entity:

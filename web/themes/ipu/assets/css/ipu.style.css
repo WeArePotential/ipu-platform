@@ -8,7 +8,7 @@ a > em {
 }
 
 /* Colours */
-.btn-sm, .ultimenu__flyout .megamenu-cta a.btn-outline-primary, .ultimenu__flyout .megamenu-cta .article__node-link a, .article__node-link .ultimenu__flyout .megamenu-cta a,
+.btn-sm, #views-exposed-form-search-page-1 input.form-submit, .ultimenu__flyout .megamenu-cta a.btn-outline-primary, .ultimenu__flyout .megamenu-cta .article__node-link a, .article__node-link .ultimenu__flyout .megamenu-cta a,
 .ultimenu__flyout .megamenu-cta .ipu-event__node-link a,
 .ipu-event__node-link .ultimenu__flyout .megamenu-cta a,
 .ultimenu__flyout .megamenu-cta a.more-data-parline, .ultimenu__flyout .megamenu-cta .node--type-landing-page.node--view-mode-highlight .node-link a, .node--type-landing-page.node--view-mode-highlight .node-link .ultimenu__flyout .megamenu-cta a,
@@ -3693,7 +3693,7 @@ fieldset:disabled .blue-button a,
   border-radius: 0.3rem;
 }
 
-.btn-sm, .ultimenu__flyout .megamenu-cta a.btn-outline-primary, .ultimenu__flyout .megamenu-cta .article__node-link a, .article__node-link .ultimenu__flyout .megamenu-cta a,
+.btn-sm, #views-exposed-form-search-page-1 input.form-submit, .ultimenu__flyout .megamenu-cta a.btn-outline-primary, .ultimenu__flyout .megamenu-cta .article__node-link a, .article__node-link .ultimenu__flyout .megamenu-cta a,
 .ultimenu__flyout .megamenu-cta .ipu-event__node-link a,
 .ipu-event__node-link .ultimenu__flyout .megamenu-cta a,
 .ultimenu__flyout .megamenu-cta a.more-data-parline, .ultimenu__flyout .megamenu-cta .node--type-landing-page.node--view-mode-highlight .node-link a, .node--type-landing-page.node--view-mode-highlight .node-link .ultimenu__flyout .megamenu-cta a,
@@ -4219,7 +4219,7 @@ input[type=button].btn-block {
   margin-right: 0;
 }
 
-.btn-sm + .dropdown-toggle-split, .ultimenu__flyout .megamenu-cta a.btn-outline-primary + .dropdown-toggle-split, .ultimenu__flyout .megamenu-cta .article__node-link a + .dropdown-toggle-split, .article__node-link .ultimenu__flyout .megamenu-cta a + .dropdown-toggle-split,
+.btn-sm + .dropdown-toggle-split, #views-exposed-form-search-page-1 input.form-submit + .dropdown-toggle-split, .ultimenu__flyout .megamenu-cta a.btn-outline-primary + .dropdown-toggle-split, .ultimenu__flyout .megamenu-cta .article__node-link a + .dropdown-toggle-split, .article__node-link .ultimenu__flyout .megamenu-cta a + .dropdown-toggle-split,
 .ultimenu__flyout .megamenu-cta .ipu-event__node-link a + .dropdown-toggle-split,
 .ipu-event__node-link .ultimenu__flyout .megamenu-cta a + .dropdown-toggle-split,
 .ultimenu__flyout .megamenu-cta a.more-data-parline + .dropdown-toggle-split, .ultimenu__flyout .megamenu-cta .node--type-landing-page.node--view-mode-highlight .node-link a + .dropdown-toggle-split, .node--type-landing-page.node--view-mode-highlight .node-link .ultimenu__flyout .megamenu-cta a + .dropdown-toggle-split,
@@ -27882,6 +27882,72 @@ ol.breadcrumb {
 /* Resources flyout */
 form input[type=text], form input[type=search], form select {
   padding: 0.125rem 0.5rem !important;
+}
+
+.view-search.view-display-id-page_1 header {
+  font-weight: 300;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #cccccc;
+}
+.view-search.view-display-id-page_1 .views-row {
+  margin: 10px 0;
+  padding: 10px 0;
+  border-bottom: 1px solid #cccccc;
+}
+.view-search.view-display-id-page_1 .views-field-search-api-excerpt {
+  line-height: 1.4;
+}
+.view-search.view-display-id-page_1 .views-field-type, .view-search.view-display-id-page_1 .views-field-field-theme, .view-search.view-display-id-page_1 .views-field-field-country, .view-search.view-display-id-page_1 .views-field-created {
+  font-size: 0.875rem;
+}
+.view-search.view-display-id-page_1 .views-field-field-theme, .view-search.view-display-id-page_1 .views-field-field-country {
+  font-style: italic;
+}
+.view-search.view-display-id-page_1 .views-field-created {
+  float: right;
+}
+
+#views-exposed-form-search-page-1 {
+  background-color: #f8f9fa;
+  padding: 10px;
+  margin-top: -20px;
+  display: flex;
+  margin-bottom: 10px;
+}
+#views-exposed-form-search-page-1 .form-group {
+  display: flex;
+  margin-bottom: 0;
+  align-items: center;
+}
+#views-exposed-form-search-page-1 label {
+  font-size: 0.875rem;
+  font-weight: 400;
+  margin: 0px 4px;
+}
+#views-exposed-form-search-page-1 .form-item-country label {
+  margin-left: 10px;
+}
+#views-exposed-form-search-page-1 select {
+  width: auto;
+}
+#views-exposed-form-search-page-1 input.form-submit {
+  margin-left: 10px;
+}
+
+.search-facets .search-facet .facets-widget-links ul {
+  list-style: none;
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+.search-facets .search-facet .facets-widget-links ul a {
+  font-weight: 300;
+  font-size: 0.875rem;
+  line-height: 1.45;
+  display: block;
+}
+.search-facets .search-facet h3, .search-facets .search-facet .basic-page__field-related-content .field__label, .basic-page__field-related-content .search-facets .search-facet .field__label, .search-facets .search-facet .basic-page__field-related-documents .field__label, .basic-page__field-related-documents .search-facets .search-facet .field__label {
+  margin: 0 0 4px 0;
+  border-bottom: 1px solid #00a8b4;
 }
 
 /* Add 5 card layouts */
