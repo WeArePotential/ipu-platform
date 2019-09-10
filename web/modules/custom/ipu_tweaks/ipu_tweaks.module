@@ -23,6 +23,7 @@ function ipu_tweaks_page_attachments(array &$attachments) {
   */
   if ($theme == 'ipu') {
     $attachments['#attached']['library'][] = 'ipu_tweaks/ultimenu-override';
+    $attachments['#attached']['library'][] = 'ipu_tweaks/tabs-deeplinking';
   }
 }
 
@@ -301,4 +302,11 @@ function ipu_tweaks_entity_view_mode_alter(&$view_mode, \Drupal\Core\Entity\Enti
   if ($entity->getEntityTypeId() == 'node' && $entity->bundle() == 'article' && $view_mode == 'teaser') {
     $view_mode = 'highlight';
   }
+}
+
+use Drupal\block_content\Entity\BlockContent;
+
+function ipu_tweaks_block_content_view_alter(array &$build, BlockContent $custom_block) {
+  //drupal_set_message(__FUNCTION__ . "() id: " . $custom_block->id(). $custom_block->label() );
+  // Use this to tweak custom blocks
 }

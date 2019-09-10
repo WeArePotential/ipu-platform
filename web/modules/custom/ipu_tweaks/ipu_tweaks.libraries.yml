@@ -12,3 +12,7 @@ responsive-imagemaps:
     js:
       js/rwdImageMaps/jquery.rwdImageMaps.min.js: {}
       js/responsive-imagemaps.js: {}
+tabs-deeplinking:
+    js:
+      https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js: { type: external, minified: true }
+      js/tabs-deeplinking.js: { scope: footer }
