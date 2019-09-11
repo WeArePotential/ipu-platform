@@ -1,0 +1,16 @@
+Index: web/modules/contrib/file_entity/src/Plugin/Field/FieldFormatter/FileDownloadLinkFormatter.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- web/modules/contrib/file_entity/src/Plugin/Field/FieldFormatter/FileDownloadLinkFormatter.php	(date 1568199084602)
++++ web/modules/contrib/file_entity/src/Plugin/Field/FieldFormatter/FileDownloadLinkFormatter.php	(date 1568199084602)
+@@ -157,7 +157,7 @@
+       // Prepare the text and the URL of the link.
+       $mime_type = $file->getMimeType();
+       $token_data['file'] = $file;
+-      $link_text = $this->token->replace($this->getSetting('text'), $token_data);
++      $link_text = htmlspecialchars_decode($this->token->replace($this->getSetting('text'), $token_data), ENT_QUOTES);
+       // Set options as per anchor format described at
+       // http://microformats.org/wiki/file-format-examples
+       $download_url = $file->downloadUrl(array('attributes' => array('type' => $mime_type . '; length=' . $file->getSize())));

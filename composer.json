@@ -226,6 +226,9 @@
             "drupal/similarterms": {
                 "PHP fatal error, SimilarTermsArgument::query() must be compatible with NumericArgument": "https://www.drupal.org/files/issues/query_4.patch"
             },
+            "drupal/file_entity": {
+                "Add htmlspecialchars processing to core file entity link download formatter": "web/patches/file_download_formatter_htmlspecialchars.patch"
+            },
             "drupal/viewfield": {
                 "Display missing view instead of title in viewfield": "web/patches/missing_view_in_viewfield.patch"
             },
