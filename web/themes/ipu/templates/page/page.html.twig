@@ -112,9 +112,8 @@
         {% set terms = link('Terms of use'|t, 'internal:/node/375')|render %}
         {% set privacy = link('Privacy statement'|t, 'internal:/node/9571')|render %}
         {% set year = "now"|date("Y") %}
-        {% trans %}
-          <p>© Copyright IPU {{ year }}, {{ terms }}&nbsp;and {{ privacy }}</a></p>
-        {% endtrans %}
+        {% set copyright = 'Copyright IPU'|t %}
+        <p>© {{ copyright }} {{ year }}, {{ terms }}&nbsp;&amp; {{ privacy }}</a></p>
       </div>
       </footer>
   {% endif %}
