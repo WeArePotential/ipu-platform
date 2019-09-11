@@ -1592,6 +1592,33 @@ a.btn {
     }
   }
 }
+
+.external-link-icon {
+  display: flex;
+  font-weight: $font-weight-normal;
+  line-height: 1.2rem;
+  &:before {
+    font-family: "Font Awesome 5 Free", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 900;
+    line-height: 1;
+    padding: 4px 0;
+    content: '\f0ac';
+    margin-right: 4px;
+  }
+}
+.view-documents.view-display-id-multiple_ids {
+  .document__field-external-link {
+    a {
+      @extend .external-link-icon;
+    }
+  }
+}
+
 .basic-page__field-related-documents {
   margin-bottom: 20px;
   .field__label {
@@ -1611,22 +1638,7 @@ a.btn {
     padding-top: 4px;
     padding-bottom: 4px;
     a {
-      display: flex;
-      font-weight: $font-weight-normal;
-      line-height: 1.2rem;
-      &:before {
-        font-family: "Font Awesome 5 Free", sans-serif;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        display: inline-block;
-        font-style: normal;
-        font-variant: normal;
-        font-weight: 900;
-        line-height: 1;
-        padding: 4px 0;
-        content: '\f0ac';
-        margin-right: 4px;
-      }
+      @extend .external-link-icon;
     }
   }
   .node--view-mode-teaser {

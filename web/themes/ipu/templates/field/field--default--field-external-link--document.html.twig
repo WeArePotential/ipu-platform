@@ -1,0 +1,56 @@
+{#
+/**
+ * @file
+ * Default template for a field.
+ *
+ * Replace the link title with the node title (which overrites the external link url field
+ */
+#}
+{%
+  set classes = [
+  bundle|clean_class ~ '__' ~ field_name_clean|clean_class,
+  label_display == 'inline' ? 'd-flex',
+  field_name_clean|clean_class,
+]
+%}
+
+{% set document_node_title = _context.element['#object'].title.value %}
+{%
+  set title_classes = [
+  'field__label',
+  'font-weight-bold',
+  label_display == 'visually_hidden' ? 'visually-hidden',
+]
+%}
+
+{% if label_hidden %}
+  {% if multiple %}
+    <div{{ attributes.addClass(classes) }}>
+      {% for item in items %}
+        <div{{ item.attributes.addClass('field__item') }}>{{ item.content }}</div>
+      {% endfor %}
+    </div>
+  {% else %}
+    {% for item in items %}
+      {% set content = item.content %}
+      {% set content  = content|merge({'#title': document_node_title}) %}
+      {%  set item = item|merge({'content': content}) %}
+      <div{{ attributes.addClass(classes) }}>{{ item.content }}</div>
+    {% endfor %}
+  {% endif %}
+{% else %}
+  <div{{ attributes.addClass(classes) }}>
+    <div{{ title_attributes.addClass(title_classes) }}>
+      {{ label }}{% if label_display == 'inline' %}<span class="field__label__suffix mr-1">:</span>{% endif %}
+    </div>
+    {% if multiple %}
+    <div class="field__items">
+      {% endif %}
+      {% for item in items %}
+        <div{{ item.attributes.addClass('field__item') }}>{{ item.content }}</div>
+      {% endfor %}
+      {% if multiple %}
+    </div>
+    {% endif %}
+  </div>
+{% endif %}

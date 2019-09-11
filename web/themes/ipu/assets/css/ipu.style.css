@@ -26924,6 +26924,25 @@ a.more-data-parline, .article__node-link a,
   background-color: rgba(0, 168, 180, 0.3);
 }
 
+.external-link-icon, .basic-page__field-related-documents .field__item .related-documents__field-external-link a, .view-documents.view-display-id-multiple_ids .document__field-external-link a {
+  display: flex;
+  font-weight: 400;
+  line-height: 1.2rem;
+}
+.external-link-icon:before, .basic-page__field-related-documents .field__item .related-documents__field-external-link a:before, .view-documents.view-display-id-multiple_ids .document__field-external-link a:before {
+  font-family: "Font Awesome 5 Free", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 900;
+  line-height: 1;
+  padding: 4px 0;
+  content: "\F0AC";
+  margin-right: 4px;
+}
+
 .basic-page__field-related-documents {
   margin-bottom: 20px;
 }
@@ -26940,24 +26959,6 @@ a.more-data-parline, .article__node-link a,
   border-bottom: 1px solid #eeeeee;
   padding-top: 4px;
   padding-bottom: 4px;
-}
-.basic-page__field-related-documents .field__item .related-documents__field-external-link a {
-  display: flex;
-  font-weight: 400;
-  line-height: 1.2rem;
-}
-.basic-page__field-related-documents .field__item .related-documents__field-external-link a:before {
-  font-family: "Font Awesome 5 Free", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  display: inline-block;
-  font-style: normal;
-  font-variant: normal;
-  font-weight: 900;
-  line-height: 1;
-  padding: 4px 0;
-  content: "\F0AC";
-  margin-right: 4px;
 }
 .basic-page__field-related-documents .node--view-mode-teaser {
   margin: 0;
