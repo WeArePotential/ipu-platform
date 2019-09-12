@@ -34,7 +34,7 @@ import 'bootstrap';
         var card = $(this).prev('a');
         console.log('hi');
         $('html,body').animate({
-          scrollTop: card.offset().top
+          scrollTop: card.offset().top - 30
         }, 500);
       });
     }

@@ -8,7 +8,7 @@
   const menuLinks = $('.ultimenu__link');
   function overrideMenuClick() {
     // Desktop upwards disables ultimenu link clicks
-    if ($(window).width() > 992) {
+    if ($(window).width() > 1023) {
       menuLinks.on('click', function(event) {
         event.preventDefault();
       });

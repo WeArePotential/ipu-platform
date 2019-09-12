@@ -468,33 +468,45 @@ ol.breadcrumb {
   }
 }
 
-//Toggle superfish for mobile (off canvas)
-.off-canvas, .mobile-menu-toggle  {
+//Toggle for mobile (off canvas)
+.off-canvas {
   display: none;
 }
-
-@include media-breakpoint-down(lg) {
+.mobile-menu-toggle {
+  display: none;
+}
+@include media-breakpoint-down(md) {
   .mobile-menu-toggle  {
     display: block;
     position: absolute;
     top: 0;
     right: 0;
-    z-index: 3000;
+    z-index: 3002;
   }
   #main-nav {
     display: none;
+  }
+  #topbar {
+    position: fixed;
+    z-index: 3001;
+  }
+  #top {
+    padding-top: 2rem;
   }
 }
 
 .mobile-menu-toggle {
   span {
     visibility: hidden;
+    display: block;
   }
   a {
     color: $ipu-white;
+    display: block;
   }
   a:hover, a.active {
     color: $tertiary;
+    background-color: $ipu-white;
   }
   a.active:hover {
     color: $ipu-white;
@@ -503,7 +515,7 @@ ol.breadcrumb {
     content: "≡";
     font-size: 2em;
     position: absolute;
-    right: 0.5rem;
+    right: 1rem;
     top: 0.9rem;
     -webkit-transform: translateY(-50%);
     -moz-transform: translateY(-50%);
@@ -523,7 +535,7 @@ ol.breadcrumb {
   .mobile-menu-wrapper {
     height: 10000px !important;
     background-color: $ipu-white;
-    opacity: 0.95;
+    opacity: 1;
     padding: 50px 20px;
     ul, li, a {
       display: block;

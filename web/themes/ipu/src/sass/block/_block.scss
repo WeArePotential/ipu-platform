@@ -187,7 +187,7 @@ a {
   padding: $navbar-padding-x $navbar-padding-y;
   @include media-breakpoint-down(md) {
     height: auto;
-    max-width: 100%;
+    max-width: 90%;
   }
 }
 @include media-breakpoint-up(md) {
@@ -1031,6 +1031,7 @@ a.btn {
   border: 0;
   position: absolute;
   color: transparent;
+  right: 0;
 }
 
 // Event styles

@@ -56,6 +56,14 @@
   margin-bottom: 10px;
 
 }
+@include media-breakpoint-down(md) {
+  #views-exposed-form-search-page-1 {
+    .form-item-country {
+      display: none;
+    }
+  }
+}
+
 .search-facets {
   .search-facet {
     //background-color: $light;
