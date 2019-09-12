@@ -1,0 +1,23 @@
+Index: web/modules/contrib/ultimenu/ultimenu.module
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- web/modules/contrib/ultimenu/ultimenu.module	(date 1568204540974)
++++ web/modules/contrib/ultimenu/ultimenu.module	(date 1568204540974)
+@@ -97,13 +97,13 @@
+  * Implements hook_page_bottom().
+  */
+ function ultimenu_page_bottom(array &$page_bottom) {
+-  if (_ultimenu_is_applicable()) {
++  /*if (_ultimenu_is_applicable()) {
+     $label = t('Menu');
+     $button = '<button data-ultimenu-button="#ultimenu-main" class="button button--ultimenu"
+       aria-label="' . $label . '" value="' . $label . '"><span class="bars">' . $label . '</span></button>';
+     $page_bottom['ultimenu_button']['#markup'] = $button;
+     $page_bottom['ultimenu_button']['#allowed_tags'] = ['button', 'span'];
+-  }
++  }*/
+ }
+ 
+ /**

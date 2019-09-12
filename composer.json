@@ -236,6 +236,9 @@
             },
             "drupal/stage_file_proxy": {
                 "Disable stage file proxy on live": "https://www.drupal.org/files/issues/disable_fetching-2864016-16.patch"
+            },
+            "drupal/ultimenu": {
+                "Remove mobile toggle button from ultimenu": "web/patches/remove_mobile_toggle_button_from_ultimenu.patch"
             }
         },
         "drupal-scaffold": {
