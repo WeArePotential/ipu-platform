@@ -2,7 +2,7 @@
 
 use Drupal\Core\StringTranslation;
 use Drupal\datetime\Plugin\Field\FieldType\DateTimeItemInterface;
-
+use \Drupal\block\Entity\Block;
 
 include_once 'inc/utils.inc';
 
@@ -25,6 +25,38 @@ function ipu_tweaks_page_attachments(array &$attachments) {
     $attachments['#attached']['library'][] = 'ipu_tweaks/ultimenu-override';
     $attachments['#attached']['library'][] = 'ipu_tweaks/tabs-deeplinking';
   }
+}
+
+/*
+ * Ignore (remove) the ultimenu button as we're using our own
+ */
+function ipu_tweaks_page_bottom(array &$page_bottom) {
+  $page_bottom['ultimenu_button'] = [];
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for block templates.
+ * This is so we can have our own theme for menu blocks in the off-canvas (mobile) area
+ */
+function ipu_tweaks_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+  $base_plugin_id = $variables['elements']['#base_plugin_id'];
+  $menu_block = $base_plugin_id == 'menu_block';
+
+  if ($menu_block) {
+    if (isset($variables['elements']['#id'])) {
+      $id = $variables['elements']['#id'];
+      $block = Block::load($id);
+      $region = $block->get('region');
+      $suggestions[] = 'block__' . $region . '__menu';
+    }
+  }
+}
+
+/**
+ * Implements template_preprocess_block() for the off-canvas region.
+ */
+function ipu_tweaks_preprocess_block__off_canvas__menu(&$variables) {
+  $variables['content']['#theme'] = 'menu__off_canvas';
 }
 
 /* Add current language to all templates */
@@ -271,7 +303,6 @@ function ipu_tweaks_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $for
 use Drupal\Core\Session\AccountInterface;
 use Drupal\node\NodeInterface;
 use Drupal\Core\Access\AccessResult;
-use Drupal\block\Entity\Block;
 use Drupal\Core\Url;
 
 function ipu_tweaks_block_access(Block $block, $operation, AccountInterface $account) {

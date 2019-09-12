@@ -23,6 +23,23 @@ import 'bootstrap';
     }
   };
 
+  Drupal.behaviors.mobile_menu = {
+    attach: function (context) {
+      $('.mobile-menu-toggle > a').click(function () {
+        $(this).toggleClass('active');
+        $('.off-canvas').toggle();
+      });
+
+      $('ul#mobilemenu1 > li > .collapse').on('shown.bs.collapse', function(e) {
+        var card = $(this).prev('a');
+        console.log('hi');
+        $('html,body').animate({
+          scrollTop: card.offset().top
+        }, 500);
+      });
+    }
+  };
+
   Drupal.behaviors.equalHeights = {
     attach: function (context) {
       $('.paragraph--type--highlights .node--view-mode-highlight .bs-region').matchHeight();

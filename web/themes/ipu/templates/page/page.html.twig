@@ -13,13 +13,7 @@
           <div class="topbar-left text-left">{{ page.topbar_left }}</div>
       {% endif %}
       {% if page.topbar_right %}
-      <div class="topbar-right text-right">{{ page.topbar_right }}
-        {% if page.off_canvas %}
-          <div class="off-canvas">
-            {{ page.off_canvas }}
-          </div>
-        {% endif %}
-      </div>
+      <div class="topbar-right text-right">{{ page.topbar_right }}</div>
       {% endif %}
       {% endblock %}
     </div>
@@ -117,5 +111,18 @@
       </div>
       </footer>
   {% endif %}
+
+    {% if page.off_canvas %}
+          <div class="mobile-menu-toggle">
+            <a href="#">
+              <span>{{ 'Menu'|t }}</span>
+            </a>
+          </div>
+        <div class="off-canvas">
+          <div id="mobilemenu" class="mobile-menu-wrapper">
+            {{ page.off_canvas }}
+          </div>
+        </div>
+    {% endif %}
 
 </div>

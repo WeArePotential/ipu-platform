@@ -200,12 +200,18 @@ a {
     }
   }
 }
+
 #branding .block--ipu-search {
   display: inline-block;
   @include media-breakpoint-down(sm) {
     input.form-search {
       display: none;
     }
+  }
+}
+#branding .block--newslettersubscription {
+  @include media-breakpoint-down(sm) {
+      display: none;
   }
 }
 

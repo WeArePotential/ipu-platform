@@ -1,22 +1,22 @@
-uuid: 697c84e3-d45f-44a7-809d-1a7d98b59c4a
+uuid: 7b6b84b7-a9e0-4c93-a492-60ff6c9dea63
 langcode: en
 status: true
 dependencies:
   config:
-    - system.menu.main
+    - system.menu.mega-menu
   module:
     - menu_block
   theme:
     - ipu
-id: mainmenu_2
+id: megamenu_3
 theme: ipu
 region: off_canvas
-weight: -16
+weight: -17
 provider: null
-plugin: 'menu_block:main'
+plugin: 'menu_block:mega-menu'
 settings:
-  id: 'menu_block:main'
-  label: 'Main menu'
+  id: 'menu_block:mega-menu'
+  label: 'Mega menu'
   provider: menu_block
   label_display: '0'
   level: 1
@@ -25,6 +25,6 @@ settings:
   depth: 4
   expand: 1
   expand_only_active_trails: 0
-  parent: 'main:'
-  suggestion: main
+  parent: 'mega-menu:'
+  suggestion: mega_menu
 visibility: {  }

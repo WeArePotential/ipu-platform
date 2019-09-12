@@ -1,21 +1,3 @@
-
-//Toggle superfish (off canvas) and social media icons
-.off-canvas {
-  display: none;
-}
-@include media-breakpoint-down(sm) {
-  .topbar .block--followus {
-    display: none;
-  }
-  .off-canvas {
-    display: block;
-    background-color: $tertiary;
-    color: $ipu-white;
-  }
-}
-
-
-
 #main-nav {
   background-color: color("white");
   border-width: 1px 0 4px 0;
@@ -475,3 +457,90 @@ ol.breadcrumb {
 .ultimenu__item-3 .ultimenu__flyout .block {
   @extend .col-md-6;
 }
+
+// Social follows are in the footer anyway
+@include media-breakpoint-down(md) {
+  .topbar .block--followus {
+    display: none;
+  }
+  .branding-right .block--newslettersubscription {
+    display: none;
+  }
+}
+
+//Toggle superfish for mobile (off canvas)
+.off-canvas, .mobile-menu-toggle  {
+  display: none;
+}
+
+@include media-breakpoint-down(lg) {
+  .mobile-menu-toggle  {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 3000;
+  }
+  #main-nav {
+    display: none;
+  }
+}
+
+.mobile-menu-toggle {
+  span {
+    visibility: hidden;
+  }
+  a {
+    color: $ipu-white;
+  }
+  a:hover, a.active {
+    color: $tertiary;
+  }
+  a.active:hover {
+    color: $ipu-white;
+  }
+  a:after {
+    content: "≡";
+    font-size: 2em;
+    position: absolute;
+    right: 0.5rem;
+    top: 0.9rem;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    speak: none;
+  }
+}
+
+.off-canvas {
+  width: 100%;
+  position: absolute;
+  z-index: 2999;
+  top: 0;
+  left: 0;
+  margin-top: 2rem;
+  .mobile-menu-wrapper {
+    height: 10000px !important;
+    background-color: $ipu-white;
+    opacity: 0.95;
+    padding: 50px 20px;
+    ul, li, a {
+      display: block;
+      background-color: $ipu-white;
+    }
+    a {
+      font-weight: $font-weight-light;
+      padding: 2px 6px;
+    }
+    li.menu-item-level-0.menu-item--expanded > a {
+      background-color: $ipu-teal-light;
+      font-weight: $font-weight-normal;
+      border-bottom: 1px solid $ipu-white;
+      i {
+        margin-left: 4px;
+      }
+    }
+  }
+}
+
