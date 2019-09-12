@@ -2,7 +2,7 @@
  * @see /themes/basic/js/ultimenu-override.js
 */
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1024px) {
   /* Force hover to stay hidden */
   .ultimenu--hover > li:hover > .ultimenu__flyout {
     visibility: hidden !important;
@@ -11,5 +11,7 @@
   /* Force focus anywhere in li to show  */
   .ultimenu--hover > li:focus-within .ultimenu__flyout {
     visibility: visible !important;
+    opacity: 1;
+    max-height: none;
   }
 }

@@ -8,15 +8,16 @@
   const menuLinks = $('.ultimenu__link');
   function overrideMenuClick() {
     // Desktop upwards disables ultimenu link clicks
-    if ($(window).width() > 1023) {
+    if ($(window).width() > 992) {
       menuLinks.on('click', function(event) {
-        event.preventDefault();
+        // Stop the click (IE friendly version)
+        event.preventDefault ? event.preventDefault() : (event.returnValue = false);
       });
     } else {
       menuLinks.off('click');
     }
-  }
 
+  }
   // Run on page load
   overrideMenuClick();
 
