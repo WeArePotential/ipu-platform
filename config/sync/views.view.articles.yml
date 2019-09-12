@@ -980,6 +980,8 @@ display:
           admin_label: ''
           operator: or
           value:
+            413: 413
+            414: 414
             43: 43
             276: 276
           group: 1
@@ -1356,7 +1358,6 @@ display:
     cache_metadata:
       max-age: -1
       contexts:
-        - 'languages:language_content'
         - 'languages:language_interface'
         - url
         - 'user.node_grants:view'
@@ -1445,7 +1446,6 @@ display:
     cache_metadata:
       max-age: -1
       contexts:
-        - 'languages:language_content'
         - 'languages:language_interface'
         - url
         - url.query_args
@@ -2024,7 +2024,6 @@ display:
     cache_metadata:
       max-age: -1
       contexts:
-        - 'languages:language_content'
         - 'languages:language_interface'
         - url
         - 'user.node_grants:view'

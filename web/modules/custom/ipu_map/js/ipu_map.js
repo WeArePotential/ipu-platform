@@ -13,13 +13,17 @@
                 console.log(ipumap.data);
                 return false;
             }
-
+            var current_url = $(location). attr("pathname");
+            current_url.indexOf(1);
+            current_url.toLowerCase();
+            var current_lang = current_url.split("/")[1] == 'fr' ? 'fr' : '';
             settings.areas = [];
 
             /*
              * If we have an iso_code for parliament, use this for the hyperlink
              * Unless the the no_parliament_page is checked, in which case no link needed
              */
+
             for (var index = 0; index < data.length; ++index) {
                 var member = (data[index].field_ipu_member != 'False');
                 var signatory = (data[index].field_principles_signatory != 'False');
@@ -44,7 +48,11 @@
                 if (no_parliament_page) {
                     // attr.description = attr.description + '<p>No data available.</p>';
                 } else {
-                    attr.href = '/parliament/' + iso_code_for_parliament.toLowerCase();
+                    if (current_lang == 'fr') {
+                        attr.href = '/fr/parlement/' + iso_code_for_parliament.toLowerCase();
+                    } else {
+                        attr.href = '/parliament/' + iso_code_for_parliament.toLowerCase();
+                    }
                 }
                 settings.areas[data[index].field_iso_code] = attr;
             }

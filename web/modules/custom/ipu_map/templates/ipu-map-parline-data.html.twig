@@ -17,7 +17,8 @@
         <div class="row">
             <div class="col-md-3">
                 <div class="data-parliament-name">{{ parliamentary_name|join(', ') }}</div>
-                <p>{{ description }}</p>
+                <p>{{ 'The IPU data corresponds to the lower chamber if the parliament is bicameral. For information about upper chambers, refer to <a href="https://data.ipu.org">Parline</a>'|t }}</p>
+                <!--p>{{ description }}</p-->
             </div>
             {% if current_women_percent is not same as(null) %}
             <div class="col-md-3">
