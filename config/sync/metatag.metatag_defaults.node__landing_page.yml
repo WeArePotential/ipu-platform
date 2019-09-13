@@ -1,0 +1,8 @@
+uuid: 040775cc-8098-4871-ab7d-7098470c8b10
+langcode: en
+status: true
+dependencies: {  }
+id: node__landing_page
+label: 'Content: Landing page'
+tags:
+  title: '[current-page:title]'

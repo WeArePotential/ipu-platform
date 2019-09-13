@@ -14,7 +14,7 @@
         </div>
         <div class="col-md-8">
            {% if content.news_and_stories|length %}
-            <h2>{{ 'Related news'|t }} {{ content.title }}</h2>
+            <h2>{{ 'Related news'|t }}</h2>
                 {{ content.news_and_stories }}
             {% endif %}
             {% if content.case_studies|length %}
@@ -22,7 +22,7 @@
                 {{ content.case_studies }}
             {% endif %}
             {% if content.events|length %}
-                <h2>{{ 'Related events'|t }} {{ content.title }}</h2>
+                <h2>{{ 'Related events'|t }}</h2>
                 {{ content.events }}
             {% endif %}
         </div>
