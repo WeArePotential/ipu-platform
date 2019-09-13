@@ -17598,7 +17598,7 @@ __webpack_require__.r(__webpack_exports__);
 
 function isIE() {
   var ua = window.navigator.userAgent;
-  var isIE = /MSIE|Trident|Edge|safari/.test(ua);
+  var isIE = /MSIE|Trident|Edge/.test(ua);
   return isIE;
 }
 

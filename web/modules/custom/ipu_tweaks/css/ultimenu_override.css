@@ -2,6 +2,8 @@
  * @see /themes/basic/js/ultimenu-override.js
 */
 
+
+
 @media screen and (min-width: 1024px) {
   /* Force hover to stay hidden */
   .ultimenu--hover > li:hover > .ultimenu__flyout {
@@ -22,15 +24,26 @@
   }
 
   /* This works until you click (so the link loses focus */
-  /*.ultimenu--hover > li > .ultimenu__link:focus ~ .ultimenu__flyout {
+  .ultimenu--hover > li > .ultimenu__link:focus ~ .ultimenu__flyout {
     visibility: visible !important;
     opacity: 1 !important;
     max-height: none !important;
-  }*/
+  }
   /* This uses the js which adds link-focus to all children */
   .ultimenu--hover > li.focus-within > .ultimenu__link ~ .ultimenu__flyout {
     visibility: visible !important;
     opacity: 1 !important;
     max-height: none !important;
+  }
+}
+
+/* Fix for Safari - allow normal hover behaviour */
+@media not all and (min-resolution: .001dpcm) {
+  @media {
+    .ultimenu--hover > li:hover > .ultimenu__flyout {
+        visibility: visible !important;
+        opacity: 1 !important;
+        max-height: none !important;
+    }
   }
 }
