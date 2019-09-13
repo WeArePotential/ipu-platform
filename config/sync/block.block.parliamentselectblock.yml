@@ -14,7 +14,7 @@ provider: null
 plugin: ipu_country_select_block
 settings:
   id: ipu_country_select_block
-  label: 'Find a country parliament'
+  label: 'Find a national parliament'
   provider: ipu_map
   label_display: visible
 visibility: {  }
