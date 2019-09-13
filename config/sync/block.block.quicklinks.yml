@@ -20,7 +20,7 @@ settings:
   provider: menu_block
   label_display: visible
   level: 1
-  custom_level: 1
+  custom_level: '1'
   hide_children: 0
   depth: 1
   expand: 0

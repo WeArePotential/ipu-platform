@@ -16,7 +16,7 @@ provider: null
 plugin: 'block_content:a21f0c9e-2219-47a0-b64a-0a6fde01c417'
 settings:
   id: 'block_content:a21f0c9e-2219-47a0-b64a-0a6fde01c417'
-  label: 'IPU headquarters'
+  label: 'IPU offices'
   provider: block_content
   label_display: visible
   status: true

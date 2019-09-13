@@ -461,7 +461,7 @@ span::before {
   .paragraph--type--sections {
     .field--type-viewfield {
       .views-element-container > div {
-        @extend .row;
+        /*@extend .row;*/
       }
       .views-row {
         @extend .col-md-4;
@@ -733,7 +733,7 @@ a.btn {
     font-size: 0.6rem;
     text-transform: uppercase;
     letter-spacing: 0.05rem;
-    &.type__press-releases {
+    &.type__press-releases, &.type__communiqués-de-presse {
       background-color: $tertiary;
     }
   }
