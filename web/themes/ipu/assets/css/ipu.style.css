@@ -22121,7 +22121,7 @@ a {
   text-align: right;
 }
 .topbar ul.nav :first-child {
-  flex: 1;
+  /*flex: 1 0 0;*/
 }
 .topbar a {
   font-weight: 400;
@@ -27390,6 +27390,25 @@ a.more-data-parline, .article__node-link a,
   line-height: 1;
   content: "\F0E0";
   margin-right: 4px;
+}
+
+ul.flickr-block {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+ul.flickr-block a {
+  display: block;
+  padding: 0 0 20px 0;
+}
+ul.flickr-block a:first-child {
+  width: 100%;
+}
+ul.flickr-block img {
+  width: 100%;
 }
 
 #main-nav {

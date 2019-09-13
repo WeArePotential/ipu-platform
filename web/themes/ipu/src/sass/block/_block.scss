@@ -129,7 +129,7 @@ a {
   ul.nav {
     text-align: right;
     :first-child {
-      flex: 1;
+      /*flex: 1 0 0;*/
     }
   }
   a {
@@ -784,6 +784,7 @@ a.btn {
     @extend .event-date-circle;
     .event-dates-part {
       display: block;
+      line-height: 1.4rem;
     }
     .event-dates-day {
       font-size: $font-size-lg;
