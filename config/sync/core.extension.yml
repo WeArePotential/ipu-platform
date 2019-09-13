@@ -163,7 +163,6 @@ module:
   sitemap: 0
   smart_trim: 0
   stage_file_proxy: 0
-  superfish: 0
   system: 0
   taxonomy: 0
   taxonomy_manager: 0
