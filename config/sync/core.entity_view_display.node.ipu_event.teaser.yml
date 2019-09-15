@@ -64,10 +64,16 @@ third_party_settings:
         - field_event_type
         - node_title
         - field_event_computed_date
-        - field_summary
         - field_ipu_event_dates
         - field_location
+        - field_summary
+        - node_link
     fields:
+      node_link:
+        plugin_id: node_link
+        weight: 6
+        label: hidden
+        formatter: default
       node_title:
         plugin_id: node_title
         weight: 2
@@ -106,9 +112,10 @@ third_party_settings:
       children:
         - field_event_type
         - node_title
-        - field_summary
         - field_ipu_event_dates
         - field_location
+        - field_summary
+        - node_link
       parent_name: ''
       weight: 0
       format_type: html_element
@@ -154,13 +161,14 @@ content:
             classes: {  }
   field_ipu_event_dates:
     type: daterange_default
-    weight: 4
+    weight: 3
     region: main
     label: hidden
     settings:
       timezone_override: ''
       format_type: short_date_only
       separator: '-'
+      fromto: both
     third_party_settings:
       ds:
         ft:
@@ -171,14 +179,14 @@ content:
             classes: {  }
   field_location:
     type: address_plain
-    weight: 5
+    weight: 4
     region: main
     label: hidden
     settings: {  }
     third_party_settings: {  }
   field_summary:
     type: smart_trim
-    weight: 3
+    weight: 5
     region: main
     label: hidden
     settings:
@@ -186,7 +194,7 @@ content:
       trim_type: words
       trim_suffix: ''
       wrap_class: trimmed
-      more_text: More
+      more_text: 'Read more'
       more_class: more-link
       trim_options:
         text: true
@@ -203,6 +211,11 @@ content:
             lb-col: false
             classes: {  }
 hidden:
+  event_session_paragraphs_entity_view_1: true
+  event_sub_pages_sub_page_content_eva: true
+  event_sub_pages_sub_page_content_eva_2: true
+  event_sub_pages_sub_page_titles_eva: true
+  event_sub_pages_sub_page_titles_eva_2: true
   field_agenda_order_number: true
   field_country: true
   field_date_accuracy: true

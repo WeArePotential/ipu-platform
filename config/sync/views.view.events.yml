@@ -1245,7 +1245,7 @@ display:
           exclude: true
           alter:
             alter_text: true
-            text: '{{ field_ipu_event_dates_1__value|format(''M'') }}'
+            text: '{{ field_ipu_event_dates_1__value|format(''M'')|trans }}'
             make_link: false
             path: ''
             absolute: false
@@ -1287,6 +1287,7 @@ display:
           settings:
             timezone_override: ''
             format_type: short_date_only
+            fromto: both
             separator: '-'
           group_column: value
           group_columns: {  }
@@ -1468,6 +1469,7 @@ display:
         - 'config:core.entity_view_display.node.section_page.slide'
         - 'config:core.entity_view_display.node.section_page.teaser'
         - 'config:core.entity_view_display.node.vacancy.default'
+        - 'config:core.entity_view_display.node.vacancy.full'
         - 'config:core.entity_view_display.node.vacancy.teaser'
         - 'config:core.entity_view_display.node.webform.default'
         - 'config:core.entity_view_display.node.webform.teaser'
@@ -1643,7 +1645,7 @@ display:
           value:
             min: ''
             max: ''
-            value: '-3 months'
+            value: '-1 months'
             type: offset
           group: 1
           exposed: false
@@ -1787,7 +1789,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          order: DESC
+          order: ASC
           exposed: false
           expose:
             label: ''
@@ -2179,7 +2181,7 @@ display:
           exclude: true
           alter:
             alter_text: true
-            text: '{{ field_ipu_event_dates_1__value|date(''F Y'') }}'
+            text: '{{ field_ipu_event_dates_1__value|date(''F'')|trans }} {{ field_ipu_event_dates_1__value|date(''Y'') }}'
             make_link: false
             path: ''
             absolute: false
@@ -2221,6 +2223,7 @@ display:
           settings:
             timezone_override: ''
             format_type: short_date_only
+            fromto: both
             separator: '-'
           group_column: value
           group_columns:
@@ -2470,6 +2473,7 @@ display:
         - 'config:core.entity_view_display.node.section_page.slide'
         - 'config:core.entity_view_display.node.section_page.teaser'
         - 'config:core.entity_view_display.node.vacancy.default'
+        - 'config:core.entity_view_display.node.vacancy.full'
         - 'config:core.entity_view_display.node.vacancy.teaser'
         - 'config:core.entity_view_display.node.webform.default'
         - 'config:core.entity_view_display.node.webform.teaser'
@@ -3156,7 +3160,7 @@ display:
           exclude: true
           alter:
             alter_text: true
-            text: '{{ field_ipu_event_dates_1__value|format(''M'') }}'
+            text: '{{ field_ipu_event_dates_1__value|format(''M'')|trans }}'
             make_link: false
             path: ''
             absolute: false
@@ -3198,6 +3202,7 @@ display:
           settings:
             timezone_override: ''
             format_type: short_date_only
+            fromto: both
             separator: '-'
           group_column: value
           group_columns: {  }
@@ -3379,6 +3384,7 @@ display:
         - 'config:core.entity_view_display.node.section_page.slide'
         - 'config:core.entity_view_display.node.section_page.teaser'
         - 'config:core.entity_view_display.node.vacancy.default'
+        - 'config:core.entity_view_display.node.vacancy.full'
         - 'config:core.entity_view_display.node.vacancy.teaser'
         - 'config:core.entity_view_display.node.webform.default'
         - 'config:core.entity_view_display.node.webform.teaser'
@@ -4004,7 +4010,7 @@ display:
           exclude: true
           alter:
             alter_text: true
-            text: '{{ field_ipu_event_dates_1__value|format(''M'') }}'
+            text: '{{ field_ipu_event_dates_1__value|format(''M'')|trans }}'
             make_link: false
             path: ''
             absolute: false
@@ -4046,6 +4052,7 @@ display:
           settings:
             timezone_override: ''
             format_type: short_date_only
+            fromto: both
             separator: '-'
           group_column: value
           group_columns: {  }
@@ -4227,6 +4234,7 @@ display:
         - 'config:core.entity_view_display.node.section_page.slide'
         - 'config:core.entity_view_display.node.section_page.teaser'
         - 'config:core.entity_view_display.node.vacancy.default'
+        - 'config:core.entity_view_display.node.vacancy.full'
         - 'config:core.entity_view_display.node.vacancy.teaser'
         - 'config:core.entity_view_display.node.webform.default'
         - 'config:core.entity_view_display.node.webform.teaser'
@@ -5518,6 +5526,7 @@ display:
         - 'config:core.entity_view_display.node.section_page.slide'
         - 'config:core.entity_view_display.node.section_page.teaser'
         - 'config:core.entity_view_display.node.vacancy.default'
+        - 'config:core.entity_view_display.node.vacancy.full'
         - 'config:core.entity_view_display.node.vacancy.teaser'
         - 'config:core.entity_view_display.node.webform.default'
         - 'config:core.entity_view_display.node.webform.teaser'
@@ -6563,6 +6572,7 @@ display:
         - 'config:core.entity_view_display.node.section_page.slide'
         - 'config:core.entity_view_display.node.section_page.teaser'
         - 'config:core.entity_view_display.node.vacancy.default'
+        - 'config:core.entity_view_display.node.vacancy.full'
         - 'config:core.entity_view_display.node.vacancy.teaser'
         - 'config:core.entity_view_display.node.webform.default'
         - 'config:core.entity_view_display.node.webform.teaser'

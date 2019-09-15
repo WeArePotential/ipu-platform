@@ -319,6 +319,9 @@ ol.breadcrumb {
         font-weight: $font-weight-light;
         letter-spacing: 0;
       }
+      a:hover {
+        color: $ipu-white;
+      }
     }
   }
 }
@@ -455,7 +458,7 @@ ol.breadcrumb {
 
 /* Resources flyout */
 .ultimenu__item-3 .ultimenu__flyout .block {
-  @extend .col-md-6;
+  @extend .col-md-4;
 }
 
 // Social follows are in the footer anyway
