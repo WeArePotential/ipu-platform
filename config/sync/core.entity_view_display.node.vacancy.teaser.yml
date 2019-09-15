@@ -31,15 +31,14 @@ third_party_settings:
       content:
         - field_vacancy_type
         - node_title
-        - body
         - field_deadline
-        - field_home_based
+        - body
         - field_vacancy_location
         - node_link
     fields:
       node_link:
         plugin_id: node_link
-        weight: 6
+        weight: 5
         label: hidden
         formatter: default
       node_title:
@@ -64,7 +63,7 @@ mode: teaser
 content:
   body:
     type: smart_trim
-    weight: 2
+    weight: 3
     region: content
     label: hidden
     settings:
@@ -90,28 +89,25 @@ content:
             classes: {  }
   field_deadline:
     type: datetime_default
-    weight: 3
-    region: content
-    label: above
-    settings:
-      format_type: medium
-      timezone_override: ''
-    third_party_settings: {  }
-  field_home_based:
-    type: boolean
-    weight: 4
+    weight: 2
     region: content
     label: inline
     settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
+      timezone_override: ''
+      format_type: date_month_and_year
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
   field_vacancy_location:
     type: address_default
-    weight: 5
+    weight: 4
     region: content
-    label: inline
+    label: hidden
     settings: {  }
     third_party_settings: {  }
   field_vacancy_type:
@@ -120,10 +116,18 @@ content:
     region: content
     label: hidden
     settings:
-      link: true
-    third_party_settings: {  }
+      link: false
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
 hidden:
   field_contact_ipu: true
+  field_home_based: true
   field_how_to_apply: true
   field_media_image: true
   langcode: true

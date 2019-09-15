@@ -117,3 +117,36 @@ ul.flickr-block {
     width: 100%;
   }
 }
+
+.view-vacancies {
+  .views-row {
+    margin: 10px 0;
+    padding: 10px 0;
+    border-bottom: 1px solid $light;
+  }
+  .vacancy__field-deadline {
+    font-weight: $font-weight-normal !important;
+    .field__label {
+      font-weight: $font-weight-normal !important;
+    }
+  }
+  .vacancy__node-link {
+    a {
+      @extend .btn;
+      @extend .btn-outline-primary;
+      @extend .btn-sm;
+    }
+  }
+  .vacancy__location {
+    font-weight: $font-weight-normal;
+    p.address {
+      br {
+        content: ' ';
+      }
+
+      span {
+        display: inline-block;
+      }
+    }
+  }
+}
