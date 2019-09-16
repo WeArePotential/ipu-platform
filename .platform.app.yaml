@@ -134,8 +134,11 @@ web:
             # Can be true, false or a URI path string.
             passthru: false
 
-            # Deny access to static files in this location.
+            # Allow access to static files in this location.
             allow: true
+
+            # Runs off js, otherwise no server site scripts.
+            scripts: false
 
             # Rules for specific URI patterns.
             rules:
