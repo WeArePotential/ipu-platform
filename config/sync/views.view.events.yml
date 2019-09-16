@@ -2293,7 +2293,7 @@ display:
           exclude: true
           alter:
             alter_text: true
-            text: '{{ field_ipu_event_dates_1__value|date(''F'')|trans }} {{ field_ipu_event_dates_1__value|date(''Y'') }}'
+            text: '{{ field_ipu_event_dates_1__value|date(''F'')|t({}, {''context'' : ''Long month name''}) }} {{ field_ipu_event_dates_1__value|date(''Y'') }}'
             make_link: false
             path: ''
             absolute: false
