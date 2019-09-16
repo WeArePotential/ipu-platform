@@ -17,7 +17,7 @@ a > em {
 .ultimenu__flyout .megamenu-cta .node--type-section-page.node--view-mode-highlight .node-link a,
 .node--type-section-page.node--view-mode-highlight .node-link .ultimenu__flyout .megamenu-cta a,
 .ultimenu__flyout .megamenu-cta .node--type-page.node--view-mode-highlight .node-link a,
-.node--type-page.node--view-mode-highlight .node-link .ultimenu__flyout .megamenu-cta a, .ultimenu__flyout .megamenu-cta .node--type-publication.node--view-mode-highlight .publication__node-link a, .node--type-publication.node--view-mode-highlight .publication__node-link .ultimenu__flyout .megamenu-cta a, .ultimenu__flyout .megamenu-cta .block--newslettersubscription a, .block--newslettersubscription .ultimenu__flyout .megamenu-cta a, .ultimenu__flyout .megamenu-cta .view-vacancies .vacancy__node-link a, .view-vacancies .vacancy__node-link .ultimenu__flyout .megamenu-cta a, .view-vacancies .vacancy__node-link a, .block--newslettersubscription a, .field__item__paragraph__callout-strip .field-link a, .view-publications.view-display-id-page_1 #views-exposed-form-publications-page-1 input.form-submit, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a, .node--type-publication.node--view-mode-highlight .publication__node-link a, .node--type-landing-page.node--view-mode-highlight .node-link a,
+.node--type-page.node--view-mode-highlight .node-link .ultimenu__flyout .megamenu-cta a, .ultimenu__flyout .megamenu-cta .node--type-publication.node--view-mode-highlight .publication__node-link a, .node--type-publication.node--view-mode-highlight .publication__node-link .ultimenu__flyout .megamenu-cta a, .ultimenu__flyout .megamenu-cta .block--newslettersubscription a, .block--newslettersubscription .ultimenu__flyout .megamenu-cta a, .ultimenu__flyout .megamenu-cta .view-vacancies .vacancy__node-link a, .view-vacancies .vacancy__node-link .ultimenu__flyout .megamenu-cta a, .view-vacancies .vacancy__node-link a, .block--newslettersubscription a, .field__item__paragraph__callout-strip .field-link a, .viewfield--view__events .views-exposed-form input.form-submit, .view-publications.view-display-id-page_1 #views-exposed-form-publications-page-1 input.form-submit, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a, .node--type-publication.node--view-mode-highlight .publication__node-link a, .node--type-landing-page.node--view-mode-highlight .node-link a,
 .node--type-basic-page.node--view-mode-highlight .node-link a,
 .node--type-section-page.node--view-mode-highlight .node-link a,
 .node--type-page.node--view-mode-highlight .node-link a,
@@ -3704,7 +3704,7 @@ fieldset:disabled .blue-button a,
 .ultimenu__flyout .megamenu-cta .node--type-section-page.node--view-mode-highlight .node-link a,
 .node--type-section-page.node--view-mode-highlight .node-link .ultimenu__flyout .megamenu-cta a,
 .ultimenu__flyout .megamenu-cta .node--type-page.node--view-mode-highlight .node-link a,
-.node--type-page.node--view-mode-highlight .node-link .ultimenu__flyout .megamenu-cta a, .ultimenu__flyout .megamenu-cta .node--type-publication.node--view-mode-highlight .publication__node-link a, .node--type-publication.node--view-mode-highlight .publication__node-link .ultimenu__flyout .megamenu-cta a, .ultimenu__flyout .megamenu-cta .block--newslettersubscription a, .block--newslettersubscription .ultimenu__flyout .megamenu-cta a, .ultimenu__flyout .megamenu-cta .view-vacancies .vacancy__node-link a, .view-vacancies .vacancy__node-link .ultimenu__flyout .megamenu-cta a, .view-vacancies .vacancy__node-link a, .block--newslettersubscription a, .field__item__paragraph__callout-strip .field-link a, .view-publications.view-display-id-page_1 #views-exposed-form-publications-page-1 input.form-submit, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a, .node--type-publication.node--view-mode-highlight .publication__node-link a, .node--type-landing-page.node--view-mode-highlight .node-link a,
+.node--type-page.node--view-mode-highlight .node-link .ultimenu__flyout .megamenu-cta a, .ultimenu__flyout .megamenu-cta .node--type-publication.node--view-mode-highlight .publication__node-link a, .node--type-publication.node--view-mode-highlight .publication__node-link .ultimenu__flyout .megamenu-cta a, .ultimenu__flyout .megamenu-cta .block--newslettersubscription a, .block--newslettersubscription .ultimenu__flyout .megamenu-cta a, .ultimenu__flyout .megamenu-cta .view-vacancies .vacancy__node-link a, .view-vacancies .vacancy__node-link .ultimenu__flyout .megamenu-cta a, .view-vacancies .vacancy__node-link a, .block--newslettersubscription a, .field__item__paragraph__callout-strip .field-link a, .viewfield--view__events .views-exposed-form input.form-submit, .view-publications.view-display-id-page_1 #views-exposed-form-publications-page-1 input.form-submit, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a, .node--type-publication.node--view-mode-highlight .publication__node-link a, .node--type-landing-page.node--view-mode-highlight .node-link a,
 .node--type-basic-page.node--view-mode-highlight .node-link a,
 .node--type-section-page.node--view-mode-highlight .node-link a,
 .node--type-page.node--view-mode-highlight .node-link a,
@@ -4237,7 +4237,7 @@ input[type=button].btn-block {
 .ultimenu__flyout .megamenu-cta .node--type-section-page.node--view-mode-highlight .node-link a + .dropdown-toggle-split,
 .node--type-section-page.node--view-mode-highlight .node-link .ultimenu__flyout .megamenu-cta a + .dropdown-toggle-split,
 .ultimenu__flyout .megamenu-cta .node--type-page.node--view-mode-highlight .node-link a + .dropdown-toggle-split,
-.node--type-page.node--view-mode-highlight .node-link .ultimenu__flyout .megamenu-cta a + .dropdown-toggle-split, .ultimenu__flyout .megamenu-cta .node--type-publication.node--view-mode-highlight .publication__node-link a + .dropdown-toggle-split, .node--type-publication.node--view-mode-highlight .publication__node-link .ultimenu__flyout .megamenu-cta a + .dropdown-toggle-split, .ultimenu__flyout .megamenu-cta .block--newslettersubscription a + .dropdown-toggle-split, .block--newslettersubscription .ultimenu__flyout .megamenu-cta a + .dropdown-toggle-split, .ultimenu__flyout .megamenu-cta .view-vacancies .vacancy__node-link a + .dropdown-toggle-split, .view-vacancies .vacancy__node-link .ultimenu__flyout .megamenu-cta a + .dropdown-toggle-split, .view-vacancies .vacancy__node-link a + .dropdown-toggle-split, .block--newslettersubscription a + .dropdown-toggle-split, .field__item__paragraph__callout-strip .field-link a + .dropdown-toggle-split, .view-publications.view-display-id-page_1 #views-exposed-form-publications-page-1 input.form-submit + .dropdown-toggle-split, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a + .dropdown-toggle-split, .node--type-publication.node--view-mode-highlight .publication__node-link a + .dropdown-toggle-split, .node--type-landing-page.node--view-mode-highlight .node-link a + .dropdown-toggle-split,
+.node--type-page.node--view-mode-highlight .node-link .ultimenu__flyout .megamenu-cta a + .dropdown-toggle-split, .ultimenu__flyout .megamenu-cta .node--type-publication.node--view-mode-highlight .publication__node-link a + .dropdown-toggle-split, .node--type-publication.node--view-mode-highlight .publication__node-link .ultimenu__flyout .megamenu-cta a + .dropdown-toggle-split, .ultimenu__flyout .megamenu-cta .block--newslettersubscription a + .dropdown-toggle-split, .block--newslettersubscription .ultimenu__flyout .megamenu-cta a + .dropdown-toggle-split, .ultimenu__flyout .megamenu-cta .view-vacancies .vacancy__node-link a + .dropdown-toggle-split, .view-vacancies .vacancy__node-link .ultimenu__flyout .megamenu-cta a + .dropdown-toggle-split, .view-vacancies .vacancy__node-link a + .dropdown-toggle-split, .block--newslettersubscription a + .dropdown-toggle-split, .field__item__paragraph__callout-strip .field-link a + .dropdown-toggle-split, .viewfield--view__events .views-exposed-form input.form-submit + .dropdown-toggle-split, .view-publications.view-display-id-page_1 #views-exposed-form-publications-page-1 input.form-submit + .dropdown-toggle-split, .node-publication .page__content .ds-2col-stacked-right > div .field-publication-file a + .dropdown-toggle-split, .node--type-publication.node--view-mode-highlight .publication__node-link a + .dropdown-toggle-split, .node--type-landing-page.node--view-mode-highlight .node-link a + .dropdown-toggle-split,
 .node--type-basic-page.node--view-mode-highlight .node-link a + .dropdown-toggle-split,
 .node--type-section-page.node--view-mode-highlight .node-link a + .dropdown-toggle-split,
 .node--type-page.node--view-mode-highlight .node-link a + .dropdown-toggle-split,
@@ -21921,12 +21921,14 @@ https://www.drupal.org/project/drupal/issues/2929888
 
 /* Subpages section on section pages */
 .section-page-subpages-section {
-  background-color: #eeeeee;
+  background-color: #f8f9fa;
   padding: 20px 0;
   margin: 10px -10px 0 -10px;
   /* Push to edge of container-fluid without row */
 }
 .section-page-subpages-section .field__label {
+  font-weight: 300 !important;
+  border-bottom: 1px solid #00a8b4;
   margin: 30px 0;
 }
 
@@ -25972,20 +25974,31 @@ a.more-data-parline, .article__node-link a,
 .node--type-ipu-event.node--view-mode-teaser .group-event-date .ipu-event__field-event-computed-date .event-dates-day {
   font-size: 1.75rem;
 }
-.viewfield--view__events .form-item-field-event-type-target-id {
+.viewfield--view__events .views-exposed-form {
   background-color: #f8f9fa;
   padding: 10px;
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
 }
-.viewfield--view__events .form-item-field-event-type-target-id label {
-  font-size: 0.825rem;
-  margin: 0;
-}
-.viewfield--view__events .form-item-field-event-type-target-id select {
-  width: auto;
+.viewfield--view__events .views-exposed-form .form-group {
+  display: inline-block;
   margin-left: 10px;
+  margin-bottom: 0;
+}
+.viewfield--view__events .views-exposed-form label {
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+.viewfield--view__events .views-exposed-form select {
+  width: auto;
   font-size: 0.825rem;
+}
+.viewfield--view__events .views-exposed-form input.form-submit {
+  margin-left: 10px;
+}
+.viewfield--view__events.viewfield--view__events__block .views-exposed-form {
+  margin-top: -20px;
 }
 .viewfield--view__events.viewfield--view__events__block .node--type-ipu-event, .viewfield--view__events.viewfield--view__events__block_upcoming .node--type-ipu-event, .viewfield--view__events.viewfield--view__events__block_past .node--type-ipu-event, .viewfield--view__events.viewfield--view__events__assembly_listing .node--type-ipu-event, .viewfield--view__events.viewfield--view__events__multiple_ids .node--type-ipu-event {
   margin-top: 20px;
@@ -26003,7 +26016,7 @@ a.more-data-parline, .article__node-link a,
   border-bottom: 1px solid #00a8b4;
   padding-top: 40px;
 }
-.viewfield--view__events.viewfield--view__events__block .ipu-event__field-location:before, .viewfield--view__events.viewfield--view__events__block_upcoming .ipu-event__field-location:before, .viewfield--view__events.viewfield--view__events__block_past .ipu-event__field-location:before, .viewfield--view__events.viewfield--view__events__assembly_listing .ipu-event__field-location:before, .viewfield--view__events.viewfield--view__events__multiple_ids .ipu-event__field-location:before {
+.viewfield--view__events.viewfield--view__events__block .ipu-event__dates + .ipu-event__field-location:before, .viewfield--view__events.viewfield--view__events__block_upcoming .ipu-event__dates + .ipu-event__field-location:before, .viewfield--view__events.viewfield--view__events__block_past .ipu-event__dates + .ipu-event__field-location:before, .viewfield--view__events.viewfield--view__events__assembly_listing .ipu-event__dates + .ipu-event__field-location:before, .viewfield--view__events.viewfield--view__events__multiple_ids .ipu-event__dates + .ipu-event__field-location:before {
   content: " ";
   margin-right: 10px;
 }
