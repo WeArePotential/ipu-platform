@@ -190,7 +190,7 @@ class IpuNodeBlock extends BlockBase implements ContainerFactoryPluginInterface 
     // Now add our extra link button with text
     $url = Url::fromUri('entity:node/'. $config['nid']);
     //$link = Link::fromTextAndUrl($config['link_text'], $url);
-    $button = $this->t('<a class="btn btn-outline-primary" href="@link">'.$config['link_text'].'</a>', ['@link' => $url->toString()]);
+    $button = '<a class="btn btn-outline-primary" href="'.$url->toString().'">'.$this->t($config['link_text']).'</a>';
     $build['#suffix'] = '<div class="megamenu-cta">'. $button . '</div>';
     return $build;
   }
