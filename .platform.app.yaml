@@ -131,7 +131,7 @@ web:
             # location to the application.
             #
             # Can be true, false or a URI path string.
-            passthru: '/index.html'
+            passthru: '/index.php'
 
             # Deny access to static files in this location.
             allow: true
@@ -140,10 +140,6 @@ web:
             rules:
                 # Allow access to common static files.
                 '\.(jpe?g|png|gif|svgz?|css|js|map|ico|bmp|eot|woff2?|otf|ttf)$':
-                    allow: true
-                '^/robots\.txt$':
-                    allow: true
-                '^/sitemap\.xml$':
                     allow: true
 
 # The configuration of scheduled execution.
