@@ -145,6 +145,18 @@ web:
                 # Allow access to common static files.
                 '\.(jpe?g|png|gif|svgz?|css|js|map|ico|bmp|eot|woff2?|otf|ttf)$':
                     allow: true
+        '/130years':
+            root: 'web/130years'
+            index:
+                - "index.html"
+            expires: 5m
+            passthru: false
+            allow: true
+            scripts: false
+            rules:
+                # Allow access to common static files.
+                '\.(jpe?g|png|gif|svgz?|css|js|map|ico|bmp|eot|woff2?|otf|ttf)$':
+                    allow: true
 
 # The configuration of scheduled execution.
 crons:
