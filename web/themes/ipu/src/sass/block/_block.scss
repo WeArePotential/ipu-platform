@@ -787,7 +787,7 @@ a.btn {
     @extend .event-date-circle;
     .event-dates-part {
       display: block;
-      line-height: 1.4rem;
+      line-height: 1.6rem;
     }
     .event-dates-day {
       font-size: $font-size-lg;
@@ -1069,7 +1069,9 @@ a.btn {
     color: $ipu-white;
     padding: 0.5rem;
     font-size: $font-size-sm;
-
+    a, a:hover {
+      color: $ipu-white;
+    }
     p {
       margin-bottom: 0;
     }
@@ -1127,6 +1129,9 @@ a.btn {
     color: $ipu-white;
     padding: 0.5rem;
     font-size: $font-size-sm;
+    a, a:hover {
+      color: $ipu-white;
+    }
     p {
       margin-bottom: 0;
     }

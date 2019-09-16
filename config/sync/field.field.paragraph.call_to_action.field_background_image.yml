@@ -6,12 +6,18 @@ dependencies:
     - field.storage.paragraph.field_background_image
     - paragraphs.paragraphs_type.call_to_action
   module:
+    - content_translation
     - custom_add_another
     - image
 third_party_settings:
   custom_add_another:
     custom_add_another: ''
     custom_remove: ''
+  content_translation:
+    translation_sync:
+      file: file
+      alt: '0'
+      title: '0'
 id: paragraph.call_to_action.field_background_image
 field_name: field_background_image
 entity_type: paragraph
@@ -19,7 +25,7 @@ bundle: call_to_action
 label: 'Background image'
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

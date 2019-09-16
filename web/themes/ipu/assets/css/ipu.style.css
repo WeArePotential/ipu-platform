@@ -22214,7 +22214,7 @@ a.more-data-parline, .article__node-link a,
 .node--view-mode-highlight .ipu-event__dates .event-dates-part,
 .node--view-mode-highlight .event__date .event-dates-part {
   display: block;
-  line-height: 1.4rem;
+  line-height: 1.6rem;
 }
 .node--view-mode-highlight .ipu-event__dates .event-dates-day,
 .node--view-mode-highlight .event__date .event-dates-day {
@@ -22458,6 +22458,9 @@ a.more-data-parline, .article__node-link a,
   padding: 0.5rem;
   font-size: 0.875rem;
 }
+.node-article .article__field-caption a, .node-article .article__field-caption a:hover {
+  color: #ffffff;
+}
 .node-article .article__field-caption p {
   margin-bottom: 0;
 }
@@ -22508,6 +22511,18 @@ a.more-data-parline, .article__node-link a,
   color: #ffffff;
   padding: 0.5rem;
   font-size: 0.875rem;
+}
+.image-with-caption-caption a, .node-basic_page .basic-page__field-caption a,
+.node-basic_page .page__field-caption a,
+.node-page .basic-page__field-caption a,
+.node-page .page__field-caption a,
+.section-page__dynamic-block-fieldnode-section-sub-pages .basic-page__field-caption a,
+.section-page__dynamic-block-fieldnode-section-sub-pages .page__field-caption a,
+.viewfield--view__sub_content .basic-page__field-caption a,
+.viewfield--view__sub_content .page__field-caption a,
+.node--view-mode-highlight .basic-page__field-caption a,
+.node--view-mode-highlight .page__field-caption a, .image-with-caption-caption a:hover {
+  color: #ffffff;
 }
 .image-with-caption-caption p, .node-basic_page .basic-page__field-caption p,
 .node-basic_page .page__field-caption p,
