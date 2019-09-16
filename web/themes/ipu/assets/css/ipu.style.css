@@ -26402,6 +26402,15 @@ a.more-data-parline, .article__node-link a,
   margin: 4px 0;
   font-weight: 400;
 }
+.field-committee-members .field__items > .field__item .paragraph--type--member .committee-member__field-country {
+  font-weight: 400;
+}
+.field-committee-members .field__items > .field__item .paragraph--type--member .member__position {
+  font-style: italic;
+}
+.field-committee-members .field__items > .field__item .paragraph--type--member .member__field-end-of-mandate {
+  font-size: 0.875rem;
+}
 
 .section-page__field-committee-members.field-committee-members {
   padding: 20px 0;

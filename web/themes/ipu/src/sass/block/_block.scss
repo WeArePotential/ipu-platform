@@ -1961,6 +1961,15 @@ a.btn {
             font-weight: $font-weight-normal;
           }
         }
+        .committee-member__field-country {
+          font-weight: $font-weight-normal;
+        }
+        .member__position {
+          font-style: italic;
+        }
+        .member__field-end-of-mandate {
+          font-size: $font-size-sm;
+        }
       }
     }
   }
