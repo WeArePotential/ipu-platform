@@ -118,7 +118,8 @@ web:
             #
             # This is a filesystem path, relative to the application root.
             root: 'web/130ans'
-
+            index:
+              - "index.html"
             # How long to allow static assets from this location to be cached.
             #
             # Can be a time in seconds, or -1 for no caching. Times can be
@@ -131,7 +132,7 @@ web:
             # location to the application.
             #
             # Can be true, false or a URI path string.
-            passthru: '/index.php'
+            passthru: false
 
             # Deny access to static files in this location.
             allow: true
