@@ -15,7 +15,7 @@
         $(el).tab('show');
         url = location.href.replace(/\/#/, "#");
         history.replaceState(null, null, url);
-        setTimeout(() => {
+        setTimeout(function()  {
           id = '#' + hash[1];
           //console.log('id' + id);
           $('html, body').animate({

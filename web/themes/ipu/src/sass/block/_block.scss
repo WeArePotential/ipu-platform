@@ -705,7 +705,7 @@ a.btn {
   background-image: url(../img/icons/calendar.png);
   background-position: 100% 50%;
   background-size: 36px;
-  line-height: 1.1em;
+  line-height: 1.6rem;
   z-index: 2;
 }
 
@@ -1298,6 +1298,9 @@ a.btn {
   .publication__field-media-image {
     @extend .col-lg-5;
     @extend .no-gutters;
+    img {
+      border: 1px solid $ipu-very-light-grey;
+    }
   }
   .group-content {
     @extend .card-body;
