@@ -117,6 +117,10 @@ function ipu_theme_suggestions_field_alter(&$suggestions, $variables) {
   $suggestions[] = 'field__' . $entity_type . '__' . $bundle . '__' . $field_name . '__' . $view_mode;
 }
 
+function ipu_preprocess_links__language_block(&$variables) {
+  $variables['links']['fr']['link']['#title'] = 'Français';
+}
+
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
  */
