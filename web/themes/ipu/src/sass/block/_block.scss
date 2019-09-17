@@ -2026,7 +2026,7 @@ a.btn {
       list-style: none;
       display: inline-block;
       a.non-member {
-        font-weight: $font-weight-light;
+        font-weight: $font-weight-light !important;
       }
     }
   }

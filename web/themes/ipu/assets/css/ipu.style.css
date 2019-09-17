@@ -26481,7 +26481,7 @@ a.more-data-parline, .article__node-link a,
 .viewfield--view__countries__block_1 ul li a.non-member,
 .viewfield--view__countries__block_members ul li a.non-member,
 .viewfield--view__countries__block_parliaments ul li a.non-member {
-  font-weight: 300;
+  font-weight: 300 !important;
 }
 
 .viewfield--view__countries__block_members li a:after,

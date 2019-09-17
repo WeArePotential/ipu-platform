@@ -62,8 +62,8 @@
                 var iso_code = $(elem.node).attr("data-id");
                 if (iso_code in settings.areas) {
                     var data = settings.areas[iso_code];
-                    var memberTxt = '<div class="text">' + ((data.ipu_member) ? 'IPU member' : 'Not an IPU member') + '</div>';
-                    var signatoryTxt = ((data.principles_signatory) ? '<div class="text">Signatory to common princples</div>' : '')
+                    var memberTxt = '<div class="text">' + ((data.ipu_member) ? (current_lang == 'fr' ? 'Membre de l\'UIP' : 'IPU member') : (current_lang == 'fr' ? 'Non-membre de l\'UIP' : 'Not an IPU member')) + '</div>';
+                    var signatoryTxt = ((data.principles_signatory) ? '<div class="text">' + (current_lang == 'fr' ? 'Adhérent aux Principes communs' : 'Signatory to common princples') + '</div>' : '')
                     if (data.has_parent_parliament || data.no_parliament_page) {
                         // Don't show notes if there's a parent parliament
                         memberTxt = '';
