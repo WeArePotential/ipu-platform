@@ -22163,7 +22163,7 @@ a.more-data-parline, .article__node-link a,
   background-image: url(../img/icons/calendar.png);
   background-position: 100% 50%;
   background-size: 36px;
-  line-height: 1.1em;
+  line-height: 1.6rem;
   z-index: 2;
 }
 
@@ -25889,6 +25889,9 @@ a.more-data-parline, .article__node-link a,
 .node--type-publication.node--view-mode-highlight .publication__date.date {
   float: right;
 }
+.node--type-publication.node--view-mode-highlight .publication__field-media-image img {
+  border: 1px solid #eeeeee;
+}
 .node--type-publication.node--view-mode-highlight .group-content {
   background-color: #ffffff;
 }
@@ -26478,7 +26481,7 @@ a.more-data-parline, .article__node-link a,
 .viewfield--view__countries__block_1 ul li a.non-member,
 .viewfield--view__countries__block_members ul li a.non-member,
 .viewfield--view__countries__block_parliaments ul li a.non-member {
-  font-weight: 300;
+  font-weight: 300 !important;
 }
 
 .viewfield--view__countries__block_members li a:after,
@@ -27073,6 +27076,7 @@ ol.breadcrumb {
 }
 .ultimenu__flyout .block .section-page__body,
 .ultimenu__flyout .block .landing-page__body,
+.ultimenu__flyout .block .page__body,
 .ultimenu__flyout .block .ipu-event__field-summary,
 .ultimenu__flyout .block .ipu-event__field-location {
   color: #333333;
@@ -27246,6 +27250,12 @@ ol.breadcrumb {
 }
 .off-canvas .mobile-menu-wrapper li.menu-item-level-0.menu-item--expanded > a i {
   margin-left: 4px;
+}
+
+.chosen-container .chosen-results li.highlighted {
+  background-color: #00a8b4;
+  background-image: none !important;
+  color: #fff;
 }
 
 form input[type=text], form input[type=search], form select {

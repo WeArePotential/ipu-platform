@@ -384,6 +384,7 @@ ol.breadcrumb {
   }
   .block .section-page__body,
   .block .landing-page__body,
+  .block .page__body,
   .block .ipu-event__field-summary,
   .block .ipu-event__field-location {
     color: $ipu-dark-grey;
@@ -559,3 +560,10 @@ ol.breadcrumb {
   }
 }
 
+.chosen-container .chosen-results {
+  li.highlighted {
+    background-color: $ipu-teal;
+    background-image: none !important;
+    color: #fff;
+  }
+}

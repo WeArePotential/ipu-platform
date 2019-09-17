@@ -17639,7 +17639,8 @@ function isIE() {
     attach: function attach(context) {
       $('.paragraph--type--highlights .node--view-mode-highlight .bs-region').matchHeight();
       $('.view-display-id-latest_4_country .node--view-mode-highlight .bs-region').matchHeight();
-      $('.view-display-id-latest_3_generic .node--view-mode-highlight .bs-region').matchHeight(); // Special version for one big, 4 small
+      $('.view-display-id-latest_3_generic .node--view-mode-highlight .bs-region').matchHeight();
+      $('.view-display-id-latest_4_generic .node--view-mode-highlight .bs-region').matchHeight(); // Special version for one big, 4 small
 
       $('.view-display-id-latest_5_generic .row .row .node--view-mode-highlight .bs-region').matchHeight();
       $('.view-publications .node--view-mode-highlight .bs-region').matchHeight(); // Events?
