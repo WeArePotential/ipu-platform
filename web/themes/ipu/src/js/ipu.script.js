@@ -116,17 +116,8 @@ function isIE() {
 
   Drupal.behaviors.countryClick = {
     attach: function (context) {
-
-      $('.viewfield--view__countries__block_1 .views-field-name a').each(function () {
-        if ($(this).data("no-parliament-page") == 'True') {
-          $(this).removeAttr('href').css('font-weight', 'normal');
-        }
-      });
-
-      $('.viewfield--view__countries__block_1 .views-field-name a').on("click", function () {
-        if ($(this).data("iso-code-for-parliament") != '') {
-          $(this).attr('href', "/parliament/" + $(this).data("iso-code-for-parliament"));
-        }
+      $('.viewfield--view__countries__block_members .views-field-name a, .viewfield--view__countries__block_parliaments .views-field-name a').on("click", function () {
+        // This should never happen, as we're no longer displaying ones with no parl page
         if ($(this).data("no-parliament-page") == 'True') {
           return false;
         }

@@ -259,7 +259,35 @@ function ipu_map_get_callout() {
   return $element;
 
 }
+
+/*
+ * template_preprocess_views_view_field
+ *
+ * @param $variables
+ *
+ * Replace the url in countries views country name fields to link to the french version of the parliament page
+ */
+function ipu_map_preprocess_views_view_field(&$variables) {
+
+  $view = $variables['view'];
+  $field = $variables['field'];
+  $language_id =  \Drupal::languageManager()->getCurrentLanguage('language_content')->getId();
+
+  if ($view->storage->id() == 'countries') {
+    if ($view->current_display == 'block_parliaments' || $view->current_display == 'block_members' ) {
+      if ($field->field == 'name') {
+        if ($language_id == 'fr') {
+          $term = $variables['row']->_entity;
+          $isocode = $term->get('field_iso_code')->value;
+          $variables['output'] = \Drupal\Core\Render\Markup::create(str_ireplace('/parliament/', '/fr/parlement/', $variables['output']));
+        }
+      }
+    }
+  }
+}
+
 function ipu_map_views_pre_render(\Drupal\views\ViewExecutable $view) {
+
 
   // Change the order of the news items; show the features first, if there are any, in the last 4 items.
 //  if ($view->id() == 'articles') {
@@ -275,7 +303,7 @@ function ipu_map_views_pre_render(\Drupal\views\ViewExecutable $view) {
 //      krsort($sorted_view);
 //      $view->result = $sorted_view; //$update_view;
 //    }
-//    //return $view;
+//    return $view;
 //  }
 }
 
