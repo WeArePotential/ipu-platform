@@ -36,6 +36,12 @@ $config_directories[CONFIG_SYNC_DIRECTORY] = '../config/sync';
 if (file_exists($app_root . '/' . $site_path . '/settings.platformsh.php')) {
   include $app_root . '/' . $site_path . '/settings.platformsh.php';
 }
+
+// A file full of redirects (copied from the old D7 site and preferred to using platform.app.yaml)
+if (file_exists($app_root . '/' . $site_path . '/settings.redirect.php')) {
+  include $app_root . '/' . $site_path . '/settings.redirect.php';
+}
+
 if (strtolower(getenv('PLATFORM_ENVIRONMENT')) == 'master') {
   $config['stage_file_proxy.settings']['disabled'] = 1;
 }
