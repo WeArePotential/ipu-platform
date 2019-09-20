@@ -1,0 +1,7 @@
+ipu_tweaks.download:
+  path: '/download/{fid}'
+  defaults:
+    _controller: '\Drupal\ipu_tweaks\Controller\IpuTweaksController::download'
+    _title: 'IPU File download'
+  requirements:
+    _permission: 'access content'
