@@ -1,5 +1,5 @@
 hotlink: false
-origin: 'https://master-7rqtwti-gcaqeen3me7bi.eu-2.platformsh.site'
+origin: 'https://www.ipu.org'
 origin_dir: sites/default/files
 use_imagecache_root: true
 verify: true
