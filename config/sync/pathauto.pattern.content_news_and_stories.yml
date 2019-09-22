@@ -8,24 +8,24 @@ dependencies:
 id: content_news_and_stories
 label: 'Content - News and Stories - FR'
 type: 'canonical_entities:node'
-pattern: 'actualites/[node:field_article_type:entity:parents:join-path]/[node:field_article_type]/[node:created:custom:Y-m]/[node:title]'
+pattern: 'actualites/[node:field_article_type:entity:parents:join-path]/[node:field_article_type:entity:name]/[node:created:custom:Y-m]/[node:title]'
 selection_criteria:
-  ebad6dc8-9bcd-4413-90e9-1cec828ac10f:
+  aaa6375e-f1ed-40e7-858b-2ece019d4475:
     id: node_type
     bundles:
       article: article
     negate: false
     context_mapping:
       node: node
-    uuid: ebad6dc8-9bcd-4413-90e9-1cec828ac10f
-  a25119da-2ecc-496c-b7a1-87135215c07e:
+    uuid: aaa6375e-f1ed-40e7-858b-2ece019d4475
+  2d828cab-7ec2-4b52-b2a0-98fccd6e6dfb:
     id: language
     langcodes:
       fr: fr
     negate: false
     context_mapping:
       language: 'node:langcode:language'
-    uuid: a25119da-2ecc-496c-b7a1-87135215c07e
+    uuid: 2d828cab-7ec2-4b52-b2a0-98fccd6e6dfb
 selection_logic: and
 weight: -8
 relationships:

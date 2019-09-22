@@ -7,9 +7,33 @@ show_front: true
 show_titles: true
 show_books: {  }
 books_expanded: true
-show_menus: {  }
+show_menus:
+  main: main
+  mega-menu: mega-menu
+  account: '0'
+  admin: '0'
+  features: '0'
+  follow-us: '0'
+  footer: '0'
+  quick-links: '0'
+  tools: '0'
 show_menus_hidden: false
-show_vocabularies: {  }
+show_vocabularies:
+  article: '0'
+  country: '0'
+  documents: '0'
+  event: '0'
+  event_session_type: '0'
+  event_sponsor: '0'
+  geographic_region: '0'
+  geopolitical_group: '0'
+  governing_body: '0'
+  ipu_structure: '0'
+  member_role: '0'
+  publication: '0'
+  tags: '0'
+  theme: '0'
+  vacancy: '0'
 show_description: true
 show_count: true
 vocabulary_show_links: false
@@ -22,5 +46,29 @@ rss_taxonomy: -1
 css: true
 order:
   front: -50
+  menus_account: -49
+  menus_admin: -48
+  menus_features: -47
+  menus_follow-us: -46
+  menus_footer: -45
+  menus_mega-menu: -44
+  menus_main: -43
+  menus_quick-links: -42
+  menus_tools: -41
+  vocabularies_article: -40
+  vocabularies_country: -39
+  vocabularies_documents: -38
+  vocabularies_event: -37
+  vocabularies_event_session_type: -36
+  vocabularies_event_sponsor: -35
+  vocabularies_geographic_region: -34
+  vocabularies_geopolitical_group: -33
+  vocabularies_governing_body: -32
+  vocabularies_ipu_structure: -31
+  vocabularies_member_role: -30
+  vocabularies_publication: -29
+  vocabularies_tags: -28
+  vocabularies_theme: -27
+  vocabularies_vacancy: -26
 _core:
   default_config_hash: f4sH8CGbEMFQXKFoGeaHbmIP_f6cOTi02EeFhHSbYyo

@@ -1,33 +1,33 @@
-uuid: ad32ff7d-6cb6-471e-87e5-38934972a418
+uuid: c3ff0a16-ef2e-45c4-bfdf-388fd7bbdef7
 langcode: en
 status: true
 dependencies:
   module:
     - language
     - node
-id: node_vacancy
-label: 'Content - Vacancy'
+id: content_vacancy_fr
+label: 'Content - Vacancy - FR'
 type: 'canonical_entities:node'
-pattern: 'work-with-ipu/vacancies/[node:created:custom:Y-m]/[node:title]'
+pattern: 'travailler-avec-nous/postes-vacants/[node:created:custom:Y-m]/[node:title]'
 selection_criteria:
-  5aeb7236-ad55-4b3a-8dfb-a025c089e444:
+  4a2f85a5-1332-42e6-9105-c6b9d28f762e:
     id: node_type
     bundles:
       vacancy: vacancy
     negate: false
     context_mapping:
       node: node
-    uuid: 5aeb7236-ad55-4b3a-8dfb-a025c089e444
-  d68afa70-2d85-4e3e-93b9-5abd1a58a757:
+    uuid: 4a2f85a5-1332-42e6-9105-c6b9d28f762e
+  9f6c2aca-9d5b-4b47-a626-9a5542f7d938:
     id: language
     langcodes:
-      en: en
+      fr: fr
     negate: false
     context_mapping:
       language: 'node:langcode:language'
-    uuid: d68afa70-2d85-4e3e-93b9-5abd1a58a757
+    uuid: 9f6c2aca-9d5b-4b47-a626-9a5542f7d938
 selection_logic: and
-weight: 1
+weight: 2
 relationships:
   'node:langcode:language':
     label: Language

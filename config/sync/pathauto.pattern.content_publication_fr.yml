@@ -1,33 +1,33 @@
-uuid: 35cd0d1d-4f12-4041-9b3e-d9b3598741bd
+uuid: 1b66a01a-ef29-40e2-8a32-aee8cd0eec84
 langcode: en
 status: true
 dependencies:
   module:
     - language
     - node
-id: node_publication
-label: 'Content - Publication EN'
+id: content_publication_fr
+label: 'Content - Publication FR'
 type: 'canonical_entities:node'
-pattern: 'resources/publications/[node:field_publication_type:entity:name]/[node:created:custom:Y-m]/[node:title]'
+pattern: 'ressources/publications/[node:field_publication_type:entity:name]/[node:created:custom:Y-m]/[node:title]'
 selection_criteria:
-  c57f7ff7-f04e-41b9-926b-68bf65f81478:
+  030c9e2f-3a34-4edf-aef6-70e0772a44ed:
     id: node_type
     bundles:
       publication: publication
     negate: false
     context_mapping:
       node: node
-    uuid: c57f7ff7-f04e-41b9-926b-68bf65f81478
-  9c8e097b-d4a5-4aa6-bab8-370dc394cc21:
+    uuid: 030c9e2f-3a34-4edf-aef6-70e0772a44ed
+  8f41c368-9d22-4bb0-96ec-7aa94b63fd22:
     id: language
     langcodes:
-      en: en
+      fr: fr
     negate: false
     context_mapping:
       language: 'node:langcode:language'
-    uuid: 9c8e097b-d4a5-4aa6-bab8-370dc394cc21
+    uuid: 8f41c368-9d22-4bb0-96ec-7aa94b63fd22
 selection_logic: and
-weight: -2
+weight: -1
 relationships:
   'node:langcode:language':
     label: Language

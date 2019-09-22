@@ -20,7 +20,7 @@ content:
     label: hidden
     settings:
       timezone_override: ''
-      date_format: 'M Y'
+      date_format: U
     third_party_settings:
       ds:
         ft:
