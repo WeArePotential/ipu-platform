@@ -1,0 +1,34 @@
+uuid: d401fc87-9bf6-46f1-ab4a-3b1f38118c9e
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - language
+    - taxonomy
+id: taxonomy_term_vacancy_fr
+label: 'Taxonomy term - Vacancy - FR'
+type: 'canonical_entities:taxonomy_term'
+pattern: 'travailler-avec-nous/postes-vacants/[term:name]'
+selection_criteria:
+  d87a4c61-c15e-4e35-910b-ab877d027204:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      vacancy: vacancy
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: d87a4c61-c15e-4e35-910b-ab877d027204
+  5a4747b3-8266-4b98-999e-fd4f957e795b:
+    id: language
+    langcodes:
+      fr: fr
+    negate: false
+    context_mapping:
+      language: 'taxonomy_term:langcode:language'
+    uuid: 5a4747b3-8266-4b98-999e-fd4f957e795b
+selection_logic: and
+weight: 7
+relationships:
+  'taxonomy_term:langcode:language':
+    label: Language

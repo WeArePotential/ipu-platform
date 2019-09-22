@@ -31,7 +31,7 @@
         <div class="d-flex justify-content-between align-items-center">
           {% block branding %}
             {% if page.navbar_branding %}
-              <div class="branding-left text-left">
+              <div class="branding-left text-left d-table-cell">
                 {%  if language_id == 'en' %}
                   {% set logo = 'IPU-logo-130-EN.png' %}
                   {% set url = '' %}
@@ -39,12 +39,12 @@
                   {% set logo = 'IPU-logo-130-FR.png' %}
                   {% set url = language_id %}
                 {% endif %}
-                <a href="/{{ url }}"><img class="logo" src="{{ base_path ~ directory ~ '/assets/img/' ~ logo }}" /></a>
+                <a class="logo-link" href="/{{ url }}"><img class="logo" src="{{ base_path ~ directory ~ '/assets/img/' ~ logo }}" /></a>
                 {# page.navbar_branding #}
               </div>
             {% endif %}
             {% if page.navbar_branding_right %}
-              <div class="branding-right text-right">
+              <div class="branding-right text-right  d-table-cell">
                 {{ page.navbar_branding_right }}
               </div>
             {% endif %}
