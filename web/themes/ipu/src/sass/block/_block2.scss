@@ -1,4 +1,4 @@
-.taxonomy-list-article {
+.taxonomy-list-article .page__content {
   .block--ipu-content header h3 {
     margin: 10px 0 20px 0;
   }
@@ -53,6 +53,7 @@
     p.address {
       br {
         content: '';
+        display: none;
       }
       span {
         display: inline-block;

@@ -41,17 +41,25 @@ import 'bootstrap';
     document.addEventListener('blur', update, true);
     update();
   }
-})(window, document);
 
-function isIE() {
-  var ua = window.navigator.userAgent;
-  var isIE = /MSIE|Trident|Edge/.test(ua);
-  return isIE;
-}
+  function isIE() {
+    var ua = window.navigator.userAgent;
+    var isIE = /MSIE|Trident|Edge/.test(ua);
+    return isIE;
+  }
+
+
+})(window, document);
 
 (function ($, Drupal) {
 
   'use strict';
+
+  function isEdge() {
+    var ua = window.navigator.userAgent;
+    var isEdge = /Edge/.test(ua);
+    return isEdge;
+  }
 
   Drupal.behaviors.override_dropdown = {
     attach: function (context) {
@@ -120,6 +128,17 @@ function isIE() {
         // This should never happen, as we're no longer displaying ones with no parl page
         if ($(this).data("no-parliament-page") == 'True') {
           return false;
+        }
+      });
+    }
+  };
+
+  Drupal.behaviors.destroyChosen = {
+    attach: function (context) {
+      $(document).ready(function() {
+        if (isEdge()) {
+          console.log('Clear chosen for IE');
+          $('#edit-isocode').chosen('destroy');
         }
       });
     }
