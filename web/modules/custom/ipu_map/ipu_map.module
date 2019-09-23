@@ -274,7 +274,7 @@ function ipu_map_preprocess_views_view_field(&$variables) {
   $language_id =  \Drupal::languageManager()->getCurrentLanguage('language_content')->getId();
 
   if ($view->storage->id() == 'countries') {
-    if ($view->current_display == 'block_parliaments' || $view->current_display == 'block_members' ) {
+    if ($view->current_display == 'block_parliaments' || $view->current_display == 'block_members' || $view->current_display == 'block_geo_members' ) {
       if ($field->field == 'name') {
         if ($language_id == 'fr') {
           $term = $variables['row']->_entity;

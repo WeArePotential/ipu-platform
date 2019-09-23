@@ -608,6 +608,7 @@ a.btn {
 }
 .stats-content {
   padding-left: $spacer;
+  max-width: 100%;
 }
 .stats-age {
   border: 1px solid $ipu-light-grey;
@@ -1110,11 +1111,12 @@ a.btn {
 
   .group-related {
     margin: 0 -15px;
-    background-color: $ipu-light-grey;
+    background-color: $light;
     padding: 20px 0;
     & .field__label {
       @extend h2;
-      font-weight: $font-weight-light;
+      font-weight: $font-weight-light !important;
+      border-bottom: 1px solid $secondary;
       margin: 30px 0;
     }
     & > div {
@@ -2018,6 +2020,7 @@ a.btn {
 
 .viewfield--view__countries__block_1,
 .viewfield--view__countries__block_members,
+.viewfield--view__countries__block_geo_members,
 .viewfield--view__countries__block_parliaments {
   h3 {
     clear: left;
@@ -2048,6 +2051,7 @@ a.btn {
   }
 }
 .viewfield--view__countries__block_members,
+.viewfield--view__countries__block_geo_members,
 .viewfield--view__countries__block_parliaments {
   li a:after {
     content: ', ';
