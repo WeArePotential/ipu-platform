@@ -57,9 +57,11 @@ a {
   .region-inner {
     @extend .row;
     & > .block {
+      display: inline-block;
       @extend .col-md-3;
       @extend .col-sm-6;
       margin-bottom: 20px;
+
     }
     p {
       color: $ipu-white;
@@ -128,8 +130,13 @@ a {
   }
   ul.nav {
     text-align: right;
+    display: block;
+    display: flex;
     :first-child {
       /*flex: 1 0 0;*/
+    }
+    & > li {
+      display: inline-block;
     }
   }
   a {
@@ -162,10 +169,14 @@ a {
 
   .text-left .region-inner {
     display: flex;
+    display: block;
     justify-content: flex-start;
     a {
       padding: 0.25em;
       display: block;
+    }
+    & > div {
+      float: left;
     }
   }
   ul.cross-site-navigation {
@@ -181,6 +192,9 @@ a {
     }
   }
 }
+#branding a.logo-link {
+  display: block;
+}
 #branding img.logo {
   height: 90px;
   width: auto;
@@ -188,10 +202,12 @@ a {
   @include media-breakpoint-down(md) {
     height: auto;
     max-width: 90%;
+    width: 90%;
   }
 }
 @include media-breakpoint-up(md) {
   #branding .branding-right .region-inner {
+    display: block;
     display: flex;
     flex-direction: row;
     margin: 0 -5px;
@@ -218,7 +234,7 @@ a {
 .block--languageswitchercontent {
   margin-left: 20px;
   .es, .ar {
-    display: none;
+    display: none !important;
   }
   a:hover {
     color: #fff !important;
@@ -831,7 +847,7 @@ a.btn {
 // News specific (Brand blue)
 .articles-card-news,
 .viewfield--view__articles,
-.taxonomy-list-article .views-rows-wrapper {
+.taxonomy-list-article .page__content .views-rows-wrapper {
   .node--view-mode-highlight {
     @extend .text-white;
     @extend .bg-primary;
