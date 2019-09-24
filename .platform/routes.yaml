@@ -31,3 +31,7 @@
 "https://beta.ipu.org/":
   type: redirect
   to: "https://{default}/"
+
+"https://master-7rqtwti-gcaqeen3me7bi.eu-2.platformsh.site/":
+  type: redirect
+  to: https://{default}/"
