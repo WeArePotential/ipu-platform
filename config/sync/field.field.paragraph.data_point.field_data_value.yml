@@ -18,7 +18,7 @@ bundle: data_point
 label: 'Data point value'
 description: 'Numeric value for data point. May have trailing %.'
 required: true
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }

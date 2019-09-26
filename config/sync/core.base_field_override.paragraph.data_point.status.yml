@@ -1,14 +1,14 @@
-uuid: 404cd5fd-9722-4339-b1c5-0710537cd9ca
-langcode: en
+uuid: 6c6944f1-9b1a-4590-8441-039eba3363d2
+langcode: fr
 status: true
 dependencies:
   config:
-    - paragraphs.paragraphs_type.carousel_slides
-id: paragraph.carousel_slides.status
+    - paragraphs.paragraphs_type.data_point
+id: paragraph.data_point.status
 field_name: status
 entity_type: paragraph
-bundle: carousel_slides
-label: Published
+bundle: data_point
+label: Publié
 description: ''
 required: false
 translatable: true
@@ -17,6 +17,6 @@ default_value:
     value: 1
 default_value_callback: ''
 settings:
-  on_label: 'On'
-  off_label: 'Off'
+  on_label: Activé
+  off_label: Désactivé
 field_type: boolean
