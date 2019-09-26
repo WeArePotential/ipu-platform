@@ -71,9 +71,13 @@ class IpuMapController extends ControllerBase {
 
     // Build arrays of data from parline and the taxonomy term fields
     $data = ipu_map_get_parline_data($parliament_iso_code, $this->getDescription(), $this->getMembershipStatus(), $this->getPrinciplesSignatoryStatus(),$this->getHumanRightsCases(), $this->current_language_id);
+    $regions = [];
+    foreach($country->field_geographic_region->getValue() as $term) {
+      $regions[] = $term['target_id'];
+    };
 
     // Get a view with news and stories
-    $news_block = ipu_map_get_country_news($country->get('tid')->value);
+    $news_block = ipu_map_get_country_news($country->get('tid')->value, $regions);
 
     $case_studies_block = ipu_map_get_country_case_studies($country->get('tid')->value);
     // Rendering of the block is done in the theming, so no need to run $markup .= \Drupal::service('renderer')->render($content);
@@ -83,10 +87,12 @@ class IpuMapController extends ControllerBase {
     $callout = ipu_map_get_callout();
 
     $geogroups = [];
-    foreach($country->field_geopolitical_group->getValue() as $term) {
+    foreach ($country->field_geopolitical_group->getValue() as $term) {
       $geogroups[] = $term['target_id'];
     };
     $geogroups_block = ipu_map_get_geogroups(implode(', ', $geogroups));
+
+    $region_block = ipu_map_get_countries_region(implode(', ', $regions));
 
     $page = [
       '#theme' => 'ipu-map-country',
@@ -100,6 +106,7 @@ class IpuMapController extends ControllerBase {
         'events' => $events_block,
         'callout' => $callout,
         'geogroups' => $geogroups_block,
+        'countries_region' => $region_block,
       ],
     ];
     return $page;
