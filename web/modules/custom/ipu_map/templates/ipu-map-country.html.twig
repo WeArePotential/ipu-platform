@@ -1,6 +1,5 @@
 <div class="container ipu-map-country">
-    {#}{ dump() }#}
-    <h1>
+    <h1 class="sticky-top-js">
         <div class="d-flex align-items-end">
             <div>{{ content.flag }}</div>
             <div>{{ content.title }}</div>
@@ -33,5 +32,6 @@
     <div class="container">
         <h2>{{ 'In the region'|t }}</h2>
             {{ content.geogroups }}
+        {{ content.countries_region }}
     </div>
 </div>

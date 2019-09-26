@@ -38,4 +38,4 @@
 ]
 %}
 
-<a href="#event-sub-page-{{ row.id }}" {{ attributes.addClass(classes) }} data-toggle="tab">{{ fields.field_title.content }}</a>
+<a href="#event-sub-page-{{ row.id }}" {{ attributes.addClass(classes) }} data-order="{{ fields.field_order.content|render|striptags|trim }}" data-toggle="tab">{{ fields.field_title.content }}</a>

@@ -98,8 +98,8 @@ third_party_settings:
       region: content
     group_documents:
       children:
-        - field_ipu_event_section
         - field_documents_order_number
+        - field_ipu_event_section
         - field_document_show_print
       parent_name: group_tabs
       weight: 23
@@ -114,9 +114,9 @@ third_party_settings:
       region: content
     group_agenda:
       children:
+        - field_agenda_order_number
         - field_ipu_event_session_type
         - field_ipu_event_sessions
-        - field_agenda_order_number
         - field_programme_show_print
       parent_name: group_tabs
       weight: 24
@@ -277,7 +277,7 @@ content:
       default_paragraph_type: ''
     third_party_settings: {  }
   field_ipu_event_section:
-    weight: 6
+    weight: 8
     type: entity_reference_paragraphs
     settings:
       title: Paragraph
@@ -289,7 +289,7 @@ content:
     third_party_settings: {  }
     region: content
   field_ipu_event_session_type:
-    weight: 9
+    weight: 13
     type: entity_reference_paragraphs
     settings:
       title: Paragraph
@@ -302,7 +302,7 @@ content:
     region: content
   field_ipu_event_sessions:
     type: entity_reference_paragraphs
-    weight: 11
+    weight: 14
     region: content
     settings:
       title: Paragraph
@@ -331,7 +331,7 @@ content:
     third_party_settings: {  }
     region: content
   field_programme_show_print:
-    weight: 13
+    weight: 15
     type: boolean_checkbox
     settings:
       display_label: true

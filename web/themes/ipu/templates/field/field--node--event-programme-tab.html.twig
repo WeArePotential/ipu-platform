@@ -4,7 +4,6 @@
  * Render the event document tab as a BS tab.
  */
 #}
-
 {% for item in items %}
-  <a href="#event-sub-page-programme" class="nav-link" data-toggle="tab">{{ item.content }}</a>
+  <a href="#event-sub-page-programme" data-order="{{ item.content.0['#order']|raw }}" class="nav-link" data-toggle="tab">{{ item.content }}</a>
 {% endfor %}

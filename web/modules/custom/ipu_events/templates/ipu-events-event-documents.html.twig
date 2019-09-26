@@ -11,8 +11,13 @@
  */
 #}
 
-<h2 class="event-sub-page__title">Documents</h2>
+<h2 class="event-sub-page__title">{{ title }}</h2>
 
 <div class="ipu-event-documents">
-  {{ content }}
+  <div class="ipu-event-documents-documents">
+      {{ documents }}
+  </div>
+  <div class="ipu-event-documents-session-documents">
+    {{ session_documents }}
+  </div>
 </div>

@@ -42,7 +42,9 @@ class EventDocuments extends RenderElement {
   public function getInfo() {
     return [
       '#theme' => 'ipu_events_event_documents',
-      '#content' => '',
+      '#title' => '',
+      '#documents' => '',
+      '#session_documents' => '',
       //'#attributes' => [
       //  'direction' => 'left',
       //  'loop' => -1,

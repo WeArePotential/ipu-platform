@@ -41,7 +41,9 @@ function ipu_events_theme() {
   return [
     'ipu_events_event_documents' => [
       'variables' => [
-        'content' => '',
+        'title' => '',
+        'documents' => '',
+        'session_documents' => '',
       ],
     ],
   ];
