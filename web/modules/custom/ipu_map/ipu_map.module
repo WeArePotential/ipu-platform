@@ -320,7 +320,11 @@ function ipu_map_views_pre_render(\Drupal\views\ViewExecutable $view) {
 }
 
 function ipu_map_get_flag($isocode) {
-  $flag_url = ipu_map_get_flag_url($isocode);
+  if (strtolower($isocode) == 'mm') {
+    $flag_url = 'http://data.un.org/en/flags/mmr_flag.png';
+  } else {
+    $flag_url = ipu_map_get_flag_url($isocode);
+  }
   $element = [];
   $element['#flag_url'] = $flag_url;
   $element['#theme'] = 'ipu-map-flag';
