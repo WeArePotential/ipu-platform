@@ -365,6 +365,7 @@ function ipu_tweaks_preprocess_views_view(&$variables) {
 //      'country' => t('Country'),
       'news_type' => t('News'),
       'event_type' => t('Events'),
+      'publication_type' => t('Publications'),
       'ipu_structure' => t('IPU'),
 //      'type' => t('Content type'),
     ];

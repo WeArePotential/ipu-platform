@@ -8,20 +8,13 @@
 (function ($) {
   Drupal.behaviors.tabsdeeplinking = {
     attach: function(context) {
-      let url = location.href.replace(/\/$/, "");
+      var url = location.href.replace(/\/$/, "");
       if (location.hash) {
         const hash = url.split("#");
         el = '#v-pills-tab a[href="#' + hash[1] + '"]';
         $(el).tab('show');
         url = location.href.replace(/\/#/, "#");
         history.replaceState(null, null, url);
-        setTimeout(function()  {
-          id = '#' + hash[1];
-          //console.log('id' + id);
-          $('html, body').animate({
-            scrollTop: $(id).offset().top
-          }, 1000);
-        }, 400);
       }
 
       $('a[data-toggle="tab"]').on("click", function() {
@@ -34,6 +27,15 @@
         }
         newUrl += "/";
         history.replaceState(null, null, newUrl);
+        /* Once clicked, scroll to the right place */
+
+        setTimeout(function()  {
+          id = '.page__content'; //hash;
+          //console.log('id' + id);
+          $('html, body').animate({
+            scrollTop: (parseInt($(id).offset().top))
+          }, 50);
+        }, 500);
       });
 
     }

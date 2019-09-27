@@ -38,6 +38,7 @@ class EventDocumentsTab extends DsFieldBase {
         return [];
       }
 
+
       // Get the session paragraphs.
       if (!$node->field_ipu_event_sessions->isEmpty()) {
         $sessions = $node->field_ipu_event_sessions->referencedEntities();
@@ -73,7 +74,10 @@ class EventDocumentsTab extends DsFieldBase {
 
     }
     if ($have_documents) {
-      return ['#markup' => $this->t('Documents')];
+      return [
+        '#markup' => $this->t('Documents'),
+        '#order' => (is_numeric(trim($node->field_documents_order_number->value)) ? trim($node->field_documents_order_number->value) : 0),
+        ];
     } else {
       return [];
     }

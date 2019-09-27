@@ -219,13 +219,18 @@ function ipu_map_get_parline_data($isocode, $description, $membership_status, $p
   return ['data' => $data, 'country_stats' => $stats];
 }
 
-function ipu_map_get_country_news($country_term_id) {
+function ipu_map_get_country_news($country_term_id, $regions) {
   // NOT USED: Uses an in-built view. We use the pre_reneder below to change the sort order here.
   $checkempty = views_get_view_result('articles', 'latest_4_country', $country_term_id);
+  /*$checkregionempty = views_get_view_result('articles', 'latest_4_by_region', $country_term_id);*/
+
   if (!empty($checkempty)) {
-    return views_embed_view('articles', 'latest_4_country', $country_term_id);
+    $view = views_embed_view('articles', 'latest_4_country', $country_term_id);
   }
-  return false;
+  /*if (!empty($checkregionempty)) {
+    $region_view = views_embed_view('articles', 'latest_4_by_region', $regions);;
+  }*/
+  return $view;
 }
 function ipu_map_get_country_case_studies($country_term_id) {
   $checkempty = views_get_view_result('articles', 'latest_3_case_country', $country_term_id);
@@ -247,6 +252,13 @@ function ipu_map_get_events($country_term_id) {
     return views_embed_view('events', 'latest_2_events_country', $country_term_id);
   }
 }
+function ipu_map_get_countries_region($regions) {
+  $checkempty = views_get_view_result('countries', 'block_countries_region', $regions);
+  if (!empty($checkempty)) {
+    return views_embed_view('countries', 'block_countries_region', $regions);
+  }
+}
+
 function ipu_map_get_callout() {
   $element = [];
   $link = \Drupal::service('path.alias_manager')->getAliasByPath('/node/174', \Drupal::languageManager()->getCurrentLanguage('language_content')->getId());
@@ -308,7 +320,11 @@ function ipu_map_views_pre_render(\Drupal\views\ViewExecutable $view) {
 }
 
 function ipu_map_get_flag($isocode) {
-  $flag_url = ipu_map_get_flag_url($isocode);
+  if (strtolower($isocode) == 'mm') {
+    $flag_url = 'http://data.un.org/en/flags/mmr_flag.png';
+  } else {
+    $flag_url = ipu_map_get_flag_url($isocode);
+  }
   $element = [];
   $element['#flag_url'] = $flag_url;
   $element['#theme'] = 'ipu-map-flag';

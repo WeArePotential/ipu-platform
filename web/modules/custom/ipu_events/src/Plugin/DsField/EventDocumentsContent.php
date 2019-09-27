@@ -122,7 +122,8 @@ class EventDocumentsContent extends DsFieldBase {
                   if ($document_language !== $ignore_language && $document_language != NULL) {
                     $view_builder = \Drupal::entityTypeManager()->getViewBuilder($document->getEntityTypeId() );
                     $document_view = $view_builder->view($document, 'full', $current_language);
-                    $other_documents[] = render($document_view);
+                    //$other_documents[] = render($document_view);
+                    $other_documents[] = $document_view;
                   }
                   // $other_documents[] = $document->id(). '-'. $document_lanagage;
                 }
@@ -134,8 +135,9 @@ class EventDocumentsContent extends DsFieldBase {
 
       return [
         '#type' => 'event_documents',
-        '#content' => $grouped_documents_render,
-        '#suffix' => (count($other_documents) > 0 ? implode('', $other_documents) : ''),
+        '#title' => $this->t('Documents'),
+        '#documents' => $other_documents, //(count($other_documents) > 0 ? implode('', $other_documents) : ''),
+        '#session_documents' => $grouped_documents_render,
       ];
     }
 		

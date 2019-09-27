@@ -1,17 +1,17 @@
-uuid: 1b76a0b7-91cc-48b7-be2b-850db96f3cde
-langcode: en
+uuid: 18c05e82-3db5-4330-aef8-8269e2d162c5
+langcode: fr
 status: true
 dependencies:
   config:
-    - paragraphs.paragraphs_type.carousel_slides
-id: paragraph.carousel_slides.created
+    - paragraphs.paragraphs_type.data_point
+id: paragraph.data_point.created
 field_name: created
 entity_type: paragraph
-bundle: carousel_slides
+bundle: data_point
 label: 'Authored on'
 description: 'The time that the Paragraph was created.'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }

@@ -11,7 +11,7 @@ id: ipu_structure
 name: 'IPU structure'
 url_alias: ipu_structure
 weight: 0
-min_count: 0
+min_count: 1
 show_only_one_result: false
 field_identifier: field_ipu_structure
 facet_source_id: 'search_api:views_page__search__page_1'

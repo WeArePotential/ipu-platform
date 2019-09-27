@@ -38,10 +38,12 @@
 
     {% if left_sub_page_menu.content %}
       <div class="col-md-4 order-md-2">
-        <div class="nav flex-column nav-pills nav-justified" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+        <div class="sticky-top-js md-up-only-js pt-4">
+          <div class="nav flex-column nav-pills nav-justified" id="v-pills-tab" role="tablist" aria-orientation="vertical">
           {{ left_sub_page_menu.content }}
+          </div>
+          {{ left.content }}
         </div>
-        {{ left.content }}
       </div>
     {% endif %}
 

@@ -18,6 +18,24 @@ h1,
   margin-bottom: 20px;
 }
 
+.ipu-map-country {
+  z-index: 1;
+}
+.ipu-map-country h1 {
+  background-color: $ipu-white;
+  z-index: 1200;
+}
+
+.sticky-top-js.stuck {
+  position:fixed;
+  top: 0;
+}
+@include media-breakpoint-down(md) {
+  .sticky-top-js.stuck {
+    top: 2rem;
+  }
+}
+
 // h2's are 
 h1 {
   color: color("ipu-dark-grey");

@@ -42,7 +42,10 @@ class EventProgrammeTab extends DsFieldBase {
     }
 
     if ($have_sessions) {
-      return ['#markup' => $this->t('Programme'),];
+      return [
+        '#markup' => $this->t('Programme'),
+        '#order' => (is_numeric(trim($node->field_agenda_order_number->value)) ? trim($node->field_agenda_order_number->value) : 0),
+      ];
     } else {
       return [];
     }

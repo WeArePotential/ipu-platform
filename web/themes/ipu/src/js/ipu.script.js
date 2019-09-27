@@ -122,10 +122,32 @@ import 'bootstrap';
     }
   };
 
+  /*
+   * Reorder the links in the events sub-menu. This is done in js because the
+   * links come from separate fields of different types.
+   */
+  Drupal.behaviors.eventSubpageOrder = {
+    attach: function (context) {
+      var items = $('#v-pills-tab a.nav-link');
+      items.sort(function(a, b){
+        return +$(a).data('order') - +$(b).data('order');
+      });
+      items.appendTo('#v-pills-tab');
+    }
+  }
+
+  /*
+   * When displaying a list of links to parliament pages, we wish to remove the
+   * link to the parliament page when the flag field_no_parliament_page is set.
+   * The view doesn't have this logic, so we remove the link using js.
+   * In reality, this should never happen, as we are only displaying countries
+   * with national parliaments (which would normally have a link)
+   * TODO: Add this to a views pre-process function.
+   */
+
   Drupal.behaviors.countryClick = {
     attach: function (context) {
       $('.viewfield--view__countries__block_members .views-field-name a, .viewfield--view__countries__block_parliaments .views-field-name a').on("click", function () {
-        // This should never happen, as we're no longer displaying ones with no parl page
         if ($(this).data("no-parliament-page") == 'True') {
           return false;
         }
@@ -133,12 +155,65 @@ import 'bootstrap';
     }
   };
 
+  /*
+   * There is a problem when using Chosen for the mega menu in Edge.
+   * Clicking on the inner dropdown removes focus from the outer dom elements
+   * and the megamenu disappears. This removes Chosen in Edge.
+   */
   Drupal.behaviors.destroyChosen = {
     attach: function (context) {
       $(document).ready(function() {
         if (isEdge()) {
           console.log('Clear chosen for IE');
           $('#edit-isocode').chosen('destroy');
+        }
+      });
+    }
+  };
+
+  /*
+   * Some elements we want to be sticky. We can't use display:sticky as this
+   * causes problems with the ultimenu dropdowns overlays, due to conflicting
+   * z-indexes. Instead we use a js function to fix on scroll, adding padding to
+   * any following elements to avoid jumping (e.g. country name)
+   */
+  Drupal.behaviors.sticky = {
+    attach: function (context) {
+      $(document).ready(function () {
+
+        var cache = $('.sticky-top-js');
+        function adjustWidth(e) {
+          var parentwidth = e.parent().width();
+          e.width(parentwidth);
+        }
+
+        // Don't implement this on smaller windows where class is md-up-only-js.
+        if (cache.length && ($(window).width() > 992 || !cache.hasClass('md-up-only-js'))) {
+          var topMargin = ((typeof cache.css('marginTop') !== undefined) ? parseFloat(cache.css('marginTop').replace(/auto/, 0)) : 0);
+          var vTop = cache.offset().top - topMargin;
+          var vHeight = cache.outerHeight();
+          var vNextPadding = 0;
+          if (cache.next().length) {
+            vNextPadding = ((typeof cache.next().css('padding-top') !== undefined) ? cache.next().css('padding-top').replace('px', '') : 0);
+          }
+          $(window).resize(function () {
+            adjustWidth(cache);
+          });
+
+          $(window).scroll(function (event) {
+            var y = $(this).scrollTop();
+            if (y >= vTop) {
+              cache.addClass('stuck');
+              if (cache.next().length) {
+                cache.next().css('padding-top', (parseInt(vHeight) + parseInt(vNextPadding)) + 'px');
+              }
+              adjustWidth(cache);
+            }
+            else {
+              cache.removeClass('stuck');
+              cache.next().css('padding-top', vNextPadding + 'px');
+            }
+          });
         }
       });
     }
