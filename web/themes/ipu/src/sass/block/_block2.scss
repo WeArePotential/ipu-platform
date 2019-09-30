@@ -78,6 +78,12 @@
     margin: 10px 0;
     @extend .btn-cta;
   }
+
+  .ipu-event-documents {
+    h3 {
+      margin-top: 10px;
+    }
+  }
 }
 
 .block--newslettersubscription {
