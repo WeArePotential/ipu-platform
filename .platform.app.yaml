@@ -47,6 +47,9 @@ build:
 hooks:
     build: |
         curl -sS https://platform.sh/cli/installer | php
+        cd web/themes/ipu
+        npm install
+        npm run production
     # The deploy hook runs after your application has been deployed and started.
     deploy: |
         set -e
@@ -55,6 +58,7 @@ hooks:
         drush -y cache-rebuild
         drush -y updatedb
         drush -y config-import
+        drush -y config-set file_entity.settings allow_insecure_download 1
 
 # The configuration of app when it is exposed to the web.
 web:
@@ -163,7 +167,7 @@ crons:
         spec: '*/20 * * * *'
         cmd: 'cd web ; drush core-cron'
     snapshot:
-        spec: '0 5 * * *'
+        spec: '0 15 * * *'
         cmd: |
             if [ "$PLATFORM_BRANCH" = master ]; then
                 platform snapshot:create --yes --no-wait

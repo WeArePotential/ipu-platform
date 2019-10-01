@@ -32,3 +32,7 @@
 /web/mail_error_log.log
 
 /console/
+
+# We don't need the generated js and css as these are built on deploy
+/web/themes/ipu/assets/css
+/web/themes/ipu/assets/js

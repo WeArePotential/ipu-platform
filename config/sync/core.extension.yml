@@ -19,6 +19,7 @@ module:
   bootstrap_layouts: 0
   bootstrap_simple_carousel: 0
   breakpoint: 0
+  captcha: 0
   chosen: 0
   chosen_field: 0
   chosen_lib: 0
@@ -144,6 +145,7 @@ module:
   pdfpreview: 0
   quickedit: 0
   rdf: 0
+  recaptcha: 0
   redirect: 0
   redirect_404: 0
   redis: 0
