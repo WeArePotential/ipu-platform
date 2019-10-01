@@ -1,9 +1,12 @@
+uuid: 236724d8-3640-40e2-b7b1-9a99017e425e
 langcode: en
 status: open
 dependencies:
   enforced:
     module:
       - webform
+_core:
+  default_config_hash: Db1CJM6FchEqqeVz5YJThCK0WB599y4NjQ4GkPcGF5g
 open: null
 close: null
 weight: 0
@@ -14,7 +17,7 @@ id: contact
 title: Contact
 description: 'Basic email contact webform.'
 category: ''
-elements: "name:\n  '#title': 'Your Name'\n  '#type': textfield\n  '#required': true\n  '#default_value': '[current-user:display-name]'\nemail:\n  '#title': 'Your Email'\n  '#type': email\n  '#required': true\n  '#default_value': '[current-user:mail]'\nsubject:\n  '#title': Subject\n  '#type': textfield\n  '#required': true\n  '#test': 'Testing contact webform from [site:name]'\nmessage:\n  '#title': Message\n  '#type': textarea\n  '#required': true\n  '#test': 'Please ignore this email.'\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#submit__label': 'Send message'\n"
+elements: "name:\n  '#title': 'Your Name'\n  '#type': textfield\n  '#required': true\n  '#default_value': '[current-user:display-name]'\nemail:\n  '#title': 'Your Email'\n  '#type': email\n  '#required': true\n  '#default_value': '[current-user:mail]'\nsubject:\n  '#title': Subject\n  '#type': textfield\n  '#required': true\n  '#test': 'Testing contact webform from [site:name]'\nmessage:\n  '#title': Message\n  '#type': textarea\n  '#required': true\n  '#test': 'Please ignore this email.'\ncaptcha:\n  '#type': captcha\n  '#captcha_type': recaptcha/reCAPTCHA\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#submit__label': 'Send message'"
 css: ''
 javascript: ''
 settings:
@@ -192,7 +195,7 @@ handlers:
       cc_options: {  }
       bcc_mail: ''
       bcc_options: {  }
-      from_mail: _default
+      from_mail: postbox@ipu.org
       from_options: {  }
       from_name: _default
       subject: '[webform_submission:values:subject:raw]'
@@ -220,9 +223,9 @@ handlers:
     settings:
       states:
         - completed
-      to_mail: _default
+      to_mail: postbox@ipu.org
       to_options: {  }
-      cc_mail: ''
+      cc_mail: peter@wearepotential.org
       cc_options: {  }
       bcc_mail: ''
       bcc_options: {  }
@@ -244,6 +247,3 @@ handlers:
       return_path: ''
       sender_mail: ''
       sender_name: ''
-uuid: 236724d8-3640-40e2-b7b1-9a99017e425e
-_core:
-  default_config_hash: Db1CJM6FchEqqeVz5YJThCK0WB599y4NjQ4GkPcGF5g
