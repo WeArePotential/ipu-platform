@@ -14,7 +14,7 @@
 ]
 %}
 
-{% set document_node_title = _context.element['#object'].title.value %}
+{% set document_node_title = _context.element['#object'].getTranslation(language_id).getTitle() %}
 {%
   set title_classes = [
   'field__label',
