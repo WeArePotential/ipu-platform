@@ -89,7 +89,7 @@ class EventDocumentsContent extends DsFieldBase {
             // Get rid of the documents that aren't in the current language. I tried setting access on the paragraphs with
             // hook_ENTITY_TYPE_access() but that seems to be ignored when manually sending a render array of paragraphs.
             $document_language = $document_group_session_document->get('field_publication_language')->value;
-            if ($document_language != $ignore_language && $document_language != NULL) {
+            if (($document_language != $ignore_language && $document_language != NULL) || $document_group_session_document->get('field_persistent')->value == TRUE) {
               $view_builder = \Drupal::entityTypeManager()->getViewBuilder($document_group_session_document->getEntityTypeId());
               $documents_per_group[] = $view_builder->view($document_group_session_document, 'full', $current_language);
             }
@@ -119,7 +119,7 @@ class EventDocumentsContent extends DsFieldBase {
                 $documents = $document_widget->field_ipu_event_document->referencedEntities();
                 foreach ($documents as $document) {
                   $document_language = $document->get('field_publication_language')->value;
-                  if ($document_language !== $ignore_language && $document_language != NULL) {
+                  if (($document_language !== $ignore_language && $document_language != NULL) || $document->get('field_persistent')->value == TRUE) {
                     $view_builder = \Drupal::entityTypeManager()->getViewBuilder($document->getEntityTypeId() );
                     $document_view = $view_builder->view($document, 'full', $current_language);
                     //$other_documents[] = render($document_view);

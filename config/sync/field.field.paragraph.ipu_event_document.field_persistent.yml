@@ -1,0 +1,29 @@
+uuid: e7a5dd05-8cc3-40ca-82e6-2d7573deb9f1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_persistent
+    - paragraphs.paragraphs_type.ipu_event_document
+  module:
+    - custom_add_another
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
+id: paragraph.ipu_event_document.field_persistent
+field_name: field_persistent
+entity_type: paragraph
+bundle: ipu_event_document
+label: 'Always show'
+description: 'The document will always be displayed on events, regardless of language'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

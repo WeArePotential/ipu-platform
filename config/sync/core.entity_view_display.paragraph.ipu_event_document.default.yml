@@ -8,6 +8,7 @@ dependencies:
     - field.field.paragraph.ipu_event_document.field_event_document_title
     - field.field.paragraph.ipu_event_document.field_original_fc_id
     - field.field.paragraph.ipu_event_document.field_outcome
+    - field.field.paragraph.ipu_event_document.field_persistent
     - field.field.paragraph.ipu_event_document.field_publication_language
     - field.field.paragraph.ipu_event_document.field_speech
     - paragraphs.paragraphs_type.ipu_event_document
@@ -40,5 +41,6 @@ hidden:
   field_event_document_title: true
   field_original_fc_id: true
   field_outcome: true
+  field_persistent: true
   field_publication_language: true
   field_speech: true
