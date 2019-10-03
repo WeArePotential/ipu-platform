@@ -46,19 +46,15 @@ function ipu_preprocess_viewfield_item(&$variables) {
 }
 
 function ipu_preprocess_field(&$variables) {
-
   if ($variables['field_name'] == 'field_media_image') {
-
-    if ($variables['element']['#view_mode'] == 'highlight') {
-
+    if ($variables['element']['#view_mode'] == 'full') {
       $node = $variables['element']['#object'];
-      //$field_image = field_get_items('node', $node, 'field_media_image');
-      //if (!$paragraph->field_my_image_field->isEmpty()) {
-      /*$image = $node->field_media_image->entity->url();
-      $variables['attributes']['style'][] = 'background-image: url("' . $image . '");';
-      $variables['attributes']['style'][] = 'background-size: cover;';
-      $variables['attributes']['style'][] = 'background-position: center center;';
-      */
+      if ($node->getType() == "article") {
+        if ($node->field_video->value != NULL) {
+          unset($variables['items']);
+          //print_r(array_keys($variables['items']));
+        }
+      }
     }
   }
 
@@ -67,6 +63,21 @@ function ipu_preprocess_field(&$variables) {
       $variables['peter'] = 'Event date';
     }
   }
+
+}
+
+function ipu_preprocess_node(&$variables) {
+  /*
+ * Hide images on full display article nodes if there's a video
+  */
+  /*if($variables['node']->type == "article") {
+    //print "xxxx";
+    //$node = \Drupal\node\Entity\Node::load($variables['node']->nid);
+    print ($node->getTitle());
+    if ($node->field_video->value != NULL) {
+      unset($variables['content']['field_media_image']);
+    }
+  }*/
 }
 
 function ipu_preprocess_page_title(&$variables) {
