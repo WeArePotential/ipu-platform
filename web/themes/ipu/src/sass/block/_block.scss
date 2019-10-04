@@ -809,7 +809,7 @@ a.btn {
   .article__node-link a {
     &:hover,
     &:focus {
-      background-color: $tertiary;
+      background-color: $tertiary !important;
     }
   }
 
@@ -915,7 +915,6 @@ a.btn {
         margin-bottom: 10%;
       }
     }
-
 
     .article__field-media-image + .article__type-content {
       position: absolute;

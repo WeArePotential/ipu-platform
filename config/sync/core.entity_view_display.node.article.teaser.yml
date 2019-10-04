@@ -15,6 +15,7 @@ dependencies:
     - field.field.node.article.field_place_of_publication
     - field.field.node.article.field_tags
     - field.field.node.article.field_theme
+    - field.field.node.article.field_video
     - node.type.article
     - responsive_image.styles.narrow
   module:
@@ -79,6 +80,11 @@ targetEntityType: node
 bundle: article
 mode: teaser
 content:
+  addtoany:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   body:
     label: hidden
     weight: 4
@@ -143,4 +149,5 @@ hidden:
   field_place_of_publication: true
   field_tags: true
   field_theme: true
+  field_video: true
   langcode: true

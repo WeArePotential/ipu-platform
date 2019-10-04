@@ -1,0 +1,20 @@
+uuid: 8bbe0e90-cd88-4236-a0f7-0d8fba1e2679
+langcode: en
+status: true
+dependencies:
+  module:
+    - addtoany
+  theme:
+    - ipu
+id: addtoanybuttons
+theme: ipu
+region: breadcrumbs_and_share
+weight: -17
+provider: null
+plugin: addtoany_block
+settings:
+  id: addtoany_block
+  label: 'AddToAny buttons'
+  provider: addtoany
+  label_display: '0'
+visibility: {  }

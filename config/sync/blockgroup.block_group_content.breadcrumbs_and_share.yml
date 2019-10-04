@@ -1,0 +1,6 @@
+uuid: 4d1078a0-f047-495c-acf0-0503096209fb
+langcode: en
+status: true
+dependencies: {  }
+id: breadcrumbs_and_share
+label: 'Breadcrumbs and share'
