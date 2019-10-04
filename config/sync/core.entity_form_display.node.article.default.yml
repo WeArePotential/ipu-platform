@@ -15,6 +15,7 @@ dependencies:
     - field.field.node.article.field_place_of_publication
     - field.field.node.article.field_tags
     - field.field.node.article.field_theme
+    - field.field.node.article.field_video
     - node.type.article
   module:
     - chosen_field
@@ -25,6 +26,7 @@ dependencies:
     - link
     - path
     - text
+    - video_embed_field
 third_party_settings:
   field_layout:
     id: layout_onecol
@@ -50,6 +52,7 @@ third_party_settings:
       children:
         - field_media_image
         - field_caption
+        - field_video
       parent_name: ''
       weight: 2
       label: Media
@@ -169,6 +172,12 @@ content:
     type: chosen_select
     settings: {  }
     third_party_settings: {  }
+    region: content
+  field_video:
+    weight: 28
+    settings: {  }
+    third_party_settings: {  }
+    type: video_embed_field_textfield
     region: content
   langcode:
     type: language_select

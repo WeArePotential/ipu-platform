@@ -1,0 +1,30 @@
+uuid: 88e5931b-ec40-405c-9f3f-7aa667e71865
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_video
+    - node.type.article
+  module:
+    - custom_add_another
+    - video_embed_field
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
+id: node.article.field_video
+field_name: field_video
+entity_type: node
+bundle: article
+label: Video
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_providers:
+    youtube: youtube
+    vimeo: '0'
+    youtube_playlist: '0'
+field_type: video_embed_field
