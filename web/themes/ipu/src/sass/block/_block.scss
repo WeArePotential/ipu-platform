@@ -1881,6 +1881,7 @@ a.btn {
       display: none;
     }
 
+
     .landing-page__body {
       @extend .col-sm-8;
     }
@@ -1889,39 +1890,48 @@ a.btn {
       //align-items: center;
       margin: 20px auto;
       @extend .container;
-      .landing-page__field-data-points-for-theme {
+      .group-header-right {
         @extend .col-sm-4;
-        .field__item {
-          margin-bottom: 20px;
-          .paragraph {
-            @extend .card;
-            /* Add flex-direction row to allow value and desc to site side by side */
-            flex-direction: row;
-            flex-wrap: wrap;
+
+        .landing-page__field-data-points-for-theme {
+          .field__item {
+            margin-bottom: 20px;
+
+            .paragraph {
+              @extend .card;
+              /* Add flex-direction row to allow value and desc to site side by side */
+              flex-direction: row;
+              flex-wrap: wrap;
+            }
           }
-        }
-        .field-title {
-          @extend .card-header;
-          @extend .data-point-title;
-          flex-basis: 100%;
-        }
-        .field-data-value {
-          @extend .stats-circle;
-          margin: 10px;
-          flex-basis: 75px;
-        }
-        .field-description {
-          padding: 10px 10px 10px 0;
-          flex-basis: calc(100% - 95px);
-          font-size: $font-size-sm;
-          align-self: center;
-        }
-        .field-link {
-          flex-basis: 100%;
-          margin: 10px;
-          align-self: center;
-          a {
-            @extend .stats-more-link;
+
+          .field-title {
+            @extend .card-header;
+            @extend .data-point-title;
+            flex-basis: 100%;
+          }
+
+          .field-data-value {
+            @extend .stats-circle;
+            margin: 10px;
+            flex-basis: 75px;
+          }
+
+          .field-description {
+            padding: 10px 10px 10px 0;
+            flex-basis: calc(100% - 95px);
+            font-size: $font-size-sm;
+            align-self: center;
+          }
+
+          .field-link {
+            flex-basis: 100%;
+            margin: 10px;
+            align-self: center;
+
+            a {
+              @extend .stats-more-link;
+            }
           }
         }
       }
@@ -1941,8 +1951,11 @@ a.btn {
     .landing-page__field-media-image {
       display: none;
     }
+    .group-body-and-data {
+      @extend .row;
+    }
     .landing-page__body {
-      @extend .col-md-12;
+      @extend .col-sm-9;
       padding: 20px 0;
       h2 {
         color: $ipu-grey;
@@ -1953,6 +1966,11 @@ a.btn {
         font-size: $font-size-md;
         line-height: 1.2;
       }
+    }
+    .group-header-right {
+      @extend .col-sm-3;
+      @extend .pt-4;
+      text-align: right;
     }
   }
 }

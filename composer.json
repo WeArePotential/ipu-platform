@@ -61,6 +61,7 @@
         "drupal/entity_embed": "^1.0@beta",
         "drupal/entity_reference_revisions": "^1.6",
         "drupal/entityqueue": "^1.0@beta",
+        "drupal/eu_cookie_compliance": "^1.8",
         "drupal/eva": "^2.0-rc3",
         "drupal/facets": "1.x-dev",
         "drupal/features": "^3.8",

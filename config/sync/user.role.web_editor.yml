@@ -54,6 +54,7 @@ permissions:
   - 'delete own vacancy content'
   - 'delete own video files'
   - 'display admin pages in another language'
+  - 'display eu cookie compliance popup'
   - 'download any audio files'
   - 'download any document files'
   - 'download any image files'
