@@ -1974,7 +1974,12 @@ a.btn {
     }
   }
 }
-
+// Fix for parliaments page
+.node-9854 {
+  .group-header-right {
+    text-align: right;
+  }
+}
 /* Home page */
 .viewfield--view__theme_list__block_home_page {
   @extend .container;
