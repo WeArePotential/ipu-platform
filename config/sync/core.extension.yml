@@ -2,6 +2,7 @@ module:
   action: 0
   actions_permissions: 0
   address: 0
+  addtoany: 0
   admin_toolbar: 0
   admin_toolbar_content_languages: 0
   admin_toolbar_tools: 0
@@ -207,6 +208,7 @@ module:
   views: 10
   paragraphs: 11
   standard: 1000
+  eu_cookie_compliance: 1001
 theme:
   stable: 0
   classy: 0

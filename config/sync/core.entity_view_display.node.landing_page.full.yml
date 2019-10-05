@@ -63,7 +63,7 @@ third_party_settings:
     group_body_and_data:
       children:
         - body
-        - field_data_points_for_theme
+        - group_header_right
       parent_name: group_header_inner
       weight: 3
       format_type: html_element
@@ -78,6 +78,25 @@ third_party_settings:
         id: ''
         classes: group-body-and-data
       label: 'Body and data'
+      region: content
+    group_header_right:
+      children:
+        - field_data_points_for_theme
+        - 'dynamic_block_field:node-add_to_any'
+      parent_name: group_body_and_data
+      weight: 5
+      format_type: html_element
+      format_settings:
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: group-header-right
+      label: 'Header right'
       region: content
   ds:
     layout:
@@ -96,8 +115,15 @@ third_party_settings:
         - field_caption
         - group_body_and_data
         - body
+        - group_header_right
         - field_data_points_for_theme
+        - 'dynamic_block_field:node-add_to_any'
     fields:
+      'dynamic_block_field:node-add_to_any':
+        plugin_id: 'dynamic_block_field:node-add_to_any'
+        weight: 7
+        label: hidden
+        formatter: default
       node_title:
         plugin_id: node_title
         weight: 0
@@ -151,7 +177,7 @@ content:
     region: content
   field_data_points_for_theme:
     type: entity_reference_revisions_entity_view
-    weight: 5
+    weight: 6
     region: content
     label: hidden
     settings:
@@ -175,6 +201,7 @@ content:
     type: image
     region: content
 hidden:
+  addtoany: true
   field_theme: true
   langcode: true
   links: true

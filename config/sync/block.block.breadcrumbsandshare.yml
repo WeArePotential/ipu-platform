@@ -1,0 +1,44 @@
+uuid: a5a2e28b-52ec-4d3d-bf3e-d4552400aeae
+langcode: en
+status: true
+dependencies:
+  config:
+    - blockgroup.block_group_content.breadcrumbs_and_share
+  module:
+    - blockgroup
+    - node
+    - system
+  theme:
+    - ipu
+id: breadcrumbsandshare
+theme: ipu
+region: content
+weight: -18
+provider: null
+plugin: 'block_group:4d1078a0-f047-495c-acf0-0503096209fb'
+settings:
+  id: 'block_group:4d1078a0-f047-495c-acf0-0503096209fb'
+  label: 'Breadcrumbs and share'
+  provider: blockgroup
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: true
+    context_mapping: {  }
+  node_type:
+    id: node_type
+    bundles:
+      article: article
+      basic_page: basic_page
+      event: event
+      ipu_event: ipu_event
+      page: page
+      publication: publication
+      section_page: section_page
+      vacancy: vacancy
+      webform: webform
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

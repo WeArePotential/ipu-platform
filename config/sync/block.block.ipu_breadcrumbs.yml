@@ -10,8 +10,8 @@ _core:
   default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
 id: ipu_breadcrumbs
 theme: ipu
-region: content
-weight: -17
+region: breadcrumbs_and_share
+weight: -18
 provider: null
 plugin: system_breadcrumb_block
 settings:

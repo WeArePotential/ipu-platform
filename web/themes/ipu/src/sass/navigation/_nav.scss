@@ -105,8 +105,7 @@
     display: inline-block;
   }
 }
-main,
-ol.breadcrumb {
+main {
   background-color: gray("100");
 }
 
@@ -566,4 +565,30 @@ ol.breadcrumb {
     background-image: none !important;
     color: #fff;
   }
+}
+
+
+// Breadcrumbs.
+.block--breadcrumbsandshare {
+  background-color: $light;
+  @extend .row;
+}
+
+.block--ipu-breadcrumbs {
+  @extend .col-sm-8;
+  @extend .pl-0;
+}
+.block--addtoanybuttons {
+  @extend .col-sm-4;
+  text-align: right;
+  align-self: center;
+  vertical-align: center;
+  @include media-breakpoint-down(sm) {
+    padding-bottom: 6px;
+  }
+}
+
+ol.breadcrumb {
+background-color: $light;
+margin-bottom: 0;
 }
