@@ -1,23 +1,22 @@
-uuid: 53fb7ce9-fc87-4977-bda6-b65bca8e8794
+uuid: bc5d55e0-014f-44ef-88ae-6802915d0b93
 langcode: en
 status: true
 dependencies:
   module:
-    - addtoany
     - ctools
     - system
   theme:
     - ipu
-id: addtoanybuttons
+id: breadcrumbs
 theme: ipu
 region: breadcrumbs_and_share
-weight: -17
+weight: -18
 provider: null
-plugin: addtoany_block
+plugin: system_breadcrumb_block
 settings:
-  id: addtoany_block
-  label: 'AddToAny buttons'
-  provider: addtoany
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
   label_display: '0'
 visibility:
   'entity_bundle:node':

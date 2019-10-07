@@ -788,7 +788,11 @@ a.btn {
   .bs-region--main {
     @extend .card-body;
   }
-  &.node--type-landing-page,
+  .bs-region--main {
+    // Fix for IE11
+    height: 100%;
+  }
+    &.node--type-landing-page,
   &.node--type-basic-page,
   &.node--type-page,
   &.node--type-section-page {
@@ -1797,9 +1801,6 @@ a.btn {
   main {
     padding-top: 0 !important;
     position: relative;
-  }
-  .block--ipu-breadcrumbs {
-    display: none;
   }
   .group-header {
     @extend .container-fluid;

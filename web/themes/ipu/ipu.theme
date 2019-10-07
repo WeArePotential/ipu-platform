@@ -46,13 +46,15 @@ function ipu_preprocess_viewfield_item(&$variables) {
 }
 
 function ipu_preprocess_field(&$variables) {
-  if ($variables['field_name'] == 'field_media_image') {
+  /*
+   * Remove the output of the field_media_image if there's a video in news
+   * articles. This is because the image is usually a screenshop from the video.
+   */if ($variables['field_name'] == 'field_media_image') {
     if ($variables['element']['#view_mode'] == 'full') {
       $node = $variables['element']['#object'];
       if ($node->getType() == "article") {
         if ($node->field_video->value != NULL) {
           unset($variables['items']);
-          //print_r(array_keys($variables['items']));
         }
       }
     }
@@ -66,18 +68,12 @@ function ipu_preprocess_field(&$variables) {
 
 }
 
+/*
+* This is a placeholder as Radix doesn't make use of the node so this can't be
+ * used here
+ */
 function ipu_preprocess_node(&$variables) {
-  /*
- * Hide images on full display article nodes if there's a video
-  */
-  /*if($variables['node']->type == "article") {
-    //print "xxxx";
-    //$node = \Drupal\node\Entity\Node::load($variables['node']->nid);
-    print ($node->getTitle());
-    if ($node->field_video->value != NULL) {
-      unset($variables['content']['field_media_image']);
-    }
-  }*/
+  // Nothing.
 }
 
 function ipu_preprocess_page_title(&$variables) {

@@ -9,7 +9,7 @@ _core:
 id: ipu_page_title
 theme: ipu
 region: content
-weight: -15
+weight: -16
 provider: null
 plugin: page_title_block
 settings:
