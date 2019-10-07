@@ -226,6 +226,8 @@ function ipu_map_get_country_news($country_term_id, $regions) {
 
   if (!empty($checkempty)) {
     $view = views_embed_view('articles', 'latest_4_country', $country_term_id);
+  } else {
+    $view = [];
   }
   /*if (!empty($checkregionempty)) {
     $region_view = views_embed_view('articles', 'latest_4_by_region', $regions);;

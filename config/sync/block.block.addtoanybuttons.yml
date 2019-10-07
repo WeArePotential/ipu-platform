@@ -1,17 +1,16 @@
 uuid: 53fb7ce9-fc87-4977-bda6-b65bca8e8794
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - addtoany
-    - ctools
     - system
   theme:
     - ipu
 id: addtoanybuttons
 theme: ipu
 region: breadcrumbs_and_share
-weight: -17
+weight: -19
 provider: null
 plugin: addtoany_block
 settings:
@@ -20,23 +19,8 @@ settings:
   provider: addtoany
   label_display: '0'
 visibility:
-  'entity_bundle:node':
-    id: 'entity_bundle:node'
-    bundles:
-      article: article
-      basic_page: basic_page
-      event: event
-      ipu_event: ipu_event
-      page: page
-      publication: publication
-      section_page: section_page
-      vacancy: vacancy
-      webform: webform
-    negate: false
-    context_mapping:
-      node: '@node.node_route_context:node'
   request_path:
     id: request_path
-    pages: '<front>'
+    pages: ''
     negate: true
     context_mapping: {  }

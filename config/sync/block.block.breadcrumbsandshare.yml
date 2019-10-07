@@ -1,22 +1,36 @@
-uuid: eb9026e7-e435-459b-85b2-fa44704baf4e
+uuid: 2daf6f2b-8867-47d1-bc95-a7b85ffb019a
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - blockgroup.block_group_content.breadcrumbs_and_share
   module:
     - blockgroup
+    - ctools
+    - system
   theme:
     - ipu
 id: breadcrumbsandshare
 theme: ipu
 region: content
-weight: -17
+weight: -9
 provider: null
-plugin: 'block_group:4d1078a0-f047-495c-acf0-0503096209fb'
+plugin: 'block_group:breadcrumbs_and_share'
 settings:
-  id: 'block_group:4d1078a0-f047-495c-acf0-0503096209fb'
+  id: 'block_group:breadcrumbs_and_share'
   label: 'Breadcrumbs and share'
   provider: blockgroup
   label_display: '0'
-visibility: {  }
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      landing_page: landing_page
+    negate: true
+    context_mapping:
+      node: '@node.node_route_context:node'
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: true
+    context_mapping: {  }

@@ -1,0 +1,42 @@
+uuid: c337bc82-0c84-4236-84eb-0b788186aeae
+langcode: en
+status: true
+dependencies:
+  module:
+    - ipu_layouts
+    - node
+    - system
+  theme:
+    - ipu
+id: ipubreadcrumbblock
+theme: ipu
+region: content
+weight: -19
+provider: null
+plugin: ipu_breadcrumb_block
+settings:
+  id: ipu_breadcrumb_block
+  label: 'IPU Breadcrumb block'
+  provider: ipu_layouts
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: true
+    context_mapping: {  }
+  node_type:
+    id: node_type
+    bundles:
+      article: article
+      basic_page: basic_page
+      event: event
+      ipu_event: ipu_event
+      page: page
+      publication: publication
+      section_page: section_page
+      vacancy: vacancy
+      webform: webform
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
