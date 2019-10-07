@@ -9,7 +9,7 @@ _core:
 id: ipu_local_tasks
 theme: ipu
 region: content
-weight: -14
+weight: -15
 provider: null
 plugin: local_tasks_block
 settings:

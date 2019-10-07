@@ -5,18 +5,18 @@ dependencies: {  }
 name: large_cropped
 label: 'Large (850x550 cropped)'
 effects:
-  a7704aaa-2e77-434c-bb4f-b258e2b7b424:
-    uuid: a7704aaa-2e77-434c-bb4f-b258e2b7b424
+  6518301b-330f-489c-8ff1-82ac41a917da:
+    uuid: 6518301b-330f-489c-8ff1-82ac41a917da
     id: image_scale
-    weight: 1
+    weight: -10
     data:
-      width: 850
-      height: null
+      width: null
+      height: 550
       upscale: true
-  a1c8c651-ed5d-4af5-bf83-1ad17e430bb9:
-    uuid: a1c8c651-ed5d-4af5-bf83-1ad17e430bb9
-    id: image_crop
-    weight: 2
+  dd3eb845-d6c8-4e50-9241-4f4d7305de17:
+    uuid: dd3eb845-d6c8-4e50-9241-4f4d7305de17
+    id: image_scale_and_crop
+    weight: -9
     data:
       width: 850
       height: 550
