@@ -1,15 +1,14 @@
 uuid: bc5d55e0-014f-44ef-88ae-6802915d0b93
 langcode: en
-status: true
+status: false
 dependencies:
   module:
-    - ctools
     - system
   theme:
     - ipu
 id: breadcrumbs
 theme: ipu
-region: breadcrumbs_and_share
+region: content
 weight: -18
 provider: null
 plugin: system_breadcrumb_block
@@ -18,24 +17,4 @@ settings:
   label: Breadcrumbs
   provider: system
   label_display: '0'
-visibility:
-  'entity_bundle:node':
-    id: 'entity_bundle:node'
-    bundles:
-      article: article
-      basic_page: basic_page
-      event: event
-      ipu_event: ipu_event
-      page: page
-      publication: publication
-      section_page: section_page
-      vacancy: vacancy
-      webform: webform
-    negate: false
-    context_mapping:
-      node: '@node.node_route_context:node'
-  request_path:
-    id: request_path
-    pages: '<front>'
-    negate: true
-    context_mapping: {  }
+visibility: {  }

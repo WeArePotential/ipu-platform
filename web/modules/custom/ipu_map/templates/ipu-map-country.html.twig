@@ -1,4 +1,15 @@
 <div class="container ipu-map-country">
+
+    <div class="block--ipubreadcrumbblock">
+        <div class="block--breadcrumbs">
+            {{ drupal_block('system_breadcrumb_block', wrapper=false) }}
+        </div>
+        <div class="block--addtoanybuttons">
+            {{ drupal_block('addtoany_block', wrapper=false) }}
+        </div>
+    </div>
+
+
     <h1 class="sticky-top-js">
         <div class="d-flex align-items-end">
             <div>{{ content.flag }}</div>

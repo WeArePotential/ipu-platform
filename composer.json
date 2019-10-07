@@ -32,7 +32,7 @@
         "drupal/better_exposed_filters": "^3.0@alpha",
         "drupal/block_class": "^1.0",
         "drupal/block_field": "^1.0@alpha",
-        "drupal/blockgroup": "^1.1",
+        "drupal/blockgroup": "1.x-dev",
         "drupal/bootstrap_barrio": "^4.22",
         "drupal/bootstrap_layouts": "^5.1",
         "drupal/bootstrap_sass": "^1.9",
