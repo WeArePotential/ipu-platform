@@ -5,4 +5,11 @@ dependencies: {  }
 id: node__landing_page
 label: 'Content: Landing page'
 tags:
+  content_language: '[node:langcode]'
+  image_src: '[node:field_media_image:large_cropped]'
   title: '[current-page:title]'
+  og_image: '[node:field_media_image:large_cropped]'
+  og_site_name: '[site:name]'
+  og_title: '[node:title]'
+  og_type: '[node:content-type]'
+  og_url: '[current-page:url]'
