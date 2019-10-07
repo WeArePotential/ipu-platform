@@ -8,5 +8,19 @@ id: front
 label: 'Front page'
 tags:
   canonical_url: '[site:url]'
+  content_language: '[node:langcode]'
+  image_src: 'http://ipu.org/sites/default/files/logo_en.png'
   shortlink: '[site:url]'
   title: '[site:name] | [site:slogan]'
+  og_description: '[site:slogan]'
+  og_image: 'http://ipu.org/sites/default/files/logo_en.png'
+  og_site_name: '[site:name]'
+  og_title: '[site:name]'
+  og_type: website
+  og_url: '[site:url]'
+  twitter_cards_description: '[site:slogan]'
+  twitter_cards_image: 'http://ipu.org/sites/default/files/logo_en.png'
+  twitter_cards_page_url: '[site:url]'
+  twitter_cards_site: '@ipuparliament'
+  twitter_cards_title: '[site:name]'
+  twitter_cards_type: summary
