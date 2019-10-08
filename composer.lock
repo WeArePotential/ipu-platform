@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f6c46822328906d8b0be9412a7a42f95",
+    "content-hash": "b1dc0e256b4708505c5109606a2e43c3",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -3219,60 +3219,6 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/block_field"
             }
-        },
-        {
-            "name": "drupal/blockgroup",
-            "version": "dev-1.x",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/blockgroup.git",
-                "reference": "b2f4e78501c713946ae7c3214d57cc2d43ac7d39"
-            },
-            "require": {
-                "drupal/core": "~8.0"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "branch-alias": {
-                    "dev-1.x": "1.x-dev"
-                },
-                "drupal": {
-                    "version": "8.x-1.2-rc1+0-dev",
-                    "datestamp": "1556839981",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Dev releases are not covered by Drupal security advisories."
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "axel.rutz",
-                    "homepage": "https://www.drupal.org/user/229048"
-                },
-                {
-                    "name": "kiss.jozsef",
-                    "homepage": "https://www.drupal.org/user/2848443"
-                },
-                {
-                    "name": "leymannx",
-                    "homepage": "https://www.drupal.org/user/2482808"
-                },
-                {
-                    "name": "znerol",
-                    "homepage": "https://www.drupal.org/user/63999"
-                }
-            ],
-            "description": "Add block groups to block configuration page.",
-            "homepage": "https://www.drupal.org/project/blockgroup",
-            "support": {
-                "source": "https://git.drupalcode.org/project/blockgroup"
-            },
-            "time": "2019-05-02T23:16:59+00:00"
         },
         {
             "name": "drupal/bootstrap_barrio",
@@ -10552,67 +10498,6 @@
             }
         },
         {
-            "name": "drupal/taxonomy_manager",
-            "version": "1.0.0-alpha2",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/taxonomy_manager.git",
-                "reference": "8.x-1.0-alpha2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/taxonomy_manager-8.x-1.0-alpha2.zip",
-                "reference": "8.x-1.0-alpha2",
-                "shasum": "7becfad1cad0d26f471b8e097afcadde94a9f266"
-            },
-            "require": {
-                "drupal/core": "*"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "branch-alias": {
-                    "dev-1.x": "1.x-dev"
-                },
-                "drupal": {
-                    "version": "8.x-1.0-alpha2",
-                    "datestamp": "1538074980",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Alpha releases are not covered by Drupal security advisories."
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "Matthias Hutterer (mpdonadio)",
-                    "homepage": "https://www.drupal.org/u/mh86",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "joaogarin",
-                    "homepage": "https://www.drupal.org/user/612814"
-                },
-                {
-                    "name": "kalinchernev",
-                    "homepage": "https://www.drupal.org/user/231185"
-                },
-                {
-                    "name": "mh86",
-                    "homepage": "https://www.drupal.org/user/59747"
-                }
-            ],
-            "description": "Taxonomy_Manager provides a powerful interface for managing taxonomies via a tree view.",
-            "homepage": "https://drupal.org/project/taxonomy_manager",
-            "support": {
-                "source": "http://cgit.drupalcode.org/taxonomy_manager",
-                "issues": "https://drupal.org/project/issues/taxonomy_manager"
-            }
-        },
-        {
             "name": "drupal/taxonomy_menu",
             "version": "3.4.0",
             "source": {
@@ -17837,7 +17722,6 @@
         "drupal/admin_toolbar_content_languages": 10,
         "drupal/better_exposed_filters": 15,
         "drupal/block_field": 15,
-        "drupal/blockgroup": 20,
         "drupal/captcha": 10,
         "drupal/coffee": 10,
         "drupal/context_active_trail": 5,
@@ -17869,7 +17753,6 @@
         "drupal/search_api_sorts": 10,
         "drupal/site_status_message": 5,
         "drupal/stage_file_proxy": 10,
-        "drupal/taxonomy_manager": 15,
         "drupal/viewfield": 15,
         "drupal/views_data_export": 10,
         "drupal/views_menu_children_filter": 10,
