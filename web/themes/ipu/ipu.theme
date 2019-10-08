@@ -4,6 +4,7 @@
  * Theme functions
  */
 use Drupal\Component\Utility\Html;
+use Drupal\Component\Render\FormattableMarkup;
 
 // Include all files from the includes directory.
 $includes_path = dirname(__FILE__) . '/includes/*.inc';
@@ -125,7 +126,13 @@ function ipu_theme_suggestions_field_alter(&$suggestions, $variables) {
 }
 
 function ipu_preprocess_links__language_block(&$variables) {
-  $variables['links']['fr']['link']['#title'] = 'Français';
+  $html = '<span class="lang-code-short">EN</span><span class="lang-code-long">English</span>';
+  $markup = new FormattableMarkup($html, []);
+  $variables['links']['en']['link']['#title'] = $markup;
+
+  $html = '<span class="lang-code-short">FR</span><span class="lang-code-long">Français</span>';
+  $markup = new FormattableMarkup($html, []);
+  $variables['links']['fr']['link']['#title'] = $markup;
 }
 
 /**

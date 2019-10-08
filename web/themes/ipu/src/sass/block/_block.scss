@@ -224,10 +224,16 @@ a {
   }
 }
 @include media-breakpoint-up(md) {
+  #branding .branding-left,
+  #branding .branding-right {
+    // Fix for IE
+    width: 100%;
+  }
   #branding .branding-right .region-inner {
     display: block;
     display: flex;
     flex-direction: row;
+    justify-content: flex-end;
     margin: 0 -5px;
     & > .block {
       padding: 0 5px;
@@ -251,6 +257,17 @@ a {
 
 .block--languageswitchercontent {
   margin-left: 20px;
+  span.lang-code-short {
+    display: none;
+  }
+  @include media-breakpoint-down(sm) {
+    span.lang-code-short {
+      display: inline-block;
+    }
+    span.lang-code-long {
+      display: none;
+    }
+  }
   .es, .ar {
     display: none !important;
   }
@@ -626,7 +643,7 @@ a.btn {
 }
 .stats-content {
   padding-left: $spacer;
-  max-width: 100%;
+  max-width: calc( 100% - 75px);
 }
 .stats-age {
   border: 1px solid $ipu-light-grey;
@@ -792,7 +809,7 @@ a.btn {
     // Fix for IE11
     height: 100%;
   }
-    &.node--type-landing-page,
+  &.node--type-landing-page,
   &.node--type-basic-page,
   &.node--type-page,
   &.node--type-section-page {
@@ -867,7 +884,7 @@ a.btn {
 
 }
 
-// News specific (Brand blue)
+// News specific (Brand blue).
 .articles-card-news,
 .viewfield--view__articles,
 .taxonomy-list-article .page__content .views-rows-wrapper {
@@ -887,7 +904,9 @@ a.btn {
       height: 100%;
     }
   }*/
-
+  .view-mode-highlight-lg {
+    width: 100%;
+  }
   .node--view-mode-highlight {
     .article__type-content {
       &:hover {
@@ -1494,9 +1513,13 @@ a.btn {
       .event-dates-day {
         font-size: $font-size-lg;
       }
+      .event-dates-part {
+        display: block;
+      }
     }
   }
   .group-content {
+    max-width: 100%;
   }
 }
 
@@ -1910,12 +1933,15 @@ a.btn {
             @extend .card-header;
             @extend .data-point-title;
             flex-basis: 100%;
+            max-width: 100%;
           }
 
           .field-data-value {
             @extend .stats-circle;
             margin: 10px;
             flex-basis: 75px;
+            // For IE10.
+            display: inline-table;
           }
 
           .field-description {
@@ -1923,13 +1949,14 @@ a.btn {
             flex-basis: calc(100% - 95px);
             font-size: $font-size-sm;
             align-self: center;
+            display: inline-table;
           }
 
           .field-link {
             flex-basis: 100%;
             margin: 10px;
             align-self: center;
-
+            max-width: calc(100% - 20px);
             a {
               @extend .stats-more-link;
             }

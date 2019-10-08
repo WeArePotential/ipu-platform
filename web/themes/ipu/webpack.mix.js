@@ -19,7 +19,14 @@ mix
   .setPublicPath('assets')
   .disableNotifications()
   .options({
-    processCssUrls: false
+    processCssUrls: false,
+    autoprefixer: {
+        options: {
+          browsers: [
+            'last 3 versions',
+          ]
+        }
+      }
   });
 
 /*
