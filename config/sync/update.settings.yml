@@ -8,6 +8,7 @@ fetch:
 notification:
   emails:
     - it@ipu.org
+    - hello@wearepotential.org
   threshold: security
 _core:
   default_config_hash: 2QzULf0zovJQx3J06Y9rufzzfi-CY2CTTlEfJJh2Qyw
