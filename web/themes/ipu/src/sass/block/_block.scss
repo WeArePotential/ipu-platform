@@ -891,6 +891,7 @@ a.btn {
   .node--view-mode-highlight {
     @extend .text-white;
     @extend .bg-primary;
+    border-width: 0;
     .article__body {
       padding: 10px 0;
     }
