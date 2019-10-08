@@ -102,6 +102,8 @@ import 'bootstrap';
       $('.view-display-id-latest_3_generic .node--view-mode-highlight .bs-region').matchHeight();
       $('.view-display-id-latest_4_generic .node--view-mode-highlight .bs-region').matchHeight();
 
+      $('.taxonomy-list-article .node--view-mode-highlight .bs-region').matchHeight();
+
       // Special version for one big, 4 small
       $('.view-display-id-latest_5_generic .row .row .node--view-mode-highlight .bs-region').matchHeight();
 
