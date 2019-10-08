@@ -18,6 +18,7 @@ tags:
   og_title: '[node:title]'
   og_type: '[node:content-type]'
   og_url: '[current-page:url]'
+  twitter_cards_description: '[node:summary]'
   twitter_cards_image: '[node:field_media_image:large]'
   twitter_cards_page_url: '[current-page:url]'
   twitter_cards_site: '@ipuparliament'
