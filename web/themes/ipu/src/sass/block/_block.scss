@@ -15,6 +15,7 @@ h1,
   font-weight: 400;
   padding-bottom: 4px;
   border-bottom: 2px solid color("ipu-teal");
+  margin-top: 10px;
   margin-bottom: 20px;
 }
 
@@ -1111,6 +1112,9 @@ a.btn {
 
 /* News styles */
 .node-article {
+  h1 {
+    margin-top: 0;
+  }
   .article__node-post-date {
     font-weight: $font-weight-bold;
   }
@@ -1854,9 +1858,14 @@ a.btn {
           background-color: rgba(255, 255, 255, 0.8);
           padding: 10px;
           border-bottom: 4px solid $secondary;
+          @include media-breakpoint-down(sm) {
+            left: 0;
+            bottom: 0;
+          }
           h1 {
             border-bottom-width: 0px;
             margin-bottom: 0;
+            margin-top: 0;
           }
           h1:before {
             content: "";

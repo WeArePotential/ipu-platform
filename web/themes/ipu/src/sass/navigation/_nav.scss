@@ -582,6 +582,8 @@ main {
   text-align: right;
   align-self: center;
   vertical-align: center;
+  padding-top: 2px;
+  padding-bottom: 4px;
   @include media-breakpoint-down(sm) {
     padding-bottom: 6px;
   }
