@@ -457,8 +457,12 @@ main {
 }
 
 /* Resources flyout */
-.ultimenu__item-3 .ultimenu__flyout .block {
+.ultimenu__item-3 .ultimenu__flyout .block--ipucontentblock-4 {
   @extend .col-md-4;
+}
+.ultimenu__item-3 .ultimenu__flyout .block--knowledgectas-2 {
+  @extend .col-md-8;
+  padding: 0 20px;
 }
 
 // Social follows are in the footer anyway

@@ -4,14 +4,12 @@ status: true
 dependencies:
   module:
     - ipu_layouts
-    - node
-    - system
   theme:
     - ipu
 id: ipubreadcrumbblock
 theme: ipu
 region: content
-weight: -19
+weight: -18
 provider: null
 plugin: ipu_breadcrumb_block
 settings:
@@ -19,24 +17,4 @@ settings:
   label: 'IPU Breadcrumb block'
   provider: ipu_layouts
   label_display: '0'
-visibility:
-  request_path:
-    id: request_path
-    pages: '<front>'
-    negate: true
-    context_mapping: {  }
-  node_type:
-    id: node_type
-    bundles:
-      article: article
-      basic_page: basic_page
-      event: event
-      ipu_event: ipu_event
-      page: page
-      publication: publication
-      section_page: section_page
-      vacancy: vacancy
-      webform: webform
-    negate: false
-    context_mapping:
-      node: '@node.node_route_context:node'
+visibility: {  }
