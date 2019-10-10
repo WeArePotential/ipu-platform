@@ -1502,6 +1502,14 @@ a.btn {
   }
 }
 
+.view-publications.view-display-id-multiple_ids {
+  .more-link a {
+    @extend .btn;
+    @extend .btn-sm;
+    @extend .btn-outline-primary;
+  }
+}
+
 .node--view-mode-teaser {
   position: relative;
   margin-bottom: $spacer;

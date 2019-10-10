@@ -6,7 +6,7 @@ dependencies:
     - context_active_trail
     - ctools
 name: news_in_brief
-label: 'News in brief'
+label: 'News articles'
 group: 'News menu'
 description: 'News in brief menu parent'
 requireAllConditions: false
@@ -28,8 +28,8 @@ reactions:
     saved: false
   active_trail:
     id: active_trail
-    trail: 'main:menu_link_content:e305309d-8770-4f7e-816f-3b9ad736ac9d'
-    breadcrumbs: 1
+    trail: 'main:menu_link_content:6a80c18f-2a9a-4cd0-bae6-efb73a223fb2'
+    breadcrumbs: 0
     breadcrumb_title: 0
     uuid: bf4b203a-58c3-4f54-ac9a-a6e1f7e8a522
 weight: 0

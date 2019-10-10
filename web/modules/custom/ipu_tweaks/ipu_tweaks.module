@@ -2,7 +2,8 @@
 
 use Drupal\Core\StringTranslation;
 use Drupal\datetime\Plugin\Field\FieldType\DateTimeItemInterface;
-use \Drupal\block\Entity\Block;
+use Drupal\block\Entity\Block;
+use Drupal\Core\Url;
 
 include_once 'inc/utils.inc';
 
@@ -173,7 +174,25 @@ function ipu_tweaks_preprocess_field(&$variables) {
       //print_r(json_decode(json_encode($variables['element'])),true);
     }
   }
+
+  if ($variables['element']['#field_name'] == 'field_publication_type') {
+
+    foreach ($variables['items'] as $index => $item) {
+      $route_name = 'view.publications.page_1';
+      //$new_route = ['/resources/publications'];
+      foreach($variables['element']['#items'] as $item) {
+        $tid = $item->target_id;
+      }
+      $options = [
+        'query' => ['field_publication_type_target_id_selective' => $tid],
+      ];
+      $url = Url::fromRoute($route_name, [], $options);
+      $variables['items'][$index]['content']['#url'] = $url;
+    }
+  }
+
 }
+
 
 /**
  * Implements hook_field_attach_view_alter()
@@ -294,8 +313,9 @@ function ipu_tweaks_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $for
 /**
  * Hide the page title for some node types while still showing it
  * on all other node types, and non-node pages.
+ * Hide the (ipu) breadcrumbs block on landing pages and the home page
  *
- * This is required, as hiding page title on any content types also hides on Views and other pages!
+ * This is required, as hiding page title (or any block) on any content types also hides on Views and other pages!
  * See https://www.drupal.org/project/drupal/issues/2887071
  *
  * Implements hook_block_access().
@@ -303,22 +323,26 @@ function ipu_tweaks_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $for
 use Drupal\Core\Session\AccountInterface;
 use Drupal\node\NodeInterface;
 use Drupal\Core\Access\AccessResult;
-use Drupal\Core\Url;
 
 function ipu_tweaks_block_access(Block $block, $operation, AccountInterface $account) {
-  $disallowedTypes = [
-    'article',
-    'event',
-    'ipu_event',
-    'landing_page',
-    'basic_page',
-    'page',
-    'section_page',
-    'publication',
-    'vacancy'
-  ];
 
-  if ($operation === 'view' && $block->getPluginId() == 'page_title_block') {
+  if ($operation != 'view') {
+    return AccessResult::neutral();
+  }
+
+  // For certain content types, page title is in the display suite layout.
+  if ($block->getPluginId() == 'page_title_block') {
+    $disallowedTypes = [
+      'article',
+      'event',
+      'ipu_event',
+      'landing_page',
+      'basic_page',
+      'page',
+      'section_page',
+      'publication',
+      'vacancy'
+    ];
     $node = \Drupal::routeMatch()->getParameter('node');
     if ($node instanceof NodeInterface) {
       if (in_array($node->bundle(), $disallowedTypes)) {
@@ -331,6 +355,24 @@ function ipu_tweaks_block_access(Block $block, $operation, AccountInterface $acc
       return AccessResult::forbidden();
     }
   }
+
+  if ($block->getPluginId() == 'ipu_breadcrumb_block') {
+    $disallowedTypes = [
+      'landing_page',
+    ];
+    $node = \Drupal::routeMatch()->getParameter('node');
+    if ($node instanceof NodeInterface) {
+      if (in_array($node->bundle(), $disallowedTypes)) {
+        return AccessResult::forbidden();
+      }
+    }
+    $current_url = Url::fromRoute('<current>');
+    $path  = explode('/', $current_url->getInternalPath());
+    if ($path[0] == 'parliament' || $path[0] == 'parlement' ) {
+      return AccessResult::forbidden();
+    }
+  }
+
   return AccessResult::neutral();
 }
 
