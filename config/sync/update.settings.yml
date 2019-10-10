@@ -7,7 +7,7 @@ fetch:
   timeout: 30
 notification:
   emails:
-    - it@ipu.org
+    - web@ipu.org
     - hello@wearepotential.org
   threshold: security
 _core:
