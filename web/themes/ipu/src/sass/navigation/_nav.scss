@@ -581,6 +581,7 @@ main {
   @extend .col-sm-8;
   @extend .pl-0;
 }
+
 .block--addtoanybuttons {
   @extend .col-sm-4;
   text-align: right;
@@ -590,6 +591,16 @@ main {
   padding-bottom: 4px;
   @include media-breakpoint-down(sm) {
     padding-bottom: 6px;
+    position: fixed;
+    width: 40px;
+    right: 0;
+    background-color: rgba(255,255,255, 0.6);
+    z-index: 2;
+    top: 20vh;
+    border-radius: 3px;
+    a {
+      padding: 0;
+    }
   }
 }
 
