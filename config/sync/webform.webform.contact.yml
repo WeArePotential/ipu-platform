@@ -225,7 +225,7 @@ handlers:
         - completed
       to_mail: postbox@ipu.org
       to_options: {  }
-      cc_mail: peter@wearepotential.org
+      cc_mail: ''
       cc_options: {  }
       bcc_mail: ''
       bcc_options: {  }
