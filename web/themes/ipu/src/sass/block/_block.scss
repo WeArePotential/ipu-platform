@@ -2240,3 +2240,31 @@ a.btn {
 .node-90 .col-md-5 .section-page__field-media-image {
   display: none;
 }
+
+.resources-journalists {
+  display: flex;
+  flex-direction: row;
+  @include media-breakpoint-down(md) {
+    flex-direction: column;
+  }
+}
+.resource-journalists {
+  background-color: #fff;
+  border: 1px solid #cccccc;
+  box-shadow: 0 0 3px 0 #cccccc;
+  margin: 0 5px 10px 5px;
+  padding: 8px;
+  font-size: 0.875rem;
+
+  .title a {
+    font-size: $font-size-md;
+  }
+
+  .description {
+    display: none;
+  }
+
+  .more {
+    display: none;
+  }
+}

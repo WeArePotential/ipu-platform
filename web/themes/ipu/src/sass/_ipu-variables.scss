@@ -123,23 +123,3 @@ $card-spacer-x: 10px;
     content: "\F061" !important;
   }
 }
-.resources-journalists {
-  display: flex;
-}
-.resource-journalists {
-  background-color: #fff;
-  border: 1px solid #cccccc;
-  box-shadow: 0 0 3px 0 #cccccc;
-  margin: 0 5px 10px 5px;
-  padding: 8px;
-  font-size: 0.875rem;
-  .title a {
-    font-size: $font-size-md;
-  }
-  .description {
-    display: none;
-  }
-  .more {
-    display: none;
-  }
-}
