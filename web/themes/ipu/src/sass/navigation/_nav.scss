@@ -596,9 +596,9 @@ main {
     padding: 0 0 0.5rem 1rem;
     text-align: left;
   }
-  /* Nice overlay - for testing
+  //Nice overlay - for testing
     @include media-breakpoint-down(sm) {
-      padding-bottom: 6px;
+      padding: 0.5rem;
       position: fixed;
       width: 40px;
       right: 0;
@@ -610,7 +610,7 @@ main {
         padding: 0;
       }
     }
-    */
+
 }
 
 ol.breadcrumb {
