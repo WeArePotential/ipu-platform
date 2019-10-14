@@ -109,6 +109,9 @@ main {
   background-color: gray("100");
 }
 
+.block--ipu-content {
+  overflow: hidden;
+}
 
 /**
 * Right hand column sub-meuu
@@ -590,21 +593,34 @@ main {
   padding-top: 2px;
   padding-bottom: 4px;
   @include media-breakpoint-down(sm) {
-    padding-bottom: 6px;
-    position: fixed;
-    width: 40px;
-    right: 0;
-    background-color: rgba(255,255,255, 0.6);
-    z-index: 2;
-    top: 20vh;
-    border-radius: 3px;
-    a {
-      padding: 0;
-    }
+    padding: 0 0 0.5rem 1rem;
+    text-align: left;
   }
+  /* Nice overlay - for testing
+    @include media-breakpoint-down(sm) {
+      padding-bottom: 6px;
+      position: fixed;
+      width: 40px;
+      right: 0;
+      background-color: rgba(255,255,255, 0.6);
+      z-index: 2;
+      top: 20vh;
+      border-radius: 3px;
+      a {
+        padding: 0;
+      }
+    }
+    */
 }
 
 ol.breadcrumb {
 background-color: $light;
 margin-bottom: 0;
+}
+
+// Ensure fits across the screen on mobile.
+@include media-breakpoint-down(sm) {
+  .pager__items {
+    flex-wrap: wrap;
+  }
 }
