@@ -71,6 +71,10 @@ a {
 .page__footer {
   background-color: theme-color("dark");
   padding: 40px 0 20px 0;
+  // Make space for mobile social share at bottom
+  @include media-breakpoint-down(md) {
+    padding-bottom: 50px;
+  }
   .container > p {
     font-size: $font-size-sm;
     color: $ipu-white;
