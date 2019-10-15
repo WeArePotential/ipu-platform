@@ -523,7 +523,7 @@ main {
   }
   a:after {
     content: "≡";
-    font-size: 2em;
+    font-size: 3em;
     position: absolute;
     right: 1rem;
     top: 0.9rem;
@@ -555,13 +555,27 @@ main {
       font-weight: $font-weight-light;
       padding: 2px 6px;
     }
-    li.menu-item-level-0.menu-item--expanded > a {
+    li.menu-item-level-0 > a {
       background-color: $ipu-teal-light;
-      font-weight: $font-weight-normal;
+      font-weight: $font-weight-bold;
       border-bottom: 1px solid $ipu-white;
       i {
         margin-left: 4px;
       }
+    }
+    .menu-item-level-1 > a {
+      font-weight: $font-weight-bold;
+    }
+    .menu-item-level-1.menu-item--expanded > a {
+      border-bottom: 1px solid $secondary;
+      font-weight: $font-weight-bold;
+    }
+    .menu-item--expanded.menu-item-level-2 > a {
+      font-weight: $font-weight-normal;
+      padding: 2px 6px 0 6px;
+    }
+    .menu-item-level-3 > a {
+      padding: 0px 6px;
     }
   }
 }

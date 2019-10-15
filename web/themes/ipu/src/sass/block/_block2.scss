@@ -12,6 +12,7 @@
   }
 }
 
+/* Main event page styling */
 .node-ipu_event {
   .ipu-event__node-title h2 {
     @extend h1;
@@ -22,6 +23,9 @@
       margin-top: 10px;
       border-bottom: 1px solid $ipu-teal;
     }
+  }
+  .ipu-event-section__field-ie-fc-title {
+    @extend h3;
   }
   .ipu-event__sponsors, .ipu-event__field-sponsor {
     margin: 10px 0;
