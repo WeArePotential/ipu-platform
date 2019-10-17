@@ -1996,6 +1996,7 @@ a.btn {
             flex-basis: calc(100% - 95px);
             font-size: $font-size-sm;
             align-self: center;
+            max-width: calc(100% - 95px);
             display: inline-table;
           }
 
