@@ -29,7 +29,18 @@
     </div>
   {% else %}
     {% for item in items %}
-      <div{{ attributes.addClass(classes) }}><div class="field-node-title-wrapper"><div class="field-node-title-inner">{{ item.content }}<div class="field-node-title-theme-description">{{ theme_description|striptags }}</div></div></div></div>
+      <div{{ attributes.addClass(classes) }}>
+        {% if (amend_title) %}
+        <div class="field-node-title-wrapper">
+          <div class="field-node-title-inner">
+            {{ item.content }}
+            <div class="field-node-title-theme-description">{{ theme_description|striptags }}</div>
+          </div>
+        </div>
+        {% else %}
+          {{ item.content }}
+        {% endif %}
+      </div>
     {% endfor %}
   {% endif %}
 {% else %}

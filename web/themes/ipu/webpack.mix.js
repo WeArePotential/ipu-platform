@@ -24,6 +24,7 @@ mix
         options: {
           browsers: [
             'last 3 versions',
+              'iOS > 6'
           ]
         }
       }

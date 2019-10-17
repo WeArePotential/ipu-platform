@@ -133,9 +133,11 @@ function ipu_tweaks_preprocess_field(&$variables) {
   }
   if ($variables['element']['#field_name'] == 'node_title' && $variables['element']['#bundle'] == 'landing_page') {
     //\Drupal::messenger()->addMessage('View mode'. print_r(array_keys($variables['element']),true));
+    //\Drupal::messenger()->addMessage('View mode: '. $variables['element']['#view_mode']);
 
-    if ($variables['element']['#view_mode'] == 'full' || ($variables['element']['#view_mode'] == '_custom' && $variables['element']['#ds_view_mode'] == 'full')) {
-      //\Drupal::messenger()->addMessage('View mode: '. print_r($variables['element']['#ds_view_mode'],true));
+    $variables['amend_title'] = FALSE;
+    if ($variables['element']['#view_mode'] == 'full' || (($variables['element']['#view_mode'] == '_custom' && $variables['element']['#ds_view_mode'] == 'full'))) {
+      //\Drupal::messenger()->addMessage('DS View mode: '. print_r($variables['element']['#ds_view_mode'],true));
       $node = $variables['element']['#object'];
       // Should already be available $variables['#node'] = $node;
 
@@ -158,6 +160,7 @@ function ipu_tweaks_preprocess_field(&$variables) {
                 $term_entity = $term_entity->getTranslation($current_language);
               }
             }
+            $variables['amend_title'] = TRUE;
             $variables['theme_description'] = $term_entity->getDescription();
             $variables['title_suffix'] = '<h2>'.$term_entity->getDescription().'</h2>';
           }
