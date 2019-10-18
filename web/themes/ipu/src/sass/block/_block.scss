@@ -37,13 +37,14 @@ h1,
   }
 }
 
-// h2's are 
 h1 {
   color: color("ipu-dark-grey");
   font-size: $h1-font-size;
   border-width: 4px;
+  @include media-breakpoint-down(md) {
+    font-size: $font-size-base * 2.2;
+  }
 }
-
 h2 {
   color: color("ipu-teal");
   font-size: 1.6rem;

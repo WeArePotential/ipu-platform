@@ -11,12 +11,20 @@ $grid-breakpoints: (
 );
 
 $container-max-widths: (
-        sm: 540px,
-        md: 720px,
-        lg: 960px,
+        sm: 560px,
+        md: 746px,
+        lg: 968px,
         xl: 1140px,
         xxl: 1390px
 );
+/*$container-max-widths: (
+        sm: 576px,
+        md: 768px,
+        lg: 992px,
+        xl: 1200px,
+        xxl: 1440px
+);*/
+
 $grid-gutter-width: 15px;
 
 // Font family styles

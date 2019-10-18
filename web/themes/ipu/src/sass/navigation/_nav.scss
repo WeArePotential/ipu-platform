@@ -595,12 +595,12 @@ main {
 }
 
 .block--breadcrumbs {
-  @extend .col-sm-8;
+  @extend .col-md-8;
   @extend .pl-0;
 }
 
 .block--addtoanybuttons {
-  @extend .col-sm-4;
+  @extend .col-md-4;
   text-align: right;
   align-self: center;
   vertical-align: center;
@@ -634,11 +634,9 @@ main {
   }
 }
 
-
-
 ol.breadcrumb {
-background-color: $light;
-margin-bottom: 0;
+  background-color: $light;
+  margin-bottom: 0;
 }
 
 // Ensure fits across the screen on mobile.
