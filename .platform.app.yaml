@@ -49,7 +49,7 @@ hooks:
         curl -sS https://platform.sh/cli/installer | php
         cd web/themes/ipu
         npm install
-        npm run production
+        npm run dev
     # The deploy hook runs after your application has been deployed and started.
     deploy: |
         set -e
