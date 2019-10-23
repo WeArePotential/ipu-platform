@@ -1470,12 +1470,12 @@ a.btn {
       }
     }
     .publication-body-and-image {
-      @extend .d-flex;
+      @extend .row;
       & > div {
-        flex: 1 0 0;
+        @extend .col-md-6;
       }
       .publication__field-media-image {
-        margin-left: $grid-gutter-width;
+        //margin-left: $grid-gutter-width;
         img {
           border: 1px solid $ipu-teal-light;
           padding: 4px;
