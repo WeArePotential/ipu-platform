@@ -15,7 +15,7 @@ h1,
   font-weight: 400;
   padding-bottom: 4px;
   border-bottom: 2px solid color("ipu-teal");
-  margin-top: 10px;
+  padding-top: 10px;
   margin-bottom: 20px;
 }
 
@@ -37,13 +37,14 @@ h1,
   }
 }
 
-// h2's are 
 h1 {
   color: color("ipu-dark-grey");
   font-size: $h1-font-size;
   border-width: 4px;
+  @include media-breakpoint-down(md) {
+    font-size: $font-size-base * 2.2;
+  }
 }
-
 h2 {
   color: color("ipu-teal");
   font-size: 1.6rem;
@@ -62,9 +63,19 @@ a {
   -webkit-transition: all 300ms ease;
   transition: all 300ms ease;
 }
+
+.block--ipu-content img,
+.block--ipu-content iframe {
+  max-width: 100%;
+}
+
 .page__footer {
   background-color: theme-color("dark");
   padding: 40px 0 20px 0;
+  // Make space for mobile social share at bottom
+  @include media-breakpoint-down(md) {
+    padding-bottom: 50px;
+  }
   .container > p {
     font-size: $font-size-sm;
     color: $ipu-white;
@@ -600,11 +611,18 @@ a.btn {
 .breadcrumb {
   font-size: $font-size-sm;
 }
+.breadcrumb-item + .breadcrumb-item {
+  @include media-breakpoint-down(sm) {
+    padding-left: 0.25rem;
+  }
+}
 
 .breadcrumb-item + .breadcrumb-item::before {
   content: "|";
+  @include media-breakpoint-down(sm) {
+    padding-right: 0rem;
+  }
 }
-
 // Country page and data points on home page
 
 // Data points
@@ -1155,19 +1173,21 @@ a.btn {
   }
 
   .group-related {
-    margin: 0 -15px;
+    //margin: 0 -15px;
     background-color: $light;
     padding: 20px 0;
-    & .field__label {
+    // Immediate div is bounded
+    & > div {
+      @extend .container;
+    }
+    .field__label {
       @extend h2;
       font-weight: $font-weight-light !important;
       border-bottom: 1px solid $secondary;
       margin: 30px 0;
     }
-    & > div {
-      @extend .container;
-      .field__item .views-element-container > div {
-        @extend .row;
+    .field__item {
+      .views-element-container {
         .views-row {
           @extend .col-lg-4;
           @extend .col-md-6;
@@ -1223,6 +1243,7 @@ a.btn {
       }
     }
     .section-page__node-link,
+    .landing-page__node-link,
     .basic-page__node-link {
       display: none;
     }
@@ -1236,49 +1257,54 @@ a.btn {
       .basic-page__node-title,
       .landing-page__node-title,
       .page__node-title {
+        & > * {
+          margin: 0;
+        }
         position: absolute;
         top: 20px;
-        left: 0px;
+        left: 0;
         background-color: rgb(255, 255, 255, 0.85);
         max-width: calc(100% - 20px);
 
         &:hover {
           background-color: rgb(255, 255, 255, 0.95);
           transition: all 300ms ease;
-
-          a {
-            text-decoration: none;
-            color: $ipu-blue;
-          }
         }
       }
     }
+
     .field-media-image ~ .group-content,
     .group-image ~ .group-content {
       h3 {
         font-size: $font-size-base;
-        padding: 0;
-        margin: 0;
-        a {
-          padding: 4px 8px;
-          display:block;
-          font-weight: 400;
-          &:after {
-            padding-left: 4px;
-            font-family: "Font Awesome 5 Free", sans-serif;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            display: inline-block;
-            font-style: normal;
-            font-variant: normal;
-            font-weight: 900;
-            line-height: 1;
-            content: "\f061" !important;
-          }
-        }
+        margin: 0 !important;
+      }
+    }
+    .field-media-image ~ .group-content,
+    .group-image ~ .group-content {
+      a {
+        padding: 8px 8px;
+        display:block;
+        font-weight: 400;
+        font-size: $font-size-base;
+        line-height: 1.1rem;
+      }
+
+      a:after {
+        padding-left: 4px;
+        font-family: "Font Awesome 5 Free", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        display: inline-block;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: 900;
+        line-height: 1;
+        content: "\f061" !important;
       }
 
     }
+
   }
 }
 
@@ -1444,12 +1470,12 @@ a.btn {
       }
     }
     .publication-body-and-image {
-      @extend .d-flex;
+      @extend .row;
       & > div {
-        flex: 1 0 0;
+        @extend .col-md-6;
       }
       .publication__field-media-image {
-        margin-left: $grid-gutter-width;
+        //margin-left: $grid-gutter-width;
         img {
           border: 1px solid $ipu-teal-light;
           padding: 4px;
@@ -1656,6 +1682,7 @@ a.btn {
   @extend .image-with-caption;
   /* Put caption over image */
   .basic-page__field-caption,
+  .landing-page__field-caption,
   .page__field-caption {
     @extend .image-with-caption-caption;
   }
@@ -1887,6 +1914,9 @@ a.btn {
           .field-node-title-theme-description {
             margin-left: calc( 40px + 1rem );
             font-size: $font-size-md;
+            @include media-breakpoint-down(sm) {
+              font-size: $font-size-sm;
+            }
           }
         }
       }
@@ -1967,6 +1997,7 @@ a.btn {
             flex-basis: calc(100% - 95px);
             font-size: $font-size-sm;
             align-self: center;
+            max-width: calc(100% - 95px);
             display: inline-table;
           }
 
@@ -2221,4 +2252,32 @@ a.btn {
 // Hide image on structure page as it's used as a main image too
 .node-90 .col-md-5 .section-page__field-media-image {
   display: none;
+}
+
+.resources-journalists {
+  display: flex;
+  flex-direction: row;
+  @include media-breakpoint-down(md) {
+    flex-direction: column;
+  }
+}
+.resource-journalists {
+  background-color: #fff;
+  border: 1px solid #cccccc;
+  box-shadow: 0 0 3px 0 #cccccc;
+  margin: 0 5px 10px 5px;
+  padding: 8px;
+  font-size: 0.875rem;
+
+  .title a {
+    font-size: $font-size-md;
+  }
+
+  .description {
+    display: none;
+  }
+
+  .more {
+    display: none;
+  }
 }

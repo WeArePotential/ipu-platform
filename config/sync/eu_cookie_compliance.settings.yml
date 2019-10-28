@@ -17,15 +17,15 @@ popup_bg_hex: 0066a1
 popup_clicking_confirmation: false
 popup_scrolling_confirmation: false
 popup_delay: 1000
-show_disagree_button: true
+show_disagree_button: false
 popup_disagree_button_message: 'More information'
-popup_enabled: false
+popup_enabled: true
 popup_find_more_button_message: 'More info'
 popup_height: null
 popup_hide_agreed: false
 popup_hide_button_message: Hide
 popup_info:
-  value: '<h2>We use cookies on this site to enhance your user experience</h2><p>By clicking the Accept button, you agree to us doing so.</p>'
+  value: '<h2>We use minimal cookies on this site to enhance your user experience and record anonymous usage with Google Analytics</h2><p>By continuing to use the site, you agree to us doing so. Clicking the Accept button will remove this message.&nbsp;</p><p><a href="/node/9571">More on our policies</a></p>'
   format: restricted_html
 mobile_popup_info:
   value: ''
@@ -42,10 +42,10 @@ use_bare_css: false
 disagree_do_not_show_popup: false
 reload_page: false
 cookie_name: ''
-exclude_uid_1: true
+exclude_uid_1: false
 better_support_for_screen_readers: false
 use_mobile_message: false
-method: opt_in
+method: default
 disagree_button_label: 'No thank you'
 disabled_javascripts: ''
 whitelisted_cookies: ''

@@ -15,13 +15,13 @@
     <h2 class="sr-only">{{ 'Data points'|t }} :</h2>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-lg-3 col-md-6">
                 <div class="data-parliament-name">{{ parliamentary_name|join(', ') }}</div>
                 <p>{{ 'The IPU data corresponds to the lower chamber if the parliament is bicameral. For information about upper chambers, refer to <a href="https://data.ipu.org">Parline</a>'|t }}</p>
                 <!--p>{{ description }}</p-->
             </div>
             {% if current_women_percent is not same as(null) %}
-            <div class="col-md-3">
+            <div class="col-lg-3 col-md-6">
                 <div class="card h-100 card-current-women-percent">
                     <div class="term-icon term-icon-88 card-header">
                         <span class="data-point-title">{{ 'Women in parliament'|t }}</span>
@@ -42,7 +42,7 @@
             {% endif %}
 
             {% if total_younger_45_percentage is not same as(null) %}
-            <div class="col-md-3">
+            <div class="col-lg-3 col-md-6">
                 <div class="card h-100 card-under-45-percent">
                     <div class="term-icon term-icon-117 card-header">
                         <span class="data-point-title">{{ 'Youth in parliament'|t }}</span>
@@ -63,7 +63,7 @@
             {% endif %}
 
             {% if human_rights_cases is not same as(null) %}
-            <div class="col-md-3">
+            <div class="col-lg-3 col-md-6">
                 <div class="card h-100">
                     <div class="term-icon term-icon-82 card-header">
                         <span class="data-point-title">{{ 'MPs\' human rights'|t }}</span>

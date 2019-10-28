@@ -109,6 +109,9 @@ main {
   background-color: gray("100");
 }
 
+.block--ipu-content {
+  //overflow: hidden;
+}
 
 /**
 * Right hand column sub-meuu
@@ -520,7 +523,7 @@ main {
   }
   a:after {
     content: "≡";
-    font-size: 2em;
+    font-size: 2.2em;
     position: absolute;
     right: 1rem;
     top: 0.9rem;
@@ -552,13 +555,27 @@ main {
       font-weight: $font-weight-light;
       padding: 2px 6px;
     }
-    li.menu-item-level-0.menu-item--expanded > a {
+    li.menu-item-level-0 > a {
       background-color: $ipu-teal-light;
-      font-weight: $font-weight-normal;
+      font-weight: $font-weight-bold;
       border-bottom: 1px solid $ipu-white;
       i {
         margin-left: 4px;
       }
+    }
+    .menu-item-level-1 > a {
+      font-weight: $font-weight-bold;
+    }
+    .menu-item-level-1.menu-item--expanded > a {
+      border-bottom: 1px solid $secondary;
+      font-weight: $font-weight-bold;
+    }
+    .menu-item--expanded.menu-item-level-2 > a {
+      font-weight: $font-weight-normal;
+      padding: 2px 6px 0 6px;
+    }
+    .menu-item-level-3 > a {
+      padding: 0px 6px;
     }
   }
 }
@@ -578,22 +595,86 @@ main {
 }
 
 .block--breadcrumbs {
-  @extend .col-sm-8;
+  @extend .col-md-8;
   @extend .pl-0;
 }
+
 .block--addtoanybuttons {
-  @extend .col-sm-4;
+  @extend .col-md-4;
   text-align: right;
   align-self: center;
   vertical-align: center;
   padding-top: 2px;
   padding-bottom: 4px;
   @include media-breakpoint-down(sm) {
-    padding-bottom: 6px;
+    padding: 0 0 0.5rem 1rem;
+    text-align: left;
+  }
+}
+.block--addtoanybuttons, .landing-page__dynamic-block-fieldnode-add-to-any > .block {
+  @include media-breakpoint-down(sm) {
+    padding: 0 1rem;
+    position: fixed;
+    width: 100%;
+    right: 0;
+    background-color: rgba(248, 249, 250, 0.8);
+    z-index: 2;
+    bottom: 0;
+    text-align: center;
+    border-top: 1px solid $ipu-light-grey;
+    a {
+      padding: 0.5rem;
+    }
+    .a2a_svg {
+      width: 36px !important;
+      line-height: 36px !important;
+      height: 36px !important;
+      background-size: 36px !important;
+    }
   }
 }
 
 ol.breadcrumb {
-background-color: $light;
-margin-bottom: 0;
+  background-color: $light;
+  margin-bottom: 0;
+}
+
+// Ensure fits across the screen on mobile.
+@include media-breakpoint-down(sm) {
+  .pager__items {
+    flex-wrap: wrap;
+  }
+}
+
+.eu-cookie-compliance-content {
+  padding-top: 20px;
+  padding-bottom: 10px;
+  border-top: 2px solid $secondary;
+
+  .eu-cookie-compliance-default-button.agree-button {
+    @extend .btn;
+    @extend .btn-light;
+    @extend .btn-sm;
+    color: $primary;
+    background-image: none;
+    text-shadow: none;
+    box-shadow: none;
+    font-family: $font-family-base;
+  }
+
+  .eu-cookie-compliance-message {
+    h2 {
+      @extend h3;
+    }
+
+    p {
+      font-size: $font-size-sm;
+      font-weight: $font-weight-light;
+    }
+
+    a {
+      color: #fff;
+      font-weight: $font-weight-normal;
+    }
+  }
 }

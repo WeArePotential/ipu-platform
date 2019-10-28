@@ -13,13 +13,17 @@
                 console.log(ipumap.data);
                 return false;
             }
-
+            var current_url = $(location). attr("pathname");
+            current_url.indexOf(1);
+            current_url.toLowerCase();
+            var current_lang = current_url.split("/")[1] == 'fr' ? 'fr' : '';
             settings.areas = [];
 
             /*
              * If we have an iso_code for parliament, use this for the hyperlink
              * Unless the the no_parliament_page is checked, in which case no link needed
              */
+
             for (var index = 0; index < data.length; ++index) {
                 var member = (data[index].field_ipu_member != 'False');
                 var signatory = (data[index].field_principles_signatory != 'False');
@@ -31,19 +35,25 @@
                     has_parent_parliament = true;
                 }
                 var colour = ((signatory) ? '#E98300' : '#6F7376');
+                colour = ((no_parliament_page) ? '#85edfc' : colour);
                 var attr = {
                     name: data[index].name,
                     ipu_member: member,
                     principles_signatory: signatory,
                     has_parent_parliament: has_parent_parliament,
+                    no_parliament_page: no_parliament_page,
                     description: data[index].description__value,
                     attrs: {"stroke-width": 0.4, "fill": colour},
                 };
                 // TODO: Get parliaments page url from config
                 if (no_parliament_page) {
-                    attr.description = attr.description + '<p>No data available.</p>';
+                    // attr.description = attr.description + '<p>No data available.</p>';
                 } else {
-                    attr.href = '/parliament/' + iso_code_for_parliament.toLowerCase();
+                    if (current_lang == 'fr') {
+                        attr.href = '/fr/parlement/' + iso_code_for_parliament.toLowerCase();
+                    } else {
+                        attr.href = '/parliament/' + iso_code_for_parliament.toLowerCase();
+                    }
                 }
                 settings.areas[data[index].field_iso_code] = attr;
             }
@@ -53,9 +63,9 @@
                 var iso_code = $(elem.node).attr("data-id");
                 if (iso_code in settings.areas) {
                     var data = settings.areas[iso_code];
-                    var memberTxt = '<div class="text">' + ((data.ipu_member) ? 'IPU member' : 'Not an IPU member') + '</div>';
-                    var signatoryTxt = ((data.principles_signatory) ? '<div class="text">Signatory to common princples</div>' : '')
-                    if (data.has_parent_parliament) {
+                    var memberTxt = '<div class="text">' + ((data.ipu_member) ? (current_lang == 'fr' ? 'Membre de l\'UIP' : 'IPU member') : (current_lang == 'fr' ? 'Non-membre de l\'UIP' : 'Not an IPU member')) + '</div>';
+                    var signatoryTxt = ((data.principles_signatory) ? '<div class="text">' + (current_lang == 'fr' ? 'Adhérent aux Principes communs' : 'Signatory to common principles') + '</div>' : '')
+                    if (data.has_parent_parliament || data.no_parliament_page) {
                         // Don't show notes if there's a parent parliament
                         memberTxt = '';
                         signatoryTxt = '';

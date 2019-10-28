@@ -11,12 +11,20 @@ $grid-breakpoints: (
 );
 
 $container-max-widths: (
-        sm: 540px,
-        md: 720px,
-        lg: 960px,
+        sm: 560px,
+        md: 746px,
+        lg: 968px,
         xl: 1140px,
         xxl: 1390px
 );
+/*$container-max-widths: (
+        sm: 576px,
+        md: 768px,
+        lg: 992px,
+        xl: 1200px,
+        xxl: 1440px
+);*/
+
 $grid-gutter-width: 15px;
 
 // Font family styles
@@ -121,25 +129,5 @@ $card-spacer-x: 10px;
     line-height: 1;
     margin-left: 4px;
     content: "\F061" !important;
-  }
-}
-.resources-journalists {
-  display: flex;
-}
-.resource-journalists {
-  background-color: #fff;
-  border: 1px solid #cccccc;
-  box-shadow: 0 0 3px 0 #cccccc;
-  margin: 0 5px 10px 5px;
-  padding: 8px;
-  font-size: 0.875rem;
-  .title a {
-    font-size: $font-size-md;
-  }
-  .description {
-    display: none;
-  }
-  .more {
-    display: none;
   }
 }
