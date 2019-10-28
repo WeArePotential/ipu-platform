@@ -53,15 +53,30 @@
   .ipu-event__dates {
     font-weight: $font-weight-normal;
   }
+
+
+  .field-ipu-event-button a {
+    margin: 10px 0;
+    @extend .btn-cta;
+  }
+
+  .ipu-event-documents {
+    h3 {
+      margin-top: 10px;
+    }
+  }
+}
+.node-ipu_event,
+.node--type-ipu-event.node--view-mode-teaser {
   .ipu-event__field-location {
+    display: block;
     p.address {
+      margin-bottom: 0;
       br {
-        content: '';
         display: none;
       }
       span {
         display: inline-block;
-
         &:not(:first-child) {
           margin-left: -.3em;
         }
@@ -72,20 +87,10 @@
         }
 
         &:not(:first-child):before {
-          content: ", ";
+          display: inline-block;
+          content: ",\00a0";
         }
       }
-    }
-  }
-
-  .field-ipu-event-button a {
-    margin: 10px 0;
-    @extend .btn-cta;
-  }
-
-  .ipu-event-documents {
-    h3 {
-      margin-top: 10px;
     }
   }
 }

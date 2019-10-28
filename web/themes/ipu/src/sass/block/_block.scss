@@ -1619,12 +1619,6 @@ a.btn {
       border-bottom: 1px solid $secondary;
       padding-top: 40px;
     }
-    .ipu-event__dates + .ipu-event__field-location {
-      &:before {
-        content: ' ';
-        margin-right: 10px;
-      }
-    }
     .ipu-event__dates, .ipu-event__field-location {
       display: inline-block;
       font-weight: $font-weight-bold;
