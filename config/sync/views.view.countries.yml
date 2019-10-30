@@ -1195,16 +1195,19 @@ display:
           not: false
           plugin_id: numeric
       header:
-        result:
-          id: result
+        area:
+          id: area
           table: views
-          field: result
+          field: area
           relationship: none
           group_type: group
           admin_label: ''
           empty: false
-          content: '@total members'
-          plugin_id: result
+          tokenize: true
+          content:
+            value: '[view:total-rows] {{ ''members''|t }}'
+            format: full_html
+          plugin_id: text
     cache_metadata:
       max-age: -1
       contexts:
