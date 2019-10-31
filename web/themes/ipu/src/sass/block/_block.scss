@@ -1619,12 +1619,6 @@ a.btn {
       border-bottom: 1px solid $secondary;
       padding-top: 40px;
     }
-    .ipu-event__dates + .ipu-event__field-location {
-      &:before {
-        content: ' ';
-        margin-right: 10px;
-      }
-    }
     .ipu-event__dates, .ipu-event__field-location {
       display: inline-block;
       font-weight: $font-weight-bold;
@@ -2145,12 +2139,14 @@ a.btn {
     width: 40px;
     padding: 2px 10px;
     text-align: center;
+    margin: 0;
   }
   .item-list {
     width: 100%;
     padding-bottom: 4px;
     border-bottom: 1px solid $ipu-light-grey;
     margin-bottom: 4px;
+    display: flex;
   }
   ul {
     list-style: none;
@@ -2165,6 +2161,13 @@ a.btn {
         font-weight: $font-weight-light !important;
       }
     }
+  }
+}
+.view-display-id-block_geo_members {
+  margin-bottom: 20px;
+  .view-header {
+    font-weight: $font-weight-normal;
+    padding: 10px 0;
   }
 }
 .viewfield--view__countries__block_members,

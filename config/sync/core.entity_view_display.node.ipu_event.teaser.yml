@@ -178,7 +178,7 @@ content:
             lb-col: false
             classes: {  }
   field_location:
-    type: address_plain
+    type: address_default
     weight: 4
     region: main
     label: hidden
@@ -211,6 +211,7 @@ content:
             lb-col: false
             classes: {  }
 hidden:
+  addtoany: true
   event_session_paragraphs_entity_view_1: true
   event_sub_pages_sub_page_content_eva: true
   event_sub_pages_sub_page_content_eva_2: true

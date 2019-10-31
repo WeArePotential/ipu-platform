@@ -40,6 +40,8 @@ settings:
       override: optional
     dependentLocality:
       override: optional
+    locality:
+      override: optional
     administrativeArea:
       override: optional
   fields: {  }
