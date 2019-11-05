@@ -1,0 +1,30 @@
+uuid: 98dfee98-1be8-4b4e-babd-016ff9e484d4
+langcode: en
+status: true
+dependencies:
+  module:
+    - context_active_trail
+    - ctools
+name: publications
+label: Publications
+group: 'Menu path'
+description: ''
+requireAllConditions: false
+disabled: false
+conditions:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      publication: publication
+    negate: 0
+    uuid: 9606186e-639e-4b79-bc2f-ec3198f7e39c
+    context_mapping:
+      node: '@node.node_route_context:node'
+reactions:
+  active_trail:
+    id: active_trail
+    trail: 'mega-menu:menu_link_content:9af2b4a3-246d-4558-a726-99fa3e982c60'
+    breadcrumbs: 1
+    breadcrumb_title: 0
+    uuid: 70ef04fd-4390-4b9d-bfc5-95767d92118c
+weight: 0
