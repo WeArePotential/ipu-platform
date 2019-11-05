@@ -10,4 +10,4 @@ withdraw_message:
 withdraw_action_button_label: 'Retirer le consentement'
 withdraw_tab_button_label: 'Paramètres de confidentialité'
 popup_info:
-  value: "<h2>Nous utilisons un minimum de cookies sur ce site pour améliorer votre expérience utilisateur et enregistrer votre utilisation de manière anonyme avec Google Analytics.</h2>\r\n<p>En continuant à consulter le site, vous acceptez de nous autoriser à le faire.  Cliquez sur le bouton Accepter pour supprimer ce message.  <a href=\"/node/9571\">En savoir plus sur nos politiques.</a></p>"
+  value: "<h2>Nous utilisons un minimum de cookies sur ce site pour améliorer votre expérience utilisateur et enregistrer votre utilisation de manière anonyme avec Google Analytics.</h2>\r\n<p>En continuant à consulter le site, vous acceptez de nous autoriser à le faire.  Cliquez sur le bouton Accepter pour supprimer ce message.  <a href=\"/fr/node/9571\">En savoir plus sur nos politiques.</a></p>"
