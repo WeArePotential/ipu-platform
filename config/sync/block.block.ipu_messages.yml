@@ -11,7 +11,7 @@ _core:
 id: ipu_messages
 theme: ipu
 region: content
-weight: -13
+weight: -14
 provider: null
 plugin: system_messages_block
 settings:

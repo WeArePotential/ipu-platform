@@ -1,0 +1,7 @@
+name: IPU OrgChart
+description: Adds a Google OrgChart for IPU
+core: 8.x
+type: module
+
+dependencies:
+  - block

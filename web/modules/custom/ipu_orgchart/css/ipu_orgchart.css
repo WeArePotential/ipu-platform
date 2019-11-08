@@ -1,0 +1,33 @@
+table.google-visualization-orgchart-table {
+  max-width: 800px;
+  border-collapse: separate;
+}
+
+table.google-visualization-orgchart-table tr:hover {
+  background-color: transparent;
+}
+table.google-visualization-orgchart-table td.google-visualization-orgchart-node {
+  background: none;
+  background-color: #0066a1;
+  box-shadow: none;
+  padding: 8px !important;
+  line-height: 1rem !important;
+  font-size: 0.8rem !important;
+  font-family: inherit !important;
+}
+table.google-visualization-orgchart-table td.google-visualization-orgchart-node:hover {
+  border-color: #f90;
+}
+
+table.google-visualization-orgchart-table td a {
+  font-weight: 300;
+  font-family: inherit;
+}
+table.google-visualization-orgchart-table td .top-level a {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 400 !important;
+}
+table.google-visualization-orgchart-table td a {
+  color: #fff;
+}
