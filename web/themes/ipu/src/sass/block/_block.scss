@@ -5,12 +5,13 @@ body {
 main {
   background-color: $white !important;
 }
-// Basic styling for h1 and h2 headings
+// Basic styling for headings
 h1,
 .basic-page__node-title h2,
 .page__node-title h2,
 .ipu-map-country h2,
-.section-page__node-title h2 {
+.section-page__node-title h2,
+.block--ipu-content h2 {
   line-height: 1.25em;
   font-weight: 400;
   padding-bottom: 4px;
@@ -57,6 +58,20 @@ h3 {
   font-size: 1.4rem;
   line-height: 1.6rem;
   font-weight: 300;
+}
+
+h4 {
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+  font-weight: $font-weight-normal;
+}
+
+h5 {
+  font-size: 1.1rem;
+  line-height: 1.1rem;
+}
+h5, h6 {
+  font-weight: $font-weight-normal;
 }
 
 a {
@@ -517,7 +532,6 @@ span::before {
   .field__label {
     @extend h2;
     font-weight: $font-weight-light !important;
-    border-bottom: 1px solid $secondary;
     margin: 30px 0;
   }
 }
@@ -1183,7 +1197,6 @@ a.btn {
     .field__label {
       @extend h2;
       font-weight: $font-weight-light !important;
-      border-bottom: 1px solid $secondary;
       margin: 30px 0;
     }
     .field__item {
@@ -2030,6 +2043,10 @@ a.btn {
       padding: 20px 0;
       h2 {
         color: $ipu-grey;
+        border-bottom-width: 0;
+        margin: 0;
+        padding: 0;
+        font-weight: $font-weight-light;
       }
       p {
         color: $ipu-grey;
@@ -2065,10 +2082,6 @@ a.btn {
   margin-top: 20px;
   padding: 20px 0;
   background-color: $light;
-  h2 {
-    padding-bottom: 4px;
-    border-bottom: 1px solid $secondary;
-  }
   .views-row {
     @extend .col-md-4;
   }
@@ -2077,8 +2090,6 @@ a.btn {
 .field-committee-members {
   .field__label {
     @extend h2;
-    border-bottom: 2px solid $secondary;
-    padding-bottom: 4px;
     &.font-weight-bold {
       font-weight: $font-weight-light !important;
     }

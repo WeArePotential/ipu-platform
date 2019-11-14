@@ -381,8 +381,9 @@ main {
 .ultimenu__flyout {
   .block > h2 {
     font-size: $font-size-base;
-    border-bottom: 2px solid $secondary;
     margin-bottom: 1rem;
+    border-bottom: 1px solid color("ipu-teal");
+  ;
   }
   .block .section-page__body,
   .block .landing-page__body,

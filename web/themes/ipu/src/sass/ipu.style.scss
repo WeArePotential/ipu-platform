@@ -133,3 +133,18 @@ $spacers: map-merge(
     }
 }
 
+input[type=reset] {
+    @extend .btn;
+    @extend .btn-outline-primary;
+    padding: 0.1rem 0.5rem;
+    border-radius: 4px;
+}
+input[type=submit],
+button[type=submit] {
+    @extend .btn;
+    @extend .btn-primary;
+    // Same as btn-sm
+    padding: 0.1rem 0.5rem;
+    border-radius: 4px;
+}
+
