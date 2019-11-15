@@ -79,6 +79,9 @@ a {
   transition: all 300ms ease;
 }
 
+table th {
+  font-weight: $font-weight-normal;
+}
 .block--ipu-content img,
 .block--ipu-content iframe {
   max-width: 100%;
@@ -593,13 +596,15 @@ span::before {
 }
 
 // Block quote styles
-.blockquote {
+blockquote, .blockquote {
   width: 75%;
+  font-size: $font-size-lg;
   margin-right: auto;
-  margin-bottom: 2.5em;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   margin-left: auto;
-  padding-top: 1.25em;
-  padding-bottom: 1.25em;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
   border-style: solid none;
   border-width: 1px;
   border-color: $tertiary;
