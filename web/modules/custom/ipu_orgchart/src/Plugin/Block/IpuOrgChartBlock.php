@@ -64,12 +64,12 @@ class IpuOrgChartBlock extends BlockBase implements ContainerFactoryPluginInterf
     // TO DO: Get from count of countries vocab terms
     $form['orgchart'] = [
       '#title' => t('OrgChart html'),
-      '#description' => t('Past HTML for the Org Chsrt'),
+      '#description' => t('HTML for the Org Chsrt. Not used.'),
       '#type' => 'textarea',
       '#default_value' => $config['orgchart'],
       '#size' => 60,
       '#rows' => 8,
-      '#required' => TRUE,
+      '#required' => FALSE,
     ];
 
     return $form;
