@@ -1,0 +1,7 @@
+ipu-orgchart:
+  css:
+    theme:
+      css/ipu_orgchart.css: {}
+  js:
+   https://www.gstatic.com/charts/loader.js: { type: external, minified: false }
+   js/ipu_orgchart.js: { scope: footer }
