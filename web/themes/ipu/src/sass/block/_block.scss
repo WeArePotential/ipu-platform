@@ -461,9 +461,6 @@ span::before {
     float: left;
     margin-right: 0.4rem;
   }
-  .term-icon-198 & {
-    height: 20px;
-  }
   .term-icon-88 & {
     background: url("../img/theme_icons/gender_equality.svg");
   }
@@ -499,9 +496,7 @@ span::before {
     width: 32px !important;
     height: 32px !important;
   }
-  .term-icon-198 a::before {
-    height: 29px !important;
-  }
+
   .row .col > div {
     background-color: $light;
     padding: 10px 10px 0 10px;
@@ -1943,7 +1938,6 @@ a.btn {
       }
       &.theme-term-id-198 h1:before {
         background: url("../img/theme_icons/global_development.svg");
-        height: 36px !important;
       }
       &.theme-term-id-231 h1:before {
         background: url("../img/theme_icons/international_relations.svg");
