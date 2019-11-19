@@ -50,6 +50,10 @@
     }
     h2 {
       color: $ipu-grey;
+      border-bottom-width: 0;
+      margin-bottom: 0;
+      padding-bottom: 0;
+      /*font-weight: $font-weight-light;*/
     }
     @include media-breakpoint-up(md) {
       .slide-right .slide-inner {

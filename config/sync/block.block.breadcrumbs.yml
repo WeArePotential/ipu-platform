@@ -9,7 +9,7 @@ dependencies:
 id: breadcrumbs
 theme: ipu
 region: content
-weight: -17
+weight: -8
 provider: null
 plugin: system_breadcrumb_block
 settings:

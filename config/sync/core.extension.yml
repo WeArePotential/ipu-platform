@@ -99,6 +99,7 @@ module:
   ipu_events: 0
   ipu_layouts: 0
   ipu_map: 0
+  ipu_orgchart: 0
   ipu_tweaks: 0
   ipu_views_taxonomy_args: 0
   job_scheduler: 0

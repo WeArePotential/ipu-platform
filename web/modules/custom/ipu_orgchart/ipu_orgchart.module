@@ -1,0 +1,89 @@
+<?php
+
+use Drupal\Core\StringTranslation;
+use Drupal\node\Entity\Node;
+
+use Drupal\datetime\Plugin\Field\FieldType\DateTimeItemInterface;
+use Drupal\block\Entity\Block;
+use Drupal\Core\Url;
+
+function ipu_orgchart_theme($existing, $type, $theme, $path) {
+  return [
+    'ipu-orgchart' => [
+      'template' => 'ipu-orgchart',
+      'path' => $path . '/templates',
+      'variables' => [
+      ],
+    ],
+  ];
+}
+
+function ipu_orgchart_data() {
+  $current_language = \Drupal::languageManager()->getCurrentLanguage('language_content')->getId();
+  $tree = [];
+  $data = [];
+  // Top level
+  $tree[93] = [
+    228 => [200, 201, 202, 203],
+    97 => [205, 98, 209, 218, 210, 9855, 216, 396],
+    99 => [222, 100],
+    ];
+  $tree[101] = [
+    197 => [],
+    ];
+
+  $static_data = ['Executuve office', 'Member parliaments and External Relations', 'Programmes', 'Human Rights Programmes', 'Communications and IT','Support services'];
+  $nids = [];
+  foreach ($tree as $nid => $subnode) {
+    $nids[] = $nid;
+    foreach ($subnode as $subnid => $subsubnids) {
+      $nids[] = $subnid;
+      $nids = array_merge($nids, $subsubnids);
+    }
+  }
+  //\Drupal::messenger()->addStatus(print_r($nids,true));
+
+  $node_data = [];
+  $nodes = \Drupal\node\Entity\Node::loadMultiple($nids);
+  foreach ($nodes as $node) {
+    if ($current_language != 'en') {
+      if ($node->hasTranslation($current_language)) {
+        $node = $node->getTranslation($current_language);
+      }
+    }
+    $title = $node->getTitle();
+    $link = \Drupal::service('path.alias_manager')->getAliasByPath('/node/'. $node->id());
+    $html = '<a href="'. $link .'">'. $title . '</a>';
+    $node_data[$node->id()] = $html; //htmlentities($html, ENT_QUOTES);
+  }
+
+  /* Now build the dataset.
+  * e.g.
+  * [{'v':'nid', 'f':'<a href="/node/93">IPU President</a>'}, $parent_nid, 'tooltip'],
+  */
+  foreach ($tree as $nid => $subnode) {
+    $data[] = [['v' => (string)$nid, 'f' => '<span class="top-level">' . $node_data[$nid] . '</span>'], '', ''];
+    foreach ($subnode as $subnid => $subsubnids) {
+      $data[] = [['v' => (string)$subnid, 'f' => '<span class="top-level">' . $node_data[$subnid] . '</span>'], (string)$nid, ''];
+      foreach ($subsubnids as $key => $subsubnid) {
+        if ($key == 0) {
+          $pid = (string)$subnid;
+        }
+        $data[] = [['v' => (string)$subsubnid, 'f' => $node_data[$subsubnid]], $pid, ''];
+        // Subsequent nodes have the previous element as the parent so they display vertially
+        $pid = (string)$subsubnid;
+      }
+    }
+  }
+  $pid = $subnid;
+  $link = \Drupal::service('path.alias_manager')->getAliasByPath('/node/'. $pid);
+  foreach ($static_data as $text) {
+    $html = '<a href="'. $link .'">'. $text . '</a>';
+    $data[] = [['v' => $text, 'f' => $html], (string)$pid, ''];
+    $pid = $text;
+  }
+  $data = json_encode($data);
+  return $data;
+}
+
+

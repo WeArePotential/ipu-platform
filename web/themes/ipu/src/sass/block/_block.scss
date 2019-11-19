@@ -5,12 +5,13 @@ body {
 main {
   background-color: $white !important;
 }
-// Basic styling for h1 and h2 headings
+// Basic styling for headings
 h1,
 .basic-page__node-title h2,
 .page__node-title h2,
 .ipu-map-country h2,
-.section-page__node-title h2 {
+.section-page__node-title h2,
+.block--ipu-content h2 {
   line-height: 1.25em;
   font-weight: 400;
   padding-bottom: 4px;
@@ -59,11 +60,28 @@ h3 {
   font-weight: 300;
 }
 
+h4 {
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+  font-weight: $font-weight-normal;
+}
+
+h5 {
+  font-size: 1.1rem;
+  line-height: 1.1rem;
+}
+h5, h6 {
+  font-weight: $font-weight-normal;
+}
+
 a {
   -webkit-transition: all 300ms ease;
   transition: all 300ms ease;
 }
 
+table th {
+  font-weight: $font-weight-normal;
+}
 .block--ipu-content img,
 .block--ipu-content iframe {
   max-width: 100%;
@@ -443,9 +461,6 @@ span::before {
     float: left;
     margin-right: 0.4rem;
   }
-  .term-icon-198 & {
-    height: 20px;
-  }
   .term-icon-88 & {
     background: url("../img/theme_icons/gender_equality.svg");
   }
@@ -481,9 +496,7 @@ span::before {
     width: 32px !important;
     height: 32px !important;
   }
-  .term-icon-198 a::before {
-    height: 29px !important;
-  }
+
   .row .col > div {
     background-color: $light;
     padding: 10px 10px 0 10px;
@@ -517,7 +530,6 @@ span::before {
   .field__label {
     @extend h2;
     font-weight: $font-weight-light !important;
-    border-bottom: 1px solid $secondary;
     margin: 30px 0;
   }
 }
@@ -579,13 +591,15 @@ span::before {
 }
 
 // Block quote styles
-.blockquote {
+blockquote, .blockquote {
   width: 75%;
+  font-size: $font-size-lg;
   margin-right: auto;
-  margin-bottom: 2.5em;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   margin-left: auto;
-  padding-top: 1.25em;
-  padding-bottom: 1.25em;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
   border-style: solid none;
   border-width: 1px;
   border-color: $tertiary;
@@ -1183,7 +1197,6 @@ a.btn {
     .field__label {
       @extend h2;
       font-weight: $font-weight-light !important;
-      border-bottom: 1px solid $secondary;
       margin: 30px 0;
     }
     .field__item {
@@ -1925,7 +1938,6 @@ a.btn {
       }
       &.theme-term-id-198 h1:before {
         background: url("../img/theme_icons/global_development.svg");
-        height: 36px !important;
       }
       &.theme-term-id-231 h1:before {
         background: url("../img/theme_icons/international_relations.svg");
@@ -2030,6 +2042,10 @@ a.btn {
       padding: 20px 0;
       h2 {
         color: $ipu-grey;
+        border-bottom-width: 0;
+        margin: 0;
+        padding: 0;
+        font-weight: $font-weight-light;
       }
       p {
         color: $ipu-grey;
@@ -2065,10 +2081,6 @@ a.btn {
   margin-top: 20px;
   padding: 20px 0;
   background-color: $light;
-  h2 {
-    padding-bottom: 4px;
-    border-bottom: 1px solid $secondary;
-  }
   .views-row {
     @extend .col-md-4;
   }
@@ -2077,8 +2089,6 @@ a.btn {
 .field-committee-members {
   .field__label {
     @extend h2;
-    border-bottom: 2px solid $secondary;
-    padding-bottom: 4px;
     &.font-weight-bold {
       font-weight: $font-weight-light !important;
     }

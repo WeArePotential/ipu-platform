@@ -63,6 +63,8 @@ $ipu-grey: #747678;
 $ipu-light-grey: #cccccc;
 $ipu-very-light-grey: #eeeeee;
 $ipu-white: #ffffff;
+$ipu-black: $gray-900;
+
 
 $colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
@@ -76,7 +78,8 @@ $colors: map-merge(
     "ipu-grey": $ipu-grey,
     "ipu-light-grey": $ipu-light-grey,
     "ipu-very-light-grey": $ipu-very-light-grey,
-    "ipu-white": $ipu-white
+    "ipu-white": $ipu-white,
+    "ipu-black": $ipu-black
   ),
   $colors
 );
