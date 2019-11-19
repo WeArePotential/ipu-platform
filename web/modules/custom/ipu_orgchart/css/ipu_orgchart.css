@@ -24,7 +24,7 @@ table.google-visualization-orgchart-table td a {
   font-family: inherit;
   color: #fff;
   display: block;
-  padding: 8px;
+  padding: 4px;
 }
 table.google-visualization-orgchart-table td a:hover {
   text-decoration: none;
