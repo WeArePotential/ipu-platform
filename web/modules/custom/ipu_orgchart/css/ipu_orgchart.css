@@ -19,16 +19,18 @@ table.google-visualization-orgchart-table td.google-visualization-orgchart-node 
 table.google-visualization-orgchart-table td.google-visualization-orgchart-node:hover {
   border-color: #f90;
 }
-
 table.google-visualization-orgchart-table td a {
   font-weight: 300;
   font-family: inherit;
+  color: #fff;
+  display: block;
+  padding: 8px;
+}
+table.google-visualization-orgchart-table td a:hover {
+  text-decoration: none;
 }
 table.google-visualization-orgchart-table td .top-level a {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 400 !important;
-}
-table.google-visualization-orgchart-table td a {
-  color: #fff;
 }
