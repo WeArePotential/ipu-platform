@@ -32,7 +32,7 @@ function ipu_orgchart_data() {
     197 => [],
     ];
 
-  $static_data = ['Executuve office', 'Member parliaments and External Relations', 'Programmes', 'Human Rights Programmes', 'Communications and IT','Support services'];
+  $static_data = ['Executive office', 'Member parliaments and External Relations', 'Programmes', 'Human rights programmes', 'Communications and IT', 'Support services'];
   $nids = [];
   foreach ($tree as $nid => $subnode) {
     $nids[] = $nid;
@@ -53,6 +53,9 @@ function ipu_orgchart_data() {
     }
     $title = $node->getTitle();
     $link = \Drupal::service('path.alias_manager')->getAliasByPath('/node/'. $node->id());
+    if ($current_language != 'en') {
+      $link = '/' . $current_language. $link;
+    }
     $html = '<a href="'. $link .'">'. $title . '</a>';
     $node_data[$node->id()] = $html; //htmlentities($html, ENT_QUOTES);
   }
@@ -78,7 +81,7 @@ function ipu_orgchart_data() {
   $pid = $subnid;
   $link = \Drupal::service('path.alias_manager')->getAliasByPath('/node/'. $pid);
   foreach ($static_data as $text) {
-    $html = '<a href="'. $link .'">'. $text . '</a>';
+    $html = '<a href="'. $link .'">'. t($text) . '</a>';
     $data[] = [['v' => $text, 'f' => $html], (string)$pid, ''];
     $pid = $text;
   }
