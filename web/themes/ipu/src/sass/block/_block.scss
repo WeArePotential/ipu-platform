@@ -346,7 +346,8 @@ table th {
 .follow-twitter,
 .follow-instagram,
 .follow-youtube,
-.follow-flickr {
+.follow-flickr,
+.follow-linkedin {
   &::after,
   &::before {
     font-family: "Font Awesome 5 Brands";
@@ -371,6 +372,9 @@ table th {
 }
 .follow-instagram::before {
   content: "\f16d" !important;
+}
+.follow-linkedin::before {
+  content: "\f08c" !important;
 }
 footer {
   .follow-subscribe::before {
