@@ -428,3 +428,20 @@ function ipu_tweaks_preprocess_views_view(&$variables) {
     }
   }
 }
+
+/* Backwards compatibility for Paste from Word functionality. This will be a temp fix.
+ * See https://www.drupal.org/project/drupal/issues/2940054
+ * and the short-term fix used here: https://www.drupal.org/project/drupal/issues/2871539
+*/
+function ipu_tweaks_editor_js_settings_alter(array &$settings) {
+  if (!empty($settings['editor']['formats']) && is_array($settings['editor']['formats'])) {
+    foreach ($settings['editor']['formats'] as $text_format_name => &$format_settings) {
+      if ($format_settings['editor'] === 'ckeditor') {
+        // CKeditor 4.6 deprecated pasteFromWordRemoveFontStyles and switched
+        // its default from true to false. As a fix until core comes up with a
+        // better way to solve this (see https://www.drupal.org/node/2871539 ).
+        $format_settings['editorSettings']['pasteFromWordRemoveFontStyles'] = true;
+      }
+    }
+  }
+}
