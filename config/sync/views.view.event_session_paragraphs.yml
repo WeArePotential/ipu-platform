@@ -5,7 +5,9 @@ dependencies:
   config:
     - field.storage.paragraph.field_fc_session_room
     - field.storage.paragraph.field_fc_sessions_closed_session
+    - field.storage.paragraph.field_fc_sessions_custom_label
     - field.storage.paragraph.field_fc_sessions_description
+    - field.storage.paragraph.field_fc_sessions_hide_time
     - field.storage.paragraph.field_fc_sessions_session_title
     - field.storage.paragraph.field_ipu_event_session_dates
     - node.type.ipu_event
@@ -77,12 +79,14 @@ display:
           description: ''
           columns:
             field_ipu_event_session_dates: field_ipu_event_session_dates
-            field_ipu_event_session_dates_1: field_ipu_event_session_dates_1
+            field_ipu_event_session_dates_1: field_fc_sessions_custom_label
+            field_fc_sessions_custom_label: field_fc_sessions_custom_label
             field_fc_sessions_session_title: field_fc_sessions_session_title
             field_fc_sessions_description: field_fc_sessions_session_title
             field_fc_sessions_closed_session: field_fc_sessions_session_title
             field_fc_session_room: field_fc_session_room
             nid: nid
+            field_fc_sessions_hide_time: field_fc_sessions_hide_time
           info:
             field_ipu_event_session_dates:
               sortable: false
@@ -92,6 +96,13 @@ display:
               empty_column: false
               responsive: ''
             field_ipu_event_session_dates_1:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_fc_sessions_custom_label:
               sortable: false
               default_sort_order: asc
               align: ''
@@ -127,6 +138,13 @@ display:
               empty_column: false
               responsive: ''
             nid:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_fc_sessions_hide_time:
               sortable: false
               default_sort_order: asc
               align: ''
@@ -217,7 +235,7 @@ display:
           group_type: group
           admin_label: 'Session times'
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -264,6 +282,69 @@ display:
             format_type: time_only_24_hour_and_minutes
             fromto: both
             separator: '-'
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_fc_sessions_custom_label:
+          id: field_fc_sessions_custom_label
+          table: paragraph__field_fc_sessions_custom_label
+          field: field_fc_sessions_custom_label
+          relationship: field_ipu_event_sessions
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: col-2
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: '{{ field_ipu_event_session_dates_1 }}'
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -411,7 +492,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<em class="text-secondary">{{ field_fc_sessions_closed_session }}</em>'
+            text: '<em class="text-secondary">({{ ''Closed meeting''|trans }})</em>'
             make_link: false
             path: ''
             absolute: false
@@ -452,7 +533,7 @@ display:
           type: boolean
           settings:
             format: custom
-            format_custom_true: '(closed meeting)'
+            format_custom_true: 'Closed session'
             format_custom_false: ''
           group_column: value
           group_columns: {  }
@@ -593,6 +674,71 @@ display:
           field_api_classes: false
           entity_type: node
           entity_field: nid
+          plugin_id: field
+        field_fc_sessions_hide_time:
+          id: field_fc_sessions_hide_time
+          table: paragraph__field_fc_sessions_hide_time
+          field: field_fc_sessions_hide_time
+          relationship: field_ipu_event_sessions
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: boolean
+          settings:
+            format: default
+            format_custom_true: ''
+            format_custom_false: ''
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
           plugin_id: field
       filters:
         status:
@@ -774,7 +920,9 @@ display:
       tags:
         - 'config:field.storage.paragraph.field_fc_session_room'
         - 'config:field.storage.paragraph.field_fc_sessions_closed_session'
+        - 'config:field.storage.paragraph.field_fc_sessions_custom_label'
         - 'config:field.storage.paragraph.field_fc_sessions_description'
+        - 'config:field.storage.paragraph.field_fc_sessions_hide_time'
         - 'config:field.storage.paragraph.field_fc_sessions_session_title'
         - 'config:field.storage.paragraph.field_ipu_event_session_dates'
   entity_view_1:
@@ -799,6 +947,8 @@ display:
       tags:
         - 'config:field.storage.paragraph.field_fc_session_room'
         - 'config:field.storage.paragraph.field_fc_sessions_closed_session'
+        - 'config:field.storage.paragraph.field_fc_sessions_custom_label'
         - 'config:field.storage.paragraph.field_fc_sessions_description'
+        - 'config:field.storage.paragraph.field_fc_sessions_hide_time'
         - 'config:field.storage.paragraph.field_fc_sessions_session_title'
         - 'config:field.storage.paragraph.field_ipu_event_session_dates'

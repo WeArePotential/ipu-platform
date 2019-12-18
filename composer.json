@@ -27,6 +27,7 @@
         "drupal/admin_toolbar_content_languages": "^1.0@beta",
         "drupal/adminimal_admin_toolbar": "^1.9",
         "drupal/adminimal_theme": "^1.5",
+        "drupal/anchor_link": "^1.6",
         "drupal/back_to_top": "^1.0",
         "drupal/backup_migrate": "^4.0",
         "drupal/better_exposed_filters": "^3.0@alpha",

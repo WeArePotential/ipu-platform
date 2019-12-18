@@ -29,10 +29,12 @@ settings:
             - Copy
             - PasteText
             - PasteFromWord
+            - removeformat
             - Styles
         -
           name: Linking
           items:
+            - Anchor
             - DrupalLink
             - DrupalUnlink
         -
