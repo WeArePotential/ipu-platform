@@ -47,7 +47,7 @@
                 var colour = range[0];
                 for (var val in range) {
                     if (range.hasOwnProperty(val)) {
-                      if (parseInt(human_rights_cases) > val) {
+                      if (parseInt(human_rights_cases) >= val ) {
                         colour = range[val];
                       }
                   }
@@ -84,7 +84,7 @@
                     var signatoryTxt = ((data.principles_signatory) ? '<div class="text">' + (current_lang == 'fr' ? 'Adhérent aux Principes communs' : 'Signatory to common principles') + '</div>' : '');
                     var humanrightsTxt = ((data.human_rights_cases) ? '<div class="text" style="display:flex;align-items: center"><div class="stats-circle" style="float: left;">' + data.human_rights_cases + '</div><div><strong>&nbsp;' + (current_lang == 'fr' ? '\n' +
                       'Cas de violations des droits' : 'Human Rights cases') + '</strong></div></div>' : '');
-                  if (data.has_parent_parliament || data.no_parliament_page) {
+                    if (data.has_parent_parliament || data.no_parliament_page) {
                         // Don't show notes if there's a parent parliament
                         memberTxt = '';
                         signatoryTxt = '';
