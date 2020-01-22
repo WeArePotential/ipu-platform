@@ -142,6 +142,8 @@ function ipu_tweaks_preprocess_field(&$variables) {
       // Should already be available $variables['#node'] = $node;
 
       $image = $node->field_media_image;
+      $image_caption = $node->get('field_caption')->value;
+      $variables['image_caption'] = $image_caption;
       if ($image->entity != NULL) {
         $image_path = $image->entity->getFileUri();
         $image_url = \Drupal\image\Entity\ImageStyle::load('max_1920x1920')

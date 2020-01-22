@@ -32,6 +32,7 @@
       <div{{ attributes.addClass(classes) }}>
         {% if (amend_title) %}
         <div class="field-node-title-wrapper">
+          <div class="landing-page__field-image-caption">{{ image_caption|raw }}</div>
           <div class="field-node-title-inner">
             {{ item.content }}
             <div class="field-node-title-theme-description">{{ theme_description|striptags }}</div>
