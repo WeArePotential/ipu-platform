@@ -1,0 +1,34 @@
+uuid: bcb4c66c-be59-42ea-9709-8d80a2fd6c7d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_human_rights_cases_docs
+    - media.type.file
+    - taxonomy.vocabulary.country
+  module:
+    - custom_add_another
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
+id: taxonomy_term.country.field_human_rights_cases_docs
+field_name: field_human_rights_cases_docs
+entity_type: taxonomy_term
+bundle: country
+label: 'Human rights cases documents'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      file: file
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
