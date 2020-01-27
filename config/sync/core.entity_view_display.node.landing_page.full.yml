@@ -43,7 +43,6 @@ third_party_settings:
       children:
         - node_title
         - field_media_image
-        - field_caption
         - group_body_and_data
       parent_name: group_header
       weight: 2
@@ -112,7 +111,6 @@ third_party_settings:
         - field_content_section
         - field_media_image
         - group_header_inner
-        - field_caption
         - group_body_and_data
         - body
         - group_header_right
@@ -150,13 +148,6 @@ content:
     weight: 4
     settings: {  }
     third_party_settings: {  }
-    region: content
-  field_caption:
-    weight: 2
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
     region: content
   field_content_section:
     weight: 1
@@ -202,6 +193,7 @@ content:
     region: content
 hidden:
   addtoany: true
+  field_caption: true
   field_theme: true
   langcode: true
   links: true

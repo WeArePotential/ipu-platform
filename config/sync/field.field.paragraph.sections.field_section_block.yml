@@ -39,6 +39,7 @@ settings:
     'block_content:7ccf118f-2e43-4ae6-8c8b-1a281ffa98c9': 'block_content:7ccf118f-2e43-4ae6-8c8b-1a281ffa98c9'
     'block_content:35d7eeaf-18c9-4265-991e-6b6c4eca799d': 'block_content:35d7eeaf-18c9-4265-991e-6b6c4eca799d'
     flickr_block: flickr_block
+    ipu_map_human_rights_block: ipu_map_human_rights_block
     ipu_map_block: ipu_map_block
     ipu_map_signatory_block: ipu_map_signatory_block
     ipu_country_select_block: ipu_country_select_block

@@ -8,13 +8,30 @@
     width: 100%;
 }
 
-.mapael .map {
+.mapael .map, .mapael .areaLegend {
     position: relative;
     border: 1px solid #eee;
     z-index: 3;
     width: 90%;
     margin-left: 5%;
     margin-right: 5%;
+}
+.mapael .areaLegend {
+  border-top: 0px solid #eee;
+  padding: 10px 4px;
+}
+.mapael .areaLegend svg {
+  width: auto;
+}
+@media only screen and (max-width: 768px) {
+  .mapael .map, .mapael .areaLegend {
+    width: 100%;
+    margin-left: 0%;
+    margin-right: 0%;
+  }
+  .mapael .areaLegend {
+    overflow: scroll;
+  }
 }
 
 /* For all zoom buttons */

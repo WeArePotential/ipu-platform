@@ -1034,7 +1034,7 @@ a.btn {
   .article__node-link a {
     @extend .btn-outline-dark;
   }
-  
+
   .article__type {
     @extend .bg-secondary;
   }
@@ -1963,7 +1963,23 @@ a.btn {
       display: none;
     }
 
+    .landing-page__field-image-caption {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: $ipu-blue-light;
+      color: $ipu-white;
+      padding: 0.5rem;
+      font-size: $font-size-sm;
 
+      a, a:hover {
+        color: $ipu-white;
+      }
+
+      p {
+        margin-bottom: 0;
+      }
+    }
     .landing-page__body {
       @extend .col-sm-8;
     }
