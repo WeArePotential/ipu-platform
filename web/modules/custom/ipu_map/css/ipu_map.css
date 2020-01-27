@@ -19,16 +19,18 @@
 .mapael .areaLegend {
   border-top: 0px solid #eee;
   padding: 10px 4px;
-  overflow: scroll;
 }
 .mapael .areaLegend svg {
   width: auto;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   .mapael .map, .mapael .areaLegend {
     width: 100%;
     margin-left: 0%;
     margin-right: 0%;
+  }
+  .mapael .areaLegend {
+    overflow: scroll;
   }
 }
 
