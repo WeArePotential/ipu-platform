@@ -107,7 +107,7 @@
                 txt = (current_lang == 'fr' ? 'Aucun cas' : 'None');
               } else if (val > 40)
               {
-                txt = '> 40 cas';
+                txt = (current_lang == 'fr' ? '> 40 cas' : '> 40 cases');
               } else {
                   if ((val - lastVal) > 1) {
                     txt = lastVal + '-' + (val-1) + '';
