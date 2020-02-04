@@ -69,6 +69,15 @@ class IpuMapController extends ControllerBase {
       $parliament_iso_code = $iso_code;
     }
 
+    // Get any HR documents. If we have any, then we want to update the link
+    // 285 is the term id of the HR Decisions Document type
+    $hr_recent_document = FALSE;
+    list($hr_documents_block, $hr_documents_count) = ipu_map_get_hr_documents([$country->get('tid')->value, 285]);
+    if ($hr_documents_count > 0) {
+      //drupal_set_message(print_r($hr_documents_block, true));
+      //list($hr_documents_block, $hr_documents_count) = ipu_map_get_latest_hr_document([$country->get('tid')->value, 285]);
+    }
+
     // Build arrays of data from parline and the taxonomy term fields
     $data = ipu_map_get_parline_data($parliament_iso_code, $this->getDescription(), $this->getMembershipStatus(), $this->getPrinciplesSignatoryStatus(),$this->getHumanRightsCases(), $this->current_language_id);
     $regions = [];
@@ -104,6 +113,7 @@ class IpuMapController extends ControllerBase {
         'news_and_stories' => $news_block,
         'case_studies' => $case_studies_block,
         'events' => $events_block,
+        'hr_documents' => $hr_documents_block,
         'callout' => $callout,
         'geogroups' => $geogroups_block,
         'countries_region' => $region_block,

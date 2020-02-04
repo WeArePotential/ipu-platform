@@ -219,6 +219,20 @@ function ipu_map_get_parline_data($isocode, $description, $membership_status, $p
   return ['data' => $data, 'country_stats' => $stats];
 }
 
+/*
+ * Pass country tid and document type to documents view.
+ */
+function ipu_map_get_hr_documents($args) {
+  $checkempty = views_get_view_result('documents', 'multiple_ids', implode('+',$args));
+
+  if (!empty($checkempty)) {
+    $view = views_embed_view('documents', 'multiple_ids', implode('+',$args));
+  } else {
+    $view = [];
+  }
+  return [$view, $checkempty];
+}
+
 function ipu_map_get_country_news($country_term_id, $regions) {
   // NOT USED: Uses an in-built view. We use the pre_reneder below to change the sort order here.
   $checkempty = views_get_view_result('articles', 'latest_4_country', $country_term_id);
