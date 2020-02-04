@@ -35,6 +35,10 @@
                 <h2>{{ 'Related events'|t }}</h2>
                 {{ content.events }}
             {% endif %}
+            {% if content.hr_documents|length %}
+              <h2>{{ 'Human Rights Cases'|t }}</h2>
+              {{ content.hr_documents }}
+            {% endif %}
         </div>
     </div>
 
