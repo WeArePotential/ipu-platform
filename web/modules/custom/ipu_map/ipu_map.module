@@ -223,10 +223,10 @@ function ipu_map_get_parline_data($isocode, $description, $membership_status, $p
  * Pass country tid and document type to documents view.
  */
 function ipu_map_get_hr_documents($args) {
-  $checkempty = views_get_view_result('documents', 'multiple_ids', implode('+',$args));
+  $checkempty = views_get_view_result('documents', 'multiple_ids', implode(',',$args));
 
   if (!empty($checkempty)) {
-    $view = views_embed_view('documents', 'multiple_ids', implode('+',$args));
+    $view = views_embed_view('documents', 'multiple_ids', implode(',',$args));
   } else {
     $view = [];
   }
