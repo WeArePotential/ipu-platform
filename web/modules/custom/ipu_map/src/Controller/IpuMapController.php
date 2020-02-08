@@ -49,7 +49,6 @@ class IpuMapController extends ControllerBase {
   }
 
   public function countryContent($iso_code) {
-
     $country = $this->getCountryTerm($iso_code);
     if ($country == Null) {
       throw new \Symfony\Component\HttpKernel\Exception\NotFoundHttpException();
@@ -101,7 +100,9 @@ class IpuMapController extends ControllerBase {
     //drupal_set_message(print_r($this->getHumanRightsCases(), true));
     if (count($hr_documents) > 0 && $this->getHumanRightsCases() > 0)  {
       $document = \Drupal::entityTypeManager()->getStorage('node')->load($hr_documents[0]);
-      //drupal_set_message('xxx'.  print_r(array_keys((array)$document), TRUE));
+      if ($this->current_language_id != 'en' && $document->hasTranslation($this->current_language_id)) {
+        $document = $document->getTranslation($this->current_language_id);
+      }
       // Will either be field_external_link or
       // field_document_file
       // i.e. $document->field_external_link->getValue()[0]['uri']);
