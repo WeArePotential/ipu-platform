@@ -1,10 +1,10 @@
-uuid: bcb4c66c-be59-42ea-9709-8d80a2fd6c7d
+uuid: 3429ae72-9d8b-48ab-9ee2-144d6f6b80e4
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.taxonomy_term.field_human_rights_cases_docs
-    - media.type.file
+    - field.storage.taxonomy_term.field_hr_cases_document
+    - node.type.document
     - taxonomy.vocabulary.country
   module:
     - custom_add_another
@@ -12,21 +12,21 @@ third_party_settings:
   custom_add_another:
     custom_add_another: ''
     custom_remove: ''
-id: taxonomy_term.country.field_human_rights_cases_docs
-field_name: field_human_rights_cases_docs
+id: taxonomy_term.country.field_hr_cases_document
+field_name: field_hr_cases_document
 entity_type: taxonomy_term
 bundle: country
 label: 'Human rights cases documents'
-description: ''
+description: 'Select the most recent Human Rights decisions document for this country. A link to the first document replaces the link in the human rights data box at the top of the Parliament page.'
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:media'
+  handler: 'default:node'
   handler_settings:
     target_bundles:
-      file: file
+      document: document
     sort:
       field: _none
     auto_create: false

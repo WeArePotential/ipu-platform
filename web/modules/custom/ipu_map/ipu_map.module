@@ -97,15 +97,19 @@ function ipu_map_get_parline_data($isocode, $description, $membership_status, $p
   curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
   curl_setopt($ch, CURLOPT_URL, $parline_url);
-  $result = curl_exec($ch);
 
-  $decoded = json_decode($result);
-
-  $chamber_nids = [];
-  $data['#parliamentary_name'] = array();
-  if (sizeof($decoded->list) == 0) {
+  try {
+    $result = curl_exec($ch);
+    $decoded = json_decode($result);
+    if (sizeof($decoded->list) == 0) {
+      \Drupal::messenger()->addStatus(t('Sorry, no data is available from Parline for @s', ['@s' => new FormattableMarkup($link->toString(), [])]));
+    }
+  } catch (exception $exception) {
     \Drupal::messenger()->addStatus(t('Sorry, no data is available from Parline for @s', ['@s' => new FormattableMarkup($link->toString(), [])]));
   }
+  $chamber_nids = [];
+  $data['#parliamentary_name'] = [];
+
   foreach ($decoded->list as $chamber) {
     // TODO Multilingual
     // TODO Add fields from https://data.ipu.org/node/53/basic-information/contact-details?chamber_id=13379
@@ -203,7 +207,7 @@ function ipu_map_get_parline_data($isocode, $description, $membership_status, $p
   $data['#ipu_map_gender_link'] = ($config->get('ipu_map_gender_link') ? (($current_language_id != 'en') ? '/'. $current_language_id : '') . \Drupal::service('path.alias_manager')->getAliasByPath($config->get('ipu_map_gender_link'), $current_language_id) : '');
   $data['#ipu_map_youth_link'] = ($config->get('ipu_map_youth_link') ? (($current_language_id != 'en') ? '/'. $current_language_id : '') . \Drupal::service('path.alias_manager')->getAliasByPath($config->get('ipu_map_youth_link'), $current_language_id) : '');
   $data['#ipu_map_hr_link'] = ($config->get('ipu_map_hr_link') ? (($current_language_id != 'en') ? '/'. $current_language_id : '') . \Drupal::service('path.alias_manager')->getAliasByPath($config->get('ipu_map_hr_link'), $current_language_id) : '');
-
+  $data['#ipu_map_hr_text'] = ($config->get('ipu_map_hr_text') ? (($current_language_id != 'en') ? '/'. $current_language_id : '') . \Drupal::service('path.alias_manager')->getAliasByPath($config->get('ipu_map_hr_text'), $current_language_id) : '');
   $data['#parliamentary_name'] = array_unique($data['#parliamentary_name']);
 
   $data_provenance = $config->get('ipu_map_data_provenance');
@@ -217,6 +221,19 @@ function ipu_map_get_parline_data($isocode, $description, $membership_status, $p
   $data['#theme'] = 'ipu-map-parline-data';
   $stats['#theme'] = 'ipu-map-country-stats';
   return ['data' => $data, 'country_stats' => $stats];
+}
+
+/*
+ * Pass country tid and document type to documents view.
+ */
+function ipu_map_get_hr_documents($args) {
+  $checkempty = views_get_view_result('documents', 'multiple_ids_recent', implode(',',$args));
+  if (!empty($checkempty)) {
+    $view = views_embed_view('documents', 'multiple_ids_recent', implode(',',$args));
+  } else {
+    $view = [];
+  }
+  return [$view, count($checkempty)];
 }
 
 function ipu_map_get_country_news($country_term_id, $regions) {
@@ -376,6 +393,7 @@ function ipu_map_theme($existing, $type, $theme, $path) {
         'ipu_map_gender_link' => '',
         'ipu_map_youth_link' => '',
         'ipu_map_hr_link' => '',
+        'ipu_map_hr_text' => '',
       ),
     ),
     'ipu-map-country-stats' => array(
