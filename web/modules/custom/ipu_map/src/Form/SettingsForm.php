@@ -198,6 +198,7 @@ class SettingsForm extends ConfigFormBase {
       'ipu_map_average_percent_women',
       'ipu_map_youth_link',
       'ipu_map_hr_link',
+      'ipu_map_hr_text',
       'ipu_map_gender_link',
     ];
     foreach ($keys as $key) {

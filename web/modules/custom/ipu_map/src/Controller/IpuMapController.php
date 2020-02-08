@@ -6,6 +6,8 @@ use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Lock\NullLockBackend;
 use Drupal\views\Views;
 use Drupal\Core\Render\Markup;
+use Drupal\Core\Link;
+use Drupal\Core\Url;
 
 
 /**
@@ -69,17 +71,54 @@ class IpuMapController extends ControllerBase {
       $parliament_iso_code = $iso_code;
     }
 
-    // Get any HR documents. If we have any, then we want to update the link
-    // 285 is the term id of the HR Decisions Document type
-    $hr_recent_document = FALSE;
-    list($hr_documents_block, $hr_documents_count) = ipu_map_get_hr_documents([$country->get('tid')->value, 285]);
-    if ($hr_documents_count > 0) {
-      //drupal_set_message(print_r($hr_documents_block, true));
-      //list($hr_documents_block, $hr_documents_count) = ipu_map_get_latest_hr_document([$country->get('tid')->value, 285]);
-    }
-
     // Build arrays of data from parline and the taxonomy term fields
     $data = ipu_map_get_parline_data($parliament_iso_code, $this->getDescription(), $this->getMembershipStatus(), $this->getPrinciplesSignatoryStatus(),$this->getHumanRightsCases(), $this->current_language_id);
+
+    // Get any HR documents. If we have any, then we want to update the link
+    // 285 is the term id of the HR Decisions Document type
+    list($hr_documents_block, $hr_documents_count) = ipu_map_get_hr_documents([$country->get('tid')->value, 285]);
+    if ($hr_documents_count > 0) {
+      $url = Url::fromRoute('entity.node.canonical', ['node' => 205], [
+        'attributes' => [
+          'class' => [
+            'btn-outline-primary',
+            'btn-sm',
+            'btn',
+          ],
+        ],
+      ]);
+      $link = Link::fromTextAndUrl(t('Find out more about the Committee on the Human Rights of Parliamentarians'), $url);
+      $hr_documents_block['#suffix'] = $link->toString();
+    }
+
+    // If a document is attached to the country, we override
+    // the hr_link and hr_text.
+    $hr_documents = [];
+    foreach ($country->field_hr_cases_document->getValue() as $document) {
+      $hr_documents[] = $document['target_id'];
+    };
+
+    //drupal_set_message(print_r($this->getHumanRightsCases(), true));
+    if (count($hr_documents) > 0 && $this->getHumanRightsCases() > 0)  {
+      $document = \Drupal::entityTypeManager()->getStorage('node')->load($hr_documents[0]);
+      //drupal_set_message('xxx'.  print_r(array_keys((array)$document), TRUE));
+      // Will either be field_external_link or
+      // field_document_file
+      // i.e. $document->field_external_link->getValue()[0]['uri']);
+      // or $document->field_document_link
+      if ($document->field_document_file !== NULL) {
+        $fid = $document->field_document_file->getValue()[0]['target_id'];
+        if ($file = \Drupal\file\Entity\File::load($fid)) {
+          $uri = $file->getFileUri();
+          $url = \Drupal\Core\Url::fromUri(file_create_url($uri))->toString();
+          $data['data']['#ipu_map_hr_link'] = $url;
+          $data['data']['#ipu_map_hr_text'] = ['#markup'=>t('Read the cases')];
+        }
+      }
+    } else {
+      $data['data']['#ipu_map_hr_text'] = ['#markup'=>t('Report an MP in danger')];
+    }
+
     $regions = [];
     foreach($country->field_geographic_region->getValue() as $term) {
       $regions[] = $term['target_id'];
@@ -119,6 +158,7 @@ class IpuMapController extends ControllerBase {
         'countries_region' => $region_block,
       ],
     ];
+
     return $page;
   }
 
@@ -167,7 +207,6 @@ class IpuMapController extends ControllerBase {
       $this->principlessignatory = $country->field_principles_signatory->value;
       $this->humanrightscases = $country->field_human_rights_cases->value;
       $this->description = $country->description->value;
-
       $this->title = $country->name->value;
       return $country;
     } else {
