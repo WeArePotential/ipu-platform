@@ -1,0 +1,26 @@
+uuid: b8625461-8109-4305-a976-42fc93fef4a5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_official_position_mandate_
+    - paragraphs.paragraphs_type.member
+  module:
+    - custom_add_another
+    - datetime
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
+id: paragraph.member.field_official_position_mandate_
+field_name: field_official_position_mandate_
+entity_type: paragraph
+bundle: member
+label: 'Senior office mandate end'
+description: 'Date at which any senior office mandate ends (e.g. President, First Vice-President, Second Vice-President)'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

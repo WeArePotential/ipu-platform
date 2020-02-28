@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.paragraph.member.field_end_of_mandate
     - field.field.paragraph.member.field_member_position
+    - field.field.paragraph.member.field_official_position_mandate_
     - field.field.paragraph.member.field_person
     - paragraphs.paragraphs_type.member
   module:
@@ -35,6 +36,12 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete_tags
+    region: content
+  field_official_position_mandate_:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
     region: content
   field_person:
     weight: 0

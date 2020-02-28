@@ -17,6 +17,7 @@ module:
   block_class: 0
   block_content: 0
   block_field: 0
+  blockgroup: 0
   bootstrap_layouts: 0
   bootstrap_simple_carousel: 0
   breakpoint: 0
@@ -173,6 +174,7 @@ module:
   stage_file_proxy: 0
   system: 0
   taxonomy: 0
+  taxonomy_manager: 0
   taxonomy_menu: 0
   text: 0
   token: 0

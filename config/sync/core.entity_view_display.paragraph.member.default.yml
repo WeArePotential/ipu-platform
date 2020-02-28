@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.paragraph.member.field_end_of_mandate
     - field.field.paragraph.member.field_member_position
+    - field.field.paragraph.member.field_official_position_mandate_
     - field.field.paragraph.member.field_person
     - paragraphs.paragraphs_type.member
   module:
@@ -16,7 +17,7 @@ bundle: member
 mode: default
 content:
   field_end_of_mandate:
-    weight: 2
+    weight: 3
     label: hidden
     settings:
       timezone_override: ''
@@ -45,6 +46,22 @@ content:
             lb-col: false
             classes: {  }
     type: entity_reference_label
+    region: content
+  field_official_position_mandate_:
+    weight: 2
+    label: hidden
+    settings:
+      timezone_override: ''
+      date_format: U
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: datetime_custom
     region: content
   field_person:
     weight: 0
