@@ -32,7 +32,7 @@
       {#{% set date = item.content|raw|format_date('month_and_year') %}#}
       {#{{ timestamp|format_date('month_and_year')|replace({' ':'&nbsp;'})|raw }}#}
       {# Need to split date to translate month #}
-      <div{{ attributes.addClass(classes) }}>{{ 'Position ends'|t }}:
+      <div{{ attributes.addClass(classes) }}>{{ 'until'|t }}
         {{ timestamp|date('M')|trans }}&nbsp;{{ timestamp|date('Y') }}
       </div>
     {% endfor %}
