@@ -1,0 +1,20 @@
+uuid: 954ebc49-e2e5-4df4-adee-3b804b7c022d
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime
+    - paragraphs
+id: paragraph.field_official_position_mandate_
+field_name: field_official_position_mandate_
+entity_type: paragraph
+type: datetime
+settings:
+  datetime_type: date
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

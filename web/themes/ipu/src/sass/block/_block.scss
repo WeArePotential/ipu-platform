@@ -2131,7 +2131,8 @@ a.btn {
         .committee-member__field-country {
           font-weight: $font-weight-normal;
         }
-        .member__position {
+        .member__position, .member__field-official-position-mandate- {
+          display: inline-block;
           font-style: italic;
         }
         .member__field-end-of-mandate {
