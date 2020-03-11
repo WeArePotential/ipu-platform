@@ -1,0 +1,16 @@
+uuid: 93717343-12e2-4079-b0d2-4bd7edea5ce9
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.innovation_hub
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: taxonomy_term.innovation_hub
+target_entity_type_id: taxonomy_term
+target_bundle: innovation_hub
+default_langcode: site_default
+language_alterable: true

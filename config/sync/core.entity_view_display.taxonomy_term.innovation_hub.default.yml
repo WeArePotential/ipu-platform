@@ -1,0 +1,36 @@
+uuid: 5be39194-e5d1-4dfa-a4a5-70d1a282a723
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.innovation_hub.field_link_single
+    - taxonomy.vocabulary.innovation_hub
+  module:
+    - link
+    - text
+id: taxonomy_term.innovation_hub.default
+targetEntityType: taxonomy_term
+bundle: innovation_hub
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_link_single:
+    weight: 1
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden:
+  langcode: true
