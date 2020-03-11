@@ -1,0 +1,51 @@
+uuid: 54b13fb5-c947-41a0-8689-1124697c2ee5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.innovation_tracker_issue.body
+    - field.field.node.innovation_tracker_issue.field_date_single
+    - field.field.node.innovation_tracker_issue.field_integer_single
+    - node.type.innovation_tracker_issue
+  module:
+    - datetime
+    - text
+    - user
+id: node.innovation_tracker_issue.default
+targetEntityType: node
+bundle: innovation_tracker_issue
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_date_single:
+    weight: 103
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_integer_single:
+    weight: 104
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  langcode: true
