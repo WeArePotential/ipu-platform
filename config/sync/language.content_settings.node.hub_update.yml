@@ -1,0 +1,16 @@
+uuid: 61c6c2af-404e-4743-ba5d-f4157b73828e
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.hub_update
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: node.hub_update
+target_entity_type_id: node
+target_bundle: hub_update
+default_langcode: site_default
+language_alterable: true

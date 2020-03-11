@@ -1,0 +1,35 @@
+uuid: a6489cb0-7f22-479a-a5ea-32694b98bb45
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_innovation_hub
+    - node.type.hub_update
+    - taxonomy.vocabulary.innovation_hub
+  module:
+    - custom_add_another
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
+id: node.hub_update.field_innovation_hub
+field_name: field_innovation_hub
+entity_type: node
+bundle: hub_update
+label: Hub
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      innovation_hub: innovation_hub
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
