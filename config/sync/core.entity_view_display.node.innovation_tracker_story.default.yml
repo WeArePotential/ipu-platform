@@ -1,0 +1,51 @@
+uuid: 33bf4f41-4e6b-462d-a26f-a8bbd76e1b54
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.innovation_tracker_story.body
+    - field.field.node.innovation_tracker_story.field_date_single
+    - field.field.node.innovation_tracker_story.field_integer_single
+    - node.type.innovation_tracker_story
+  module:
+    - datetime
+    - text
+    - user
+id: node.innovation_tracker_story.default
+targetEntityType: node
+bundle: innovation_tracker_story
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_date_single:
+    weight: 103
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_integer_single:
+    weight: 102
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  langcode: true

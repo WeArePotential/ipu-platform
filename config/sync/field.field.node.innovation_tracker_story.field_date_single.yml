@@ -1,0 +1,29 @@
+uuid: 213383e7-d37f-46f5-a23f-a76f13fa77ef
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_date_single
+    - node.type.innovation_tracker_story
+  module:
+    - custom_add_another
+    - datetime
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
+id: node.innovation_tracker_story.field_date_single
+field_name: field_date_single
+entity_type: node
+bundle: innovation_tracker_story
+label: 'Issue date'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

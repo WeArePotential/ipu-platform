@@ -1,0 +1,29 @@
+uuid: ffe059e3-cf59-4e20-af89-1c405fb44bdd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_integer_single
+    - node.type.innovation_tracker_story
+  module:
+    - custom_add_another
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
+id: node.innovation_tracker_story.field_integer_single
+field_name: field_integer_single
+entity_type: node
+bundle: innovation_tracker_story
+label: 'Issue number'
+description: 'Specify the issue number of the Innovation Tracker Issue, for example: enter <em>2</em> if this is <em>Issue 2</em>'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

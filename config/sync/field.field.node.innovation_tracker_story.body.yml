@@ -1,0 +1,27 @@
+uuid: c0945f43-aafc-4ad7-b038-e9bb22ec90a1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.innovation_tracker_story
+  module:
+    - custom_add_another
+    - text
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
+id: node.innovation_tracker_story.body
+field_name: body
+entity_type: node
+bundle: innovation_tracker_story
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

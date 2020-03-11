@@ -1,0 +1,17 @@
+uuid: 2eaec545-bf0e-4d34-ad2a-905f5026a420
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Innovation Tracker Story'
+type: innovation_tracker_story
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false
