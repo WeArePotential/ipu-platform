@@ -1,0 +1,19 @@
+uuid: 7e99d92b-75dd-4e33-9974-1d9cfbdb0d93
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_innovation_tracker_story
+field_name: field_innovation_tracker_story
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

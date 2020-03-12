@@ -1,0 +1,26 @@
+uuid: 8c83783e-9090-4fb9-8553-be1728ee498c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_caption
+    - node.type.innovation_tracker_issue
+  module:
+    - custom_add_another
+    - text
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
+id: node.innovation_tracker_issue.field_caption
+field_name: field_caption
+entity_type: node
+bundle: innovation_tracker_issue
+label: Caption
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

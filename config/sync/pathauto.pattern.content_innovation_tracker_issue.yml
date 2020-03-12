@@ -1,0 +1,33 @@
+uuid: 7f6ecc9b-646d-4b86-83e6-3b9bb5293ebc
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: content_innovation_tracker_issue
+label: 'Content - Innovation Tracker Issue - EN'
+type: 'canonical_entities:node'
+pattern: 'innovation-tracker/[node:title]'
+selection_criteria:
+  af9606b6-00c3-43bb-bc07-cb2c01abba07:
+    id: node_type
+    bundles:
+      innovation_tracker_issue: innovation_tracker_issue
+    negate: false
+    context_mapping:
+      node: node
+    uuid: af9606b6-00c3-43bb-bc07-cb2c01abba07
+  c424b7aa-1e84-470a-9063-ab94784a3ad8:
+    id: language
+    langcodes:
+      en: en
+    negate: false
+    context_mapping:
+      language: 'node:langcode:language'
+    uuid: c424b7aa-1e84-470a-9063-ab94784a3ad8
+selection_logic: and
+weight: -5
+relationships:
+  'node:langcode:language':
+    label: Language
