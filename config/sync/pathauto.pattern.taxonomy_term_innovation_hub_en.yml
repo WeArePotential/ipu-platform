@@ -1,0 +1,34 @@
+uuid: bb84b8a3-31d2-4a50-8ad2-ee5ddbb9795d
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - language
+    - taxonomy
+id: taxonomy_term_innovation_hub_en
+label: 'Taxonomy term - Innovation Hub - EN'
+type: 'canonical_entities:taxonomy_term'
+pattern: 'innovation-hub/[term:name]'
+selection_criteria:
+  c1bca6eb-d9b0-4d50-95b5-11007a846bd7:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      innovation_hub: innovation_hub
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: c1bca6eb-d9b0-4d50-95b5-11007a846bd7
+  6cdd89a2-0530-4b69-ba47-3df1cc338025:
+    id: language
+    langcodes:
+      en: en
+    negate: false
+    context_mapping:
+      language: 'taxonomy_term:langcode:language'
+    uuid: 6cdd89a2-0530-4b69-ba47-3df1cc338025
+selection_logic: and
+weight: -10
+relationships:
+  'taxonomy_term:langcode:language':
+    label: Language

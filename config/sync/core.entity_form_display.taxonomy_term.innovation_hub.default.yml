@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.taxonomy_term.innovation_hub.field_hub_type
     - field.field.taxonomy_term.innovation_hub.field_link_single
     - taxonomy.vocabulary.innovation_hub
   module:
@@ -28,6 +29,12 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_hub_type:
+    weight: 32
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
   field_link_single:
     weight: 31
     settings:
