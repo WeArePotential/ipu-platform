@@ -8,7 +8,6 @@ dependencies:
     - taxonomy.vocabulary.innovation_hub
   module:
     - link
-    - options
     - text
 id: taxonomy_term.innovation_hub.default
 targetEntityType: taxonomy_term
@@ -22,16 +21,9 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_hub_type:
-    weight: 2
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: list_default
-    region: content
   field_link_single:
     weight: 1
-    label: above
+    label: inline
     settings:
       trim_length: 80
       url_only: false
@@ -42,4 +34,5 @@ content:
     type: link
     region: content
 hidden:
+  field_hub_type: true
   langcode: true

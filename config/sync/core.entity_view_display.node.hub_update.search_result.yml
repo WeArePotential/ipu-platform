@@ -1,8 +1,9 @@
-uuid: fe2398a1-4b9f-4873-8424-b3efbae422ef
+uuid: 3619da10-7f66-4113-8d32-2795b8a3d590
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.search_result
     - field.field.node.hub_update.body
     - field.field.node.hub_update.field_innovation_hub
     - node.type.hub_update
@@ -13,49 +14,49 @@ dependencies:
 third_party_settings:
   ds:
     layout:
-      id: bs_2col_stacked
+      id: bs_1col
       library: null
       disable_css: false
       entity_classes: all_classes
       settings:
-        layout:
-          wrapper: div
-          classes:
-            row: row
-          add_layout_class: 1
-          attributes: ''
-        regions:
-          main:
-            wrapper: div
-            classes:
-              col-sm-12: col-sm-12
-            add_region_classes: 1
-            attributes: ''
+        classes: {  }
+        wrappers:
+          main: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
     regions:
-      left:
+      main:
+        - langcode
+        - links
         - body
         - field_innovation_hub
-id: node.hub_update.default
+id: node.hub_update.search_result
 targetEntityType: node
 bundle: hub_update
-mode: default
+mode: search_result
 content:
   body:
     label: hidden
     type: text_default
-    weight: 0
+    weight: 101
     settings: {  }
     third_party_settings: {  }
-    region: main
+    region: content
   field_innovation_hub:
-    weight: 1
+    weight: 102
     label: hidden
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-    region: main
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   addtoany: true
   langcode: true
-  links: true
