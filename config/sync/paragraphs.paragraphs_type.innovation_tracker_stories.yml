@@ -1,0 +1,9 @@
+uuid: 85becf93-1731-495d-87e6-6ffbcdfdc072
+langcode: en
+status: true
+dependencies: {  }
+id: innovation_tracker_stories
+label: 'Innovation Tracker Stories'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

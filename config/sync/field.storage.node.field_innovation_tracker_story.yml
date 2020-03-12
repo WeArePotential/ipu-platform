@@ -1,16 +1,18 @@
-uuid: 7e99d92b-75dd-4e33-9974-1d9cfbdb0d93
+uuid: da1decd4-3393-46fd-92f3-7ee72ca0bd65
 langcode: en
 status: true
 dependencies:
   module:
+    - entity_reference_revisions
     - node
+    - paragraphs
 id: node.field_innovation_tracker_story
 field_name: field_innovation_tracker_story
 entity_type: node
-type: entity_reference
+type: entity_reference_revisions
 settings:
-  target_type: node
-module: core
+  target_type: paragraph
+module: entity_reference_revisions
 locked: false
 cardinality: -1
 translatable: true
