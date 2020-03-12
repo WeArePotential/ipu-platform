@@ -4,11 +4,12 @@ status: true
 dependencies:
   config:
     - field.field.node.innovation_tracker_story.body
-    - field.field.node.innovation_tracker_story.field_date_single
-    - field.field.node.innovation_tracker_story.field_integer_single
+    - field.field.node.innovation_tracker_story.field_caption
+    - field.field.node.innovation_tracker_story.field_country
+    - field.field.node.innovation_tracker_story.field_media_image
     - node.type.innovation_tracker_story
   module:
-    - datetime
+    - image
     - text
     - user
 id: node.innovation_tracker_story.default
@@ -23,23 +24,29 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
-  field_date_single:
+  field_caption:
     weight: 103
     label: above
-    settings:
-      format_type: medium
-      timezone_override: ''
+    settings: {  }
     third_party_settings: {  }
-    type: datetime_default
+    type: text_default
     region: content
-  field_integer_single:
+  field_country:
+    weight: 104
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_media_image:
     weight: 102
     label: above
     settings:
-      thousand_separator: ''
-      prefix_suffix: true
+      image_style: ''
+      image_link: ''
     third_party_settings: {  }
-    type: number_integer
+    type: image
     region: content
   links:
     weight: 100

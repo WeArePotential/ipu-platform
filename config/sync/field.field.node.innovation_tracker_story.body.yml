@@ -16,7 +16,7 @@ id: node.innovation_tracker_story.body
 field_name: body
 entity_type: node
 bundle: innovation_tracker_story
-label: Body
+label: Description
 description: ''
 required: false
 translatable: true
