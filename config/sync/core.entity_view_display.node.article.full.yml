@@ -57,8 +57,8 @@ third_party_settings:
         - field_video
         - body
       footer:
-        - group_related
         - 'dynamic_block_field:node-related_news_and_stories'
+        - group_related
     fields:
       'dynamic_block_field:node-related_news_and_stories':
         plugin_id: 'dynamic_block_field:node-related_news_and_stories'
@@ -200,6 +200,7 @@ content:
             lb-col: false
             classes: {  }
 hidden:
+  addtoany: true
   field_contact_ipu: true
   field_country: true
   field_image: true

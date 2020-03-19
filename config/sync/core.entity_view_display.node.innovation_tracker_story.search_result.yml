@@ -1,8 +1,9 @@
-uuid: 33bf4f41-4e6b-462d-a26f-a8bbd76e1b54
+uuid: 025cd849-cd4d-4447-b8a4-0cbd70b2b92f
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.search_result
     - field.field.node.innovation_tracker_story.body
     - field.field.node.innovation_tracker_story.field_caption
     - field.field.node.innovation_tracker_story.field_country
@@ -85,10 +86,10 @@ third_party_settings:
         speed: fast
       label: image
       region: hidden
-id: node.innovation_tracker_story.default
+id: node.innovation_tracker_story.search_result
 targetEntityType: node
 bundle: innovation_tracker_story
-mode: default
+mode: search_result
 content:
   body:
     label: hidden

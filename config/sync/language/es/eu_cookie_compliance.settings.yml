@@ -4,5 +4,7 @@ popup_agree_button_message: Aceptar
 popup_disagree_button_message: 'Más info'
 popup_find_more_button_message: 'Más info'
 popup_hide_button_message: Ocultar
+popup_link: /node/9571
+disagree_button_label: 'No thank you'
 withdraw_tab_button_label: 'Opciones de privacidad'
 save_preferences_button_label: 'Guardar preferencias'

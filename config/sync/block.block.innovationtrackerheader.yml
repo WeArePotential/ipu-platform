@@ -1,0 +1,24 @@
+uuid: 8d688b8d-23b2-4135-8e99-0b7b79b8cc61
+langcode: en
+status: true
+dependencies:
+  module:
+    - ipu_innovation_tracker
+  theme:
+    - ipu
+id: innovationtrackerheader
+theme: ipu
+region: content
+weight: -16
+provider: null
+plugin: ipu_innovation_tracker_header
+settings:
+  id: ipu_innovation_tracker_header
+  label: 'Innovation Tracker Header'
+  provider: ipu_innovation_tracker
+  label_display: '0'
+  page_title: 'IPU Innovation Tracker'
+  content:
+    value: "<p>The quarterly electronic bulletin from the Centre for Innovation in Parliament</p>\r\n"
+    format: full_html
+visibility: {  }

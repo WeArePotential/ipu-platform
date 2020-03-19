@@ -99,12 +99,14 @@ module:
   imagemagick: 0
   inline_entity_form: 0
   ipu_events: 0
+  ipu_innovation_tracker: 0
   ipu_layouts: 0
   ipu_map: 0
   ipu_orgchart: 0
   ipu_tweaks: 0
   ipu_views_taxonomy_args: 0
   job_scheduler: 0
+  kint: 0
   lang_dropdown: 0
   language: 0
   languagefield: 0

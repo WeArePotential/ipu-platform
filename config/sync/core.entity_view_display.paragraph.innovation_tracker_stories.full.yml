@@ -1,17 +1,18 @@
-uuid: 6aee5f77-8f2b-4d32-a699-440811628c15
+uuid: d148d690-8ca5-4605-aec5-fb17baf35191
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.paragraph.full
     - field.field.paragraph.innovation_tracker_stories.field_node
     - field.field.paragraph.innovation_tracker_stories.field_title
     - paragraphs.paragraphs_type.innovation_tracker_stories
   module:
     - ds
-id: paragraph.innovation_tracker_stories.default
+id: paragraph.innovation_tracker_stories.full
 targetEntityType: paragraph
 bundle: innovation_tracker_stories
-mode: default
+mode: full
 content:
   field_node:
     weight: 1

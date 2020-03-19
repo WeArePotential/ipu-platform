@@ -6,6 +6,7 @@ dependencies:
     - entity_browser.browser.browse_files_modal
     - field.field.node.innovation_tracker_issue.body
     - field.field.node.innovation_tracker_issue.field_caption
+    - field.field.node.innovation_tracker_issue.field_contribute_block
     - field.field.node.innovation_tracker_issue.field_date_single
     - field.field.node.innovation_tracker_issue.field_hub_updates
     - field.field.node.innovation_tracker_issue.field_innovation_tracker_story
@@ -13,6 +14,7 @@ dependencies:
     - field.field.node.innovation_tracker_issue.field_media_image
     - node.type.innovation_tracker_issue
   module:
+    - block_field
     - datetime
     - entity_browser
     - field_group
@@ -32,6 +34,7 @@ third_party_settings:
         - title
         - field_integer_single
         - field_date_single
+        - field_contribute_block
       parent_name: ''
       weight: 0
       format_type: fieldset
@@ -98,6 +101,15 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+    region: content
+  field_contribute_block:
+    weight: 6
+    settings:
+      plugin_id: ''
+      settings: {  }
+      configuration_form: full
+    third_party_settings: {  }
+    type: block_field_default
     region: content
   field_date_single:
     weight: 5

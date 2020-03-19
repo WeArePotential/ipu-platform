@@ -1,11 +1,11 @@
-uuid: 54b13fb5-c947-41a0-8689-1124697c2ee5
+uuid: 49341190-f900-48b5-8e31-d6a87057de63
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.search_index
     - field.field.node.innovation_tracker_issue.body
     - field.field.node.innovation_tracker_issue.field_caption
-    - field.field.node.innovation_tracker_issue.field_contribute_block
     - field.field.node.innovation_tracker_issue.field_date_single
     - field.field.node.innovation_tracker_issue.field_hub_updates
     - field.field.node.innovation_tracker_issue.field_innovation_tracker_story
@@ -13,16 +13,15 @@ dependencies:
     - field.field.node.innovation_tracker_issue.field_media_image
     - node.type.innovation_tracker_issue
   module:
-    - block_field
     - datetime
     - entity_reference_revisions
     - image
     - text
     - user
-id: node.innovation_tracker_issue.default
+id: node.innovation_tracker_issue.search_index
 targetEntityType: node
 bundle: innovation_tracker_issue
-mode: default
+mode: search_index
 content:
   body:
     label: hidden
@@ -37,13 +36,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
-    region: content
-  field_contribute_block:
-    weight: 110
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: block_field
     region: content
   field_date_single:
     weight: 103
