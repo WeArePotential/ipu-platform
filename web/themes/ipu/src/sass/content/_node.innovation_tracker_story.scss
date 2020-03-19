@@ -1,0 +1,45 @@
+.node--type-innovation-tracker-story.node--view-mode-highlight {
+  .bs-region--main {
+    padding: 0;
+  }
+
+  .group-content {
+    padding: 20px;
+    flex: 1;
+    background-color: #fff;
+    line-height: 1.5em;
+  }
+
+  .innovation-tracker-story {
+    &__node-title h3 {
+      font-size: 1.1rem;
+      line-height: 1.25;
+      color: color('ipu-blue');
+      margin-bottom: 0.5em;
+    }
+
+    &__node-link a {
+      &:link,
+      &:visited {
+        @extend .btn-outline-primary;
+        @extend .btn;
+        @extend .btn-sm;
+
+        &:after {
+          padding-left: 5px;
+          font-family: "Font Awesome 5 Free", sans-serif;
+          content: "\f061";
+          font-weight: 900;
+          -moz-osx-font-smoothing: grayscale;
+          -webkit-font-smoothing: antialiased;
+          display: inline-block;
+          font-style: normal;
+          font-variant: normal;
+          text-rendering: auto;
+          line-height: 1;
+        }
+      }
+    }
+  }
+
+}
