@@ -1,0 +1,25 @@
+block.settings.ipu_innovation_tracker_header:
+  type: block_settings
+  label: 'IPU Innovation Tracker Header Block configuration'
+  mapping:
+    page_title:
+      type: text
+      label: 'Title'
+    content:
+      type: text_format
+      label: 'Content'
+
+block.settings.ipu_innovation_tracker_contribute:
+  type: block_settings
+  label: 'IPU Innovation Tracker Contribute Block configuration'
+
+ipu_innovation_tracker.contribute:
+  type: config_object
+  label: 'IPU Innovation Tracker Contribute content configuration'
+  mapping:
+    content:
+      type: text_format
+      label: 'Content'
+    langcode:
+      type: string
+      label: 'Language code'

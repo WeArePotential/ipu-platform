@@ -1,0 +1,6 @@
+ipu_innovation_tracker.configuration_form:
+  title: 'IPU Innovation Tracker Contribution Block Settings'
+  parent: system.admin_config_system
+  description: 'Configure the text to display on the contribution block of the Innovation Tracker.'
+  weight: 0
+  route_name: ipu_innovation_tracker.configuration_form
