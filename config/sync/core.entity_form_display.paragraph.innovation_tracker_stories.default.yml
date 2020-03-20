@@ -22,12 +22,10 @@ content:
     weight: 1
     settings:
       match_operator: CONTAINS
-      size: '60'
+      size: 60
       placeholder: ''
-      link_to_entity: false
-      link_to_edit_form: true
     third_party_settings: {  }
-    type: entityqueue_dragtable
+    type: entity_reference_autocomplete
     region: content
   field_title:
     weight: 0
