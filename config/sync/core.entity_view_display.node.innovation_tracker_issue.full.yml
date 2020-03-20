@@ -41,19 +41,19 @@ third_party_settings:
     regions:
       ds_content:
         - group_wrapper
+        - group_image
         - field_media_image
-        - field_caption
         - field_innovation_tracker_story
+        - field_caption
         - field_hub_updates
-        - group_header
         - group_left
+        - group_header
         - node_title
-        - group_stories
         - field_date_single
+        - group_stories
         - group_hub_updates
         - body
         - group_right
-        - group_image
         - field_contribute_block
     fields:
       node_title:
@@ -66,8 +66,8 @@ third_party_settings:
       children:
         - field_media_image
         - field_caption
-      parent_name: group_left
-      weight: 24
+      parent_name: ''
+      weight: 1
       format_type: html_element
       format_settings:
         id: ''
@@ -161,7 +161,6 @@ third_party_settings:
         - node_title
         - field_date_single
         - body
-        - group_image
       parent_name: group_header
       weight: 20
       format_type: html_element

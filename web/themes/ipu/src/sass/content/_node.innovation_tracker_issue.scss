@@ -6,11 +6,55 @@
     border-bottom-color: color('ipu-orange');
   }
 }
+.viewfield--view__innovation_tracker_issue {
+  //@extend .container;
+}
+
+.view-innovation-tracker-issue {
+  @extend .row;
+}
+.view-innovation-tracker-issue .views-row {
+  @extend .col-sm-12;
+  @extend .col-md-4;
+  .bs-1col {
+    @extend .card;
+    background-color: $ipu-extra-light-grey;
+  }
+  .innovation-tracker-issue__node-title,
+  .innovation-tracker-issue__node-link {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .innovation-tracker-issue__node-title a {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-light;
+    color: $secondary;
+  }
+  .innovation-tracker-issue__field-date-single {
+    @extend .card-body;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-light;
+  }
+  .innovation-tracker-issue__body {
+    @extend .card-body;
+  }
+  .innovation-tracker-issue__node-link {
+    &,
+    &:link,
+    &:visited {
+      @extend .btn-outline-primary;
+      @extend .btn;
+      @extend .btn-sm;
+      background-color: $ipu-white;
+    }
+  }
+}
 
 // Using block--ipu-content wrapper in order to override existing styles which also specify this wrapper.
 .block--ipu-content .innovation-tracker-issue {
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.3);
-  background-color: #fafafa;
+  background-color: $ipu-extra-light-grey;
   margin-bottom: 30px;
   padding: 10px 10px 20px 10px;
 

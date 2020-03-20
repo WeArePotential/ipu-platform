@@ -3,11 +3,13 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.taxonomy_term.innovation_hub.field_host_parliament
     - field.field.taxonomy_term.innovation_hub.field_hub_type
     - field.field.taxonomy_term.innovation_hub.field_link_single
     - taxonomy.vocabulary.innovation_hub
   module:
     - link
+    - options
     - text
 id: taxonomy_term.innovation_hub.default
 targetEntityType: taxonomy_term
@@ -17,12 +19,27 @@ content:
   description:
     label: hidden
     type: text_default
-    weight: 0
+    weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_host_parliament:
+    weight: 3
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_hub_type:
+    type: list_default
+    weight: 0
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
   field_link_single:
-    weight: 1
+    weight: 2
     label: inline
     settings:
       trim_length: 80
@@ -34,5 +51,4 @@ content:
     type: link
     region: content
 hidden:
-  field_hub_type: true
   langcode: true
