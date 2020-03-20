@@ -88,4 +88,5 @@ content:
     third_party_settings: {  }
 hidden:
   addtoany: true
+  field_contribute_block: true
   langcode: true

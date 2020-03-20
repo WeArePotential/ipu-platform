@@ -10,7 +10,6 @@ dependencies:
     - field_group
     - field_layout
     - layout_discovery
-    - path
     - text
 third_party_settings:
   field_layout:
@@ -23,6 +22,7 @@ third_party_settings:
         - title
         - body
         - field_innovation_hub
+        - status
       parent_name: ''
       weight: 0
       format_type: fieldset
@@ -47,12 +47,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
     region: content
-  created:
-    type: datetime_timestamp
-    weight: 4
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   field_innovation_hub:
     weight: 5
     settings:
@@ -69,31 +63,11 @@ content:
     settings:
       include_locked: true
     third_party_settings: {  }
-  path:
-    type: path
-    weight: 8
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  promote:
-    type: boolean_checkbox
-    settings:
-      display_label: true
-    weight: 6
-    region: content
-    third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 10
-    region: content
-    third_party_settings: {  }
-  sticky:
-    type: boolean_checkbox
-    settings:
-      display_label: true
-    weight: 7
+    weight: 6
     region: content
     third_party_settings: {  }
   title:
@@ -105,22 +79,14 @@ content:
       placeholder: ''
     third_party_settings: {  }
   translation:
-    weight: 5
+    weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }
-  uid:
-    type: entity_reference_autocomplete
-    weight: 3
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    region: content
-    third_party_settings: {  }
-  url_redirects:
-    weight: 9
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-hidden: {  }
+hidden:
+  created: true
+  path: true
+  promote: true
+  sticky: true
+  uid: true
+  url_redirects: true

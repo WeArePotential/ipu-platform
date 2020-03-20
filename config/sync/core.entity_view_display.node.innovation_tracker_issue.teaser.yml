@@ -29,4 +29,11 @@ content:
     region: content
 hidden:
   addtoany: true
+  field_caption: true
+  field_contribute_block: true
+  field_date_single: true
+  field_hub_updates: true
+  field_innovation_tracker_story: true
+  field_integer_single: true
+  field_media_image: true
   langcode: true
