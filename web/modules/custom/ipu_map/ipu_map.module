@@ -81,6 +81,31 @@ function ipu_map_get_countries() {
   return $terms;
 }
 
+function ipu_map_get_hub_link($country_tid) {
+  // Get any Hub terms flagged with this country
+  /*if ($hub_vocab = taxonomy_vocabulary_machine_name_load('innovation_hub')) {
+    $efq = new EntityFieldQuery();
+    $result = $efq->entityCondition('entity_type', 'taxonomy_term')
+      ->propertyCondition('vid', $hub_vocab->vid)
+      ->fieldCondition('field_country', 'target_id', $country_tid)
+      ->execute();
+    if (!empty($result['taxonomy_term'])) {
+      $first_term_stub = current($result['taxonomy_term']);
+      $first_term_tid = key($result['taxonomy_term']);
+      // To load all terms.
+      $terms = taxonomy_term_load_multiple(array_keys($result['taxonomy_term']));
+      // To generate an options list.
+      foreach ($terms as $term) {
+        // To hook into i18n and everything else, use entity_label().
+        $term_options_list[$term->tid] = entity_label('taxonomy_term', $term);
+        // Single language, no term label alters.
+        $term_options_list[$term->tid] = $term->name;
+      }
+      return print_r($term_options_list, true);
+    }
+  }*/
+  return '';
+}
 function ipu_map_get_country_page() {
 
 }
@@ -236,6 +261,7 @@ function ipu_map_get_hr_documents($args) {
   return [$view, count($checkempty)];
 }
 
+
 function ipu_map_get_country_news($country_term_id, $regions) {
   // NOT USED: Uses an in-built view. We use the pre_reneder below to change the sort order here.
   $checkempty = views_get_view_result('articles', 'latest_4_country', $country_term_id);
@@ -249,6 +275,15 @@ function ipu_map_get_country_news($country_term_id, $regions) {
   /*if (!empty($checkregionempty)) {
     $region_view = views_embed_view('articles', 'latest_4_by_region', $regions);;
   }*/
+  return $view;
+}
+function ipu_map_get_innovation_tracker_stories($country_term_id) {
+  $checkempty = views_get_view_result('innovation_tracker_story', 'latest_3_country', $country_term_id);
+  if (!empty($checkempty)) {
+    $view = views_embed_view('innovation_tracker_story', 'latest_3_country', $country_term_id);
+  } else {
+    $view = [];
+  }
   return $view;
 }
 function ipu_map_get_country_case_studies($country_term_id) {
@@ -414,6 +449,7 @@ function ipu_map_theme($existing, $type, $theme, $path) {
         'website_link' => '',
         'last_election_date' => '',
         'data_provenance' => '',
+        'hub_link' => '',
       ),
     ),
     'ipu-map-flag' => array(

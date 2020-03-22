@@ -8,6 +8,8 @@ dependencies:
     - field.field.taxonomy_term.innovation_hub.field_link_single
     - taxonomy.vocabulary.innovation_hub
   module:
+    - ds
+    - ipu_innovation_tracker
     - link
     - options
     - text
@@ -27,9 +29,21 @@ content:
     weight: 3
     label: inline
     settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
+      separator_option: ', '
+      element_option: '- None -'
+      element_class: ''
+      wrapper_option: '- None -'
+      wrapper_class: ''
+      links_option: true
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: country_taxonomy_term_reference
     region: content
   field_hub_type:
     type: list_default

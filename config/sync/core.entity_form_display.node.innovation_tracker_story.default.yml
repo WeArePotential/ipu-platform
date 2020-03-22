@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.innovation_tracker_story.field_media_image
     - node.type.innovation_tracker_story
   module:
+    - chosen_field
     - entity_browser
     - field_group
     - field_layout
@@ -91,12 +92,9 @@ content:
     region: content
   field_country:
     weight: 4
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: chosen_select
     region: content
   field_media_image:
     weight: 10

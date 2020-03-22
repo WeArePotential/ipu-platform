@@ -40,15 +40,15 @@ third_party_settings:
     regions:
       main:
         - group_image
-        - field_media_image
         - group_content
+        - field_media_image
         - node_title
         - body
         - node_link
     fields:
       node_link:
         plugin_id: node_link
-        weight: 18
+        weight: 19
         label: hidden
         formatter: default
         settings:
@@ -124,7 +124,7 @@ content:
   body:
     label: hidden
     type: smart_trim
-    weight: 17
+    weight: 18
     settings:
       trim_length: 60
       trim_type: words
