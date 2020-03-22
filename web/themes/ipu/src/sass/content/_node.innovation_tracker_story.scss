@@ -3,6 +3,13 @@
     border-bottom-color: color('ipu-orange');
   }
 }
+
+.view-innovation-tracker-story {
+  .views-row {
+    @extend .innovation-tracker-issue__stories-row;
+  }
+}
+
 .node--type-innovation-tracker-story.node--view-mode-highlight {
   .bs-region--main {
     padding: 0;
