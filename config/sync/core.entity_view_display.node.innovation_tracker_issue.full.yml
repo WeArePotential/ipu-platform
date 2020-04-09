@@ -41,16 +41,16 @@ third_party_settings:
     regions:
       ds_content:
         - group_wrapper
-        - group_image
         - field_media_image
-        - field_innovation_tracker_story
         - field_caption
+        - field_innovation_tracker_story
         - field_hub_updates
+        - group_image
         - group_left
         - group_header
         - node_title
-        - field_date_single
         - group_stories
+        - field_date_single
         - group_hub_updates
         - body
         - group_right
@@ -67,7 +67,7 @@ third_party_settings:
         - field_media_image
         - field_caption
       parent_name: ''
-      weight: 1
+      weight: 14
       format_type: html_element
       format_settings:
         id: ''
