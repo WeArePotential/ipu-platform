@@ -3,6 +3,30 @@ table.google-visualization-orgchart-table {
   border-collapse: separate;
 }
 
+/*.google-visualization-orgchart-table tr + tr + tr + tr + tr td + td + td + td + td.google-visualization-orgchart-linenode {
+  background-color: white;
+  border-top: 1px solid #0f74a8;
+}*/
+.google-visualization-orgchart-table tr + tr + tr + tr + tr td + td + td + td + td.google-visualization-orgchart-linenode:before {
+  content: '.';
+  min-width: 10px;
+  color: #fff;
+  display: block;
+  height: 3rem;
+  border-bottom: 2px solid #0f74a8;
+}
+/*
+.google-visualization-orgchart-table tr + tr + tr + tr + tr + tr td + td + td + td + td.google-visualization-orgchart-linenode {
+  background-color: transparent;
+  border-bottom: 0px solid #0f74a8;
+}*/
+.google-visualization-orgchart-table tr + tr + tr + tr + tr + tr td + td + td + td + td.google-visualization-orgchart-linenode:before {
+  content: '';
+  width: auto;
+  display: inline;
+  border-bottom: 0px;
+}
+}
 table.google-visualization-orgchart-table tr:hover {
   background-color: transparent;
 }
