@@ -101,7 +101,13 @@ function ipu_map_get_hub_link($country_tid) {
     }
     $alias = \Drupal::service('path.alias_manager')->getAliasByPath('/taxonomy/term/' . $tid);
     $link = Link::fromTextAndUrl($term_options_list[$tid], Url::fromUserInput($alias));
-    return t('Host for %name innovation hub', ['%name' => $link->toString()]);
+    $html = t('Host for %name innovation hub', ['%name' => $link->toString()]);
+
+    $html .= '<div class="hub-description">'.$term->description->value.'</div>';
+    $link = Link::fromTextAndUrl(t('Read more'), Url::fromUserInput($alias))->toRenderable();
+    $link['#attributes'] = ['class' => ['btn', 'btn-sm', 'btn-outline-primary']];
+    $html .= render($link);
+    return $html;
   }
   return '';
 }

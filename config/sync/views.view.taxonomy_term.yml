@@ -251,9 +251,11 @@ display:
       empty: {  }
       relationships: {  }
       fields: {  }
-      display_extenders: {  }
+      display_extenders:
+        metatag_display_extender: {  }
       link_url: ''
       link_display: page_1
+      title: ''
     cache_metadata:
       contexts:
         - 'languages:language_interface'
@@ -321,12 +323,13 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          empty: true
-          content: '<h3>News from the Hub</h3>'
+          empty: false
+          content: '@total hub updates'
           plugin_id: result
       defaults:
         header: false
         arguments: false
+        title: false
       arguments:
         tid:
           id: tid
@@ -372,6 +375,7 @@ display:
           plugin_id: taxonomy_index_tid
       display_description: ''
       block_description: 'Content list of Innovation Hub vocabulary'
+      title: 'Hub updates'
     cache_metadata:
       contexts:
         - 'languages:language_interface'

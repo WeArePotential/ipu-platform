@@ -19,7 +19,6 @@ dependencies:
     - ds
     - entity_reference_revisions
     - field_group
-    - image
     - text
     - user
 third_party_settings:
@@ -41,18 +40,16 @@ third_party_settings:
     regions:
       ds_content:
         - group_wrapper
-        - field_media_image
-        - field_caption
+        - group_image
         - field_innovation_tracker_story
         - field_hub_updates
-        - group_image
-        - group_left
         - group_header
+        - group_left
         - node_title
         - group_stories
         - field_date_single
-        - group_hub_updates
         - body
+        - group_hub_updates
         - group_right
         - field_contribute_block
     fields:
@@ -63,11 +60,9 @@ third_party_settings:
         formatter: default
   field_group:
     group_image:
-      children:
-        - field_media_image
-        - field_caption
+      children: {  }
       parent_name: ''
-      weight: 14
+      weight: 1
       format_type: html_element
       format_settings:
         id: ''
@@ -206,13 +201,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: ds_content
-  field_caption:
-    weight: 5
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: ds_content
   field_contribute_block:
     type: block_field
     weight: 25
@@ -269,17 +257,10 @@ content:
       link: ''
     third_party_settings: {  }
     region: ds_content
-  field_media_image:
-    weight: 4
-    label: hidden
-    settings:
-      image_style: ''
-      image_link: ''
-    third_party_settings: {  }
-    type: image
-    region: ds_content
 hidden:
   addtoany: true
+  field_caption: true
   field_integer_single: true
+  field_media_image: true
   langcode: true
   links: true
