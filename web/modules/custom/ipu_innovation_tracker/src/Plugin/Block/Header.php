@@ -100,8 +100,8 @@ class Header extends BlockBase {
         '#attributes' => [
           'class' => [
             'ipu-innovation-tracker__navigation',
-          ]
-        ]
+          ],
+        ],
       ];
 
       $build['wrapper']['previous'] = $this->buildNavigationLink($this->getCurrentIssue() - 1, $this->t('Previous'));
@@ -153,8 +153,30 @@ class Header extends BlockBase {
    * @return array
    */
   private function buildNavigationSelect() {
-    // @todo: Finish this later.
-    return ['#markup' => $this->currentNode->label()];
+    /* @todo: Turn this into a dropdown
+    $nids = [];
+    /** @var \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager */
+    /*
+     $entity_type_manager = \Drupal::service('entity_type.manager');
+    $query = $entity_type_manager->getStorage('node')->getQuery();
+    $result = $query
+      ->condition('status', NodeInterface::PUBLISHED)
+      ->condition('type', self::IPU_ISSUE)
+      ->order()
+      //->condition('field_integer_single', $issue_number)
+      ->execute();
+
+    if (!empty($result)) {
+      foreach($result as $nid=>$node) {
+        $nids[$nid] = $node->title;
+      }
+      //$nid = reset($result);
+      //$node = $entity_type_manager->getStorage('node')->load($nid);
+      //$link = $node->toLink($link_text)->toRenderable();
+    }
+    return $link;
+  */
+    return ['#markup' => '<div class="ipu-innovation-tracker__current">'.$this->currentNode->label(). '</div>'];
   }
 
   /**

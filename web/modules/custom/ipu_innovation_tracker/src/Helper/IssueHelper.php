@@ -5,6 +5,9 @@
 namespace Drupal\ipu_innovation_tracker\Helper;
 
 use Drupal\node\NodeInterface;
+use Drupal\Core\Entity\EntityViewBuilderInterface;
+
+
 
 /**
  * Class IssueHelper
@@ -100,10 +103,49 @@ class IssueHelper {
     $term = $node->get('field_innovation_hub')->referencedEntities();
     $term = reset($term);
     $link = $term->toLink($term->label(), 'link', ['attributes' => ['class' => ['innovation-tracker-issue__hub-link']]])->toRenderable();
-    $link['#weight'] = 50;
+    $link['#weight'] = 51;
     return $link;
   }
 
+  /**
+   * Generate a link to the hub country, given a node entity of type hub_update.
+   *
+   * @param \Drupal\node\NodeInterface $node
+   *   The node.
+   *
+   * @return array|mixed[]
+   *   The render array of a link to the innovation_hub taxonomy term.
+   *
+   * @throws \Drupal\Core\Entity\EntityMalformedException
+   * @throws \Drupal\Core\TypedData\Exception\MissingDataException
+   */
+  public static function getHubCountryLink(NodeInterface $node) {
+    /** @var \Drupal\taxonomy\TermInterface $term */
+    $term = $node->get('field_innovation_hub')->referencedEntities();
+    $term = reset($term);
+    $link_text = '';
+    foreach ($term->field_host_parliament as $i => $delta) {
+      $term_formatter = ['type' => 'country_taxonomy_term_reference'];
+      $render_array = $delta->view($term_formatter);
+      $link_text = \Drupal::service('renderer')->render($render_array);
+    }
+    if ($link_text !== '') {
+      $link = $term->toLink($link_text, 'link', [
+        'attributes' => [
+          'class' => [
+            'innovation-tracker-issue__country-link',
+          ],
+          'title' => t('Host') . ': ' . $link_text,
+        ],
+      ])->toRenderable();
+      $link['#prefix'] = '<div class="innovation-tracker-issue__country-link-wrapper">'.t('Host') . ': ';
+      $link['#suffix'] = '</div>';
+      $link['#weight'] = 50;
+      return $link;
+    } else {
+      return '';
+    }
+  }
   /**
    * Get all the hub types allowed on the field_hub_type of the taxonomy terms.
    *

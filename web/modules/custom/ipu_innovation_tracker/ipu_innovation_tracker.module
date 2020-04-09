@@ -74,6 +74,8 @@ function _ipu_innovation_tracker_node_innovation_tracker_issue_view_alter(array 
 function ipu_innovation_tracker_ds_pre_render_alter(array &$layout_render_array, array $context, array &$vars) {
   if ($context['entity_type'] === 'node' && $context['bundle'] === 'hub_update') {
     $layout_render_array['main']['hub_link'] = IssueHelper::getHubLink($context['entity']);
+    $layout_render_array['main']['country_link'] = IssueHelper::getHubCountryLink($context['entity']);
+
   }
 
   if ($context['entity_type'] === 'node' && $context['bundle'] === 'innovation_tracker_story' && $context['view_mode'] === 'full') {
@@ -94,10 +96,14 @@ function ipu_innovation_tracker_ds_pre_render_alter(array &$layout_render_array,
       /** @var \Drupal\paragraphs\ParagraphInterface $paragraph */
       $paragraph = $storage->load($pid);
       $parent = $paragraph->getParentEntity();
-      $render = $parent->toLink(t('&laquo; ' . $parent->label()))->toRenderable();
+      $parent_link_text = t('Innovation tracker') . ' | '.$parent->label() . ' | '. $parent->get('field_date_single')->date->format("d M Y");
+      $render = $parent->toLink($parent_link_text)->toRenderable();
+      $render['#attributes']['class'][] = 'innovation-tracker-story__parent-link';
+      $render['#prefix'] = '<div class="innovation-tracker-story__parent-link-wrapper">';
+      $render['#suffix'] = '</div>';
       $render['#weight'] = -10;
     }
 
-    $layout_render_array['right'][] = $render;
+    $layout_render_array['left'][] = $render;
   }
 }

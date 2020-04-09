@@ -84,3 +84,23 @@
     color: color('ipu-orange');
   }
 }
+
+.taxonomy-list-innovation-hub {
+  .innovation-hub__field-hub-type {
+    font-weight: $font-weight-normal;
+    font-style: italic;
+  }
+  .views-rows-wrapper {
+    margin: 10px -15px;
+  }
+  .innovation-hub__field-host-parliament {
+    .field__label.font-weight-bold {
+      font-weight: $font-weight-light !important;
+    }
+  }
+  .view-display-id-innovation_hub_terms {
+    header {
+      margin: 20px 0;
+    }
+  }
+}
