@@ -142,8 +142,9 @@ class IssueHelper {
       $link['#suffix'] = '</div>';
       $link['#weight'] = 50;
       return $link;
-    } else {
-      return '';
+    }
+    else {
+      return ['#markup' => ''];
     }
   }
   /**
