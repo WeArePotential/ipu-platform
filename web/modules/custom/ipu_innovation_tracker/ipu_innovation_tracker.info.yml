@@ -1,0 +1,5 @@
+name: 'IPU Innovation Tracker'
+type: module
+description: 'Blocks and various helpers for the Innovation Tracker content types.'
+core: 8.x
+package: 'IPU'

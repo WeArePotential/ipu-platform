@@ -8,8 +8,6 @@ display:
           submit_button: Appliquer
           reset_button_label: Réinitialiser
           exposed_sorts_label: 'Trier par'
-          sort_asc_label: Asc
-          sort_desc_label: Desc
       pager:
         options:
           expose:
@@ -20,5 +18,9 @@ display:
         tid:
           exception:
             title: Tout
-  page_1:
-    display_title: Page
+  page_1: {  }
+  innovation_hub_terms:
+    display_options:
+      header:
+        result:
+          content: '@total nouvelles du pôle'

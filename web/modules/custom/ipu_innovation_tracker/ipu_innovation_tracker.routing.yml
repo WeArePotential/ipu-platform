@@ -1,0 +1,7 @@
+ipu_innovation_tracker.configuration_form:
+  path: '/admin/config/system/ipu-innovation-tracker'
+  defaults:
+    _form: '\Drupal\ipu_innovation_tracker\Form\ConfigurationForm'
+    _title: IPU Innovation Tracker Contribution Block Settings
+  requirements:
+    _permission: 'administer content'

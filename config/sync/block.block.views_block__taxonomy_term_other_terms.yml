@@ -1,0 +1,40 @@
+uuid: 45905407-7be8-44c6-a7a7-3c1c253d21d4
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.taxonomy_term
+  module:
+    - ctools
+    - system
+    - views
+  theme:
+    - ipu
+id: views_block__taxonomy_term_other_terms
+theme: ipu
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:taxonomy_term-other_terms'
+settings:
+  id: 'views_block:taxonomy_term-other_terms'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+  context_mapping:
+    tid: '@taxonomy_term.taxonomy_term_route_context:taxonomy_term'
+visibility:
+  'entity_bundle:taxonomy_term':
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      innovation_hub: innovation_hub
+    negate: true
+    context_mapping:
+      taxonomy_term: '@taxonomy_term.taxonomy_term_route_context:taxonomy_term'
+  request_path:
+    id: request_path
+    pages: '/taxonomy/term/*'
+    negate: false
+    context_mapping: {  }

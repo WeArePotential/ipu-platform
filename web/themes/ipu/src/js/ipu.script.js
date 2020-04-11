@@ -231,4 +231,22 @@ import 'bootstrap';
     }
   };
 
+  Drupal.behaviors.innovationTrackerHubUpdates = {
+    attach: function(context) {
+      var $hub_updates = $('.innovation-tracker-issue .node--type-hub-update.node--view-mode-highlight', context).once('innovation-tracker-hub-updates');
+      if (!$hub_updates.length) {
+        return;
+      }
+
+      $hub_updates.each(function(index, element) {
+        var $top = $('.bs-region--top', this);
+        var $main = $('.bs-region--main', this);
+        $top.on('click', function() {
+          $(this).toggleClass('closed');
+          $main.slideToggle(300);
+        }).triggerHandler('click');
+      });
+    }
+  };
+
 })(jQuery, Drupal);

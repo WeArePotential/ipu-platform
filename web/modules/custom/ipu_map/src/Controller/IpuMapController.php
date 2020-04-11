@@ -73,6 +73,9 @@ class IpuMapController extends ControllerBase {
     // Build arrays of data from parline and the taxonomy term fields
     $data = ipu_map_get_parline_data($parliament_iso_code, $this->getDescription(), $this->getMembershipStatus(), $this->getPrinciplesSignatoryStatus(),$this->getHumanRightsCases(), $this->current_language_id);
 
+    $hub_link = ipu_map_get_hub_link($country->get('tid')->value);
+    $data['country_stats']['#hub_link'] = $hub_link == '' ? null : ['#markup'=>$hub_link];
+
     // Get any HR documents. If we have any, then we want to update the link
     // 285 is the term id of the HR Decisions Document type
     list($hr_documents_block, $hr_documents_count) = ipu_map_get_hr_documents([$country->get('tid')->value, 285]);
@@ -128,6 +131,9 @@ class IpuMapController extends ControllerBase {
     // Get a view with news and stories
     $news_block = ipu_map_get_country_news($country->get('tid')->value, $regions);
 
+    // Get a view with innovation traker stories
+    $innovation_tracker_stories_block = ipu_map_get_innovation_tracker_stories($country->get('tid')->value);
+
     $case_studies_block = ipu_map_get_country_case_studies($country->get('tid')->value);
     // Rendering of the block is done in the theming, so no need to run $markup .= \Drupal::service('renderer')->render($content);
 
@@ -151,6 +157,7 @@ class IpuMapController extends ControllerBase {
         'parline_data' => $data['data'],
         'country_stats' => $data['country_stats'],
         'news_and_stories' => $news_block,
+        'innovation_tracker_stories' => $innovation_tracker_stories_block,
         'case_studies' => $case_studies_block,
         'events' => $events_block,
         'hr_documents' => $hr_documents_block,

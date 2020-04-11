@@ -1,0 +1,16 @@
+uuid: 1fb04d85-8c89-45c3-b91b-4eee21b7b533
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.innovation_tracker_story
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: node.innovation_tracker_story
+target_entity_type_id: node
+target_bundle: innovation_tracker_story
+default_langcode: site_default
+language_alterable: true

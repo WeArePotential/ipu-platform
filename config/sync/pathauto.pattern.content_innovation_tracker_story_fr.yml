@@ -1,0 +1,33 @@
+uuid: 3d68fbda-0363-4ede-8ac3-50913eb8ec6e
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: content_innovation_tracker_story_fr
+label: 'Content - Innovation Tracker Story - FR'
+type: 'canonical_entities:node'
+pattern: 'bulletin-de-linnovation/histoires/[node:title]'
+selection_criteria:
+  c5f39207-3ab7-4ca3-934f-9a1c3209464e:
+    id: node_type
+    bundles:
+      innovation_tracker_story: innovation_tracker_story
+    negate: false
+    context_mapping:
+      node: node
+    uuid: c5f39207-3ab7-4ca3-934f-9a1c3209464e
+  44608491-db7f-4574-a545-c85fe46eb99a:
+    id: language
+    langcodes:
+      fr: fr
+    negate: false
+    context_mapping:
+      language: 'node:langcode:language'
+    uuid: 44608491-db7f-4574-a545-c85fe46eb99a
+selection_logic: and
+weight: -3
+relationships:
+  'node:langcode:language':
+    label: Language

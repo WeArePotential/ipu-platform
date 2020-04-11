@@ -1,0 +1,39 @@
+uuid: 4a2bcad9-ea54-4246-961b-6bfbcce930bd
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.innovation_tracker_issue.body
+    - node.type.innovation_tracker_issue
+  module:
+    - text
+    - user
+id: node.innovation_tracker_issue.teaser
+targetEntityType: node
+bundle: innovation_tracker_issue
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  field_caption: true
+  field_contribute_block: true
+  field_date_single: true
+  field_hub_updates: true
+  field_innovation_tracker_story: true
+  field_integer_single: true
+  field_media_image: true
+  langcode: true

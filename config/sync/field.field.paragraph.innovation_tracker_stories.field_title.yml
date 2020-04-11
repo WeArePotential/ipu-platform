@@ -1,0 +1,25 @@
+uuid: 216da971-4c39-4016-9dfd-dfab53930759
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.innovation_tracker_stories
+  module:
+    - custom_add_another
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
+id: paragraph.innovation_tracker_stories.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: innovation_tracker_stories
+label: Title
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

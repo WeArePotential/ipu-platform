@@ -1,0 +1,143 @@
+uuid: 5cccae81-110b-4b6d-8f94-69bd0a211ace
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.highlight
+    - field.field.node.innovation_tracker_issue.body
+    - field.field.node.innovation_tracker_issue.field_caption
+    - field.field.node.innovation_tracker_issue.field_contribute_block
+    - field.field.node.innovation_tracker_issue.field_date_single
+    - field.field.node.innovation_tracker_issue.field_hub_updates
+    - field.field.node.innovation_tracker_issue.field_innovation_tracker_story
+    - field.field.node.innovation_tracker_issue.field_integer_single
+    - field.field.node.innovation_tracker_issue.field_media_image
+    - image.style.teaser
+    - node.type.innovation_tracker_issue
+  module:
+    - datetime
+    - ds
+    - image
+    - smart_trim
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: bs_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        layout:
+          wrapper: div
+          classes:
+            row: row
+          add_layout_class: 1
+          attributes: ''
+        regions:
+          main:
+            wrapper: div
+            classes:
+              col-sm-12: col-sm-12
+            add_region_classes: 1
+            attributes: ''
+    regions:
+      main:
+        - node_title
+        - field_date_single
+        - field_media_image
+        - body
+        - node_link
+    fields:
+      node_link:
+        plugin_id: node_link
+        weight: 4
+        label: hidden
+        formatter: default
+      node_title:
+        plugin_id: node_title
+        weight: 0
+        label: hidden
+        formatter: default
+        settings:
+          link: true
+          wrapper: h2
+          class: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+id: node.innovation_tracker_issue.highlight
+targetEntityType: node
+bundle: innovation_tracker_issue
+mode: highlight
+content:
+  body:
+    label: hidden
+    type: smart_trim
+    weight: 3
+    settings:
+      trim_length: 60
+      trim_type: words
+      trim_suffix: ''
+      wrap_class: trimmed
+      more_text: More
+      more_class: more-link
+      summary_handler: full
+      trim_options:
+        text: true
+        trim_zero: false
+      wrap_output: false
+      more_link: false
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    region: main
+  field_date_single:
+    weight: 1
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: date_month_and_year
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: datetime_default
+    region: main
+  field_media_image:
+    weight: 2
+    label: hidden
+    settings:
+      image_style: teaser
+      image_link: content
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: image
+    region: main
+hidden:
+  addtoany: true
+  field_caption: true
+  field_contribute_block: true
+  field_hub_updates: true
+  field_innovation_tracker_story: true
+  field_integer_single: true
+  langcode: true
+  links: true

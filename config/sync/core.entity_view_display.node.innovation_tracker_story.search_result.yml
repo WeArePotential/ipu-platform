@@ -1,0 +1,128 @@
+uuid: 025cd849-cd4d-4447-b8a4-0cbd70b2b92f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_result
+    - field.field.node.innovation_tracker_story.body
+    - field.field.node.innovation_tracker_story.field_caption
+    - field.field.node.innovation_tracker_story.field_country
+    - field.field.node.innovation_tracker_story.field_media_image
+    - node.type.innovation_tracker_story
+    - responsive_image.styles.wide
+  module:
+    - ds
+    - field_group
+    - responsive_image
+    - text
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: bs_2col_stacked
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        layout:
+          wrapper: div
+          classes:
+            row: row
+          add_layout_class: 1
+          attributes: ''
+        regions:
+          top:
+            wrapper: div
+            classes:
+              col-sm-12: col-sm-12
+            add_region_classes: 1
+            attributes: ''
+          left:
+            wrapper: div
+            classes:
+              col-xs-12: col-xs-12
+              col-sm-12: col-sm-12
+              col-md-4: col-md-4
+            add_region_classes: 1
+            attributes: ''
+          right:
+            wrapper: div
+            classes:
+              col-xs-12: col-xs-12
+              col-sm-12: col-sm-12
+              col-md-8: col-md-8
+            add_region_classes: 1
+            attributes: ''
+          bottom:
+            wrapper: div
+            classes:
+              col-sm-12: col-sm-12
+            add_region_classes: 1
+            attributes: ''
+    regions:
+      left:
+        - group_image
+        - field_media_image
+        - field_caption
+      right:
+        - body
+  field_group:
+    group_image:
+      children:
+        - field_media_image
+        - field_caption
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: group-news-image
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: image
+      region: hidden
+id: node.innovation_tracker_story.search_result
+targetEntityType: node
+bundle: innovation_tracker_story
+mode: search_result
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    region: right
+  field_caption:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: left
+  field_media_image:
+    weight: 1
+    label: hidden
+    settings:
+      responsive_image_style: wide
+      image_link: ''
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: responsive_image
+    region: left
+hidden:
+  addtoany: true
+  field_country: true
+  langcode: true
+  links: true

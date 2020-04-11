@@ -97,6 +97,7 @@ content:
             lb-col: false
             classes: {  }
 hidden:
+  addtoany: true
   field_country_cm: true
   field_custom_date_range_text: true
   field_designation_cm: true

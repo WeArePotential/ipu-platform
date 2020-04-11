@@ -1,0 +1,34 @@
+uuid: 82a372fa-821c-4f9f-8271-9191cef81afa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hub_updates
+    - node.type.hub_update
+    - node.type.innovation_tracker_issue
+  module:
+    - custom_add_another
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
+id: node.innovation_tracker_issue.field_hub_updates
+field_name: field_hub_updates
+entity_type: node
+bundle: innovation_tracker_issue
+label: Updates
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      hub_update: hub_update
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

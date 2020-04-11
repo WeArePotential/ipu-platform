@@ -1,0 +1,33 @@
+uuid: 1bf9807c-e411-4ec8-a9f3-fd7ff080d4de
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: content_hub_update_fr
+label: 'Content - Hub Update - FR'
+type: 'canonical_entities:node'
+pattern: 'centre-dinnovation/nouvelle/[node:title]'
+selection_criteria:
+  eb153b3e-ef5e-431a-b06b-6f4a7531d829:
+    id: node_type
+    bundles:
+      hub_update: hub_update
+    negate: false
+    context_mapping:
+      node: node
+    uuid: eb153b3e-ef5e-431a-b06b-6f4a7531d829
+  3143fde3-42aa-411c-882c-9b54a73ac816:
+    id: language
+    langcodes:
+      fr: fr
+    negate: false
+    context_mapping:
+      language: 'node:langcode:language'
+    uuid: 3143fde3-42aa-411c-882c-9b54a73ac816
+selection_logic: and
+weight: -10
+relationships:
+  'node:langcode:language':
+    label: Language

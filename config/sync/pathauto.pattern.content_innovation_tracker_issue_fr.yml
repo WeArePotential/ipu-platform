@@ -1,0 +1,33 @@
+uuid: b9449558-52af-404b-9eb9-155d192b8ee1
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: content_innovation_tracker_issue_fr
+label: 'Content - Innovation Tracker Issue - FR'
+type: 'canonical_entities:node'
+pattern: 'bulletin-de-linnovation/[node:title]'
+selection_criteria:
+  faaf6d0c-88c9-4184-bad9-0b5cc65dc183:
+    id: node_type
+    bundles:
+      innovation_tracker_issue: innovation_tracker_issue
+    negate: false
+    context_mapping:
+      node: node
+    uuid: faaf6d0c-88c9-4184-bad9-0b5cc65dc183
+  d30ab73e-a8f5-4088-a2ad-7ecb21d99adf:
+    id: language
+    langcodes:
+      fr: fr
+    negate: false
+    context_mapping:
+      language: 'node:langcode:language'
+    uuid: d30ab73e-a8f5-4088-a2ad-7ecb21d99adf
+selection_logic: and
+weight: -5
+relationships:
+  'node:langcode:language':
+    label: Language

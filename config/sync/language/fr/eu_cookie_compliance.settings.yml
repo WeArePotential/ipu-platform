@@ -4,10 +4,11 @@ popup_agree_button_message: Accepter
 popup_disagree_button_message: 'En savoir plus'
 popup_find_more_button_message: 'En savoir plus'
 popup_hide_button_message: Masquer
+popup_info:
+  value: "<h2>Nous utilisons un minimum de cookies sur ce site pour améliorer votre expérience utilisateur et enregistrer votre utilisation de manière anonyme avec Google Analytics.</h2>\r\n<p>En continuant à consulter le site, vous acceptez de nous autoriser à le faire.  Cliquez sur le bouton Accepter pour supprimer ce message.  <a href=\"/fr/node/9571\">En savoir plus sur nos politiques.</a></p>"
+popup_link: /node/9571
 disagree_button_label: 'Non, merci.'
 withdraw_message:
   value: '<h2>Nous utilisons des cookies sur ce site pour améliorer votre expérience d''utilisateur.</h2><p>Vous avez consenti à l''ajout de cookies.</p>'
 withdraw_action_button_label: 'Retirer le consentement'
 withdraw_tab_button_label: 'Paramètres de confidentialité'
-popup_info:
-  value: "<h2>Nous utilisons un minimum de cookies sur ce site pour améliorer votre expérience utilisateur et enregistrer votre utilisation de manière anonyme avec Google Analytics.</h2>\r\n<p>En continuant à consulter le site, vous acceptez de nous autoriser à le faire.  Cliquez sur le bouton Accepter pour supprimer ce message.  <a href=\"/fr/node/9571\">En savoir plus sur nos politiques.</a></p>"

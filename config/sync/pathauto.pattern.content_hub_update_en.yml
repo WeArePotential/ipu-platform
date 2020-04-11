@@ -1,0 +1,33 @@
+uuid: 2ae9bd80-6f4a-49a6-aa5c-af53045a2444
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: content_hub_update_en
+label: 'Content - Hub Update - EN'
+type: 'canonical_entities:node'
+pattern: 'innovation-hub/update/[node:title]'
+selection_criteria:
+  1e23db0e-1133-4807-8bb5-be7dafba9426:
+    id: node_type
+    bundles:
+      hub_update: hub_update
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 1e23db0e-1133-4807-8bb5-be7dafba9426
+  1551f531-3b10-4d4e-9a44-1b9feba2c335:
+    id: language
+    langcodes:
+      en: en
+    negate: false
+    context_mapping:
+      language: 'node:langcode:language'
+    uuid: 1551f531-3b10-4d4e-9a44-1b9feba2c335
+selection_logic: and
+weight: -10
+relationships:
+  'node:langcode:language':
+    label: Language

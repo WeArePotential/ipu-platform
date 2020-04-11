@@ -1,0 +1,266 @@
+uuid: 8cef60d8-24e9-4ad4-b6c1-e302233d6ae9
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.innovation_tracker_issue.body
+    - field.field.node.innovation_tracker_issue.field_caption
+    - field.field.node.innovation_tracker_issue.field_contribute_block
+    - field.field.node.innovation_tracker_issue.field_date_single
+    - field.field.node.innovation_tracker_issue.field_hub_updates
+    - field.field.node.innovation_tracker_issue.field_innovation_tracker_story
+    - field.field.node.innovation_tracker_issue.field_integer_single
+    - field.field.node.innovation_tracker_issue.field_media_image
+    - node.type.innovation_tracker_issue
+  module:
+    - block_field
+    - datetime
+    - ds
+    - entity_reference_revisions
+    - field_group
+    - text
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - group_wrapper
+        - group_image
+        - field_innovation_tracker_story
+        - field_hub_updates
+        - group_header
+        - group_left
+        - node_title
+        - group_stories
+        - field_date_single
+        - body
+        - group_hub_updates
+        - group_right
+        - field_contribute_block
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 21
+        label: hidden
+        formatter: default
+  field_group:
+    group_image:
+      children: {  }
+      parent_name: ''
+      weight: 1
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: group-news-image
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Image
+      region: hidden
+    group_header:
+      children:
+        - group_left
+        - group_right
+      parent_name: group_wrapper
+      weight: 20
+      format_type: html_element
+      format_settings:
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: innovation-tracker-issue__header
+      label: Header
+      region: hidden
+    group_wrapper:
+      children:
+        - group_header
+        - group_stories
+        - group_hub_updates
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      format_settings:
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: innovation-tracker-issue
+      label: Wrapper
+      region: hidden
+    group_stories:
+      children:
+        - field_innovation_tracker_story
+      parent_name: group_wrapper
+      weight: 22
+      format_type: html_element
+      format_settings:
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: innovation-tracker-issue__stories
+      label: Stories
+      region: hidden
+    group_hub_updates:
+      children:
+        - field_hub_updates
+      parent_name: group_wrapper
+      weight: 23
+      format_type: html_element
+      format_settings:
+        element: div
+        show_label: true
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: innovation-tracker-issue__updates
+      label: 'Updates from the hubs'
+      region: hidden
+    group_left:
+      children:
+        - node_title
+        - field_date_single
+        - body
+      parent_name: group_header
+      weight: 20
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: left
+      region: hidden
+    group_right:
+      children:
+        - field_contribute_block
+      parent_name: group_header
+      weight: 24
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: right
+      region: hidden
+id: node.innovation_tracker_issue.full
+targetEntityType: node
+bundle: innovation_tracker_issue
+mode: full
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 23
+    settings: {  }
+    third_party_settings: {  }
+    region: ds_content
+  field_contribute_block:
+    type: block_field
+    weight: 25
+    region: ds_content
+    label: hidden
+    settings: {  }
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+  field_date_single:
+    weight: 22
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: date_month_and_year
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: datetime_default
+    region: ds_content
+  field_hub_updates:
+    weight: 6
+    label: hidden
+    settings:
+      view_mode: highlight
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: entity_reference_entity_view
+    region: ds_content
+  field_innovation_tracker_story:
+    type: entity_reference_revisions_entity_view
+    weight: 5
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: ds_content
+hidden:
+  addtoany: true
+  field_caption: true
+  field_integer_single: true
+  field_media_image: true
+  langcode: true
+  links: true

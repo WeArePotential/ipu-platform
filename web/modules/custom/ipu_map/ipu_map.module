@@ -1,11 +1,11 @@
 <?php
 
+use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Link;
 use Drupal\Core\Url;
 use Drupal\Component\Render\FormattableMarkup;
 use Drupal\taxonomy\Entity\Vocabulary;
-//use Drupal\Core\Entity\EntityInterface;
 use Drupal\views\Views;
 
 
@@ -79,6 +79,37 @@ function ipu_map_get_countries() {
     $terms[] = $terms_sorted[$term_name];
   }
   return $terms;
+}
+
+function ipu_map_get_hub_link($country_tid) {
+  $language_id =  \Drupal::languageManager()->getCurrentLanguage('language_content')->getId();
+
+  // Get any Hub terms flagged with this country
+  $result = \Drupal::entityQuery('taxonomy_term')
+    ->condition('field_host_parliament.entity.tid', $country_tid)
+    ->condition('vid', 'innovation_hub')
+    ->execute();
+  $term_options_list = [];
+  if (!empty($result)) {
+    foreach ($result as $tid) {
+      $term = entity_load('taxonomy_term', $tid);
+      if ($term->hasTranslation($language_id)) {
+        $term = \Drupal::service('entity.repository')
+          ->getTranslationFromContext($term, $language_id);
+      }
+      $term_options_list[$tid] = $term->name->value;
+    }
+    $alias = \Drupal::service('path.alias_manager')->getAliasByPath('/taxonomy/term/' . $tid);
+    $link = Link::fromTextAndUrl($term_options_list[$tid], Url::fromUserInput($alias));
+    $html = t('Host for %name innovation hub', ['%name' => $link->toString()]);
+
+    $html .= '<div class="hub-description">'.$term->description->value.'</div>';
+    $link = Link::fromTextAndUrl(t('Read more'), Url::fromUserInput($alias))->toRenderable();
+    $link['#attributes'] = ['class' => ['btn', 'btn-sm', 'btn-outline-primary']];
+    $html .= render($link);
+    return $html;
+  }
+  return '';
 }
 
 function ipu_map_get_country_page() {
@@ -236,6 +267,7 @@ function ipu_map_get_hr_documents($args) {
   return [$view, count($checkempty)];
 }
 
+
 function ipu_map_get_country_news($country_term_id, $regions) {
   // NOT USED: Uses an in-built view. We use the pre_reneder below to change the sort order here.
   $checkempty = views_get_view_result('articles', 'latest_4_country', $country_term_id);
@@ -249,6 +281,15 @@ function ipu_map_get_country_news($country_term_id, $regions) {
   /*if (!empty($checkregionempty)) {
     $region_view = views_embed_view('articles', 'latest_4_by_region', $regions);;
   }*/
+  return $view;
+}
+function ipu_map_get_innovation_tracker_stories($country_term_id) {
+  $checkempty = views_get_view_result('innovation_tracker_story', 'latest_3_country', $country_term_id);
+  if (!empty($checkempty)) {
+    $view = views_embed_view('innovation_tracker_story', 'latest_3_country', $country_term_id);
+  } else {
+    $view = [];
+  }
   return $view;
 }
 function ipu_map_get_country_case_studies($country_term_id) {
@@ -414,6 +455,7 @@ function ipu_map_theme($existing, $type, $theme, $path) {
         'website_link' => '',
         'last_election_date' => '',
         'data_provenance' => '',
+        'hub_link' => '',
       ),
     ),
     'ipu-map-flag' => array(

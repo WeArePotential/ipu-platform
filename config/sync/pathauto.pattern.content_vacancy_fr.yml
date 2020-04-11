@@ -27,7 +27,7 @@ selection_criteria:
       language: 'node:langcode:language'
     uuid: 9f6c2aca-9d5b-4b47-a626-9a5542f7d938
 selection_logic: and
-weight: 2
+weight: 4
 relationships:
   'node:langcode:language':
     label: Language

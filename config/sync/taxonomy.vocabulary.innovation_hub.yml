@@ -1,0 +1,8 @@
+uuid: 6dc038f8-8dbb-4de4-be7a-fbcc39775167
+langcode: en
+status: true
+dependencies: {  }
+name: 'Innovation Hub'
+vid: innovation_hub
+description: ''
+weight: 0

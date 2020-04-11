@@ -1,0 +1,61 @@
+uuid: fe2398a1-4b9f-4873-8424-b3efbae422ef
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.hub_update.body
+    - field.field.node.hub_update.field_innovation_hub
+    - node.type.hub_update
+  module:
+    - ds
+    - text
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: bs_2col_stacked
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        layout:
+          wrapper: div
+          classes:
+            row: row
+          add_layout_class: 1
+          attributes: ''
+        regions:
+          main:
+            wrapper: div
+            classes:
+              col-sm-12: col-sm-12
+            add_region_classes: 1
+            attributes: ''
+    regions:
+      left:
+        - body
+        - field_innovation_hub
+id: node.hub_update.default
+targetEntityType: node
+bundle: hub_update
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: main
+  field_innovation_hub:
+    weight: 1
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: main
+hidden:
+  addtoany: true
+  langcode: true
+  links: true

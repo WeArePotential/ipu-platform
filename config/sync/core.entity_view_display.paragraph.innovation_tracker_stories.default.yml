@@ -1,0 +1,41 @@
+uuid: 6aee5f77-8f2b-4d32-a699-440811628c15
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.innovation_tracker_stories.field_node
+    - field.field.paragraph.innovation_tracker_stories.field_title
+    - paragraphs.paragraphs_type.innovation_tracker_stories
+  module:
+    - ds
+id: paragraph.innovation_tracker_stories.default
+targetEntityType: paragraph
+bundle: innovation_tracker_stories
+mode: default
+content:
+  field_node:
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: highlight
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

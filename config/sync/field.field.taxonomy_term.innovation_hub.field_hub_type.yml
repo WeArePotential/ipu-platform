@@ -1,0 +1,26 @@
+uuid: 43c19d3b-5724-413d-890b-9151c5592769
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_hub_type
+    - taxonomy.vocabulary.innovation_hub
+  module:
+    - custom_add_another
+    - options
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
+id: taxonomy_term.innovation_hub.field_hub_type
+field_name: field_hub_type
+entity_type: taxonomy_term
+bundle: innovation_hub
+label: 'Hub type'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

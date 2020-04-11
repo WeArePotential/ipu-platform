@@ -3,7 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.highlight
+    - taxonomy.vocabulary.innovation_hub
   module:
     - node
     - taxonomy
@@ -230,7 +231,8 @@ display:
       row:
         type: 'entity:node'
         options:
-          view_mode: teaser
+          relationship: none
+          view_mode: highlight
       header:
         entity_taxonomy_term:
           id: entity_taxonomy_term
@@ -249,9 +251,11 @@ display:
       empty: {  }
       relationships: {  }
       fields: {  }
-      display_extenders: {  }
+      display_extenders:
+        metatag_display_extender: {  }
       link_url: ''
       link_display: page_1
+      title: ''
     cache_metadata:
       contexts:
         - 'languages:language_interface'
@@ -265,7 +269,7 @@ display:
     id: feed_1
     display_title: Feed
     display_plugin: feed
-    position: 2
+    position: 3
     display_options:
       query:
         type: views_query
@@ -300,11 +304,183 @@ display:
         - user.permissions
       max-age: -1
       tags: {  }
+  innovation_hub_terms:
+    display_plugin: block
+    id: innovation_hub_terms
+    display_title: 'Innovation Hub terms block'
+    position: 1
+    display_options:
+      display_extenders:
+        metatag_display_extender: {  }
+      query:
+        type: views_query
+        options: {  }
+      header:
+        result:
+          id: result
+          table: views
+          field: result
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          content: '@total hub updates'
+          plugin_id: result
+      defaults:
+        header: false
+        arguments: false
+        title: false
+      arguments:
+        tid:
+          id: tid
+          table: taxonomy_index
+          field: tid
+          relationship: none
+          group_type: group
+          admin_label: ''
+          default_action: 'not found'
+          exception:
+            value: ''
+            title_enable: false
+            title: All
+          title_enable: true
+          title: '{{ arguments.tid }}'
+          default_argument_type: fixed
+          default_argument_options:
+            argument: ''
+          default_argument_skip_url: false
+          summary_options:
+            base_path: ''
+            count: true
+            items_per_page: 25
+            override: false
+          summary:
+            sort_order: asc
+            number_of_records: 0
+            format: default_summary
+          specify_validation: true
+          validate:
+            type: 'entity:taxonomy_term'
+            fail: 'not found'
+          validate_options:
+            bundles:
+              innovation_hub: innovation_hub
+            access: true
+            operation: view
+            multiple: 0
+          break_phrase: false
+          add_table: false
+          require_value: false
+          reduce_duplicates: false
+          plugin_id: taxonomy_index_tid
+      display_description: ''
+      block_description: 'Content list of Innovation Hub vocabulary'
+      title: 'Hub updates'
+    cache_metadata:
+      contexts:
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      max-age: -1
+      tags: {  }
+  other_terms:
+    display_plugin: block
+    id: other_terms
+    display_title: 'Other terms block'
+    position: 2
+    display_options:
+      display_extenders:
+        metatag_display_extender: {  }
+      query:
+        type: views_query
+        options: {  }
+      header:
+        entity_taxonomy_term:
+          id: entity_taxonomy_term
+          table: views
+          field: entity_taxonomy_term
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: true
+          target: '{{ raw_arguments.tid }}'
+          view_mode: full
+          bypass_access: false
+          plugin_id: entity
+        result:
+          id: result
+          table: views
+          field: result
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          content: '<h3>Displaying @start - @end of @total items</h3>'
+          plugin_id: result
+      defaults:
+        header: false
+        arguments: false
+      display_description: ''
+      arguments:
+        tid:
+          id: tid
+          table: taxonomy_index
+          field: tid
+          relationship: none
+          group_type: group
+          admin_label: ''
+          default_action: 'not found'
+          exception:
+            value: ''
+            title_enable: false
+            title: All
+          title_enable: true
+          title: '{{ arguments.tid }}'
+          default_argument_type: fixed
+          default_argument_options:
+            argument: ''
+          default_argument_skip_url: false
+          summary_options:
+            base_path: ''
+            count: true
+            items_per_page: 25
+            override: false
+          summary:
+            sort_order: asc
+            number_of_records: 0
+            format: default_summary
+          specify_validation: true
+          validate:
+            type: 'entity:taxonomy_term'
+            fail: 'not found'
+          validate_options:
+            access: true
+            operation: view
+            multiple: 0
+            bundles: {  }
+          break_phrase: false
+          add_table: false
+          require_value: false
+          reduce_duplicates: false
+          plugin_id: taxonomy_index_tid
+      block_description: 'Content list of all vocabularies'
+    cache_metadata:
+      contexts:
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      max-age: -1
+      tags: {  }
   page_1:
     id: page_1
     display_title: Page
     display_plugin: page
-    position: 1
+    position: 2
     display_options:
       query:
         type: views_query
@@ -338,6 +514,7 @@ display:
           plugin_id: result
       defaults:
         header: false
+      enabled: false
     cache_metadata:
       contexts:
         - 'languages:language_interface'

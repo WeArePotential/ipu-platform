@@ -1,0 +1,40 @@
+uuid: f66eeb46-7fbc-43ff-8c06-25aeedb2d0df
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.taxonomy_term
+  module:
+    - ctools
+    - system
+    - views
+  theme:
+    - ipu
+id: views_block__taxonomy_term_innovation_hub_terms
+theme: ipu
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:taxonomy_term-innovation_hub_terms'
+settings:
+  id: 'views_block:taxonomy_term-innovation_hub_terms'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+  context_mapping:
+    tid: '@taxonomy_term.taxonomy_term_route_context:taxonomy_term'
+visibility:
+  'entity_bundle:taxonomy_term':
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      innovation_hub: innovation_hub
+    negate: false
+    context_mapping:
+      taxonomy_term: '@taxonomy_term.taxonomy_term_route_context:taxonomy_term'
+  request_path:
+    id: request_path
+    pages: '/taxonomy/term/*'
+    negate: false
+    context_mapping: {  }

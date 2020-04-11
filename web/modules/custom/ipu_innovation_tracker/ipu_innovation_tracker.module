@@ -1,0 +1,109 @@
+<?php
+
+/**
+ * @file
+ * Contains ipu_innovation_tracker.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\ipu_innovation_tracker\Helper\IssueHelper;
+
+/**
+ * Implements hook_help().
+ */
+function ipu_innovation_tracker_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the ipu_innovation_tracker module.
+    case 'help.page.ipu_innovation_tracker':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Blocks and various helpers for the Innovation Tracker content types.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function ipu_innovation_tracker_theme($existing, $type, $theme, $path) {
+  return [
+    'ipu_contribute_block' => [
+      'variables' => [
+        'content' => NULL,
+      ],
+      'template' => 'ipu-contribute-block',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view_alter().
+ */
+function ipu_innovation_tracker_node_view_alter(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display) {
+  $function = '_ipu_innovation_tracker_node_' . $entity->bundle() . '_view_alter';
+
+  if (function_exists($function)) {
+    call_user_func_array($function, [&$build, $entity, $display]);
+  }
+}
+
+/**
+ * Alter the innovation_tracker_issue nodes.
+ *
+ * @param array $build
+ *   The build array.
+ * @param \Drupal\node\NodeInterface $node
+ *   The issue node.
+ * @param \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display
+ *   The display.
+ *
+ * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+ * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+ */
+function _ipu_innovation_tracker_node_innovation_tracker_issue_view_alter(array &$build, \Drupal\node\NodeInterface $node, EntityViewDisplayInterface $display) {
+  $build['field_hub_updates'] = IssueHelper::alterHubs($node);
+}
+
+/**
+ * Implements hook_ds_pre_render_alter().
+ */
+function ipu_innovation_tracker_ds_pre_render_alter(array &$layout_render_array, array $context, array &$vars) {
+  if ($context['entity_type'] === 'node' && $context['bundle'] === 'hub_update') {
+    $layout_render_array['main']['hub_link'] = IssueHelper::getHubLink($context['entity']);
+    $layout_render_array['main']['country_link'] = IssueHelper::getHubCountryLink($context['entity']);
+
+  }
+
+  if ($context['entity_type'] === 'node' && $context['bundle'] === 'innovation_tracker_story' && $context['view_mode'] === 'full') {
+    /** @var \Drupal\node\NodeInterface $node */
+    $node = $context['entity'];
+    /** @var \Drupal\Core\Entity\EntityStorageInterface $storage */
+    $storage = \Drupal::service('entity_type.manager')->getStorage('paragraph');
+    $query = $storage->getQuery();
+    $result = $query->condition('type', 'innovation_tracker_stories')
+      ->condition('field_node', $node->id())
+      ->execute();
+
+    $render = [];
+
+    if (!empty($result)) {
+      // Get the first reference
+      $pid = reset($result);
+      /** @var \Drupal\paragraphs\ParagraphInterface $paragraph */
+      $paragraph = $storage->load($pid);
+      $parent = $paragraph->getParentEntity();
+      $parent_link_text = t('Innovation tracker') . ' | '.$parent->label() . ' | '. $parent->get('field_date_single')->date->format("d M Y");
+      $render = $parent->toLink($parent_link_text)->toRenderable();
+      $render['#attributes']['class'][] = 'innovation-tracker-story__parent-link';
+      $render['#prefix'] = '<div class="innovation-tracker-story__parent-link-wrapper">';
+      $render['#suffix'] = '</div>';
+      $render['#weight'] = -10;
+    }
+
+    $layout_render_array['left'][] = $render;
+  }
+}

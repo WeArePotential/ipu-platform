@@ -1,0 +1,18 @@
+uuid: c5d5d85a-fe4d-4262-9716-35d93ae7d9e7
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - mega-menu
+    parent: 'mega-menu:menu_link_content:6c564a7c-3692-4728-986b-1f1f248bd4ef'
+name: 'Innovation Tracker Issue'
+type: innovation_tracker_issue
+description: 'Issues of the Innovation Tracker'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

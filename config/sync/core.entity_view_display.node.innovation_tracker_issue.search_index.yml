@@ -1,0 +1,92 @@
+uuid: 49341190-f900-48b5-8e31-d6a87057de63
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_index
+    - field.field.node.innovation_tracker_issue.body
+    - field.field.node.innovation_tracker_issue.field_caption
+    - field.field.node.innovation_tracker_issue.field_date_single
+    - field.field.node.innovation_tracker_issue.field_hub_updates
+    - field.field.node.innovation_tracker_issue.field_innovation_tracker_story
+    - field.field.node.innovation_tracker_issue.field_integer_single
+    - field.field.node.innovation_tracker_issue.field_media_image
+    - node.type.innovation_tracker_issue
+  module:
+    - datetime
+    - entity_reference_revisions
+    - image
+    - text
+    - user
+id: node.innovation_tracker_issue.search_index
+targetEntityType: node
+bundle: innovation_tracker_issue
+mode: search_index
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_caption:
+    weight: 108
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_date_single:
+    weight: 103
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_hub_updates:
+    weight: 106
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_innovation_tracker_story:
+    type: entity_reference_revisions_entity_view
+    weight: 109
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_integer_single:
+    weight: 104
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_media_image:
+    weight: 107
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  addtoany: true
+  field_contribute_block: true
+  langcode: true

@@ -28,7 +28,7 @@ selection_criteria:
       language: 'taxonomy_term:langcode:language'
     uuid: 5a4747b3-8266-4b98-999e-fd4f957e795b
 selection_logic: and
-weight: 7
+weight: 9
 relationships:
   'taxonomy_term:langcode:language':
     label: Language

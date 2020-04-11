@@ -1,0 +1,31 @@
+uuid: c323ff5c-8d29-4456-9be7-da0bf70bfa6e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contribute_block
+    - node.type.innovation_tracker_issue
+  module:
+    - block_field
+    - custom_add_another
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
+id: node.innovation_tracker_issue.field_contribute_block
+field_name: field_contribute_block
+entity_type: node
+bundle: innovation_tracker_issue
+label: 'Contribute block'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    plugin_id: ipu_innovation_tracker_contribute
+    settings: {  }
+default_value_callback: ''
+settings:
+  plugin_ids:
+    ipu_innovation_tracker_contribute: ipu_innovation_tracker_contribute
+field_type: block_field

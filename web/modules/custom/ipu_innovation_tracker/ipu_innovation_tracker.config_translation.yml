@@ -1,0 +1,5 @@
+ipu_innovation_tracker.contribute:
+  title: 'IPU Innovation Tracker Contribute content configuration'
+  base_route_name: ipu_innovation_tracker.configuration_form
+  names:
+    - ipu_innovation_tracker.contribute
