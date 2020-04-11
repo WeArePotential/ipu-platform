@@ -167,6 +167,11 @@ class CountryTaxonomyTermReference extends EntityReferenceFormatterBase {
         } else {
           $isocode = $entity->field_iso_code->value;
         }
+        $langcode = \Drupal::languageManager()->getCurrentLanguage()->getId();
+        if ($entity->hasTranslation($langcode)) {
+          $entity = \Drupal::service('entity.repository')->getTranslationFromContext($entity, $langcode);
+        }
+
         $url = Url::fromUserInput(($langcode == 'fr'? '/fr/parlement/' : '/parliament/') . $isocode. '/'. SafeMarkup::checkPlain($entity->label()) );
         $internal_link = Link::fromTextAndUrl(SafeMarkup::checkPlain($entity->label()), $url)->toString();
         $formatted .= $elementwrap[0] . $internal_link . $elementwrap[1] . $separator;
