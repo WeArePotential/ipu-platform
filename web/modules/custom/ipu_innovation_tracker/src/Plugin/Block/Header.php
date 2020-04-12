@@ -103,11 +103,11 @@ class Header extends BlockBase {
           ],
         ],
       ];
-
-      $build['wrapper']['previous'] = $this->buildNavigationLink($this->getCurrentIssue() - 1, $this->t('Previous'));
+      $langcode = $node->language()->getId();
+      $build['wrapper']['previous'] = $this->buildNavigationLink($this->getCurrentIssue() - 1, $this->t('Previous'), $langcode);
       $build['wrapper']['previous']['#attributes']['class'][] = 'ipu-innovation-tracker__previous';
       $build['wrapper']['current'] = $this->buildNavigationSelect();
-      $build['wrapper']['next'] = $this->buildNavigationLink($this->getCurrentIssue() + 1, $this->t('Next'));
+      $build['wrapper']['next'] = $this->buildNavigationLink($this->getCurrentIssue() + 1, $this->t('Next'), $langcode);
       $build['wrapper']['next']['#attributes']['class'][] = 'ipu-innovation-tracker__next';
     }
     return $build;
@@ -129,7 +129,7 @@ class Header extends BlockBase {
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    * @throws \Drupal\Core\Entity\EntityMalformedException
    */
-  private function buildNavigationLink($issue_number, $link_text) {
+  private function buildNavigationLink($issue_number, $link_text, $language) {
     $link = [];
     /** @var \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager */
     $entity_type_manager = \Drupal::service('entity_type.manager');
@@ -137,11 +137,12 @@ class Header extends BlockBase {
     $result = $query->condition('status', NodeInterface::PUBLISHED)
       ->condition('type', self::IPU_ISSUE)
       ->condition('field_integer_single', $issue_number)
-      ->execute();
+    ->execute();
 
     if (!empty($result)) {
       $nid = reset($result);
       $node = $entity_type_manager->getStorage('node')->load($nid);
+      $node = \Drupal::service('entity.repository')->getTranslationFromContext($node, $language);
       $link = $node->toLink($link_text)->toRenderable();
     }
     return $link;
