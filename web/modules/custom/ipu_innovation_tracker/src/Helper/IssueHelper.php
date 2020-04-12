@@ -102,6 +102,10 @@ class IssueHelper {
     /** @var \Drupal\taxonomy\TermInterface $term */
     $term = $node->get('field_innovation_hub')->referencedEntities();
     $term = reset($term);
+    $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+    if ($term->hasTranslation($language)) {
+      $term = $term->getTranslation($language);
+    }
     $link = $term->toLink($term->label(), 'link', ['attributes' => ['class' => ['innovation-tracker-issue__hub-link']]])->toRenderable();
     $link['#weight'] = 51;
     return $link;
@@ -123,6 +127,11 @@ class IssueHelper {
     /** @var \Drupal\taxonomy\TermInterface $term */
     $term = $node->get('field_innovation_hub')->referencedEntities();
     $term = reset($term);
+    $language = $node->language()->getId();
+    if ($term->hasTranslation($language)) {
+      $term = \Drupal::service('entity.repository')->getTranslationFromContext($term, $language);
+    }
+
     $link_text = '';
     foreach ($term->field_host_parliament as $i => $delta) {
       $term_formatter = ['type' => 'country_taxonomy_term_reference'];

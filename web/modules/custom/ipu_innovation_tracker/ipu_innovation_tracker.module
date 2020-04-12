@@ -96,7 +96,8 @@ function ipu_innovation_tracker_ds_pre_render_alter(array &$layout_render_array,
       /** @var \Drupal\paragraphs\ParagraphInterface $paragraph */
       $paragraph = $storage->load($pid);
       $parent = $paragraph->getParentEntity();
-      $parent_link_text = t('Innovation tracker') . ' | '.$parent->label() . ' | '. $parent->get('field_date_single')->date->format("d M Y");
+
+      $parent_link_text = t('Innovation tracker') . ' | '. $parent->label() . ' | '. $parent->get('field_date_single')->date->format("d M Y");
       $render = $parent->toLink($parent_link_text)->toRenderable();
       $render['#attributes']['class'][] = 'innovation-tracker-story__parent-link';
       $render['#prefix'] = '<div class="innovation-tracker-story__parent-link-wrapper">';
