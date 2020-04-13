@@ -27,6 +27,7 @@ class Contribute extends BlockBase {
 
     return [
       '#theme' => 'ipu_contribute_block',
+      '#title' => t('Innovation Tracker contributions'),
       '#content' => [
         '#markup' => check_markup($this->t($config->get('content.value')), $config->get('content.format')),
       ],
