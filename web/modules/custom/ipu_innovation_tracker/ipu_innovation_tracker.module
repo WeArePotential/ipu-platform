@@ -96,7 +96,10 @@ function ipu_innovation_tracker_ds_pre_render_alter(array &$layout_render_array,
       /** @var \Drupal\paragraphs\ParagraphInterface $paragraph */
       $paragraph = $storage->load($pid);
       $parent = $paragraph->getParentEntity();
-
+      $language = $node->language()->getId();
+      if ($parent->hasTranslation($language)) {
+        $parent = \Drupal::service('entity.repository')->getTranslationFromContext($parent, $language);
+      }
       $parent_link_text = t('Innovation tracker') . ' | '. $parent->label() . ' | '. $parent->get('field_date_single')->date->format("d M Y");
       $render = $parent->toLink($parent_link_text)->toRenderable();
       $render['#attributes']['class'][] = 'innovation-tracker-story__parent-link';
