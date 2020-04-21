@@ -23,8 +23,8 @@ function ipu_preprocess_html(&$variables) {
   if (isset($variables['node_id'])) {
     $variables['attributes']['class'][] = ('node-' . $variables['node_id']);
   }
-  $node = \Drupal::routeMatch()->getParameter('node');
-  if ($node) {
+  if (\Drupal::routeMatch()->getRouteName() == 'entity.node.canonical') {
+    $node = \Drupal::routeMatch()->getParameter('node');
     $variables['attributes']['class'][] = ('node-' . $node->id());
   }
  if (\Drupal::routeMatch()->getRouteName() == 'entity.taxonomy_term.canonical') {
