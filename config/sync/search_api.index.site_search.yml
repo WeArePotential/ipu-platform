@@ -7,10 +7,10 @@ dependencies:
     - node
     - search_api
   config:
-    - field.storage.node.field_article_type
     - field.storage.node.field_country
     - field.storage.node.field_event_type
     - field.storage.node.field_ipu_structure
+    - field.storage.node.field_article_type
     - field.storage.node.field_publication_type
     - field.storage.node.field_theme
     - search_api.server.database
@@ -116,6 +116,8 @@ field_settings:
         'entity:node':
           article: full
           basic_page: full
+          innovation_tracker_issue: full
+          innovation_tracker_story: full
           ipu_event: full
           landing_page: full
           page: full

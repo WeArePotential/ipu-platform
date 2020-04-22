@@ -3,6 +3,7 @@
     border-bottom-color: color('ipu-orange');
   }
 }
+
 .node--type-hub-update.node--view-mode-highlight {
   margin: 0 10px 15px 10px;
 
@@ -31,7 +32,10 @@
     margin-bottom: 10px;
     padding: 0 10px;
   }
-
+  // Hidden because already in context on Tracker issue pages
+  .innovation-hub__issue-link {
+    display: none;
+  }
   .bs-region--main {
     padding-left: 10px;
     padding-right: 10px;
@@ -85,10 +89,22 @@
   }
 }
 
+// List of Hub updates (term pages)
 .taxonomy-list-innovation-hub {
   .innovation-hub__field-hub-type {
     font-weight: $font-weight-normal;
     font-style: italic;
+  }
+  .node--type-hub-update.node--view-mode-highlight {
+    .innovation-hub__issue-link {
+      display: block;
+    }
+    .innovation-tracker-issue__country-link-wrapper {
+      display: none;
+    }
+    .innovation-tracker-issue__hub-link {
+      display: none;
+    }
   }
   .views-rows-wrapper {
     margin: 10px -15px;
@@ -103,4 +119,5 @@
       margin: 20px 0;
     }
   }
-}
+
+  }
