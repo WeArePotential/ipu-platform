@@ -6,8 +6,6 @@ dependencies:
     - field.storage.node.field_country
     - node.type.innovation_tracker_story
     - taxonomy.vocabulary.country
-  content:
-    - 'taxonomy_term:country:63a3c451-2aaa-43fa-a21f-e6eca8804425'
   module:
     - custom_add_another
 third_party_settings:
@@ -22,9 +20,7 @@ label: Country
 description: ''
 required: false
 translatable: false
-default_value:
-  -
-    target_uuid: 63a3c451-2aaa-43fa-a21f-e6eca8804425
+default_value: {  }
 default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'
