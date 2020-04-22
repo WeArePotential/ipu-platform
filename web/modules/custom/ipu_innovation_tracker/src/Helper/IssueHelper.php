@@ -156,6 +156,48 @@ class IssueHelper {
       return ['#markup' => ''];
     }
   }
+
+  /**
+   * Generate a link from the Hub update to first issue it was published on.
+   *
+   * @param \Drupal\node\NodeInterface $node
+   *   The node.
+   *
+   * @return array|mixed[]
+   *   The render array of a link to the innovation tracker issue.
+   *
+   * @throws \Drupal\Core\Entity\EntityMalformedException
+   * @throws \Drupal\Core\TypedData\Exception\MissingDataException
+   */
+  public static function getIssueLink(NodeInterface $node) {
+    $language = $node->language()->getId();
+    $query = \Drupal::entityQuery('node')
+      ->condition('type', 'innovation_tracker_issue')
+      ->condition('status', \Drupal\node\NodeInterface::PUBLISHED)
+      ->condition('langcode', $language)
+      ->condition('field_hub_updates', $node->id());
+    $results = $query->execute();
+    if (count($results) == 0) {
+      return ['#markup' => ''];
+    }
+    $links = [];
+    foreach($results as $nid) {
+      $issue = entity_load('node', $nid);
+      if ($issue->hasTranslation($language)) {
+        $issue = $issue->getTranslation($language);
+      }
+      $link_text = t('Innovation tracker') . ' | '. $issue->label() . ' | '. $issue->get('field_date_single')->date->format("d M Y");
+      $link = $issue->toLink($link_text, 'canonical')
+        ->toRenderable();
+      $link['#prefix'] = '<div class="innovation-hub__issue-link">';
+      $link['#suffix'] = '</div>';
+      $link['#weight'] = -2;
+      $links[] = $link;
+    }
+    //return implode(' | ', $links);
+    return $link;
+  }
+
   /**
    * Get all the hub types allowed on the field_hub_type of the taxonomy terms.
    *

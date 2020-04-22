@@ -75,7 +75,7 @@ function ipu_innovation_tracker_ds_pre_render_alter(array &$layout_render_array,
   if ($context['entity_type'] === 'node' && $context['bundle'] === 'hub_update') {
     $layout_render_array['main']['hub_link'] = IssueHelper::getHubLink($context['entity']);
     $layout_render_array['main']['country_link'] = IssueHelper::getHubCountryLink($context['entity']);
-
+    $layout_render_array['main']['issue_link'] = IssueHelper::getIssueLink($context['entity']);
   }
 
   if ($context['entity_type'] === 'node' && $context['bundle'] === 'innovation_tracker_story' && $context['view_mode'] === 'full') {
@@ -89,7 +89,6 @@ function ipu_innovation_tracker_ds_pre_render_alter(array &$layout_render_array,
       ->execute();
 
     $render = [];
-
     if (!empty($result)) {
       // Get the first reference
       $pid = reset($result);
@@ -107,7 +106,6 @@ function ipu_innovation_tracker_ds_pre_render_alter(array &$layout_render_array,
       $render['#suffix'] = '</div>';
       $render['#weight'] = -10;
     }
-
     $layout_render_array['left'][] = $render;
   }
 }
