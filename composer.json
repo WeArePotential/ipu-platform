@@ -42,6 +42,7 @@
         "drupal/coffee": "^1.0@beta",
         "drupal/colorbox": "^1.4",
         "drupal/components": "^1.1",
+        "drupal/config_ignore": "^2.2",
         "drupal/config_split": "^1.4",
         "drupal/console": "^1.0.2",
         "drupal/context_active_trail": "^1.0@RC",
