@@ -19,6 +19,6 @@ settings:
   label_display: '0'
   page_title: 'IPU Innovation Tracker'
   content:
-    value: "<p>The quarterly electronic bulletin from the Centre for Innovation in Parliament</p>\r\n"
+    value: "<p>The quarterly electronic bulletin from the !NO LINK Centre for Innovation in Parliament</p>\r\n"
     format: full_html
 visibility: {  }
