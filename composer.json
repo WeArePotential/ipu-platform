@@ -242,6 +242,9 @@
             "drupal/ultimenu": {
                 "Remove mobile toggle button from ultimenu": "web/patches/remove_mobile_toggle_button_from_ultimenu.patch"
             },
+            "drupal/views_bulk_operations": {
+                "Ignore missing id error": "web/patches/vbo_missing_id.patch"
+            },
             "drupal/flickr": {
                 "Error messages when adding Flickr filter to text format": "https://www.drupal.org/files/issues/2019-08-27/flickr-add-filter-settings-2958360-2.patch"
             }

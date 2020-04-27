@@ -1,0 +1,17 @@
+Index: web/modules/contrib/views_bulk_operations/modules/actions_permissions/src/ActionsPermissions.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- web/modules/contrib/views_bulk_operations/modules/actions_permissions/src/ActionsPermissions.php	(date 1587985554328)
++++ web/modules/contrib/views_bulk_operations/modules/actions_permissions/src/ActionsPermissions.php	(date 1587985554328)
+@@ -72,6 +72,9 @@
+       if (!empty($definition['requirements'])) {
+         continue;
+       }
++      if (!isset($definition['id'])) {
++        return $permissions;
++      }
+ 
+       $id = 'execute ' . $definition['id'];
+       $entity_type = NULL;
