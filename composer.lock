@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "aaa8d61cdc119568a6344be2ef9cac76",
+    "content-hash": "6b05bd31f0ae685e465d3b677ac77366",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -437,27 +437,27 @@
         },
         {
             "name": "commerceguys/addressing",
-            "version": "v1.0.5",
+            "version": "v1.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/commerceguys/addressing.git",
-                "reference": "2d048bfdb3b79f2d87f5d5b078769c059eaa3eb1"
+                "reference": "fa434c03e99a416de0b37d98068c6c0bdfd78cde"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/commerceguys/addressing/zipball/2d048bfdb3b79f2d87f5d5b078769c059eaa3eb1",
-                "reference": "2d048bfdb3b79f2d87f5d5b078769c059eaa3eb1",
+                "url": "https://api.github.com/repos/commerceguys/addressing/zipball/fa434c03e99a416de0b37d98068c6c0bdfd78cde",
+                "reference": "fa434c03e99a416de0b37d98068c6c0bdfd78cde",
                 "shasum": ""
             },
             "require": {
                 "doctrine/collections": "~1.0",
-                "php": ">=5.5.0"
+                "php": ">=7.0.8"
             },
             "require-dev": {
                 "mikey179/vfsstream": "1.*",
-                "phpunit/phpunit": "~4.0",
+                "phpunit/phpunit": "^6.0",
                 "squizlabs/php_codesniffer": "2.*",
-                "symfony/validator": ">=3.2"
+                "symfony/validator": "^3.4"
             },
             "suggest": {
                 "symfony/validator": "to validate addresses"
@@ -492,7 +492,7 @@
                 "localization",
                 "postal"
             ],
-            "time": "2019-06-27T10:43:27+00:00"
+            "time": "2020-01-24T16:21:06+00:00"
         },
         {
             "name": "composer/installers",
@@ -2466,33 +2466,30 @@
         },
         {
             "name": "drupal/address",
-            "version": "1.7.0",
+            "version": "1.8.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/address.git",
-                "reference": "8.x-1.7"
+                "reference": "8.x-1.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/address-8.x-1.7.zip",
-                "reference": "8.x-1.7",
-                "shasum": "dab23a510090e59e3e6bc77faa517b523ad048ae"
+                "url": "https://ftp.drupal.org/files/projects/address-8.x-1.8.zip",
+                "reference": "8.x-1.8",
+                "shasum": "ded73be392ba9257fca9289719757928a8826275"
             },
             "require": {
-                "commerceguys/addressing": "^1.0.0",
-                "drupal/core": "^8.6"
+                "commerceguys/addressing": "^1.0.7",
+                "drupal/core": "^8.7.7 || ^9"
             },
             "require-dev": {
                 "drupal/token": "^1.0"
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-1.x": "1.x-dev"
-                },
                 "drupal": {
-                    "version": "8.x-1.7",
-                    "datestamp": "1559642884",
+                    "version": "8.x-1.8",
+                    "datestamp": "1583988119",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2515,6 +2512,10 @@
                 {
                     "name": "googletorp",
                     "homepage": "https://www.drupal.org/user/386230"
+                },
+                {
+                    "name": "jsacksick",
+                    "homepage": "https://www.drupal.org/user/972218"
                 },
                 {
                     "name": "mglaman",
@@ -10545,36 +10546,33 @@
         },
         {
             "name": "drupal/stage_file_proxy",
-            "version": "1.0.0-beta1",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/stage_file_proxy.git",
-                "reference": "8.x-1.0-beta1"
+                "reference": "8.x-1.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/stage_file_proxy-8.x-1.0-beta1.zip",
-                "reference": "8.x-1.0-beta1",
-                "shasum": "6609a2166509fd7cc2e593ff2efd7c44daeb0e5b"
+                "url": "https://ftp.drupal.org/files/projects/stage_file_proxy-8.x-1.0.zip",
+                "reference": "8.x-1.0",
+                "shasum": "f101a07e0096f476c91cf23137469a5c5c18e2df"
             },
             "require": {
-                "drupal/core": "~8.0"
+                "drupal/core": ">=8.7.7"
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-1.x": "1.x-dev"
-                },
                 "drupal": {
-                    "version": "8.x-1.0-beta1",
-                    "datestamp": "1555515785",
+                    "version": "8.x-1.0",
+                    "datestamp": "1580492032",
                     "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Beta releases are not covered by Drupal security advisories."
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
                     }
                 },
                 "patches_applied": {
-                    "Disable stage file proxy on live": "https://www.drupal.org/files/issues/disable_fetching-2864016-16.patch"
+                    "Disable stage file proxy on live": "https://www.drupal.org/files/issues/2019-11-18/disable_fetching-2864016-26.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -10587,7 +10585,7 @@
                     "homepage": "https://www.drupal.org/user/107229"
                 },
                 {
-                    "name": "axel.rutz",
+                    "name": "geek-merlin",
                     "homepage": "https://www.drupal.org/user/229048"
                 },
                 {
