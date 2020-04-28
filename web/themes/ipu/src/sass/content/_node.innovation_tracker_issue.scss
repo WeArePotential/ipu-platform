@@ -6,6 +6,50 @@
     border-bottom-color: color('ipu-orange');
   }
 }
+
+.innovation-tracker-issue__node-title span {
+  display: none;
+}
+.paragraph--type--highlights {
+  .node--type-innovation-tracker-issue {
+    @extend .card;
+    background-color: $ipu-extra-light-grey;
+
+    .innovation-tracker-issue__node-title,
+    .innovation-tracker-issue__node-link,
+    .innovation-tracker-issue__field-date-single {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+    .innovation-tracker-issue__node-title span {
+      border-bottom: 1px solid $ipu-orange;
+      display: block;
+    }
+
+    .innovation-tracker-issue__node-title a,
+    .innovation-tracker-issue__field-date-single {
+      font-size: $font-size-lg;
+    }
+
+    .innovation-tracker-issue__body {
+      @extend .card-body;
+    }
+
+    .innovation-tracker-issue__node-link {
+      &,
+      &:link,
+      &:visited {
+        @extend .btn-outline-primary;
+        @extend .btn;
+        @extend .btn-sm;
+        background-color: $ipu-white;
+      }
+    }
+  }
+}
+
+
 .viewfield--view__innovation_tracker_issue {
   //@extend .container;
 }
