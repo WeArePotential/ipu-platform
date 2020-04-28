@@ -6,6 +6,8 @@ dependencies:
     - field.storage.paragraph.field_node
     - node.type.article
     - node.type.basic_page
+    - node.type.innovation_tracker_issue
+    - node.type.innovation_tracker_story
     - node.type.ipu_event
     - node.type.landing_page
     - node.type.page
@@ -35,6 +37,8 @@ settings:
     target_bundles:
       basic_page: basic_page
       ipu_event: ipu_event
+      innovation_tracker_issue: innovation_tracker_issue
+      innovation_tracker_story: innovation_tracker_story
       landing_page: landing_page
       article: article
       page: page
