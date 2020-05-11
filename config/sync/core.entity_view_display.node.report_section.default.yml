@@ -1,0 +1,105 @@
+uuid: 40519676-5f77-4e89-9df9-a977edff84a3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.report_section.body
+    - field.field.node.report_section.field_image
+    - field.field.node.report_section.field_key_figure
+    - field.field.node.report_section.field_section
+    - field.field.node.report_section.field_subtitle
+    - field.field.node.report_section.field_theme
+    - image.style.max_1300x1300
+    - node.type.report_section
+  module:
+    - ds
+    - entity_reference_revisions
+    - image
+    - text
+    - user
+id: node.report_section.default
+targetEntityType: node
+bundle: report_section
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_image:
+    weight: 5
+    label: hidden
+    settings:
+      image_style: max_1300x1300
+      image_link: ''
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: image
+    region: content
+  field_key_figure:
+    type: entity_reference_revisions_entity_view
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_section:
+    type: entity_reference_revisions_entity_view
+    weight: 4
+    label: hidden
+    settings:
+      view_mode: rest
+      link: ''
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    region: content
+  field_subtitle:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_theme:
+    weight: 3
+    label: hidden
+    settings:
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: entity_reference_label
+    region: content
+  links:
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  addtoany: true
+  langcode: true

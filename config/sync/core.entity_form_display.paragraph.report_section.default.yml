@@ -1,0 +1,68 @@
+uuid: 1212ba48-f0eb-4282-ba7f-9f3c62e36730
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.report_section.field_content_type
+    - field.field.paragraph.report_section.field_image
+    - field.field.paragraph.report_section.field_link
+    - field.field.paragraph.report_section.field_section_html
+    - field.field.paragraph.report_section.field_section_title
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.report_section
+  module:
+    - field_layout
+    - image
+    - layout_discovery
+    - link
+    - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+id: paragraph.report_section.default
+targetEntityType: paragraph
+bundle: report_section
+mode: default
+content:
+  field_content_type:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_image:
+    weight: 3
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_link:
+    weight: 4
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_section_html:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_section_title:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

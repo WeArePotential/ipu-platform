@@ -1,0 +1,28 @@
+uuid: c97523da-ea5e-46d5-b4f9-2b0b8fe4e519
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+  theme:
+    - bootstrap_barrio
+id: bootstrap_barrio_languageswitchercontent
+theme: bootstrap_barrio
+region: top_header
+weight: 0
+provider: null
+plugin: 'language_block:language_content'
+settings:
+  id: 'language_block:language_content'
+  label: 'Language switcher (Content)'
+  provider: language
+  label_display: '0'
+visibility:
+  language:
+    id: language
+    langcodes:
+      en: en
+      fr: fr
+    negate: false
+    context_mapping:
+      language: '@language.current_language_context:language_interface'

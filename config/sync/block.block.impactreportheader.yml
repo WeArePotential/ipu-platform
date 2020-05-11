@@ -1,0 +1,33 @@
+uuid: 96a6ed79-7202-447e-81d9-e8f047ac9547
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - ipu_tweaks
+  theme:
+    - ipu_report
+id: impactreportheader
+theme: ipu_report
+region: top_header
+weight: 0
+provider: null
+plugin: ipu_impact_report_header
+settings:
+  id: ipu_impact_report_header
+  label: 'Impact Report Header'
+  provider: ipu_tweaks
+  label_display: '0'
+  page_title: ''
+  content:
+    value: ''
+    format: full_html
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      report: report
+      report_section: report_section
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

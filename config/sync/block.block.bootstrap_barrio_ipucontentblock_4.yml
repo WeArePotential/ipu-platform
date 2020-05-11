@@ -1,0 +1,24 @@
+uuid: 5fd8cd14-c145-4710-8fae-60274904997f
+langcode: en
+status: true
+dependencies:
+  module:
+    - ipu_map
+  theme:
+    - bootstrap_barrio
+id: bootstrap_barrio_ipucontentblock_4
+theme: bootstrap_barrio
+region: top_header
+weight: -16
+provider: null
+plugin: ipu_node_block
+settings:
+  id: ipu_node_block
+  label: 'IPU content block'
+  provider: ipu_map
+  label_display: '0'
+  current: 0
+  nid: '374'
+  link_text: 'Read more'
+  view_mode: highlight
+visibility: {  }

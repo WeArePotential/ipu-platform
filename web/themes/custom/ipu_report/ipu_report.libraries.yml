@@ -1,0 +1,26 @@
+global-styling:
+  version: VERSION
+  js:
+    js/popper.min.js: {}
+    js/bootstrap.min.js: {}
+    js/global.js: {}
+    https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js: {type: external}
+
+  css:
+    component:
+      css/style.css: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+
+fontawesome:
+  version: VERSION
+  css:
+    component:
+      //use.fontawesome.com/releases/v5.1.0/css/all.css: {}
+
+animate:
+  version: VERSION
+  css:
+    component:
+      //cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css: {}

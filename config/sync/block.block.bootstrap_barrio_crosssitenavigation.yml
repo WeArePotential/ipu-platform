@@ -1,0 +1,25 @@
+uuid: 0dfcf6a2-19d1-4e1c-872e-ea2d5960319d
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:089612b5-c27c-409d-b1e1-8a227e0d98d8'
+  module:
+    - block_content
+  theme:
+    - bootstrap_barrio
+id: bootstrap_barrio_crosssitenavigation
+theme: bootstrap_barrio
+region: top_header
+weight: 0
+provider: null
+plugin: 'block_content:089612b5-c27c-409d-b1e1-8a227e0d98d8'
+settings:
+  id: 'block_content:089612b5-c27c-409d-b1e1-8a227e0d98d8'
+  label: 'Cross-site navigation'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

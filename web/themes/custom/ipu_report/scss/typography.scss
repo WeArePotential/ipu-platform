@@ -1,0 +1,66 @@
+/* TYPOGRAPHY */
+
+/* Google Fonts */
+
+//@import url("https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic,900,900italic");
+//@import url("https://fonts.googleapis.com/css?family=Raleway:400,300,500,600,700,800,900");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
+
+// font families
+$font-lato: 'Lato',
+Arial,
+Verdana,
+sans-serif;
+$font-raleway: 'Raleway',
+Arial,
+Verdana,
+sans-serif;
+// Fonts
+//
+// Font, line-height, and color for body text, headings, and more.
+$font-family-sans-serif: Roboto,
+-apple-system,
+system-ui,
+BlinkMacSystemFont,
+"Segoe UI",
+"Helvetica Neue",
+Arial,
+sans-serif !default;
+$font-family-serif: Georgia,
+"Times New Roman",
+Times,
+serif !default;
+$font-family-monospace: Menlo,
+Monaco,
+Consolas,
+"Liberation Mono",
+"Courier New",
+monospace;
+$font-family-base: $font-family-sans-serif;
+$font-size-base: 1rem; // Assumes the browser default, typically `16px`
+$font-size-lg: 1.25rem;
+$font-size-sm: .875rem;
+$font-size-xs: .75rem;
+
+$font-weight-light: 300;
+$font-weight-normal: normal;
+$font-weight-bold: bold;
+$font-weight-base: $font-weight-normal;
+$line-height-base: 1.5;
+$font-size-h1: 2.5rem;
+$font-size-h2: 2rem;
+$font-size-h3: 1.75rem;
+$font-size-h4: 1.5rem;
+$font-size-h5: 1.25rem;
+$font-size-h6: 1rem;
+
+h1, h2, h3 {
+  font-weight: $font-weight-light;
+}
+h2 {
+  color: $teal;
+  border-bottom: 1px solid $teal;
+}
+h4 {
+  color: $ipu-blue;
+}

@@ -30,16 +30,8 @@ display:
           label: Actions
         name_1:
           separator: ', '
-      filters:
-        langcode:
-          expose:
-            label: Language
   page_unapproved:
     display_options:
-      filters:
-        langcode:
-          expose:
-            label: Language
       fields:
         subject:
           separator: ', '

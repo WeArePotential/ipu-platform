@@ -1,0 +1,17 @@
+uuid: f04bde94-aa8c-439d-b311-35fad873ae8b
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Report section'
+type: report_section
+description: 'Container for content for a section of report presented as long-form page. Report sections contain report section paragraphs.'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

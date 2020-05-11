@@ -1,0 +1,33 @@
+uuid: 4ebb4738-de15-450f-8b2c-400410203e6c
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.follow-us
+  module:
+    - menu_block
+  theme:
+    - bootstrap_barrio
+id: bootstrap_barrio_followus
+theme: bootstrap_barrio
+region: top_header
+weight: 0
+provider: null
+plugin: 'menu_block:follow-us'
+settings:
+  id: 'menu_block:follow-us'
+  label: 'Follow us'
+  provider: menu_block
+  label_display: '0'
+  level: 1
+  custom_level: 1
+  hide_children: 0
+  depth: 1
+  expand: 0
+  expand_only_active_trails: 0
+  parent: 'follow-us:'
+  suggestion: follow_us
+  follow: 0
+  follow_parent: child
+  render_parent: false
+visibility: {  }

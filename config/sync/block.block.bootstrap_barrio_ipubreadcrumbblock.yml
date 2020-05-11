@@ -1,0 +1,20 @@
+uuid: 3a467c84-9985-4d47-8929-6f25aad5b801
+langcode: en
+status: true
+dependencies:
+  module:
+    - ipu_layouts
+  theme:
+    - bootstrap_barrio
+id: bootstrap_barrio_ipubreadcrumbblock
+theme: bootstrap_barrio
+region: content
+weight: -18
+provider: null
+plugin: ipu_breadcrumb_block
+settings:
+  id: ipu_breadcrumb_block
+  label: 'IPU Breadcrumb block'
+  provider: ipu_layouts
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,17 @@
+uuid: 148c5c15-2b39-4fdd-bf82-48d181f1bd5e
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Report
+type: report
+description: 'A report made up of sections. These are not presented on the site, but used to provide content.  '
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

@@ -1,0 +1,409 @@
+.btn-circle {
+  width: 36px;
+  height: 36px;
+  text-align: center;
+  padding: 0px 0;
+  font-size: 24px;
+  line-height: 1.428571429;
+  border-radius: 24px;
+}
+
+iframe {
+  max-width: 100%;
+}
+a.cta {
+  &::after {
+    font-family: "Font Awesome 5 Free";
+    display: inline-block;
+    padding-left: 4px;
+    vertical-align: middle;
+    font-weight: 900;
+    content: "\f35a";
+    color: $teal;
+    font-size: 1.4rem;
+  }
+
+}
+
+.node--type-report {
+  .btn-circle {
+    color: $ipu-black;
+    border-color: $teal;
+  }
+
+}
+.more-sections {
+  .btn-circle {
+    color: $ipu-white;
+    border-color: $teal-bright;
+    &:hover {
+     border-color: $ipu-white;
+    }
+  }
+
+}
+
+h1.report-header {
+  font-size: 5rem;
+  border-bottom: none;
+  text-transform: unset;
+  font-weight: $font-weight-light;
+  margin-right: 30px;
+}
+
+#main {
+  padding: 0;
+}
+#header {
+  background-color: #fff;
+  box-shadow: 0px 4px 4px 0px rgba(138,138,138,0.5);
+  border-bottom: 2px solid rgba(138,138,138,0.5);
+}
+#navbar-top,
+#navbar-main {
+  padding: 0;
+}
+#navbar-top {
+  @extend .container;
+}
+
+.navbar.bg-secondary {
+  background-color: $ipu-white !important;
+}
+
+#main-nav.item-list {
+  ul {
+    margin: 0;
+    li {
+      border: 0;
+      padding: 0;
+      border-radius: 0 !important;
+      border-right: 1px solid $ipu-white;
+      &:hover {
+        background-color: $ipu-light-grey;
+      }
+      a {
+        padding: 0.75rem;
+        color: $ipu-blue !important;
+        background-color: $ipu-white;
+        font-weight: 400;
+        &:hover {
+          background-color: $ipu-light-grey !important;
+        }
+      }
+      a.nav-link {
+        background-color: $ipu-very-light-grey;
+      }
+      a.nav-link.active {
+        background-color: $ipu-blue;
+        color: $ipu-white !important;
+        &:hover {
+          background-color: $ipu-blue !important;
+        }
+      }
+    }
+    li:first-child a {
+      font-weight: 500;
+    }
+  }
+}
+#main-nav {
+  &.navbar {
+    padding: 0;
+  }
+  .term-icon {
+    display: block;
+
+    a {
+      font-weight: $font-weight-normal;
+      font-size: 0.9rem;
+      line-height: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      &:hover {
+        color: color("ipu-orange");
+        text-decoration: none;
+      }
+    }
+
+    a::before {
+      content: "";
+      width: 32px;
+      height: 32px;
+      background-size: 100%;
+      display: block;
+      float: left;
+      margin-right: 0.4rem;
+    }
+  }
+  .term-icon-88 a::before {
+    background-image: url("../../../ipu/assets/img/theme_icons/gender_equality.svg");
+  }
+  .term-icon-139 a::before {
+    background-image: url("../../../ipu/assets/img/theme_icons/peace_building.svg");
+  }
+  .term-icon-82 a::before {
+    background-image: url("../../../ipu/assets/img/theme_icons/human_rights.svg");
+  }
+  .term-icon-198 a::before {
+    background-image: url("../../../ipu/assets/img/theme_icons/global_development.svg");
+  }
+  .term-icon-231 a::before {
+    background-image: url("../../../ipu/assets/img/theme_icons/international_relations.svg");
+  }
+  .term-icon-139 a::before {
+    background-image: url("../../../ipu/assets/img/theme_icons/peace_building.svg");
+  }
+  .term-icon-19 a::before {
+    background-image: url("../../../ipu/assets/img/theme_icons/strong_parliaments.svg");
+  }
+  .term-icon-117 a::before {
+    background-image: url("../../../ipu/assets/img/theme_icons/youth.svg");
+  }
+  .term-icon-337 a::before {
+    background-image: url("../../../ipu/assets/img/theme_icons/parliamentary_dialogue.svg");
+  }
+  .term-icon-logo-en a::before,
+  .term-icon-logo-fr a::before {
+    background-image: url("../../../ipu/assets/img/theme_icons/ipu-logo.svg");
+  }
+  .term-icon-report-next a::before {
+    background-image: url("../../../ipu/assets/img/theme_icons/report-next.svg");
+  }
+
+}
+
+#report-page-top {
+  h2 {
+    & {
+      display: flex;
+    }
+
+    & span {
+      background-size: 100%;
+      display: inline-block;
+      margin-right: 10px;
+      background-repeat: no-repeat;
+      flex: 0 0 5rem;
+      min-height: 5rem;
+      &.term-icon-88 {
+        background-image: url("../../../ipu/assets/img/theme_icons/gender_equality.svg");
+      }
+
+      &.term-icon-139 {
+        background-image: url("../../../ipu/assets/img/theme_icons/peace_building.svg");
+      }
+
+      &.term-icon-82 {
+        background-image: url("../../../ipu/assets/img/theme_icons/human_rights.svg");
+      }
+
+      &.term-icon-198 {
+        background-image: url("../../../ipu/assets/img/theme_icons/global_development.svg");
+      }
+
+      &.term-icon-231 {
+        background-image: url("../../../ipu/assets/img/theme_icons/international_relations.svg");
+      }
+
+      &.term-icon-139 {
+        background-image: url("../../../ipu/assets/img/theme_icons/peace_building.svg");
+      }
+
+      &.term-icon-19 {
+        background-image: url("../../../ipu/assets/img/theme_icons/strong_parliaments.svg");
+      }
+
+      &.term-icon-117 {
+        background-image: url("../../../ipu/assets/img/theme_icons/youth.svg");
+      }
+
+      &.term-icon-337 {
+        background-image: url("../../../ipu/assets/img/theme_icons/parliamentary_dialogue.svg");
+      }
+    }
+  }
+}
+
+.node__content {
+  margin-top: 0;
+}
+
+#inpage-nav {
+  margin-top: 30px;
+}
+
+#navbar-sections {
+  position: absolute;
+  right: 0;
+  margin-top: 80px;
+  padding: 0 !important;
+  box-shadow: 1px 4px 10px 2px rgba(138,138,138,0.2);
+  //box-shadow: 0px 4px 4px 4px rgba(138,138,138,0.5);
+  .nav-link {
+    background-color: $gray-100;
+    display: flex;
+    align-items: start;
+    border-bottom: 1px solid $ipu-white;
+  }
+  .nav-link::before {
+    font-family: 'Font Awesome 5 Free';
+    display: inline-block;
+    color: $gray-100;
+    content: '\f054';
+    font-weight: 900;
+    font-size: 1.1rem;
+    padding-right: 4px;
+  }
+  .nav-link.active::before {
+    color: $teal;
+  }
+  .nav-link:hover::before {
+    color: $teal-bright;
+  }
+}
+
+h1 {
+  color: $teal-bright;
+  font-size: 1.2rem;
+  //border-bottom: 4px solid $teal;
+  text-transform: uppercase;
+  font-weight: $font-weight-bold;
+}
+
+#report-page-top {
+  overflow: hidden;
+  padding: 0 !important;
+  .report-page-top-left {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  .node--type-report-section & {
+    background-color: $ipu-black;
+  }
+  h2 {
+    font-size: 2.4rem;
+    color: $teal-bright;
+    padding-bottom: 10px;
+    border-bottom-width: 3px;
+  }
+  .report-page-introduction {
+    .node--type-report-section & {
+      color: #fff;
+      margin: 20px 0 0 0;
+    }
+  }
+  .row {
+    min-height: 80vh;
+  }
+  .report-page-image {
+    height: 100%;
+    overflow-y: hidden;
+    margin-right: -100%;
+    background-position: center;
+    align-content: center;
+    background-size: auto;
+  }
+}
+
+.report-section--type--impact-statement,
+.report-section--type--case-study,
+.report-section--type--next-steps {
+  & > .container-fluid > .row {
+    min-height: 80vh;
+  }
+}
+
+.report-section--type--banner-image {
+  .container > .row {
+    min-height: 80vh;
+  }
+  .inner-overlay {
+    padding: 20px;
+    background-color: $ipu-black;
+    opacity: 90%;
+  }
+  h3 {
+    color: $ipu-white;
+  }
+}
+
+.bg-left,
+.bg-right {
+  padding-top: 30px;
+}
+.bg-right h4 {
+  margin-top: 15px;
+  font-size: 1.2rem;
+}
+.line {
+  border-top: 4px solid;
+  margin: 0 -30px;
+}
+.bg-left .line {
+  margin-left: 0;
+}
+
+.paragraph.report-section--type--impact-statement {
+  .bg-left {
+    background-color: $teal;
+    color: #fff;
+    .line {
+      border-color: $ipu-white;
+    }
+  }
+  .bg-right {
+    background-color: $teal-light;
+    .line {
+      border-color: $teal;
+    }
+  }
+}
+
+.paragraph.report-section--type--case-study {
+  .bg-left {
+    background-color: $ipu-grey;
+    color: #fff;
+    .line {
+      border-color: $ipu-white;
+    }
+  }
+  .bg-right {
+    background-color: $ipu-light-grey;
+    .line {
+      border-color: $ipu-grey;
+    }
+  }
+}
+
+.paragraph.report-section--type--next-steps {
+  .bg-left {
+    background-color: $ipu-orange;
+    color: #fff;
+    .line {
+      border-color: $ipu-white;
+    }
+  }
+  .bg-right {
+    background-color: $light-orange;
+    .line {
+      border-color: $ipu-orange;
+    }
+  }
+}
+
+.image-with-caption {
+  img {
+    position: relative;
+  }
+  .image-caption {
+    position: absolute;
+    bottom: 0;
+    display: inline-block;
+    color: #fff;
+    background-color: $ipu-blue-light;
+    padding: 2px 4px;
+  }
+}
+

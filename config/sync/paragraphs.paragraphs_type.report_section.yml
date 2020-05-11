@@ -1,0 +1,9 @@
+uuid: dc154b9f-95a4-44a3-bb20-1c5782f84385
+langcode: en
+status: true
+dependencies: {  }
+id: report_section
+label: 'Report section'
+icon_uuid: null
+description: 'Content for a report section '
+behavior_plugins: {  }

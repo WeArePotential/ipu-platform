@@ -52,9 +52,6 @@ display:
                 title: Publié
               2:
                 title: 'Non publié'
-        langcode:
-          expose:
-            label: Language
       title: Média
   media_page_list:
     display_title: Média

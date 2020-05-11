@@ -1,0 +1,24 @@
+uuid: f509cdab-6cfa-451d-bcef-6f3db233e35b
+langcode: en
+status: true
+dependencies:
+  module:
+    - ipu_innovation_tracker
+  theme:
+    - bootstrap_barrio
+id: bootstrap_barrio_innovationtrackerheader
+theme: bootstrap_barrio
+region: content
+weight: -16
+provider: null
+plugin: ipu_innovation_tracker_header
+settings:
+  id: ipu_innovation_tracker_header
+  label: 'Innovation Tracker Header'
+  provider: ipu_innovation_tracker
+  label_display: '0'
+  page_title: 'IPU Innovation Tracker'
+  content:
+    value: "<p>The quarterly electronic bulletin from the <a href=\"peter.html\">Centre for Innovation in Parliament</a></p>\r\n"
+    format: full_html
+visibility: {  }

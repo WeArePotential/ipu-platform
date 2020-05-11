@@ -1,5 +1,7 @@
 <?php
 
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\StringTranslation;
 use Drupal\datetime\Plugin\Field\FieldType\DateTimeItemInterface;
 use Drupal\block\Entity\Block;
@@ -447,3 +449,19 @@ function ipu_tweaks_editor_js_settings_alter(array &$settings) {
     }
   }
 }
+
+
+/**
+ * Implements hook_entity_view().
+ *
+ * Gets the output for extra fields.
+ */
+function ipu_tweaks_entity_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+
+  if ($entity->getEntityType()->id() == 'node' && $entity->bundle() == 'report_section' && $view_mode == 'full' && !empty($build['field_section'])) {
+    $view_builder = \Drupal::entityTypeManager()
+      ->getViewBuilder('field_collection_item');
+    $build['field_section'] = $view_builder->build($build['field_section']);
+  }
+}
+

@@ -1,0 +1,16 @@
+uuid: b4a9ef7b-8e5d-4e13-a1bf-1db4fb8edad9
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.report_section
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: node.report_section
+target_entity_type_id: node
+target_bundle: report_section
+default_langcode: site_default
+language_alterable: false

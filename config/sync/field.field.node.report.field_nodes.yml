@@ -1,0 +1,35 @@
+uuid: 2843d6e4-f0f3-4a3a-a428-5cc448976196
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_nodes
+    - node.type.report
+    - node.type.report_section
+  module:
+    - custom_add_another
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
+id: node.report.field_nodes
+field_name: field_nodes
+entity_type: node
+bundle: report
+label: 'Report sections'
+description: 'Add sections of the report'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      report_section: report_section
+    sort:
+      field: title
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

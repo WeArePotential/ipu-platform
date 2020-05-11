@@ -1,0 +1,24 @@
+uuid: cb4e0ac1-20bf-48ba-86a8-3fa749dc0850
+langcode: en
+status: true
+dependencies:
+  module:
+    - ipu_map
+  theme:
+    - bootstrap_barrio
+id: bootstrap_barrio_ipucontentblock_3
+theme: bootstrap_barrio
+region: top_header
+weight: -15
+provider: null
+plugin: ipu_node_block
+settings:
+  id: ipu_node_block
+  label: 'IPU content block'
+  provider: ipu_map
+  label_display: '0'
+  current: 0
+  nid: '9838'
+  link_text: 'Get involved'
+  view_mode: highlight
+visibility: {  }

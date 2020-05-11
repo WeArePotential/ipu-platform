@@ -1,0 +1,21 @@
+uuid: 3b7272d9-0c6f-4115-b167-15aeb18f49fa
+langcode: en
+status: false
+dependencies:
+  theme:
+    - bootstrap_barrio
+id: bootstrap_barrio_knowledgectas
+theme: bootstrap_barrio
+region: top_header
+weight: -14
+provider: null
+plugin: 'block_content:7c4b6128-62ec-4f24-a2d4-f08f8e351f80'
+settings:
+  id: 'block_content:7c4b6128-62ec-4f24-a2d4-f08f8e351f80'
+  label: 'Knowledge CTAs'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

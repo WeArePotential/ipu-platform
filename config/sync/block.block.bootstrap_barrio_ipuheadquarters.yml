@@ -1,0 +1,25 @@
+uuid: 23e3aec5-7236-4a0a-8054-1dc110bd8b40
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:a21f0c9e-2219-47a0-b64a-0a6fde01c417'
+  module:
+    - block_content
+  theme:
+    - bootstrap_barrio
+id: bootstrap_barrio_ipuheadquarters
+theme: bootstrap_barrio
+region: top_header
+weight: -16
+provider: null
+plugin: 'block_content:a21f0c9e-2219-47a0-b64a-0a6fde01c417'
+settings:
+  id: 'block_content:a21f0c9e-2219-47a0-b64a-0a6fde01c417'
+  label: 'IPU offices'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

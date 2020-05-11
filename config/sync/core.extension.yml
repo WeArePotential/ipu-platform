@@ -160,6 +160,7 @@ module:
   redis: 0
   responsive_image: 0
   rest: 0
+  rest_views: 0
   roleassign: 0
   search: 0
   search_api: 0
@@ -182,6 +183,7 @@ module:
   token: 0
   toolbar: 0
   tour: 0
+  twig_field_value: 0
   twig_tweak: 0
   twitter_block: 0
   ultimenu: 0
@@ -224,6 +226,8 @@ theme:
   radix: 0
   ipu: 0
   adminimal_theme: 0
+  bootstrap_barrio: 0
+  ipu_report: 0
 profile: standard
 _core:
   default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc

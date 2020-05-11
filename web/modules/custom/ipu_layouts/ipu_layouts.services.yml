@@ -1,0 +1,7 @@
+services:
+  ipu_layouts.theme:
+    class: Drupal\ipu_layouts\Theme\IpulayoutsThemeNegotiator
+    arguments: []
+    tags:
+      - { name: theme_negotiator, priority: 10 }
+

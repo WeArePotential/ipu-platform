@@ -1,0 +1,32 @@
+uuid: 9c71da24-0e13-4f87-923e-1e44892a7efe
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.report_section.body
+    - node.type.report_section
+  module:
+    - text
+    - user
+id: node.report_section.teaser
+targetEntityType: node
+bundle: report_section
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  langcode: true

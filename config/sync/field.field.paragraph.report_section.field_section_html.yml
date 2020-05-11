@@ -1,0 +1,26 @@
+uuid: 3cc63e74-27e1-4a08-ae33-9c54111498aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_section_html
+    - paragraphs.paragraphs_type.report_section
+  module:
+    - custom_add_another
+    - text
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
+id: paragraph.report_section.field_section_html
+field_name: field_section_html
+entity_type: paragraph
+bundle: report_section
+label: Content
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,25 @@
+uuid: e259e30d-36c5-41ee-afb1-74ebf9bcddb8
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:cta_block:31badc67-54ef-46da-8c20-59e91369d62c'
+  module:
+    - block_content
+  theme:
+    - bootstrap_barrio
+id: bootstrap_barrio_knowledgectas_2
+theme: bootstrap_barrio
+region: top_header
+weight: -15
+provider: null
+plugin: 'block_content:31badc67-54ef-46da-8c20-59e91369d62c'
+settings:
+  id: 'block_content:31badc67-54ef-46da-8c20-59e91369d62c'
+  label: 'Discover the IPU''s resources'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

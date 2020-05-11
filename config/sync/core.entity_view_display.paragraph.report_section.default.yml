@@ -1,0 +1,73 @@
+uuid: e17fa588-eaac-4300-b829-57629ddb195f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.report_section.field_content_type
+    - field.field.paragraph.report_section.field_image
+    - field.field.paragraph.report_section.field_link
+    - field.field.paragraph.report_section.field_section_html
+    - field.field.paragraph.report_section.field_section_title
+    - image.style.max_1300x1300
+    - paragraphs.paragraphs_type.report_section
+  module:
+    - ds
+    - image
+    - link
+    - options
+    - text
+id: paragraph.report_section.default
+targetEntityType: paragraph
+bundle: report_section
+mode: default
+content:
+  field_content_type:
+    weight: 0
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_image:
+    weight: 3
+    label: hidden
+    settings:
+      image_style: max_1300x1300
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: image_url
+    region: content
+  field_link:
+    weight: 4
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_section_html:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_section_title:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

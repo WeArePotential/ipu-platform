@@ -1,0 +1,24 @@
+uuid: 080ae3ee-a1fa-44ba-8fb2-6ea662f4d009
+langcode: en
+status: true
+dependencies:
+  module:
+    - ipu_map
+  theme:
+    - bootstrap_barrio
+id: bootstrap_barrio_ipucontentblock_2
+theme: bootstrap_barrio
+region: top_header
+weight: -16
+provider: null
+plugin: ipu_node_block
+settings:
+  id: ipu_node_block
+  label: 'IPU content block'
+  provider: ipu_map
+  label_display: '0'
+  current: 0
+  nid: 9854
+  link_text: 'See all parliaments'
+  view_mode: highlight
+visibility: {  }
