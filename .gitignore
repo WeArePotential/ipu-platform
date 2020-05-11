@@ -34,5 +34,8 @@
 /console/
 
 # We don't need the generated js and css as these are built on deploy
+# However they are left in for development purposes.
 # /web/themes/ipu/assets/css
 # /web/themes/ipu/assets/js
+/web/themes/custom/ipu_report/node_modules/
+/temp/
