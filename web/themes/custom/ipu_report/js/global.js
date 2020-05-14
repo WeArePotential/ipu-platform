@@ -20,6 +20,21 @@
     }
   };
 
+  Drupal.behaviors.circle_animate = {
+    attach: function (context, settings) {
+      $(document).ready(function () {
+      setTimeout(
+        function()
+        {
+          var circle = $('.circle-wrapper');
+          circle.fadeIn('slow', function () {
+            circle.attr("animation-play-state", "running");
+          });
+        }, 1000);
+      });
+    }
+  };
+
   Drupal.behaviors.bootstrap_barrio_subtheme = {
     attach: function(context, settings) {
       var position = $(window).scrollTop();

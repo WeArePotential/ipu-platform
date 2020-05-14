@@ -1,0 +1,99 @@
+uuid: 482b8559-e73f-404a-92b7-c617b552b36f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_section
+    - node.type.report
+    - paragraphs.paragraphs_type.report_section
+  module:
+    - custom_add_another
+    - entity_reference_revisions
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
+id: node.report.field_section
+field_name: field_section
+entity_type: node
+bundle: report
+label: 'Page section'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      report_section: report_section
+    target_bundles_drag_drop:
+      call_to_action:
+        weight: 23
+        enabled: false
+      callout_strip:
+        weight: 24
+        enabled: false
+      carousel:
+        weight: 25
+        enabled: false
+      carousel_slides:
+        weight: 26
+        enabled: false
+      data_point:
+        weight: 27
+        enabled: false
+      event_sub_page:
+        weight: 28
+        enabled: false
+      highlights:
+        weight: 29
+        enabled: false
+      innovation_tracker_stories:
+        weight: 30
+        enabled: false
+      ipu_event_document:
+        weight: 31
+        enabled: false
+      ipu_event_document_widget:
+        weight: 32
+        enabled: false
+      ipu_event_right_menu:
+        weight: 33
+        enabled: false
+      ipu_event_section:
+        weight: 34
+        enabled: false
+      ipu_event_session_type:
+        weight: 35
+        enabled: false
+      ipu_event_sessions:
+        weight: 36
+        enabled: false
+      ipu_event_sponsors:
+        weight: 37
+        enabled: false
+      member:
+        weight: 38
+        enabled: false
+      publication_document:
+        weight: 39
+        enabled: false
+      related_content:
+        weight: 40
+        enabled: false
+      related_documents:
+        weight: 41
+        enabled: false
+      report_section:
+        enabled: true
+        weight: 42
+      sections:
+        weight: 43
+        enabled: false
+      slide:
+        weight: 44
+        enabled: false
+field_type: entity_reference_revisions

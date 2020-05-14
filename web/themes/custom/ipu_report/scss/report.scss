@@ -8,9 +8,6 @@
   border-radius: 24px;
 }
 
-iframe {
-  max-width: 100%;
-}
 a.cta {
   &::after {
     font-family: "Font Awesome 5 Free";
@@ -22,7 +19,12 @@ a.cta {
     color: $teal;
     font-size: 1.4rem;
   }
+}
 
+.data-point-value {
+  font-size: 3rem;
+  line-height: 1;
+  font-weight: 500;
 }
 
 .node--type-report {
@@ -32,6 +34,11 @@ a.cta {
   }
 
 }
+
+iframe {
+  max-width: 100%;
+}
+
 .more-sections {
   .btn-circle {
     color: $ipu-white;
@@ -74,7 +81,12 @@ h1.report-header {
 #main-nav.item-list {
   ul {
     margin: 0;
+    display: flex;
     li {
+      display: block;
+      flex: 1 1 0px;
+      width: 10%;
+      text-align: center;
       border: 0;
       padding: 0;
       border-radius: 0 !important;
@@ -83,7 +95,7 @@ h1.report-header {
         background-color: $ipu-light-grey;
       }
       a {
-        padding: 0.75rem;
+        padding: 0.5rem;
         color: $ipu-blue !important;
         background-color: $ipu-white;
         font-weight: 400;
@@ -113,8 +125,9 @@ h1.report-header {
   }
   .term-icon {
     display: block;
-
+    height: 100%;
     a {
+      height: 100%;
       font-weight: $font-weight-normal;
       font-size: 0.9rem;
       line-height: 1;
@@ -134,7 +147,7 @@ h1.report-header {
       background-size: 100%;
       display: block;
       float: left;
-      margin-right: 0.4rem;
+      margin-bottom: 0.4rem;
     }
   }
   .term-icon-88 a::before {
@@ -275,27 +288,40 @@ h1 {
 #report-page-top {
   overflow: hidden;
   padding: 0 !important;
+
   .report-page-top-left {
     padding-top: 30px;
     padding-bottom: 30px;
   }
+
   .node--type-report-section & {
     background-color: $ipu-black;
   }
+
   h2 {
     font-size: 2.4rem;
     color: $teal-bright;
     padding-bottom: 10px;
     border-bottom-width: 3px;
+    align-items: flex-end;
   }
+
   .report-page-introduction {
     .node--type-report-section & {
       color: #fff;
       margin: 20px 0 0 0;
     }
   }
+
   .row {
-    min-height: 80vh;
+    .node--type-report-section & {
+      min-height: 80vh;
+    }
+  }
+
+  .field--name-field-link a {
+    @extend .btn;
+    @extend .cta;
   }
   .report-page-image {
     height: 100%;
@@ -307,11 +333,13 @@ h1 {
   }
 }
 
-.report-section--type--impact-statement,
-.report-section--type--case-study,
-.report-section--type--next-steps {
-  & > .container-fluid > .row {
-    min-height: 80vh;
+.node--type-report-section {
+  .report-section--type--impact-statement,
+  .report-section--type--case-study,
+  .report-section--type--next-steps {
+    & > .container-fluid > .row {
+      min-height: 80vh;
+    }
   }
 }
 
@@ -360,6 +388,106 @@ h1 {
     }
   }
 }
+.paragraph--type--data-point {
+  float: right;
+  width: 250px;
+  height: 250px;
+  margin: 20px 0 20px 20px;
+
+  .circle-wrapper {
+    width: 250px;
+    height: 250px;
+    position: relative;
+    background: transparent;
+    display: none;
+    .pie {
+      width: 50%;
+      height: 100%;
+      transform-origin: 100% 50%;
+      position: absolute;
+      background: transparent;
+      border: 2px solid $ipu-orange;
+    }
+
+    .spinner {
+      border-radius: 100% 0 0 100% / 50% 0 0 50%;
+      z-index: 0;
+      border-right: none;
+      -webkit-animation: rota 7s linear infinite;
+    }
+
+    &:hover .spinner,
+    &:hover .filler,
+    &:hover .mask {
+      animation-play-state: paused; // running
+    }
+
+    .filler {
+      border-radius: 0 100% 100% 0 / 0 50% 50% 0;
+      left: 50%;
+      opacity: 0;
+      -webkit-animation: opa 7s steps(1, end) infinite reverse;
+      border-left: none;
+    }
+
+    .mask {
+      width: 50%;
+      height: 100%;
+      position: absolute;
+      background: inherit;
+      opacity: 1;
+      -webkit-animation: opa 7s steps(1, end) infinite;
+    }
+
+    .circle-content {
+      padding: 20px;
+      z-index: 1001;
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+      font-size: 0.9rem;
+      justify-content: center;
+    }
+  }
+
+  .field {
+    color: $ipu-orange;
+    text-align: center;
+  }
+  .field--name-field-data-value {
+    font-size: 3rem;
+    line-height: 1;
+    font-weight: 500;
+  }
+
+}
+
+
+@-webkit-keyframes rota {
+  0% {
+    transform: rotate(0deg);
+    border-color: $ipu-orange;
+  }
+
+  100% {
+    transform: rotate(360deg);
+    z-index: 0;
+  }
+}
+
+@-webkit-keyframes opa {
+  0% {
+    opacity: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
 
 .paragraph.report-section--type--case-study {
   .bg-left {
@@ -393,17 +521,45 @@ h1 {
   }
 }
 
+blockquote {
+  margin: 0 0 15px 7.5px;
+  float: right;
+  margin-right: -8.3%;
+  width: 50%;
+  color: $teal;
+  padding: 0 0 0 15px;
+  border-left: 1px solid $teal;
+  font-style: italic;
+  &, p {
+    font-size: 1.1rem;
+  }
+  & em {
+    font-size: 1rem;
+    font-style: normal;
+  }
+}
+.image-caption-basic {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  color: #fff;
+  background-color: $ipu-blue-light;
+  padding: 2px 4px;
+}
+
 .image-with-caption {
+  position: relative;
   img {
-    position: relative;
+    max-width: 100%;
   }
   .image-caption {
+    @extend .image-caption-basic;
     position: absolute;
     bottom: 0;
-    display: inline-block;
-    color: #fff;
-    background-color: $ipu-blue-light;
-    padding: 2px 4px;
   }
+}
+figcaption {
+  @extend .image-caption-basic;
+  position: relative;
 }
 

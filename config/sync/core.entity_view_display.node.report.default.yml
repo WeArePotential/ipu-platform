@@ -6,10 +6,12 @@ dependencies:
     - field.field.node.report.body
     - field.field.node.report.field_image
     - field.field.node.report.field_nodes
+    - field.field.node.report.field_section
     - image.style.max_1920x1920
     - node.type.report
   module:
     - ds
+    - entity_reference_revisions
     - image
     - text
     - user
@@ -55,6 +57,15 @@ content:
             lb-col: false
             classes: {  }
     type: entity_reference_label
+    region: content
+  field_section:
+    weight: 104
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
     region: content
   links:
     weight: 100
