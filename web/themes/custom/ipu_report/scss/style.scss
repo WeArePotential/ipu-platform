@@ -1,4 +1,4 @@
-/* 
+/*
 Theme Name: Bootstrap 4 Sass
 Description: Bootstrap 4 with Sass
 */
@@ -14,7 +14,7 @@ body {
 }
 
 
-/* COLORS 
+/* COLORS
 --------------------------------------------------*/
 
 a {
@@ -57,4 +57,29 @@ a {
 
 .slick>div {
     margin: 0 15px;
+}
+
+// Language switcher block - unused languages
+ul.language-switcher-language-url {
+  padding: 0;
+  margin: 10px 0;
+  li {
+    display: inline-block;
+    margin: 0;
+    padding: 0 2px;
+    &:first-child {
+      border-right: 1px solid $ipu-blue;
+    }
+  }
+  a {
+    display: block;
+    padding: 2px 6px;
+    &.is-active {
+      font-weight: bold;
+    }
+  }
+  li.ar,
+  li.es {
+    display: none;
+  }
 }
