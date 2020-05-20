@@ -131,12 +131,13 @@ class ImpactReportFooter extends BlockBase {
 //        $link['#suffix'] = '</div>';
         if ((int)$count++ < count($results)-1) {
 //          $link['#prefix'] = '<div class="term-icon term-icon-logo-' . $language . '">';
-//          $link['#attributes'] = ['class' => 'nav-link'];
+          $link['#attributes'] = ['class' => 'first'];
           // Get the link to the PDF of report
           $publication_link = $report_page->field_publication_link;
           $links[] = $link;
         } else {
 //          $link['#prefix'] = '<div class="term-icon term-icon-report-next">';
+          $link['#attributes'] = ['class' => 'last'];
           $last_link = $link;
         }
       }
@@ -184,14 +185,14 @@ class ImpactReportFooter extends BlockBase {
       }
       $links[] = $last_link;
 
-      $links1 = array_slice($links, 0, 4);
+      $links1 = array_slice($links, 0, round(count($links)/2));
       $list1 = [
         '#theme' => 'item_list',
         '#list_type' => 'ul',
         //'#title' => '',
         '#items' => $links1,
       ];
-      $links2 = array_slice($links, 5, 4);
+      $links2 = array_slice($links, round(count($links)/2), round(count($links)/2));
       $list2 = [
         '#theme' => 'item_list',
         '#list_type' => 'ul',

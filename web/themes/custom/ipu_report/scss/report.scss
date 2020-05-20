@@ -634,10 +634,10 @@ figcaption {
         color: $ipu-teal;
       }
     }
-    &:last-child a {
+    a.last {
       border-top: 1px solid;
     }
-    &:first-child a {
+    a.first {
       border-bottom: 1px solid;
     }
   }
