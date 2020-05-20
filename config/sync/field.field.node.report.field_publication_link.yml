@@ -1,0 +1,28 @@
+uuid: f1f9fb9a-79c7-4f5b-8526-f15764f4cb90
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_publication_link
+    - node.type.report
+  module:
+    - custom_add_another
+    - link
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
+id: node.report.field_publication_link
+field_name: field_publication_link
+entity_type: node
+bundle: report
+label: 'Link to publication'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

@@ -1,0 +1,33 @@
+uuid: 5e88c00f-39fa-4916-9a80-39cf30c851fc
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - ipu_tweaks
+  theme:
+    - ipu_report
+id: impactreportfooter
+theme: ipu_report
+region: footer_fifth
+weight: 0
+provider: null
+plugin: ipu_impact_report_footer
+settings:
+  id: ipu_impact_report_footer
+  label: 'Impact Report Footer'
+  provider: ipu_tweaks
+  label_display: '0'
+  page_title: ''
+  content:
+    value: ''
+    format: full_html
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      report: report
+      report_section: report_section
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

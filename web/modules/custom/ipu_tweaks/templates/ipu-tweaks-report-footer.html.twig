@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="footer-col-1 col-md-3 col-sm-6">
+      {{ col1 }}
+      {% if language == 'en' %}
+        {% set url = '' %}
+      {% else %}
+        {% set url = language %}
+      {% endif %}
+      <a class="logo-link" href="/{{ url }}"><img class="logo" src="/themes/custom/ipu_report/images/ipu_logo-{{ language }}.png" /></a>
+      {# page.navbar_branding #}
+
+    </div>
+    <div class="footer-col-2 col-md-3 col-sm-6">
+      {{ col2 }}
+    </div>
+    <div class="footer-col-3 col-md-3 col-sm-6">
+      {{ col3 }}
+    </div>
+    <div class="footer-col-4 col-md-3 col-sm-6">
+
+      <div class=""><a href="{{col4.link.uri}}" class="btn btn-download btn-secondary">{{col4.link.title}}</a></div>
+    </div>
+
+
+  </div>
+
+</div>

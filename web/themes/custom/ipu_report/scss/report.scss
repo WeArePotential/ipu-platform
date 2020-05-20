@@ -20,6 +20,16 @@ a.cta {
     font-size: 1.4rem;
   }
 }
+a.btn-download {
+  @extend a.cta;
+  &::after {
+    content: "\f019";
+    color: $ipu-white;
+  }
+}
+.site-footer a.download::after {
+  color: $ipu-white !important;
+}
 
 .data-point-value {
   font-size: 3rem;
@@ -44,7 +54,7 @@ iframe {
     color: $ipu-white;
     border-color: $teal-bright;
     &:hover {
-     border-color: $ipu-white;
+      border-color: $ipu-white;
     }
   }
 
@@ -332,7 +342,13 @@ h1 {
     background-size: auto;
   }
 }
-
+.node--type-report-section {
+  .report-section--type--report {
+    .field--name-field-section-html {
+      margin-bottom: 20px;
+    }
+  }
+}
 .node--type-report-section {
   .report-section--type--impact-statement,
   .report-section--type--case-study,
@@ -388,6 +404,31 @@ h1 {
     }
   }
 }
+
+.paragraph.report-section--type--report {
+  table {
+    margin: 10px 0;
+    td {
+      padding: 4px 8px;
+    }
+    td p {
+      margin: 0;
+    }
+    tr {
+      background-color: $ipu-teal-light;
+    }
+    tr:nth-child(odd) {
+      background-color: $ipu-very-light-grey;
+    }
+    tr:first-child {
+      background-color: $ipu-teal;
+      color: $ipu-white;
+    }
+
+
+  }
+}
+
 .paragraph--type--data-point {
   float: right;
   width: 250px;
@@ -549,6 +590,7 @@ blockquote {
 
 .image-with-caption {
   position: relative;
+  margin-bottom: 20px;
   img {
     max-width: 100%;
   }
@@ -563,3 +605,46 @@ figcaption {
   position: relative;
 }
 
+// FOOTER
+
+.site-footer {
+  padding: 0;
+  border-top: 4px solid $ipu-light-grey;
+  & > * {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    background-color: $ipu-very-light-grey !important;
+  }
+}
+
+#block-impactreportfooter {
+  @extend .col-12;
+  color: $ipu-white;
+  .footer-col-1 {
+    img {
+      max-width: 90%;
+    }
+  }
+  ul li {
+    a {
+      padding: 2px 4px;
+      font-size: 0.9rem;
+      display: block;
+      &:hover {
+        color: $ipu-teal;
+      }
+    }
+    &:last-child a {
+      border-top: 1px solid;
+    }
+    &:first-child a {
+      border-bottom: 1px solid;
+    }
+  }
+
+  .list-group-item {
+    padding: 0;
+    background-color: transparent;
+    border: 0px solid rgba(0, 0, 0, 0.125);
+  }
+}
