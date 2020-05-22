@@ -393,7 +393,8 @@ h1 {
   margin-left: 0;
 }
 
-.paragraph.report-section--type--impact-statement {
+.paragraph.report-section--type--impact-statement,
+.paragraph.report-section--type--impact {
   .bg-left {
     background-color: $teal;
     color: #fff;
