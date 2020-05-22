@@ -352,14 +352,18 @@ h1 {
 .node--type-report-section {
   .report-section--type--impact-statement,
   .report-section--type--case-study,
-  .report-section--type--next-steps {
+  .report-section--type--next-steps,
+  .report-section--type--impact,
+  .report-section--type--case_study,
+  .report-section--type--next_steps {
     & > .container-fluid > .row {
       min-height: 80vh;
     }
   }
 }
 
-.report-section--type--banner-image {
+.report-section--type--banner-image,
+.report-section--type--image {
   .container > .row {
     min-height: 80vh;
   }

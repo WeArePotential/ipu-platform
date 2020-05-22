@@ -1,0 +1,12 @@
+settings:
+  allowed_values:
+    1:
+      label: Rapport
+    2:
+      label: 'Image de la bannière'
+    3:
+      label: 'Étude de cas'
+    4:
+      label: 'L’impact de l’UIP'
+    5:
+      label: 'Prochaines étapes'

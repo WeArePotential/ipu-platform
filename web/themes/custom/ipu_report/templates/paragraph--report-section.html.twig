@@ -39,26 +39,31 @@
  */
 #}
 {% set contenttype = "Peter" %}
+{% set contenttypeid = "peter" %}
+
 {% for key, item in content.field_content_type if key|first != '#' %}
   {% set contenttype = item|render %}
+  {% set contenttypeid = content.field_content_type|field_raw.value %}
+
 {% endfor %}
 
 {%
   set classes = [
-    not contenttype == 'Banner image' ? 'col-12',
+    not contenttypeid == 'image' ? 'col-12',
     'paragraph',
     'container-fluid',
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
     not paragraph.isPublished() ? 'paragraph--unpublished',
     'report-section--type--' ~ contenttype|clean_class,
+    'report-section--type--' ~ contenttypeid|clean_class,
   ]
 %}
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
 
       {% block content %}
-        {% if contenttype == 'Banner image' %}
+        {% if contenttypeid == 'image' %}
           <div class="container-fluid"
             {% if content.field_image is defined and content.field_image is not empty %}
               {% if content.field_image['#items'].entity.uri.value %}
@@ -80,8 +85,8 @@
           </div>
         {% endif %}
 
-        {% if contenttype != 'Banner image' %}
-          {% if contenttype == 'Report' %}
+        {% if contenttypeid != 'image' %}
+          {% if contenttypeid == 'report' %}
 
             <div class="container">
               <div class="row">
@@ -112,7 +117,7 @@
                     <div class="row">
                       <div class="col-8 offset-4 pl-0 pr-0">
                         <h3>
-                          {% if contenttype == 'Next steps' %}
+                          {% if contenttypeid == 'next_steps' %}
                             <i class="fas fa-caret-right"></i><i class="fas fa-caret-right"></i>
                           {% endif %}
                           {{ contenttype }}</h3>
@@ -130,7 +135,7 @@
                         <h4>{{ content.field_section_title }}</h4>
                         <div class="wow animate__animated animate__fadeInRight">{{ content.field_section_html }}</div>
 
-                        {% if contenttype == 'Next steps' %}
+                        {% if contenttypeid == 'next_steps' %}
                           <a class="button btn btn-primary wow animate__animated animate__fadeIn" data-wow-duration="0.5s" data-wow-delay="2s"
                              id="next-button" href="#">{{ 'Next section'|t }}</a>
                         {% endif %}

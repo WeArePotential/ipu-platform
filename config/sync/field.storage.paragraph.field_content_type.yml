@@ -25,7 +25,7 @@ settings:
       label: 'Case study'
     -
       value: impact
-      label: 'Impact statement'
+      label: 'Our impact'
     -
       value: next_steps
       label: 'Next steps'
