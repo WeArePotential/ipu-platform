@@ -91,11 +91,12 @@ h1.report-header {
 #main-nav.item-list {
   ul {
     margin: 0;
-    display: flex;
+    display: inline-grid;
+    grid-template-columns: repeat(10, minmax(0, 1fr));
     li {
       display: block;
-      flex: 1 1 0px;
-      width: 10%;
+      //flex: 1 1 0px;
+      //width: calc(10% - 0px);
       text-align: center;
       border: 0;
       padding: 0;
@@ -123,12 +124,52 @@ h1.report-header {
           background-color: $ipu-blue !important;
         }
       }
+      .page-number {
+        display: none;
+      }
     }
     li:first-child a {
       font-weight: 500;
     }
   }
 }
+
+@include media-breakpoint-down(md) {
+  #main-nav.item-list {
+    ul {
+      //width: calc(20% - 0px);
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      li:first-child a:before,
+      li:last-child a:before,
+      li .term-icon a:before {
+        display: none;
+      }
+      .term-icon a :before {
+        width: 20px;
+        height: 20px;
+      }
+      li a {
+        .page-number {
+          display: block !important;
+          font-size: 2rem;
+        }
+        .title {
+          display: none;
+        }
+      }
+      li:first-child a,
+      li:last-child a {
+        .page-number {
+          display: none !important;
+        }
+        .title {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
 #main-nav {
   &.navbar {
     padding: 0;
@@ -342,6 +383,15 @@ h1 {
     background-size: auto;
   }
 }
+
+@include media-breakpoint-down(md) {
+  .report-page-image {
+    min-height: 200px;
+  }
+  #navbar-sections {
+   display: none;
+  }
+}
 .node--type-report-section {
   .report-section--type--report {
     .field--name-field-section-html {
@@ -391,6 +441,15 @@ h1 {
 }
 .bg-left .line {
   margin-left: 0;
+}
+
+@include media-breakpoint-down(md) {
+  .line {
+    display: none;
+  }
+  .bg-right h3 {
+    display: none;
+  }
 }
 
 .paragraph.report-section--type--impact-statement,
@@ -510,7 +569,11 @@ h1 {
   }
 
 }
-
+@include media-breakpoint-down(md) {
+  .paragraph--type--data-point {
+    float: none;
+  }
+}
 
 @-webkit-keyframes rota {
   0% {
