@@ -140,8 +140,7 @@ h1.report-header {
       //width: calc(20% - 0px);
       grid-template-columns: repeat(5, minmax(0, 1fr));
       li:first-child a:before,
-      li:last-child a:before,
-      li .term-icon a:before {
+      li:last-child a:before {
         display: none;
       }
       .term-icon a :before {
@@ -150,7 +149,7 @@ h1.report-header {
       }
       li a {
         .page-number {
-          display: block !important;
+          display: none !important;
           font-size: 2rem;
         }
         .title {

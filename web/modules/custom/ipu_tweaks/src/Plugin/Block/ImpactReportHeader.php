@@ -151,19 +151,19 @@ class ImpactReportHeader extends BlockBase {
         return ['#markup' => ''];
       }
 
-      $page = 2;
+      $page = 1;
       foreach($results as $nid) {
         $section_page = entity_load('node', $nid);
         if ($section_page->hasTranslation($language)) {
           $section_page = $section_page->getTranslation($language);
         }
         $link_title = $section_page->label();
-        $theme_id = 1;
+        $theme_id = 0;
         if (!empty($section_page->field_theme)) {
           foreach ($section_page->field_theme as $theme) {
             if ($theme->entity) {
               $theme->entity = $theme->entity->getTranslation($language);
-              $link_text = Markup::create('<span class="page-number">'.$page++.'</span><span class="title">'.$theme->entity->label().'</span>');
+              $link_text = Markup::create('<span class="page-number">'. $page .'</span><span class="title">'.$theme->entity->label().'</span>');
               $theme_id = $theme->entity->id();
             }
           }
@@ -171,13 +171,13 @@ class ImpactReportHeader extends BlockBase {
             ->toRenderable();
           $link['#prefix'] = '<div class="term-icon term-icon-' . $theme_id . '">';
           $link['#suffix'] = '</div>';
-          $link['#attributes'] = [ 'class' => ['nav-link']];
+          $link['#attributes'] = [ 'class' => ['nav-link'], 'title' => $page . '. '. $theme->entity->label()];
           if ($nid == $node->id()) {
             $link['#attributes']['class'][] = 'active';
           }
-
           $link['#weight'] = -2;
           $links[] = $link;
+          $page++;
         }
       }
       $links[] = $last_link;
