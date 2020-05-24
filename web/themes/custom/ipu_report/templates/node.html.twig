@@ -189,7 +189,7 @@
     </div>
     <div id="report-sections" class="report-sections">
     {% for key, item in content.field_section if key|first != '#' %}
-      <div class="report-section">
+      <div class="report-section container-fluid">
         <div class="row item-{{ key + 1 }}">{{ item }}</div>
       </div>
     {% endfor %}

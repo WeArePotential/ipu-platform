@@ -131,10 +131,10 @@
     {% endif %}
     <div id="main-wrapper" class="layout-main-wrapper clearfix">
       {% block content %}
-        <div id="main" class="{{ container }}">
+        <div id="main" xclass="{{ container }}">
           {{ page.breadcrumb }}
-          <div class="row clearfix">
-              <main{{ content_attributes }}>
+          <div class="clearfix">
+              <main id="content" role="main" {#{ content_attributes }#}>
                 <section class="section">
                   <a id="main-content" tabindex="-1"></a>
                   {{ page.content }}
