@@ -393,8 +393,10 @@ h1 {
     }
   }
   .node--type-report {
-    .row {
-      flex-direction: column-reverse;
+    #report-page-top {
+      .row {
+        flex-direction: column-reverse;
+      }
     }
   }
 
