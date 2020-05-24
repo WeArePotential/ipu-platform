@@ -106,14 +106,14 @@
     <div id="report-page-top" class="container-fluid">
       <div class="container pt-5">
         <div class="row">
-          <div class="col-6">
+          <div class="col-md-6">
             {% for key, item in content.field_section if key|first != '#' %}
               <div class="report-section">
                 <div class="row item-{{ key + 1 }}">{{ item }}</div>
               </div>
             {% endfor %}
           </div>
-          <div class="col-6">
+          <div class="col-md-6">
             <div class="report-page-introduction">{{ content.body.0 }}</div>
           </div>
         </div>
