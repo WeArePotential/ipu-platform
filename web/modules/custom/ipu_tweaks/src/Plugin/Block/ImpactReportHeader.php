@@ -186,7 +186,7 @@ class ImpactReportHeader extends BlockBase {
         '#theme' => 'item_list',
         '#list_type' => 'ul',
         '#title' => '',
-        '#items' => array_merge($links, $links),
+        '#items' => $links,
         '#attributes' => ['class' => 'list-group-horizontal menu nav navbar-nav'],
         '#prefix' => '<div class="container-fluid">',
         '#suffix' => '</div>',
