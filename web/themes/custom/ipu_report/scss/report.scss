@@ -135,6 +135,9 @@ h1.report-header {
 }
 
 @include media-breakpoint-down(md) {
+  h1.report-header {
+    font-size: 3rem;
+  }
   #main-nav.item-list {
     ul {
       //width: calc(20% - 0px);
@@ -384,6 +387,9 @@ h1 {
 }
 
 @include media-breakpoint-down(md) {
+  #report-page-top  h2 {
+    font-size: 2rem;
+  }
   .report-page-image {
     min-height: 200px;
   }
