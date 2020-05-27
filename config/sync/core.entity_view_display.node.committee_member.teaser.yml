@@ -12,7 +12,7 @@ dependencies:
     - field.field.node.committee_member.field_parent_node_cm
     - field.field.node.committee_member.field_photo_cm
     - node.type.committee_member
-    - responsive_image.styles.narrow
+    - responsive_image.styles.square
   module:
     - ds
     - responsive_image
@@ -86,7 +86,7 @@ content:
     region: main
     label: hidden
     settings:
-      responsive_image_style: narrow
+      responsive_image_style: square
       image_link: ''
     third_party_settings:
       ds:
