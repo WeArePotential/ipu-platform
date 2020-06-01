@@ -677,6 +677,17 @@ blockquote {
   padding: 2px 4px;
 }
 
+.image-caption-overlay {
+  position: absolute;
+  left: 25px; // Include the padding on the column
+  bottom: 10px;
+  display: block;
+  margin-right: 15px;
+  color: #fff;
+  background-color: $ipu-dark-grey-overlay;
+  padding: 2px 4px;
+}
+
 .image-with-caption {
   position: relative;
   margin-bottom: 20px;
