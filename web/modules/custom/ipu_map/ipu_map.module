@@ -144,10 +144,11 @@ function ipu_map_get_parline_data($isocode, $description, $membership_status, $p
   foreach ($decoded->list as $chamber) {
     // TODO Multilingual
     // TODO Add fields from https://data.ipu.org/node/53/basic-information/contact-details?chamber_id=13379
-    if ($chamber->language == $current_language_id) {
-      //print '<pre>'.print_r($chamber,TRUE).'</pre>';
 
-      $stats['#url'] = $chamber->url;
+    // Use the English url as the FR one isn't working?
+    if ($chamber->language == $current_language_id) {
+      $stats['#url'] = $chamber->source->uri;   //$chamber->url;
+      //print '<pre>'.print_r($chamber,TRUE).'</pre>';
       // Some fields are common across languages...as they are non-lang specific.
       $stats['#population_in_millions'] = number_format(round($chamber->field_population_in_thousands / 1000, 4), 2, '.', '');
       // Some have multiple values and so are passed as an arrey
@@ -189,8 +190,8 @@ function ipu_map_get_parline_data($isocode, $description, $membership_status, $p
           foreach($chamber->field_parliamentary_website_url as $url) {
             $url_txt = str_ireplace('http://', '', str_ireplace('https://','', $url->value));
             $url_txt = rtrim($url_txt,"/");
-            $link = Link::fromTextAndUrl($url_txt, Url::fromUri($url->value));
-            $stats['#website_link'][] = new FormattableMarkup($link->toString(), []);
+            $weblink = Link::fromTextAndUrl($url_txt, Url::fromUri($url->value));
+            $stats['#website_link'][] = new FormattableMarkup($weblink->toString(), []);
           }
         } else {
           $stats['#website_link'] = 'Not available';
@@ -226,6 +227,14 @@ function ipu_map_get_parline_data($isocode, $description, $membership_status, $p
 
 
   $config = \Drupal::config('ipu_map.settings');
+
+  // Convert the EN link to FR if required.
+  if ($current_language_id != 'en') {
+    $stats['#url'] = str_ireplace('/api/', '/'. $current_language_id . '/', $stats['#url']);
+  } else {
+    $stats['#url'] = str_ireplace('/api/', '/', $stats['#url']);
+  }
+  $stats['#url'] = str_ireplace('.json', '', $stats['#url']);
 
   $stats['#membership_status'] = ($membership_status ? true : false);
   $stats['#membership_status_text'] = ($membership_status ? t('Is an IPU member') : t('Is not an PU member'));
