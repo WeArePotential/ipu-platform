@@ -12,6 +12,7 @@ dependencies:
     - node.type.landing_page
     - node.type.page
     - node.type.publication
+    - node.type.report
     - node.type.section_page
     - node.type.vacancy
     - paragraphs.paragraphs_type.slide
@@ -43,6 +44,7 @@ settings:
       article: article
       page: page
       publication: publication
+      report: report
       section_page: section_page
       vacancy: vacancy
     sort:
