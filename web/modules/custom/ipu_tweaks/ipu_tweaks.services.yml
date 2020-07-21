@@ -1,0 +1,6 @@
+services:
+  ipu_tweaks.request_subscriber:
+    class: Drupal\ipu_tweaks\EventSubscriber\IpuTweaksRequestSubscriber
+    arguments: []
+    tags:
+      - { name: event_subscriber }
