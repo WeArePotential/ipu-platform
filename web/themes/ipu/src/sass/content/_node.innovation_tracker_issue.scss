@@ -312,6 +312,10 @@
     margin: 0 0 10px 0;
   }
   &__hub-link {
+    margin-right: $grid-gutter-width;
+    &:last-of-type {
+      margin-right: 0;
+    }
     &:link,
     &:visited {
       @extend .btn-outline-primary;
@@ -337,3 +341,4 @@
 
 
 }
+

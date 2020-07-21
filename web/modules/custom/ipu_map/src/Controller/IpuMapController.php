@@ -74,7 +74,7 @@ class IpuMapController extends ControllerBase {
     $data = ipu_map_get_parline_data($parliament_iso_code, $this->getDescription(), $this->getMembershipStatus(), $this->getPrinciplesSignatoryStatus(),$this->getHumanRightsCases(), $this->current_language_id);
 
     $hub_link = ipu_map_get_hub_link($country->get('tid')->value);
-    $data['country_stats']['#hub_link'] = $hub_link == '' ? null : ['#markup'=>$hub_link];
+    $data['country_stats']['#hub_links'] = $hub_link == '' ? null : ['#markup' => $hub_link];
 
     // Get any HR documents. If we have any, then we want to update the link
     // 285 is the term id of the HR Decisions Document type

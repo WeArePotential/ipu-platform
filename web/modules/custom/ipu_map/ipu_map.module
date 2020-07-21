@@ -44,7 +44,7 @@ function ipu_map_get_countries() {
   $term_names = [];
   $terms_sorted = [];
   foreach ($terms as &$term) {
-    if ($language_id != $term->langcode) {
+    if ($language_id != $term->language()) {
       if ($term->hasTranslation($language_id)) {
         $term = $term->getTranslation($language_id);
       }
@@ -464,7 +464,7 @@ function ipu_map_theme($existing, $type, $theme, $path) {
         'website_link' => '',
         'last_election_date' => '',
         'data_provenance' => '',
-        'hub_link' => '',
+        'hub_links' => '',
       ),
     ),
     'ipu-map-flag' => array(

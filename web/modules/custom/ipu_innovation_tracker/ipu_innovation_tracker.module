@@ -73,7 +73,7 @@ function _ipu_innovation_tracker_node_innovation_tracker_issue_view_alter(array 
  */
 function ipu_innovation_tracker_ds_pre_render_alter(array &$layout_render_array, array $context, array &$vars) {
   if ($context['entity_type'] === 'node' && $context['bundle'] === 'hub_update') {
-    $layout_render_array['main']['hub_link'] = IssueHelper::getHubLink($context['entity']);
+    $layout_render_array['main']['hub_links'] = IssueHelper::getHubLink($context['entity']);
     $layout_render_array['main']['country_link'] = IssueHelper::getHubCountryLink($context['entity']);
     $layout_render_array['main']['issue_link'] = IssueHelper::getIssueLink($context['entity']);
   }
