@@ -21,8 +21,8 @@ class IpuTweaksRequestSubscriber implements EventSubscriberInterface {
     if ($route->getRouteName() == 'entity.taxonomy_term.canonical') {
       $term_id = $route->getRawParameter('taxonomy_term');
       $term = Term::load($term_id);
-      if ($term->bundle == 'country') {
-        $path = '/parliament/' . $term->field_iso_code->value;
+      if ($term->bundle() == 'country') {
+        $path = ($term->language()->getId() == 'en' ? '/parliament' : '/fr/parlement') .'/' . $term->field_iso_code->value;
         $event->setResponse(new RedirectResponse($path, $status = 301));
       }
     }
