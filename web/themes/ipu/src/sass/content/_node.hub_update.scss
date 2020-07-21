@@ -31,7 +31,21 @@
     color: color('ipu-grey');
     margin-bottom: 10px;
     padding: 0 10px;
+
+    .field__item {
+      display: inline-block;
+
+      &:after {
+        content: ', ';
+      }
+
+      &:last-child:after {
+        content: '';
+      }
+    }
   }
+
+
   // Hidden because already in context on Tracker issue pages
   .innovation-hub__issue-link {
     display: none;

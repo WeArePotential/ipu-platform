@@ -100,15 +100,19 @@ class IssueHelper {
    */
   public static function getHubLink(NodeInterface $node) {
     /** @var \Drupal\taxonomy\TermInterface $term */
-    $term = $node->get('field_innovation_hub')->referencedEntities();
-    $term = reset($term);
+    $terms = $node->get('field_innovation_hub')->referencedEntities();
+    $links = [];
     $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
-    if ($term->hasTranslation($language)) {
-      $term = $term->getTranslation($language);
+    foreach($terms as $term) {
+      if ($term->hasTranslation($language)) {
+        $term = $term->getTranslation($language);
+      }
+      $link = $term->toLink($term->label(), 'link', ['attributes' => ['class' => ['innovation-tracker-issue__hub-link']]])
+        ->toRenderable();
+      $links[] = $link;
     }
-    $link = $term->toLink($term->label(), 'link', ['attributes' => ['class' => ['innovation-tracker-issue__hub-link']]])->toRenderable();
-    $link['#weight'] = 51;
-    return $link;
+    $links['#weight'] = 51;
+    return $links;
   }
 
   /**
@@ -125,32 +129,46 @@ class IssueHelper {
    */
   public static function getHubCountryLink(NodeInterface $node) {
     /** @var \Drupal\taxonomy\TermInterface $term */
-    $term = $node->get('field_innovation_hub')->referencedEntities();
-    $term = reset($term);
+    $terms = $node->get('field_innovation_hub')->referencedEntities();
     $language = $node->language()->getId();
-    if ($term->hasTranslation($language)) {
-      $term = \Drupal::service('entity.repository')->getTranslationFromContext($term, $language);
-    }
+    $links = [];
 
-    $link_text = '';
-    foreach ($term->field_host_parliament as $i => $delta) {
-      $term_formatter = ['type' => 'country_taxonomy_term_reference'];
-      $render_array = $delta->view($term_formatter);
-      $link_text = \Drupal::service('renderer')->render($render_array);
+    foreach ($terms as $term) {
+      if ($term->hasTranslation($language)) {
+        $term = \Drupal::service('entity.repository')
+          ->getTranslationFromContext($term, $language);
+      }
+
+      $link_text = '';
+      foreach ($term->field_host_parliament as $i => $delta) {
+        $term_formatter = ['type' => 'country_taxonomy_term_reference'];
+        $render_array = $delta->view($term_formatter);
+        $link_text = \Drupal::service('renderer')->render($render_array);
+        //$link_text = strip_tags($link_text);
+        //if ($i < count($term->field_host_parliament)) {
+        //  $link_text .= ', ';
+        //}
+        $links[] = $link_text;
+        //$render_array . (($i < count($term->field_host_parliament)) ? ', ': '');
+        /*if ($link_text !== '') {
+          $link = $term->toLink($link_text, 'link', [
+            'attributes' => [
+              'class' => [
+                'innovation-tracker-issue__country-link',
+              ],
+              'title' => t('Host') . ': ' . $link_text,
+            ],
+          ])->toRenderable();
+           $links[] = $link;
+        */
+      }
     }
-    if ($link_text !== '') {
-      $link = $term->toLink($link_text, 'link', [
-        'attributes' => [
-          'class' => [
-            'innovation-tracker-issue__country-link',
-          ],
-          'title' => t('Host') . ': ' . $link_text,
-        ],
-      ])->toRenderable();
-      $link['#prefix'] = '<div class="innovation-tracker-issue__country-link-wrapper">'.t('Host') . ': ';
-      $link['#suffix'] = '</div>';
-      $link['#weight'] = 50;
-      return $link;
+    if ($links) {
+      $xlinks['#markup'] = implode(', ', $links);
+      $xlinks['#prefix'] = '<div class="innovation-tracker-issue__country-link-wrapper">' . t('Host'. (count($links)>1?'s':'')) . ': ';
+      $xlinks['#suffix'] = '</div>';
+      $xlinks['#weight'] = 50;
+      return $xlinks;
     }
     else {
       return ['#markup' => ''];
