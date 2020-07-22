@@ -67,10 +67,10 @@
       {{ data_provenance }}
     </div>
   {% endif %}
-  {% if hub_link is not same as(null) %}
+  {% if hub_links is not same as(null) %}
     <div class="hub-link">
-      <h3 style="border-bottom: 2px solid #f0ad4e;">{{  'Innovation host'|t }}</h3>
-      {{ hub_link }}
+      <h3 style="border-bottom: 2px solid #f0ad4e;">{{ 'Innovation host'|t }}</h3>
+      {{ hub_links }}
     </div>
   {% endif %}
 </div>
