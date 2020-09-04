@@ -1,0 +1,28 @@
+uuid: d679595e-8136-4bf5-b42d-996b6e466000
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_flag_url
+    - taxonomy.vocabulary.country
+  module:
+    - custom_add_another
+    - link
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
+id: taxonomy_term.country.field_flag_url
+field_name: field_flag_url
+entity_type: taxonomy_term
+bundle: country
+label: 'Flag url'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link
