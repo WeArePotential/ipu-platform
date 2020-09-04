@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.taxonomy_term.country.field_flag_url
     - field.field.taxonomy_term.country.field_geographic_region
     - field.field.taxonomy_term.country.field_geopolitical_group
     - field.field.taxonomy_term.country.field_hr_cases_document
@@ -14,6 +15,7 @@ dependencies:
     - field.field.taxonomy_term.country.field_principles_signatory
     - taxonomy.vocabulary.country
   module:
+    - link
     - text
 id: taxonomy_term.country.default
 targetEntityType: taxonomy_term
@@ -27,6 +29,18 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_flag_url:
+    weight: 11
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
   field_geographic_region:
     weight: 9
     label: above
