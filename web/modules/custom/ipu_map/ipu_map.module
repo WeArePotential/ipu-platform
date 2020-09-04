@@ -388,15 +388,26 @@ function ipu_map_views_pre_render(\Drupal\views\ViewExecutable $view) {
 //  }
 }
 
-function ipu_map_get_flag($isocode) {
-  if (strtolower($isocode) == 'mm') {
-    $flag_url = 'http://data.un.org/en/flags/mmr_flag.png';
-  } else {
-    $flag_url = ipu_map_get_flag_url($isocode);
-  }
+function ipu_map_get_flag($isocode, $field_flag_url = NULL) {
   $element = [];
-  $element['#flag_url'] = $flag_url;
   $element['#theme'] = 'ipu-map-flag';
+
+  // Use overridden url if required.
+  if (!empty($field_flag_url->uri)) {
+    $element['#flag_url'] = $field_flag_url->uri;
+    return $element;
+  }
+
+  // Otherwise use Geonames lookup
+  switch (strtolower($isocode)) {
+    // Note: UN 3 char isocodes are problematic as they have empty space in the image.
+    case 'EXAMPLE':
+      $flag_url = ipu_map_get_flag_url_un('mmr');
+      break;
+    default:
+      $flag_url = ipu_map_get_flag_url($isocode);
+  }
+  $element['#flag_url'] = $flag_url;
   return $element;
 }
 
@@ -422,11 +433,17 @@ function ipu_map_get_data_from_view() {
   }
   return $data;
 }
-/* Get a flag image url from ISO code */
+/* Get a flag image url from ISO code
+* Uses Geonames
+*/
 function ipu_map_get_flag_url($isocode) {
   $geonames_url = 'https://img.geonames.org/flags/x/' . trim(strtolower($isocode)) . '.gif';
   return $geonames_url;
-
+}
+/* Get a flag image url from UN using ISO 3 char  */
+function ipu_map_get_flag_url_un($iso3charcode) {
+  $url = 'https://data.un.org/common/flags/' .trim(strtolower($iso3charcode)). '_flag.png';
+  return $url;
 }
 
 function ipu_map_theme($existing, $type, $theme, $path) {
