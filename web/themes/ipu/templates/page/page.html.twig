@@ -33,10 +33,10 @@
             {% if page.navbar_branding %}
               <div class="branding-left text-left d-table-cell">
                 {%  if language_id == 'en' %}
-                  {% set logo = 'IPU-logo-130-EN.png' %}
+                  {% set logo = 'ipu_logo-en.png' %}
                   {% set url = '' %}
                 {% else %}
-                  {% set logo = 'IPU-logo-130-FR.png' %}
+                  {% set logo = 'ipu_logo-fr.png' %}
                   {% set url = language_id %}
                 {% endif %}
                 <a class="logo-link" href="/{{ url }}"><img class="logo" src="{{ base_path ~ directory ~ '/assets/img/' ~ logo }}" /></a>

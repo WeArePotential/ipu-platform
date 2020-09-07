@@ -246,7 +246,7 @@ table th {
 #branding img.logo {
   height: 90px;
   width: auto;
-  padding: $navbar-padding-x $navbar-padding-y;
+  padding: $navbar-padding-x /2  $navbar-padding-y / 2;
   @include media-breakpoint-down(md) {
     height: auto;
     max-width: 90%;
