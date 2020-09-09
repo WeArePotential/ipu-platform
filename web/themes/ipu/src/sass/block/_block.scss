@@ -1991,7 +1991,8 @@ a.btn {
       .group-header-right {
         @extend .col-sm-4;
 
-        .landing-page__field-data-points-for-theme {
+        .landing-page__field-data-points-for-theme,
+        .landing-page__field-parline-link {
           .field__item {
             margin-bottom: 20px;
 
@@ -2026,8 +2027,13 @@ a.btn {
             max-width: calc(100% - 95px);
             display: inline-table;
           }
+          .field-summary {
+            padding: 10px 10px 10px 10px;
+            font-size: $font-size-sm;
+          }
 
-          .field-link {
+          .field-link,
+          .field-external-link {
             flex-basis: 100%;
             margin: 10px;
             align-self: center;
@@ -2035,6 +2041,15 @@ a.btn {
             a {
               @extend .stats-more-link;
             }
+          }
+        }
+        .landing-page__field-parline-link {
+          .field-title {
+            border-color: $ipu-parline-green;
+            background-color: $ipu-parline-green-light;
+          }
+          .field__item .paragraph {
+              border-color: $ipu-parline-green;
           }
         }
       }
