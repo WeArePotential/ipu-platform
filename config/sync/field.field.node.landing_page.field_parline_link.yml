@@ -1,0 +1,102 @@
+uuid: 70fbd02b-94c6-4834-abc4-33df6b40040c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_parline_link
+    - node.type.landing_page
+    - paragraphs.paragraphs_type.call_to_action_small
+  module:
+    - custom_add_another
+    - entity_reference_revisions
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
+id: node.landing_page.field_parline_link
+field_name: field_parline_link
+entity_type: node
+bundle: landing_page
+label: 'Parline link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      call_to_action_small: call_to_action_small
+    target_bundles_drag_drop:
+      call_to_action_small:
+        enabled: true
+        weight: 24
+      call_to_action:
+        weight: 25
+        enabled: false
+      callout_strip:
+        weight: 26
+        enabled: false
+      carousel:
+        weight: 27
+        enabled: false
+      carousel_slides:
+        weight: 28
+        enabled: false
+      data_point:
+        weight: 29
+        enabled: false
+      event_sub_page:
+        weight: 30
+        enabled: false
+      highlights:
+        weight: 31
+        enabled: false
+      innovation_tracker_stories:
+        weight: 32
+        enabled: false
+      ipu_event_document:
+        weight: 33
+        enabled: false
+      ipu_event_document_widget:
+        weight: 34
+        enabled: false
+      ipu_event_right_menu:
+        weight: 35
+        enabled: false
+      ipu_event_section:
+        weight: 36
+        enabled: false
+      ipu_event_session_type:
+        weight: 37
+        enabled: false
+      ipu_event_sessions:
+        weight: 38
+        enabled: false
+      ipu_event_sponsors:
+        weight: 39
+        enabled: false
+      member:
+        weight: 40
+        enabled: false
+      publication_document:
+        weight: 41
+        enabled: false
+      related_content:
+        weight: 42
+        enabled: false
+      related_documents:
+        weight: 43
+        enabled: false
+      report_section:
+        weight: 44
+        enabled: false
+      sections:
+        weight: 45
+        enabled: false
+      slide:
+        weight: 46
+        enabled: false
+field_type: entity_reference_revisions

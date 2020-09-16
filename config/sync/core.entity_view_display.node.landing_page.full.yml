@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.landing_page.field_content_section
     - field.field.node.landing_page.field_data_points_for_theme
     - field.field.node.landing_page.field_media_image
+    - field.field.node.landing_page.field_parline_link
     - field.field.node.landing_page.field_theme
     - image.style.max_1300x1300
     - node.type.landing_page
@@ -81,6 +82,7 @@ third_party_settings:
     group_header_right:
       children:
         - field_data_points_for_theme
+        - field_parline_link
         - 'dynamic_block_field:node-add_to_any'
       parent_name: group_body_and_data
       weight: 5
@@ -115,11 +117,12 @@ third_party_settings:
         - body
         - group_header_right
         - field_data_points_for_theme
+        - field_parline_link
         - 'dynamic_block_field:node-add_to_any'
     fields:
       'dynamic_block_field:node-add_to_any':
         plugin_id: 'dynamic_block_field:node-add_to_any'
-        weight: 7
+        weight: 8
         label: hidden
         formatter: default
       node_title:
@@ -191,6 +194,15 @@ content:
             classes: {  }
     type: image
     region: content
+  field_parline_link:
+    type: entity_reference_revisions_entity_view
+    weight: 7
+    region: content
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
 hidden:
   addtoany: true
   field_caption: true

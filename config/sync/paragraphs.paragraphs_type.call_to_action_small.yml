@@ -1,0 +1,9 @@
+uuid: 3f5dc893-5abc-4ca7-9131-bc883e9a0049
+langcode: en
+status: true
+dependencies: {  }
+id: call_to_action_small
+label: 'Call to action (small)'
+icon_uuid: null
+description: 'A title, desc and button link for small calls to action. '
+behavior_plugins: {  }

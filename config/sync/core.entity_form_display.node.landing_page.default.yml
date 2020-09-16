@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.landing_page.field_content_section
     - field.field.node.landing_page.field_data_points_for_theme
     - field.field.node.landing_page.field_media_image
+    - field.field.node.landing_page.field_parline_link
     - field.field.node.landing_page.field_theme
     - node.type.landing_page
   module:
@@ -88,6 +89,7 @@ third_party_settings:
       children:
         - field_theme
         - field_data_points_for_theme
+        - field_parline_link
       parent_name: group_landing_page_content
       weight: 3
       format_type: tab
@@ -164,6 +166,18 @@ content:
       preview_image_style: thumbnail
     third_party_settings: {  }
     type: entity_browser_file
+    region: content
+  field_parline_link:
+    type: entity_reference_paragraphs
+    weight: 5
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: call_to_action_small
+    third_party_settings: {  }
     region: content
   field_theme:
     weight: 3
