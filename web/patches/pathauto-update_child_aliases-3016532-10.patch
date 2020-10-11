@@ -1,0 +1,195 @@
+Index: web/modules/contrib/pathauto/src/PathautoGenerator.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- web/modules/contrib/pathauto/src/PathautoGenerator.php	(date 1602344732072)
++++ web/modules/contrib/pathauto/src/PathautoGenerator.php	(date 1602344732072)
+@@ -2,6 +2,7 @@
+ 
+ namespace Drupal\pathauto;
+ 
++use Drupal\Core\Cache\Cache;
+ use Drupal\Core\Config\ConfigFactoryInterface;
+ use Drupal\Core\Entity\ContentEntityInterface;
+ use Drupal\Core\Entity\EntityInterface;
+@@ -10,10 +11,13 @@
+ use Drupal\Core\Entity\RevisionableInterface;
+ use Drupal\Core\Extension\ModuleHandlerInterface;
+ use Drupal\Core\Language\LanguageInterface;
++use Drupal\Core\Menu\MenuLinkInterface;
++use Drupal\Core\Menu\MenuLinkManagerInterface;
+ use Drupal\Core\Messenger\MessengerTrait;
+ use Drupal\Core\Render\BubbleableMetadata;
+ use Drupal\Core\StringTranslation\StringTranslationTrait;
+ use Drupal\Core\StringTranslation\TranslationInterface;
++use Drupal\menu_link_content\MenuLinkContentInterface;
+ use Drupal\Core\Utility\Token;
+ use Drupal\token\TokenEntityMapperInterface;
+ use Drupal\Core\Entity\EntityTypeManagerInterface;
+@@ -61,6 +65,13 @@
+    */
+   protected $patternsByEntityType = [];
+ 
++  /**
++   * Available patterns with menu tokens.
++   *
++   * @var array
++   */
++  protected $patternsWithMenuTokens = NULL;
++
+   /**
+    * The alias cleaner.
+    *
+@@ -272,6 +283,21 @@
+ 
+     $return = $this->aliasStorageHelper->save($path, $existing_alias, $op);
+ 
++        // If op is 'insert', or 'update' and alias has changed, update aliases for
++        // entities linked to in this entity's menu link/s child links (if any).
++        // @todo Add an admin setting to check entities in child menu links? Or just
++        // check if any pathauto pattern contains menu link tokens, as below?
++        $do_menu_links_check = $this->getPatternsWithMenuTokens();
++        if ($do_menu_links_check
++            && ($op === 'insert'
++              || ($op == 'update'
++                  && (empty($existing_alias) || $alias !== $existing_alias['alias'])
++                )
++            )
++        ) {
++            $this->updateEntityMenuLinkChildAliases($entity, $op);
++          }
++
+     // Because there is no way to set an altered pattern to not be cached,
+     // change it back to the original value.
+     if ($pattern_altered !== $pattern_original) {
+@@ -330,12 +356,107 @@
+     return $this->patterns[$entity->getEntityTypeId()][$entity->id()][$langcode];
+   }
+ 
++  /**
++     * Update patterns for entities linked to in child menu links of an entity's
++     * menu link/s, if any.
++     *
++     * @param \Drupal\Core\Entity\EntityInterface $entity
++     *   The entity.
++     * @param string $op
++     *   Operation being performed on the content being aliased
++     *   ('insert', 'update', 'return', or 'bulkupdate').
++     */
++  protected function updateEntityMenuLinkChildAliases(EntityInterface $entity, $op) {
++      /** @var MenuLinkManagerInterface $menu_link_manager */
++      $menu_link_manager = \Drupal::service('plugin.manager.menu.link');
++      $entity_type_manager = \Drupal::entityTypeManager();
++
++      // Get this entity's menu link/s.
++      // @todo Option here to specify menu name - for now use default.
++      $menu_name = NULL;
++      $langcode = $entity->language()->getId();
++      $entity_url = $entity->toUrl();
++
++      if ($entity_menu_links = $menu_link_manager->loadLinksByRoute($entity_url->getRouteName(), $entity_url->getRouteParameters(), $menu_name)) {
++
++          foreach ($entity_menu_links as $entity_menu_link) {
++
++              // Get child menu links.
++              // @todo Possibility for recursion here? If parent menu link's child in
++              // one menu is its parent in another menu.
++              if ($child_menu_link_ids = $menu_link_manager->getChildIds($entity_menu_link->getPluginId())) {
++
++                  foreach ($child_menu_link_ids as $child_menu_link_id) {
++
++                      /** @var MenuLinkInterface $child_menu_link */
++                      $child_menu_link = $menu_link_manager->createInstance($child_menu_link_id);
++
++                      // If the child menu link links to an entity, load it.
++                      if (strpos($child_menu_link->getRouteName(), 'entity.') === 0
++                          && $child_entity_type = explode('.', $child_menu_link->getRouteName())[1]
++                          ) {
++                          $child_entity_id = $child_menu_link->getRouteParameters()[$child_entity_type];
++                          $child_entity = $entity_type_manager->getStorage($child_entity_type)
++                              ->load($child_entity_id);
++
++              // Translate child entity if applicable.
++              if ($child_entity instanceof ContentEntityInterface
++                              && $child_entity->isTranslatable()
++                            && $child_entity->language()->getId() !== $langcode
++                            && $child_entity->hasTranslation($langcode)
++                          ) {
++                              $child_entity = $child_entity->getTranslation($langcode);
++                            }
++
++              // Check child entity's pathauto pattern for menu link parent
++              // tokens.
++              $child_entity_pattern = $this->getPatternByEntity($child_entity);
++              if ($child_entity_pattern
++                              && strpos($child_entity_pattern->getPattern(), ':menu-link:parent') !== 0
++                          ) {
++                              // Update the child entity's alias.
++                              // @todo Not sure that passing the parent's $op is necessary -
++                              // use 'update' instead?
++                              $this->updateEntityAlias($child_entity, $op);
++
++                              // Clear the cache for this entity.
++                              Cache::invalidateTags($child_entity->getCacheTagsToInvalidate());
++                            }
++            }
++          }
++        }
++      }
++    }
++  }
++
++  /**
++   * Loads pathauto patterns that use menu tokens.
++   *
++   * @return \Drupal\pathauto\PathautoPatternInterface[]
++   *   A list of patterns.
++   */
++  protected function getPatternsWithMenuTokens()
++  {
++    if ($this->patternsWithMenuTokens === NULL) {
++      $ids = \Drupal::entityQuery('pathauto_pattern')
++        ->condition('pattern', ':menu-link:parent', 'CONTAINS')
++        ->execute();
++
++      $this->patternsWithMenuTokens = \Drupal::entityTypeManager()
++        ->getStorage('pathauto_pattern')
++        ->loadMultiple($ids);
++    }
++
++    return $this->patternsWithMenuTokens;
++  }
++
+   /**
+    * {@inheritdoc}
+    */
+   public function resetCaches() {
+     $this->patterns = [];
+     $this->patternsByEntityType = [];
++    $this->patternsWithMenuTokens = NULL;
+     $this->aliasCleaner->resetCaches();
+   }
+ 
+@@ -343,6 +464,21 @@
+    * {@inheritdoc}
+    */
+   public function updateEntityAlias(EntityInterface $entity, $op, array $options = []) {
++        if ($entity instanceof MenuLinkContentInterface) {
++            $router = \Drupal::service('router.no_access_checks');
++            try {
++                $result = $router->match($entity->getUrlObject()->toString());
++                foreach ($result as $routeMatchProperty) {
++                    if ($routeMatchProperty instanceof EntityInterface) {
++                        $this->updateEntityAlias($routeMatchProperty, $op);
++                      }
++        }
++      }
++      catch (\Exception $e)  {
++                // Not a parseable request url.
++              }
++    }
++
+     // Skip if the entity does not have the path field.
+     if (!($entity instanceof ContentEntityInterface) || !$entity->hasField('path')) {
+       return NULL;

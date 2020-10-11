@@ -17,10 +17,13 @@
     ],
     "require": {
         "php": ">=5.6",
+        "asm89/stack-cors": "^1.1",
         "commerceguys/addressing": "^1.0.7",
-        "composer/installers": "^1.2",
-        "cweagans/composer-patches": "^1.6.5",
-        "drupal-composer/drupal-scaffold": "^2.5",
+        "composer/installers": "1.7",
+        "composer/semver": "^1.0",
+        "cweagans/composer-patches": "~1.0",
+        "doctrine/annotations": "^1.4",
+        "doctrine/common": "^2.7",
         "drupal/address": "^1.8",
         "drupal/addtoany": "^1.12",
         "drupal/admin_toolbar": "^1.26",
@@ -41,14 +44,15 @@
         "drupal/chosen": "^2.7",
         "drupal/coffee": "^1.0@beta",
         "drupal/colorbox": "^1.4",
-        "drupal/components": "^1.1",
+        "drupal/components": "^2.0.0-beta3",
         "drupal/config_ignore": "^2.2",
         "drupal/config_split": "^1.4",
         "drupal/console": "^1.0.2",
         "drupal/context_active_trail": "^1.0@RC",
         "drupal/convert_bundles": "^1.0@alpha",
         "drupal/convert_media_tags_to_markup": "^1.0@beta",
-        "drupal/core": "8.7.13",
+        "drupal/core-composer-scaffold": "^8.9",
+        "drupal/core-recommended": "^8.9",
         "drupal/csv_serialization": "^1.4",
         "drupal/ctools": "^3.2",
         "drupal/custom_add_another": "^1.0@beta",
@@ -108,7 +112,7 @@
         "drupal/override_node_options": "^2.4",
         "drupal/paragraphs": "^1.8",
         "drupal/paragraphs_preview_helper": "^1.1",
-        "drupal/pathauto": "^1.4",
+        "drupal/pathauto": "1.6",
         "drupal/pathologic": "^1.0@alpha",
         "drupal/pdfpreview": "^1.0@RC",
         "drupal/radix": "4.x-dev",
@@ -145,10 +149,32 @@
         "drupal/webform": "^5.2",
         "drupal/xmlsitemap": "^1.0@alpha",
         "drush/drush": "^9.7",
+        "easyrdf/easyrdf": "^0.9",
         "egulias/email-validator": "^2.0",
+        "guzzlehttp/guzzle": "^6.3",
+        "laminas/laminas-diactoros": "^1.8",
+        "laminas/laminas-feed": "^2.12",
+        "masterminds/html5": "^2.1",
+        "pear/archive_tar": "^1.4.9",
         "platformsh/config-reader": "^2.2",
+        "psr/log": "^1.0",
+        "stack/builder": "^1.0",
+        "symfony-cmf/routing": "^1.4",
+        "symfony/class-loader": "~3.4.0",
+        "symfony/console": "~3.4.0",
+        "symfony/dependency-injection": "~3.4.26",
+        "symfony/event-dispatcher": "~3.4.0",
+        "symfony/http-foundation": "~3.4.35",
+        "symfony/http-kernel": "~3.4.14",
+        "symfony/polyfill-iconv": "^1.0",
+        "symfony/process": "~3.4.0",
+        "symfony/psr-http-message-bridge": "^1.1.2",
+        "symfony/routing": "~3.4.0",
+        "symfony/serializer": "~3.4.0",
+        "symfony/translation": "~3.4.0",
+        "symfony/validator": "~3.4.0",
+        "symfony/yaml": "~3.4.0",
         "vlucas/phpdotenv": "^2.4",
-        "webflo/drupal-core-require-dev": "8.7.13",
         "webflo/drupal-finder": "^1.0.0",
         "webmozart/path-util": "^2.3",
         "wikimedia/composer-merge-plugin": "^1.4",
@@ -186,6 +212,7 @@
     },
     "extra": {
         "composer-exit-on-patch-failure": true,
+        "enable-patching": true,
         "patchLevel": {
             "drupal/core": "-p2"
         },
@@ -209,33 +236,28 @@
         },
         "patches": {
             "drupal/core": {
-                "Ignore width height on untranslatable field": "https://www.drupal.org/files/issues/2019-02-11/ignore_width_height_on_untranslatable_field_comparision_2941092_8.patch",
-                "Path alias filter by system path": "https://www.drupal.org/files/issues/2018-03-24/path_alias_filter_by-2418755-69.patch",
-                "Term route context": "https://www.drupal.org/files/issues/2019-04-12/term_route_context-2998826-31.patch",
+                "Ignore width height on untranslatable field": "https://www.drupal.org/files/issues/2019-12-09/2418755-75.patch",
+                "Term route context": "https://www.drupal.org/files/issues/2020-03-21/2998826-term-44.patch",
                 "Exception thrown by responsive srcset images when the image is not yet in the file system": "https://www.drupal.org/files/issues/2827921-remove-missing-responsive-image-width-exception.patch",
-                "Increase entity autocomplete results count.patch": "web/patches/increase_entity_autocomplete_results_count.patch",
                 "Date range start or end formatter": "https://www.drupal.org/files/issues/2018-05-23/drupal-display-one-date-formatter-2827055-25.patch"
-            },
-            "drupal/convert_media_tags_to_markup": {
-                "Add usemap to imagefield filter": "web/patches/add_usemap_to_imagefield_filter.patch"
-            },
-            "drupal/pathauto": {
-                "Pathauto token for node menu hierarchy not working after updating parent node": "https://www.drupal.org/files/issues/2019-05-07/pathauto-update_child_aliases-3016532-8.patch"
-            },
-            "drupal/entity_browser": {
-                "Warning: key() expects parameter 1 to be array, null given in Drupal\\entity_browser\\Plugin\\Field\\FieldWidget\\EntityReferenceBrowserWidget::processEntityBrowser()": "https://www.drupal.org/files/issues/2018-07-17/entity_browser-key-2914385-6.patch"
-            },
-            "drupal/menu_block": {
-                "Recognise don't need to show menu when not in active trail": "https://www.drupal.org/files/issues/2018-05-02/menu_block_follow-2756675-45.patch"
-            },
-            "drupal/file_entity": {
-                "Add htmlspecialchars processing to core file entity link download formatter": "web/patches/file_download_formatter_htmlspecialchars.patch"
             },
             "drupal/viewfield": {
                 "Display missing view instead of title in viewfield": "web/patches/missing_view_in_viewfield.patch"
             },
-            "drupal/devel_debug_log": {
-                "Empty message if being called from drush": "https://www.drupal.org/files/issues/2802681-make-drush-compatible.patch"
+            "drupal/flickr": {
+                "Error messages when adding Flickr filter to text format": "https://www.drupal.org/files/issues/2019-08-27/flickr-add-filter-settings-2958360-2.patch"
+            },
+            "drupal/menu_block": {
+                "Recognise don't need to show menu when not in active trail": "https://www.drupal.org/files/issues/2018-05-02/menu_block_follow-2756675-45.patch"
+            },
+            "drupal/convert_media_tags_to_markup": {
+                "Add usemap to imagefield filter": "web/patches/add_usemap_to_imagefield_filter.patch"
+            },
+            "drupal/entity_browser": {
+                "Warning: key() expects parameter 1 to be array, null given in Drupal\\entity_browser\\Plugin\\Field\\FieldWidget\\EntityReferenceBrowserWidget::processEntityBrowser()": "https://www.drupal.org/files/issues/2018-07-17/entity_browser-key-2914385-6.patch"
+            },
+            "drupal/file_entity": {
+                "Add htmlspecialchars processing to core file entity link download formatter": "web/patches/file_download_formatter_htmlspecialchars.patch"
             },
             "drupal/stage_file_proxy": {
                 "Disable stage file proxy on live": "https://www.drupal.org/files/issues/2019-11-18/disable_fetching-2864016-26.patch"
@@ -246,14 +268,27 @@
             "drupal/views_bulk_operations": {
                 "Ignore missing id error": "web/patches/vbo_missing_id.patch"
             },
-            "drupal/flickr": {
-                "Error messages when adding Flickr filter to text format": "https://www.drupal.org/files/issues/2019-08-27/flickr-add-filter-settings-2958360-2.patch"
+            "drupal/pathauto": {
+                "Pathauto token for node menu hierarchy not working after updating parent node": "web/patches/pathauto-update_child_aliases-3016532-10.patch"
             }
         },
         "drupal-scaffold": {
             "initial": {
                 ".editorconfig": "../.editorconfig",
                 ".gitattributes": "../.gitattributes"
+            },
+            "locations": {
+                "web-root": "web/"
+            },
+            "allowed-packages": [
+                "drupal/core"
+            ],
+            "file-mapping": {
+                "[web-root]/.htaccess": {
+                    "mode": "replace",
+                    "path": "web/core/assets/scaffold/files/htaccess",
+                    "overwrite": false
+                }
             }
         }
     }
