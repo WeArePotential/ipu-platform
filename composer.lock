@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "62f689af8a5a21054ab9ccb145aed68f",
+    "content-hash": "94c1d47af2f88f54c55e55f1fba957c0",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -4009,6 +4009,9 @@
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
                     }
+                },
+                "patches_applied": {
+                    "Add usemap to imagefield filter": "web/patches/add_usemap_to_imagefield_filter.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -4233,6 +4236,12 @@
                         "[web-root]/profiles/README.txt": "assets/scaffold/files/profiles.README.txt",
                         "[web-root]/themes/README.txt": "assets/scaffold/files/themes.README.txt"
                     }
+                },
+                "patches_applied": {
+                    "Ignore width height on untranslatable field": "https://www.drupal.org/files/issues/2019-12-09/2418755-75.patch",
+                    "Term route context": "https://www.drupal.org/files/issues/2020-03-21/2998826-term-44.patch",
+                    "Exception thrown by responsive srcset images when the image is not yet in the file system": "https://www.drupal.org/files/issues/2827921-remove-missing-responsive-image-width-exception.patch",
+                    "Date range start or end formatter": "https://www.drupal.org/files/issues/2018-05-23/drupal-display-one-date-formatter-2827055-25.patch"
                 }
             },
             "autoload": {
@@ -5216,6 +5225,9 @@
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "patches_applied": {
+                    "Warning: key() expects parameter 1 to be array, null given in Drupal\\entity_browser\\Plugin\\Field\\FieldWidget\\EntityReferenceBrowserWidget::processEntityBrowser()": "https://www.drupal.org/files/issues/2018-07-17/entity_browser-key-2914385-6.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -6119,6 +6131,9 @@
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
                     }
+                },
+                "patches_applied": {
+                    "Add htmlspecialchars processing to core file entity link download formatter": "web/patches/file_download_formatter_htmlspecialchars.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -6380,6 +6395,9 @@
                         "status": "not-covered",
                         "message": "Alpha releases are not covered by Drupal security advisories."
                     }
+                },
+                "patches_applied": {
+                    "Error messages when adding Flickr filter to text format": "https://www.drupal.org/files/issues/2019-08-27/flickr-add-filter-settings-2958360-2.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -7819,6 +7837,9 @@
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "patches_applied": {
+                    "Recognise don't need to show menu when not in active trail": "https://www.drupal.org/files/issues/2018-05-02/menu_block_follow-2756675-45.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -8682,6 +8703,9 @@
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "patches_applied": {
+                    "Pathauto token for node menu hierarchy not working after updating parent node": "web/patches/pathauto-update_child_aliases-3016532-10.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -9736,6 +9760,9 @@
                     "services": {
                         "stage_file_proxy.drush.services.yml": "^9 || ^10"
                     }
+                },
+                "patches_applied": {
+                    "Disable stage file proxy on live": "https://www.drupal.org/files/issues/2019-11-18/disable_fetching-2864016-26.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -10194,6 +10221,9 @@
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "patches_applied": {
+                    "Remove mobile toggle button from ultimenu": "web/patches/remove_mobile_toggle_button_from_ultimenu.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -10305,6 +10335,9 @@
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
                     }
+                },
+                "patches_applied": {
+                    "Display missing view instead of title in viewfield": "web/patches/missing_view_in_viewfield.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -10423,6 +10456,9 @@
                     "services": {
                         "drush.services.yml": "^9"
                     }
+                },
+                "patches_applied": {
+                    "Ignore missing id error": "web/patches/vbo_missing_id.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",

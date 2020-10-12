@@ -239,7 +239,8 @@
                 "Ignore width height on untranslatable field": "https://www.drupal.org/files/issues/2019-12-09/2418755-75.patch",
                 "Term route context": "https://www.drupal.org/files/issues/2020-03-21/2998826-term-44.patch",
                 "Exception thrown by responsive srcset images when the image is not yet in the file system": "https://www.drupal.org/files/issues/2827921-remove-missing-responsive-image-width-exception.patch",
-                "Date range start or end formatter": "https://www.drupal.org/files/issues/2018-05-23/drupal-display-one-date-formatter-2827055-25.patch"
+                "Date range start or end formatter": "https://www.drupal.org/files/issues/2018-05-23/drupal-display-one-date-formatter-2827055-25.patch",
+                "Base table or view not found: 1146 Table 'drupal.path_alias' doesn't exist. Update to 8.8.0 fails.": "https://www.drupal.org/files/issues/2020-09-15/path-alias-8.9.5-3099084-154.patch"
             },
             "drupal/viewfield": {
                 "Display missing view instead of title in viewfield": "web/patches/missing_view_in_viewfield.patch"
