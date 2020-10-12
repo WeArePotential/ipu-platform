@@ -1,0 +1,16 @@
+uuid: ee81e574-98f0-4fce-ab67-c2c3a8c7145c
+langcode: en
+status: true
+dependencies: {  }
+id: _members_files
+path: /members-files
+bypass: false
+grant_file_owners: false
+users: {  }
+roles:
+  anonymous: anonymous
+  authenticated: '0'
+  administrator: '0'
+  product_owner: '0'
+  web_editor: '0'
+  writer: '0'

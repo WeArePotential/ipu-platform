@@ -1,0 +1,9 @@
+uuid: 8ccd2324-d628-4b58-91bc-68d76364c83e
+langcode: en
+status: true
+dependencies: {  }
+id: private_documents
+label: 'Private documents'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

@@ -1,0 +1,36 @@
+Index: web/modules/contrib/protected_pages/src/EventSubscriber/ProtectedPagesSubscriber.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- web/modules/contrib/protected_pages/src/EventSubscriber/ProtectedPagesSubscriber.php	(date 1602518011607)
++++ web/modules/contrib/protected_pages/src/EventSubscriber/ProtectedPagesSubscriber.php	(date 1602518011607)
+@@ -88,18 +88,22 @@
+    *   The protected page id.
+    */
+   public function protectedPagesIsPageLocked($current_path, $normal_path) {
+-    $fields = array('pid');
+-    $conditions = array();
+-    $conditions['or'][] = array(
++    $fields = ['pid'];
++    $conditions = [];
++    $conditions['or'][] = [
+       'field' => 'path',
+       'value' => $normal_path,
+       'operator' => '=',
+-    );
+-    $conditions['or'][] = array(
++    ];
++    $conditions['or'][] = [
+       'field' => 'path',
+       'value' => $current_path,
+       'operator' => '=',
+-    );
++    ];
++    $conditions['or'][] = [
++            'statement' => 'path like \'%/\' AND :current_path LIKE concat(path, \'%\')',
++            'args' => [':current_path' => $current_path . '/'],
++          ];
+     $protectedPagesStorage = \Drupal::service('protected_pages.storage');
+     $pid = $protectedPagesStorage->loadProtectedPage($fields, $conditions, TRUE);
+ 

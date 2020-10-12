@@ -111,6 +111,7 @@
         "drupal/pathauto": "^1.4",
         "drupal/pathologic": "^1.0@alpha",
         "drupal/pdfpreview": "^1.0@RC",
+        "drupal/private_files_download_permission": "^2.2",
         "drupal/radix": "4.x-dev",
         "drupal/recaptcha": "^2.4",
         "drupal/redirect": "^1.3",

@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.basic_page.field_contact_ipu
     - field.field.node.basic_page.field_geopolitical_group
     - field.field.node.basic_page.field_media_image
+    - field.field.node.basic_page.field_private_documents
     - field.field.node.basic_page.field_related_content
     - field.field.node.basic_page.field_related_documents
     - field.field.node.basic_page.field_sections
@@ -28,7 +29,7 @@ third_party_settings:
         - field_media_image
         - field_caption
       parent_name: ''
-      weight: 7
+      weight: 8
       label: image
       format_settings:
         element: div
@@ -84,6 +85,7 @@ third_party_settings:
         - node_title
       left:
         - body
+        - field_private_documents
         - field_committee_members
         - field_sections
       right:
@@ -98,7 +100,7 @@ third_party_settings:
     fields:
       'dynamic_block_field:node-contextual_menu_event_navigation':
         plugin_id: 'dynamic_block_field:node-contextual_menu_event_navigation'
-        weight: 6
+        weight: 7
         label: hidden
         formatter: default
         ft:
@@ -109,7 +111,7 @@ third_party_settings:
             classes: {  }
       'dynamic_block_field:node-menu_block':
         plugin_id: 'dynamic_block_field:node-menu_block'
-        weight: 5
+        weight: 6
         label: hidden
         formatter: default
         ft:
@@ -120,7 +122,7 @@ third_party_settings:
             classes: {  }
       'dynamic_block_field:node-top_level_menu_item':
         plugin_id: 'dynamic_block_field:node-top_level_menu_item'
-        weight: 4
+        weight: 5
         label: hidden
         formatter: default
       node_title:
@@ -159,7 +161,7 @@ content:
     region: right
   field_committee_members:
     type: entity_reference_revisions_entity_view
-    weight: 2
+    weight: 3
     label: above
     settings:
       view_mode: default
@@ -183,9 +185,18 @@ content:
       image_style: max_650x650
       image_link: ''
     third_party_settings: {  }
+  field_private_documents:
+    type: entity_reference_revisions_entity_view
+    weight: 2
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: left
   field_related_content:
     label: above
-    weight: 8
+    weight: 9
     type: entity_reference_revisions_entity_view
     settings:
       view_mode: full
@@ -194,7 +205,7 @@ content:
     region: right
   field_related_documents:
     type: entity_reference_revisions_entity_view
-    weight: 9
+    weight: 10
     region: right
     label: above
     settings:
@@ -203,7 +214,7 @@ content:
     third_party_settings: {  }
   field_sections:
     label: hidden
-    weight: 3
+    weight: 4
     type: entity_reference_revisions_entity_view
     settings:
       view_mode: full
@@ -211,6 +222,7 @@ content:
     third_party_settings: {  }
     region: left
 hidden:
+  addtoany: true
   field_contact_ipu: true
   field_geopolitical_group: true
   langcode: true

@@ -171,3 +171,14 @@ ul.flickr-block {
   border-radius: 4px;
   margin-bottom: 10px;
 }
+
+#protected-pages-enter-password {
+  @extend .container;
+}
+.basic-page__field-private-documents {
+  & > .field__label {
+    @extend h2;
+    font-weight: $font-weight-light !important;
+    margin: 30px 0;
+  }
+}
