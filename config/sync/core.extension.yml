@@ -152,8 +152,8 @@ module:
   path: 0
   pathologic: 0
   pdfpreview: 0
-  pfdp: 10
-  protected_pages: 0
+  pfdp: 0
+  protected_pages: 10
   quickedit: 0
   rdf: 0
   recaptcha: 0
