@@ -152,8 +152,6 @@ module:
   path: 0
   pathologic: 0
   pdfpreview: 0
-  pfdp: 0
-  protected_pages: 10
   quickedit: 0
   rdf: 0
   recaptcha: 0
@@ -215,8 +213,10 @@ module:
   webform_bootstrap: 1
   xmlsitemap: 1
   ds_extras: 2
+  protected_pages: 10
   content_translation: 10
   views: 10
+  pfdp: 11
   paragraphs: 11
   standard: 1000
   eu_cookie_compliance: 1001
