@@ -29,4 +29,9 @@ content:
     region: content
 hidden:
   addtoany: true
+  field_image: true
+  field_key_figure: true
+  field_section: true
+  field_subtitle: true
+  field_theme: true
   langcode: true

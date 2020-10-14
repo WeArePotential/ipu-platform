@@ -11,6 +11,7 @@ is_admin: false
 permissions:
   - 'access content'
   - 'access mailchimp signup pages'
+  - 'access protected page password screen'
   - 'display eu cookie compliance popup'
   - 'download any audio files'
   - 'download any document files'
@@ -19,3 +20,4 @@ permissions:
   - 'search content'
   - 'use advanced search'
   - 'use text format filtered_html'
+  - 'view files'

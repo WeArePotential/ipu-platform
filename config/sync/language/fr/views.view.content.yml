@@ -44,6 +44,9 @@ display:
                 title: Publié
               2:
                 title: 'Non publié'
+        langcode:
+          expose:
+            label: Language
       title: Contenu
     display_title: Maître
   page_1:

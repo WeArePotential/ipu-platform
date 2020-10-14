@@ -1,0 +1,28 @@
+uuid: 03fa3330-374c-4146-990a-8c2482bb5161
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_publication_language
+    - paragraphs.paragraphs_type.private_documents
+  module:
+    - custom_add_another
+    - options
+third_party_settings:
+  custom_add_another:
+    custom_add_another: ''
+    custom_remove: ''
+id: paragraph.private_documents.field_publication_language
+field_name: field_publication_language
+entity_type: paragraph
+bundle: private_documents
+label: 'Document language'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: en
+default_value_callback: ''
+settings: {  }
+field_type: list_string

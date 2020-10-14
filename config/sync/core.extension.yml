@@ -97,6 +97,7 @@ module:
   google_analytics: 0
   help: 0
   history: 0
+  http_auth: 0
   image: 0
   imagemagick: 0
   inline_entity_form: 0

@@ -1,0 +1,37 @@
+uuid: e128d12d-5701-4e35-b8cd-efcb8f302c53
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.private_documents.field_member_document
+    - field.field.paragraph.private_documents.field_publication_language
+    - paragraphs.paragraphs_type.private_documents
+  module:
+    - field_layout
+    - file
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+id: paragraph.private_documents.default
+targetEntityType: paragraph
+bundle: private_documents
+mode: default
+content:
+  field_member_document:
+    weight: 0
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_publication_language:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+hidden:
+  created: true
+  status: true

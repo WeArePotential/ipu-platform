@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.basic_page.field_contact_ipu
     - field.field.node.basic_page.field_geopolitical_group
     - field.field.node.basic_page.field_media_image
+    - field.field.node.basic_page.field_private_documents
     - field.field.node.basic_page.field_related_content
     - field.field.node.basic_page.field_related_documents
     - field.field.node.basic_page.field_sections
@@ -206,6 +207,18 @@ content:
       field_widget_replace: false
       open: false
       preview_image_style: thumbnail
+    third_party_settings: {  }
+    region: ds_content
+  field_private_documents:
+    type: entity_reference_paragraphs
+    weight: 27
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
     third_party_settings: {  }
     region: ds_content
   field_related_content:
