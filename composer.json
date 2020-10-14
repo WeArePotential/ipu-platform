@@ -211,6 +211,7 @@
                 "Ignore width height on untranslatable field": "https://www.drupal.org/files/issues/2019-02-11/ignore_width_height_on_untranslatable_field_comparision_2941092_8.patch",
                 "Term route context": "https://www.drupal.org/files/issues/2019-04-12/term_route_context-2998826-31.patch",
                 "Exception thrown by responsive srcset images when the image is not yet in the file system": "https://www.drupal.org/files/issues/2827921-remove-missing-responsive-image-width-exception.patch",
+                "Increase entity autocomplete results count.patch": "web/patches/increase_entity_autocomplete_results_count.patch",
                 "Date range start or end formatter": "https://www.drupal.org/files/issues/2018-05-23/drupal-display-one-date-formatter-2827055-25.patch"
             },
             "drupal/convert_media_tags_to_markup": {
