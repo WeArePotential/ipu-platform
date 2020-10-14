@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7aeb5455f6b75e8625c941122e97e0ae",
+    "content-hash": "56248b630ea63818e996ce9dde722ab7",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -9607,97 +9607,6 @@
             "homepage": "https://www.drupal.org/project/pdfpreview",
             "support": {
                 "source": "https://git.drupalcode.org/project/pdfpreview"
-            }
-        },
-        {
-            "name": "drupal/private_files_download_permission",
-            "version": "2.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/private_files_download_permission.git",
-                "reference": "8.x-2.2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/private_files_download_permission-8.x-2.2.zip",
-                "reference": "8.x-2.2",
-                "shasum": "42d0299c3f6b75df32dbd385ec5991873ac42a1f"
-            },
-            "require": {
-                "drupal/core": "~8.0"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "8.x-2.2",
-                    "datestamp": "1586013192",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "zanonmark",
-                    "homepage": "https://www.drupal.org/user/1526222"
-                }
-            ],
-            "homepage": "https://www.drupal.org/project/private_files_download_permission",
-            "support": {
-                "source": "https://git.drupalcode.org/project/private_files_download_permission"
-            }
-        },
-        {
-            "name": "drupal/protected_pages",
-            "version": "1.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/protected_pages.git",
-                "reference": "8.x-1.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/protected_pages-8.x-1.1.zip",
-                "reference": "8.x-1.1",
-                "shasum": "9bce09a0d06776839ee449b195781e6e973b3200"
-            },
-            "require": {
-                "drupal/core": "~8.0"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "8.x-1.1",
-                    "datestamp": "1528110654",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Unsupported Projects",
-                    "homepage": "https://www.drupal.org/user/291168"
-                },
-                {
-                    "name": "oksana-c",
-                    "homepage": "https://www.drupal.org/user/2916547"
-                }
-            ],
-            "description": "Allow you to protect pages, private files by secure password.",
-            "homepage": "https://www.drupal.org/project/protected_pages",
-            "support": {
-                "source": "https://git.drupalcode.org/project/protected_pages"
             }
         },
         {
