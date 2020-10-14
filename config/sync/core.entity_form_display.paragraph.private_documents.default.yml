@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.private_documents.field_private_document
+    - field.field.paragraph.private_documents.field_member_document
     - field.field.paragraph.private_documents.field_publication_language
     - paragraphs.paragraphs_type.private_documents
   module:
@@ -19,7 +19,7 @@ targetEntityType: paragraph
 bundle: private_documents
 mode: default
 content:
-  field_private_document:
+  field_member_document:
     weight: 0
     settings:
       progress_indicator: throbber
@@ -27,7 +27,7 @@ content:
     type: file_generic
     region: content
   field_publication_language:
-    weight: 1
+    weight: 2
     settings: {  }
     third_party_settings: {  }
     type: options_select

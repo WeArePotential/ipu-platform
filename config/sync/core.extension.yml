@@ -97,6 +97,7 @@ module:
   google_analytics: 0
   help: 0
   history: 0
+  http_auth: 0
   image: 0
   imagemagick: 0
   inline_entity_form: 0
@@ -213,10 +214,8 @@ module:
   webform_bootstrap: 1
   xmlsitemap: 1
   ds_extras: 2
-  protected_pages: 10
   content_translation: 10
   views: 10
-  pfdp: 11
   paragraphs: 11
   standard: 1000
   eu_cookie_compliance: 1001

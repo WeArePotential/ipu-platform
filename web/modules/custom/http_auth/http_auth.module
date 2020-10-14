@@ -1,0 +1,117 @@
+<?php
+
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
+
+/**
+ * @file
+ * Enables Drupal to add HTTP Auth from frontend on all over the site/pages.
+ */
+
+function http_auth_file_download($uri) {
+  $target = file_uri_target($uri);
+  $parts = explode('/', $uri);
+
+  if (in_array('members-files', $parts)) {
+
+    \Drupal::messenger()
+      ->addWarning(t('Check http.' . print_r($uri, TRUE)));
+
+    $realm = 'Restricted Page';
+    $http_auth = \Drupal::config('http_auth.settings')->get();
+
+    $username = isset($_SERVER['PHP_AUTH_USER']) ? $_SERVER['PHP_AUTH_USER'] : '';
+    $password = isset($_SERVER['PHP_AUTH_PW']) ? $_SERVER['PHP_AUTH_PW'] : '';
+
+    if (!($http_auth['username'] == $username && $http_auth['password'] == $password)) {
+      $message = '';//$http_auth['message'];
+      header('WWW-Authenticate: Basic realm="' . $realm . '"');
+      header('HTTP/1.0 401 Unauthorized');
+      if (empty($message)) {
+        $message = t("This page is Restricted. Please contact the administrator for access.");
+      }
+      die(http_auth_cancel_page($message));
+    }
+    else {
+      \Drupal::messenger()
+        ->addWarning(t('Allow download.' . print_r($uri, TRUE)));
+      $uri_download_headers = [
+        'Content-Type' => \Drupal::service('file.mime_type.guesser')
+          ->guess($uri),
+        'Content-Disposition' => 'attachment; filename=' . \Drupal::service('file_system')
+            ->basename($uri),
+      ];
+      $file = new BinaryFileResponse($uri, 200, $uri_download_headers, FALSE);
+      $file->send();
+      // Exit to avoid duplication of HTTP transmission.
+      exit();
+    }
+  }
+  else {
+      \Drupal::messenger()
+        ->addWarning(t('Disallow download.' . print_r($uri, TRUE)));
+      return FALSE;
+  }
+
+}
+    /**
+     * Implements hook_page_top().
+     */
+function http_auth_page_top(array &$page_top) {
+  $user_roles = \Drupal::currentUser()->getRoles();
+  if (is_array($user_roles) && in_array("administrator", $user_roles)) {
+    return;
+  }
+
+  $realm = 'Restricted Page';
+  $http_auth = \Drupal::config('http_auth.settings')->get();
+
+  // Always activate
+  $http_auth['activate'] = 1;
+  /* We only want this to apply if we are on either
+   * page /members-section or
+   * public files within members-files
+  */
+  if (strpos($_SERVER['REQUEST_URI'], '/members-section') === FALSE && strpos($_SERVER['REQUEST_URI'], '/members-files') === FALSE) {
+    return;
+  }
+
+  if (isset($http_auth) && !empty($http_auth) && isset($http_auth['activate']) && $http_auth['activate'] == 1) {
+    if ($http_auth['applicable'] == 'admin') {
+      if (strpos($_SERVER['REQUEST_URI'], '/admin') === FALSE && strpos($_SERVER['REQUEST_URI'], '/user') === FALSE && strpos($_SERVER['REQUEST_URI'], '/user/login') === FALSE) {
+        return;
+      }
+    }
+
+    $username = isset($_SERVER['PHP_AUTH_USER']) ? $_SERVER['PHP_AUTH_USER'] : '';
+    $password = isset($_SERVER['PHP_AUTH_PW']) ? $_SERVER['PHP_AUTH_PW'] : '';
+
+    if (!($http_auth['username'] == $username && $http_auth['password'] == $password)) {
+      $message = '';//$http_auth['message'];
+      header('WWW-Authenticate: Basic realm="' . $realm . '"');
+      header('HTTP/1.0 401 Unauthorized');
+      if (empty($message)) {
+        $message = t("This page is Restricted. Please contact the administrator for access.");
+      }
+      die(http_auth_cancel_page($message));
+    }
+  }
+}
+
+/**
+ * Returns the page to the unauthenticated user.
+ */
+function http_auth_cancel_page($message = '') {
+  $sitename = \Drupal::config('system.site')->get('name');
+  if ($sitename == '') {
+    $sitename = "Locked";
+  }
+  return '<html>
+            <head>
+              <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+              <title>' . $sitename . ' | Restricted Site</title>
+            </head>
+            <body class="http-restricted">
+              <p>' . $message . '</p>
+            </body>
+          </html>';
+}

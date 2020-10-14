@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.private_documents.field_private_document
+    - field.field.paragraph.private_documents.field_member_document
     - field.field.paragraph.private_documents.field_publication_language
     - paragraphs.paragraphs_type.private_documents
   module:
@@ -14,9 +14,9 @@ targetEntityType: paragraph
 bundle: private_documents
 mode: default
 content:
-  field_private_document:
+  field_member_document:
     weight: 0
-    label: hidden
+    label: above
     settings:
       use_description_as_link_text: true
     third_party_settings: {  }
