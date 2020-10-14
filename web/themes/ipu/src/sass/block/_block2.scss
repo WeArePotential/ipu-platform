@@ -172,9 +172,6 @@ ul.flickr-block {
   margin-bottom: 10px;
 }
 
-#protected-pages-enter-password {
-  @extend .container;
-}
 .basic-page__field-private-documents {
   & > .field__label {
     @extend h2;

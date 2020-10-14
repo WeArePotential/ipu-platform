@@ -1,4 +1,4 @@
-name: HTTP Auth
+name: HTTP Auth - IPU VERSION
 description: This module allows you to set up HTTP authentication on your site. You can easily set username and password for HTTP Authentication. No server site configuration needed.
 package: HTTP Auth
 
