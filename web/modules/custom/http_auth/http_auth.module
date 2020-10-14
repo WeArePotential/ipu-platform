@@ -47,15 +47,16 @@ function http_auth_file_download($uri) {
     }
   }
   else {
-      \Drupal::messenger()
-        ->addWarning(t('Disallow download.' . print_r($uri, TRUE)));
-      return FALSE;
+    \Drupal::messenger()
+      ->addWarning(t('Disallow download.' . print_r($uri, TRUE)));
+    return FALSE;
   }
 
 }
-    /**
-     * Implements hook_page_top().
-     */
+
+/**
+ * Implements hook_page_top().
+ */
 function http_auth_page_top(array &$page_top) {
   $user_roles = \Drupal::currentUser()->getRoles();
   if (is_array($user_roles) && in_array("administrator", $user_roles)) {
@@ -71,7 +72,11 @@ function http_auth_page_top(array &$page_top) {
    * page /members-section or
    * public files within members-files
   */
-  if (strpos($_SERVER['REQUEST_URI'], '/members-section') === FALSE && strpos($_SERVER['REQUEST_URI'], '/members-files') === FALSE) {
+  if (
+    strpos($_SERVER['REQUEST_URI'], '/members-section') === FALSE &&
+    strpos($_SERVER['REQUEST_URI'], '/node/10510') === FALSE &&
+    strpos($_SERVER['REQUEST_URI'], '/members-files') === FALSE
+  ) {
     return;
   }
 
