@@ -17,7 +17,7 @@ id: node.basic_page.field_private_documents
 field_name: field_private_documents
 entity_type: node
 bundle: basic_page
-label: 'Members documents'
+label: 'Restricted documents for Members'
 description: ''
 required: false
 translatable: false
