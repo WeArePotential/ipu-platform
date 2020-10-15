@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1bee3dbf354c7219e35c3ca242c2a335",
+    "content-hash": "d713de546aab8bcadc8b666d9d4085e9",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -4687,7 +4687,8 @@
                     "Term route context": "https://www.drupal.org/files/issues/2019-04-12/term_route_context-2998826-31.patch",
                     "Exception thrown by responsive srcset images when the image is not yet in the file system": "https://www.drupal.org/files/issues/2827921-remove-missing-responsive-image-width-exception.patch",
                     "Increase entity autocomplete results count.patch": "web/patches/increase_entity_autocomplete_results_count.patch",
-                    "Date range start or end formatter": "https://www.drupal.org/files/issues/2018-05-23/drupal-display-one-date-formatter-2827055-25.patch"
+                    "Date range start or end formatter": "https://www.drupal.org/files/issues/2018-05-23/drupal-display-one-date-formatter-2827055-25.patch",
+                    "Base table or view not found: 1146 Table 'drupal.path_alias' doesn't exist": "https://www.drupal.org/files/issues/2020-09-15/path-alias-8.9.5-3099084-154.patch"
                 }
             },
             "autoload": {
