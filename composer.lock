@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5a52641e0344ca9f353ab66651f40e34",
+    "content-hash": "1bee3dbf354c7219e35c3ca242c2a335",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -9013,6 +9013,9 @@
                     "services": {
                         "drush.services.yml": "^9 || ^10"
                     }
+                },
+                "patches_applied": {
+                    "Pathauto token for node menu hierarchy not working after updating parent node": "https://www.drupal.org/files/issues/2019-10-28/pathauto-update_child_aliases-3016532-10.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",

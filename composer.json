@@ -216,6 +216,9 @@
             "drupal/convert_media_tags_to_markup": {
                 "Add usemap to imagefield filter": "web/patches/add_usemap_to_imagefield_filter.patch"
             },
+            "drupal/pathauto": {
+                "Pathauto token for node menu hierarchy not working after updating parent node": "https://www.drupal.org/files/issues/2019-10-28/pathauto-update_child_aliases-3016532-10.patch"
+            },
             "drupal/entity_browser": {
                 "Warning: key() expects parameter 1 to be array, null given in Drupal\\entity_browser\\Plugin\\Field\\FieldWidget\\EntityReferenceBrowserWidget::processEntityBrowser()": "https://www.drupal.org/files/issues/2018-07-17/entity_browser-key-2914385-6.patch"
             },
