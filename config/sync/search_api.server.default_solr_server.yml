@@ -1,6 +1,6 @@
 uuid: a1eb74e7-921e-443e-b451-0702bfca19bd
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - search_api_solr.solr_field_type.text_ar_7_0_0
