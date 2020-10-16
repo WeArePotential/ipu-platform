@@ -119,6 +119,7 @@
         "drupal/search_api": "^1.12",
         "drupal/search_api_db": "^1.12",
         "drupal/search_api_page": "^1.0@alpha",
+        "drupal/search_api_solr": "^4.1",
         "drupal/search_api_sorts": "^1.0@beta",
         "drupal/shield": "^1.2",
         "drupal/similarterms": "^1.3",
