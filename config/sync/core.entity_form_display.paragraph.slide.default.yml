@@ -38,6 +38,7 @@ third_party_settings:
             col-sm-6: col-sm-6
           add_region_classes: 1
           attributes: ''
+      label: ''
 id: paragraph.slide.default
 targetEntityType: paragraph
 bundle: slide

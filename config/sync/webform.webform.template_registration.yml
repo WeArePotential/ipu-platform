@@ -1,9 +1,12 @@
+uuid: d53b5cc9-1e61-4dee-a3dd-fdb612076a2b
 langcode: en
 status: closed
 dependencies:
   enforced:
     module:
       - webform_templates
+_core:
+  default_config_hash: 0MPMA_5jirZY5pTgzS4iIncd2yqsMEw7045F2twPkA0
 open: null
 close: null
 weight: 0
@@ -179,6 +182,7 @@ handlers:
   email_notification:
     id: email
     label: 'Email Notification'
+    notes: ''
     handler_id: email_notification
     status: true
     conditions: {  }
@@ -210,6 +214,6 @@ handlers:
       return_path: ''
       sender_mail: ''
       sender_name: ''
-uuid: d53b5cc9-1e61-4dee-a3dd-fdb612076a2b
-_core:
-  default_config_hash: 0MPMA_5jirZY5pTgzS4iIncd2yqsMEw7045F2twPkA0
+      exclude_attachments: false
+      parameters: {  }
+variants: {  }

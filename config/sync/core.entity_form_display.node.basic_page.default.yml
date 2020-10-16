@@ -28,6 +28,7 @@ third_party_settings:
   field_layout:
     id: ds_1col
     settings:
+      label: ''
       wrappers:
         ds_content: div
       outer_wrapper: div
@@ -311,6 +312,7 @@ content:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
+      match_limit: 10
     region: ds_content
     third_party_settings: {  }
   url_redirects:
