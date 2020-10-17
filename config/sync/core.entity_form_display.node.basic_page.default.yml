@@ -118,6 +118,7 @@ third_party_settings:
         - group_related_documents
         - group_sections
         - group_committee
+        - group_private_documents
       parent_name: ''
       weight: 2
       format_type: tabs
@@ -140,6 +141,20 @@ third_party_settings:
         formatter: closed
         required_fields: true
       label: Committee
+      region: ds_content
+    group_private_documents:
+      children:
+        - field_private_documents
+      parent_name: group_tabs
+      weight: 12
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        description: 'Private documents for members. Displayed at the bottom of the page.'
+        formatter: closed
+        required_fields: true
+      label: 'Private documents'
       region: ds_content
 id: node.basic_page.default
 targetEntityType: node
@@ -218,7 +233,7 @@ content:
       edit_mode: open
       add_mode: dropdown
       form_display_mode: default
-      default_paragraph_type: ''
+      default_paragraph_type: private_documents
     third_party_settings: {  }
     region: ds_content
   field_related_content:
