@@ -5,5 +5,5 @@ dependencies: {  }
 id: private_documents
 label: 'Private documents'
 icon_uuid: null
-description: ''
+description: 'Private documents are stored so that they are not accessible without a username and password. '
 behavior_plugins: {  }
