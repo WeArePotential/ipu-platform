@@ -32,7 +32,7 @@
         "drupal/backup_migrate": "^4.0",
         "drupal/better_exposed_filters": "^3.0@alpha",
         "drupal/block_class": "^1.0",
-        "drupal/block_field": "^1.0@alpha",
+        "drupal/block_field": "^1.0-rc1",
         "drupal/bootstrap_barrio": "^4.22",
         "drupal/bootstrap_layouts": "^5.1",
         "drupal/bootstrap_sass": "^1.9",
@@ -60,7 +60,7 @@
         "drupal/editor_advanced_link": "^1.6",
         "drupal/entity_embed": "^1.0@beta",
         "drupal/entity_reference_revisions": "^1.6",
-        "drupal/entityqueue": "^1.0@beta",
+        "drupal/entityqueue": "1.0-beta5",
         "drupal/eu_cookie_compliance": "^1.8",
         "drupal/eva": "^2.0-rc3",
         "drupal/facets": "1.x-dev",
@@ -107,7 +107,7 @@
         "drupal/override_node_options": "^2.4",
         "drupal/paragraphs": "^1.8",
         "drupal/paragraphs_preview_helper": "^1.1",
-        "drupal/pathauto": "^1.0.",
+        "drupal/pathauto": "1.6",
         "drupal/pathologic": "^1.0@alpha",
         "drupal/pdfpreview": "^1.0@RC",
         "drupal/radix": "4.x-dev",
@@ -211,7 +211,7 @@
                 "Exception thrown by responsive srcset images when the image is not yet in the file system": "https://www.drupal.org/files/issues/2827921-remove-missing-responsive-image-width-exception.patch",
                 "Increase entity autocomplete results count.patch": "web/patches/increase_entity_autocomplete_results_count.patch",
                 "Date range start or end formatter": "https://www.drupal.org/files/issues/2018-05-23/drupal-display-one-date-formatter-2827055-25.patch",
-                "Base table or view not found: 1146 Table 'drupal.path_alias' doesn't exist": "https://www.drupal.org/files/issues/2020-09-15/path-alias-8.9.5-3099084-154.patch"
+                "Base table or view not found: 1146 Table 'drupal.path_alias' doesn't exist": "web/patches/path-alias-8.9.7-3099084-157.patch"
             },
             "drupal/convert_media_tags_to_markup": {
                 "Add usemap to imagefield filter": "web/patches/add_usemap_to_imagefield_filter.patch"
