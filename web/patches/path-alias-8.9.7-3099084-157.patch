@@ -1,15 +1,11 @@
 diff --git a/core/modules/system/system.install b/core/modules/system/system.install
-index abe796822a..0c7e1f2938 100644
+index abe796822a..91d6faf2d1 100644
 --- a/core/modules/system/system.install
 +++ b/core/modules/system/system.install
-@@ -2674,6 +2674,135 @@ function system_update_8803() {
+@@ -2674,6 +2674,122 @@ function system_update_8803() {
   * Convert path aliases to entities.
   */
  function system_update_8804(&$sandbox = NULL) {
-+
-+  /**
-+   * Convert path aliases to entities.
-+   */
 +  $schema['path_alias'] = [
 +    'description' => 'The base table for path_alias entities.',
 +    'fields' => [
@@ -122,19 +118,10 @@ index abe796822a..0c7e1f2938 100644
 +    ],
 +  ];
 +
-+  if (\Drupal::moduleHandler()->moduleExists('path_alias') && (!\Drupal\Core\Database\Schema::tableExists('path_alias') || !\Drupal\Core\Database\Schema::tableExists('path_alias_revision'))) {
-+    foreach ($schema as $name => $spec) {
-+      \Drupal::database()->schema()->createTable($name, $spec);
-+    }
++  foreach ($schema as $name => $spec) {
++    \Drupal::database()->schema()->createTable($name, $spec);
 +  }
-+
-+  // Enable the Path Alias module if needed.
-+  if (!\Drupal::moduleHandler()->moduleExists('path_alias')) {
-+    \Drupal::service('module_installer')->install(['path_alias'], FALSE);
-+    return t('The "path_alias" entity type has been installed.');
-+  }
-+
-+
++  
    // Bail out early if the entity type is not using the default storage class.
    $storage = \Drupal::entityTypeManager()->getStorage('path_alias');
    if (!$storage instanceof PathAliasStorage) {

@@ -119,6 +119,7 @@
         "drupal/search_api": "^1.12",
         "drupal/search_api_db": "^1.12",
         "drupal/search_api_page": "^1.0@alpha",
+        "drupal/search_api_solr": "^1.6",
         "drupal/search_api_sorts": "^1.0@beta",
         "drupal/shield": "^1.2",
         "drupal/similarterms": "^1.3",
@@ -210,8 +211,7 @@
                 "Term route context": "https://www.drupal.org/files/issues/2019-04-12/term_route_context-2998826-31.patch",
                 "Exception thrown by responsive srcset images when the image is not yet in the file system": "https://www.drupal.org/files/issues/2827921-remove-missing-responsive-image-width-exception.patch",
                 "Increase entity autocomplete results count.patch": "web/patches/increase_entity_autocomplete_results_count.patch",
-                "Date range start or end formatter": "https://www.drupal.org/files/issues/2018-05-23/drupal-display-one-date-formatter-2827055-25.patch",
-                "Base table or view not found: 1146 Table 'drupal.path_alias' doesn't exist": "web/patches/path-alias-8.9.7-3099084-157.patch"
+                "Date range start or end formatter": "https://www.drupal.org/files/issues/2018-05-23/drupal-display-one-date-formatter-2827055-25.patch"
             },
             "drupal/convert_media_tags_to_markup": {
                 "Add usemap to imagefield filter": "web/patches/add_usemap_to_imagefield_filter.patch"
