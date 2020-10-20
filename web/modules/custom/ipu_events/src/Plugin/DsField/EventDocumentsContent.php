@@ -34,19 +34,18 @@ class EventDocumentsContent extends DsFieldBase {
       // Get the session paragraphs.
       if (!$node->field_ipu_event_sessions->isEmpty()) {
         $sessions = $node->field_ipu_event_sessions->referencedEntities();
-  
+
         // Get the document widget paragraphs.
         foreach ($sessions as $session) {
           if (!$session->field_ipu_event_document_widget->isEmpty()) {
             $document_widgets = $session->field_ipu_event_document_widget->referencedEntities();
-    
+
             // Get the document paragraphs.
             foreach ($document_widgets as $document_widget) {
               if (!$document_widget->field_ipu_event_document->isEmpty()) {
                 $documents = $document_widget->field_ipu_event_document->referencedEntities();
-  
-                // We're grouping by session type taxonomy terms from the session paragraph.
 
+                // We're grouping by session type taxonomy terms from the session paragraph.
 
                 if ($session->field_event_session_types->isEmpty()) {
                   $all_documents[0]['name'] = '';
@@ -83,7 +82,7 @@ class EventDocumentsContent extends DsFieldBase {
       foreach ($all_documents as $document_group) {
         $title = $document_group['name'];
         $documents_per_group = [];
-  
+
         foreach ($document_group['sessions'] as $document_group_session) {
           foreach ($document_group_session['documents'] as $document_group_session_document) {
             // Get rid of the documents that aren't in the current language. I tried setting access on the paragraphs with
@@ -95,7 +94,7 @@ class EventDocumentsContent extends DsFieldBase {
             }
           }
         }
-  
+
         $grouped_documents_render[] = [
           '#theme' => 'item_list',
           '#title' => $title,
@@ -105,15 +104,20 @@ class EventDocumentsContent extends DsFieldBase {
       }
 
       // Other documents
+      $title = '';
+      $description = '';
       $other_documents = [];
       if (!$node->field_ipu_event_section->isEmpty()) {
         $sections = $node->field_ipu_event_section->referencedEntities();
         foreach ($sections as $section) {
+         if ($section->getTranslation($current_language)->field_ie_fc_title->value != '') {
+            $title = $section->getTranslation($current_language)->field_ie_fc_title->value;
+          }
+          if ($section->getTranslation($current_language)->field_ie_fc_description->value != '') {
+            $description = $section->getTranslation($current_language)->field_ie_fc_description->value;
+          }
           if (!$section->field_ipu_event_document_widget->isEmpty()) {
             $document_widgets = $section->field_ipu_event_document_widget->referencedEntities();
-            if ($section->field_ie_fc_title->value != '') {
-              $other_documents[] = '<h2>' . $section->field_ie_fc_title->value . '</h2>';
-            }
             foreach ($document_widgets as $document_widget) {
               if (!$document_widget->field_ipu_event_document->isEmpty()) {
                 $documents = $document_widget->field_ipu_event_document->referencedEntities();
@@ -135,12 +139,13 @@ class EventDocumentsContent extends DsFieldBase {
 
       return [
         '#type' => 'event_documents',
-        '#title' => $this->t('Documents'),
+        '#title' => $title == '' ? $this->t('Documents') : $title,
+        '#description' => $description,
         '#documents' => $other_documents, //(count($other_documents) > 0 ? implode('', $other_documents) : ''),
         '#session_documents' => $grouped_documents_render,
       ];
     }
-		
+
     return [];
 	}
 }

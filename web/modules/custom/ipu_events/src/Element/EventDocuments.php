@@ -43,6 +43,7 @@ class EventDocuments extends RenderElement {
     return [
       '#theme' => 'ipu_events_event_documents',
       '#title' => '',
+      '#description' => '',
       '#documents' => '',
       '#session_documents' => '',
       //'#attributes' => [
