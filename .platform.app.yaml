@@ -56,8 +56,6 @@ hooks:
         php ./drush/platformsh_generate_drush_yml.php
         cd web
         drush -y cache-rebuild
-        drush -y updatedb
-        drush -y config-import
         drush -y config-set file_entity.settings allow_insecure_download 1
 
 # The configuration of app when it is exposed to the web.
