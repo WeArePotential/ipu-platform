@@ -61,11 +61,11 @@ display:
           grouping: {  }
           row_class: ''
           default_row_class: true
-          alignment: horizontal
           col_xs: col-12
           col_sm: col-sm-12
           col_md: col-md-6
           col_lg: col-lg-6
+          col_xl: none
       row:
         type: fields
         options:
@@ -491,7 +491,8 @@ display:
           entity_type: taxonomy_term
           plugin_id: entity_reverse
       arguments: {  }
-      display_extenders: {  }
+      display_extenders:
+        metatag_display_extender: {  }
     cache_metadata:
       max-age: -1
       contexts:
@@ -527,13 +528,13 @@ display:
         type: views_bootstrap_grid
         options:
           grouping: {  }
-          row_class: ''
+          row_class: col
           default_row_class: true
-          alignment: horizontal
           col_xs: col-12
           col_sm: col-sm-12
           col_md: col-md-4
           col_lg: col-lg-3
+          col_xl: none
       defaults:
         style: false
         row: false
