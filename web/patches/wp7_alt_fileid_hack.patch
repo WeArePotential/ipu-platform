@@ -54,8 +54,9 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 +        $altfile = \Drupal\file\Entity\File::load($possible_file->fid);
 +        return new BinaryFileResponse($altfile->getFileUri(), 200, $headers);
 +      }
-      $message = t('File @uri not found. File is at https://ipu.org/file/@fid/download.', [ '@uri' =>$file->getFileUri(), '@fid' =>$file->id() ]);
-      ipu_tweaks_send_alert('File not found on ipu.org', $message, 'peter@wearepotential.org');
-      return new Response($message, 404);
++      $message = t('File @uri not found. File is at https://ipu.org/file/@fid/download.', [ '@uri' =>$file->getFileUri(), '@fid' =>$file->id() ]);
++      ipu_tweaks_send_alert('File not found on ipu.org', $message, 'peter@wearepotential.org');
+-      return new Response(t('File @uri not found', array('@uri' =>$file->getFileUri())), 404);
++      return new Response($message, 404);
      }
    }
