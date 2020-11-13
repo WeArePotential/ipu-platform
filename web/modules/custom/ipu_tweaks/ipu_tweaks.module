@@ -475,3 +475,47 @@ function ipu_tweaks_entity_view(array &$build, EntityInterface $entity, EntityVi
   }
 }
 
+/**
+ * Implements hook_mail().
+ */
+function ipu_tweaks_mail($key, &$message, $params) {
+  $options = array(
+    'langcode' => $message['langcode'],
+  );
+  switch ($key) {
+    case 'ipu_tweaks_alert':
+      $message['from'] = \Drupal::config('system.site')->get('mail');
+      $message['reply-to'] = \Drupal::config('system.site')->get('mail');
+      $message['subject'] = t('@title', array('@title' => $params['title']), $options);
+      $message['body'][] = $params['message'];
+      break;
+  }
+}
+
+/**
+ * @param string $title
+ * @param string $message
+ * Custom helper module to send notification to specified email address on certain events
+ */
+function ipu_tweaks_send_alert($title, $message, $to = '') {
+  $mailManager = \Drupal::service('plugin.manager.mail');
+  $module = 'ipu_tweaks';
+  $key = 'ipu_tweaks_alert';
+  $to = ($to == '' ? \Drupal::config('system.site')->get('mail') : $to);
+  $params['message'] = $message;
+  $params['title'] = $title;
+  $langcode = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  $send = true;
+  if($to) {
+    $result = $mailManager->mail($module, $key, $to, $langcode, $params, NULL, $send);
+    if ($result['result'] !== true) {
+      \Drupal::logger('ipu_tweaks_alert')->error('Alert could not be sent '.$to.'. Alert: '.$message);
+    }
+    else {
+      \Drupal::logger('ipu_tweaks_alert')->notice('Alert sent to '.$to.'. Alert: '.$message);
+    }
+  } else {
+    \Drupal::logger('ipu_tweaks_alert')->notice('No alert was send. Please specify an email address.');
+  }
+
+}
