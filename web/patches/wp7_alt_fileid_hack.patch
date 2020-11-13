@@ -1,0 +1,59 @@
+Index: web/modules/contrib/file_entity/src/Controller/FileController.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- web/modules/contrib/file_entity/src/Controller/FileController.php	(date 1605267947915)
++++ web/modules/contrib/file_entity/src/Controller/FileController.php	(date 1605267947915)
+@@ -7,6 +7,7 @@
+ use Drupal\Core\Ajax\CloseDialogCommand;
+ use Drupal\Core\Ajax\OpenDialogCommand;
+ use Drupal\Core\Controller\ControllerBase;
++use Drupal\Core\Database\Database;
+ use Drupal\Core\Form\FormState;
+ use Drupal\file\FileInterface;
+ use Symfony\Component\HttpFoundation\BinaryFileResponse;
+@@ -78,6 +79,43 @@
+       return new BinaryFileResponse($file->getFileUri(), 200, $headers);
+     }
+     catch (FileNotFoundException $e) {
++
++      /* It may be that the file doesn't have the right name, due to migration problems.
++       *
++       * Try to find another file wilth the same
++       * - uri (without trailing _0, _1 etc. i.e. remove "_0")
++       *  NOTE: This does a "LIKE" on the name without any _0_1 or .suffix.
++       * - origname
++       * - uid
++       * - langcode
++       * And a lower fid (as it will have been created earlier)
++       */
++
++      // Remove the suffix: Subsequent versions of the file would have _0_1 etc appended.
++      $poss_name = $file->getFileUri();
++      $poss_name = substr($poss_name, 0, strrpos($poss_name, ".")); // Remove the suffix.
++      for ($f = 3; $f >= 0; $f--) {
++        if (substr($poss_name, -2) == '_'.$f) {
++          $poss_name = substr($poss_name, 0, -2);
++        }
++      }
++      $database = \Drupal::database();
++      $query = $database->select('file_managed', 'fm');
++
++      $query->fields('fm', ['fid'])
++      ->condition('fm.uid', $file->getOwnerId(), '=')
++        ->condition('fm.langcode', $file->language()->getId(), '=')
++        ->condition('fm.filesize', $file->getSize(), '=')
++        ->condition('fm.filename', $file->getFilename(), '=')
++        ->condition('fm.uri', '%' . Database::getConnection()->escapeLike($poss_name) . '%', 'LIKE')
++        ->condition('fm.fid', $file->id(), '<')
++        ->range(0, 1);
++      $result = $query->execute();
++//      print strtr($query->__toString(), $query->arguments());
++      foreach ($result as $possible_file) {
++        $altfile = \Drupal\file\Entity\File::load($possible_file->fid);
++        return new BinaryFileResponse($altfile->getFileUri(), 200, $headers);
++      }
+       return new Response(t('File @uri not found', array('@uri' =>$file->getFileUri())), 404);
+     }
+   }

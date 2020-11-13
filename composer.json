@@ -229,7 +229,8 @@
                 "Recognise don't need to show menu when not in active trail": "https://www.drupal.org/files/issues/2018-05-02/menu_block_follow-2756675-45.patch"
             },
             "drupal/file_entity": {
-                "Add htmlspecialchars processing to core file entity link download formatter": "web/patches/file_download_formatter_htmlspecialchars.patch"
+                "Add htmlspecialchars processing to core file entity link download formatter": "web/patches/file_download_formatter_htmlspecialchars.patch",
+                "Find alt names for managed files where more than one was migrated ": "web/patches/wp7_alt_fileid_hack.patch"
             },
             "drupal/viewfield": {
                 "Display missing view instead of title in viewfield": "web/patches/missing_view_in_viewfield.patch"
