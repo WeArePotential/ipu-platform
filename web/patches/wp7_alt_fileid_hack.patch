@@ -3,8 +3,8 @@ IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
---- web/modules/contrib/file_entity/src/Controller/FileController.php	(date 1605267947915)
-+++ web/modules/contrib/file_entity/src/Controller/FileController.php	(date 1605267947915)
+--- web/modules/contrib/file_entity/src/Controller/FileController.php	(date 1605289641138)
++++ web/modules/contrib/file_entity/src/Controller/FileController.php	(date 1605289641138)
 @@ -7,6 +7,7 @@
  use Drupal\Core\Ajax\CloseDialogCommand;
  use Drupal\Core\Ajax\OpenDialogCommand;
@@ -13,10 +13,11 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
  use Drupal\Core\Form\FormState;
  use Drupal\file\FileInterface;
  use Symfony\Component\HttpFoundation\BinaryFileResponse;
-@@ -78,6 +79,43 @@
+@@ -78,7 +79,46 @@
        return new BinaryFileResponse($file->getFileUri(), 200, $headers);
      }
      catch (FileNotFoundException $e) {
+-      return new Response(t('File @uri not found', array('@uri' =>$file->getFileUri())), 404);
 +
 +      /* It may be that the file doesn't have the right name, due to migration problems.
 +       *
@@ -54,6 +55,9 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 +        $altfile = \Drupal\file\Entity\File::load($possible_file->fid);
 +        return new BinaryFileResponse($altfile->getFileUri(), 200, $headers);
 +      }
-       return new Response(t('File @uri not found', array('@uri' =>$file->getFileUri())), 404);
++      $message = t('File @uri not found. File is at https://ipu.org/file/@fid/download.', [ '@uri' =>$file->getFileUri(), '@fid' =>$file->id() ]);
++      ipu_tweaks_send_alert('File not found on ipu.org', $message, 'peter@wearepotential.org');
++      return new Response($message, 404);
      }
    }
+ 
