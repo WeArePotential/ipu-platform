@@ -61,3 +61,4 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 +      return new Response($public_message, 404);
      }
    }
+
