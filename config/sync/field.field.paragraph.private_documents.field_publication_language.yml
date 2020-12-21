@@ -20,9 +20,7 @@ label: 'Document language'
 description: ''
 required: false
 translatable: true
-default_value:
-  -
-    value: en
+default_value: {  }
 default_value_callback: ''
 settings: {  }
 field_type: list_string

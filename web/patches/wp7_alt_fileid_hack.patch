@@ -1,0 +1,65 @@
+Index: web/modules/contrib/file_entity/src/Controller/FileController.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- web/modules/contrib/file_entity/src/Controller/FileController.php	(date 1605289641138)
++++ web/modules/contrib/file_entity/src/Controller/FileController.php	(date 1605289641138)
+@@ -7,6 +7,7 @@
+ use Drupal\Core\Ajax\CloseDialogCommand;
+ use Drupal\Core\Ajax\OpenDialogCommand;
+ use Drupal\Core\Controller\ControllerBase;
++use Drupal\Core\Database\Database;
+ use Drupal\Core\Form\FormState;
+ use Drupal\file\FileInterface;
+ use Symfony\Component\HttpFoundation\BinaryFileResponse;
+@@ -78,7 +79,46 @@
+       return new BinaryFileResponse($file->getFileUri(), 200, $headers);
+     }
+     catch (FileNotFoundException $e) {
+-      return new Response(t('File @uri not found', array('@uri' =>$file->getFileUri())), 404);
++
++      /* It may be that the file doesn't have the right name, due to migration problems.
++       *
++       * Try to find another file wilth the same
++       * - uri (without trailing _0, _1 etc. i.e. remove "_0")
++       *  NOTE: This does a "LIKE" on the name without any _0_1 or .suffix.
++       * - origname
++       * - uid
++       * - langcode
++       * And a lower fid (as it will have been created earlier)
++       */
++
++      // Remove the suffix: Subsequent versions of the file would have _0_1 etc appended.
++      $poss_name = $file->getFileUri();
++      $poss_name = substr($poss_name, 0, strrpos($poss_name, ".")); // Remove the suffix.
++      for ($f = 3; $f >= 0; $f--) {
++        if (substr($poss_name, -2) == '_'.$f) {
++          $poss_name = substr($poss_name, 0, -2);
++        }
++      }
++      $database = \Drupal::database();
++      $query = $database->select('file_managed', 'fm');
++
++      $query->fields('fm', ['fid'])
++      ->condition('fm.uid', $file->getOwnerId(), '=')
++        ->condition('fm.langcode', $file->language()->getId(), '=')
++        ->condition('fm.filesize', $file->getSize(), '=')
++        ->condition('fm.filename', $file->getFilename(), '=')
++        ->condition('fm.uri', '%' . Database::getConnection()->escapeLike($poss_name) . '%', 'LIKE')
++        ->condition('fm.fid', $file->id(), '<')
++        ->range(0, 1);
++      $result = $query->execute();
++//      print strtr($query->__toString(), $query->arguments());
++      foreach ($result as $possible_file) {
++        $altfile = \Drupal\file\Entity\File::load($possible_file->fid);
++        return new BinaryFileResponse($altfile->getFileUri(), 200, $headers);
++      }
++            $message = t("File @uri not found. File is at https://ipu.org/file/@fid/download. To replace the missing file, log on and edit at https://ipu.org/file/@fid/edit or verify usage at https://ipu.org/file/@fid/usage\n
++               The file might be available on the old site at https://live-ipu.pantheonsite.io/file/@fid/edit", [ '@uri' =>$file->getFileUri(), '@fid' =>$file->id() ]);
++            $public_message = t('File @uri not found. Administrator has been notified. Please try again later', [ '@uri' =>$file->getFileUri()]);
++             ipu_tweaks_send_alert('File not found on ipu.org', $message, 'peter@wearepotential.org');
++             return new Response($public_message, 404);
+     }
+   }
+

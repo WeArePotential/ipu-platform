@@ -13,9 +13,6 @@ function http_auth_file_download($uri) {
 
   if (in_array('members-files', $parts)) {
 
-    \Drupal::messenger()
-      ->addWarning(t('Check http.' . print_r($uri, TRUE)));
-
     $realm = 'Restricted Page';
     $http_auth = \Drupal::config('http_auth.settings')->get();
 
@@ -23,17 +20,11 @@ function http_auth_file_download($uri) {
     $password = isset($_SERVER['PHP_AUTH_PW']) ? $_SERVER['PHP_AUTH_PW'] : '';
 
     if (!($http_auth['username'] == $username && $http_auth['password'] == $password)) {
-      $message = '';//$http_auth['message'];
       header('WWW-Authenticate: Basic realm="' . $realm . '"');
       header('HTTP/1.0 401 Unauthorized');
-      if (empty($message)) {
-        $message = t("This page is Restricted. Please contact the administrator for access.");
-      }
-      die(http_auth_cancel_page($message));
+      die(http_auth_cancel_page(_http_auth_message(TRUE)));
     }
     else {
-      \Drupal::messenger()
-        ->addWarning(t('Allow download.' . print_r($uri, TRUE)));
       $uri_download_headers = [
         'Content-Type' => \Drupal::service('file.mime_type.guesser')
           ->guess($uri),
@@ -47,8 +38,6 @@ function http_auth_file_download($uri) {
     }
   }
   else {
-    \Drupal::messenger()
-      ->addWarning(t('Disallow download.' . print_r($uri, TRUE)));
     return FALSE;
   }
 
@@ -74,7 +63,6 @@ function http_auth_page_top(array &$page_top) {
   */
   if (
     strpos($_SERVER['REQUEST_URI'], '/members-section') === FALSE &&
-    strpos($_SERVER['REQUEST_URI'], '/node/10510') === FALSE &&
     strpos($_SERVER['REQUEST_URI'], '/members-files') === FALSE
   ) {
     return;
@@ -91,15 +79,22 @@ function http_auth_page_top(array &$page_top) {
     $password = isset($_SERVER['PHP_AUTH_PW']) ? $_SERVER['PHP_AUTH_PW'] : '';
 
     if (!($http_auth['username'] == $username && $http_auth['password'] == $password)) {
-      $message = '';//$http_auth['message'];
       header('WWW-Authenticate: Basic realm="' . $realm . '"');
       header('HTTP/1.0 401 Unauthorized');
-      if (empty($message)) {
-        $message = t("This page is Restricted. Please contact the administrator for access.");
-      }
-      die(http_auth_cancel_page($message));
+      die(http_auth_cancel_page(_http_auth_message(TRUE)));
     }
   }
+}
+
+
+function _http_auth_message($html_format = FALSE) {
+  if ($html_format) {
+    $message = 'This page is restricted to Members only. Please contact <a href="mailto:postbox@ipu.org">postbox@ipu.org</a> to receive a password
+      <br /><br />Cette page est réservée aux membres uniquement. Merci de contacter <a href="mailto:postbox@ipu.org">postbox@ipu.org</a> pour recevoir un mot de passe';
+    return $message;
+  }
+  $message = "This page is restricted to Members only. Please contact postbox@ipu.org to receive a password\n\nCette page est réservée aux membres uniquement. Merci de contacter postbox@ipu.org pour recevoir un mot de passe";
+  return $message;
 }
 
 /**
@@ -113,7 +108,7 @@ function http_auth_cancel_page($message = '') {
   return '<html>
             <head>
               <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-              <title>' . $sitename . ' | Restricted Site</title>
+              <title>' . $sitename . ' | Restricted page</title>
             </head>
             <body class="http-restricted">
               <p>' . $message . '</p>

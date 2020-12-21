@@ -1,11 +1,11 @@
-uuid: 626a7363-847b-42ac-9ff4-ee13958f1bec
+uuid: b460896f-9bbb-47f9-b899-7b25fa8aab30
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_private_documents
-    - node.type.basic_page
+    - field.storage.paragraph.field_private_documents
     - paragraphs.paragraphs_type.private_documents
+    - paragraphs.paragraphs_type.sections
   module:
     - custom_add_another
     - entity_reference_revisions
@@ -13,12 +13,12 @@ third_party_settings:
   custom_add_another:
     custom_add_another: ''
     custom_remove: ''
-id: node.basic_page.field_private_documents
+id: paragraph.sections.field_private_documents
 field_name: field_private_documents
-entity_type: node
-bundle: basic_page
-label: 'Restricted documents for Members'
-description: ''
+entity_type: paragraph
+bundle: sections
+label: 'Private documents'
+description: 'Upload documents which are password protected.'
 required: false
 translatable: false
 default_value: {  }
@@ -31,59 +31,59 @@ settings:
       private_documents: private_documents
     target_bundles_drag_drop:
       call_to_action:
-        weight: 26
+        weight: 25
         enabled: false
       call_to_action_small:
-        weight: 27
+        weight: 26
         enabled: false
       callout_strip:
-        weight: 28
+        weight: 27
         enabled: false
       carousel:
-        weight: 29
+        weight: 28
         enabled: false
       carousel_slides:
-        weight: 30
+        weight: 29
         enabled: false
       data_point:
-        weight: 31
+        weight: 30
         enabled: false
       event_sub_page:
-        weight: 32
+        weight: 31
         enabled: false
       highlights:
-        weight: 33
+        weight: 32
         enabled: false
       innovation_tracker_stories:
-        weight: 34
+        weight: 33
         enabled: false
       ipu_event_document:
-        weight: 35
+        weight: 34
         enabled: false
       ipu_event_document_widget:
-        weight: 36
+        weight: 35
         enabled: false
       ipu_event_right_menu:
-        weight: 37
+        weight: 36
         enabled: false
       ipu_event_section:
-        weight: 38
+        weight: 37
         enabled: false
       ipu_event_session_type:
-        weight: 39
+        weight: 38
         enabled: false
       ipu_event_sessions:
-        weight: 40
+        weight: 39
         enabled: false
       ipu_event_sponsors:
-        weight: 41
+        weight: 40
         enabled: false
       member:
-        weight: 42
+        weight: 41
         enabled: false
       private_documents:
         enabled: true
-        weight: 25
+        weight: 42
       publication_document:
         weight: 43
         enabled: false
