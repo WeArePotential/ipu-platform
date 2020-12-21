@@ -55,7 +55,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 +        $altfile = \Drupal\file\Entity\File::load($possible_file->fid);
 +        return new BinaryFileResponse($altfile->getFileUri(), 200, $headers);
 +      }
-+      $message = t("File @uri not found. File is at https://ipu.org/file/@fid/download. To replace the missing file, log on and edit at https://ipu.org/file/@fid/edit or verify usage at https://ipu.org/file/@fid/usage\nThe file might be available on the old site at https://live-ipu.pantheonsite.io/file/@fid/edit", [ '@uri' =>$file->getFileUri(), '@fid' =>$file->id() ]);
++      $message = t("File @uri not found. File is at https://ipu.org/file/@fid/download. To replace the missing file, log on and edit at https://ipu.org/file/@fid/edit or verify usage at https://ipu.org/file/@fid/usage. <br/>The file might be available on the old site at https://live-ipu.pantheonsite.io/file/@fid/edit", [ '@uri' =>$file->getFileUri(), '@fid' =>$file->id() ]);
 +      $public_message = t('File @uri not found. Administrator has been notified. Please try again later', [ '@uri' =>$file->getFileUri()]);
 +      ipu_tweaks_send_alert('File not found on ipu.org', $message, 'peter@wearepotential.org');
 +      return new Response($public_message, 404);
