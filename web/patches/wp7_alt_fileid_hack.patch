@@ -3,8 +3,8 @@ IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
---- web/modules/contrib/file_entity/src/Controller/FileController.php	(date 1605289641138)
-+++ web/modules/contrib/file_entity/src/Controller/FileController.php	(date 1605289641138)
+--- web/modules/contrib/file_entity/src/Controller/FileController.php	(date 1608626559346)
++++ web/modules/contrib/file_entity/src/Controller/FileController.php	(date 1608626559346)
 @@ -7,6 +7,7 @@
  use Drupal\Core\Ajax\CloseDialogCommand;
  use Drupal\Core\Ajax\OpenDialogCommand;
@@ -13,7 +13,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
  use Drupal\Core\Form\FormState;
  use Drupal\file\FileInterface;
  use Symfony\Component\HttpFoundation\BinaryFileResponse;
-@@ -78,7 +79,46 @@
+@@ -78,7 +79,48 @@
        return new BinaryFileResponse($file->getFileUri(), 200, $headers);
      }
      catch (FileNotFoundException $e) {
