@@ -14,10 +14,22 @@ display:
           expose:
             items_per_page_options_all_label: '- الكل -'
       fields:
+        subject:
+          label: الموضوع
         operations:
           label: عمليات
+      filters:
+        subject:
+          expose:
+            label: الموضوع
   page_unapproved:
     display_options:
+      filters:
+        subject:
+          expose:
+            label: الموضوع
       fields:
+        subject:
+          label: الموضوع
         operations:
           label: عمليات

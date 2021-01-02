@@ -11,7 +11,8 @@ dependencies:
 third_party_settings:
   field_layout:
     id: layout_onecol
-    settings: {  }
+    settings:
+      label: ''
 id: paragraph.ipu_event_sponsors.default
 targetEntityType: paragraph
 bundle: ipu_event_sponsors
@@ -20,6 +21,11 @@ content:
   field_ipu_event_sponsor_name:
     weight: 1
     type: options_select
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  translation:
+    weight: 10
     settings: {  }
     third_party_settings: {  }
     region: content

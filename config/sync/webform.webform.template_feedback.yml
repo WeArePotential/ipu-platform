@@ -1,9 +1,12 @@
+uuid: adb7849a-43e2-407c-b99c-35ed7cb42979
 langcode: en
 status: closed
 dependencies:
   enforced:
     module:
       - webform_templates
+_core:
+  default_config_hash: 00_8Q6rSy0QN3NC6evx9ov1hB5KCyMqZykHpMZWiS88
 open: null
 close: null
 weight: 0
@@ -179,6 +182,7 @@ handlers:
   email_confirmation:
     id: email
     label: 'Email confirmation'
+    notes: ''
     handler_id: email_confirmation
     status: true
     conditions: {  }
@@ -210,9 +214,12 @@ handlers:
       return_path: ''
       sender_mail: ''
       sender_name: ''
+      exclude_attachments: false
+      parameters: {  }
   email_notification:
     id: email
     label: 'Email notification'
+    notes: ''
     handler_id: email_notification
     status: true
     conditions: {  }
@@ -259,6 +266,6 @@ handlers:
       return_path: ''
       sender_mail: ''
       sender_name: ''
-uuid: adb7849a-43e2-407c-b99c-35ed7cb42979
-_core:
-  default_config_hash: 00_8Q6rSy0QN3NC6evx9ov1hB5KCyMqZykHpMZWiS88
+      exclude_attachments: false
+      parameters: {  }
+variants: {  }

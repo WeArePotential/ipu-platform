@@ -20,6 +20,7 @@ display:
             offset_label: Desplazamiento
       fields:
         sid:
+          label: Nº
           separator: ', '
         in_draft:
           separator: ', '
@@ -37,6 +38,7 @@ display:
     display_options:
       fields:
         sid:
+          label: Nº
           separator: ', '
         in_draft:
           separator: ', '
@@ -56,6 +58,7 @@ display:
     display_options:
       fields:
         sid:
+          label: Nº
           separator: ', '
         in_draft:
           separator: ', '
@@ -78,6 +81,7 @@ display:
     display_options:
       fields:
         sid:
+          label: Nº
           separator: ', '
         in_draft:
           separator: ', '

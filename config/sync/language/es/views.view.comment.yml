@@ -17,6 +17,7 @@ display:
             offset_label: Desplazamiento
       fields:
         subject:
+          label: Asunto
           separator: ', '
         uid:
           separator: ', '
@@ -30,10 +31,19 @@ display:
           label: Operaciones
         name_1:
           separator: ', '
+      filters:
+        subject:
+          expose:
+            label: Asunto
   page_unapproved:
     display_options:
+      filters:
+        subject:
+          expose:
+            label: Asunto
       fields:
         subject:
+          label: Asunto
           separator: ', '
         uid:
           separator: ', '

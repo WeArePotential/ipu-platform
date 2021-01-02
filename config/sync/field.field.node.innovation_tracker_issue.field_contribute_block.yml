@@ -26,6 +26,6 @@ default_value:
     settings: {  }
 default_value_callback: ''
 settings:
-  plugin_ids:
-    ipu_innovation_tracker_contribute: ipu_innovation_tracker_contribute
+  selection: blocks
+  selection_settings: {  }
 field_type: block_field

@@ -1,3 +1,5 @@
+popup_disagree_button_message: 'More info'
+popup_find_more_button_message: 'More info'
 popup_hide_button_message: إخفاء
 popup_info:
   value: '<h2>We use minimal cookies on this site to enhance your user experience and record anonymous usage with Google Analytics</h2><p>By continuing to use the site, you agree to us doing so. Clicking the Accept button will remove this message.&nbsp;</p><p><a href="/node/9571">More on our policies</a></p>'

@@ -1,5 +1,5 @@
 settings:
   content:
-    value: "<p>Le bulletin électronique trimestriel du Centre pour l'innovation au Parlement</p>\r\n"
+    value: "<p>Le bulletin électronique trimestriel du <a href=\"/fr/node/9774\">Centre pour l'innovation au parlement</a></p>\r\n"
     format: full_html
-  page_title: 'IPU from locale!'
+  page_title: 'Bulletin de l''innovation de l''UIP'

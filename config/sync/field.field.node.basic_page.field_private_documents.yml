@@ -30,9 +30,6 @@ settings:
     target_bundles:
       private_documents: private_documents
     target_bundles_drag_drop:
-      private_documents:
-        enabled: true
-        weight: 25
       call_to_action:
         weight: 26
         enabled: false
@@ -84,6 +81,9 @@ settings:
       member:
         weight: 42
         enabled: false
+      private_documents:
+        enabled: true
+        weight: 25
       publication_document:
         weight: 43
         enabled: false
