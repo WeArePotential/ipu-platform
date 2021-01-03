@@ -110,7 +110,7 @@ class EventDocumentsContent extends DsFieldBase {
       if (!$node->field_ipu_event_section->isEmpty()) {
         $sections = $node->field_ipu_event_section->referencedEntities();
         foreach ($sections as $section) {
-         if ($section->getTranslation($current_language)->field_ie_fc_title->value != '') {
+          if ($section->getTranslation($current_language)->field_ie_fc_title->value != '') {
             $title = $section->getTranslation($current_language)->field_ie_fc_title->value;
           }
           if ($section->getTranslation($current_language)->field_ie_fc_description->value != '') {
