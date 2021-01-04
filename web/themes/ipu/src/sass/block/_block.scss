@@ -1114,7 +1114,9 @@ a.btn {
     border-bottom-width: 0px;
   }
 }
-
+#branding #search-block-form #edit-actions {
+  position: relative;
+}
 #branding .form-actions::after {
   content: "\f002" !important;
   color: $tertiary;
