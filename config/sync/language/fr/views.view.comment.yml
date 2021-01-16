@@ -17,6 +17,7 @@ display:
             offset_label: Décalage
       fields:
         subject:
+          label: Objet
           separator: ', '
         uid:
           separator: ', '
@@ -30,10 +31,25 @@ display:
           label: Actions
         name_1:
           separator: ', '
+      filters:
+        subject:
+          expose:
+            label: Objet
+        langcode:
+          expose:
+            label: Language
   page_unapproved:
     display_options:
+      filters:
+        subject:
+          expose:
+            label: Objet
+        langcode:
+          expose:
+            label: Language
       fields:
         subject:
+          label: Objet
           separator: ', '
         uid:
           separator: ', '

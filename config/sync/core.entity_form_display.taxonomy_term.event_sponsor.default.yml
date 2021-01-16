@@ -15,7 +15,8 @@ dependencies:
 third_party_settings:
   field_layout:
     id: layout_onecol
-    settings: {  }
+    settings:
+      label: ''
 id: taxonomy_term.event_sponsor.default
 targetEntityType: taxonomy_term
 bundle: event_sponsor
@@ -63,6 +64,13 @@ content:
     weight: 5
     region: content
     settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 100
+    region: content
     third_party_settings: {  }
   translation:
     weight: 4

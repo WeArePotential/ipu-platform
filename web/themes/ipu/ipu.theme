@@ -147,6 +147,14 @@ function ipu_theme_suggestions_field_alter(&$suggestions, $variables) {
 }
 
 function ipu_preprocess_links__language_block(&$variables) {
+
+  // Add the lang to the link class. This should also be on the li but isn't always working
+  foreach ($variables['links'] as $lang => &$link) {
+    $link['link']['#options']['attributes']['class'][] = $lang;
+  }
+  // Remove unwanted languages completely
+  unset($variables['links']['es']);
+  unset($variables['links']['ar']);
   $html = '<span class="lang-code-short">EN</span><span class="lang-code-long">English</span>';
   $markup = new FormattableMarkup($html, []);
   $variables['links']['en']['link']['#title'] = $markup;

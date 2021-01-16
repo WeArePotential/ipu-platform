@@ -7,7 +7,7 @@
 name: 'app'
 
 # The runtime the application uses.
-type: 'php:7.2'
+type: 'php:7.4'
 
 # The relationships of the application with services or other applications.
 #
@@ -56,8 +56,6 @@ hooks:
         php ./drush/platformsh_generate_drush_yml.php
         cd web
         drush -y cache-rebuild
-        drush -y updatedb
-        drush -y config-import
         drush -y config-set file_entity.settings allow_insecure_download 1
 
 # The configuration of app when it is exposed to the web.

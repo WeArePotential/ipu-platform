@@ -13,7 +13,8 @@ dependencies:
 third_party_settings:
   field_layout:
     id: layout_onecol
-    settings: {  }
+    settings:
+      label: ''
 _core:
   default_config_hash: HYzof_QiEoo7449yRhD_uJoLXMEAmSafqexxGS9OmjQ
 id: file.image.default

@@ -22,6 +22,10 @@ function ipu_events_paragraph_access(EntityInterface $entity, $operation, Accoun
     }
     // If there is a document remove the ones that aren't assigned to the current language.
     else {
+      // Unless they should always be shown
+      if ($entity->get('field_persistent')->value == TRUE) {
+        return AccessResult::neutral();
+      }
       $current_language = \Drupal::languageManager()->getCurrentLanguage()->getId();
       $document_lanagage = $entity->get('field_publication_language')->value;
       if ($current_language != $document_lanagage) {
